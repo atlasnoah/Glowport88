@@ -1,6 +1,7 @@
 {
-  "version": "0.4.0",
-  "sourceCommit": "cd6457866271966658a06df2b0782928cb4b4ecf",
-  "sha256": "aaa2194c107b8c8cefa19fb56956a2353d8b696c9d6e6bc9b22c8362ba2c1f71",
-  "mobileTouch": true
+  "version": "0.4.1",
+  "sourceCommit": "1d3cbb9223058a6474bcaac3bc4dadf676c6cb5f",
+  "sha256": "bed6ccd2ad713612f6e2998cfaa211353a3a03624f6f458c467846962316bcf8",
+  "mobileTouch": true,
+  "touchRefinements": true
 }
