@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-21T01:04:18.671Z",
+  "time": "2026-10-21T19:34:45.545Z",
   "passed": [
     "menu and Start",
     "city rendering",
@@ -16,7 +16,7 @@
     "police response",
     "save and restore",
     "new story resets campaign",
-    "old-save migration and three-stage investigation",
+    "old-save migration to expanded campaign",
     "clinic purchase and interactive arcade",
     "distinct interior assets",
     "night and rain rendering",

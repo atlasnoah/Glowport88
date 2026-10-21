@@ -1,0 +1,24 @@
+{
+  "time": "2026-10-21T19:35:08.594Z",
+  "passed": [
+    "v2 save migrates the radio chapter into m07",
+    "phone freezes simulation and captures gameplay input",
+    "property purchase is a real one-time transaction",
+    "phone accepts a side story and persists it",
+    "actual ordered investigation advances and reloads",
+    "objective deadline fails and checkpoint retry grants no cash",
+    "heist uses actual timing-window input",
+    "street encounter offer can be accepted through its dialogue",
+    "all final choices resolve distinct endings with free roam",
+    "police search begins after losing sight inside",
+    "complete side story consumes its inventory and pays once",
+    "route checkpoints require driving and a stopped arrival",
+    "escort boards the getaway and reaches a real handoff",
+    "stealth requires crouching through the ordered quiet route",
+    "pursuit follows a physical traffic target before the handoff",
+    "garage storage, tuning and controlled vehicle survive reload",
+    "no critical browser errors or missing assets"
+  ],
+  "errors": [],
+  "scope": "Scenario-based browser mechanic coverage; not a timed full-campaign playthrough"
+}

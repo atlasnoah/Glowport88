@@ -37,4 +37,15 @@
 - Final source regression: 20 smoke + 6 deeper browser checks passed, with mission logic/syntax checks and no browser errors. Final standalone check passed with every asset subrequest blocked.
 - Release outputs: `dist/Glowport88-Midnight-Signal.html`, its SHA-256 manifest, and `artifacts/Glowport88-Midnight-Signal.zip` containing editable source, original raster assets, generation tools, tests, screenshots, and reports. The ZIP excludes dependencies and Git internals and was CRC-verified.
 - Reusable cloud install/start instructions were saved to the environment configuration draft. Saving does not publish the environment or verify a fresh task restoration.
-- All implementation commits are local; no remote push or deployment was performed. Continue from ROADMAP.md.
+- At the earlier art milestone implementation commits were local. A later authorized delivery pushed the standalone to gh-pages; the current overhaul updates that demo after validation.
+
+
+## Gameplay overhaul · 2026-10-21
+
+- Inspected and browser-tested the prior baseline before editing. Saved /tmp/glowport-gameplay-baseline.tar.gz; retained all seven approved art hashes, the renderer, perspective, world and road grid.
+- Implemented the reusable mission lifecycle, original five-act catalogue, recurring side arcs, contextual encounters, gameplay adapter, police model, phone, progression/economy and version 3 migration. Detailed content inventories are in MISSION_TRACKER.md and SIDE_STORIES.md.
+- Connected actual objective actions to the existing city, combat, traffic, room interactions and rendering. Added queued/skippable dialogue, camera easing, checkpoints/retries, real item handoffs and three endings/free roam.
+- Added persistent choice/relationship effects, funding versus restitution, crew protection, equipment discounts, nearby radio reactions, performance payouts, property recovery/income/storage, repairs and tuning. Kept UI services transactional and saveable.
+- Browser tests caught encounter markers detached from their objectives, impossible indoor car requirements, and escort actions consuming vehicle-entry input. Corrected these and added coverage. Also preserved controlled cars, removed regenerated stored identities on load, and prevented restarting the active mission through the phone.
+- Expanded regression to 43 Chromium scenarios and model/content checks. Three accelerated adapter sweeps resolve 910 objectives across 74 new definitions; the host substitutes travel/combat and the heist success boundary. This is not a timed human campaign playthrough. No duration estimate is asserted.
+- Rebuilt the standalone demo, source archive and checksums after validation. See TEST_RESULTS.md for current evidence and ROADMAP.md for remaining human playtesting, balancing, performance and platform work.

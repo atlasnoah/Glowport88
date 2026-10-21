@@ -1,3 +1,18 @@
+# Gameplay overhaul · 0.3.0
+
+- Added reusable multi-stage mission lifecycle, prerequisites, strict deadlines, failure/checkpoint retry, suspended main objectives, persisted decisions, and exactly-once reward events.
+- Added 40 main missions over five acts, 20 side stories across Darla/Bobby/Static/Violet/Sol, and 20 district/cooldown encounter types. Retained the six tested opening training missions.
+- Connected investigations, route driving/races, combat/protection, escorts, stealth, traffic pursuits, deliveries, interactive lock breaches, and escape objectives to the existing city.
+- Added three final endings and free roam, crew trust/choice memory, operational funding/restitution effects, passenger protection, Jax discounts, nearby radio/NPC reactions, and clean-run/heist-precision rewards.
+- Added phone messages/jobs/contacts/properties/status, six purchasable properties, income, upgrades, recovery, garage storage, repair, engine tuning, driving/shooting skills, equipment, and inventory.
+- Replaced automatic heat decay with witnesses, dispatch, line-of-sight pursuit, last-known-position searches, fair reinforcements, roadblocks, and arrest handling.
+- Added version 3 saves preserving objectives, police, actors, owned and controlled vehicles, properties, choices, inventory, and receipts. Old completed saves remain in free roam.
+- Fixed encounter/objective placement, indoor handoffs with parked getaway cars, escort interception of vehicle interaction, regenerated stored-vehicle duplicates, and duplicate active-operation acceptance.
+- Preserved every approved art PNG, art.js, camera resolution, and the square-grid city.
+- Expanded automated coverage to 43 browser checks, model tests, content/art validation, and three accelerated campaign choice sweeps. Duration remains unmeasured; see TEST_RESULTS.md for limits.
+
+---
+
 # Midnight Signal · development milestone
 
 ## Visual rebuild

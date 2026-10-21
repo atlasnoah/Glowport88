@@ -34,17 +34,10 @@ const check=async(name,fn)=>{await fn();results.push(name);console.log('PASS',na
  await check('police response',async()=>{await page.evaluate(()=>GlowportTest.setWanted(2));await page.waitForTimeout(300);assert((await page.evaluate(()=>GlowportTest.getState().police))>0);const cops=await page.evaluate(()=>GlowportTest.getPolice()),player=await page.evaluate(()=>GlowportTest.getState().player);assert(cops.every(c=>Math.hypot(c.x-player.x,c.y-player.y)>240),'Police must spawn at a fair distance');await page.evaluate(()=>GlowportTest.setWanted(-10))});
  await check('save and restore',async()=>{await page.locator('#saveBtn').click();const before=await page.evaluate(()=>GlowportTest.getState());const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('glowport88-neongrid-v08')));assert.equal(saved.story,before.story);await page.reload();await page.locator('#startBtn').click();assert.equal(await page.evaluate(()=>GlowportTest.getState().story),before.story)});
  await check('new story resets campaign',async()=>{await page.reload();await page.locator('#newBtn').click();assert.equal(await page.evaluate(()=>GlowportTest.getState().story),0)});
- await check('old-save migration and three-stage investigation',async()=>{
- await page.evaluate(()=>localStorage.setItem('glowport88-neongrid-v08',JSON.stringify({story:6,money:900,owned:[true,false,true,false,false],weapon:2,mag:{pistol:12},ammo:{pistol:36}})));
- await page.reload();await page.locator('#startBtn').click();await page.evaluate(()=>GlowportTest.enterInterior('radio'));
- assert.equal(await page.evaluate(()=>GlowportTest.getState().investigation.step),0);
- // Taking the final evidence early must not advance the chapter.
- await page.evaluate(()=>GlowportTest.setInteriorPosition(403,149));await page.keyboard.press('e');assert.equal(await page.evaluate(()=>GlowportTest.getState().story),6);
- for(let step=0;step<2;step++){
- const node=await page.evaluate(()=>GlowportTest.getState().investigation.node);await page.evaluate(n=>GlowportTest.setInteriorPosition(n.x,n.y),node);await page.keyboard.press('e');await page.locator('#conversationPanel').waitFor({state:'visible'});await page.keyboard.press('Enter');assert.equal(await page.evaluate(()=>GlowportTest.getState().investigation.step),step+1);
- if(step===0){await page.locator('#saveBtn').click();await page.reload();await page.locator('#startBtn').click();await page.evaluate(()=>GlowportTest.enterInterior('radio'));assert.equal(await page.evaluate(()=>GlowportTest.getState().investigation.step),1)}
- }
- await page.evaluate(()=>GlowportTest.setInteriorPosition(403,149));await page.keyboard.press('e');await page.locator('#conversationPanel').waitFor({state:'visible'});for(let i=0;i<5&&await page.locator('#conversationPanel').isVisible();i++)await page.keyboard.press('Enter');assert.equal(await page.evaluate(()=>GlowportTest.getState().story),7);
+ await check('old-save migration to expanded campaign',async()=>{
+ await page.evaluate(()=>localStorage.setItem('glowport88-neongrid-v08',JSON.stringify({version:2,story:6,money:900,owned:[true,false,true,false,false],weapon:2,mag:{pistol:12},ammo:{pistol:36}})));
+ await page.reload();await page.locator('#startBtn').click();const state=await page.evaluate(()=>GlowportTest.campaign().state);assert.equal(state.active.id,'m07');for(let i=1;i<=6;i++)assert(state.completed['m'+String(i).padStart(2,'0')]);assert.equal(await page.evaluate(()=>GlowportTest.getState().money),900);
+ for(let n=0;n<40;n++){if(await page.locator('#conversationPanel').isVisible())await page.keyboard.press('Enter');await page.waitForTimeout(25);if(!await page.locator('#conversationPanel').isVisible()&&await page.evaluate(()=>GlowportTest.system.dialogues.length===0))break}
  });
  await check('clinic purchase and interactive arcade',async()=>{
  await page.evaluate(()=>{GlowportTest.enterInterior('clinic');GlowportTest.setInteriorPosition(570,195)});const cash=await page.evaluate(()=>GlowportTest.getState().money);await page.keyboard.press('e');await page.locator('#conversationPanel').waitFor({state:'visible'});await page.keyboard.press('1');assert.equal(await page.evaluate(()=>GlowportTest.getState().money),cash-90);assert.equal(await page.evaluate(()=>GlowportTest.getState().hp),150);

@@ -1,22 +1,11 @@
-# Development roadmap and continuation
+# Next validation and development
 
-## Completed milestone
+The gameplay overhaul implements the 40-main / 20-side / 20-encounter catalogue through shared objective handlers, phone, progression, properties, garages, a police detection/search model, choices and endings. All original approved artwork and city geometry remain intact. See TEST_RESULTS.md for executed coverage and limits.
 
-- Working baseline repaired, backed up, and recorded in Git.
-- Original art foundation and separate renderer, with source sprite sheets and deterministic drawn-asset tooling.
-- First city art transformation: illustrated buildings, textured streets, props, foliage, district choices, and fixture lighting.
-- Directional character/vehicle sprites, portraits, and first-pass distinct room artwork/collision bounds.
-- Evidence chains, timed checkpoint deliveries, several business activities, and the playable arcade cabinet.
-- Syntax/mission checks, 26 browser checks, screenshot evidence, standalone HTML, and source archive tooling.
+1. Complete a continuous human playthrough of all 40 main missions from New Story. Record actual elapsed play time and any navigational, combat, escort, stealth, pursuit, or checkpoint friction. Do not describe accelerated fixture runs as a measured campaign.
+2. Play each recurring contact’s complete four-mission arc. Verify all encounter branches in the actual city and tune frequency, spawn context, and rewards. Three integration choice sweeps cover each option, not every combination of choices.
+3. Balance the economy, passive income, skills, main mission bonuses, police search pressure, crew protection, and finale consequences against observed play. Expand persistent faction reactions and crew-specific heist approaches where they add meaningful decisions.
+4. Run longer traffic/NPC/police performance and memory soak tests across every district. Profile before changing terrain or rendering architecture. Add browser coverage for failed escorts, stealth alarms, death/arrest retry, indoor vehicle handoffs, and service variants.
+5. Test responsive phone access and implement complete touch movement/aiming controls if mobile play is required. Verify Firefox/Safari and low-end desktop hardware.
 
-## Exact next work
-
-1. Run the entire 21-chapter campaign from a clean save. Extend `tests/gameplay.cjs` to cover all investigation variants, full checkpoint travel, mid-campaign fights, the finale, death/retry, and every reward. Use real objectives; do not call `storyAdvance()` to manufacture passing outcomes.
-2. Test diner/motel purchases and a full arcade run. Check low-cash behavior, reward limits, and mobile input. Audit saved time jumps against event/mission expiration.
-3. Harmonize visual scale between architecture, furniture, and people. Add more authored shell variants, distinct clinic/observatory/pier silhouettes, parking/loading alleys, and curated neighborhood compositions. Preserve the connected 7200×5040 grid and existing landmark doors.
-4. Implement shared prop collision metadata and depth-aware occlusion for street decorations and room objects. Add real shadow occlusion and richer shop-window animation without washing out the scene.
-5. Profile multiple districts and long play sessions. Audit NPC corner cases, vehicle intersections, sustained pursuits, memory, and frame time. Consider chunked terrain caching only if measurements justify replacing the current full-world bake.
-6. Expand story with authored investigations, meaningful relationship consequences, stealth/cover, scripted chases, and retryable multi-objective missions. Existing trust changes dialogue wording; it is not yet a branched campaign.
-7. Add distinct vehicle handling/classes, entry/exit animation, customizations, more civilian activity animations, and optional property/clothing systems after the playable core remains stable.
-
-Keep incremental playable commits. Preserve old saves or provide explicit migrations. Use the existing checkout; do not create a Git worktree unless explicitly requested. Run `npm test` after significant changes; rebuild with `python3 tools/build_release.py` and run `node tests/release.cjs` before handing off a new standalone release. Inspect actual screenshots and update `TEST_RESULTS.md` instead of claiming unrun checks passed.
+Keep using the existing checkout; do not create a Git worktree unless explicitly requested. Preserve all approved art PNGs, art.js, camera resolution, grid constants, doors, existing saves, and user edits. Run npm test, rebuild with npm run release, then npm run test:release before publishing a new demo. Keep actual screenshots, reports, the release manifest, and stable commits current.

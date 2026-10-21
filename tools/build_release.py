@@ -1,6 +1,6 @@
 """Bundle the browser game into one offline HTML file, retaining editable sources."""
 from pathlib import Path
-import base64,json,re,zipfile
+import base64,hashlib,json,re,zipfile
 ROOT=Path(__file__).resolve().parents[1];GAME=ROOT/'Glowport88';DIST=ROOT/'dist';DIST.mkdir(exist_ok=True)
 html=(GAME/'Glowport88_ArtRehaul_v11.html').read_text()
 html=html.replace('<link rel="stylesheet" href="assets/ui.css">','<style>'+(GAME/'assets/ui.css').read_text()+'</style>')
@@ -13,6 +13,7 @@ def embed(match):
  return '<script>'+code.replace('</script','<\\/script')+'</script>'
 html=re.sub(r'<script src="([^"]+)"></script>',embed,html)
 out=DIST/'Glowport88-Midnight-Signal.html';out.write_text(html)
+(DIST/'SHA256SUMS').write_text(hashlib.sha256(out.read_bytes()).hexdigest()+'  '+out.name+'\n')
 print('Built',out,'('+str(out.stat().st_size)+' bytes)')
 # Archive sources, original assets, tests, evidence and the standalone build. Never include dependencies or Git metadata.
 archive=ROOT/'artifacts'/'Glowport88-Midnight-Signal.zip'
