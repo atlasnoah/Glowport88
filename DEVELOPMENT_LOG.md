@@ -32,3 +32,9 @@
 - Separate undefined-variable audit: zero errors. Frozen dependency installation passed. Actual screenshots were inspected; remaining style/scale and campaign coverage gaps are recorded.
 - Produced a self-contained HTML bundle and verified it with subresource requests blocked. The cloud browser disallows direct file navigation, so the bundle was tested through a temporary HTTP server. No direct-file compatibility claim is made.
 - This session implements a substantial playable milestone rather than every master-directive feature. The full campaign regression, true light occlusion, richer AI/mission branching, and further art polish are explicitly deferred in ROADMAP.md.
+
+## Delivery
+- Final source regression: 20 smoke + 6 deeper browser checks passed, with mission logic/syntax checks and no browser errors. Final standalone check passed with every asset subrequest blocked.
+- Release outputs: `dist/Glowport88-Midnight-Signal.html`, its SHA-256 manifest, and `artifacts/Glowport88-Midnight-Signal.zip` containing editable source, original raster assets, generation tools, tests, screenshots, and reports. The ZIP excludes dependencies and Git internals and was CRC-verified.
+- Reusable cloud install/start instructions were saved to the environment configuration draft. Saving does not publish the environment or verify a fresh task restoration.
+- All implementation commits are local; no remote push or deployment was performed. Continue from ROADMAP.md.
