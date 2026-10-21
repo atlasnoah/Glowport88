@@ -1,3 +1,13 @@
+# Touch refinement · 0.4.1
+
+- Fixed a verified long-press double-activation bug. Actions activate once on release inside, cancel outside, and ignore trailing pointer clicks.
+- Added continuous low-speed movement, per-axis steering/throttle filtering, deliberate drag-to-fire, unit aiming and firing hysteresis.
+- Preserved aiming direction when switching from the aiming stick to held Fire; keyboard/mouse/touch releases no longer erase other input sources.
+- Added consistent pointer ownership/window fallback, stronger canceled/modal/destroyed gesture handling, clear active/disabled feedback, supported-only fullscreen visibility, and short landscape sizing.
+- Cached touch presentation state instead of rewriting it every frame. Added 17 isolated controller checks and expanded mobile scenarios from 17 to 21. Artwork and mission content are unchanged.
+
+---
+
 # Mobile browser beta · 0.4.0
 
 - Added independent touch movement and aim/fire sticks, interaction, owned-weapon cycling, reload, crouch, sprint/turbo, brake, and optional fullscreen controls.

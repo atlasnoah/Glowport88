@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-21T20:23:03.523Z",
+  "time": "2026-10-21T21:01:16.953Z",
   "passed": [
     "phone Start and portrait controls fit the viewport",
     "touch joystick moves and releases without page scrolling",
@@ -8,10 +8,14 @@
     "two thumbs can move and aim/fire independently",
     "touch cancellation clears both sticks and held actions",
     "touch crouch, weapon selection, fire and reload work",
+    "long touch actions activate once on release and cancel outside",
+    "hybrid keyboard and touch releases preserve independent sources",
+    "held Fire preserves aim while the movement thumb stays active",
     "phone menus scroll natively and freeze the game",
     "touch driving supports throttle, steering, braking and exit",
     "pause and background handlers release held input and preserve time",
     "landscape rotation retains usable game and touch targets",
+    "short landscape viewport and unsupported fullscreen stay usable",
     "phone can complete the actual heist timing input",
     "mobile arcade buttons and quit preserve the main game",
     "mobile save/reload preserves progress and restores touch controls",
@@ -21,15 +25,15 @@
   ],
   "errors": [],
   "terrain": {
-    "draws": 559,
-    "hits": 2174,
+    "draws": 666,
+    "hits": 2596,
     "bakes": 5,
     "evictions": 0,
     "residentBytes": 20971520,
     "peakResidentBytes": 20971520,
-    "totalBakeMs": 84.09999999962747,
-    "maxBakeMs": 31.5,
-    "lastBakeMs": 11.599999999627471,
+    "totalBakeMs": 64.80000000074506,
+    "maxBakeMs": 22.5,
+    "lastBakeMs": 8.700000001117587,
     "tileSize": 1024,
     "maxTiles": 6,
     "cachedTiles": 5,
@@ -94,6 +98,14 @@
       "viewport": {
         "width": 320,
         "height": 568
+      },
+      "hasTouch": true,
+      "isMobile": true
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 320
       },
       "hasTouch": true,
       "isMobile": true

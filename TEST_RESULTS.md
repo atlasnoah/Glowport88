@@ -1,10 +1,10 @@
-# Test results · Mobile browser build 0.4.0
+# Test results · Mobile browser build 0.4.1
 
 ## Executed checks
 
-`npm ci --cache /tmp/glowport-npm-cache --no-audit --no-fund` installs the frozen lockfile successfully. `npm test` runs syntax/asset-reference validation, the retained evidence/delivery logic suite, 16 mission-engine tests, 11 police model tests, progression/economy persistence checks, catalogue/geometry/art validation, accelerated campaign integration, and **60 Chromium browser checks** (20 smoke + 6 combat/gameplay + 17 overhaul + 17 mobile scenarios).
+`npm ci --cache /tmp/glowport-npm-cache --no-audit --no-fund` installs the frozen lockfile successfully. `npm test` runs syntax/asset-reference validation, the retained evidence/delivery logic suite, 16 mission-engine tests, 11 police model tests, progression/economy persistence checks, catalogue/geometry/art validation, accelerated campaign integration, and **64 gameplay browser checks** (20 smoke + 6 combat/gameplay + 17 overhaul + 21 mobile scenarios), plus **17 isolated touch-controller browser checks**.
 
-The mobile suite uses portrait 390×844, landscape 844×390 and small-phone 320×568 contexts with real CDP multi-touch. It covers simultaneous movement/aim/fire and independent release, cancellation, actual driving/steering/braking/exit, touch conversations, owned-weapon switching/fire/reload/crouch, native list swipes, modal time freeze, background input release/pause, a real heist timing sequence, arcade controls, exact room save/reload and desktop input compatibility. Actual-device and Safari validation is still outstanding.
+The mobile suite uses portrait 390×844, landscape 844×390, short landscape 844×320, and small-phone 320×568 contexts with real CDP multi-touch. It covers simultaneous movement/aim/fire and independent release, cancellation, actual driving/steering/braking/exit, touch conversations, owned-weapon switching/fire/reload/crouch, native list swipes, modal time freeze, background input release/pause, a real heist timing sequence, arcade controls, exact room save/reload and desktop input compatibility. Additional checks cover long-press single activation/drag-away cancellation, hybrid hardware keys, aim-to-Fire handoff and hidden unsupported fullscreen. The isolated controller suite covers radial precision, normalized aim/fire hysteresis, independent/duplicate pointer ownership, stale capture/click events, modal and destruction cleanup, accessible activation, window motion fallback, and zero unchanged-frame DOM mutations. Actual-device and Safari validation is still outstanding.
 
 Terrain tests cover ten exact coordinate/seam views, ten actual-art crop comparisons with documented raster-sampling tolerance, LRU budget/reuse/eviction and disposal. The game allocates 1024px terrain surfaces with a six-tile/24 MiB budget instead of one 36-million-pixel world canvas. All original art files are unchanged.
 
@@ -18,7 +18,7 @@ The browser checks exercise Start, movement, driving/braking, buildings, real sh
 
 ## Published delivery
 
-The mobile 0.4.0 release uses https://atlasnoah.github.io/Glowport88/?v=0.4.0. Its tested checksum is generated in dist/SHA256SUMS; public verification records the deployed checksum in artifacts/public-demo-results.json.
+The mobile 0.4.1 release uses https://atlasnoah.github.io/Glowport88/?v=0.4.1. Its tested checksum is generated in dist/SHA256SUMS; public verification records the deployed checksum in artifacts/public-demo-results.json.
 
 `node tests/public-demo.cjs` downloads the public file with normal TLS verification, checks that hash, and plays the downloaded bytes in Chromium with subresources blocked. The public check covers mobile Start, touch movement, all 40/20/20 definitions, 60 phone jobs, and map. Direct external navigation in cloud Chromium hit its read-only NSS proxy-trust database; TLS verification was not disabled. This check verifies deployed bytes plus local playback, not direct external browser navigation.
 
@@ -26,6 +26,7 @@ The mobile 0.4.0 release uses https://atlasnoah.github.io/Glowport88/?v=0.4.0. I
 
 - `artifacts/smoke-results.json`, `gameplay-results.json`, `overhaul-results.json`: actual named browser outcomes.
 - `artifacts/campaign-playthrough-results.json`: accelerated integration scope and objective counts.
+- `artifacts/touch-controls-results.json`: 17 isolated controller regressions.
 - `artifacts/mobile-results.json`, `mobile-portrait.png`, `mobile-landscape.png`: actual phone-emulation outcomes/screenshots.
 - `artifacts/terrain-cache-results.json`: coordinate/art comparisons, memory bounds and disposal.
 - `artifacts/release-results.json`, `standalone-mobile.png`: standalone desktop/touch checks.

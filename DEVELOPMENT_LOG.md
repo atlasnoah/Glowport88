@@ -66,3 +66,9 @@
 - Seventeen mobile browser checks pass, including native multi-touch, driving, touch conversations/heists/arcade, scrolling menus, background handling and save/reload. Full regression and release/public verification are recorded in TEST_RESULTS.md and artifacts. These are emulated devices; physical phone/Safari checks are still required.
 
 - Final mobile milestone committed as cd64578 and published to the authorized gh-pages demo in 62c8920. All 60 source browser checks and standalone desktop/touch checks pass. Public delivery verification downloaded the live 0.4.0 release with normal TLS validation, matched SHA-256 aaa2194c107b8c8cefa19fb56956a2353d8b696c9d6e6bc9b22c8362ba2c1f71, and passed real touch movement, Start, phone jobs and map while playing those deployed bytes locally with subresources blocked. Source is pushed to codex/gameplay-overhaul; main remains untouched.
+
+## Touch refinements · 2026-10-21
+
+- Saved /tmp/glowport-before-touch-refinement.tar.gz before edits. Independent audit reproduced a native long-press duplicate action, loss of aim during Fire handoff, unwanted orthogonal driving drift and 900 DOM mutations over 60 unchanged controller updates.
+- Reworked gesture ownership and captured release actions, continuous movement response, deliberate right-stick dragging/fire hysteresis, retained Fire aim, and combined hardware/touch/mouse input. Added active/disabled/origin feedback and supported-only fullscreen visibility. Approved artwork, renderer and missions stay unchanged.
+- Seventeen isolated controller browser checks and twenty-one integrated mobile checks pass, including the reproduced bugs, capture fallback, stale gestures, native compatibility clicks, accessibility, hybrid input and short landscape. Full desktop/gameplay and packaging regression is included in the final npm test/release checks. Physical-device testing remains outstanding.

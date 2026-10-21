@@ -71,6 +71,8 @@ body.touch-mode .touch-pad {
   touch-action: none;
   outline-offset: 4px;
   overflow: visible;
+  -webkit-tap-highlight-color: transparent;
+  isolation: isolate;
 }
 body.touch-mode #movePad { grid-column: 1; grid-row: 1; }
 body.touch-mode #aimPad { grid-column: 3; grid-row: 1; border-color: #ad7897; }
@@ -86,8 +88,39 @@ body.touch-mode .touch-stick {
   border-radius: 50%;
   box-shadow: 0 3px 9px #0007;
   pointer-events: none;
+  z-index: 2;
 }
 body.touch-mode #aimPad .touch-stick { background: #ba7f9e; border-color: #ebc0d3; }
+body.touch-mode .touch-origin {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  transform: translate(-50%, -50%);
+  border: 1px solid #c8e2d8;
+  border-radius: 50%;
+  background: #152536;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+body.touch-mode .touch-pad.is-active .touch-origin { opacity: .85; }
+body.touch-mode .touch-state {
+  position: absolute;
+  top: 9px;
+  left: 5px;
+  right: 5px;
+  color: #dfd2dc;
+  font-size: 8px;
+  font-weight: bold;
+  letter-spacing: .04em;
+  line-height: 1.2;
+  text-align: center;
+  pointer-events: none;
+  z-index: 3;
+}
+body.touch-mode .touch-state:empty { display: none; }
 body.touch-mode .touch-pad-label {
   position: absolute;
   left: -8px;
@@ -101,6 +134,12 @@ body.touch-mode .touch-pad-label {
   pointer-events: none;
 }
 body.touch-mode .touch-pad.is-active { box-shadow: inset 0 0 0 5px #36596a, 0 0 15px #83c9c84d; }
+body.touch-mode #aimPad.is-aiming { border-color: #e2abc9; box-shadow: inset 0 0 0 5px #4b354e, 0 0 12px #cd86ab44; }
+body.touch-mode #aimPad.is-firing { border-color: #f5d4df; box-shadow: inset 0 0 0 5px #724660, 0 0 16px #ed94b966; }
+body.touch-mode #aimPad.is-firing .touch-stick { background: #e4a5be; border-color: #fff0e4; }
+body.touch-mode .touch-pad[aria-disabled="true"] { border-style: dashed; filter: saturate(.35); }
+body.touch-mode .touch-pad[aria-disabled="true"] .touch-stick { opacity: .45; }
+body.touch-mode .touch-pad[aria-disabled="true"] .touch-pad-label { color: #91a1ae; }
 body.touch-mode .touch-bank {
   grid-column: 2;
   grid-row: 1;
@@ -128,10 +167,16 @@ body.touch-mode .touch-bank button {
   overflow-wrap: anywhere;
   touch-action: none;
 }
+/* Author display:flex must not reveal a fullscreen action the browser cannot use. */
+body.touch-mode .touch-bank button[hidden] { display: none !important; }
+body.touch-mode .touch-bank:has(#touchFullscreen[hidden]) #touchFire { grid-column: 1 / -1; }
 body.touch-mode .touch-bank #touchE { background: #355954; border-color: #99cfc2; }
 body.touch-mode .touch-bank #touchFire { background: #6b3b58; border-color: #cc8bae; }
 body.touch-mode .touch-bank .is-held,
 body.touch-mode .touch-bank .is-on { background: #526d71; border-color: #d0e3cd; color: #fff; }
+body.touch-mode .touch-bank button:not(:disabled):active { border-color: #e0eee4; box-shadow: inset 0 0 0 1px #a8c5bf; }
+body.touch-mode .touch-bank button:focus-visible { outline: 2px solid #f5d4df; outline-offset: 2px; }
+body.touch-mode .touch-bank button:disabled { cursor: default; opacity: .4; filter: saturate(.45); }
 body.touch-mode #touchHelp { grid-column: 1 / -1; margin: 3px 0 0; font-size: 9px; line-height: 1.5; text-align: center; color: #a4bec5; }
 body.touch-mode #touch.touch-blocked { opacity: .35; }
 body.touch-mode #touch.touch-driving #aimPad { opacity: .42; }
@@ -237,6 +282,8 @@ body.touch-mode #phonePanel #phoneStatus { min-height: 17px; margin: 8px 0 0; fo
   body.touch-mode #aimPad { grid-column: 3; grid-row: 1; width: 100px; }
   body.touch-mode .touch-pad-label { bottom: -19px; font-size: 8px; }
   body.touch-mode .touch-bank { grid-column: 1 / -1; grid-row: 2; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 5px; }
+  body.touch-mode .touch-bank:has(#touchFullscreen[hidden]) { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+  body.touch-mode .touch-bank:has(#touchFullscreen[hidden]) #touchFire { grid-column: auto; }
   body.touch-mode .touch-bank button { min-height: 44px; padding: 4px; font-size: 9px; }
   body.touch-mode #touchHelp { display: none; }
   body.touch-mode #touch.touch-blocked > * { opacity: .35; }
@@ -273,6 +320,14 @@ body.touch-mode #phonePanel #phoneStatus { min-height: 17px; margin: 8px 0 0; fo
   body.touch-mode #hud .stars { font-size: 10px; letter-spacing: 0; }
   body.touch-mode #hud .weapon { grid-column: 1 / -1; margin: 0; font-size: 8px; }
   body.touch-mode #hud .panel { padding: 6px; }
+}
+
+/* Browser bars can leave less vertical space than a phone's screen dimensions. */
+@media (orientation: landscape) and (max-height: 350px) {
+  body.touch-mode .screen { width: min(100%, calc((100dvh - 158px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) * 16 / 9)); }
+  body.touch-mode #hud .panel:nth-child(2) { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  body.touch-mode #hud .panel:nth-child(2) .weapon { grid-column: 2 / -1; }
+  body.touch-mode #hud .chapter { display: none; }
 }
 </style></head>
 <body><main class="wrapper"><div class="mast"><div><div class="logo">GLOWPORT ’88 <span style="color:#ff72c4">/ MIDNIGHT SIGNAL</span></div><div class="subtitle">AN ORIGINAL OPEN-WORLD PIXEL CRIME ADVENTURE · MIDNIGHT SIGNAL</div></div><div class="buttons"><button id="mapBtn" class="tiny">🗺 MAP [M]</button><button id="journalBtn" class="tiny">📖 STORY [J]</button><button id="saveBtn" class="tiny">💾 SAVE</button><button id="phoneBtn" class="tiny">PHONE [P]</button><button id="pauseBtn" class="tiny">Ⅱ PAUSE</button></div></div>
@@ -2243,17 +2298,17 @@ class Gameplay{
 return Gameplay;
 })();
 </script>
-<script>/* Touch input for the existing city. It owns gesture state; the host owns gameplay. */
+<script>/* Captured touch gestures are independent input sources. The host owns gameplay. */
 window.GlowportTouch=(()=>{
 'use strict';
-const clamp=(value,min,max)=>Math.max(min,Math.min(max,value));
+const clamp=(n,min,max)=>Math.max(min,Math.min(max,n));
+const MOVE_DEAD=.17,AIM_DEAD=.12,FIRE_ON=.32,FIRE_OFF=.20;
 function mount(api){
- const root=api.root;
- if(!root)throw new TypeError('GlowportTouch requires a control root');
+ const root=api.root;if(!root)throw new TypeError('GlowportTouch requires a control root');
  root.setAttribute('aria-label','Touch game controls');
  root.innerHTML=`
   <div id="movePad" class="touch-pad" role="group" aria-label="Movement joystick">
-   <span class="touch-pad-label">MOVE</span><span class="touch-stick" aria-hidden="true"></span>
+   <span class="touch-origin" aria-hidden="true"></span><span class="touch-state" aria-hidden="true"></span><span class="touch-pad-label">MOVE</span><span class="touch-stick" aria-hidden="true"></span>
   </div>
   <div class="touch-bank">
    <button id="touchE" type="button" aria-label="Interact with people, doors or vehicles">INTERACT</button>
@@ -2265,87 +2320,144 @@ function mount(api){
    <button id="touchFire" type="button" aria-label="Hold to attack">FIRE</button>
    <button id="touchFullscreen" type="button" aria-label="Expand game to fullscreen">EXPAND</button>
   </div>
-  <div id="aimPad" class="touch-pad" role="group" aria-label="Aim and fire joystick">
-   <span class="touch-pad-label">AIM + FIRE</span><span class="touch-stick" aria-hidden="true"></span>
+  <div id="aimPad" class="touch-pad" role="group" aria-label="Drag to aim and fire">
+   <span class="touch-origin" aria-hidden="true"></span><span class="touch-state" aria-hidden="true"></span><span class="touch-pad-label">DRAG TO AIM + FIRE</span><span class="touch-stick" aria-hidden="true"></span>
   </div>
-  <div id="touchHelp">Left stick moves. Right stick aims and fires. Tap INTERACT for doors, people and cars.</div>`;
+  <div id="touchHelp">Left stick moves. Drag the right stick to aim and fire. Tap INTERACT for doors, people and cars.</div>`;
  const element=id=>root.querySelector('#'+id),movePad=element('movePad'),aimPad=element('aimPad');
  const buttons={interact:element('touchE'),weapon:element('touchWeapon'),reload:element('touchReload'),crouch:element('touchCrouch'),shift:element('touchSprint'),space:element('touchBrake'),fire:element('touchFire'),fullscreen:element('touchFullscreen')};
- const cleanup=[],held=new Map();
+ const cleanup=[],owners=new Map(),media=window.matchMedia?.('(pointer: coarse)');
  const listen=(target,type,fn,options)=>{target.addEventListener(type,fn,options);cleanup.push(()=>target.removeEventListener(type,fn,options))};
- const media=window.matchMedia?window.matchMedia('(pointer: coarse)'):null;
- let seenTouch=false,enabled=!!(media?.matches||navigator.maxTouchPoints>0),available=false,previousMode=null,destroyed=false;
- let movePointer=null,aimPointer=null,aimVector={x:0,y:0},aimFire=false;
+ const toggle=(node,name,on)=>{if(node.classList.contains(name)!==!!on)node.classList.toggle(name,!!on)};
+ const text=(node,value)=>{if(node.textContent!==value)node.textContent=value};
+ let seenTouch=false,enabled=!!(media?.matches||navigator.maxTouchPoints>0),available=false,previousMode=null,presentation=null,destroyed=false;
+ let movePointer=null,aimPointer=null,aimVector={x:0,y:0},stickyFireAim=null,aimFire=false;
  function state(){return api.state()||{}}
- function hasHold(name){for(const value of held.values())if(value.name===name)return true;return false}
- function pushFire(){const firing=available&&(aimFire||hasHold('fire'));api.aim(aimVector.x,aimVector.y,firing);api.control('fire',firing)}
- function center(pad){pad.classList.remove('is-active');pad.querySelector('.touch-stick').style.transform='translate(-50%,-50%)'}
- function releaseCapture(node,id){if(id===null)return;try{if(node.hasPointerCapture(id))node.releasePointerCapture(id)}catch{}}
- function reset(){
-  const moveId=movePointer,aimId=aimPointer,owners=[...held.entries()];
-  movePointer=null;aimPointer=null;aimVector={x:0,y:0};aimFire=false;held.clear();
-  center(movePad);center(aimPad);for(const button of Object.values(buttons))button.classList.remove('is-held');
-  api.move(0,0);api.aim(0,0,false);for(const name of ['shift','space','fire'])api.control(name,false);
-  releaseCapture(movePad,moveId);releaseCapture(aimPad,aimId);for(const [id,owner] of owners)releaseCapture(owner.node,id);
+ function held(name){return [...owners.values()].some(owner=>owner.kind==='hold'&&owner.name===name)}
+ function radius(node){const b=node.getBoundingClientRect();return {box:b,r:Math.max(20,Math.min(b.width,b.height)*.34)}}
+ function inside(node,event){const b=node.getBoundingClientRect();return event.clientX>=b.left&&event.clientX<=b.right&&event.clientY>=b.top&&event.clientY<=b.bottom}
+ function permitted(){const s=state();return !destroyed&&enabled&&available&&!!s.playing&&!s.blocked&&!document.hidden}
+ function canAttack(){const s=state();return permitted()&&!s.inCar&&!s.inside}
+ function markPad(node,x=0,y=0){node.querySelector('.touch-stick').style.transform=`translate(-50%,-50%) translate(${x}px,${y}px)`}
+ function origin(node,x,y){const b=node.getBoundingClientRect(),dot=node.querySelector('.touch-origin');dot.style.left=clamp(x-b.left,0,b.width)+'px';dot.style.top=clamp(y-b.top,0,b.height)+'px'}
+ function idle(node){toggle(node,'is-active',false);toggle(node,'is-aiming',false);toggle(node,'is-firing',false);markPad(node);text(node.querySelector('.touch-state'),'')}
+ function release(owner,id){try{if(owner.node.hasPointerCapture(id))owner.node.releasePointerCapture(id)}catch{}}
+ function pushFire(){
+  const hold=held('fire'),firing=canAttack()&&(aimFire||hold),aiming=!!(aimVector.x||aimVector.y);
+  if(aiming&&(aimFire||hold))stickyFireAim={...aimVector};
+  const direction=aiming?aimVector:hold&&stickyFireAim?stickyFireAim:{x:0,y:0};
+  api.aim(direction.x,direction.y,firing);api.control('fire',firing);
+  toggle(aimPad,'is-aiming',aiming);toggle(aimPad,'is-firing',firing);
+  text(aimPad.querySelector('.touch-state'),firing?'FIRING':aiming?'AIMING':aimPointer!==null?'DRAG':'');
+  if(!firing)stickyFireAim=null;
  }
- function modeKey(s){return [!!s.playing,!!s.blocked,!!s.inCar,!!s.inside].join(':')}
+ function reset(){
+  const old=[...owners];owners.clear();movePointer=null;aimPointer=null;aimVector={x:0,y:0};stickyFireAim=null;aimFire=false;
+  idle(movePad);idle(aimPad);toggle(root,'touch-moving',false);
+  for(const node of Object.values(buttons))toggle(node,'is-held',false);
+  api.move(0,0);api.aim(0,0,false);for(const name of ['shift','space','fire'])api.control(name,false);
+  for(const [id,owner] of old)release(owner,id);
+ }
  function update(){
   if(destroyed)return;
-  const s=state(),mode=modeKey(s),nextAvailable=enabled&&!!s.playing&&!s.blocked&&!document.hidden;
-  // A dormant touch controller must never clear desktop keyboard movement.
-  // Losing an active touch mode still releases gestures, even if touch support turns off.
-  if((enabled&&mode!==previousMode)||(available&&!nextAvailable))reset();
-  previousMode=mode;available=nextAvailable;
-  document.body.classList.toggle('touch-mode',enabled);
-  root.classList.toggle('hidden',!enabled||!s.playing);root.classList.toggle('touch-driving',!!s.inCar);root.classList.toggle('touch-blocked',!nextAvailable);
+  const s=state(),mode=[!!s.playing,!!s.blocked,!!s.inCar,!!s.inside].join(':'),next=enabled&&!!s.playing&&!s.blocked&&!document.hidden;
+  if((enabled&&mode!==previousMode)||(available&&!next))reset();
+  previousMode=mode;available=next;
+  const fullscreen=typeof api.canFullscreen==='function'?api.canFullscreen():!!document.fullscreenEnabled;
+  const key=[enabled,mode,next,!!s.sneaking,fullscreen,!!document.fullscreenElement].join(':');
+  if(key===presentation)return;presentation=key;
+  toggle(document.body,'touch-mode',enabled);toggle(root,'hidden',!enabled||!s.playing);toggle(root,'touch-driving',!!s.inCar);toggle(root,'touch-blocked',!next);
   root.setAttribute('aria-hidden',String(!enabled||!s.playing));
-  const canAttack=nextAvailable&&!s.inCar&&!s.inside;
-  movePad.setAttribute('aria-disabled',String(!nextAvailable));aimPad.setAttribute('aria-disabled',String(!canAttack));
-  movePad.querySelector('.touch-pad-label').textContent=s.inCar?'DRIVE / STEER':'MOVE';
-  aimPad.querySelector('.touch-pad-label').textContent=s.inCar?'USE BRAKE':s.inside?'AIM OUTSIDE':'AIM + FIRE';
-  for(const button of Object.values(buttons))button.disabled=!nextAvailable;
-  buttons.fire.disabled=!canAttack;buttons.weapon.disabled=!nextAvailable||!!s.inCar;buttons.crouch.disabled=!nextAvailable||!!s.inCar;buttons.space.disabled=!nextAvailable||!s.inCar;
-  buttons.interact.textContent=s.inCar?'EXIT':'INTERACT';buttons.shift.textContent=s.inCar?'TURBO':'SPRINT';
+  const attack=next&&!s.inCar&&!s.inside;
+  movePad.setAttribute('aria-disabled',String(!next));aimPad.setAttribute('aria-disabled',String(!attack));
+  text(movePad.querySelector('.touch-pad-label'),s.inCar?'DRIVE / STEER':'MOVE');
+  text(aimPad.querySelector('.touch-pad-label'),s.inCar?'BRAKE TO STOP':s.inside?'AIM OUTSIDE':'DRAG TO AIM + FIRE');
+  for(const node of Object.values(buttons))node.disabled=!next;
+  buttons.fire.disabled=!attack;buttons.weapon.disabled=!next||!!s.inCar;buttons.crouch.disabled=!next||!!s.inCar;buttons.space.disabled=!next||!s.inCar;
+  text(buttons.interact,s.inCar?'EXIT':'INTERACT');text(buttons.shift,s.inCar?'TURBO':'SPRINT');
   buttons.shift.setAttribute('aria-label',s.inCar?'Hold for vehicle boost':'Hold to sprint');
-  buttons.crouch.textContent=s.sneaking?'STAND':'CROUCH';buttons.crouch.classList.toggle('is-on',!!s.sneaking);buttons.crouch.setAttribute('aria-pressed',String(!!s.sneaking));
-  const fullscreenAllowed=typeof api.canFullscreen==='function'?api.canFullscreen():!!document.fullscreenEnabled;
-  buttons.fullscreen.hidden=!fullscreenAllowed;buttons.fullscreen.textContent=document.fullscreenElement?'SHRINK':'EXPAND';
-  element('touchHelp').textContent=s.inCar?'Left stick: up accelerates, down reverses, left/right steer. Hold BRAKE before EXIT.':'Left stick moves. Right stick aims and fires. Tap INTERACT for doors, people and cars.';
+  text(buttons.crouch,s.sneaking?'STAND':'CROUCH');toggle(buttons.crouch,'is-on',!!s.sneaking);buttons.crouch.setAttribute('aria-pressed',String(!!s.sneaking));
+  buttons.fullscreen.hidden=!fullscreen;text(buttons.fullscreen,document.fullscreenElement?'SHRINK':'EXPAND');
+  text(element('touchHelp'),s.inCar?'Left stick: up accelerates, down reverses, left/right steer. Hold BRAKE before EXIT.':'Left stick moves. Drag the right stick to aim and fire. Tap INTERACT for doors, people and cars.');
  }
- function enableForTouch(event){if(event.pointerType!=='touch')return;if(!enabled){seenTouch=true;enabled=true;update()}else seenTouch=true}
+ function enableForTouch(event){if(destroyed||event.pointerType!=='touch')return;seenTouch=true;if(!enabled){enabled=true;update()}}
  listen(document,'pointerdown',enableForTouch,true);
  if(media){const change=()=>{enabled=seenTouch||media.matches||navigator.maxTouchPoints>0;update()};if(media.addEventListener)listen(media,'change',change);else if(media.addListener){media.addListener(change);cleanup.push(()=>media.removeListener(change))}}
- function canUsePad(kind){const s=state();return available&&!s.blocked&&(kind==='move'||(!s.inCar&&!s.inside))}
- function vector(event,pad){const box=pad.getBoundingClientRect(),radius=Math.max(20,Math.min(box.width,box.height)*.34);let x=(event.clientX-box.left-box.width/2)/radius,y=(event.clientY-box.top-box.height/2)/radius;const length=Math.hypot(x,y);if(length>1){x/=length;y/=length}pad.querySelector('.touch-stick').style.transform=`translate(-50%,-50%) translate(${x*radius}px,${y*radius}px)`;return {x:clamp(x,-1,1),y:clamp(y,-1,1),length:Math.min(1,length)}}
- function sendVector(event,pad,kind){const v=vector(event,pad);if(kind==='move'){const scale=v.length<.17?0:1;api.move(v.x*scale,v.y*scale)}else{aimVector=v.length<.17?{x:0,y:0}:{x:v.x,y:v.y};aimFire=v.length>.27;pushFire()}}
- function bindPad(pad,kind){
-  listen(pad,'pointerdown',event=>{enableForTouch(event);if(event.pointerType==='mouse'&&event.button!==0)return;if(!canUsePad(kind))return;if(kind==='move'?movePointer!==null:aimPointer!==null)return;event.preventDefault();event.stopPropagation();if(kind==='move')movePointer=event.pointerId;else aimPointer=event.pointerId;pad.classList.add('is-active');try{pad.setPointerCapture(event.pointerId)}catch{}sendVector(event,pad,kind)});
-  listen(pad,'pointermove',event=>{const owner=kind==='move'?movePointer:aimPointer;if(owner!==event.pointerId)return;event.preventDefault();if(!canUsePad(kind)){reset();return}sendVector(event,pad,kind)});
-  const finish=event=>{const owner=kind==='move'?movePointer:aimPointer;if(owner!==event.pointerId)return;event.preventDefault();if(kind==='move'){movePointer=null;api.move(0,0)}else{aimPointer=null;aimVector={x:0,y:0};aimFire=false;pushFire()}center(pad);releaseCapture(pad,event.pointerId)};
-  for(const type of ['pointerup','pointercancel','lostpointercapture'])listen(pad,type,finish);
-  for(const type of ['pointerup','pointercancel'])listen(window,type,finish);
+ function claim(event,node,kind,name=null){
+  enableForTouch(event);update();if(!permitted()||owners.has(event.pointerId)||event.pointerType==='mouse'&&event.button!==0)return null;
+  if(kind==='aim'&&!canAttack()||kind==='move'&&movePointer!==null||kind==='aim'&&aimPointer!==null||node.disabled||node.hidden)return null;
+  event.preventDefault();event.stopPropagation();
+  const owner={node,kind,name,originX:event.clientX,originY:event.clientY};owners.set(event.pointerId,owner);
+  try{node.setPointerCapture(event.pointerId)}catch{/* Owned window listeners remain the fallback. */}
+  return owner;
  }
- bindPad(movePad,'move');bindPad(aimPad,'aim');
- function bindHold(name,node){
-  listen(node,'pointerdown',event=>{enableForTouch(event);if(node.disabled||!available||event.pointerType==='mouse'&&event.button!==0)return;event.preventDefault();event.stopPropagation();held.set(event.pointerId,{name,node});node.classList.add('is-held');try{node.setPointerCapture(event.pointerId)}catch{}if(name==='fire')pushFire();else api.control(name,true)});
-  const finish=event=>{const owner=held.get(event.pointerId);if(owner?.node!==node)return;event.preventDefault();held.delete(event.pointerId);node.classList.toggle('is-held',hasHold(name));if(name==='fire')pushFire();else api.control(name,hasHold(name));releaseCapture(node,event.pointerId)};
-  for(const type of ['pointerup','pointercancel','lostpointercapture'])listen(node,type,finish);
-  for(const type of ['pointerup','pointercancel'])listen(window,type,finish);
-  // Avoid the synthetic click selecting text or activating another action after a hold.
-  listen(node,'click',event=>event.preventDefault());
+ function vector(event,owner){
+  const {box,r}=radius(owner.node),cx=box.left+box.width/2,cy=box.top+box.height/2;
+  const x=(event.clientX-(owner.kind==='aim'?owner.originX:cx))/r,y=(event.clientY-(owner.kind==='aim'?owner.originY:cy))/r,length=Math.hypot(x,y);
+  const visualX=(event.clientX-cx)/r,visualY=(event.clientY-cy)/r,visualLength=Math.max(1,Math.hypot(visualX,visualY));markPad(owner.node,visualX/visualLength*r,visualY/visualLength*r);
+  return {x,y,length};
  }
- for(const name of ['shift','space','fire'])bindHold(name,buttons[name]);
+ function sendVector(event,owner){
+  const v=vector(event,owner);
+  if(owner.kind==='move'){
+   const amount=v.length<=MOVE_DEAD?0:Math.pow((Math.min(1,v.length)-MOVE_DEAD)/(1-MOVE_DEAD),1.15);
+   let x=v.length?v.x/v.length*amount:0,y=v.length?v.y/v.length*amount:0;
+   if(state().inCar){const axis=n=>Math.sign(n)*Math.max(0,(Math.abs(n)-.12)/.88);x=axis(x);y=axis(y)}
+   api.move(x,y);toggle(root,'touch-moving',!!(x||y));text(movePad.querySelector('.touch-state'),x||y?state().inCar?'DRIVING':amount>.8?'MOVE':'PRECISE':'');
+  }else{
+   aimVector=v.length>AIM_DEAD?{x:v.x/v.length,y:v.y/v.length}:{x:0,y:0};
+   aimFire=aimFire?v.length>FIRE_OFF:v.length>=FIRE_ON;pushFire();
+  }
+ }
+ for(const [node,kind] of [[movePad,'move'],[aimPad,'aim']])listen(node,'pointerdown',event=>{
+  const owner=claim(event,node,kind);if(!owner)return;
+  if(kind==='move')movePointer=event.pointerId;else aimPointer=event.pointerId;
+  toggle(node,'is-active',true);origin(node,kind==='aim'?event.clientX:node.getBoundingClientRect().left+node.getBoundingClientRect().width/2,kind==='aim'?event.clientY:node.getBoundingClientRect().top+node.getBoundingClientRect().height/2);
+  sendVector(event,owner);
+ });
+ for(const name of ['shift','space','fire'])listen(buttons[name],'pointerdown',event=>{
+  const owner=claim(event,buttons[name],'hold',name);if(!owner)return;toggle(owner.node,'is-held',true);
+  if(name==='fire')pushFire();else api.control(name,true);
+ });
  for(const name of ['interact','weapon','reload','crouch','fullscreen']){
-  const node=buttons[name];let lastPointerAction=-Infinity;
-  const act=()=>{if(node.disabled||!available)return;api.action(name);update()};
-  listen(node,'pointerdown',event=>{enableForTouch(event);if(event.pointerType==='mouse'&&event.button!==0)return;if(node.disabled||!available)return;event.preventDefault();event.stopPropagation();lastPointerAction=performance.now();act()});
-  listen(node,'click',event=>{event.preventDefault();if(performance.now()-lastPointerAction>500)act()});
+  const node=buttons[name];
+  listen(node,'pointerdown',event=>{const owner=claim(event,node,'action',name);if(owner)toggle(node,'is-held',true)});
+  // Native pointer clicks are handled by their captured release. Keyboard and
+  // assistive activation uses detail=0, without a duplicate time-based fallback.
+  listen(node,'click',event=>{event.preventDefault();if(event.detail===0&&!event.pointerType&&permitted()&&!node.disabled&&!node.hidden){api.action(name);update()}});
  }
+ function finish(event,canceled){
+  const owner=owners.get(event.pointerId);if(!owner)return;
+  event.preventDefault();owners.delete(event.pointerId);
+  if(owner.kind==='move'){movePointer=null;api.move(0,0);toggle(root,'touch-moving',false);idle(movePad)}
+  else if(owner.kind==='aim'){aimPointer=null;aimVector={x:0,y:0};aimFire=false;idle(aimPad);pushFire()}
+  else if(owner.kind==='hold'){
+   toggle(owner.node,'is-held',held(owner.name));if(owner.name==='fire')pushFire();else api.control(owner.name,held(owner.name));
+  }else{
+   toggle(owner.node,'is-held',false);
+   if(!canceled&&permitted()&&!owner.node.disabled&&!owner.node.hidden&&inside(owner.node,event)){release(owner,event.pointerId);api.action(owner.name);update();return}
+  }
+  release(owner,event.pointerId);
+ }
+ listen(window,'pointermove',event=>{
+  const owner=owners.get(event.pointerId);if(!owner)return;
+  if(!permitted()||owner.kind==='aim'&&!canAttack()){reset();return}
+  event.preventDefault();if(owner.kind==='move'||owner.kind==='aim')sendVector(event,owner);
+  else if(owner.kind==='action')toggle(owner.node,'is-held',inside(owner.node,event));
+ });
+ listen(window,'pointerup',event=>finish(event,false));listen(window,'pointercancel',event=>finish(event,true));
+ listen(root,'lostpointercapture',event=>finish(event,true));
+ for(const node of [buttons.shift,buttons.space,buttons.fire])listen(node,'click',event=>event.preventDefault());
  listen(root,'contextmenu',event=>event.preventDefault());listen(root,'selectstart',event=>event.preventDefault());
- listen(window,'blur',reset);listen(window,'pagehide',reset);listen(window,'resize',()=>{reset();update()});listen(window,'orientationchange',()=>{reset();update()});
+ // Ignore incidental browser-toolbar height changes during a drag; orientation
+ // and a changed viewport width invalidate the gesture's coordinate system.
+ let viewWidth=window.innerWidth;
+ listen(window,'blur',reset);listen(window,'pagehide',reset);
+ listen(window,'resize',()=>{if(window.innerWidth!==viewWidth){viewWidth=window.innerWidth;reset()}update()});
+ listen(window,'orientationchange',()=>{reset();update()});listen(document,'fullscreenchange',()=>{reset();update()});
  listen(document,'visibilitychange',()=>{if(document.hidden)reset();update()});
  update();
- return {reset,update,get enabled(){return enabled},diagnostics:()=>({enabled,available,movePointer,aimPointer,aimFire,held:[...held.values()].map(v=>v.name)}),destroy(){reset();destroyed=true;for(const remove of cleanup)remove();document.body.classList.remove('touch-mode')}};
+ return {reset,update,get enabled(){return enabled},diagnostics:()=>({enabled,available,movePointer,aimPointer,aimFire,held:[...owners.values()].filter(v=>v.kind==='hold').map(v=>v.name),owners:owners.size}),destroy(){if(destroyed)return;reset();destroyed=true;for(const remove of cleanup)remove();document.body.classList.remove('touch-mode')}};
 }
 return {mount};
 })();
@@ -2587,14 +2699,17 @@ const sideTypes=[
 ];
 const sideBoards=['arcade','clinic','diner','motel','club','radio','pier','records'];
 const npcs=[],cars=[],police=[],bullets=[],enemies=[],pickups=[],effects=[];
-let gameplay=null,cinematicCamera=null,touchInput=null,mobileMove=null,mobileAim=null,mouseFirePointer=null;
+let gameplay=null,cinematicCamera=null,touchInput=null,mobileMove=null,mobileAim=null,mouseFirePointer=null,mouseFireHeld=false;
 let world={clock:0},player,log=[],screen='menu',paused=false,showMap=false,showJournal=false,shopOpen=false;
 let last=0,damageFlash=0,toast='',toastTimer=0,saveClock=0,frameCount=0;
 const lm=key=>landmarks.find(l=>l.key===key);
 const camera={x:0,y:0},pointer={x:W/2,y:H/2,active:false};
 const controls={up:false,down:false,left:false,right:false,shift:false,space:false,fire:false};
+const keyboardControls=Object.fromEntries(Object.keys(controls).map(key=>[key,false])),touchControls=Object.fromEntries(Object.keys(controls).map(key=>[key,false]));
+function syncControls(){for(const key of Object.keys(controls))controls[key]=keyboardControls[key]||touchControls[key]||(key==='fire'&&mouseFireHeld);}
+function movementInput(){return {x:clamp((keyboardControls.right?1:0)-(keyboardControls.left?1:0)+(mobileMove?.x||0),-1,1),y:clamp((keyboardControls.down?1:0)-(keyboardControls.up?1:0)+(mobileMove?.y||0),-1,1)}}
 function canPlayInput(){return screen==='playing'&&!paused&&!showMap&&!showJournal&&!shopOpen&&!activeDialogue&&!GlowportActivities.active&&!gameplay?.modalActive;}
-function resetInputs(){for(const key of Object.keys(controls))controls[key]=false;pointer.active=false;mobileMove=null;mobileAim=null;mouseFirePointer=null;touchInput?.reset();}
+function resetInputs(){for(const key of Object.keys(controls)){keyboardControls[key]=false;touchControls[key]=false;controls[key]=false;}mouseFireHeld=false;pointer.active=false;mobileMove=null;mobileAim=null;mouseFirePointer=null;touchInput?.reset();}
 function cycleWeapon(){for(let offset=1;offset<=GUNS.length;offset++){const next=(player.weapon+offset)%GUNS.length;if(player.owned[next]){equip(next);return}}}
 function mobileCopy(value){if(!touchInput?.enabled)return value;return String(value).replace(/PRESS [13]/gi,'TAP WEAPON').replace(/PRESS R/gi,'TAP RELOAD').replace(/PRESS E/gi,'TAP INTERACT').replace(/PRESS C/gi,'TAP CROUCH').replace(/\bE ·/g,'INTERACT ·').replace(/\bP ·/g,'PHONE ·').replace(/\bC ·/g,'CROUCH ·').replace(/W DRIVE · SPACE BRAKE/g,'LEFT STICK TO DRIVE · BRAKE TO STOP');}
 function touchAction(name){if(name==='fullscreen'){const request=document.documentElement.requestFullscreen;if(document.fullscreenElement){document.exitFullscreen?.().catch(()=>{});return}if(request)request.call(document.documentElement).catch(()=>announce('Rotate your phone for a wider view.',3));return}if(!canPlayInput())return;if(name==='interact')action();else if(name==='weapon')cycleWeapon();else if(name==='reload')reload();else if(name==='crouch'&&!player.inCar){player.sneaking=!player.sneaking;announce(player.sneaking?'CROUCHING · QUIET FOOTSTEPS':'STANDING',1.5)}}
@@ -3096,18 +3211,18 @@ function updateNpcs(dt){
  }
  for(let pass=0;pass<2;pass++)separatePedestrians();ambientSpeech(dt);
 }
-function updateDriving(dt){let car=player.inCar;let go=mobileMove?-mobileMove.y:controls.up?1:controls.down?-1:0,boost=controls.shift,cap=(boost?305:211)*(1+(gameplay?.progression.state.skills.driving||0)*.001+(car.tuning||0)*.08)*clamp((car.health??100)/100,.55,1);
+function updateDriving(dt){let car=player.inCar;let input=movementInput(),go=-input.y,boost=controls.shift,cap=(boost?305:211)*(1+(gameplay?.progression.state.skills.driving||0)*.001+(car.tuning||0)*.08)*clamp((car.health??100)/100,.55,1);
  if(go){car.speed=clamp(car.speed+go*(go>0?(boost?470:355):340)*dt,-98,cap)}else car.speed*=Math.pow(.977,dt*60);
  if(controls.space)car.speed*=Math.pow(.83,dt*60);
  if(Math.abs(car.speed)<.3)car.speed=0;
- let turn=mobileMove?mobileMove.x:(controls.right?1:0)-(controls.left?1:0);if(turn)car.angle+=turn*2.25*dt*Math.sign(car.speed||1)*clamp(Math.abs(car.speed)/90,.15,1.05);
+ let turn=input.x;if(turn)car.angle+=turn*2.25*dt*Math.sign(car.speed||1)*clamp(Math.abs(car.speed)/90,.15,1.05);
  let dx=Math.sin(car.angle)*car.speed*dt,dy=-Math.cos(car.angle)*car.speed*dt,hit=moveCircle(car,dx,dy,19);
  if(hit){if(Math.abs(car.speed)>55)damage(clamp(Math.abs(car.speed)*.065,3,11));car.speed*= -.23}
  for(let c of cars){if(c===car)continue;let dd=distance(car.x,car.y,c.x,c.y),min=34;if(dd<min){let nx=(car.x-c.x)/(dd||1),ny=(car.y-c.y)/(dd||1),push=min-dd;if(!solidWorld(car.x+nx*push,car.y+ny*push,19)){car.x+=nx*push;car.y+=ny*push}if(Math.abs(car.speed)>38){const impact=Math.abs(car.speed);damage(Math.min(9,impact*.045));car.health=Math.max(0,(car.health??100)-impact*.035);c.health=Math.max(0,(c.health??100)-impact*.13)}car.speed*=-.17;c.speed*=.70}}
  for(let n of npcs){let dd=distance(car.x,car.y,n.x,n.y);if(dd<23){let dx=(n.x-car.x)/(dd||1),dy=(n.y-car.y)/(dd||1);if(!solidWorld(n.x+dx*(23-dd),n.y+dy*(23-dd),8)){n.x+=dx*(23-dd);n.y+=dy*(23-dd)}n.panic=4;if(Math.abs(car.speed)>70)crime(.12)}}}
 function update(dt){if(screen!=='playing'||paused||shopOpen||showMap||showJournal||activeDialogue||GlowportActivities.active||gameplay?.modalActive)return;world.clock+=dt;damageFlash=Math.max(0,damageFlash-dt);const oldX=player.inside?player.ix:player.x,oldY=player.inside?player.iy:player.y;player.invuln=Math.max(0,player.invuln-dt);player.cool=Math.max(0,player.cool-dt);if(player.reload>0){player.reload-=dt;if(player.reload<=0){let w=GUNS[player.weapon];if(w.mag){let load=Math.min(w.mag-player.mag[w.id],player.ammo[w.id]);player.mag[w.id]+=load;player.ammo[w.id]-=load}}}
- if(player.inside){let dx=mobileMove?mobileMove.x:((controls.right?1:0)-(controls.left?1:0)),dy=mobileMove?mobileMove.y:((controls.down?1:0)-(controls.up?1:0));let mag=Math.max(1,Math.hypot(dx,dy)),speed=(controls.shift?163:125)*(player.sneaking?.52:1);let px=clamp(player.ix+dx/mag*speed*dt,68,730),py=clamp(player.iy+dy/mag*speed*dt,78,388);let solids=GlowportArt.roomSolids(player.inside).concat(gameplay?.roomSolids()||[]),investigation=GlowportMissions.current(storyAt(),world);if(investigation&&storyAt().where===player.inside)solids=solids.concat(investigation.steps.map(n=>[n.x-22,n.y-17,n.x+22,n.y+20]));let roomBlock=(x,y)=>solids.some(([l,t,r,b])=>x>l-6&&x<r+6&&y>t-7&&y<b+8);if(!roomBlock(px,player.iy))player.ix=px;if(!roomBlock(player.ix,py))player.iy=py;if(dx||dy){player.walk+=dt*9;player.face=Math.abs(dx)>Math.abs(dy)?dx>0?'right':'left':dy>0?'down':'up'};
- }else if(player.inCar){updateDriving(dt)}else{let mx=mobileMove?mobileMove.x:(controls.right?1:0)-(controls.left?1:0),my=mobileMove?mobileMove.y:(controls.down?1:0)-(controls.up?1:0),mag=Math.max(1,Math.hypot(mx,my)),speed=(controls.shift?173:122)*(player.sneaking?.52:1);moveCircle(player,mx/mag*speed*dt,my/mag*speed*dt,9);if(mx||my){player.walk+=dt*(controls.shift?15:10);player.angle=Math.atan2(mx,-my);player.face=Math.abs(mx)>Math.abs(my)?mx>0?'right':'left':my>0?'down':'up'}}
+ if(player.inside){let movement=movementInput(),dx=movement.x,dy=movement.y;let mag=Math.max(1,Math.hypot(dx,dy)),speed=(controls.shift?163:125)*(player.sneaking?.52:1);let px=clamp(player.ix+dx/mag*speed*dt,68,730),py=clamp(player.iy+dy/mag*speed*dt,78,388);let solids=GlowportArt.roomSolids(player.inside).concat(gameplay?.roomSolids()||[]),investigation=GlowportMissions.current(storyAt(),world);if(investigation&&storyAt().where===player.inside)solids=solids.concat(investigation.steps.map(n=>[n.x-22,n.y-17,n.x+22,n.y+20]));let roomBlock=(x,y)=>solids.some(([l,t,r,b])=>x>l-6&&x<r+6&&y>t-7&&y<b+8);if(!roomBlock(px,player.iy))player.ix=px;if(!roomBlock(player.ix,py))player.iy=py;if(dx||dy){player.walk+=dt*9;player.face=Math.abs(dx)>Math.abs(dy)?dx>0?'right':'left':dy>0?'down':'up'};
+ }else if(player.inCar){updateDriving(dt)}else{let movement=movementInput(),mx=movement.x,my=movement.y,mag=Math.max(1,Math.hypot(mx,my)),speed=(controls.shift?173:122)*(player.sneaking?.52:1);moveCircle(player,mx/mag*speed*dt,my/mag*speed*dt,9);if(mx||my){player.walk+=dt*(controls.shift?15:10);player.angle=Math.atan2(mx,-my);player.face=Math.abs(mx)>Math.abs(my)?mx>0?'right':'left':my>0?'down':'up'}}
  const delivery=storyAt()?.task==='drive'?GlowportMissions.route(storyAt(),world,lm(storyAt().where),roadXs,roadYs):null;const deliveryNotice=GlowportMissions.updateDelivery(delivery,player,dt);if(deliveryNotice){announce(deliveryNotice,4);saveGame();updateHud()}
  updatePolice(dt);
  player.moving=Math.abs((player.inside?player.ix:player.x)-oldX)+Math.abs((player.inside?player.iy:player.y)-oldY)>.05;
@@ -3183,16 +3298,16 @@ function updateHud(){if(screen!=='playing')return;$('cash').textContent='$'+Math
  let near=nearestInteractable(),prompt='';if(player.inside){if(st?.task==='buy'&&player.inside==='armory')prompt='BUY THE 9MM PISTOL AT THE CYAN SHOP MARKER';else if(st?.task==='switch'&&player.inside==='armory')prompt=world.switchStep?'PRESS 3 · EQUIP PISTOL':'PRESS 1 · EQUIP FISTS';else if(near?.kind==='clue')prompt='E · '+near.obj.title.toUpperCase();else if(near?.kind==='service')prompt='E · '+(player.inside==='arcade'?'PLAY DEAD DROP':'BROWSE SERVICES');else if(near?.kind==='story')prompt='E · CONTINUE STORY';else if(near?.kind==='shop')prompt='E · BROWSE WEAPONS';else if(near?.kind==='exit')prompt='E · EXIT BUILDING'}else if(world.side&&distance(p.x,p.y,lm(world.side.to).x,lm(world.side.to).y)<65)prompt='E · COMPLETE SIDE HUSTLE';else if(st?.task==='target'&&world.practiceInitialized&&distance(p.x,p.y,storyMarker().x,storyMarker().y)<180)prompt='AIM & SHOOT THE PINK TRAINING TARGETS';else if(st?.task==='informant'&&distance(p.x,p.y,tutorialInformant().x,tutorialInformant().y)<70)prompt='E · TALK TO ROXY';else if(st&&!st.inside&&!['target','informant'].includes(st.task)&&distance(p.x,p.y,lm(st.where).x,lm(st.where).y)<75)prompt='E · CONTINUE STORY';else if(player.inCar)prompt='E · EXIT VEHICLE';else if(streetEvent&&eventMarker()&&distance(p.x,p.y,eventMarker().x,eventMarker().y)<70)prompt='E · '+streetEvent.title;else if(near?.kind==='npc')prompt='E · TALK TO '+near.obj.name;else if(st?.task==='informant'&&distance(p.x,p.y,tutorialInformant().x,tutorialInformant().y)<58)prompt='E · QUESTION ROXY';else if(near?.kind==='building')prompt='E · ENTER '+near.obj.name+(sideBoards.includes(near.obj.key)?' | SHIFT+E SIDE JOB':'');else if(near?.kind==='car')prompt='E · DRIVE CAR';const missionHud=gameplay?.hud();if(missionHud){$('chapter').textContent='ACT '+missionHud.act+' · '+missionHud.title;$('objective').textContent=missionHud.objective+(missionHud.time!==null?' · '+missionHud.time+'s':'');$('side').textContent='P · PHONE / JOBS / CONTACTS · '+(gameplay.policeResult?.mode||'clear').toUpperCase();prompt=gameplay.prompt()||prompt}if($('missionRetryBtn'))$('missionRetryBtn').classList.toggle('hidden',gameplay?.engine.state.active?.status!=='failed');$('prompt').textContent=mobileCopy(prompt);if(touchInput?.enabled){$('objective').textContent=mobileCopy($('objective').textContent);$('side').textContent=mobileCopy($('side').textContent);}$('prompt').classList.toggle('hidden',!prompt);drawMinimap()}
 function doFrame(now){touchInput?.update();let dt=last?clamp((now-last)/1000,0,.034):.016;last=now;update(dt);if(screen==='playing'){gameplay?.uiTick();if(cinematicCamera){const t=Math.min(1,(now-cinematicCamera.started)/900);camera.x=clamp(cinematicCamera.x+Math.sin(t*Math.PI/2)*24,0,MW-W);camera.y=clamp(cinematicCamera.y-t*12,0,MH-H)}drawGame();}requestAnimationFrame(doFrame)}
 function mapPointer(e){let b=canvas.getBoundingClientRect();pointer.x=(e.clientX-b.left)/b.width*W;pointer.y=(e.clientY-b.top)/b.height*H;pointer.active=true}
-const keyMove=(k,v)=>{if(['w','arrowup'].includes(k))controls.up=v;if(['s','arrowdown'].includes(k))controls.down=v;if(['a','arrowleft'].includes(k))controls.left=v;if(['d','arrowright'].includes(k))controls.right=v;if(k==='shift')controls.shift=v;if(k===' ')controls.space=v;if(k==='f')controls.fire=v};
+const keyMove=(k,v)=>{if(['w','arrowup'].includes(k))keyboardControls.up=v;if(['s','arrowdown'].includes(k))keyboardControls.down=v;if(['a','arrowleft'].includes(k))keyboardControls.left=v;if(['d','arrowright'].includes(k))keyboardControls.right=v;if(k==='shift')keyboardControls.shift=v;if(k===' ')keyboardControls.space=v;if(k==='f')keyboardControls.fire=v;syncControls()};
 window.addEventListener('keydown',e=>{let k=e.key.toLowerCase();if([' ','arrowup','arrowdown','arrowleft','arrowright','tab'].includes(k))e.preventDefault();if(screen!=='playing'){if(k==='enter'&&!$('startBtn').disabled)launch();return}if(gameplay?.modalActive)return;if(activeDialogue){if(!e.repeat&&['1','2','3'].includes(k))advanceConversation(Number(k)-1);if(!e.repeat&&(k==='enter'||k===' '))advanceConversation(0);return}if(paused||showMap||showJournal||shopOpen){if(!e.repeat){if(k==='escape')pauseGame();else if(showMap&&k==='m')toggleMap();else if(showJournal&&(k==='j'||k==='tab'))toggleJournal()}return}if(!e.repeat){if(k==='p')gameplay?.openPhone();if(k==='c'){player.sneaking=!player.sneaking;announce(player.sneaking?'CROUCHING · QUIET FOOTSTEPS':'STANDING',1.5)}if(k==='e')action();if(k==='m')toggleMap();if(k==='j'||k==='tab')toggleJournal();if(k==='escape')pauseGame();if(k==='r')reload();if(k==='q')cycleWeapon();if('12345'.includes(k))equip(Number(k)-1);if(k==='f'&&!player.inCar)shoot()}keyMove(k,true)});
 window.addEventListener('keyup',e=>keyMove(e.key.toLowerCase(),false));
 window.addEventListener('blur',backgroundGame);window.addEventListener('pagehide',backgroundGame);document.addEventListener('visibilitychange',()=>{if(document.hidden)backgroundGame()});window.addEventListener('pageshow',()=>{resetInputs();last=0});
-canvas.addEventListener('pointermove',e=>{if(e.pointerType!=='touch'){mobileAim=null;mapPointer(e)}});canvas.addEventListener('pointerdown',e=>{if(e.pointerType!=='touch'&&e.button===0&&canPlayInput()){mobileAim=null;mapPointer(e);mouseFirePointer=e.pointerId;canvas.setPointerCapture(e.pointerId);controls.fire=true;shoot()}});for(const type of ['pointerup','pointercancel','lostpointercapture'])window.addEventListener(type,e=>{if(e.pointerId===mouseFirePointer){mouseFirePointer=null;controls.fire=false}});
+canvas.addEventListener('pointermove',e=>{if(e.pointerType!=='touch'){mobileAim=null;mapPointer(e)}});canvas.addEventListener('pointerdown',e=>{if(e.pointerType!=='touch'&&e.button===0&&canPlayInput()){mobileAim=null;mapPointer(e);mouseFirePointer=e.pointerId;try{canvas.setPointerCapture(e.pointerId)}catch{}mouseFireHeld=true;syncControls();shoot()}});for(const type of ['pointerup','pointercancel','lostpointercapture'])window.addEventListener(type,e=>{if(e.pointerId===mouseFirePointer){mouseFirePointer=null;mouseFireHeld=false;syncControls()}});
 $('phoneBtn').addEventListener('click',()=>gameplay?.openPhone());$('missionRetryBtn')?.addEventListener('click',()=>gameplay?.retry());$('startBtn').addEventListener('click',launch);$('newBtn').addEventListener('click',()=>{resetGame();$('menu').classList.add('hidden')});$('mapBtn').addEventListener('click',toggleMap);$('journalBtn').addEventListener('click',toggleJournal);$('saveBtn').addEventListener('click',()=>saveGame(false));$('mapClose').addEventListener('click',toggleMap);$('journalClose').addEventListener('click',toggleJournal);$('shopClose').addEventListener('click',hideShop);$('pauseBtn').addEventListener('click',pauseGame);$('pauseClose').addEventListener('click',pauseGame);$('pauseSave').addEventListener('click',()=>saveGame(false));$('pauseRestart').addEventListener('click',resetGame);
-touchInput=GlowportTouch.mount({root:$('touch'),state:()=>({playing:screen==='playing',blocked:!canPlayInput(),inCar:!!player?.inCar,inside:!!player?.inside,sneaking:!!player?.sneaking}),move:(x,y)=>{mobileMove=x||y?{x,y}:null;controls.left=x<-.2;controls.right=x>.2;controls.up=y<-.2;controls.down=y>.2},aim:(x,y)=>{mobileAim=x||y?{x,y}:null;pointer.active=false},control:(name,held)=>{if(name in controls){const pressed=held&&!controls[name];controls[name]=held;if(name==='fire'&&pressed)shoot()}},action:touchAction,canFullscreen:()=>!!document.documentElement.requestFullscreen});
-if(touchInput.enabled){document.querySelector('.menu-mini').textContent='LEFT STICK: MOVE / DRIVE · RIGHT STICK: AIM + FIRE · INTERACT: TALK / ENTER';document.querySelector('.convo-hint').textContent='Tap a response or Continue.';}
+touchInput=GlowportTouch.mount({root:$('touch'),state:()=>({playing:screen==='playing',blocked:!canPlayInput(),inCar:!!player?.inCar,inside:!!player?.inside,sneaking:!!player?.sneaking}),move:(x,y)=>{mobileMove=x||y?{x,y}:null;touchControls.left=x<-.01;touchControls.right=x>.01;touchControls.up=y<-.01;touchControls.down=y>.01;syncControls()},aim:(x,y)=>{mobileAim=x||y?{x,y}:null;pointer.active=false},control:(name,held)=>{if(name in touchControls){const pressed=held&&!controls[name];touchControls[name]=held;syncControls();if(name==='fire'&&pressed)shoot()}},action:touchAction,canFullscreen:()=>!!document.fullscreenEnabled&&typeof document.documentElement.requestFullscreen==='function'});
+if(touchInput.enabled){document.querySelector('.menu-mini').textContent='LEFT STICK: MOVE / DRIVE · DRAG RIGHT STICK: AIM + FIRE · INTERACT: TALK / ENTER';document.querySelector('.convo-hint').textContent='Tap a response or Continue.';}
 // Diagnostics for gameplay regression checks, not required by players.
-window.GlowportTest={terrain:()=>terrain.diagnostics(),input:()=>({controls:{...controls},pointer:{...pointer},move:mobileMove,aim:mobileAim,paused,touch:touchInput?.diagnostics()}),get system(){return gameplay},campaign:()=>gameplay?.diagnostics(),setMission:id=>gameplay?.fixture(id,0),setMissionStage:(id,index)=>gameplay?.fixture(id,index),landmarks:()=>landmarks.map(l=>({key:l.key,x:l.x,y:l.y,safe:!solidWorld(l.x,l.y+10,9),onLand:onLand(l.x,l.y+10),roadDistance:closestRoadPoint(l.x,l.y).d,inside:!!l.building})),getState:()=>({interior:{x:player?.ix,y:player?.iy},investigation:GlowportMissions.current(storyAt(),world),delivery:world.delivery?JSON.parse(JSON.stringify(world.delivery)):null,reserve:player?.ammo?{...player.ammo}:null,ammo:player?.mag?{...player.mag}:null,reloading:player?.reload,trust:world.trust,camera:{...camera},time:world.clock,screen,story:world.story,hp:player.hp,money:player.money,wanted:world.wanted,inside:player.inside,player:{x:player.x,y:player.y,weapon:player.weapon},cars:cars.length,buildings:buildings.length,landmarks:landmarks.length,roadSegments:segments.length,mapW:MW,mapH:MH,roadCols:roadXs.length,roadRows:roadYs.length,dialogue:!!activeDialogue,practice:(world.practice||[]).length,training:world.trainingSpawned,talking:world.talkCount,trafficMinGap:Math.min(...cars.filter(c=>c.ai).map(c=>Math.min(...cars.filter(o=>o!==c&&o.ai&&o.ring===c.ring).map(o=>distance(c.x,c.y,o.x,o.y))))),enemies:enemies.length,police:police.length,bullets:bullets.length,car:!!player.inCar,side:world.side?.to||null}),launch,teleport:key=>{let a=lm(key);player.inside=null;player.inCar=null;player.x=a.x;player.y=a.y+10;camera.x=clamp(player.x-W/2,0,MW-W);camera.y=clamp(player.y-H/2,0,MH-H);updateHud()},getTargets:()=>world.practice.map(t=>({...t})),getNPCs:()=>npcs.map(n=>({id:n.id,x:n.x,y:n.y,phase:n.phase,role:n.role,waypoints:n.waypoints.length,stuck:n.stuckTime,sayTime:n.sayTime})),getEnemies:()=>enemies.map(e=>({hp:e.hp,x:e.x,y:e.y})),getPolice:()=>police.map(p=>({x:p.x,y:p.y,foot:p.foot})),getTraffic:()=>cars.filter(c=>c.ai).map(c=>({x:c.x,y:c.y,ring:c.ring,speed:c.speed,trackDist:c.trackDist})),canStand:(x,y)=>!solidWorld(x,y,9),setInteriorPosition:(x,y)=>{player.ix=x;player.iy=y},setPosition:(x,y,angle=null)=>{player.inside=null;player.inCar=null;player.x=x;player.y=y;if(angle!==null)player.angle=angle;camera.x=clamp(x-W/2,0,MW-W);camera.y=clamp(y-H/2,0,MH-H);pointer.active=false;player.cool=0},resetCooldown:()=>player.cool=0,setWanted:v=>{gameplay?gameplay.forceWanted(v<0?0:Math.min(5,world.wanted+v)):crime(v);updateHud()},setEnvironment:(hour,type)=>{world.clock=((hour*60-CITY_START_MINUTES+1440)%1440)/1440*CITY_DAY_SECONDS;weather=type;nextWeatherAt=world.clock+9999;eventSpawnAt=world.clock+9999;updateHud()},getVehicles:()=>cars.map(c=>({x:c.x,y:c.y,angle:c.angle,personal:c.personal,speed:c.speed})),getCity:()=>({time:formatCityClock(),weather,event:streetEvent?{...streetEvent}:null,finished:cityEventsFinished,relations:{...relations}}),startStreetEvent,interactStreetEvent,setEvent:e=>{streetEvent=e;updateHud()},getSignals:()=>lands.map(d=>({ring:d.id,signal:trafficSignal(d.id,0)})),talkToInformant,advanceConversation,buyItem,initPractice,spawnTutorialEnforcers,shoot,updateBullets,equip,action,update,drawGame,storyAdvance,enterInterior,leaveInterior};
+window.GlowportTest={terrain:()=>terrain.diagnostics(),input:()=>({controls:{...controls},keyboard:{...keyboardControls},touchControls:{...touchControls},pointer:{...pointer},move:mobileMove,aim:mobileAim,paused,touch:touchInput?.diagnostics()}),get system(){return gameplay},campaign:()=>gameplay?.diagnostics(),setMission:id=>gameplay?.fixture(id,0),setMissionStage:(id,index)=>gameplay?.fixture(id,index),landmarks:()=>landmarks.map(l=>({key:l.key,x:l.x,y:l.y,safe:!solidWorld(l.x,l.y+10,9),onLand:onLand(l.x,l.y+10),roadDistance:closestRoadPoint(l.x,l.y).d,inside:!!l.building})),getState:()=>({interior:{x:player?.ix,y:player?.iy},investigation:GlowportMissions.current(storyAt(),world),delivery:world.delivery?JSON.parse(JSON.stringify(world.delivery)):null,reserve:player?.ammo?{...player.ammo}:null,ammo:player?.mag?{...player.mag}:null,reloading:player?.reload,trust:world.trust,camera:{...camera},time:world.clock,screen,story:world.story,hp:player.hp,money:player.money,wanted:world.wanted,inside:player.inside,player:{x:player.x,y:player.y,weapon:player.weapon},cars:cars.length,buildings:buildings.length,landmarks:landmarks.length,roadSegments:segments.length,mapW:MW,mapH:MH,roadCols:roadXs.length,roadRows:roadYs.length,dialogue:!!activeDialogue,practice:(world.practice||[]).length,training:world.trainingSpawned,talking:world.talkCount,trafficMinGap:Math.min(...cars.filter(c=>c.ai).map(c=>Math.min(...cars.filter(o=>o!==c&&o.ai&&o.ring===c.ring).map(o=>distance(c.x,c.y,o.x,o.y))))),enemies:enemies.length,police:police.length,bullets:bullets.length,car:!!player.inCar,side:world.side?.to||null}),launch,teleport:key=>{let a=lm(key);player.inside=null;player.inCar=null;player.x=a.x;player.y=a.y+10;camera.x=clamp(player.x-W/2,0,MW-W);camera.y=clamp(player.y-H/2,0,MH-H);updateHud()},getTargets:()=>world.practice.map(t=>({...t})),getNPCs:()=>npcs.map(n=>({id:n.id,x:n.x,y:n.y,phase:n.phase,role:n.role,waypoints:n.waypoints.length,stuck:n.stuckTime,sayTime:n.sayTime})),getEnemies:()=>enemies.map(e=>({hp:e.hp,x:e.x,y:e.y})),getPolice:()=>police.map(p=>({x:p.x,y:p.y,foot:p.foot})),getTraffic:()=>cars.filter(c=>c.ai).map(c=>({x:c.x,y:c.y,ring:c.ring,speed:c.speed,trackDist:c.trackDist})),canStand:(x,y)=>!solidWorld(x,y,9),setInteriorPosition:(x,y)=>{player.ix=x;player.iy=y},setPosition:(x,y,angle=null)=>{player.inside=null;player.inCar=null;player.x=x;player.y=y;if(angle!==null)player.angle=angle;camera.x=clamp(x-W/2,0,MW-W);camera.y=clamp(y-H/2,0,MH-H);pointer.active=false;player.cool=0},resetCooldown:()=>player.cool=0,setWanted:v=>{gameplay?gameplay.forceWanted(v<0?0:Math.min(5,world.wanted+v)):crime(v);updateHud()},setEnvironment:(hour,type)=>{world.clock=((hour*60-CITY_START_MINUTES+1440)%1440)/1440*CITY_DAY_SECONDS;weather=type;nextWeatherAt=world.clock+9999;eventSpawnAt=world.clock+9999;updateHud()},getVehicles:()=>cars.map(c=>({x:c.x,y:c.y,angle:c.angle,personal:c.personal,speed:c.speed})),getCity:()=>({time:formatCityClock(),weather,event:streetEvent?{...streetEvent}:null,finished:cityEventsFinished,relations:{...relations}}),startStreetEvent,interactStreetEvent,setEvent:e=>{streetEvent=e;updateHud()},getSignals:()=>lands.map(d=>({ring:d.id,signal:trafficSignal(d.id,0)})),talkToInformant,advanceConversation,buyItem,initPractice,spawnTutorialEnforcers,shoot,updateBullets,equip,action,update,drawGame,storyAdvance,enterInterior,leaveInterior};
 $('startBtn').disabled=false;$('startBtn').textContent='▶ START / CONTINUE';$('newBtn').disabled=false;
 console.log('GLOWPORT88 MIDNIGHT SIGNAL READY',lands.length,'districts',buildings.length,'buildings',landmarks.length,'interiors');
 requestAnimationFrame(doFrame);

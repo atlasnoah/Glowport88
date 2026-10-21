@@ -1,0 +1,24 @@
+{
+  "time": "2026-10-21T21:00:55.889Z",
+  "passed": [
+    "radial movement starts smoothly and clamps diagonal speed",
+    "edge contact on the aiming pad cannot fire before a deliberate drag",
+    "aim direction is normalized and firing has a release dead band",
+    "movement, aim and held Fire keep independent pointer ownership",
+    "driving filters tiny orthogonal drift without losing throttle",
+    "keyboard and assistive click activation remains available once",
+    "foreign movement and release events cannot steal another thumb",
+    "a duplicate pointer cannot also press Fire while owning movement",
+    "long-held action performs once and ignores compatibility clicks",
+    "dragged-away and canceled action presses perform no action",
+    "capture loss releases only its owner and cannot restart from a stale move",
+    "window ownership tracks motion even when native capture is unavailable",
+    "modal transitions cancel pending actions and require fresh contacts",
+    "blur, page hiding and orientation resets release all held inputs",
+    "destroy removes listeners and stale events cannot re-enable the controller",
+    "unchanged frame updates do not rewrite touch presentation",
+    "disabled desktop controller leaves keyboard state untouched across modes"
+  ],
+  "errors": [],
+  "scope": "Isolated production touch module in Chromium with real CDP contacts, replayed compatibility/capture tails, and deterministic fake gameplay host. Not physical iOS/Android testing."
+}
