@@ -1,8 +1,8 @@
 {
-  "time": "2026-10-21T21:03:57.382Z",
-  "url": "https://atlasnoah.github.io/Glowport88/?v=0.4.1-touch",
+  "time": "2026-10-21T21:44:21.499Z",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.4.2-navigation",
   "verifiedHTTPSDownload": true,
-  "sha256": "bed6ccd2ad713612f6e2998cfaa211353a3a03624f6f458c467846962316bcf8",
+  "sha256": "1959d065d7be8a53a8e0ff707bcfd5a3642b4913d1f36679ec8a209afab96f97",
   "matchesTestedRelease": true,
   "browserPlaybackOfDownloadedBytes": {
     "main": 40,
@@ -12,6 +12,7 @@
     "phone": true,
     "map": true,
     "touchMovement": true,
+    "entranceGuidance": true,
     "mobileViewport": {
       "width": 390,
       "height": 844
