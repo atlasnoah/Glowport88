@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-21T21:00:55.889Z",
+  "time": "2026-10-21T21:43:03.292Z",
   "passed": [
     "radial movement starts smoothly and clamps diagonal speed",
     "edge contact on the aiming pad cannot fire before a deliberate drag",

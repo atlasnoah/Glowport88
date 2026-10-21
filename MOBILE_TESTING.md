@@ -1,6 +1,8 @@
-# Mobile browser testing · 0.4.1
+# Mobile browser testing · 0.4.2
 
-Open https://atlasnoah.github.io/Glowport88/?v=0.4.1-touch on your phone. No download or developer account is required. Start / Continue resumes local progress; New Story starts fresh. Both portrait and landscape keep the canvas, thumb controls and current objective accessible.
+Open https://atlasnoah.github.io/Glowport88/?v=0.4.2-navigation on your phone. No download or developer account is required. Start / Continue resumes local progress; New Story starts fresh. Both portrait and landscape keep the canvas, thumb controls and current objective accessible.
+
+Story navigation now points to the objective building entrance from the street, then to the exact objective inside. An EXIT marker guides you out when the next objective is elsewhere. Between operations, NEXT JOB marks the next story lead; the objective panel names it and explains Phone → Jobs acceptance. Existing saves keep their progress.
 
 ## Controls
 
@@ -39,6 +41,6 @@ The former 7200×5040 backing canvas used about 145 MB of raw pixels and exceede
 
 `npm run test:touch` adds 17 isolated controller regressions, including cancellation, native/compatibility click handling, hysteresis, pointer ownership, capture failure, foreground transitions, accessibility activation and removal. Unchanged controller frames produce zero presentation mutations.
 
-The full npm test command also runs the existing 43 browser checks, model/content/art checks and accelerated campaign integration. Packaging checks separately verify desktop and touch play with all asset subrequests blocked. Public delivery is checked using a certificate-verified download, SHA-256 equality, and browser playback of those deployed bytes.
+The navigation suite adds 11 browser scenarios, including an actual touch investigation/handoff/completion/acceptance chain and a sweep of all 177 post-training story stages. The full npm test command also runs the existing 43 browser checks, model/content/art checks and accelerated campaign integration. Packaging checks separately verify desktop and touch play with all asset subrequests blocked. Public delivery is checked using a certificate-verified download, SHA-256 equality, and browser playback of those deployed bytes.
 
 Physical iPhones/Android devices, iOS Safari, real browser address-bar resizing, low-memory device behavior, thermal/battery use, and prolonged mobile sessions remain unverified. Please test on your phone as development continues. This browser beta is not an App Store submission or a store-approval claim.

@@ -74,3 +74,10 @@
 - Seventeen isolated controller browser checks and twenty-one integrated mobile checks pass, including the reproduced bugs, capture fallback, stale gestures, native compatibility clicks, accessibility, hybrid input and short landscape. Full desktop/gameplay and packaging regression is included in the final npm test/release checks. Physical-device testing remains outstanding.
 
 - Final touch refinement committed in 1d3cbb9 and published to gh-pages in ce4da89. All 64 integrated gameplay browser scenarios and 17 isolated controller scenarios pass; standalone desktop/mobile playback passes with all asset subrequests blocked. The first public check saw the prior cached release, so the fresh versioned URL https://atlasnoah.github.io/Glowport88/?v=0.4.1-touch was verified by normal HTTPS download, exact release hash bed6ccd2ad713612f6e2998cfaa211353a3a03624f6f458c467846962316bcf8, and mobile playback of those deployed bytes. Source remains on codex/gameplay-overhaul; main is untouched.
+
+
+## Story navigation · 0.4.2
+
+- Reproduced missing street arrows for indoor story objectives: world drawing required an outdoor marker while the maps separately projected room markers to their building entrances. 104 of 177 post-training main stages use indoor objectives.
+- Separated navigation targets from semantic objective coordinates: streets guide to entrances, the correct room shows its objective, and other rooms show the lower exit. Completed operations preview the next available main story lead and explain Phone → Jobs acceptance. Checkpoint retry and ending free roam are preserved.
+- Validation passed: full npm test (92 browser scenarios, model/content/art checks and accelerated campaign integration), standalone desktop/mobile playback with subresources blocked, and an explicit packaged entrance-arrow rendering regression. Navigation coverage includes all 177 post-training story stages plus real touch handoffs, next-job acceptance, retry and endings. Physical phones/Safari remain untested.

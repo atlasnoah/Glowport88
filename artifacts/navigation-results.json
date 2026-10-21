@@ -1,0 +1,22 @@
+{
+  "time": "2026-10-21T21:42:58.216Z",
+  "passed": [
+    "indoor story objectives draw an outdoor entrance arrow",
+    "correct rooms preserve clue targets and wrong rooms show the exit",
+    "real investigation and handoff retain exit, street and entrance guidance",
+    "completion previews the next unlocked story without autoaccepting it",
+    "next-story guidance survives save and reload",
+    "phone acceptance replaces next-job guidance with the accepted entrance",
+    "route checkpoints and moving pursuit targets retain their world coordinates",
+    "all post-training story stages resolve world and room coordinates consistently",
+    "failed missions retain retry guidance and restore arrows after retry",
+    "finale completion keeps free roam without an obsolete story arrow",
+    "navigation changes produce no critical browser errors or missing assets"
+  ],
+  "errors": [],
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "scope": "Production navigation resolution and render calls; actual touch investigations, handoffs, story completion/acceptance and checkpoint retry. Fixture travel and catalogue-stage sweep are not a full human campaign playthrough."
+}

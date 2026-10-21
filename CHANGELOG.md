@@ -1,3 +1,12 @@
+# Story navigation fix · 0.4.2
+
+- Restored street arrows for indoor objectives by guiding to the building entrance, then switching to the correct clue or objective inside.
+- Added an exit marker when the next objective is outdoors or in another building.
+- Added a next-story waypoint between operations, with the next mission named in the objective panel and Phone → Jobs acceptance guidance. Failed checkpoints retain Retry; completed campaigns retain free roam.
+- Kept actual objective coordinates, route checkpoints, pursuit targets, mission acceptance, saves, artwork and touch controls intact.
+
+---
+
 # Touch refinement · 0.4.1
 
 - Fixed a verified long-press double-activation bug. Actions activate once on release inside, cancel outside, and ignore trailing pointer clicks.
