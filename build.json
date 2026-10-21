@@ -1,8 +1,15 @@
 {
-  "version": "0.4.2",
-  "sourceCommit": "ccbc2544458822a104d813033e9e8de93dc75c93",
-  "sha256": "1959d065d7be8a53a8e0ff707bcfd5a3642b4913d1f36679ec8a209afab96f97",
+  "version": "0.5.0",
+  "sourceCommit": "f03182c6fd90b49637d8739f739c354aa2cbf5d3",
+  "sha256": "51cd13889d9799aa229336d8f394391c9436f904dfb5c18e6d6ce4746d965dc6",
   "mobileTouch": true,
   "touchRefinements": true,
-  "storyNavigation": true
+  "storyNavigation": true,
+  "livingCity": true,
+  "mainMissions": 40,
+  "sideMissions": 20,
+  "encounters": 32,
+  "vehicleModels": 10,
+  "cassettes": 12,
+  "radioStations": 4
 }
