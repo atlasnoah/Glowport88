@@ -1,0 +1,12 @@
+'use strict';
+const assert=require('node:assert/strict');global.window=global;require('../Glowport88/assets/save-system.js');
+const memory=new Map(),storage={getItem:key=>memory.get(key)??null,setItem:(key,value)=>memory.set(key,value)},key='player',original=JSON.stringify({version:3,story:17,money:1234,gameplay:{evidence:'preserve'}});
+assert.equal(GlowportSave.read(storage,key).state,null);
+storage.setItem(key,original);assert(GlowportSave.read(storage,key).needsMigration);GlowportSave.write(storage,key,{version:4,story:17,money:1300});assert.equal(storage.getItem(key+'.backup.migration'),original);assert.equal(storage.getItem(key+'.backup.previous'),original);assert.equal(GlowportSave.read(storage,key).state.money,1300);
+GlowportSave.write(storage,key,{story:18,money:1400});assert.equal(storage.getItem(key+'.backup.migration'),original,'First migration backup must survive later autosaves');assert.equal(JSON.parse(storage.getItem(key+'.backup.previous')).money,1300);
+storage.setItem(key,'{broken');const recovered=GlowportSave.read(storage,key);assert(recovered.recovered);assert.equal(recovered.state.money,1300);assert.equal(storage.getItem(key+'.backup.corrupt'),'{broken');assert.equal(storage.getItem(key),'{broken','Recovery must not silently replace original bytes');
+memory.clear();storage.setItem(key,JSON.stringify({version:99,story:19,money:9999}));assert(GlowportSave.read(storage,key).blocked);assert.throws(()=>GlowportSave.write(storage,key,{story:0,money:600}),/newer/);assert.equal(JSON.parse(storage.getItem(key)).version,99);
+GlowportSave.backup(storage,key,'new-story');assert.equal(storage.getItem(key),storage.getItem(key+'.backup.new-story'));
+memory.clear();storage.setItem(key,original);const quota={getItem:storage.getItem,setItem:()=>{throw Error('Quota exceeded')}};assert.throws(()=>GlowportSave.write(quota,key,{story:18}),/Quota/);assert.equal(storage.getItem(key),original,'A failed backup write must preserve the original save');assert.throws(()=>GlowportSave.write(storage,key,{story:-1}),/invalid/);
+memory.clear();storage.setItem(key,'[]');assert(GlowportSave.read(storage,key).corrupt);assert.equal(storage.getItem(key+'.backup.corrupt'),'[]');assert.equal(storage.getItem(key),'[]');
+console.log('PASS save migration backups, corruption recovery, future-version preservation, explicit new-story backup and quota safety');
