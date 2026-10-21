@@ -1,0 +1,12 @@
+{
+  "time": "2026-10-21T01:04:27.152Z",
+  "passed": [
+    "menu keyboard safety",
+    "training targets",
+    "tutorial combat",
+    "Roxy conversation",
+    "delivery timeout/retry",
+    "30-second simulation"
+  ],
+  "errors": []
+}

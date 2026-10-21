@@ -3,7 +3,7 @@ window.GlowportArt=(()=>{
 'use strict';
 const atlas=window.GLOWPORT_ATLAS,images={},patterns=new WeakMap(),lightGrid=new Map();
 const base=new URL('.',document.currentScript.src);
-const ready=Promise.all(['city-atlas','characters','vehicles','buildings-illustrated','portraits'].map(name=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{images[name]=im;resolve()};im.onerror=()=>reject(Error('Could not load '+name+'.png'));im.src=new URL(name+'.png',base).href})));
+const ready=Promise.all(['city-atlas','characters','vehicles','buildings-illustrated','neighborhoods-illustrated','portraits','furniture-illustrated'].map(name=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{images[name]=im;resolve()};im.onerror=()=>reject(Error('Could not load '+name+'.png'));im.src=new URL(name+'.png',base).href})));
 const palettes={
  west:{roof:'roof-rust',wall:'brick-warm',edge:'#a18a92',accent:'#ef99b1',label:'SUNSET'},
  core:{roof:'roof',wall:'brick-blue',edge:'#7a8da7',accent:'#71e4df',label:'DOWNTOWN'},
@@ -14,7 +14,10 @@ const palettes={
 const neon=['#75e9e1','#f38fc5','#a6a1f0','#edbc8c'];
 const hash=(x,y=0)=>{let n=Math.imul(x|0,374761393)^Math.imul(y|0,668265263);n=Math.imul(n^(n>>>13),1274126177);return (n^(n>>>16))>>>0};
 function rect(c,x,y,w,h,col){c.fillStyle=col;c.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h))}
-function sprite(c,name,x,y,w,h){const a=atlas[name];if(!a)throw Error('Missing atlas sprite '+name);c.drawImage(images['city-atlas'],...a,Math.round(x),Math.round(y),w||a[2],h||a[3])}
+function sprite(c,name,x,y,w,h){if(furnitureCells[name]){const a=atlas[name];furniture(c,name,x,y,w||a?.[2]||32,h||a?.[3]||32);return}const a=atlas[name];if(!a)throw Error('Missing atlas sprite '+name);c.drawImage(images['city-atlas'],...a,Math.round(x),Math.round(y),w||a[2],h||a[3])}
+const furnitureCells={sofa:[10,60,414,274],table:[438,35,315,300],bed:[789,14,307,350],arcade:[1145,24,384,327],counter:[13,373,427,269],gunrack:[455,376,310,270],mixer:[778,386,412,254],crates:[1208,367,317,281],terminal:[19,650,382,359],records:[440,698,382,278],locker:[940,650,198,360],planter:[1199,667,310,337]};
+function furniture(c,name,x,y,w,h){const a=furnitureCells[name];c.drawImage(images['furniture-illustrated'],...a,Math.round(x),Math.round(y),w,h)}
+function roomSolids(key){return [[88,108,230,185],[270,250,350,298],[486,260,616,304],key==='motel'?[520,100,646,176]:[486,100,646,170]]}
 function pattern(c,name){let map=patterns.get(c);if(!map){map=new Map();patterns.set(c,map)}if(!map.has(name)){const a=atlas[name],tile=document.createElement('canvas');tile.width=a[2];tile.height=a[3];tile.getContext('2d').drawImage(images['city-atlas'],...a,0,0,a[2],a[3]);map.set(name,c.createPattern(tile,'repeat'))}return map.get(name)}
 function material(c,name,x,y,w,h){c.fillStyle=pattern(c,name);c.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h))}
 function line(c,points,col,width=1){c.strokeStyle=col;c.lineWidth=width;c.beginPath();c.moveTo(...points[0]);for(let i=1;i<points.length;i++)c.lineTo(...points[i]);c.stroke()}
@@ -47,22 +50,23 @@ function modularBuilding(c,b){const {x,y,w,h}=b,s=hash(x,y),p=palettes[b.distric
  light(b.doorX,b.doorY-8,63,col,b.landmark?1.1:.6);
 }
 const buildingCells=[[0,0,512,530],[512,0,512,530],[1024,0,512,530],[0,530,512,494],[512,530,512,494],[1024,530,512,494]];
+const neighborhoodCells=[[36,58,467,424],[530,92,469,387],[1029,60,473,419],[25,534,484,407],[535,547,472,392],[1029,534,485,400]];
 function building(c,b){
- const seed=hash(b.x,b.y),byKey={hotel:0,motel:0,armory:1,radio:2,diner:3,records:3,club:4,arcade:4,warehouse:5,observatory:2,pier:5,clinic:0};
- const choices={west:[0,2,3],core:[0,1,4],north:[0,2,0],south:[3,0,3],east:[5,1,5]};
- const index=b.landmark?byKey[b.landmark.key]??0:choices[b.district][seed%3];
- // A true sprite sheet is the primary architecture source. Footprints and thresholds are unchanged.
+ const seed=hash(b.x,b.y),landmark=b.landmark?.key;
+ const choices={west:[0,2,4],core:[1,3,4],north:[0,0,4],south:[2,0,1],east:[5,5,1]};
+ let index=choices[b.district][seed%3],sheet='neighborhoods-illustrated',cells=neighborhoodCells;
+ if(landmark){const special={hotel:0,armory:1,radio:2,warehouse:5};if(special[landmark]!==undefined){index=special[landmark];sheet='buildings-illustrated';cells=buildingCells}else index={motel:0,diner:2,records:4,club:3,arcade:4,observatory:5,pier:5,clinic:0}[landmark]??0}
+ // Full illustrated architectural sprites are anchored at the original collision footprint and door.
  const dx=b.x-3,dy=b.y-3,dw=b.w+6,dh=b.h+20;
- c.drawImage(images['buildings-illustrated','portraits'],...buildingCells[index],dx,dy,dw,dh);
- const col=b.landmark?palettes[b.district].accent:neon[seed%4];
- // Small address plates give each reused architectural shell its in-world identity.
- const plateY=b.y+b.h-17;
- if(b.landmark){rect(c,b.x+5,plateY,b.w-10,10,'#131d30ed');label(c,b.name,b.x+5,plateY+8,b.w-10,col,7)}
- if(seed%4===0&&b.w>95)sprite(c,'ac',b.x+b.w-35,b.y+9,22,18);
+ c.drawImage(images[sheet],...cells[index],dx,dy,dw,dh);
+ const col=landmark?palettes[b.district].accent:neon[seed%4];
+ // An in-world business plaque labels the unlettered neighborhood shells.
+ const plateY=Math.round(dy+dh*.6),plateW=Math.min(b.w-14,112);
+ if(sheet==='neighborhoods-illustrated'||landmark){rect(c,b.doorX-plateW/2,plateY,plateW,9,'#131d30ed');label(c,b.name,b.doorX-plateW/2,plateY+7,plateW,col,7)}
  rect(c,b.doorX-9,b.doorY+3,18,1,col);
- light(b.doorX,b.doorY-8,75,col,b.landmark?1.4:.85);
- if(index===4)light(b.x+b.w*.75,b.y+b.h*.55,50,'#e589cb',.8);
- if(index===0||index===3)light(b.x+b.w*.25,b.y+b.h*.6,38,'#efb786',.55);
+ light(b.doorX,b.doorY-8,75,col,landmark?1.4:.85);
+ if(index===3)light(b.x+b.w*.75,b.y+b.h*.55,50,'#e589cb',.8);
+ if(index===0||index===2)light(b.x+b.w*.25,b.y+b.h*.6,38,'#efb786',.55);
 }
 function bakeTerrain(c,world){const {MW,MH,lands,roadXs,roadYs,STREET,buildings,trees,debris,streetlights}=world;lightGrid.clear();c.imageSmoothingEnabled=false;
  material(c,'concrete',0,0,MW,MH);
@@ -74,12 +78,13 @@ function bakeTerrain(c,world){const {MW,MH,lands,roadXs,roadYs,STREET,buildings,
  // Deterministic surface wear, leaves, and puddle contours; none use gameplay randomness.
  for(let i=0;i<12000;i++){const s=hash(i,88),x=s%MW,y=hash(i,194)%MH;const near=roadXs.some(rx=>Math.abs(rx-x)<33)||roadYs.some(ry=>Math.abs(ry-y)<33);if(near){rect(c,x,y,2+s%5,1,['#3b4356','#1e263b','#424959'][s%3]);if(s%27===0)line(c,[[x,y],[x+12,y+1],[x+18,y+3]],'#4b5668')}else if(s%5===0)rect(c,x,y,2,1,s%2?'#896174':'#808080')}
  for(const b of buildings)building(c,b);
- for(const tr of trees){sprite(c,'tree',tr.x-20,tr.y-30,40,40);}
+ for(const tr of trees){sprite(c,tr.kind==='palm'?'palm':'tree',tr.x-20,tr.y-30,40,40);}
  for(const l of streetlights){sprite(c,'lamp',l.x-7,l.y-25,14,24);light(l.x,l.y-15,48,'#a1ded7',.5,'lamp')}
  for(let x of roadXs)for(let y of roadYs){if(hash(x,y)%3===0){sprite(c,'dumpster',x+57,y+66);sprite(c,'vending',x-74,y-86,18,27)}if(hash(x,y)%4===0)sprite(c,'bench',x+65,y-65)}
 }
 function character(c,x,y,e,hero,clock,moving=false){const face={down:0,left:1,right:2,up:3}[e.face]??0;const variant=hero?0:e.shirt==='#5372ae'?6:e.shirt==='#a7586f'?7:1+((e.id??hash(x,y))%11);let frame=moving?1+Math.floor((e.walk||e.step||clock*7)*1.4)%4:0;if(hero&&e.weapon>0){if(e.reload>0)frame=7;else if(e.cool>.12)frame=6;else frame=moving?frame:5}
  c.save();c.globalAlpha=.4;c.fillStyle='#080f25';c.beginPath();c.ellipse(x+2,y+9,9,3,0,0,Math.PI*2);c.fill();c.restore();c.drawImage(images.characters,frame*32,(variant*4+face)*40,32,40,Math.round(x-16),Math.round(y-25),32,40);
+ if(hero&&e.weapon>1&&clock-(e.lastShot??-100)<.09){const a=e.angle||0,fx=x+Math.sin(a)*17,fy=y-Math.cos(a)*17;polygon(c,[[fx-4,fy],[fx,fy-5],[fx+4,fy],[fx,fy+5]],'#ffde99');rect(c,fx-1,fy-1,3,3,'#fff0c0')}
  if(hero){rect(c,x-3,y+12,6,1,'#8eecdd');if(e.reload>0){rect(c,x-10,y-28,20,2,'#26324c');rect(c,x-10,y-28,20*Math.max(0,1-e.reload/1.2),2,'#f3d49c')}}
 }
 function vehicle(c,x,y,v){let dir=((Math.round((v.angle||0)/(Math.PI/8))%16)+16)%16;let index=v.kind==='police'?7:hash((v.color||'pink').split('').reduce((a,k)=>a+k.charCodeAt(0),0))%7;c.save();c.globalAlpha=.5;c.fillStyle='#091020';c.beginPath();c.ellipse(x+3,y+10,17,11,0,0,Math.PI*2);c.fill();c.restore();c.drawImage(images.vehicles,dir*64,index*64,64,64,Math.round(x-32),Math.round(y-32),64,64)}
@@ -100,17 +105,17 @@ function atmosphere(c,{clock,hour,weather,camera,W,H,cars,police}){
 function interior(c,key,name,W,H){const club=key==='club',hotel=['hotel','motel'].includes(key),gun=key==='armory',arcade=key==='arcade',clinic=key==='clinic',industrial=['warehouse','radio','observatory'].includes(key);const accent=club?'#be93ea':gun?'#89dfd6':hotel?'#eba8b6':clinic?'#9cc9ca':'#e7c18e';
  rect(c,0,0,W,H,'#101528');material(c,industrial?'concrete':hotel?'wood':'tile',46,66,W-92,H-100);material(c,industrial?'metal':'brick-blue',30,25,W-60,47);rect(c,30,25,W-60,3,'#7d7b92');rect(c,30,66,W-60,7,'#171d34');rect(c,30,72,16,H-98,'#262b43');rect(c,W-46,72,16,H-98,'#262b43');rect(c,30,H-30,W-60,6,'#090f22');rect(c,55,H-33,W-110,2,accent);
  for(let x=78;x<W-80;x+=115){sprite(c,hotel?'window-warm':'window',x,34,40,28);glow(c,x+20,70,53,accent,.13)}
- label(c,name,230,52,340,accent,16);
+ rect(c,284,29,232,28,'#17243be8');rect(c,284,29,232,1,accent);label(c,name,230,50,340,accent,16);
  // Keep furniture in the original collision footprints and leave the central mission approach clear.
- if(hotel){sprite(c,'sofa',90,112,136,68);sprite(c,'planter',72,158,38,40);sprite(c,'terminal',278,251,56,44);sprite(c,'table',492,264,92,40);sprite(c,'bed',548,114,104,70);label(c,'RECEPTION / VIOLET',470,96,230,accent,9);material(c,'tile',340,80,110,291);rect(c,346,84,98,280,'#73546844');for(let y=90;y<360;y+=20)rect(c,349,y,92,1,'#b5837840')}
- else if(gun){material(c,'metal',88,104,142,80);for(let i=0;i<6;i++){rect(c,96+i*20,124,14,3,'#bdc1bb');rect(c,101+i*20,126,3,8,'#3a4558')}material(c,'wood',484,266,124,24);sprite(c,'terminal',548,103,55,46);for(let x=275;x<355;x+=25){rect(c,x,251,20,44,'#59576a');rect(c,x+3,254,14,1,'#c5ae8b')}label(c,'LICENSED / NO REFUNDS',460,91,230,accent,10)}
- else if(arcade){for(let i=0;i<5;i++)sprite(c,'arcade',90+i*27,110,26,66);for(let i=0;i<5;i++)sprite(c,'arcade',490+i*25,102,25,56);sprite(c,'sofa',274,251,76,44);sprite(c,'table',490,265,110,30);label(c,'INSERT COIN / LOSE TIME',480,90,230,accent,10)}
+ if(hotel){sprite(c,'sofa',90,112,136,68);sprite(c,'planter',72,158,38,40);sprite(c,'terminal',278,251,56,44);sprite(c,'table',492,264,92,40);furniture(c,key==='motel'?'bed':'counter',key==='motel'?520:490,105,key==='motel'?122:150,65);label(c,'RECEPTION / VIOLET',470,96,230,accent,9);material(c,'tile',340,80,110,291);rect(c,346,84,98,280,'#73546844');for(let y=90;y<360;y+=20)rect(c,349,y,92,1,'#b5837840')}
+ else if(gun){furniture(c,'gunrack',88,104,142,80);material(c,'wood',484,266,124,24);sprite(c,'terminal',548,103,55,46);for(let x=275;x<355;x+=25){rect(c,x,251,20,44,'#59576a');rect(c,x+3,254,14,1,'#c5ae8b')}label(c,'LICENSED / NO REFUNDS',460,91,230,accent,10)}
+ else if(arcade){furniture(c,'arcade',90,110,136,72);furniture(c,'arcade',490,102,125,60);sprite(c,'sofa',274,251,76,44);sprite(c,'table',490,265,110,30);label(c,'INSERT COIN / LOSE TIME',480,90,230,accent,10)}
  else if(clinic){sprite(c,'bed',90,110,130,70);sprite(c,'bed',490,105,122,58);sprite(c,'terminal',276,252,65,40);rect(c,561,267,27,23,'#c6d9c9');rect(c,571,270,6,17,'#b76b86');rect(c,565,276,18,5,'#b76b86');label(c,'WALK IN / WALK OUT',470,92,230,accent,10)}
- else if(club){sprite(c,'sofa',90,110,136,70);sprite(c,'table',274,252,74,42);material(c,'metal',485,267,122,25);sprite(c,'terminal',548,103,56,45);rect(c,298,188,168,58,'#343046');for(let x=300;x<460;x+=20)for(let y=190;y<245;y+=18)rect(c,x,y,17,15,((x+y)/2)%3?'#8766a65a':'#62bcb55a');label(c,'THE LAST GOOD NIGHT',470,90,230,accent,10)}
- else if(industrial){for(let x=94;x<225;x+=40){material(c,'wood',x,112,34,65);rect(c,x+2,118,30,2,'#8d7984')}sprite(c,'terminal',276,253,67,40);sprite(c,'terminal',530,105,65,45);material(c,'metal',490,267,110,25);label(c,'STAFF ONLY / MERIDIAN',470,92,230,accent,10)}
+ else if(club){sprite(c,'sofa',90,110,136,70);sprite(c,'table',274,252,74,42);material(c,'metal',485,267,122,25);furniture(c,'mixer',490,103,124,56);rect(c,298,188,168,58,'#343046');for(let x=300;x<460;x+=20)for(let y=190;y<245;y+=18)rect(c,x,y,17,15,((x+y)/2)%3?'#8766a65a':'#62bcb55a');label(c,'THE LAST GOOD NIGHT',470,90,230,accent,10)}
+ else if(industrial){furniture(c,'crates',94,110,130,72);sprite(c,'terminal',276,253,67,40);sprite(c,'terminal',530,105,65,45);material(c,'metal',490,267,110,25);label(c,'STAFF ONLY / MERIDIAN',470,92,230,accent,10)}
  else{sprite(c,'table',92,120,70,54);sprite(c,'table',165,120,62,54);sprite(c,'sofa',275,252,76,40);sprite(c,'table',492,265,108,34);sprite(c,'vending',548,101,36,55);label(c,'LOCAL BUSINESS / OPEN LATE',470,90,230,accent,10)}
  rect(c,370,H-51,60,23,'#262f49');rect(c,370,H-51,60,1,accent);label(c,'EXIT [E]',370,H-35,60,accent,10);
 }
 function portrait(canvas,speaker,expression=0){const c=canvas.getContext('2d');c.imageSmoothingEnabled=false;c.clearRect(0,0,64,80);const name=speaker.toUpperCase(),index=name.includes('VEE')?0:name==='YOU'?1:name.includes('JAX')?2:name.includes('ROXY')?3:name.includes('SOL')?4:5;c.drawImage(images.portraits,index*64,expression*80,64,80,0,0,64,80)}
-return {portrait,ready,bakeTerrain,character,vehicle,atmosphere,interior,sprite,glow,palettes};
+return {furniture,roomSolids,portrait,ready,bakeTerrain,character,vehicle,atmosphere,interior,sprite,glow,palettes};
 })();

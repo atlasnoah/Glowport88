@@ -1,0 +1,2 @@
+# Needed only to regenerate the hand-drawn atlases, not to play or package the game.
+Pillow==12.3.0

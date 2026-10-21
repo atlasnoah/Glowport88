@@ -22,3 +22,13 @@
 - Opening dialogue records Vee trust and changes later Vee conversation text. This is a small relationship feature, not a branched campaign.
 - Added loading-state protection for Start/New Story and prevented gameplay keyboard actions from firing on the main menu or under overlays.
 - Expanded browser checks to 20 passing checks, including actual shop UI purchase, ammunition/reload behavior, vehicle operation, investigations, and arcade/clinic transactions.
+
+## Final art and stability pass
+- Added six unlettered neighborhood shells to reduce repeated named storefronts, plus twelve illustrated furniture props integrated in actual rooms.
+- Added room collision metadata, persistent visible investigation stations, palm variants, less noisy floor materials, clearer room signage, and route markers on maps.
+- Preserved the original 7200×5040 world and 20×15 road grid; browser assertions cover those dimensions.
+- Added fair offscreen police spawn selection, menu keyboard guards, input reset on New Story, and save validation while preserving accumulated valid reserve ammunition.
+- Added six deeper browser checks that shoot training targets, complete the two-enforcer fight, progress Roxy, validate delivery failure/retry, and simulate thirty seconds of NPC/traffic behavior. Combined suite: 26 browser checks, plus syntax/mission logic checks, passing.
+- Separate undefined-variable audit: zero errors. Frozen dependency installation passed. Actual screenshots were inspected; remaining style/scale and campaign coverage gaps are recorded.
+- Produced a self-contained HTML bundle and verified it with subresource requests blocked. The cloud browser disallows direct file navigation, so the bundle was tested through a temporary HTTP server. No direct-file compatibility claim is made.
+- This session implements a substantial playable milestone rather than every master-directive feature. The full campaign regression, true light occlusion, richer AI/mission branching, and further art polish are explicitly deferred in ROADMAP.md.

@@ -9,3 +9,7 @@ Pixel grid: 16×16 repeatable materials; 32×40 character cells, 4 directions ×
 Do not replace the connected square street grid. Use each district's material and roof palette to establish identity. Keep game-critical markers, door thresholds, and people legible. Avoid turning every surface into an emissive neon sign. Night lighting is per fixture; weather reflections appear on roads and pavement.
 
 Remaining artistic work: bespoke landmark silhouettes, richer interior furniture collision shapes, authored animation for entering cars, portrait expressions, additional vehicle classes, and manually curated street compositions. The atlas foundation is a first authored art pass, not a claim of reference parity.
+
+The in-game architecture now uses two original illustrated sheets: six named landmark shells and six unlettered neighborhood shells. Neighborhood selection varies by district; original business names are composited onto unlettered panels. The same collision footprints and door coordinates are retained. Original generated sheets retain provenance metadata and are included as editable raster source assets. They are not derived by copying pixels from the reference.
+
+Visual QA so far: day and night/rain city views and dialogue portraits have been inspected. The art is materially different from the baseline. Remaining quality gaps include consistency between tiny sprites and highly detailed architecture, repeated shells, furniture detail, true light occlusion, and curated block composition. These remain future polish rather than completed features.

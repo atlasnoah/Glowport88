@@ -5,8 +5,9 @@
   "description": "A standalone pixel-art city adventure",
   "scripts": {
     "start": "python3 -m http.server 8000 --directory Glowport88",
-    "test": "node tests/syntax.cjs && node tests/missions.cjs && node tests/smoke.cjs",
-    "assets": "python3 tools/build_assets.py"
+    "test": "node tests/syntax.cjs && node tests/missions.cjs && node tests/smoke.cjs && node tests/gameplay.cjs",
+    "assets": "python3 tools/build_assets.py",
+    "release": "python3 tools/build_release.py"
   },
   "devDependencies": {
     "playwright": "1.58.2"

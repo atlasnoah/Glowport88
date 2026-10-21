@@ -27,6 +27,9 @@ def material(name,base,colors,kind):
    d.line((1,1,14,1),fill=colors[-1])
   if kind=='slab':
    d.line((0,15,15,15),fill=colors[0]);d.line((15,0,15,15),fill=colors[0]);d.line((1,0,14,0),fill=colors[-1])
+  if kind=='wood':
+   for y in [0,8]:
+    d.line((0,y,15,y),fill=colors[0]);d.line((4 if y==0 else 12,y,4 if y==0 else 12,y+7),fill=colors[0])
   if kind=='metal':
    for y in [0,4,8,12]:d.line((0,y,15,y),fill=colors[0]);d.line((0,y+1,15,y+1),fill=colors[-1])
  sprite(name,16,16,paint)
@@ -42,7 +45,7 @@ for name,b,cs,k in [
  ('brick-warm','#66515a',['#3e3546','#735b64','#846b70'],'brick'),
  ('grass','#243d40',['#1b3038','#2b4949','#36534d'],'grain'),
  ('metal','#41495f',['#242d43','#46536b','#5d6a80'],'metal'),
- ('wood','#624955',['#3f3549','#725363','#8e6570'],'metal'),
+ ('wood','#514652',['#423a49','#574a56','#5d505c'],'wood'),
  ('tile','#4d465e',['#363247','#5c526b','#706279'],'slab')]:material(name,b,cs,k)
 
 def window(d,im):
@@ -110,6 +113,17 @@ sprite('bed',48,40,bed)
 def terminal(d,im):
  d.rectangle((1,0,26,22),fill=INK);d.rectangle((3,2,24,17),fill='#678a95');d.rectangle((5,4,22,14),fill='#162e44');d.line((7,7,18,7),fill=CYAN);d.line((7,10,14,10),fill='#78b8ad');d.rectangle((11,18,16,23),fill='#59687c');d.polygon([(2,23),(25,23),(28,28),(0,28)],fill='#747c8e');d.line((4,25,23,25),fill='#2e3e52')
 sprite('terminal',30,30,terminal)
+def palm(d,im):
+ d.polygon([(23,23),(29,25),(28,43),(24,45),(22,40)],fill=INK)
+ d.polygon([(23,24),(26,25),(25,42),(23,43)],fill='#997f79')
+ for y in range(29,43,4):d.line((23,y,26,y-1),fill='#5c5263')
+ for k in range(7):
+  a=k*math.pi*2/7;vx=math.cos(a);vy=math.sin(a)
+  pts=[(24,20),(24+vx*10-vy*5,20+vy*8+vx*5),(24+vx*21,20+vy*16+4),(24+vx*12+vy*2,20+vy*10-vx*2)]
+  d.polygon(pts,fill=['#336a61','#3d7e6d','#4a8c75'][k%3])
+  d.line((24,20,24+vx*18,20+vy*14+3),fill='#6ca28a')
+ d.ellipse((21,17,27,23),fill='#82ae8d')
+sprite('palm',48,48,palm)
 atlas.save(OUT/'city-atlas.png',optimize=True)
 # Authored body shapes, four directions, eight poses (idle, walking x4, aim, recoil, reload).
 char=Image.new('RGBA',(32*8,40*4*12))
