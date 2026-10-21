@@ -179,6 +179,9 @@ function drawTerrain(){
  for(let x=84;x<MW-84;x+=120)for(let y=70;y<MH-84;y+=120){ if(withinRoad(x,y,34)) continue; let r=((x*13+y*7)>>4)&3; drawFacadeProp(t,x,y,r); if(rand()<.36){t.fillStyle='#48586a';t.fillRect(x+18,y+3,12,2);t.fillRect(x+21,y+5,2,6);t.fillRect(x+26,y+5,2,6)} if(rand()<.28){t.fillStyle='#9e7c55';t.fillRect(x+34,y+8,9,9);t.fillStyle='#4f835f';t.fillRect(x+36,y+4,5,5)} }
  for(let b of buildings)drawBuilding(t,b); for(let tr of trees){if(tr.kind==='palm')drawPalm(t,tr.x,tr.y,tr.size/10);else{t.fillStyle='#1b4b3f';t.beginPath();t.arc(tr.x+2,tr.y+4,tr.size,0,TAU);t.fill();t.fillStyle=tr.c;t.beginPath();t.arc(tr.x,tr.y,tr.size*.72,0,TAU);t.fill();t.fillStyle='#56ba8d';t.fillRect(tr.x-3,tr.y-5,5,5)}} for(let l of streetlights){t.fillStyle='#23313f';t.fillRect(l.x-2,l.y-3,5,8);t.fillStyle='#fbe3a0';t.fillRect(l.x-1,l.y-5,3,3);t.fillStyle='#5df0ef';t.fillRect(l.x-1,l.y-8,3,2)}
 }
+const mapBase=document.createElement('canvas');mapBase.width=800;mapBase.height=530;
+const mc=mapBase.getContext('2d',{alpha:false});mc.imageSmoothingEnabled=false;
+const mapX=x=>x/MW*mapBase.width,mapY=y=>y/MH*mapBase.height;
 function makeMap(){
  mc.fillStyle='#4b635b';mc.fillRect(0,0,800,530);
  for(let d of lands){mc.fillStyle=d.ground;mc.fillRect(mapX(d.x0),mapY(d.y0),mapX(d.x1-d.x0),mapY(d.y1-d.y0))}
@@ -187,6 +190,7 @@ function makeMap(){
  for(let p of debris)if(p.type==='park'){mc.fillStyle='#3f8869';mc.fillRect(mapX(p.x),mapY(p.y),mapX(p.w),mapY(p.h))}
  for(let d of lands){mc.fillStyle='#f3e9cc';mc.font='bold 12px monospace';mc.textAlign='center';mc.fillText(d.name,mapX(d.x),mapY(d.y-110))}mc.textAlign='left';
 }
+drawTerrain();
 makeMap();
 const GUNS=[{id:'fists',name:'FISTS',price:0,cool:.42,damage:17,radius:28},{id:'bat',name:'BASEBALL BAT',price:120,cool:.42,damage:29,radius:46},{id:'pistol',name:'9MM PISTOL',price:350,cool:.36,damage:26,mag:12,maxAmmo:84,ammoPrice:80,speed:640},{id:'shotgun',name:'PUMP SHOTGUN',price:780,cool:.83,damage:17,mag:6,maxAmmo:48,ammoPrice:130,speed:580,spread:5},{id:'smg',name:'NEON SMG',price:1350,cool:.12,damage:12,mag:28,maxAmmo:180,ammoPrice:180,speed:675}];
 const tutorialChapters=[
@@ -226,6 +230,11 @@ const sideTypes=[
 ];
 const sideBoards=['arcade','clinic','diner','motel','club','radio','pier','records'];
 const npcs=[],cars=[],police=[],bullets=[],enemies=[],pickups=[],effects=[];
+let world={clock:0},player,log=[],screen='menu',paused=false,showMap=false,showJournal=false,shopOpen=false;
+let last=0,damageFlash=0,toast='',toastTimer=0,saveClock=0,frameCount=0;
+const lm=key=>landmarks.find(l=>l.key===key);
+const camera={x:0,y:0},pointer={x:W/2,y:H/2,active:false};
+const controls={up:false,down:false,left:false,right:false,shift:false,space:false,fire:false};
 const ambientLines=[
  'My landlord put a parking meter on my porch.',
  'If the pigeon wears sunglasses, DON’T TRUST IT.',
