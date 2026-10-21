@@ -1,0 +1,787 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>GLOWPORT ’88 | ART REHAUL PROTOTYPE</title>
+<style>
+:root{--neon:#ff63b8;--teal:#5cf4df;--gold:#ffda8d;--ink:#0a1023}*{box-sizing:border-box}html,body{margin:0;background:#070d19;color:#f3f1e8;font-family:Consolas,'Courier New',monospace}body{min-height:100vh;background:radial-gradient(ellipse at 18% 14%,#4a235f 0,transparent 42%),radial-gradient(ellipse at 84% 74%,#154d57 0,transparent 50%),radial-gradient(ellipse at 55% 50%,#121a38 0,transparent 58%),#070b18;display:flex;justify-content:center;align-items:flex-start;padding:16px;overscroll-behavior:none}button{color:inherit;font-family:inherit;cursor:pointer}.wrapper{width:min(1250px,100%);margin:auto}.mast{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}.logo{font-size:clamp(15px,2vw,22px);font-weight:900;color:var(--teal);letter-spacing:.16em;text-shadow:0 0 20px #53f2dc80,0 0 40px #ff72c433}.subtitle{font-size:10px;letter-spacing:.2em;color:#a0c2c4}.buttons{display:flex;gap:7px;flex-wrap:wrap}.tiny{border:1px solid #46687b;background:#172639;border-radius:7px;padding:7px 11px;font-size:11px;font-weight:800}.tiny:hover{background:#29465b}.layout{display:grid;grid-template-columns:minmax(0,1fr) 279px;gap:11px}.screen{position:relative;border:3px solid #446681;box-shadow:0 15px 50px #000b,0 0 30px #62f8e622,0 0 65px #ff69c61a;background:#11273f;overflow:hidden;border-radius:9px}.screen canvas{width:100%;height:auto;aspect-ratio:16/9;display:block;image-rendering:pixelated;cursor:crosshair}.overlay{position:absolute;inset:0;background:#080d1de8;z-index:8;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;gap:12px}.overlay h1{font-size:clamp(24px,4vw,55px);color:var(--neon);margin:0;line-height:.95;letter-spacing:.07em;text-shadow:4px 4px #522149}.overlay h2{color:var(--teal);margin:0}.overlay p{line-height:1.6;font-size:13px;max-width:530px;margin:0}.playbtn{font-size:15px;letter-spacing:.12em;font-weight:900;background:#f360ae;border:2px solid #ffbfe0;color:#141629;border-radius:7px;padding:14px 28px;box-shadow:0 5px 0 #88305e}.playbtn:hover{transform:translateY(2px);box-shadow:0 3px 0 #88305e}.menu-mini{font-size:11px;color:#bad5d3}.hidden{display:none!important}.toast{position:absolute;left:50%;top:13px;transform:translateX(-50%);background:#0e1931e8;color:#f9e9bc;border:1px solid #deab79;padding:8px 13px;font-weight:900;font-size:11px;text-align:center;max-width:88%;z-index:4;opacity:0;transition:opacity .2s;pointer-events:none}.toast.visible{opacity:1}.prompt{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);padding:8px 15px;background:#0e1f34dd;border:1px solid #61e9d5;color:#bcf5e4;font-size:11px;font-weight:900;pointer-events:none;text-align:center;max-width:95%;white-space:normal}.panel{background:linear-gradient(155deg,#16263a,#11182e);border:1px solid #40556b;border-radius:9px;padding:13px;margin-bottom:11px;box-shadow:0 8px 23px #0005}.panelhead{font-size:10px;color:#9bafbd;letter-spacing:.18em;font-weight:900;margin-bottom:9px}.mapmini{width:100%;border:2px solid #455968;image-rendering:pixelated;display:block;border-radius:4px}.district{font-size:14px;color:var(--teal);font-weight:900;margin-bottom:8px}.city-info{display:flex;justify-content:space-between;gap:4px;color:#d7e4ef;font-size:11px;margin:7px 0}.city-info b{color:#ffe4ae}.event-info{color:#ffda87;font-size:10px;letter-spacing:.025em;line-height:1.4;margin:7px 0}.bar{height:10px;background:#373548;border:1px solid #5c5f73;margin:7px 0}.bar span{display:block;height:100%;width:100%;background:linear-gradient(90deg,#e26091,#ff9eaa)}.bigstat{display:flex;justify-content:space-between;gap:4px;font-size:12px;font-weight:900;margin-bottom:5px}.cash{color:var(--gold)}.stars{color:#ffc36d;font-size:17px;letter-spacing:.1em}.chapter{color:var(--neon);font-size:13px;font-weight:900;margin:8px 0}.objective{font-size:12px;line-height:1.6;color:#d5e2e5}.side{font-size:11px;line-height:1.5;color:var(--teal);margin-top:12px;border-top:1px solid #304358;padding-top:9px}.weapon{font-size:11px;color:var(--gold);font-weight:900;margin-top:9px}.bottomhelp{font-size:11px;color:#b5cbd1;line-height:1.7;margin-top:11px;padding:0 3px}.bottomhelp b{color:#e8c18a}.window{position:fixed;inset:0;background:#070c18c9;display:flex;align-items:center;justify-content:center;z-index:20;padding:18px}.modal{background:#141f33;border:2px solid #4c8291;border-radius:10px;width:min(900px,100%);max-height:92vh;overflow:auto;padding:17px;box-shadow:0 15px 60px #000a}.modal h2{color:var(--teal);font-size:22px;margin:2px 0 13px}.modalhead{display:flex;justify-content:space-between;align-items:center;gap:9px}.close{background:#263e52;border:1px solid #6e94a1;padding:7px 11px;border-radius:6px;font-weight:bold}.fullmap{width:100%;height:auto;border:1px solid #6b8897;image-rendering:pixelated;border-radius:5px;display:block}.modalnote{font-size:11px;color:#becfce;line-height:1.6;margin-top:12px}.modal .questpanel{max-height:60vh;overflow:auto}.journalrow{display:flex;gap:14px;border-bottom:1px solid #314356;padding:10px;font-size:12px;line-height:1.5;color:#b6bfcc}.journalrow span{font-size:18px;color:#72eadc}.journalrow.here{background:#22374e;color:#fff;border-left:4px solid #ff68ae}.journalrow b{color:#ffc09c}.journalrow small{display:block;margin-top:3px}.journalfooter{line-height:1.6;color:#9fe9d8;font-size:12px}.shoprow{background:#202f46;border:1px solid #415f72;width:100%;display:flex;justify-content:space-between;align-items:center;gap:12px;margin:7px 0;padding:11px 14px;text-align:left;border-radius:6px;font-weight:900;font-size:13px}.shoprow:hover{background:#304b5c}.shoprow small{display:block;font-size:10px;color:#a9bfcd;margin-top:5px}.shoprow b{color:#ffe1a4}.shopcash{color:var(--gold);font-size:15px;font-weight:bold}.keys{font-size:10px;color:#90b1bc;margin-top:8px}.dialog{font-size:11px;color:#f7c5e3;line-height:1.5;min-height:16px;margin-top:9px}.touch{display:none;gap:12px;justify-content:space-between;align-items:end;margin-top:12px}.dp{display:grid;grid-template-columns:repeat(3,48px);grid-template-rows:repeat(2,46px);gap:3px}.dp button,.touchops button{background:#24394f;border:1px solid #78adb2;border-radius:7px;color:#fff;font-weight:900;touch-action:none}.dp [data-control="up"]{grid-column:2}.dp [data-control="left"]{grid-column:1;grid-row:2}.dp [data-control="down"]{grid-column:2;grid-row:2}.dp [data-control="right"]{grid-column:3;grid-row:2}.touchops{display:grid;grid-template-columns:repeat(3,minmax(43px,1fr));gap:4px}.touchops button{height:42px;padding:3px 8px;font-size:10px}.touchops #touchFire{background:#7d3059}.glow{font-size:10px;color:var(--gold);letter-spacing:.11em}@media(max-width:1000px){.layout{grid-template-columns:1fr}.hud{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.hud .panel{margin:0}.hud .panel:first-child{grid-row:span 2}.touch{display:flex}.mast .subtitle{display:none}.bottomhelp{margin-top:15px}}@media(max-width:600px){body{padding:6px}.hud{grid-template-columns:1fr}.hud .panel:first-child{grid-row:auto}.logo{font-size:14px}.panel{padding:10px}.screen{border-width:2px}.dp{grid-template-columns:repeat(3,38px);grid-template-rows:repeat(2,39px)}.touchops button{height:37px}.bottomhelp{font-size:10px}}
+
+#conversationPanel{z-index:35;background:#060d1bcf;align-items:flex-end;padding:24px}.convo-card{width:min(800px,96vw);background:linear-gradient(155deg,#202642,#11172e);border:2px solid #6df6e3;box-shadow:0 0 70px #4ce4dc33;border-radius:14px;padding:23px;max-height:85vh;overflow:auto}.convo-name{color:#72f5e5;letter-spacing:.2em;font-weight:900;font-size:14px;margin-bottom:12px}.convo-body{font-size:clamp(15px,2.2vw,21px);line-height:1.5;margin-bottom:20px;color:#fff0d5}.convo-choices{display:grid;gap:8px}.chat-choice{border:1px solid #536a80;background:#25334d;text-align:left;color:#fff5e4;border-radius:8px;padding:11px 15px;font-size:13px;font-weight:800}.chat-choice:hover,.chat-choice:focus{background:#435170;border-color:#f76bb9}.convo-hint{font-size:10px;color:#9bbdc3;margin-top:12px}
+</style></head>
+<body><main class="wrapper"><div class="mast"><div><div class="logo">GLOWPORT ’88 <span style="color:#ff72c4">/ ART REHAUL</span></div><div class="subtitle">AN ORIGINAL OPEN-WORLD PIXEL CRIME ADVENTURE · v1.1 ART REHAUL</div></div><div class="buttons"><button id="mapBtn" class="tiny">🗺 MAP [M]</button><button id="journalBtn" class="tiny">📖 STORY [J]</button><button id="saveBtn" class="tiny">💾 SAVE</button><button id="pauseBtn" class="tiny">Ⅱ PAUSE</button></div></div>
+<div class="layout"><div><div class="screen"><canvas id="game" width="800" height="450" tabindex="0"></canvas>
+<div id="toast" class="toast"></div><div id="prompt" class="prompt hidden"></div>
+<div id="menu" class="overlay"><div class="glow">SQUARE-CITY SANDBOX · STYLE REBUILD · REFERENCE-INSPIRED LIGHTING</div><h1>GLOWPORT<br>’88</h1><h2>ART REHAUL</h2><p>A heavier visual rebuild inspired by your pasted neon city reference. Same story systems, but with denser storefronts, stronger glow, moodier nights, and upgraded interiors. street events, rush-hour traffic, and locals who remember you. Talk to people, take jobs, and dodge the cops.</p><button class="playbtn" id="startBtn">▶ START / CONTINUE</button><button class="tiny" id="newBtn">↻ NEW STORY</button><div class="menu-mini">WASD MOVE • E TALK / INTERACT • 1–5 SWITCH WEAPONS • CLICK / F FIRE • M MAP</div></div></div>
+<div class="touch hidden" id="touch"><div class="dp"><button data-control="up">▲</button><button data-control="left">◀</button><button data-control="down">▼</button><button data-control="right">▶</button></div><div class="touchops"><button id="touchE">ENTER</button><button id="touchWeapon">WEAPON</button><button id="touchReload">RELOAD</button><button id="touchFire">FIRE</button><button data-control="shift">SPRINT</button><button data-control="space">BRAKE</button></div></div>
+<div class="bottomhelp"><b>WASD / arrows</b> walk or drive · <b>Shift</b> sprint/turbo · <b>E</b> talk / doors / vehicles / story · <b>Shift+E</b> take side jobs at cyan S markers · <b>Click / F</b> shoot · <b>1–5 / Q</b> swap weapons · <b>R</b> reload · <b>Space</b> brake · <b>M</b> map · <b>J</b> journal. Story conversations have choices. Save is automatic, with a manual Save button.</div></div>
+<aside id="hud" class="hud hidden"><div class="panel"><div class="panelhead">THE CITY GRID</div><div class="district" id="district">NEON BASIN</div><div class="city-info"><span>🕓 <b id="cityClock">8:20 AM</b></span><span>☁ <b id="weather">CLEAR</b></span></div><div id="eventStatus" class="event-info">NO ACTIVE STREET EVENT</div><canvas class="mapmini" id="minimap" width="220" height="150"></canvas><div class="keys">PINK = STORY · CYAN = SIDE JOB · GOLD = EVENT</div></div><div class="panel"><div class="panelhead">YOUR STATUS</div><div class="bigstat"><span id="cash" class="cash">$260</span><span id="speed">ON FOOT</span></div><div class="bigstat"><span>HEALTH</span><span id="health">150/150</span></div><div class="bar"><span id="healthBar"></span></div><div id="stars" class="stars">☆☆☆☆☆</div><div class="weapon" id="weapon">FISTS</div></div><div class="panel"><div class="panelhead">MAIN STORY</div><div class="chapter" id="chapter">01 · A CITY FOR SALE</div><div class="objective" id="objective">Find Vee at the Violet Hotel.</div><div class="side" id="side">Side hustles around the map.</div><div class="dialog" id="dialog"></div></div></aside></div>
+<div id="mapPanel" class="window hidden"><div class="modal"><div class="modalhead"><h2>THE CITY OF GLOWPORT</h2><button id="mapClose" class="close">CLOSE [M]</button></div><canvas id="fullmap" class="fullmap" width="800" height="530"></canvas><p class="modalnote">One huge connected city of classic square street blocks: Sunset District, Neon Downtown, Crescent Heights, Palm South, and Eastside Industrial. Pink markers show story chapters. Cyan S symbols mark repeatable side jobs.</p></div></div>
+<div id="journalPanel" class="window hidden"><div class="modal"><div class="modalhead"><h2>STORY JOURNAL</h2><button id="journalClose" class="close">CLOSE [J]</button></div><div id="journalContent" class="questpanel"></div></div></div>
+<div id="shopPanel" class="window hidden"><div class="modal" style="max-width:650px"><div class="modalhead"><h2>NEON ARMORY · WEAPONS & SUPPLIES</h2><button id="shopClose" class="close">LEAVE SHOP</button></div><p class="modalnote">Buy a weapon once, then refill ammunition whenever you need it. Switch weapons with 1–5 or Q. Click or press F to attack, R to reload.</p><div class="shopcash" id="shopCash">$0</div><div id="shopItems"></div></div></div>
+<div id="conversationPanel" class="window hidden"><div class="convo-card"><div class="convo-name" id="conversationWho">VEE</div><div class="convo-body" id="conversationBody">Welcome to Glowport.</div><div class="convo-choices" id="conversationChoices"></div><div class="convo-hint">Choose with mouse or number keys 1–3. ENTER advances the first option.</div></div></div>
+<div id="pausePanel" class="window hidden"><div class="modal" style="max-width:380px;text-align:center"><h2>PAUSED</h2><p class="modalnote">Glowport will still be here when you get back.</p><div style="display:grid;gap:10px;margin-top:20px"><button id="pauseClose" class="tiny">RESUME</button><button id="pauseSave" class="tiny">SAVE PROGRESS</button><button id="pauseRestart" class="tiny">START NEW STORY</button></div></div></div>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id);
+const canvas=$('game'),ctx=canvas.getContext('2d',{alpha:false});ctx.imageSmoothingEnabled=false;
+const W=800,H=450,MW=7200,MH=5040,TAU=Math.PI*2;
+let seed=886244;const rand=()=>((seed=(seed*1664525+1013904223)>>>0)/4294967296);
+const rnd=(a,b)=>a+(b-a)*rand(),pick=a=>a[Math.floor(rand()*a.length)],clamp=(n,a,b)=>Math.max(a,Math.min(b,n)),distance=(a,b,c,d)=>Math.hypot(a-c,b-d);
+const COLORS={ocean:'#132d43',road:'#34394d',neon:'#ff66be',aqua:'#4ff1dc',gold:'#ffd27c'};
+const lands=[
+ {id:'west',name:'SUNSET DISTRICT',x:1120,y:2510,rx:1060,ry:2460,x0:28,x1:2200,y0:28,y1:5012,ground:'#526d60',roofs:['#79768e','#ac778a','#ba9776'],phase:.9},
+ {id:'core',name:'NEON DOWNTOWN',x:3600,y:2520,rx:1400,ry:990,x0:2200,x1:5000,y0:1530,y1:3530,ground:'#626c6c',roofs:['#7d668b','#748ca2','#9b6c88'],phase:2.1},
+ {id:'north',name:'CRESCENT HEIGHTS',x:3600,y:778,rx:1400,ry:750,x0:2200,x1:5000,y0:28,y1:1530,ground:'#456a5b',roofs:['#658da0','#8e9274','#797a9d'],phase:1.3},
+ {id:'south',name:'PALM SOUTH',x:3600,y:4271,rx:1400,ry:741,x0:2200,x1:5000,y0:3530,y1:5012,ground:'#5f765c',roofs:['#a48a74','#83a09c','#87748b'],phase:2.9},
+ {id:'east',name:'EASTSIDE INDUSTRIAL',x:6090,y:2510,rx:1090,ry:2480,x0:5000,x1:7172,y0:28,y1:5012,ground:'#5b675f',roofs:['#7e9299','#967c72','#716b90'],phase:1.9}
+];
+// Straight road grid. One connected rectangular city, not a collection of islands.
+const roadXs=Array.from({length:20},(_,i)=>160+i*360);
+const roadYs=Array.from({length:15},(_,i)=>160+i*340);
+const STREET=66;
+for(let d of lands)d.poly=[{x:d.x0,y:d.y0},{x:d.x1,y:d.y0},{x:d.x1,y:d.y1},{x:d.x0,y:d.y1}];
+function polyContains(points,x,y){let inside=false;for(let i=0,j=points.length-1;i<points.length;j=i++){let a=points[i],b=points[j];if((a.y>y)!==(b.y>y)&&x<(b.x-a.x)*(y-a.y)/(b.y-a.y)+a.x)inside=!inside}return inside}
+const streetPaths=[],districtRings={};
+function road(points,w=STREET,name='',loop=false,bridge=false){streetPaths.push({points,w,name,loop,bridge})}
+for(let x of roadXs)road([{x,y:40},{x,y:MH-40}],STREET,(x%720?'CROSS STREET':'PALM AVENUE'));
+for(let y of roadYs)road([{x:40,y},{x:MW-40,y}],STREET,(y%680?'STREET':'NEON BOULEVARD'));
+// Visible, driveable traffic loops laid out on real grid intersections.
+const rings={
+ west:[2,5,3,11],core:[8,12,5,10],north:[8,12,1,4],south:[8,12,11,13],east:[15,18,3,11]
+};
+for(let d of lands){let [l,r,t,b]=rings[d.id],x1=roadXs[l],x2=roadXs[r],y1=roadYs[t],y2=roadYs[b];
+ districtRings[d.id]=[{x:x1,y:y1},{x:x2,y:y1},{x:x2,y:y2},{x:x1,y:y2}];}
+const segments=[];
+for(let r of streetPaths){let n=r.points.length;for(let k=0;k<n-1+(r.loop?1:0);k++)segments.push({a:r.points[k],b:r.points[(k+1)%n],w:r.w,bridge:false,path:r})}
+function distSegment(x,y,a,b){let dx=b.x-a.x,dy=b.y-a.y,t=clamp(((x-a.x)*dx+(y-a.y)*dy)/(dx*dx+dy*dy||1),0,1),xx=a.x+t*dx,yy=a.y+t*dy;return Math.hypot(x-xx,y-yy)}
+function onLand(x,y){return Number.isFinite(x)&&Number.isFinite(y)&&x>20&&y>20&&x<MW-20&&y<MH-20}
+function districtFor(x,y){return lands.find(d=>x>=d.x0&&x<d.x1&&y>=d.y0&&y<d.y1)||lands[1]}
+const buildings=[],landmarks=[],trees=[],debris=[],streetlights=[];
+const TYPES={hotel:'🏨',gun:'🔫',radio:'📻',arcade:'👾',warehouse:'📦',observatory:'🔭',club:'🎵',clinic:'❤️',diner:'🍔',record:'💿',motel:'🛏',pier:'⚓'};
+function withinRoad(x,y,pad=0){return roadXs.some(rx=>Math.abs(rx-x)<STREET/2+pad)||roadYs.some(ry=>Math.abs(ry-y)<STREET/2+pad)}
+function canPlace(x,y,w,h,strict=true){let corners=[[x+2,y+2],[x+w-2,y+2],[x+2,y+h-2],[x+w-2,y+h-2]];
+ for(let p of corners)if(!onLand(p[0],p[1])||withinRoad(p[0],p[1],10))return false;
+ for(let b of buildings){let padding=strict?20:11;if(x<b.x+b.w+padding&&x+w+padding>b.x&&y<b.y+b.h+padding&&y+h+padding>b.y)return false}
+ return true}
+function building(x,y,w,h,d,landmark=null){const b={x:Math.round(x),y:Math.round(y),w:Math.round(w),h:Math.round(h),district:d.id,kind:landmark?'landmark':pick(['store','store','lowrise','tower','homes']),roof:pick(d.roofs),name:landmark?landmark.name:pick(['SUNSET MART','PALM BAR','ECHO CAFE','NIGHT VIDEO','NOVA STUDIO','TROPIC SHOP','WAVE 98','CASSETTE','BODEGA 88','PIXEL AUTO','LOFI LOUNGE','PARADISE','APARTMENTS']),doorX:Math.round(x+w*.5),doorY:Math.round(y+h+13),landmark};buildings.push(b);if(landmark){landmark.x=b.doorX;landmark.y=b.doorY;landmark.building=b;landmarks.push(landmark)}return b}
+const landmarkDefs=[
+ {key:'hotel',name:'VIOLET HOTEL',district:'core',angle:2.0,type:'hotel'},
+ {key:'armory',name:'NEON ARMORY',district:'core',angle:-.7,type:'gun'},
+ {key:'club',name:'CASSETTE CLUB',district:'core',angle:.55,type:'club'},
+ {key:'records',name:'RECORD EXCHANGE',district:'core',angle:3.2,type:'record'},
+ {key:'radio',name:'DEAD AIR RADIO',district:'west',angle:4.6,type:'radio'},
+ {key:'arcade',name:'STAR ARCADE',district:'west',angle:1.35,type:'arcade'},
+ {key:'motel',name:'PALM MOTEL',district:'west',angle:2.7,type:'motel'},
+ {key:'warehouse',name:'DOCKSIDE 88',district:'east',angle:1.8,type:'warehouse'},
+ {key:'diner',name:'EAST DINER',district:'east',angle:-2.3,type:'diner'},
+ {key:'observatory',name:'CRESCENT LOOKOUT',district:'north',angle:2.4,type:'observatory'},
+ {key:'clinic',name:'MARINA CLINIC',district:'south',angle:4.6,type:'clinic'},
+ {key:'pier',name:'BAYFRONT BOATHOUSE',district:'south',angle:1.4,type:'pier'}
+];
+// Locations are attached to ordinary street blocks so every mission door is reachable.
+function pointAt(d,ang,rf){return {x:d.x+Math.cos(ang)*d.rx*rf,y:d.y+Math.sin(ang)*d.ry*rf}}
+const desiredLandmarks={
+ hotel:[3640,2310],armory:[4010,2010],club:[4350,3020],records:[2970,3010],
+ radio:[1050,2190],arcade:[1530,3350],motel:[1220,1510],
+ warehouse:[6190,2920],diner:[5790,2210],observatory:[3630,800],
+ clinic:[4000,4220],pier:[2910,4620]
+};
+for(let def of landmarkDefs){
+ let d=lands.find(x=>x.id===def.district),wanted=desiredLandmarks[def.key],w=def.key==='warehouse'?160:def.key==='hotel'?141:118,h=def.key==='warehouse'?101:88;
+ let opts=[];
+ for(let i=0;i<roadXs.length-1;i++)for(let j=0;j<roadYs.length-1;j++){
+  let x0=roadXs[i]+STREET/2+22,x1=roadXs[i+1]-STREET/2-22;
+  let y0=roadYs[j]+STREET/2+22,y1=roadYs[j+1]-STREET/2-25;
+  if(x1-x0<w+8||y1-y0<h+8)continue;
+  // All candidate entrances face the southern sidewalk of a regular block.
+  let yy=y1-h-8;
+  for(let xx of [x0+5,x1-w-5,(x0+x1-w)/2]){
+   let dist=distance(xx+w/2,yy+h/2,wanted[0],wanted[1]);
+   if(xx>=d.x0&&xx+w<=d.x1&&yy>=d.y0&&yy+h<=d.y1)opts.push({x:xx,y:yy,dist});
+  }
+ }
+ opts.sort((a,b)=>a.dist-b.dist);
+ let placed=false;
+ for(let p of opts){if(canPlace(p.x,p.y,w,h)){building(p.x,p.y,w,h,d,{...def});placed=true;break}}
+ if(!placed)console.warn('NO ROOM FOR STORY BUILDING',def.key);
+}
+// Fill each square city block with short storefronts, apartments, courtyards,
+// parks, plazas and parking lots. The roads remain straight and connected.
+for(let i=0;i<roadXs.length-1;i++)for(let j=0;j<roadYs.length-1;j++){
+ let x0=roadXs[i]+STREET/2+24,x1=roadXs[i+1]-STREET/2-24;
+ let y0=roadYs[j]+STREET/2+24,y1=roadYs[j+1]-STREET/2-24;
+ let ww=x1-x0,hh=y1-y0;
+ let district=districtFor((x0+x1)/2,(y0+y1)/2);
+ let layout=(i*13+j*7+Math.floor(rand()*5))%9;
+ if((i===4&&j===5)||(i===10&&j===7)||(i===14&&j===3)||(i===8&&j===12)||layout===0){
+  // Green park with paths, benches and little ponds.
+  debris.push({type:'park',x:x0,y:y0,w:ww,h:hh});
+  for(let k=0;k<10;k++)trees.push({x:rnd(x0+15,x1-15),y:rnd(y0+14,y1-14),size:rnd(8,17),kind:pick(['palm','round','fern']),c:pick(['#247f63','#409d6c','#3ca380'])});
+  continue;
+ }
+ if(layout===1){
+  // Larger plazas leave breathing room between retail towers.
+  debris.push({type:'plaza',x:x0+34,y:y0+16,w:ww-68,h:hh-32});
+  for(let a of [x0+7,x1-104])if(canPlace(a,y0+18,97,113))building(a,y0+18,97,113,district);
+ }else if(layout===2){
+  debris.push({type:'parking',x:x0+40,y:y0+hh*.57,w:ww-80,h:hh*.28});
+  if(canPlace(x0+12,y0+12,ww-24,Math.min(112,hh*.48)))building(x0+12,y0+12,ww-24,Math.min(112,hh*.48),district);
+ }else if(layout===3||layout===4){
+  for(let c=0;c<3;c++){let width=(ww-42)/3,x=x0+7+c*(width+14),height=Math.min(112,hh*.44),y=y0+12;
+    if(canPlace(x,y,width,height))building(x,y,width,height,district);
+  }
+  for(let c=0;c<2;c++){let width=ww*.39,x=x0+10+c*(ww*.5),height=Math.min(80,hh*.32),y=y1-height-14;
+    if(canPlace(x,y,width,height))building(x,y,width,height,district);
+  }
+ }else{
+  for(let c=0;c<2;c++)for(let r=0;r<2;r++){
+   let width=ww*.38+rnd(-8,10),height=hh*.33+rnd(-7,6),x=x0+12+c*ww*.5,y=y0+11+r*hh*.50;
+   if(canPlace(x,y,width,height))building(x,y,width,height,district);
+  }
+ }
+ for(let k=0;k<4;k++){let xx=rnd(x0+12,x1-12),yy=rnd(y0+12,y1-12);if(!buildings.some(b=>xx>b.x-10&&xx<b.x+b.w+10&&yy>b.y-10&&yy<b.y+b.h+10))trees.push({x:xx,y:yy,size:rnd(7,13),kind:pick(['palm','round']),c:pick(['#258968','#378a6d'])})}
+}
+for(let s of segments){let len=distance(s.a.x,s.a.y,s.b.x,s.b.y);for(let u=85;u<len-60;u+=125){let dx=(s.b.x-s.a.x)/len,dy=(s.b.y-s.a.y)/len;for(let side of [-1,1]){let x=s.a.x+u*dx+(-dy)*side*(s.w/2+9),y=s.a.y+u*dy+dx*side*(s.w/2+9);if(onLand(x,y))streetlights.push({x,y})}}}
+const terrain=document.createElement('canvas');terrain.width=MW;terrain.height=MH;const t=terrain.getContext('2d',{alpha:false});t.imageSmoothingEnabled=false;
+function polygon(c,points,fill,stroke='',width=1){c.beginPath();c.moveTo(points[0].x,points[0].y);for(let k=1;k<points.length;k++)c.lineTo(points[k].x,points[k].y);c.closePath();if(fill){c.fillStyle=fill;c.fill()}if(stroke){c.strokeStyle=stroke;c.lineWidth=width;c.stroke()}}
+function drawPalm(c,x,y,sz=1){c.save();c.translate(Math.round(x),Math.round(y));c.scale(sz,sz);c.fillStyle='#221b27';c.fillRect(-2,-4,5,10);c.fillStyle='#c09a74';c.fillRect(-1,-9,3,12);for(let i=0;i<7;i++){let a=i*TAU/7;c.strokeStyle=i%2?'#30a786':'#176a60';c.lineWidth=4;c.beginPath();c.moveTo(0,-11);c.lineTo(Math.cos(a)*12,Math.sin(a)*10-13);c.stroke()}c.restore()}
+
+function neonRect(c,x,y,w,h,color,alpha=.24){c.save();c.globalAlpha=alpha;for(let i=3;i>=1;i--){c.fillStyle=color;c.fillRect(Math.floor(x-i),Math.floor(y-i),Math.floor(w+i*2),Math.floor(h+i*2))}c.restore()}
+function neonLine(c,x1,y1,x2,y2,color,alpha=.25,width=2){c.save();for(let i=3;i>=1;i--){c.globalAlpha=alpha/(i*.9);c.strokeStyle=color;c.lineWidth=width+i*2;c.beginPath();c.moveTo(Math.floor(x1)+.5,Math.floor(y1)+.5);c.lineTo(Math.floor(x2)+.5,Math.floor(y2)+.5);c.stroke()}c.restore()}
+function softGlow(c,x,y,r,color,alpha=.15){c.save();let g=c.createRadialGradient(x,y,0,x,y,r);g.addColorStop(0,color);g.addColorStop(1,'transparent');c.globalAlpha=alpha;c.fillStyle=g;c.beginPath();c.arc(x,y,r,0,TAU);c.fill();c.restore()}
+
+function signPalette(seed){const pairs=[["#66f7e6","#0f2634"],["#ff79c8","#351436"],["#91a0ff","#161d45"],["#ffd57d","#30291a"]];return pairs[Math.abs(seed)%pairs.length]}
+function drawWindowPanel(c,x,y,w,h,lit=true,cool=true){c.fillStyle=lit?(cool?"#6fc7f2":"#ffd6a1"):"#132338";c.fillRect(x,y,w,h);if(lit){c.fillStyle=cool?"#d7f6ff":"#fff2cd";c.fillRect(x+1,y+1,w-2,Math.max(1,Math.floor(h/3)))}}
+function drawRoofBox(c,x,y,w,h){c.fillStyle="#293348";c.fillRect(x,y,w,h);c.fillStyle="#54647a";c.fillRect(x+2,y+2,w-4,Math.max(2,h/3));c.fillStyle="#172131";c.fillRect(x+3,y+h-3,w-6,2)}
+function drawFacadeProp(c,x,y,type=0){if(type===0){c.fillStyle="#26354c";c.fillRect(x,y,12,18);c.fillStyle="#8ae4ff";c.fillRect(x+2,y+3,8,9);c.fillStyle="#142132";c.fillRect(x+3,y+13,6,2)}else if(type===1){c.fillStyle="#7d5e48";c.fillRect(x,y+7,18,3);c.fillRect(x+1,y+10,3,6);c.fillRect(x+14,y+10,3,6)}else if(type===2){c.fillStyle="#32435b";c.fillRect(x,y,4,18);c.fillStyle="#ff7ccb";c.fillRect(x+4,y+2,8,14);c.fillStyle="#1a2034";c.fillRect(x+5,y+4,6,10)}else{c.fillStyle="#283246";c.fillRect(x,y,13,13);c.fillStyle="#7ef4e8";c.fillRect(x+3,y+3,7,4);c.fillStyle="#1a2032";c.fillRect(x+2,y+9,9,2)}}
+function drawBuilding(c,b){
+ let{x,y,w,h,kind,roof,name}=b;
+ let signPair=signPalette(((x+y+w)<<1));
+ let signColor=b.landmark?(b.type==='gun'?'#ff79d4':b.type==='club'?'#8f87ff':'#64f7e3'):signPair[0];
+ let signDark=b.landmark?'#1a1631':signPair[1];
+ c.fillStyle='#08101d';c.fillRect(x+12,y+16,w,h+4); c.fillStyle='#10182a';c.fillRect(x-4,y+5,w+8,h+8);
+ c.fillStyle=roof;c.fillRect(x,y,w,h); c.fillStyle='#c9d3da';c.fillRect(x,y,w,3); c.fillStyle='#23324a';c.fillRect(x+3,y+3,w-6,h-6); c.fillStyle=roof;c.fillRect(x+5,y+7,w-10,h-13); c.fillStyle='#16243a';c.fillRect(x+8,y+11,w-16,h-27);
+ c.fillStyle='#2a3751';c.fillRect(x+6,y+8,w-12,5); drawRoofBox(c,x+9,y+9,16,8); if(w>62)drawRoofBox(c,x+w-28,y+10,15,7); if(w>80)drawRoofBox(c,x+w/2-7,y+8,14,6);
+ c.fillStyle='#31405a';for(let px=x+14;px<x+w-14;px+=22)c.fillRect(px,y+16,2,h-46);
+ let cols=Math.max(2,Math.floor((w-18)/18)), rows=Math.max(2,Math.floor((h-48)/16));
+ for(let iy=0;iy<rows;iy++)for(let ix=0;ix<cols;ix++){ let wx=x+12+ix*18, wy=y+18+iy*15; if(wx+10>x+w-12||wy+8>y+h-36) continue; let lit=((ix+iy+((x+y)>>4))%4)!==0, cool=((ix+iy)&1)===0; drawWindowPanel(c,wx,wy,10,7,lit,cool)}
+ let storefrontY=y+h-38; c.fillStyle='#10192b';c.fillRect(x+7,storefrontY,w-14,25); c.fillStyle='#20314b';c.fillRect(x+8,storefrontY+1,w-16,23);
+ let signW=Math.max(30,w-20), signX=x+10, signY=y+h-30; neonRect(c,signX,signY,signW,15,signColor,.18); c.fillStyle=signDark;c.fillRect(signX,signY,signW,15); c.fillStyle='#25304a';c.fillRect(signX+2,signY+2,signW-4,11); c.fillStyle=signColor;c.font='bold 10px monospace';c.textAlign='center'; c.fillText((name||'SHOP').slice(0,16),x+w/2,signY+11);c.textAlign='left';
+ c.fillStyle=((x+y)%3)?'#4a5d86':'#643e86';c.fillRect(x+12,y+h-13,w-24,6); for(let a=x+14;a<x+w-16;a+=8){c.fillStyle=((a/8)&1)?'#78f7e7':'#ff98d0';c.fillRect(a,y+h-12,4,2)}
+ if(kind==='store' || b.landmark){ drawFacadeProp(c,x+8,y+h-52,0); if(w>72) drawFacadeProp(c,x+w-24,y+h-51,2); if(w>90) drawFacadeProp(c,x+w/2-8,y+h-50,Math.abs((x+y)>>5)%4) }
+ neonRect(c,b.doorX-8,b.doorY-21,16,17,signColor,.14); c.fillStyle='#150f28';c.fillRect(b.doorX-8,b.doorY-19,16,15); c.fillStyle='#8d73ff';c.fillRect(b.doorX-6,b.doorY-17,12,11); c.fillStyle='#dbf9ff';c.fillRect(b.doorX-5,b.doorY-16,10,3); c.fillStyle='#f4c880';c.fillRect(b.doorX-5,b.doorY-4,10,4); c.fillStyle='#243548';c.fillRect(b.doorX-10,b.doorY-1,20,2); if(b.landmark){c.fillStyle='#62f8e8';c.fillRect(b.doorX-12,y+h-2,24,4)}
+ if(kind==='store' && w>58){ c.fillStyle='#1b2840';c.fillRect(x-3,y+h-48,5,20);c.fillStyle=signColor;c.fillRect(x-5,y+h-45,9,7); if(w>82){c.fillStyle='#1b2840';c.fillRect(x+w-2,y+h-44,5,18);c.fillStyle='#9dd8ff';c.fillRect(x+w-4,y+h-40,9,6)} }
+ c.strokeStyle='#25324a';c.beginPath();c.moveTo(x+2,y+17);c.lineTo(x-6,y+25);c.moveTo(x+w-6,y+14);c.lineTo(x+w+6,y+24);c.stroke();
+}
+function drawTerrain(){
+ t.fillStyle='#314a4f';t.fillRect(0,0,MW,MH); for(let d of lands){t.fillStyle=d.ground;t.fillRect(d.x0,d.y0,d.x1-d.x0,d.y1-d.y0)}
+ for(let k=0;k<18000;k++){let x=rnd(20,MW-20),y=rnd(20,MH-20);t.fillStyle=pick(['#537363','#4a685d','#536f66','#647665']);t.fillRect(x,y,rnd(2,7),rnd(2,5))}
+ for(let p of debris){ if(p.type==='park'){ t.fillStyle='#355f4b';t.fillRect(p.x,p.y,p.w,p.h); t.fillStyle='#b79f79';t.fillRect(p.x,p.y+p.h*.48,p.w,14);t.fillRect(p.x+p.w*.47,p.y,13,p.h); t.fillStyle='#618faa';t.fillRect(p.x+p.w*.58,p.y+p.h*.17,p.w*.22,p.h*.20); t.fillStyle='#89c5d0';t.fillRect(p.x+p.w*.61,p.y+p.h*.19,p.w*.16,p.h*.15)} else if(p.type==='plaza'){ t.fillStyle='#808d8b';t.fillRect(p.x,p.y,p.w,p.h); for(let gy=p.y+2;gy<p.y+p.h;gy+=18){t.fillStyle=(gy/18)&1?'#899694':'#738180';t.fillRect(p.x,gy,p.w,1)} for(let gx=p.x+2;gx<p.x+p.w;gx+=18){t.fillStyle=(gx/18)&1?'#899694':'#738180';t.fillRect(gx,p.y,1,p.h)} t.fillStyle='#d1ab8d';t.fillRect(p.x+p.w*.30,p.y+p.h*.40,p.w*.40,10); for(let k=0;k<3;k++)drawFacadeProp(t,p.x+22+k*48,p.y+18,1)} else {t.fillStyle='#646f74';t.fillRect(p.x,p.y,p.w,p.h); t.fillStyle='#d0c6a2';for(let k=16;k<p.w-12;k+=24)t.fillRect(p.x+k,p.y+5,2,p.h-10)}}
+ for(let x of roadXs){ t.fillStyle='#7b8388';t.fillRect(x-STREET/2-12,22,STREET+24,MH-44); t.fillStyle='#b0b0aa';t.fillRect(x-STREET/2-12,22,4,MH-44);t.fillRect(x+STREET/2+8,22,4,MH-44); t.fillStyle=COLORS.road;t.fillRect(x-STREET/2,22,STREET,MH-44); for(let lane=x-STREET/2+8; lane<x+STREET/2; lane+=22){t.fillStyle='#3f465c';t.fillRect(lane,22,2,MH-44)} t.fillStyle='#e1d5ac';for(let y=66;y<MH-60;y+=38)if(!roadYs.some(ry=>Math.abs(y-ry)<64))t.fillRect(x-2,y,4,19)}
+ for(let y of roadYs){ t.fillStyle='#7b8388';t.fillRect(22,y-STREET/2-12,MW-44,STREET+24); t.fillStyle='#b0b0aa';t.fillRect(22,y-STREET/2-12,MW-44,4);t.fillRect(22,y+STREET/2+8,MW-44,4); t.fillStyle=COLORS.road;t.fillRect(22,y-STREET/2,MW-44,STREET); for(let lane=y-STREET/2+8; lane<y+STREET/2; lane+=22){t.fillStyle='#3f465c';t.fillRect(22,lane,MW-44,2)} t.fillStyle='#d5c9ac';for(let x=70;x<MW-70;x+=38)if(!roadXs.some(rx=>Math.abs(x-rx)<64))t.fillRect(x,y-2,19,4)}
+ for(let x of roadXs)for(let y of roadYs){ for(let k=-24;k<=24;k+=12){t.fillStyle='#aeb3b1';t.fillRect(x-45,y+k,7,5);t.fillRect(x+38,y+k,7,5);t.fillRect(x+k,y-45,5,7);t.fillRect(x+k,y+38,5,7)} t.fillStyle='#f1d28d';t.fillRect(x-40,y-40,5,5);t.fillRect(x+35,y+35,5,5) }
+ for(let x=84;x<MW-84;x+=120)for(let y=70;y<MH-84;y+=120){ if(withinRoad(x,y,34)) continue; let r=((x*13+y*7)>>4)&3; drawFacadeProp(t,x,y,r); if(rand()<.36){t.fillStyle='#48586a';t.fillRect(x+18,y+3,12,2);t.fillRect(x+21,y+5,2,6);t.fillRect(x+26,y+5,2,6)} if(rand()<.28){t.fillStyle='#9e7c55';t.fillRect(x+34,y+8,9,9);t.fillStyle='#4f835f';t.fillRect(x+36,y+4,5,5)} }
+ for(let b of buildings)drawBuilding(t,b); for(let tr of trees){if(tr.kind==='palm')drawPalm(t,tr.x,tr.y,tr.size/10);else{t.fillStyle='#1b4b3f';t.beginPath();t.arc(tr.x+2,tr.y+4,tr.size,0,TAU);t.fill();t.fillStyle=tr.c;t.beginPath();t.arc(tr.x,tr.y,tr.size*.72,0,TAU);t.fill();t.fillStyle='#56ba8d';t.fillRect(tr.x-3,tr.y-5,5,5)}} for(let l of streetlights){t.fillStyle='#23313f';t.fillRect(l.x-2,l.y-3,5,8);t.fillStyle='#fbe3a0';t.fillRect(l.x-1,l.y-5,3,3);t.fillStyle='#5df0ef';t.fillRect(l.x-1,l.y-8,3,2)}
+}
+function makeMap(){
+ mc.fillStyle='#4b635b';mc.fillRect(0,0,800,530);
+ for(let d of lands){mc.fillStyle=d.ground;mc.fillRect(mapX(d.x0),mapY(d.y0),mapX(d.x1-d.x0),mapY(d.y1-d.y0))}
+ for(let x of roadXs){mc.fillStyle='#9ba6a9';mc.fillRect(mapX(x-STREET/2),0,Math.max(3,mapX(STREET)),530)}
+ for(let y of roadYs){mc.fillStyle='#9ba6a9';mc.fillRect(0,mapY(y-STREET/2),800,Math.max(3,mapY(STREET)))}
+ for(let p of debris)if(p.type==='park'){mc.fillStyle='#3f8869';mc.fillRect(mapX(p.x),mapY(p.y),mapX(p.w),mapY(p.h))}
+ for(let d of lands){mc.fillStyle='#f3e9cc';mc.font='bold 12px monospace';mc.textAlign='center';mc.fillText(d.name,mapX(d.x),mapY(d.y-110))}mc.textAlign='left';
+}
+makeMap();
+const GUNS=[{id:'fists',name:'FISTS',price:0,cool:.42,damage:17,radius:28},{id:'bat',name:'BASEBALL BAT',price:120,cool:.42,damage:29,radius:46},{id:'pistol',name:'9MM PISTOL',price:350,cool:.36,damage:26,mag:12,maxAmmo:84,ammoPrice:80,speed:640},{id:'shotgun',name:'PUMP SHOTGUN',price:780,cool:.83,damage:17,mag:6,maxAmmo:48,ammoPrice:130,speed:580,spread:5},{id:'smg',name:'NEON SMG',price:1350,cool:.12,damage:12,mag:28,maxAmmo:180,ammoPrice:180,speed:675}];
+const tutorialChapters=[
+ {name:'01 · A CITY FOR SALE',where:'hotel',task:'intro',inside:true,desc:'Enter the Violet Hotel. Walk to the pink marker and press E to meet Vee.',pay:130},
+ {name:'02 · A LITTLE INSURANCE',where:'armory',task:'buy',inside:true,desc:'Enter NEON ARMORY, walk to the cyan SHOP marker and buy the 9MM PISTOL ($350).',pay:100},
+ {name:'03 · LEARN THE HARDWARE',where:'armory',task:'switch',inside:true,desc:'Switch to FISTS (press 1), then switch back to your PISTOL (press 3).',pay:100},
+ {name:'04 · PAPER TARGETS',where:'armory',task:'target',inside:false,desc:'Exit the armory. Shoot the three glowing practice targets outside. Aim with your mouse; click or press F.',pay:180},
+ {name:'05 · THE FIRST THREAT',where:'warehouse',task:'tutorialFight',inside:false,desc:'Go to Dockside 88. Press E on the pink marker, then take down the two Meridian enforcers.',pay:450},
+ {name:'06 · EVERYONE KNOWS SOMEONE',where:'arcade',task:'informant',inside:false,desc:'Find Roxy standing outside the Star Arcade. Walk near her and press E to question her.',pay:260}
+];
+const story=[
+ ...tutorialChapters,
+ {name:'07 · DEAD AIR',where:'radio',task:'loot',inside:true,desc:'Recover an encrypted tape inside Dead Air Radio, Sunset District.',dialog:'VEE: That tape was never supposed to leave the studio. Someone killed the broadcast.',pay:320},
+ {name:'08 · THE FIXER',where:'records',task:'meet',inside:true,desc:'Bring the tape to Jax at the Record Exchange in Neon Downtown.',dialog:'JAX: This recording is a payment ledger. Meridian is laundering the whole city.',pay:430},
+ {name:'09 · EAST SPAN RUN',where:'diner',task:'drive',inside:false,desc:'Steal or borrow a car and drive to East Diner across the bay.',dialog:'JAX: Nice wheels. Keep moving. That bridge has eyes.',pay:500},
+ {name:'10 · COLD STORAGE',where:'warehouse',task:'loot',inside:true,desc:'Search Dockside 88 for the shipping ledger.',dialog:'VEE: Every container has a number, and every number hides a name. Take the ledger.',pay:550},
+ {name:'11 · THE AMBUSH',where:'warehouse',task:'fight',inside:false,desc:'Meridian enforcers are waiting at the warehouse. Defeat the ambush.',dialog:'MERIDIAN SECURITY: You were not supposed to see that shipment.',pay:725},
+ {name:'12 · UNDERGROUND FREQUENCY',where:'club',task:'meet',inside:true,desc:'Meet the DJ at Cassette Club. They can broadcast what you found.',dialog:'DJ SOL: We can put this city on every radio. But first we need an untraceable transmitter.',pay:610},
+ {name:'13 · NORTH OF THE LIGHTS',where:'observatory',task:'loot',inside:true,desc:'Take the transmitter from Crescent Lookout in Crescent Heights.',dialog:'VEE: From up here, you can see every neighborhood they plan to erase.',pay:750},
+ {name:'14 · NO SIGNAL LOST',where:'arcade',task:'drive',inside:false,desc:'Drive to Star Arcade, Sunset District, to activate the backup station.',dialog:'DJ SOL: Signal strong. The whole coast can hear you now.',pay:950},
+ {name:'15 · SPLIT SIGNAL',where:'pier',task:'meet',inside:true,desc:'Regroup with Vee at the Bayfront Boathouse after the first broadcast.',dialog:'VEE: Our signal was hijacked. Someone fed Meridian the address. There is a mole in our crew, and our best evidence is now bait.',pay:820},
+ {name:'16 · AN OLD DEBT',where:'records',task:'loot',inside:true,desc:'Find Jax’s hidden backup drive inside the Record Exchange.',dialog:'JAX: I worked for Meridian once. I kept copies because I knew the bills would come due. The mayor’s name is on everything.',pay:950},
+ {name:'17 · THE WITNESS',where:'clinic',task:'meet',inside:true,desc:'Meet the terrified dockworker hiding at Marina Clinic.',dialog:'DOCKWORKER MIKA: They burned the manifests and called it an accident. But I saw the shipment. It was never about real estate.',pay:1000},
+ {name:'18 · FALSE FLAG',where:'diner',task:'fight',inside:false,desc:'Meridian security has surrounded East Diner. Clear the roadblock.',dialog:'MERIDIAN CAPTAIN: The mayor says you are terrorists. We say you are loose ends. Do not leave this diner alive.',pay:1150},
+ {name:'19 · BACKUP FREQUENCY',where:'radio',task:'drive',inside:false,desc:'Race back to Sunset District to bring the backup drive to Dead Air Radio.',dialog:'DJ SOL: We only get one clean broadcast. After that, they shut down every transmitter in Glowport.',pay:1300},
+ {name:'20 · THE WHOLE TRUTH',where:'observatory',task:'meet',inside:true,desc:'Confront Vee at Crescent Lookout and uncover the mole.',dialog:'VEE: I was Meridian’s analyst. I leaked the location to draw their security away from Mika. I should have told you. This ends tonight.',pay:1400},
+ {name:'21 · GLOWPORT RISING',where:'hotel',task:'meet',inside:true,desc:'Return to Violet Hotel for the final city-wide transmission.',dialog:'VEE: The mayor is exposed. Meridian has lost its charter. Nobody owns this coast, not while this city has a voice. We saved Glowport together.',pay:2500}
+];
+const sideTypes=[
+ {name:'STREET CLEANUP',desc:'Face down a Meridian patrol at the marked location.',pay:540,needsFight:true},
+ {name:'PARCEL DASH',desc:'Deliver a sealed parcel across Glowport.',pay:220},
+ {name:'NIGHT COURIER',desc:'Run an after-hours delivery to the other side of town.',pay:360},
+ {name:'HOT WHEELS',desc:'Get a vehicle to the marked garage before the clock runs out.',pay:310,needsCar:true},
+ {name:'TAPE RUN',desc:'Pick up a rare cassette from the marked location.',pay:210},
+ {name:'SIDE HUSTLE',desc:'Help a shopkeeper with a quick cross-town errand.',pay:260},
+ {name:'HEAT CHECK',desc:'Get to the safehouse after losing the police tail.',pay:340,needsCalm:true}
+];
+const sideBoards=['arcade','clinic','diner','motel','club','radio','pier','records'];
+const npcs=[],cars=[],police=[],bullets=[],enemies=[],pickups=[],effects=[];
+const ambientLines=[
+ 'My landlord put a parking meter on my porch.',
+ 'If the pigeon wears sunglasses, DON’T TRUST IT.',
+ 'I owe the arcade machine an apology.',
+ 'The mayor’s haircut is a public emergency.',
+ 'That taxi charged me for emotional damage.',
+ 'Someone stole my sandwich and left a business card.',
+ 'My therapist said stop arguing with vending machines.',
+ 'I saw a raccoon driving. It indicated correctly.',
+ 'The club DJ owes me a whole Tuesday.',
+ 'The seagulls here have union representation.',
+ 'My rent went up because the moon looked expensive.',
+ 'These traffic lights are having a personal crisis.',
+ 'The hotel ghost keeps stealing the good towels.',
+ 'Meridian can buy buildings, not my mixtape.',
+ 'I told the police the flamingo did it.',
+ 'There’s a guy selling counterfeit sunshine downtown.',
+ 'The ocean called. It wants its drama back.',
+ 'I am NOT getting into another suspicious limousine.',
+ 'The hotdog vendor knows every city secret.',
+ 'I have more parking tickets than relatives.',
+ 'If my ex is here, tell them I joined the circus.'
+];
+const npcNames=['Darla','Mick','Bunny','Big Al','Toni','Mavis','Bobby','Dizzy','Nico','Pebbles','Cricket','Sunny','Shay','Lola','Ricky','Jules','Lou','Ginger'];
+let activeDialogue=null,dialogueCounter=0,dialogueRun=null;
+
+
+// LIVING CITY SYSTEM • accelerated local time, weather, daily roles, dynamic street events.
+const CITY_DAY_SECONDS=720, CITY_START_MINUTES=8*60+20;
+const NPC_JOBS=['BARISTA','MECHANIC','CLUB REGULAR','MARKET SELLER','DELIVERY RIDER','OFFICE WORKER','STREET ARTIST','TOURIST'];
+const WEATHER_TYPES=['CLEAR','CLEAR','CLOUDY','RAIN','RAIN','MIST'];
+const SOCIAL_LINES={
+ work:['Clocked in six minutes ago. I need a holiday.','Boss said the coffee machine is management.','I make minimum wage and maximum enemies.','If Meridian buys my job, I am billing them for my stress.'],
+ home:['Don’t tell my landlord I own a toaster.','I just came out to get some air and gossip.','The rent is stealing my entire personality.','My neighbor practices trombone at three in the morning.'],
+ leisure:['This club banned me for dancing too beautifully.','I had a lovely evening until somebody mentioned taxes.','The city smells like hot pavement and secrets.','I am here for the vibes and possibly the fries.'],
+ rain:['My umbrella left me for somebody wealthier.','If my shoes squeak again I am calling city hall.','This rain is personal. What did I do to the clouds?'],
+ panic:['GUNFIRE? I DID NOT SIGN UP FOR THIS!','OH HELL NO, I JUST BOUGHT THESE SHOES!','I GOT BILLS, I AM NOT DYING HERE!'],
+ night:['The moon owes me an explanation.','These streetlights know too much.','Everything weird happens after ten. Including me.']
+};
+const eventCatalog=[
+ {id:'wallet',title:'LOST WALLET',desc:'Someone found a wallet on the sidewalk.',pay:110},
+ {id:'breakdown',title:'STRANDED DRIVER',desc:'A driver needs a replacement part delivered.',pay:270},
+ {id:'busker',title:'STREET SHOW',desc:'A performer is causing a scene.',pay:85},
+ {id:'outage',title:'BLACKOUT BLOCK',desc:'The local power box blew. Restore the streetlights.',pay:190}
+];
+let streetEvent=null,eventSpawnAt=22,weather='CLEAR',nextWeatherAt=115,cityAlert='',cityAlertUntil=0,cityEventsFinished=0,relations={},trafficTick=0;
+function cityMinute(){return (CITY_START_MINUTES+Math.floor(world.clock*1440/CITY_DAY_SECONDS))%1440}
+function formatCityClock(){let t=cityMinute(),h=Math.floor(t/60),m=t%60;return ((h+11)%12+1)+':'+String(m).padStart(2,'0')+(h<12?' AM':' PM')}
+function timePhase(){let hour=cityMinute()/60;return hour<7||hour>=22?'home':hour<16?'work':'leisure'}
+function weatherLine(n){if(weather==='RAIN'&&rand()<.7)return pick(SOCIAL_LINES.rain);if(cityMinute()>1260&&rand()<.3)return pick(SOCIAL_LINES.night);return pick(SOCIAL_LINES[n.phase]||ambientLines)}
+function setCityAlert(s,duration=7){cityAlert=s;cityAlertUntil=world.clock+duration;announce(s,Math.min(4,duration))}
+function randomSidewalkNear(x,y,spread=700){for(let k=0;k<60;k++){
+ let rx=roadXs.reduce((a,b)=>Math.abs(b-x)<Math.abs(a-x)?b:a,roadXs[0]);
+ let xx=clamp(rx+(rand()<.5?-49:49)+rnd(-5,5),22,MW-22),yy=clamp(y+rnd(-spread,spread),30,MH-30);
+ if(!solidWorld(xx,yy,10))return {x:xx,y:yy};
+ }return{x:clamp(x,20,MW-20),y:clamp(y,20,MH-20)}}
+function nearestStreetX(x){return roadXs.reduce((a,b)=>Math.abs(b-x)<Math.abs(a-x)?b:a,roadXs[0])}
+function nearStreetY(y){return roadYs.reduce((a,b)=>Math.abs(b-y)<Math.abs(a-y)?b:a,roadYs[0])}
+function pavementX(x){let r=nearestStreetX(x);return r+(x<r?-48:48)}
+function pavementY(y){let r=nearStreetY(y);return r+(y<r?-48:48)}
+function setNpcDestination(n,to){n.goal={x:to.x,y:to.y};let viaY=pavementY(n.y),viaX=pavementX(n.x);
+ // Keep pedestrian routes on the sidewalk corridors rather than cutting through buildings.
+ n.waypoints=[{x:viaX,y:n.y},{x:viaX,y:viaY},{x:pavementX(to.x),y:viaY},{x:pavementX(to.x),y:to.y},{x:to.x,y:to.y}].filter(p=>!solidWorld(p.x,p.y,8));
+ n.waypoint=0;n.stuckTime=0;
+}
+function settleNpcSchedule(n,force=false){let phase=timePhase();if(!force&&n.phase===phase)return;n.phase=phase;
+ let dest=phase==='home'?n.home:phase==='work'?n.work:n.leisure;
+ setNpcDestination(n,dest);n.dwell=0;
+}
+function socialFavor(n,delta){relations[n.id]=clamp((relations[n.id]||0)+delta,-4,6);n.affinity=relations[n.id];}
+function npcPersonalLine(n){let affinity=relations[n.id]||0;if(n.panic>0)return pick(SOCIAL_LINES.panic);
+ if(affinity>=3)return `${n.name}: There you are! My favorite troublemaker.`;
+ if(affinity<=-2)return `${n.name}: Oh. It's you again.`;
+ if(weather==='RAIN')return pick(SOCIAL_LINES.rain);
+ return pick([n.say,...SOCIAL_LINES[n.phase]||[],...ambientLines.slice(0,4)]);
+}
+function pickEventLocation(){let focus=player.inCar||player;
+ let candidates=landmarks.filter(l=>distance(l.x,l.y,focus.x,focus.y)>140&&distance(l.x,l.y,focus.x,focus.y)<1750);
+ let l=pick(candidates.length?candidates:landmarks);let p=randomSidewalkNear(l.x,l.y,115);return{x:p.x,y:p.y,l};}
+function startStreetEvent(){if(streetEvent||screen!=='playing')return;let type=pick(eventCatalog),pos=pickEventLocation();
+ streetEvent={type:type.id,title:type.title,desc:type.desc,pay:type.pay,x:pos.x,y:pos.y,start:world.clock,expiry:world.clock+205,stage:0,who:pick(npcNames),district:districtFor(pos.x,pos.y).name};
+ if(type.id==='breakdown'){let choices=landmarks.filter(l=>l.key!==pos.l.key&&distance(l.x,l.y,pos.x,pos.y)>350&&distance(l.x,l.y,pos.x,pos.y)<2100);streetEvent.dest=pick(choices.length?choices:landmarks.filter(l=>l.key!==pos.l.key)).key}
+ setCityAlert('CITY EVENT: '+type.title+' · GOLD ! ON MAP',5);updateHud();
+}
+function eventMarker(){if(!streetEvent)return null;if(streetEvent.type==='breakdown'&&streetEvent.stage===1){let l=lm(streetEvent.dest);return{x:l.x,y:l.y,label:'DELIVER'}}return{x:streetEvent.x,y:streetEvent.y,label:'EVENT'}}
+function finishStreetEvent(cash,messageText){if(!streetEvent)return;player.money=Math.max(0,player.money+cash);cityEventsFinished++;setCityAlert(messageText+(cash>0?' · +$'+cash:cash<0?' · -$'+Math.abs(cash):''),5);streetEvent=null;eventSpawnAt=world.clock+rnd(35,70);saveGame();updateHud()}
+function interactStreetEvent(){let ev=streetEvent;if(!ev)return;let mark=eventMarker();if(!mark||distance(player.x,player.y,mark.x,mark.y)>72)return;
+ if(ev.type==='wallet'){
+  openConversation('DARLA · LOST WALLET',[{speaker:ev.who,text:'Somebody dropped their wallet. The universe has given you two choices and neither is subtle.',choices:[{label:'Return it to the owner.',reaction:'You get a relieved smile and a small reward.'},{label:'Keep the cash. Finders keepers.',reaction:'Nobody sees you pocket the bills.'}]}],()=>finishStreetEvent(ev.pay,'WALLET RETURNED'));
+  // Distinct rewards/choices handled by explicit dialogue choice below.
+  let conversation=activeDialogue;conversation.eventChoices=[()=>finishStreetEvent(ev.pay,'GOOD DEED · WALLET RETURNED'),()=>{crime(.15);finishStreetEvent(ev.pay+95,'WALLET KEPT · REPUTATION NOTED')}];return;
+ }
+ if(ev.type==='breakdown'){
+  if(ev.stage===0){openConversation('STRANDED DRIVER',[{speaker:ev.who,text:'My engine just made the sound of a divorced lawnmower. Can you run a part to '+lm(ev.dest).name+'?',choices:[{label:'Sure. I’ll take the part.',reaction:'Driver: You just saved my entire afternoon.'},{label:'I’ll do it. You owe me.',reaction:'Driver: Fair. Bring it over, please.'}]}],()=>{ev.stage=1;ev.expiry=world.clock+270;setCityAlert('DELIVER ENGINE PART TO '+lm(ev.dest).name,5)});return}
+  finishStreetEvent(ev.pay,'ENGINE PART DELIVERED');return;
+ }
+ if(ev.type==='busker'){
+  openConversation('STREET PERFORMER',[{speaker:ev.who,text:'Step right up! I can juggle three oranges and one unresolved emotional issue.',choices:[{label:'Cheer them on and join the show.',reaction:'The crowd loves it.'},{label:'Give the performer a $20 tip.',reaction:'They bow dramatically.'}]}],()=>finishStreetEvent(ev.pay,'STREET SHOW SUCCESS'));let conv=activeDialogue;conv.eventChoices=[()=>finishStreetEvent(ev.pay,'CROWD GOES WILD'),()=>finishStreetEvent(ev.pay-20,'YOU TIPPED THE BUSKER')];return;
+ }
+ if(ev.type==='outage'){
+  openConversation('NEIGHBORHOOD ELECTRICIAN',[{speaker:ev.who,text:'The streetlights are off and the power cabinet smells like burnt toast. Can you reboot it?',choices:[{label:'Flip the emergency breaker.',reaction:'The neon signs flicker back to life.'},{label:'Try a careful reset.',reaction:'A click. Then the street wakes up.'}]}],()=>finishStreetEvent(ev.pay,'POWER RESTORED'));return;
+ }
+}
+function updateCityLife(dt){
+ if(world.clock>=nextWeatherAt){let next=pick(WEATHER_TYPES);if(next!==weather){weather=next;setCityAlert('WEATHER UPDATE: '+weather,3)}nextWeatherAt=world.clock+rnd(85,155)}
+ if(streetEvent){if(world.clock>streetEvent.expiry){setCityAlert('STREET EVENT EXPIRED',2);streetEvent=null;eventSpawnAt=world.clock+rnd(16,35)}}
+ else if(world.clock>=eventSpawnAt)startStreetEvent();
+ for(let n of npcs)settleNpcSchedule(n);
+}
+function drawStreetSignals(){
+ for(let d of lands){let ring=districtRings[d.id];for(let k=0;k<ring.length;k++){
+  let x=ring[k].x-camera.x,y=ring[k].y-camera.y;if(x< -50||x>W+50||y< -50||y>H+50)continue;
+  let state=trafficSignal(d.id,k),col=state==='green'?'#59f3b2':state==='amber'?'#f2d783':'#ff5d86';
+  rect(ctx,x+28,y-37,9,15,'#1a2639');rect(ctx,x+31,y-33,3,8,col);
+  rect(ctx,x-37,y+27,9,15,'#1a2639');rect(ctx,x-34,y+31,3,8,col);
+ }}
+}
+function drawCityAtmosphere(){let minute=cityMinute(),hour=minute/60;
+ let darkness=hour<6?.54:hour<8?.54*(8-hour)/2:hour>18?Math.min(.54,(hour-18)/3*.54):0; if(darkness>0){ctx.globalAlpha=darkness;rect(ctx,0,0,W,H,'#061022');ctx.globalAlpha=1}
+ if(darkness>.02){ ctx.globalCompositeOperation='screen'; for(let b of landmarks){let [x,y]=groundPoint(b.x,b.y-18);if(x<-150||x>W+150||y<-130||y>H+130)continue;let col=b.type==='gun'?'#54f7e7':b.type==='club'?'#9183ff':'#ff76c8';softGlow(ctx,x,y,b.type==='club'?95:74,col,.18+Math.sin(world.clock*2+b.x*.01)*.03);softGlow(ctx,x+14,y+8,40,'#9fd8ff',.07)} for(let l of streetlights){let [x,y]=groundPoint(l.x,l.y);if(x<-60||x>W+60||y<-60||y>H+60)continue;softGlow(ctx,x,y,38,'#8ef6f4',.14)} ctx.globalAlpha=.08;rect(ctx,0,0,W,H,'#5f86ff');ctx.globalAlpha=1; ctx.globalCompositeOperation='source-over'; }
+ if(weather==='RAIN'){ctx.strokeStyle='#b7dcef85';ctx.lineWidth=1;for(let k=0;k<108;k++){let x=((k*91+world.clock*102)% (W+90))-40,y=((k*137+world.clock*382)% (H+60))-30;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-5,y+14);ctx.stroke()} ctx.globalAlpha=.08;rect(ctx,0,0,W,H,'#83b9cf');ctx.globalAlpha=1} else if(weather==='MIST'){ctx.globalAlpha=.16;rect(ctx,0,0,W,H,'#b0d6e1');ctx.globalAlpha=1}
+ if(streetEvent?.type==='outage'){let center=eventMarker(),pt=groundPoint(center.x,center.y),r=Math.hypot(pt[0]-W/2,pt[1]-H/2);if(r<700){ctx.globalAlpha=.13;rect(ctx,0,0,W,H,'#020713');ctx.globalAlpha=1}}
+ ctx.globalAlpha=.12;rect(ctx,0,0,W,24,'#091221');rect(ctx,0,H-24,W,24,'#091221');rect(ctx,0,0,22,H,'#091221');rect(ctx,W-22,0,22,H,'#091221');ctx.globalAlpha=1
+}
+function announce(msg,time=3){toast=msg;toastTimer=time;$('toast').textContent=msg;$('toast').classList.add('visible')}
+function msgLog(who,text){log.unshift({who,text});log=log.slice(0,22);$('dialog').textContent=text;announce(text,5)}
+function solidBuilding(x,y,r=9){for(let b of buildings){let dx=Math.max(b.x-x,0,x-(b.x+b.w)),dy=Math.max(b.y-y,0,y-(b.y+b.h));if(dx*dx+dy*dy<r*r)return true}return false}
+function solidWorld(x,y,r=8){if(!onLand(x,y))return true;if(solidBuilding(x,y,r))return true;for(let a of [[-r,0],[r,0],[0,-r],[0,r]])if(!onLand(x+a[0],y+a[1]))return true;return false}
+function moveCircle(o,dx,dy,r=8,indoors=false){const steps=Math.max(1,Math.ceil(Math.max(Math.abs(dx),Math.abs(dy))/5));let hit=false;for(let i=0;i<steps;i++){let x=o.x+dx/steps,y=o.y+dy/steps;if(indoors){if(x>61&&x<739&&y>67&&y<394)o.x=x;else hit=true;continue}if(!solidWorld(x,o.y,r))o.x=x;else hit=true;if(!solidWorld(o.x,y,r))o.y=y;else hit=true}return hit}
+function leaveInterior(){if(!player.inside)return;let b=lm(player.inside);player.inside=null;player.x=b.x;player.y=b.y+17;player.invuln=1.5;announce('BACK ON THE STREETS',2)}
+function enterInterior(key){let b=lm(key);if(!b)return;player.inside=key;player.ix=400;player.iy=377;player.inCar=null;player.face='up';announce('ENTERED: '+b.name,2);updateHud()}
+function nearestCar(){let closest=null,dd=43;for(let c of cars){let d=distance(player.x,player.y,c.x,c.y);if(d<dd){dd=d;closest=c}}return closest}
+function hitEntity(o,r,x,y){return distance(o.x,o.y,x,y)<r}
+function collideBodies(){if(player.inside||player.inCar)return;
+ for(let c of cars){let r=21;let dx=player.x-c.x,dy=player.y-c.y,d=Math.hypot(dx,dy)||.01;if(d<r+8){let push=r+8-d;player.x+=dx/d*push;player.y+=dy/d*push;if(Math.abs(c.speed)>65&&player.invuln<=0){damage(8);c.speed*=.68}}}
+ for(let n of npcs){let dx=player.x-n.x,dy=player.y-n.y,d=Math.hypot(dx,dy)||.01;if(d<14){let push=14-d;player.x+=dx/d*push*.7;player.y+=dy/d*push*.7;n.x-=dx/d*push*.3;n.y-=dy/d*push*.3}}
+}
+function closestRoadPoint(x,y){let best={x,y,d:Infinity};for(let s of segments){let dx=s.b.x-s.a.x,dy=s.b.y-s.a.y,t=clamp(((x-s.a.x)*dx+(y-s.a.y)*dy)/(dx*dx+dy*dy||1),0,1),px=s.a.x+dx*t,py=s.a.y+dy*t,d=distance(x,y,px,py);if(d<best.d)best={x:px,y:py,d}}return best}
+function ringPoint(r,pos){let count=r.length,idx=(pos%count+count)%count,i=Math.floor(idx),f=idx-i,a=r[i],b=r[(i+1)%count];return{x:a.x+(b.x-a.x)*f,y:a.y+(b.y-a.y)*f,angle:Math.atan2(b.x-a.x,-(b.y-a.y))}}
+function loopLength(r){let sum=0;for(let i=0;i<r.length;i++)sum+=distance(r[i].x,r[i].y,r[(i+1)%r.length].x,r[(i+1)%r.length].y);return sum}
+function loopAt(r,metres,lane=12){let total=loopLength(r),d=((metres%total)+total)%total;
+ for(let i=0;i<r.length;i++){
+  let a=r[i],b=r[(i+1)%r.length],len=distance(a.x,a.y,b.x,b.y);
+  if(d<=len||i===r.length-1){let t=clamp(d/len,0,1),tx=(b.x-a.x)/len,ty=(b.y-a.y)/len;
+   return {x:a.x+(b.x-a.x)*t-ty*lane,y:a.y+(b.y-a.y)*t+tx*lane,angle:Math.atan2(tx,-ty)};
+  }d-=len;
+ }
+}
+function spawnTraffic(){cars.length=0;
+ const colors=['#fa6ba6','#44cbbf','#f5bc65','#9b89da','#dde1d9','#77c4a5','#ec804e'];
+ for(let d of lands){let rr=districtRings[d.id],total=loopLength(rr),count=d.id==='core'?11:8;
+  for(let i=0;i<count;i++){
+   let trackDist=(i+.15)*total/count,p=loopAt(rr,trackDist),speed=rnd(68,93);
+   cars.push({x:p.x,y:p.y,angle:p.angle,speed,targetSpeed:rnd(72,108),color:pick(colors),ring:d.id,trackDist,ai:true,dir:1,health:100,w:17,h:32,style:(rand()*3)|0});
+  }
+ }
+ let place=closestRoadPoint(player.x+65,player.y+35);
+ cars.push({x:place.x,y:place.y,angle:0,speed:0,health:100,color:'#ff60b3',ai:false,parked:true,personal:true,w:18,h:35,style:2});
+}
+
+function spawnPedestrians(){npcs.length=0;
+ for(let i=0;i<170;i++){
+  let d=pick(lands),rx=pick(roadXs.filter(v=>v>d.x0+45&&v<d.x1-45)),xx=rx+(rand()<.5?-48:48),yy=rnd(d.y0+80,d.y1-80);
+  let p={x:xx,y:yy};if(solidWorld(p.x,p.y,10))p=randomSidewalkNear(d.x,d.y,600);
+  if(solidWorld(p.x,p.y,10)||npcs.some(n=>distance(n.x,n.y,p.x,p.y)<24))continue;
+  let role=pick(NPC_JOBS),here=landmarks.filter(l=>l.district===d.id),job=here.length?pick(here):pick(landmarks);
+  let home={...p},work=randomSidewalkNear(job.x,job.y,100),leisure=randomSidewalkNear(d.x,d.y,450);
+  let n={id:i,x:p.x,y:p.y,homeX:p.x,homeY:p.y,home,work,leisure,phase:null,role,
+    face:pick(['up','down','left','right']),angle:rnd(0,TAU),shirt:pick(['#f364aa','#48b9b4','#f2c87a','#ac89e6','#80d79c','#d6ac91']),
+    skin:pick(['#d9ac86','#8a624b','#e2c29e','#b87a54','#edbd8c']),hair:pick(['#1b2332','#793d35','#e7b771','#3c2341']),
+    speed:rnd(30,48),step:rnd(0,9),panic:0,name:pick(npcNames),hp:65,say:pick(ambientLines),sayTime:0,nextSay:rnd(4,22),talkCount:0,
+    dwell:rnd(0,8),affinity:relations[i]||0,waypoints:[],waypoint:0,stuckTime:0};
+  settleNpcSchedule(n,true);npcs.push(n);
+ }
+}
+function spawnCollectibles(){pickups.length=0;for(let k=0;k<55;k++){let d=pick(lands),p=pointAt(d,rnd(0,TAU),rnd(.25,.79));if(solidWorld(p.x,p.y,13))continue;pickups.push({x:p.x,y:p.y,amount:pick([15,25,40,55]),collected:false})}}
+function initialState(){world={story:0,side:null,wanted:0,crimeTimer:0,clock:0,nearHit:0,lastCopSpawn:-10};const h=lm('hotel');player={x:h?h.x:2410,y:h?h.y+32:1580,hp:150,maxHp:150,money:600,inCar:null,inside:null,ix:400,iy:380,face:'down',angle:0,walk:0,invuln:1.5,weapon:0,owned:[true,false,false,false,false],ammo:{pistol:0,shotgun:0,smg:0},mag:{pistol:0,shotgun:0,smg:0},cool:0,reload:0,armor:0};
+ streetEvent=null;eventSpawnAt=22;weather='CLEAR';nextWeatherAt=115;cityAlert='';cityEventsFinished=0;relations={};
+ spawnTraffic();spawnPedestrians();spawnCollectibles();enemies.length=0;police.length=0;bullets.length=0;effects.length=0;log=[];activeDialogue=null;world.switchStep=0;world.practice=[];world.practiceInitialized=false;world.ambush=false;world.trainingSpawned=false;world.talkCount=0;camera.x=clamp(player.x-W/2,0,MW-W);camera.y=clamp(player.y-H/2,0,MH-H)
+}
+const memoryKey='glowport88-neongrid-v08';
+function saveGame(silent=true){try{let state={story:world.story,hp:player.hp,money:player.money,weapon:player.weapon,owned:player.owned,ammo:player.ammo,mag:player.mag,inside:null,x:player.x,y:player.y,switchStep:world.switchStep,practice:world.practice,practiceInitialized:world.practiceInitialized,trainingSpawned:world.trainingSpawned,
+ clock:world.clock,weather,nextWeatherAt,cityEventsFinished,relations,
+ streetEvent:streetEvent?{...streetEvent}:null,eventSpawnAt};
+ localStorage.setItem(memoryKey,JSON.stringify(state));if(!silent)announce('PROGRESS SAVED',2)}catch(e){if(!silent)announce('SAVE UNAVAILABLE IN THIS BROWSER',2)}}
+function loadGame(){try{let s=JSON.parse(localStorage.getItem(memoryKey)||'null');if(!s)return false;
+ world.story=clamp(s.story||0,0,story.length);player.hp=clamp(s.hp||150,1,150);player.money=Math.max(0,s.money||0);player.owned=Array.isArray(s.owned)?s.owned:player.owned;player.weapon=s.weapon||0;player.ammo=s.ammo||player.ammo;player.mag=s.mag||player.mag;world.switchStep=s.switchStep||0;world.practice=Array.isArray(s.practice)?s.practice:[];world.practiceInitialized=!!s.practiceInitialized;world.trainingSpawned=world.story===4?false:!!s.trainingSpawned;world.ambush=false;
+ if(onLand(s.x,s.y)&&!solidWorld(s.x,s.y,10)){player.x=s.x;player.y=s.y}
+ world.clock=Number.isFinite(s.clock)?s.clock:0;weather=WEATHER_TYPES.includes(s.weather)?s.weather:'CLEAR';nextWeatherAt=Number.isFinite(s.nextWeatherAt)?s.nextWeatherAt:world.clock+110;cityEventsFinished=s.cityEventsFinished||0;relations=s.relations||{};
+ for(let n of npcs){n.affinity=relations[n.id]||0;settleNpcSchedule(n,true)}
+ streetEvent=s.streetEvent&&Number.isFinite(s.streetEvent.expiry)&&s.streetEvent.expiry>world.clock?s.streetEvent:null;eventSpawnAt=Math.max(world.clock+8,s.eventSpawnAt||world.clock+23);
+ return true}catch(e){console.warn('Save load failed',e);return false}}
+function launch(){initialState();$('conversationPanel').classList.add('hidden');let resumed=loadGame();screen='playing';$('menu').classList.add('hidden');$('hud').classList.remove('hidden');$('touch').classList.remove('hidden');$('game').focus();announce(resumed?'WELCOME BACK TO GLOWPORT':'WELCOME TO GLOWPORT. FOLLOW THE PINK MISSION MARKER.',4);updateHud()}
+function resetGame(){try{localStorage.removeItem(memoryKey)}catch(e){}initialState();$('conversationPanel').classList.add('hidden');screen='playing';paused=false;showJournal=false;showMap=false;shopOpen=false;hideOverlays();$('menu').classList.add('hidden');$('hud').classList.remove('hidden');$('touch').classList.remove('hidden');announce('NEW GAME: FIND VEE INSIDE THE VIOLET HOTEL',4);updateHud()}
+function damage(amount){if(player.invuln>0||player.inside||screen!=='playing')return;world.nearHit=world.clock;let amountLeft=Math.max(1,amount-player.armor*.1);player.hp=Math.max(0,player.hp-amountLeft);player.invuln=.42;damageFlash=.36;if(player.hp<=0)hospital()}
+function hospital(){if(player.inCar){player.inCar.speed=0;player.inCar.ai=false;player.inCar=null}let fine=Math.min(player.money,Math.ceil(player.money*.12));player.money-=fine;player.hp=110;player.inside=null;player.invuln=5;world.wanted=0;police.length=0;bullets.length=0;enemies.length=0;if(world.story===4){world.trainingSpawned=false;world.ambush=false}const c=lm('clinic');player.x=c.x;player.y=c.y+30;announce('MARINA CLINIC · YOU SURVIVED. MEDICAL BILL $'+fine,5);msgLog('CLINIC','Easy now. You are not made of spare parts.');saveGame()}
+function crime(x){world.wanted=clamp(world.wanted+x,0,5);world.crimeTimer=world.clock}
+function openConversation(person,lines,callback=null){
+ if(activeDialogue)return;
+ activeDialogue={person,lines,index:0,callback};$('conversationPanel').classList.remove('hidden');showConversationPage();
+}
+function showConversationPage(){
+ if(!activeDialogue)return;let d=activeDialogue,node=d.lines[d.index];
+ $('conversationWho').textContent=node.speaker||d.person;
+ $('conversationBody').textContent=node.text;
+ const opts=$('conversationChoices');opts.innerHTML='';
+ let choices=node.choices||[{label:d.index===d.lines.length-1?'[ Continue ]':'[ Next ]',reaction:null}];
+ choices.forEach((choice,i)=>{let btn=document.createElement('button');btn.className='chat-choice';btn.textContent=(i+1)+'. '+choice.label;btn.onclick=()=>advanceConversation(i);opts.appendChild(btn)})
+}
+function advanceConversation(i=0){
+ if(!activeDialogue)return;let d=activeDialogue,node=d.lines[d.index],choice=(node.choices||[{label:'Next'}])[i];if(!choice)return;
+ if(choice.reaction){$('dialog').textContent=choice.reaction;announce(choice.reaction,3)}
+ if(d.reactionPerson&&d.index===d.lines.length-1){socialFavor(d.reactionPerson,i===2?1:i===0?0:0)}
+ if(d.eventChoices&&d.index===d.lines.length-1){let job=d.eventChoices[i];d.callback=job||d.callback}
+ d.index++;if(d.index<d.lines.length){showConversationPage();return}
+ let callback=d.callback;activeDialogue=null;$('conversationPanel').classList.add('hidden');if(callback)callback();updateHud();
+}
+function npcTalk(n){
+ n.talkCount++;n.sayTime=0;n.panic=0;
+ let mood=(relations[n.id]||0),phase=n.phase||'leisure';
+ let opener=mood>=3?'Look who it is! My favorite neighbor in this ridiculous city.':mood<=-2?'We have met before. I am still recovering.':
+ phase==='work'?`I am a ${n.role.toLowerCase()} and today has already lasted three business weeks.`:
+ phase==='home'?'Just trying to get home without being judged by a parking meter.':'I am off the clock, if time is even real.';
+ let choices=[{label:'Any rumors about Meridian?',reaction:`${n.name}: ${pick(['They bought another block this morning.','My cousin saw their vans by the docks.','Ask around the radio station. People are getting nervous.'])}`},
+ {label:'How is your day going?',reaction:`${n.name}: ${weather==='RAIN'?'I am soaking wet and profoundly ungrateful.':pick(SOCIAL_LINES[phase])}`},
+ {label:'You seem cool. Take care!',reaction:`${n.name}: Well, that was unexpectedly nice.`}];
+ if(mood<=-2)choices[2]={label:'Apologize for last time.',reaction:`${n.name}: I appreciate that. Weird, but appreciated.`};
+ openConversation(n.name,[{speaker:n.name,text:opener},{speaker:n.name,text:npcPersonalLine(n),choices}],()=>{
+  world.talkCount=(world.talkCount||0)+1;
+ });
+ // Conversation choice in the second page changes how this civilian greets you later.
+ const conv=activeDialogue;conv.reactionPerson=n;
+}
+function startIntroConversation(){
+ openConversation('VEE',[
+ {speaker:'VEE',text:'You actually came. Good. Welcome to Glowport, where the mayor sells neighborhoods and the pigeons have better lawyers.'},
+ {speaker:'YOU',text:'Who are you, and why am I meeting you in a hotel?',choices:[{label:'Start talking. I’m listening.',reaction:'VEE likes that you asked questions.'},{label:'This better be worth my time.',reaction:'VEE: Oh, sweetheart. It gets worse.'}]},
+ {speaker:'VEE',text:'Meridian Holdings is quietly buying the entire city. The evidence is scattered all over town. First, you need to learn how to stay alive.'},
+ {speaker:'VEE',text:'I left you some starting cash. Go to Neon Armory, buy the 9MM, then learn how to switch and shoot before Meridian comes looking.'}
+ ],()=>storyAdvance());
+}
+function initPractice(){
+ if(world.practiceInitialized)return;
+ let a=lm('armory'),base=closestRoadPoint(a.x+90,a.y+90);let candidates=[{x:base.x-26,y:base.y-45},{x:base.x+12,y:base.y-65},{x:base.x+42,y:base.y-42},{x:base.x+8,y:base.y+38},{x:base.x-40,y:base.y+26}];
+ world.practice=candidates.filter(p=>!solidWorld(p.x,p.y,18)).slice(0,3).map((p,i)=>({...p,hp:2,id:i}));
+ // Fallback nearby street points, always leave at least three targets.
+ let attempts=0;while(world.practice.length<3&&attempts++<40){let x=a.x+rnd(-120,120),y=a.y+rnd(-130,130);if(!solidWorld(x,y,16)&&world.practice.every(t=>distance(x,y,t.x,t.y)>26))world.practice.push({x,y,hp:2,id:world.practice.length})}
+ world.practiceInitialized=true;
+ announce('TRAINING RANGE OPEN · AIM AND SHOOT ALL THREE TARGETS',4);
+}
+function spawnTutorialEnforcers(){
+ if(world.trainingSpawned)return;world.trainingSpawned=true;world.ambush=true;
+ let l=lm('warehouse'),points=[{x:l.x+60,y:l.y+65},{x:l.x-75,y:l.y+75},{x:l.x+95,y:l.y-30}];
+ let count=0;for(let p of points){if(solidWorld(p.x,p.y,13))continue;enemies.push({x:p.x,y:p.y,hp:52,stun:0,shootTimer:3.0+rnd(0,1),kind:'enemy'});if(++count===2)break}
+ if(count===0){for(let i=0;i<2;i++){let pos=closestRoadPoint(l.x+(i?100:-100),l.y+40);enemies.push({x:pos.x,y:pos.y,hp:45,stun:0,shootTimer:3+rnd(0,1),kind:'enemy'})}}
+ msgLog('VEE','There they are. Meridian sent two thugs. Use your pistol, take cover, and don’t let them corner you.');
+}
+function tutorialInformant(){let l=lm('arcade');return{x:l.x+37,y:l.y+12,name:'ROXY',shirt:'#5fe3db',skin:'#ae7b61',hair:'#ef8fc8',face:'left',walk:0}}
+function talkToInformant(){
+ openConversation('ROXY',[
+ {speaker:'ROXY',text:'You look like trouble in bargain-bin shoes. Vee sent you, didn’t she?'},
+ {speaker:'YOU',text:'I’m looking for something Meridian wants hidden.',choices:[{label:'What’s Meridian shipping through the docks?',reaction:'ROXY narrows her eyes.'},{label:'Is Vee someone I can trust?',reaction:'ROXY: Trust is expensive here.'}]},
+ {speaker:'ROXY',text:'There’s a tape at Dead Air Radio in Sunset District. It names the shell companies. Someone tried to erase it last night.'},
+ {speaker:'ROXY',text:'Take it to Jax at Record Exchange. And be careful: even the coffee shops have informants.'}
+ ],()=>storyAdvance());
+}
+function ambientSpeech(dt){
+ let p=player.inCar||player,near=0;
+ for(let n of npcs){n.sayTime=Math.max(0,(n.sayTime||0)-dt);n.nextSay-=dt;
+  let d=distance(n.x,n.y,p.x,p.y);
+  if(d>150)n.contactLock=false;
+  if(d<195&&n.sayTime>0)near++;
+  if(d<116&&near<2&&n.sayTime<=0&&(!n.contactLock||n.nextSay<=0)){
+   n.say=n.panic>0?pick(SOCIAL_LINES.panic):weather==='RAIN'?pick(SOCIAL_LINES.rain):pick([...SOCIAL_LINES[n.phase]||[],...ambientLines]);
+   n.sayTime=n.panic>0?2:3.2;n.nextSay=rnd(13,24);n.contactLock=true;near++;
+  }
+ }
+}
+function drawSpeechBubble(c,x,y,text,color='#e6edfc'){
+ let str=String(text).slice(0,45),w=Math.min(260,Math.max(92,12+str.length*6.1));
+ let bx=clamp(x-w/2,4,W-w-4),by=clamp(y-56,3,H-39);
+ c.fillStyle='#0b1935ec';c.fillRect(bx,by,w,29);c.strokeStyle='#61eee0';c.lineWidth=1;c.strokeRect(bx+.5,by+.5,w-1,28);
+ c.fillStyle='#0b1935';c.fillRect(clamp(x-3,bx+5,bx+w-8),by+28,8,5);
+ c.font='bold 10px monospace';c.fillStyle=color;c.textAlign='center';c.fillText(str,bx+w/2,by+18);c.textAlign='left';
+}
+function storyAt(){return story[world.story]||null}
+function storyMarker(){let st=storyAt();if(!st)return null;
+ if(st.task==='target'&&world.practiceInitialized){let next=world.practice.find(t=>t.hp>0);if(next)return{x:next.x,y:next.y,label:st.name,inside:false,where:st.where}}
+ if(st.task==='informant'){let n=tutorialInformant();return{x:n.x,y:n.y,label:st.name,inside:false,where:st.where}}
+ let l=lm(st.where);return{x:l.x,y:l.y,label:st.name,inside:st.inside,where:st.where}}
+
+function hasGun(){return GUNS[player.weapon].mag>0}
+function weaponName(){return GUNS[player.weapon].name}
+function equip(i){if(!player.owned[i]){announce('BUY '+GUNS[i].name+' AT NEON ARMORY',2);return}
+ player.weapon=i;player.reload=0;announce('EQUIPPED: '+GUNS[i].name,1.5);
+ if(world.story===2){if(i===0){world.switchStep=1;announce('GOOD! NOW PRESS 3 TO EQUIP THE PISTOL',4)}else if(i===2&&world.switchStep===1){world.switchStep=2;storyAdvance()}}
+ updateHud();}
+
+function reload(){let w=GUNS[player.weapon];if(!w.mag||player.reload>0||player.mag[w.id]>=w.mag||player.ammo[w.id]<=0)return;player.reload=w.id==='shotgun'?1.15:1.0;announce('RELOADING...',.8)}
+function chooseDirection(x,y){let dx=x-player.x,dy=y-player.y;return Math.atan2(dx,-dy)}
+function combatAim(){if(pointer.active)return Math.atan2(pointer.x-(player.x-camera.x),- (pointer.y-(player.y-camera.y)));return player.angle}
+function shoot(){if(screen!=='playing'||paused||showMap||showJournal||shopOpen||activeDialogue||player.inside||player.inCar)return;let g=GUNS[player.weapon];if(player.cool>0||player.reload>0)return;player.cool=g.cool;let angle=combatAim();player.angle=angle;player.face=Math.abs(Math.sin(angle))>Math.abs(Math.cos(angle))?(Math.sin(angle)>0?'right':'left'):(Math.cos(angle)>0?'up':'down');
+ if(!g.mag){let target=null,dBest=g.radius;for(let ent of [...enemies,...police.filter(p=>p.foot)]){let d=distance(ent.x,ent.y,player.x,player.y);if(d<dBest){dBest=d;target=ent}}if(target){target.hp-=g.damage;target.stun=.5;for(let k=0;k<5;k++)effects.push({x:target.x,y:target.y,vx:rnd(-30,30),vy:rnd(-25,25),life:.4,c:'#f4a96c'});if(target.kind==='police')crime(.5)}return}
+ if(player.mag[g.id]<=0){announce('EMPTY · PRESS R TO RELOAD',1);player.cool=.23;return}player.mag[g.id]--;const shots=g.spread||1;for(let k=0;k<shots;k++){let spread=(k-(shots-1)/2)*.105+rnd(-.018,.018),a=angle+spread;bullets.push({x:player.x+Math.sin(a)*16,y:player.y-Math.cos(a)*16,vx:Math.sin(a)*g.speed,vy:-Math.cos(a)*g.speed,life:.75,damage:g.damage,team:'player'})}
+ effects.push({x:player.x+Math.sin(angle)*15,y:player.y-Math.cos(angle)*15,vx:0,vy:0,life:.12,c:'#ffe7a2'});if(world.story!==3)crime(.07);if(g.id!=='smg')announce(''+g.name+'  '+player.mag[g.id]+'/'+player.ammo[g.id],.5)
+}
+function nearestInteractable(){if(player.inside){let inside=lm(player.inside);if(distance(player.ix,player.iy,400,370)<55)return {kind:'exit',distance:0};let st=storyAt();if(st&&st.inside&&st.where===player.inside&&distance(player.ix,player.iy,403,149)<83)return {kind:'story',distance:0};if(player.inside==='armory'&&distance(player.ix,player.iy,520,157)<110)return {kind:'shop',distance:0};return null}
+ let nearestPerson=null,nd=38;for(let n of npcs){let d=distance(player.x,player.y,n.x,n.y);if(d<nd){nd=d;nearestPerson=n}}
+ let best=null,bestD=58;for(let a of landmarks){let dd=distance(player.x,player.y,a.x,a.y);if(dd<bestD){bestD=dd;best={kind:'building',obj:a,distance:dd}}}
+ if(best&&best.distance<52)return best;
+ if(nearestPerson)return {kind:'npc',obj:nearestPerson};
+ if(best)return best;
+ if(!player.inCar){let c=nearestCar();if(c)return {kind:'car',obj:c}}
+ let st=storyAt();if(st&&!st.inside&&distance(player.x,player.y,lm(st.where).x,lm(st.where).y)<64)return {kind:'story',distance:0};return null}
+function storyAdvance(){const st=storyAt();if(!st)return;
+ player.money+=st.pay;world.story++;world.ambush=false;
+ if(world.story===3)initPractice();
+ if(world.story===story.length){msgLog('VEE','MERIDIAN EXPOSED. THE CITY BELONGS TO ITS PEOPLE AGAIN.');announce('CAMPAIGN COMPLETE · +$'+st.pay,6)}
+ else announce('CHAPTER COMPLETE · +$'+st.pay+' · '+story[world.story].name,5);
+ saveGame();updateHud();
+}
+function doStory(){let st=storyAt();if(!st)return;let l=lm(st.where);
+ if(st.inside){if(player.inside!==st.where||distance(player.ix,player.iy,403,149)>86)return}
+ else if(player.inside||distance((player.inCar||player).x,(player.inCar||player).y,l.x,l.y)>80)return;
+ if(st.task==='intro'){startIntroConversation();return}
+ if(st.task==='buy'){announce('OPEN THE SHOP AT THE CYAN MARKER AND PURCHASE A PISTOL',3);return}
+ if(st.task==='switch'){announce('PRESS 1 FOR FISTS, THEN 3 FOR PISTOL',3);return}
+ if(st.task==='target'){initPractice();announce('AIM WITH MOUSE · CLICK OR PRESS F ON THE GLOWING TARGETS',4);return}
+ if(st.task==='informant'){talkToInformant();return}
+ if(st.task==='tutorialFight'){if(!world.trainingSpawned){spawnTutorialEnforcers();return}if(enemies.some(e=>e.hp>0)){announce('CLEAR THE TWO MERIDIAN ENFORCERS FIRST',2);return}storyAdvance();return}
+ if(st.task==='drive'&&!player.inCar){announce('THIS MISSION NEEDS A CAR',2);return}
+ if(st.task==='fight'){
+  if(!world.ambush){world.ambush=true;for(let k=0;k<4;k++){let p={x:l.x+rnd(-110,110),y:l.y+rnd(-120,100),hp:64,stun:0,shootTimer:1+rnd(0,2),kind:'enemy'};if(solidWorld(p.x,p.y,12)){p.x=l.x+rnd(-70,70);p.y=l.y+40}enemies.push(p)}msgLog('VEE','Meridian guards spill into the street. Fight your way out!');return}
+  if(enemies.some(e=>e.hp>0)){announce('CLEAR THE MERIDIAN ENFORCERS FIRST',2);return}
+  world.ambush=false;
+ }
+ if(st.task==='meet'||st.task==='loot'){
+  let parts=st.dialog.split(': '),who=parts[0]||'VEE',line=parts.slice(1).join(': ')||st.dialog;
+  openConversation(who,[
+   {speaker:st.task==='loot'?'YOU':who,text:st.task==='loot'?'You pocket the evidence. A crackly radio cuts through the static.':line},
+   {speaker:st.task==='loot'?who:'YOU',text:st.task==='loot'?line:'What do we do next?',choices:st.task==='loot'?[{label:'Keep the evidence safe.',reaction:'EVIDENCE COLLECTED.'},{label:'Tell me why this matters.',reaction:'It connects Meridian to another district.'}]:[{label:'I’m ready for the next step.',reaction:'NEW LEAD ADDED TO YOUR JOURNAL.'},{label:'There’s more to this, isn’t there?',reaction:who+': There always is.'}]}
+  ],()=>storyAdvance());return;
+ }
+ msgLog('STORY',st.dialog);storyAdvance();
+}
+
+function startSide(from){if(world.side){announce('FINISH YOUR CURRENT SIDE HUSTLE FIRST',2);return}let type=pick(sideTypes),choices=sideBoards.filter(k=>k!==from&&lm(k).district!==lm(from).district),dest=pick(choices.length?choices:sideBoards.filter(k=>k!==from));world.side={...type,from,to:dest,started:world.clock,expires:world.clock+240};announce(type.name+' STARTED · HEAD TO '+lm(dest).name,4);updateHud()}
+function completeSide(){const s=world.side;if(!s)return;let l=lm(s.to);if(player.inside||distance((player.inCar||player).x,(player.inCar||player).y,l.x,l.y)>65)return;
+ if(s.needsCar&&!player.inCar){announce('GET INTO A CAR TO FINISH THIS JOB',2);return}
+ if(s.needsCalm&&world.wanted>.4){announce('LOSE YOUR WANTED LEVEL BEFORE FINISHING',2);return}
+ if(s.needsFight){if(!s.fightStarted){s.fightStarted=true;for(let k=0;k<2;k++){let p={x:l.x+rnd(-80,80),y:l.y+rnd(-60,70),hp:48,stun:0,shootTimer:1.4+rnd(0,1),kind:'enemy'};if(solidWorld(p.x,p.y,10)){p.x=l.x+rnd(-30,30);p.y=l.y+45}enemies.push(p)}announce('MERIDIAN ENFORCERS APPROACH! DEFEAT THEM.',3);return}if(enemies.some(e=>e.hp>0)){announce('DEFEAT THE ENFORCERS FIRST',2);return}}
+ let pay=s.pay+((world.story/2)|0)*35;player.money+=pay;world.side=null;announce('SIDE HUSTLE COMPLETE · +$'+pay,4);saveGame()}
+function action(){if(screen!=='playing'||paused||showMap||showJournal||activeDialogue||shopOpen)return;
+ if(player.inside){let st=storyAt();if(st&&st.inside&&st.where===player.inside&&distance(player.ix,player.iy,403,149)<86&&st.task!=='buy'&&st.task!=='switch'){doStory();return}
+  if(player.inside==='armory'&&distance(player.ix,player.iy,520,157)<110){showShop();return}
+  if(distance(player.ix,player.iy,400,370)<55){leaveInterior();return}return}
+ if(player.inCar){let st=storyAt();if(st&&!st.inside&&st.task!=='target'&&distance(player.inCar.x,player.inCar.y,lm(st.where).x,lm(st.where).y)<78){doStory();return}
+  if(Math.abs(player.inCar.speed)>40){announce('SLOW DOWN TO EXIT',1.8);return}let c=player.inCar;let sx=c.x+Math.cos(c.angle)*36,sy=c.y+Math.sin(c.angle)*36;
+  if(solidWorld(sx,sy,10)){sx=c.x-Math.cos(c.angle)*36;sy=c.y-Math.sin(c.angle)*36}if(solidWorld(sx,sy,10)){announce('NO ROOM TO EXIT',1.8);return}player.x=sx;player.y=sy;player.inCar=null;c.speed=0;c.ai=false;c.parked=true;return}
+ let st=storyAt(),marker=storyMarker();
+ if(st?.task==='informant'&&distance(player.x,player.y,marker.x,marker.y)<52){doStory();return}
+  if(streetEvent&&eventMarker()&&distance(player.x,player.y,eventMarker().x,eventMarker().y)<68){interactStreetEvent();return}
+ if(world.side&&distance(player.x,player.y,lm(world.side.to).x,lm(world.side.to).y)<65){completeSide();return}
+ if(st&&!st.inside&&!['target','informant'].includes(st.task)&&distance(player.x,player.y,lm(st.where).x,lm(st.where).y)<78){doStory();return}
+ // Important door interactions take priority over wandering pedestrians.
+ for(let a of landmarks)if(distance(player.x,player.y,a.x,a.y)<52){if(controls.shift&&sideBoards.includes(a.key)){startSide(a.key);return}enterInterior(a.key);return}
+ let nearby=null,best=38;for(let n of npcs){let d=distance(player.x,player.y,n.x,n.y);if(d<best){best=d;nearby=n}}
+ if(nearby){npcTalk(nearby);return}
+ for(let a of landmarks)if(distance(player.x,player.y,a.x,a.y)<58){if(controls.shift&&sideBoards.includes(a.key)){startSide(a.key);return}enterInterior(a.key);return}
+ let c=nearestCar();if(c){player.inCar=c;c.ai=false;c.parked=false;c.speed=0;if(!c.personal)crime(.28);announce('ENGINE ON · W DRIVE · SPACE BRAKE',2);return}
+ announce('GET CLOSER TO A PERSON, DOOR, CAR, OR MISSION',1.5)
+}
+
+function showShop(){shopOpen=true;$('shopPanel').classList.remove('hidden');renderShop()}
+function hideShop(){shopOpen=false;$('shopPanel').classList.add('hidden')}
+function buyItem(id){let g=GUNS.find(w=>w.id===id);if(id==='medkit'){if(player.money<120){announce('NOT ENOUGH CASH',1.5);return}player.money-=120;player.hp=Math.min(150,player.hp+75);announce('PATCHED UP +75 HP',2)}else if(id.endsWith('-ammo')){const w=GUNS.find(v=>v.id===id.replace('-ammo',''));if(!player.owned[GUNS.indexOf(w)]){announce('OWN THE WEAPON FIRST',1.5);return}if(player.money<w.ammoPrice){announce('NOT ENOUGH CASH',1.5);return}player.money-=w.ammoPrice;player.ammo[w.id]=(player.ammo[w.id]||0)+w.mag*3;announce('AMMO RESTOCKED',2)}else if(g){let idx=GUNS.indexOf(g);if(player.owned[idx]){equip(idx);hideShop();return}if(player.money<g.price){announce('NOT ENOUGH CASH',1.5);return}player.money-=g.price;player.owned[idx]=true;if(g.mag){player.mag[g.id]=g.mag;player.ammo[g.id]=g.mag*3}equip(idx);announce('PURCHASED '+g.name,2);if(world.story===1&&g.id==='pistol')storyAdvance()}renderShop();updateHud();saveGame()}
+function renderShop(){let html='';for(let i=1;i<GUNS.length;i++){let w=GUNS[i],owned=player.owned[i];html+=`<button class="shoprow" data-buy="${w.id}"><span>${w.name}<small>${w.mag?'Magazine '+w.mag+' · damage '+w.damage:'Close combat · damage '+w.damage}</small></span><b>${owned?'EQUIP':'$'+w.price}</b></button>`}for(let w of GUNS.filter(w=>w.mag))html+=`<button class="shoprow" data-buy="${w.id}-ammo"><span>${w.name} AMMO<small>+${w.mag*3} rounds</small></span><b>$${w.ammoPrice}</b></button>`;html+='<button class="shoprow" data-buy="medkit"><span>MEDICAL KIT<small>Restore 75 health</small></span><b>$120</b></button>';$('shopItems').innerHTML=html;$('shopCash').textContent='$'+player.money.toLocaleString();$('shopItems').querySelectorAll('[data-buy]').forEach(el=>el.addEventListener('click',()=>buyItem(el.dataset.buy)))}
+function toggleMap(){if(screen!=='playing'||shopOpen)return;showMap=!showMap;$('mapPanel').classList.toggle('hidden',!showMap);if(showMap)drawFullMap()}
+function toggleJournal(){if(screen!=='playing'||shopOpen)return;showJournal=!showJournal;$('journalPanel').classList.toggle('hidden',!showJournal);if(showJournal)renderJournal()}
+function renderJournal(){let html='';story.forEach((s,i)=>{if(i===0)html+='<h3>ACT I · THE CITY OF STATIC</h3>';if(i===5)html+='<h3>ACT II · SIGNAL LOST</h3>';if(i===10)html+='<h3>ACT III · THE WHOLE TRUTH</h3>';html+=`<div class="journalrow ${world.story===i?'here':''}"><span>${i<world.story?'✓':world.story===i?'◆':'○'}</span><div><b>${s.name}</b><small>${i<world.story?'COMPLETE':i===world.story?s.desc:'LOCKED UNTIL PREVIOUS CHAPTER'}</small></div></div>`});html+='<p class="journalfooter">Side hustles respawn around the city. Look for cyan S icons and hold Shift while pressing E at their door.</p>';$('journalContent').innerHTML=html}
+function hideOverlays(){for(let id of ['mapPanel','journalPanel','shopPanel','pausePanel'])$(id).classList.add('hidden')}
+function pauseGame(){if(screen!=='playing')return;if(shopOpen){hideShop();return}if(showMap){toggleMap();return}if(showJournal){toggleJournal();return}paused=!paused;$('pausePanel').classList.toggle('hidden',!paused)}
+function officerSpawn(){const target=player.inCar||player,road=closestRoadPoint(target.x+rnd(-320,320),target.y+rnd(-270,270));let p={x:road.x,y:road.y,angle:0,hp:85,speed:92+world.wanted*8,state:'car',exit:2.2+rnd(0,.7),reload:1.3,kind:'police',foot:false,stun:0};police.push(p);world.lastCopSpawn=world.clock}
+function updatePolice(dt){if(world.wanted<.35){if(police.length)police.length=0;return}let need=clamp(Math.ceil(world.wanted),1,4);if(police.length<need&&world.clock-(world.lastCopSpawn||-10)>1.75)officerSpawn();let target=player.inCar||player;for(let p of police){p.stun=Math.max(0,p.stun-dt);p.reload-=dt;if(p.hp<=0)continue;let d=distance(p.x,p.y,target.x,target.y),ax=(target.x-p.x)/(d||1),ay=(target.y-p.y)/(d||1);p.angle=Math.atan2(ax,-ay);
+ if(p.state==='car'){if(d>105){let nextX=p.x+ax*p.speed*dt,nextY=p.y+ay*p.speed*dt;if(!solidWorld(nextX,nextY,19)){p.x=nextX;p.y=nextY}else{p.exit=Math.min(p.exit,.3)}}p.exit-=dt;if(p.exit<=0||d<115){p.state='foot';p.foot=true;p.reload=1.6;effects.push({x:p.x,y:p.y,vx:0,vy:0,life:.8,c:'#f8c285'})}}
+ else{if(p.stun>0)continue;if(d>85&&d<500){let collided=moveCircle(p,ax*91*dt,ay*91*dt,8);if(collided){let side=p.avoidDir||1,avoidX=-ay*91*dt*side,avoidY=ax*91*dt*side;if(moveCircle(p,avoidX,avoidY,8)){p.avoidDir=-side;moveCircle(p,ay*91*dt*side,-ax*91*dt*side,8)}else p.avoidDir=side}}if(d<300&&p.reload<=0&&!player.inside){let dir=p.angle+rnd(-.15,.15);bullets.push({x:p.x+ax*10,y:p.y+ay*10,vx:Math.sin(dir)*450,vy:-Math.cos(dir)*450,damage:5.5,life:1.0,team:'police'});p.reload=1.35+rnd(0,.75)}}
+ }police.splice(0,police.length,...police.filter(p=>p.hp>0))}
+function updateEnemies(dt){for(let e of enemies){if(e.hp<=0)continue;e.stun=Math.max(0,e.stun-dt);if(e.stun>0)continue;let target=player.inCar||player,dist=distance(e.x,e.y,target.x,target.y),dx=(target.x-e.x)/(dist||1),dy=(target.y-e.y)/(dist||1);if(dist>125&&dist<475)moveCircle(e,dx*66*dt,dy*66*dt,10);e.shootTimer-=dt;if(dist<360&&e.shootTimer<=0&&!player.inside){let ang=Math.atan2(dx,-dy)+rnd(-.12,.12);bullets.push({x:e.x,y:e.y,vx:Math.sin(ang)*420,vy:-Math.cos(ang)*420,damage:6.5,life:1.0,team:'enemy'});e.shootTimer=rnd(1.5,2.3)}}enemies.splice(0,enemies.length,...enemies.filter(e=>e.hp>0))}
+function updateBullets(dt){for(let bullet of bullets){bullet.life-=dt;let count=Math.max(1,Math.ceil(Math.hypot(bullet.vx,bullet.vy)*dt/12));for(let k=0;k<count&&bullet.life>0;k++){bullet.x+=bullet.vx*dt/count;bullet.y+=bullet.vy*dt/count;if(solidWorld(bullet.x,bullet.y,2)&&!player.inside){bullet.life=0;break}if(bullet.team==='player'){
+ if(world.story===3&&world.practice){for(let t of world.practice){if(t.hp>0&&distance(t.x,t.y,bullet.x,bullet.y)<16){t.hp=0;bullet.life=0;effects.push({x:t.x,y:t.y,vx:0,vy:0,life:.65,c:'#6cf3ee'});announce('TARGET DOWN! '+world.practice.filter(t=>t.hp<=0).length+'/3',2);if(world.practice.every(q=>q.hp<=0))storyAdvance();break}}}
+ if(bullet.life<=0)continue;
+ let targets=[...enemies,...police.filter(p=>p.foot)];for(let p of targets){if(distance(p.x,p.y,bullet.x,bullet.y)<11){p.hp-=bullet.damage;p.stun=.15;bullet.life=0;if(p.kind==='police')crime(.2);break}}if(bullet.life>0){for(let n of npcs){if(distance(n.x,n.y,bullet.x,bullet.y)<10){bullet.life=0;n.panic=7;n.hp=(n.hp||65)-bullet.damage;n.angle=Math.atan2(n.y-player.y,n.x-player.x);n.say='SOMEONE CALL FOR HELP!';n.sayTime=3.2;crime(.8);break}}}
+ }else if(!player.inside){let target=player.inCar||player;if(distance(target.x,target.y,bullet.x,bullet.y)<(player.inCar?19:10)){bullet.life=0;if(player.inCar){damage(bullet.damage*.5)}else damage(bullet.damage);break}}
+ }}bullets.splice(0,bullets.length,...bullets.filter(b=>b.life>0));npcs.splice(0,npcs.length,...npcs.filter(n=>n.hp>0))}
+function trafficSignal(ring,corner){let order=['west','core','north','south','east'].indexOf(ring);let phase=(world.clock+(order*4+corner*7))%28;return phase<17?'green':phase<21?'amber':'red'}
+function updateTraffic(dt){
+ for(let c of cars){if(!c.ai||c===player.inCar)continue;
+  let rr=districtRings[c.ring],total=loopLength(rr),ahead=Infinity;
+  for(let o of cars){if(o===c||!o.ai||o.ring!==c.ring)continue;let gap=(o.trackDist-c.trackDist+total)%total;if(gap>.001&&gap<ahead)ahead=gap}
+  let p=player.inCar||player,now=loopAt(rr,c.trackDist),next=loopAt(rr,c.trackDist+Math.max(26,c.speed)*dt),
+    playerVehicleBlock=!!player.inCar&&player.inCar!==c&&distance(p.x,p.y,next.x,next.y)<37;
+  let obstruction=cars.some(o=>o!==c&&!o.ai&&distance(o.x,o.y,next.x,next.y)<34),safeSpeed=c.targetSpeed;
+  const minimumGap=69;
+  if(ahead<minimumGap)safeSpeed=0;
+  else if(ahead<135)safeSpeed=Math.min(safeSpeed,(ahead-minimumGap)*1.6);
+  // Stop for the next junction if the traffic light is red.
+  let nextCorner=0,cornerDistance=Infinity,soFar=0;
+  for(let i=0;i<rr.length;i++){let last=rr[i],end=rr[(i+1)%rr.length],len=distance(last.x,last.y,end.x,end.y),delta=(soFar+len-c.trackDist+total)%total;
+   if(delta<cornerDistance){cornerDistance=delta;nextCorner=(i+1)%rr.length}soFar+=len}
+  if(cornerDistance>12&&cornerDistance<110&&trafficSignal(c.ring,nextCorner)==='red')safeSpeed=Math.min(safeSpeed,Math.max(0,(cornerDistance-18)*1.6));
+  if(playerVehicleBlock||obstruction)safeSpeed=0;
+  const acceleration=92,deceleration=205;
+  c.speed=clamp(c.speed+clamp(safeSpeed-c.speed,-deceleration*dt,acceleration*dt),0,c.targetSpeed);
+  let step=Math.min(c.speed*dt,Math.max(0,ahead-minimumGap-1));
+  c.trackDist=(c.trackDist+step)%total;
+  let pos=loopAt(rr,c.trackDist);c.x=pos.x;c.y=pos.y;c.angle=pos.angle;
+ }
+}
+function separatePedestrians(){
+ const size=30,grid=new Map();for(let n of npcs){let x=Math.floor(n.x/size),y=Math.floor(n.y/size),key=x+','+y;if(!grid.has(key))grid.set(key,[]);grid.get(key).push(n)}
+ for(let n of npcs){let cx=Math.floor(n.x/size),cy=Math.floor(n.y/size);
+  for(let ox=-1;ox<=1;ox++)for(let oy=-1;oy<=1;oy++)for(let o of grid.get((cx+ox)+','+(cy+oy))||[]){
+   if(o.id<=n.id)continue;
+   let dx=n.x-o.x,dy=n.y-o.y,len=Math.hypot(dx,dy),min=22;if(len>=min)continue;
+   if(len<.001){dx=(((n.id*19)%7)-3)||1;dy=1;len=Math.hypot(dx,dy)}
+   let push=(min-len)/2+.08,ux=dx/len,uy=dy/len;
+   if(!solidWorld(n.x+ux*push,n.y+uy*push,9)){n.x+=ux*push;n.y+=uy*push}
+   if(!solidWorld(o.x-ux*push,o.y-uy*push,9)){o.x-=ux*push;o.y-=uy*push}
+  }
+ }
+}
+function updateNpcs(dt){
+ let focus=player.inCar||player,cell=56,spatial=new Map();
+ for(let n of npcs){let k=Math.floor(n.x/cell)+','+Math.floor(n.y/cell);if(!spatial.has(k))spatial.set(k,[]);spatial.get(k).push(n)}
+ for(let n of npcs){n.step+=dt*7;n.panic=Math.max(0,n.panic-dt);let d=distance(n.x,n.y,focus.x,focus.y);
+  if(world.wanted>1&&d<150)n.panic=Math.max(n.panic,3);
+  if(n.panic>0){n.angle=Math.atan2(n.y-focus.y,n.x-focus.x);n.waypoint=Math.max(0,n.waypoint)}
+  else if(n.waypoint>=n.waypoints.length){n.dwell-=dt;
+   if(n.dwell<=0){n.dwell=rnd(3,11);let center=n.phase==='home'?n.home:n.phase==='work'?n.work:n.leisure;
+    setNpcDestination(n,randomSidewalkNear(center.x,center.y,130));}}
+  let goal=n.panic>0?{x:n.x+Math.cos(n.angle)*80,y:n.y+Math.sin(n.angle)*80}:n.waypoints[n.waypoint];
+  if(!goal)continue;
+  let gx=goal.x-n.x,gy=goal.y-n.y,gg=Math.hypot(gx,gy);
+  if(gg<13){n.waypoint++;continue}
+  let vx=gx/(gg||1),vy=gy/(gg||1),cx=Math.floor(n.x/cell),cy=Math.floor(n.y/cell),avoidX=0,avoidY=0;
+  for(let ox=-1;ox<=1;ox++)for(let oy=-1;oy<=1;oy++)for(let o of spatial.get((cx+ox)+','+(cy+oy))||[]){
+   if(o===n)continue;let dd=distance(n.x,n.y,o.x,o.y);if(dd>0&&dd<37){avoidX+=(n.x-o.x)/dd*(37-dd)/37;avoidY+=(n.y-o.y)/dd*(37-dd)/37}
+  }
+  for(let c of cars){if(distance(c.x,c.y,n.x,n.y)>42)continue;let dd=distance(c.x,c.y,n.x,n.y)||1;avoidX+=(n.x-c.x)/dd*2.3;avoidY+=(n.y-c.y)/dd*2.3}
+  if(avoidX||avoidY){vx+=avoidX*1.9;vy+=avoidY*1.9;let v=Math.hypot(vx,vy)||1;vx/=v;vy/=v}
+  let sp=n.panic>0?n.speed*2.0:n.speed,xx=n.x,yy=n.y;
+  let blocked=moveCircle(n,vx*sp*dt,vy*sp*dt,9);
+  n.stuckTime=distance(xx,yy,n.x,n.y)<.15?n.stuckTime+dt:Math.max(0,n.stuckTime-dt*.8);
+  if(blocked||n.stuckTime>1.7){n.stuckTime=0;if(n.panic>0)n.angle+=1.5;
+    else{n.waypoint=Math.min(n.waypoint+1,n.waypoints.length);}}
+  n.face=Math.abs(vx)>Math.abs(vy)?(vx>0?'right':'left'):(vy>0?'down':'up');n.angle=Math.atan2(vy,vx);
+ }
+ for(let pass=0;pass<2;pass++)separatePedestrians();ambientSpeech(dt);
+}
+function updateDriving(dt){let car=player.inCar;let go=controls.up?1:controls.down?-1:0,boost=controls.shift,cap=boost?305:211;
+ if(go){car.speed=clamp(car.speed+go*(go>0?(boost?470:355):340)*dt,-98,cap)}else car.speed*=Math.pow(.977,dt*60);
+ if(controls.space)car.speed*=Math.pow(.83,dt*60);
+ if(Math.abs(car.speed)<.3)car.speed=0;
+ let turn=(controls.right?1:0)-(controls.left?1:0);if(turn)car.angle+=turn*2.25*dt*Math.sign(car.speed||1)*clamp(Math.abs(car.speed)/90,.15,1.05);
+ let dx=Math.sin(car.angle)*car.speed*dt,dy=-Math.cos(car.angle)*car.speed*dt,hit=moveCircle(car,dx,dy,19);
+ if(hit){if(Math.abs(car.speed)>55)damage(clamp(Math.abs(car.speed)*.065,3,11));car.speed*= -.23}
+ for(let c of cars){if(c===car)continue;let dd=distance(car.x,car.y,c.x,c.y),min=34;if(dd<min){let nx=(car.x-c.x)/(dd||1),ny=(car.y-c.y)/(dd||1),push=min-dd;if(!solidWorld(car.x+nx*push,car.y+ny*push,19)){car.x+=nx*push;car.y+=ny*push}if(Math.abs(car.speed)>38)damage(Math.min(9,Math.abs(car.speed)*.045));car.speed*=-.17;c.speed*=.70}}
+ for(let n of npcs){let dd=distance(car.x,car.y,n.x,n.y);if(dd<23){let dx=(n.x-car.x)/(dd||1),dy=(n.y-car.y)/(dd||1);if(!solidWorld(n.x+dx*(23-dd),n.y+dy*(23-dd),8)){n.x+=dx*(23-dd);n.y+=dy*(23-dd)}n.panic=4;if(Math.abs(car.speed)>70)crime(.12)}}}
+function update(dt){world.clock+=dt;damageFlash=Math.max(0,damageFlash-dt);if(screen!=='playing'||paused||shopOpen||showMap||showJournal||activeDialogue)return;player.invuln=Math.max(0,player.invuln-dt);player.cool=Math.max(0,player.cool-dt);if(player.reload>0){player.reload-=dt;if(player.reload<=0){let w=GUNS[player.weapon];if(w.mag){let load=Math.min(w.mag-player.mag[w.id],player.ammo[w.id]);player.mag[w.id]+=load;player.ammo[w.id]-=load}}}
+ if(player.inside){let dx=((controls.right?1:0)-(controls.left?1:0)),dy=((controls.down?1:0)-(controls.up?1:0));let mag=Math.hypot(dx,dy)||1,speed=controls.shift?163:125;let px=clamp(player.ix+dx/mag*speed*dt,68,730),py=clamp(player.iy+dy/mag*speed*dt,78,388);let roomBlock=(x,y)=>[[88,108,230,185],[270,250,350,298],[486,265,607,291]].some(([l,t,r,b])=>x>l-6&&x<r+6&&y>t-7&&y<b+8);if(!roomBlock(px,player.iy))player.ix=px;if(!roomBlock(player.ix,py))player.iy=py;if(dx||dy){player.walk+=dt*9;player.face=Math.abs(dx)>Math.abs(dy)?dx>0?'right':'left':dy>0?'down':'up'};
+ }else if(player.inCar){updateDriving(dt)}else{let mx=(controls.right?1:0)-(controls.left?1:0),my=(controls.down?1:0)-(controls.up?1:0),mag=Math.hypot(mx,my)||1,speed=controls.shift?173:122;moveCircle(player,mx/mag*speed*dt,my/mag*speed*dt,9);if(mx||my){player.walk+=dt*10;player.angle=Math.atan2(mx,-my);player.face=Math.abs(mx)>Math.abs(my)?mx>0?'right':'left':my>0?'down':'up'}}
+ if(!player.inside){updateCityLife(dt);updateTraffic(dt);updateNpcs(dt);collideBodies();updatePolice(dt);updateEnemies(dt);updateBullets(dt);if(controls.fire)shoot();for(let p of pickups)if(!p.collected&&distance(player.inCar?player.inCar.x:player.x,player.inCar?player.inCar.y:player.y,p.x,p.y)<21){p.collected=true;player.money+=p.amount;announce('STREET CASH +$'+p.amount,1.8)}}
+ if(world.story===3&&!world.practiceInitialized)initPractice();
+ if(world.story===4&&world.trainingSpawned&&world.ambush&&enemies.length===0)storyAdvance();
+ if(world.wanted>0&&world.clock-world.crimeTimer>8)world.wanted=Math.max(0,world.wanted-.11*dt);
+ if(world.wanted<.7&&player.hp<150&&world.clock-world.nearHit>4)player.hp=Math.min(150,player.hp+3.8*dt);
+ if(world.side&&world.clock>world.side.expires){announce('SIDE HUSTLE EXPIRED · TRY ANOTHER JOB',3);world.side=null}
+ for(let e of effects){e.x+=e.vx*dt;e.y+=e.vy*dt;e.life-=dt}effects.splice(0,effects.length,...effects.filter(e=>e.life>0));
+ let f=player.inCar||player;if(!player.inside){let cx=clamp(f.x-W/2,0,MW-W),cy=clamp(f.y-H/2,0,MH-H);camera.x+=(cx-camera.x)*Math.min(1,dt*6);camera.y+=(cy-camera.y)*Math.min(1,dt*6)}
+ toastTimer-=dt;if(toastTimer<=0)$('toast').classList.remove('visible');saveClock+=dt;if(saveClock>25){saveClock=0;saveGame()}if(frameCount++%11===0)updateHud();
+}
+function rect(c,x,y,w,h,color){c.fillStyle=color;c.fillRect(Math.round(x),Math.round(y),Math.round(w),Math.round(h))}
+function drawPerson(c,x,y,entity,hero=false){
+ let step=Math.sin(entity.walk||entity.step||0)>0?2:-2,face=entity.face||'down',shirt=entity.shirt||'#f56aab',skin=entity.skin||'#cf9a70',hair=entity.hair||'#172432';
+ rect(c,x-7,y+9,15,4,'#09111f8a'); c.fillStyle='#10192a';c.fillRect(x-6,y-12,12,24); c.fillStyle=shirt;c.fillRect(x-5,y-4,10,11); c.fillStyle=skin;c.fillRect(x-5,y-11,10,7); c.fillStyle=hair;c.fillRect(x-5,y-13,10,4); c.fillStyle='#26344b';c.fillRect(x-4,y+7,3,5+step);c.fillRect(x+1,y+7,3,5-step); c.fillStyle=skin;c.fillRect(x-7,y-3,3,6);c.fillRect(x+5,y-3,3,6);
+ if(face==='up'){c.fillStyle=hair;c.fillRect(x-4,y-11,8,8)} else if(face==='left'){c.fillStyle=hair;c.fillRect(x+3,y-9,2,2);c.fillStyle='#1c2030';c.fillRect(x-5,y-7,2,2)} else if(face==='right'){c.fillStyle=hair;c.fillRect(x-4,y-9,2,2);c.fillStyle='#1c2030';c.fillRect(x+4,y-7,2,2)} else{c.fillStyle='#1c2030';c.fillRect(x-3,y-8,1,2);c.fillRect(x+2,y-8,1,2)} c.fillStyle='#6ef6e4';c.fillRect(x-5,y+7,10,1); c.fillStyle='#d7f8ff';c.fillRect(x-4,y-1,8,1); if(hero){c.strokeStyle='#6ef6e4';c.lineWidth=1;c.strokeRect(Math.floor(x-8),Math.floor(y-15),16,30)}
+}
+function drawVehicle(c,x,y,v){
+ c.save();c.translate(Math.round(x),Math.round(y));c.rotate(v.angle); neonRect(c,-11,-20,22,40,v.personal?'#ffd27c':'#6bece0',.07); rect(c,-10,-21,21,42,'#151f33');rect(c,-9,-19,18,37,v.color||'#e8ecf1'); rect(c,-8,-16,16,5,'#293d59');rect(c,-6,-12,12,10,'#274261');rect(c,-5,-11,10,6,'#8dbdd7'); rect(c,-6,5,12,7,'#284460');rect(c,-8,13,16,3,'#22364c');rect(c,-7,-1,14,2,'#dff7ff55'); rect(c,-12,-14,3,8,'#101827');rect(c,9,-14,3,8,'#101827');rect(c,-12,7,3,8,'#101827');rect(c,9,7,3,8,'#101827'); rect(c,-8,-20,5,3,'#fff7b5');rect(c,3,-20,5,3,'#fff7b5');rect(c,-8,17,5,2,'#f76385');rect(c,3,17,5,2,'#f76385'); if(v.personal){rect(c,-2,0,4,3,'#ffd170')}c.restore()
+}
+function groundPoint(x,y){return [Math.round(x-camera.x),Math.round(y-camera.y)]}
+function drawMarker(c,x,y,color,text,type='circle'){let bob=Math.sin(world.clock*3)*4,rad=17+Math.sin(world.clock*3)*2;c.globalAlpha=.15;c.fillStyle=color;c.beginPath();c.arc(x,y,rad+13,0,TAU);c.fill();c.globalAlpha=1;c.strokeStyle=color;c.lineWidth=2;c.beginPath();c.ellipse(x,y+3,rad,7,0,0,TAU);c.stroke();c.fillStyle=color;c.beginPath();c.moveTo(x,y-15+bob);c.lineTo(x-9,y-31+bob);c.lineTo(x+9,y-31+bob);c.closePath();c.fill();rect(c,x-27,y-48+bob,54,13,'#121c33');c.font='bold 10px monospace';c.textAlign='center';c.fillStyle='#f5f4eb';c.fillText(text,x,y-38+bob);c.textAlign='left'}
+function drawInterior(){
+ ctx.fillStyle='#14182c';ctx.fillRect(0,0,W,H); for(let x=36;x<W-36;x+=28)for(let y=32;y<H-26;y+=28){rect(ctx,x,y,26,26,((x+y)/28|0)%2?'#2f3650':'#343d5b')} rect(ctx,30,26,740,24,'#1b2840');rect(ctx,30,416,740,14,'#182133');rect(ctx,30,26,16,404,'#172235');rect(ctx,754,26,16,404,'#172235');
+ let b=lm(player.inside),gun=player.inside==='armory',clinic=player.inside==='clinic',arcade=player.inside==='arcade',hotel=player.inside==='hotel'||player.inside==='motel',club=player.inside==='club';
+ neonRect(ctx,200,36,400,12,gun?'#66f7e6':club?'#8f87ff':'#ff7fc7',.22);rect(ctx,200,36,400,12,'#1b2237'); ctx.fillStyle='#ffdca8';ctx.font='bold 20px monospace';ctx.textAlign='center';ctx.fillText(b.name,400,52);ctx.textAlign='left';
+ rect(ctx,76,94,166,94,'#5d5a82');rect(ctx,84,102,150,78,'#384561'); rect(ctx,96,116,34,48,'#202840');drawWindowPanel(ctx,100,122,26,14,true,true);rect(ctx,140,116,34,48,'#202840');drawWindowPanel(ctx,144,122,26,14,true,false);rect(ctx,184,116,34,48,'#202840');drawWindowPanel(ctx,188,122,26,14,true,true); drawFacadeProp(ctx,92,194,1);drawFacadeProp(ctx,136,192,0);drawFacadeProp(ctx,188,192,3);
+ rect(ctx,456,98,222,48,gun?'#685f82':club?'#57477a':'#4d6f72');rect(ctx,464,104,206,34,'#252c47'); for(let i=0;i<4;i++){rect(ctx,482+i*42,112,24,13,gun?'#e6c37c':club?'#8f87ff':'#5ce2ca')}
+ rect(ctx,270,240,86,54,'#534364');rect(ctx,278,248,70,36,'#293650');drawFacadeProp(ctx,286,256,0); rect(ctx,482,258,134,23,'#674f68');rect(ctx,500,236,14,23,'#9d87b2');rect(ctx,554,236,14,23,'#9d87b2');
+ if(clinic){rect(ctx,270,110,128,58,'#dcc7b5');rect(ctx,278,118,112,38,'#8db7bf');rect(ctx,286,126,34,18,'#f3f7fa');rect(ctx,332,126,34,18,'#f3f7fa')} if(arcade){for(let i=0;i<4;i++){rect(ctx,258+i*45,104,30,56,'#1d1a3e');rect(ctx,263+i*45,110,20,22,i%2?'#4cead9':'#ff6bbe');rect(ctx,266+i*45,136,14,16,'#2a2747')}} if(hotel){rect(ctx,510,104,96,60,'#2a3048');rect(ctx,520,116,22,34,'#8f87ff');rect(ctx,548,116,22,34,'#ff7fc7');drawFacadeProp(ctx,610,110,2)} if(club){for(let i=0;i<3;i++){neonRect(ctx,112+i*40,90,18,70,i%2?'#ff7fc7':'#6cf6e5',.16);rect(ctx,114+i*40,94,14,62,'#1f2441')}softGlow(ctx,605,118,60,'#8f87ff',.18)}
+ rect(ctx,370,399,60,22,'#f3ac78');ctx.fillStyle='#242b40';ctx.font='bold 12px monospace';ctx.textAlign='center';ctx.fillText('EXIT [E]',400,414); let st=storyAt(); if(st&&st.inside&&st.where===player.inside&&!['buy','switch'].includes(st.task)){ drawMarker(ctx,403,149,'#ff65bf','STORY'); if(['intro','meet'].includes(st.task)){ const who=st.task==='intro'?'VEE':(st.dialog||'VEE:').split(':')[0]; drawPerson(ctx,403,151,{face:'down',shirt:who==='VEE'?'#57d6c7':'#b48aeb',skin:'#b98b70',hair:'#211f32',step:0}); ctx.font='bold 11px monospace';ctx.textAlign='center';ctx.fillStyle='#ffe5a0';ctx.fillText(who,403,116);ctx.textAlign='left'; }else if(st.task==='loot'){rect(ctx,390,141,26,19,'#9b6e55');rect(ctx,394,138,18,6,'#efcd84');rect(ctx,400,145,6,7,'#4ce8d7')}}
+ if(gun){drawMarker(ctx,520,157,'#67f5df','SHOP');drawPerson(ctx,570,163,{face:'left',shirt:'#b2c5da',skin:'#986d56',hair:'#262036',step:0});ctx.font='bold 10px monospace';ctx.fillStyle='#b7eae5';ctx.fillText('SHOPKEEPER',541,94)} let p={...player,x:player.ix,y:player.iy,shirt:'#f459ab',skin:'#d1a077',hair:'#142033'};drawPerson(ctx,p.x,p.y,p,true); ctx.globalCompositeOperation='screen';softGlow(ctx,174,112,90,'#63f6ea',.14);softGlow(ctx,586,114,94,gun?'#ff78c9':'#66f7e6',.11);ctx.globalCompositeOperation='source-over'; if(showMap)return;ctx.font='bold 11px monospace';ctx.fillStyle='#daeaf0';ctx.textAlign='center';ctx.fillText('Walk to a marker and press E. Go to the lower door to exit.',400,442);ctx.textAlign='left'}
+function drawGame(){if(screen==='menu'){return}if(player.inside){drawInterior();return}
+ ctx.fillStyle='#102b42';ctx.fillRect(0,0,W,H);try{ctx.drawImage(terrain,Math.round(camera.x),Math.round(camera.y),W,H,0,0,W,H)}catch(e){}ctx.globalAlpha=.07;rect(ctx,0,0,W,H,'#87a8ff');ctx.globalAlpha=1;drawStreetSignals();
+ // layered neighborhood light passes
+ ctx.globalCompositeOperation='screen';
+ for(let b of landmarks){let [x,y]=groundPoint(b.x,b.y);if(x<-55||x>W+55||y<-55||y>H+55)continue;let color=b.type==='gun'?'#55f5e5':b.type==='club'?'#9b80ff':'#ff6cc3';softGlow(ctx,x,y-18,b.type==='club'?78:60,color,.16);ctx.globalAlpha=.18+Math.sin(world.clock*2+b.x)*.05;rect(ctx,x-24,y-44,48,24,color);ctx.globalAlpha=1;rect(ctx,x-8,y-12,16,4,'#ecfff9')}
+ ctx.globalCompositeOperation='source-over';
+ for(let p of pickups){if(p.collected)continue;let [x,y]=groundPoint(p.x,p.y);if(x<0||x>W||y<0||y>H)continue;neonRect(ctx,x-5,y-5,10,10,'#7bf8b2',.08);rect(ctx,x-5,y-5,10,10,'#142837');rect(ctx,x-3,y-3,6,6,'#78f7b0')}
+ let st=storyAt();if(st){let marker=storyMarker(),[sx,sy]=groundPoint(marker.x,marker.y);if(sx>-70&&sx<W+70&&sy>-70&&sy<H+70)drawMarker(ctx,sx,sy,'#fc6cbf','STORY')}
+ for(let key of sideBoards){let a=lm(key),[sx,sy]=groundPoint(a.x+25,a.y-20);if(sx>-40&&sx<W+40&&sy>-40&&sy<H+40){neonRect(ctx,sx-8,sy-8,16,16,'#43e5d5',.08);ctx.fillStyle='#43e5d5';ctx.fillRect(sx-8,sy-8,16,16);ctx.font='bold 12px monospace';ctx.fillStyle='#0c2031';ctx.fillText('S',sx-4,sy+3)}}
+ if(streetEvent){let ev=eventMarker(),[ex,ey]=groundPoint(ev.x,ev.y);if(ex>-50&&ex<W+50&&ey>-50&&ey<H+50)drawMarker(ctx,ex,ey,'#ffd570','EVENT')}
+ if(world.side){let a=lm(world.side.to),[sx,sy]=groundPoint(a.x,a.y);if(sx>-70&&sx<W+70&&sy>-70&&sy<H+70)drawMarker(ctx,sx,sy,'#ffe182','GIG')}
+ if(st?.task==='target'){for(let t of world.practice||[]){if(t.hp<=0)continue;let [x,y]=groundPoint(t.x,t.y);if(x<0||x>W||y<0||y>H)continue;neonRect(ctx,x-14,y-12,29,25,'#ff77bb',.08);rect(ctx,x-14,y-12,29,25,'#3f334e');rect(ctx,x-10,y-8,21,17,'#f5b76d');rect(ctx,x-7,y-5,15,11,'#402941');rect(ctx,x-4,y-2,9,5,'#fb5e9d');rect(ctx,x-2,y+12,4,6,'#53716a')}}
+ const objs=[];for(let c of cars)objs.push({y:c.y,draw(){let[x,y]=groundPoint(c.x,c.y);if(x>-48&&x<W+48&&y>-48&&y<H+48)drawVehicle(ctx,x,y,c)}});
+ for(let n of npcs)objs.push({y:n.y,draw(){let[x,y]=groundPoint(n.x,n.y);if(x>-25&&x<W+25&&y>-25&&y<H+25)drawPerson(ctx,x,y,n)}});
+ for(let c of police)objs.push({y:c.y,draw(){let[x,y]=groundPoint(c.x,c.y);if(x<-45||x>W+45||y<-45||y>H+45)return;if(!c.foot){drawVehicle(ctx,x,y,{...c,color:'#e7e5ec'});rect(ctx,x-5,y-6,5,6,(world.clock*8|0)%2?'#f9628b':'#688aff');rect(ctx,x+2,y-6,5,6,(world.clock*8|0)%2?'#688aff':'#f9628b')}else drawPerson(ctx,x,y,{...c,face:'down',shirt:'#5372ae',skin:'#ba9879',hair:'#223149',step:world.clock*7})}});
+ if(st?.task==='informant'){let roxy=tutorialInformant();objs.push({y:roxy.y,draw(){let[x,y]=groundPoint(roxy.x,roxy.y);drawPerson(ctx,x,y,roxy);drawSpeechBubble(ctx,x,y-8,'ROXY: HEY, YOU!', '#ffe8ae')}})}
+ for(let e of enemies)objs.push({y:e.y,draw(){let[x,y]=groundPoint(e.x,e.y);if(x>-20&&x<W+20&&y>-20&&y<H+20){drawPerson(ctx,x,y,{...e,shirt:'#a7586f',skin:'#c6a189',hair:'#21202c',step:world.clock*7});rect(ctx,x-10,y-18,20*(e.hp/64),3,'#ff6b80')}}});
+ if(!player.inCar)objs.push({y:player.y,draw(){let[x,y]=groundPoint(player.x,player.y);drawPerson(ctx,x,y,{...player,shirt:'#f45ca7',skin:'#d5a47c',hair:'#202339'},true)}});
+ objs.sort((a,b)=>a.y-b.y);for(let ob of objs)ob.draw();
+ for(let n of npcs){if(n.sayTime>0){let[x,y]=groundPoint(n.x,n.y);if(x>15&&x<W-15&&y>20&&y<H-10)drawSpeechBubble(ctx,x,y,n.say)}}
+ for(let bullet of bullets){let[x,y]=groundPoint(bullet.x,bullet.y);neonRect(ctx,x-2,y-2,4,4,bullet.team==='player'?'#ffe2a6':'#ff9696',.15);rect(ctx,x-2,y-2,4,4,bullet.team==='player'?'#f8e8a3':'#ff8888')}
+ for(let e of effects){let[x,y]=groundPoint(e.x,e.y);ctx.globalAlpha=clamp(e.life*2,0,1);rect(ctx,x,y,3,3,e.c);ctx.globalAlpha=1}
+ if(player.inCar){let [x,y]=groundPoint(player.inCar.x,player.inCar.y);ctx.globalAlpha=.18;ctx.fillStyle='#68f5e1';ctx.fillRect(x-2,y-2,4,4);ctx.globalAlpha=1}
+ drawCityAtmosphere();
+ if(damageFlash>0){ctx.globalAlpha=damageFlash*.38;rect(ctx,0,0,W,H,'#ff2a59');ctx.globalAlpha=1}
+ if(streetEvent)drawTravelArrow(eventMarker(),'#ffd570','EVENT');
+ if(st)drawTravelArrow(storyMarker(),'#ff67bc','STORY');if(world.side)drawTravelArrow(lm(world.side.to),'#ffe185','SIDE');
+ if(!player.inCar){let x=pointer.active?pointer.x:W/2+Math.sin(player.angle)*50,y=pointer.active?pointer.y:H/2-Math.cos(player.angle)*50;ctx.strokeStyle='#f6eeb9';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(x-7,y);ctx.lineTo(x-3,y);ctx.moveTo(x+3,y);ctx.lineTo(x+7,y);ctx.moveTo(x,y-7);ctx.lineTo(x,y-3);ctx.moveTo(x,y+3);ctx.lineTo(x,y+7);ctx.stroke()}
+}
+function drawTravelArrow(dest,color,label){if(!dest)return;let x=dest.x-camera.x,y=dest.y-camera.y;if(x>=18&&x<W-18&&y>=18&&y<H-18)return;let dx=x-W/2,dy=y-H/2,length=Math.hypot(dx,dy)||1,scale=Math.min((W/2-50)/Math.max(Math.abs(dx),1),(H/2-50)/Math.max(Math.abs(dy),1)),sx=W/2+dx*scale,sy=H/2+dy*scale;ctx.save();ctx.translate(sx,sy);ctx.rotate(Math.atan2(dy,dx));ctx.fillStyle=color;ctx.beginPath();ctx.moveTo(13,0);ctx.lineTo(-8,-10);ctx.lineTo(-8,10);ctx.closePath();ctx.fill();ctx.restore();ctx.font='bold 10px monospace';ctx.textAlign='center';rect(ctx,sx-26,sy-27,52,13,'#0d2034cc');ctx.fillStyle=color;ctx.fillText(label,sx,sy-17);ctx.textAlign='left'}
+function drawFullMap(){const cv=$('fullmap'),c=cv.getContext('2d');c.clearRect(0,0,800,530);c.drawImage(mapBase,0,0);for(let l of landmarks){let x=mapX(l.x),y=mapY(l.y);c.fillStyle=l.key==='armory'?'#5dffdf':'#f5d49c';c.fillRect(x-3,y-3,7,7);c.font='bold 9px monospace';c.fillStyle='#f3efe4';c.fillText(l.name,x+6,y+2)}for(let k of sideBoards){let l=lm(k);c.fillStyle='#54f9e4';c.font='bold 15px monospace';c.fillText('S',mapX(l.x+25),mapY(l.y-20))}
+ if(streetEvent){let ev=eventMarker();c.fillStyle='#ffdc73';c.beginPath();c.arc(mapX(ev.x),mapY(ev.y),7,0,TAU);c.fill();c.font='bold 11px monospace';c.fillText('EVENT',mapX(ev.x)+9,mapY(ev.y))}
+ let st=storyMarker();if(st){c.fillStyle='#ff65b8';c.beginPath();c.arc(mapX(st.x),mapY(st.y),8,0,TAU);c.fill();c.fillStyle='#fff';c.font='bold 12px monospace';c.fillText('STORY',mapX(st.x)+12,mapY(st.y))}
+ if(world.side){let l=lm(world.side.to);c.fillStyle='#fff09a';c.beginPath();c.arc(mapX(l.x),mapY(l.y),7,0,TAU);c.fill()}
+ const p=player.inCar||player;c.fillStyle='#56ffe5';c.beginPath();c.arc(mapX(p.x),mapY(p.y),7,0,TAU);c.fill();c.strokeStyle='#112e3b';c.lineWidth=3;c.stroke()}
+function drawMinimap(){let c=$('minimap').getContext('2d'),p=player.inCar||player;c.clearRect(0,0,220,150);c.drawImage(mapBase,0,0,220,150);let st=storyMarker();if(st){c.fillStyle='#ff5fbc';c.beginPath();c.arc(st.x/MW*220,st.y/MH*150,4.5,0,TAU);c.fill()}if(streetEvent){let ev=eventMarker();c.fillStyle='#ffd46d';c.fillRect(ev.x/MW*220-3,ev.y/MH*150-3,7,7)}if(world.side){let l=lm(world.side.to);c.fillStyle='#f9e9a0';c.beginPath();c.arc(l.x/MW*220,l.y/MH*150,4,0,TAU);c.fill()}c.fillStyle='#69ffe4';c.beginPath();c.arc(p.x/MW*220,p.y/MH*150,4,0,TAU);c.fill();c.strokeStyle='#fff';c.lineWidth=.8;c.stroke()}
+function updateHud(){if(screen!=='playing')return;$('cash').textContent='$'+Math.floor(player.money).toLocaleString();$('health').textContent=Math.ceil(player.hp)+'/150';$('healthBar').style.width=(player.hp/150*100)+'%';$('stars').textContent='★'.repeat(Math.ceil(world.wanted))+'☆'.repeat(5-Math.ceil(world.wanted));let p=player.inCar||player,d=districtFor(p.x,p.y);$('district').textContent=player.inside?lm(player.inside).name:d.name;
+ $('cityClock').textContent=formatCityClock();$('weather').textContent=weather; $('eventStatus').textContent=streetEvent?streetEvent.title+' · '+(streetEvent.stage?'DELIVER PART':'GOLD ! ON MAP')+' · '+Math.max(0,Math.ceil(streetEvent.expiry-world.clock))+'s':'NO ACTIVE STREET EVENT';
+ let st=storyAt();$('chapter').textContent=st?st.name:'CAMPAIGN COMPLETE';$('objective').textContent=st?st.desc:'Glowport is yours. Complete side hustles, visit stores and explore the coast.';
+ $('side').textContent=world.side?`${world.side.name}: ${lm(world.side.to).name}`:'Side hustles: visit cyan S markers, Shift + E';
+ let w=GUNS[player.weapon];$('weapon').textContent=w.name+(w.mag?'  '+(player.mag[w.id]||0)+'/'+(player.ammo[w.id]||0):'');$('speed').textContent=player.inCar?Math.round(Math.abs(player.inCar.speed)*.55)+' MPH':'ON FOOT';
+ let near=nearestInteractable(),prompt='';if(player.inside){if(st?.task==='buy'&&player.inside==='armory')prompt='BUY THE 9MM PISTOL AT THE CYAN SHOP MARKER';else if(st?.task==='switch'&&player.inside==='armory')prompt=world.switchStep?'PRESS 3 · EQUIP PISTOL':'PRESS 1 · EQUIP FISTS';else if(near?.kind==='story')prompt='E · CONTINUE STORY';else if(near?.kind==='shop')prompt='E · BROWSE WEAPONS';else if(near?.kind==='exit')prompt='E · EXIT BUILDING'}else if(world.side&&distance(p.x,p.y,lm(world.side.to).x,lm(world.side.to).y)<65)prompt='E · COMPLETE SIDE HUSTLE';else if(st?.task==='target'&&world.practiceInitialized&&distance(p.x,p.y,storyMarker().x,storyMarker().y)<180)prompt='AIM & SHOOT THE PINK TRAINING TARGETS';else if(st?.task==='informant'&&distance(p.x,p.y,tutorialInformant().x,tutorialInformant().y)<70)prompt='E · TALK TO ROXY';else if(st&&!st.inside&&!['target','informant'].includes(st.task)&&distance(p.x,p.y,lm(st.where).x,lm(st.where).y)<75)prompt='E · CONTINUE STORY';else if(player.inCar)prompt='E · EXIT VEHICLE';else if(streetEvent&&eventMarker()&&distance(p.x,p.y,eventMarker().x,eventMarker().y)<70)prompt='E · '+streetEvent.title;else if(near?.kind==='npc')prompt='E · TALK TO '+near.obj.name;else if(st?.task==='informant'&&distance(p.x,p.y,tutorialInformant().x,tutorialInformant().y)<58)prompt='E · QUESTION ROXY';else if(near?.kind==='building')prompt='E · ENTER '+near.obj.name+(sideBoards.includes(near.obj.key)?' | SHIFT+E SIDE JOB':'');else if(near?.kind==='car')prompt='E · DRIVE CAR';$('prompt').textContent=prompt;$('prompt').classList.toggle('hidden',!prompt);drawMinimap()}
+function doFrame(now){let dt=last?clamp((now-last)/1000,0,.034):.016;last=now;update(dt);if(screen==='playing')drawGame();requestAnimationFrame(doFrame)}
+function mapPointer(e){let b=canvas.getBoundingClientRect();pointer.x=(e.clientX-b.left)/b.width*W;pointer.y=(e.clientY-b.top)/b.height*H;pointer.active=true}
+const keyMove=(k,v)=>{if(['w','arrowup'].includes(k))controls.up=v;if(['s','arrowdown'].includes(k))controls.down=v;if(['a','arrowleft'].includes(k))controls.left=v;if(['d','arrowright'].includes(k))controls.right=v;if(k==='shift')controls.shift=v;if(k===' ')controls.space=v;if(k==='f')controls.fire=v};
+window.addEventListener('keydown',e=>{let k=e.key.toLowerCase();if([' ','arrowup','arrowdown','arrowleft','arrowright','tab'].includes(k))e.preventDefault();if(activeDialogue){if(!e.repeat&&['1','2','3'].includes(k))advanceConversation(Number(k)-1);if(!e.repeat&&(k==='enter'||k===' '))advanceConversation(0);return}if(!e.repeat){if(k==='e')action();if(k==='m')toggleMap();if(k==='j'||k==='tab')toggleJournal();if(k==='escape')pauseGame();if(k==='r')reload();if(k==='q')equip((player.weapon+1)%5);if('12345'.includes(k))equip(Number(k)-1);if(k==='f'&&!player.inCar)shoot()}keyMove(k,true)});
+window.addEventListener('keyup',e=>keyMove(e.key.toLowerCase(),false));window.addEventListener('blur',()=>{Object.keys(controls).forEach(k=>controls[k]=false)});
+canvas.addEventListener('pointermove',mapPointer);canvas.addEventListener('pointerdown',e=>{if(e.button===0){mapPointer(e);controls.fire=true;shoot()}});window.addEventListener('pointerup',()=>controls.fire=false);
+$('startBtn').addEventListener('click',launch);$('newBtn').addEventListener('click',()=>{resetGame();$('menu').classList.add('hidden')});$('mapBtn').addEventListener('click',toggleMap);$('journalBtn').addEventListener('click',toggleJournal);$('saveBtn').addEventListener('click',()=>saveGame(false));$('mapClose').addEventListener('click',toggleMap);$('journalClose').addEventListener('click',toggleJournal);$('shopClose').addEventListener('click',hideShop);$('pauseBtn').addEventListener('click',pauseGame);$('pauseClose').addEventListener('click',pauseGame);$('pauseSave').addEventListener('click',()=>saveGame(false));$('pauseRestart').addEventListener('click',resetGame);
+for(let el of document.querySelectorAll('[data-control]')){let key=el.dataset.control;el.addEventListener('pointerdown',e=>{e.preventDefault();el.setPointerCapture(e.pointerId);controls[key]=true});for(let v of ['pointerup','pointercancel','lostpointercapture'])el.addEventListener(v,()=>controls[key]=false)}
+$('touchE').addEventListener('pointerdown',e=>{e.preventDefault();action()});$('touchFire').addEventListener('pointerdown',e=>{e.preventDefault();controls.fire=true;shoot()});$('touchFire').addEventListener('pointerup',()=>controls.fire=false);
+$('touchReload').addEventListener('pointerdown',e=>{e.preventDefault();reload()});$('touchWeapon').addEventListener('pointerdown',e=>{e.preventDefault();equip((player.weapon+1)%5)});
+// Diagnostics for gameplay regression checks, not required by players.
+window.GlowportTest={landmarks:()=>landmarks.map(l=>({key:l.key,x:l.x,y:l.y,safe:!solidWorld(l.x,l.y+10,9),onLand:onLand(l.x,l.y+10),roadDistance:closestRoadPoint(l.x,l.y).d,inside:!!l.building})),getState:()=>({screen,story:world.story,hp:player.hp,money:player.money,wanted:world.wanted,inside:player.inside,player:{x:player.x,y:player.y,weapon:player.weapon},cars:cars.length,buildings:buildings.length,landmarks:landmarks.length,roadSegments:segments.length,mapW:MW,mapH:MH,roadCols:roadXs.length,roadRows:roadYs.length,dialogue:!!activeDialogue,practice:(world.practice||[]).length,training:world.trainingSpawned,talking:world.talkCount,trafficMinGap:Math.min(...cars.filter(c=>c.ai).map(c=>Math.min(...cars.filter(o=>o!==c&&o.ai&&o.ring===c.ring).map(o=>distance(c.x,c.y,o.x,o.y))))),enemies:enemies.length,police:police.length,bullets:bullets.length,car:!!player.inCar,side:world.side?.to||null}),launch,teleport:key=>{let a=lm(key);player.inside=null;player.inCar=null;player.x=a.x;player.y=a.y+10;camera.x=clamp(player.x-W/2,0,MW-W);camera.y=clamp(player.y-H/2,0,MH-H);updateHud()},getTargets:()=>world.practice.map(t=>({...t})),getNPCs:()=>npcs.map(n=>({id:n.id,x:n.x,y:n.y,phase:n.phase,role:n.role,waypoints:n.waypoints.length,stuck:n.stuckTime,sayTime:n.sayTime})),getEnemies:()=>enemies.map(e=>({hp:e.hp,x:e.x,y:e.y})),getTraffic:()=>cars.filter(c=>c.ai).map(c=>({x:c.x,y:c.y,ring:c.ring,speed:c.speed,trackDist:c.trackDist})),setPosition:(x,y,angle=null)=>{player.inside=null;player.inCar=null;player.x=x;player.y=y;if(angle!==null)player.angle=angle;camera.x=clamp(x-W/2,0,MW-W);camera.y=clamp(y-H/2,0,MH-H);pointer.active=false;player.cool=0},resetCooldown:()=>player.cool=0,setWanted:v=>{crime(v);updateHud()},getCity:()=>({time:formatCityClock(),weather,event:streetEvent?{...streetEvent}:null,finished:cityEventsFinished,relations:{...relations}}),startStreetEvent,interactStreetEvent,setEvent:e=>{streetEvent=e;updateHud()},getSignals:()=>lands.map(d=>({ring:d.id,signal:trafficSignal(d.id,0)})),talkToInformant,advanceConversation,buyItem,initPractice,spawnTutorialEnforcers,shoot,updateBullets,equip,action,update,drawGame,storyAdvance,enterInterior,leaveInterior};
+console.log('GLOWPORT88 v1.0 NEON NIGHTS READY',lands.length,'districts',buildings.length,'buildings',landmarks.length,'interiors');
+requestAnimationFrame(doFrame);
+})()</script></main></body></html>
