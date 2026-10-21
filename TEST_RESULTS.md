@@ -42,7 +42,7 @@ The standalone checker blocks subresource requests and verifies desktop Start/re
 
 The public checker uses normal certificate-verified HTTPS download, exact SHA256 equality, and local Chromium playback of those deployed bytes with subresources blocked. It checks mobile Start/movement/phone/map, catalogue/modules, entrance guidance, actual story completion and on-foot direct diner mission acceptance. Cloud Chromium's external proxy trust database limits direct remote navigation; TLS verification is never disabled.
 
-Deployment evidence and exact URL/checksum are in `public-demo-results.json`. The intended 0.5.0 URL is https://atlasnoah.github.io/Glowport88/?v=0.5.0-living-city; publication is claimed only after this verification succeeds.
+Deployment evidence and exact URL/checksum are in `public-demo-results.json`. The verified 0.5.0 URL is https://atlasnoah.github.io/Glowport88/?v=0.5.0-living-city; the public metadata, exact tested checksum and mobile direct-diner-start playback verification all passed.
 
 ## Failures found and resolved
 
@@ -66,3 +66,5 @@ See LIVING_CITY_REPORT.md, ENCOUNTER_CATALOGUE.md and LIVING_CITY_BACKLOG.md for
 Full `npm test` exited 0 after the final gameplay fixes. All 131 named host/controller/soak checks and the focused/model suites passed. The standalone test exited 0 with zero subresource requests, debug-save isolation and backup-quota safety. The CLI transcript is `artifacts/living-final-validation.txt`.
 
 The final soak measured 51038ms wall time for 21,600 updates; update median/p95/p99 were 1.9/4.1/7.4ms. Retained JS heap was 4863236 → 5547452 bytes after explicit GC. These are cloud CPU measurements, not phone FPS.
+
+The verified public checksum is `51cd13889d9799aa229336d8f394391c9436f904dfb5c18e6d6ce4746d965dc6`; deployed source is `f03182c` and Pages commit is `562549a`.

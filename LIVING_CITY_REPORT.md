@@ -49,8 +49,15 @@ Development branch: codex/living-city-update, from stable 19abe84. Main is prese
 
 ## 7. Playable build
 
-Intended release URL: https://atlasnoah.github.io/Glowport88/?v=0.5.0-living-city. Deployment verification and checksum are recorded in artifacts/public-demo-results.json once published. Use Start / Continue for current progress. ACTIONS chooses local work/services; Palm Garage sells/customizes vehicles; SOUND controls radio/audio.
+Verified release URL: https://atlasnoah.github.io/Glowport88/?v=0.5.0-living-city. The public 0.5.0 metadata, normal HTTPS download, exact standalone checksum and mobile playback with direct diner mission acceptance all passed. Evidence: artifacts/public-demo-results.json. Use Start / Continue for current progress. ACTIONS chooses local work/services; Palm Garage sells/customizes vehicles; SOUND controls radio/audio.
 
 ## 8. Remaining work
 
 LIVING_CITY_BACKLOG.md separates unfinished brief requirements from implemented features. Campaign duration, full physical-device validation, deeper bespoke activities, broader NPC/faction simulation, wardrobe/stamina/health progression, native store packaging and submission remain future work.
+
+## Release checkpoints
+
+- `219b5db`: bounded city, audio, encounter, vehicle, interaction and save modules.
+- `f03182c`: integrated Living City gameplay, focused QA, full regression evidence, documentation and standalone release.
+- GitHub Pages `562549a`: published the tested 0.5.0 standalone.
+- Verified standalone SHA256: `51cd13889d9799aa229336d8f394391c9436f904dfb5c18e6d6ce4746d965dc6`.
