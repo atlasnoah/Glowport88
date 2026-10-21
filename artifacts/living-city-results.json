@@ -1,0 +1,26 @@
+{
+  "time": "2026-10-21T23:34:19.163Z",
+  "passed": [
+    "twelve original archive sites have valid sampled access paths",
+    "blocked maps omit inaccessible collectibles instead of spawning placeholders",
+    "collecting requires the same on-foot radius advertised by its interaction",
+    "collection receipts survive reload and prevent duplicate cash and evidence",
+    "all twelve tapes unlock the archive record and pay its completion honorarium once",
+    "weather, pursuits, hazards and crossing pedestrians change actual traffic caps",
+    "citizens flee, return to routine, seek shelter and recover blocked routes",
+    "multi-day policy simulation keeps NPC state storage bounded",
+    "unsupported audio is a recoverable optional capability",
+    "real user gesture unlocks Web Audio and the four-station mobile controls fit",
+    "music/effects/station controls work and the audio modal captures gameplay keys",
+    "rapid effects and engine/weather scheduling remain within the voice budget and pause cleans up",
+    "background suspension, gesture resume and mute are safe with no browser errors"
+  ],
+  "errors": [],
+  "policySimulation": {
+    "days": 4,
+    "npcs": 170,
+    "steps": 960,
+    "milliseconds": 26.610006000000055
+  },
+  "browser": "Chromium mobile emulation; synthesized audio scheduling and controls, not a physical speaker/listening test"
+}

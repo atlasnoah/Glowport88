@@ -1,17 +1,19 @@
 {
   "name": "glowport88",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "private": true,
   "description": "A standalone pixel-art city adventure",
   "scripts": {
     "start": "python3 -m http.server 8000 --directory Glowport88",
-    "test": "node tests/syntax.cjs && node tests/missions.cjs && node tests/mission-engine.cjs && node tests/police-system.cjs && node tests/progression.cjs && node tests/campaign-content.cjs && node tests/campaign-playthrough.cjs && node tests/terrain-cache.cjs && node tests/smoke.cjs && node tests/gameplay.cjs && node tests/overhaul.cjs && node tests/navigation.cjs && node tests/touch-controls.cjs && node tests/mobile.cjs",
+    "test": "node tests/syntax.cjs && node tests/missions.cjs && node tests/mission-engine.cjs && node tests/police-system.cjs && node tests/progression.cjs && node tests/save-system.cjs && node tests/living-missions.cjs && node tests/living-events.cjs && node tests/living-vehicles.cjs && node tests/living-city.cjs && node tests/campaign-content.cjs && node tests/campaign-playthrough.cjs && node tests/terrain-cache.cjs && node tests/smoke.cjs && node tests/gameplay.cjs && node tests/overhaul.cjs && node tests/navigation.cjs && node tests/touch-controls.cjs && node tests/mobile.cjs && node tests/east-diner.cjs && node tests/vehicle-host.cjs && node tests/living-city-host.cjs && node tests/encounter-host.cjs && node tests/living-endurance.cjs",
     "assets": "python3 tools/build_assets.py",
     "release": "python3 tools/build_release.py",
     "test:release": "node tests/release.cjs",
     "test:mobile": "node tests/mobile.cjs",
     "test:touch": "node tests/touch-controls.cjs",
-    "test:navigation": "node tests/navigation.cjs"
+    "test:navigation": "node tests/navigation.cjs",
+    "test:diner": "node tests/east-diner.cjs",
+    "test:living": "node tests/save-system.cjs && node tests/living-missions.cjs && node tests/living-events.cjs && node tests/living-vehicles.cjs && node tests/living-city.cjs && node tests/east-diner.cjs && node tests/vehicle-host.cjs && node tests/living-city-host.cjs && node tests/encounter-host.cjs && node tests/living-endurance.cjs"
   },
   "devDependencies": {
     "playwright": "1.58.2"

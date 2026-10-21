@@ -13,7 +13,7 @@ body.touch-mode .logo { font-size: 15px; letter-spacing: .12em; }
 body.touch-mode .logo span { font-size: 7px; padding: 4px 5px; margin-left: 5px; }
 body.touch-mode .subtitle,
 body.touch-mode .bottomhelp { display: none; }
-body.touch-mode .buttons { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); width: 100%; gap: 5px; }
+body.touch-mode .buttons { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); width: 100%; gap: 5px; }
 body.touch-mode button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
 body.touch-mode .tiny,
 body.touch-mode .close,

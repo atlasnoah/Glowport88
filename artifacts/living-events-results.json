@@ -1,0 +1,23 @@
+{
+  "time": "2026-10-21T23:34:12.804Z",
+  "passed": [
+    "32 event types retain all 20 old event IDs and original objective slots",
+    "required new canonical encounters contain actual stages and distinct outcomes",
+    "time, district, progression, proximity and cooldown gates affect selection",
+    "weather and reputation gates are enforceable and force still validates geometry",
+    "safe spawn searches bounded alternatives and rejects inaccessible targets",
+    "variety history avoids immediate repeats when alternatives exist",
+    "offer and active street scenes use visible safe actors and bounded temporary cars",
+    "scene witnesses visibly flee danger without moving into blocked geometry",
+    "blackout darkens its local block, restores after relay stage, and cleans up",
+    "road routes follow connected streets and route around solid blocks",
+    "two physical race rivals wait for a vehicle, drive safe routes and record real finish times",
+    "saved race progress restores rivals without duplicate cars or reset finish times",
+    "temporary cleanup preserves the player’s controlled car",
+    "outcome memory persists real choices and safely validates damaged imports"
+  ],
+  "eventTypes": 32,
+  "newEventTypes": 12,
+  "legacyEventStagePrefixesPreserved": true,
+  "scope": "Deterministic production encounter-director tests: context selection, safe scenes, bounded cleanup, original-sprite actor reactions, blackout, physical road-following race rivals, memory and persistence. Objective-handler sweeps run separately in campaign-playthrough.cjs; not a continuous human playthrough."
+}

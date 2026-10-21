@@ -1,0 +1,357 @@
+[
+  {
+    "id": "event-mugging",
+    "stages": [
+      {
+        "id": "event-mugging-s1",
+        "type": "choice",
+        "where": "arcade"
+      },
+      {
+        "id": "event-mugging-s2",
+        "type": "combat",
+        "where": "arcade"
+      }
+    ]
+  },
+  {
+    "id": "event-passing-pursuit",
+    "stages": [
+      {
+        "id": "event-passing-pursuit-s1",
+        "type": "choice",
+        "where": "diner"
+      },
+      {
+        "id": "event-passing-pursuit-s2",
+        "type": "chase",
+        "where": "motel"
+      },
+      {
+        "id": "event-passing-pursuit-s3",
+        "type": "escape",
+        "where": "motel"
+      }
+    ]
+  },
+  {
+    "id": "event-ride-request",
+    "stages": [
+      {
+        "id": "event-ride-request-s1",
+        "type": "choice",
+        "where": "motel"
+      },
+      {
+        "id": "event-ride-request-s2",
+        "type": "escort",
+        "where": "clinic"
+      }
+    ]
+  },
+  {
+    "id": "event-store-robbery",
+    "stages": [
+      {
+        "id": "event-store-robbery-s1",
+        "type": "choice",
+        "where": "diner"
+      },
+      {
+        "id": "event-store-robbery-s2",
+        "type": "defend",
+        "where": "diner"
+      }
+    ]
+  },
+  {
+    "id": "event-car-thief",
+    "stages": [
+      {
+        "id": "event-car-thief-s1",
+        "type": "choice",
+        "where": "hotel"
+      },
+      {
+        "id": "event-car-thief-s2",
+        "type": "collect",
+        "where": "records"
+      },
+      {
+        "id": "event-car-thief-s3",
+        "type": "deliver",
+        "where": "hotel"
+      }
+    ]
+  },
+  {
+    "id": "event-suspicious-van",
+    "stages": [
+      {
+        "id": "event-suspicious-van-s1",
+        "type": "choice",
+        "where": "warehouse"
+      },
+      {
+        "id": "event-suspicious-van-s2",
+        "type": "investigate",
+        "where": "warehouse"
+      }
+    ]
+  },
+  {
+    "id": "event-alley-ambush",
+    "stages": [
+      {
+        "id": "event-alley-ambush-s1",
+        "type": "choice",
+        "where": "warehouse"
+      },
+      {
+        "id": "event-alley-ambush-s2",
+        "type": "combat",
+        "where": "warehouse"
+      }
+    ]
+  },
+  {
+    "id": "event-medical-help",
+    "stages": [
+      {
+        "id": "event-medical-help-s1",
+        "type": "choice",
+        "where": "clinic"
+      },
+      {
+        "id": "event-medical-help-s2",
+        "type": "collect",
+        "where": "diner"
+      },
+      {
+        "id": "event-medical-help-s3",
+        "type": "deliver",
+        "where": "clinic"
+      }
+    ]
+  },
+  {
+    "id": "event-stranded-driver",
+    "stages": [
+      {
+        "id": "event-stranded-driver-s1",
+        "type": "choice",
+        "where": "diner"
+      },
+      {
+        "id": "event-stranded-driver-s2",
+        "type": "collect",
+        "where": "warehouse"
+      },
+      {
+        "id": "event-stranded-driver-s3",
+        "type": "deliver",
+        "where": "diner"
+      }
+    ]
+  },
+  {
+    "id": "event-street-race",
+    "stages": [
+      {
+        "id": "event-street-race-s1",
+        "type": "choice",
+        "where": "pier"
+      },
+      {
+        "id": "event-street-race-s2",
+        "type": "race",
+        "where": "observatory"
+      }
+    ]
+  },
+  {
+    "id": "event-street-argument",
+    "stages": [
+      {
+        "id": "event-street-argument-s1",
+        "type": "choice",
+        "where": "club"
+      },
+      {
+        "id": "event-street-argument-s2",
+        "type": "defend",
+        "where": "club"
+      }
+    ]
+  },
+  {
+    "id": "event-drunk-philosopher",
+    "stages": [
+      {
+        "id": "event-drunk-philosopher-s1",
+        "type": "choice",
+        "where": "club"
+      },
+      {
+        "id": "event-drunk-philosopher-s2",
+        "type": "escort",
+        "where": "motel"
+      }
+    ]
+  },
+  {
+    "id": "event-security-convoy",
+    "stages": [
+      {
+        "id": "event-security-convoy-s1",
+        "type": "choice",
+        "where": "warehouse"
+      },
+      {
+        "id": "event-security-convoy-s2",
+        "type": "chase",
+        "where": "warehouse"
+      },
+      {
+        "id": "event-security-convoy-s3",
+        "type": "heist",
+        "where": "warehouse"
+      }
+    ]
+  },
+  {
+    "id": "event-shakedown",
+    "stages": [
+      {
+        "id": "event-shakedown-s1",
+        "type": "choice",
+        "where": "armory"
+      },
+      {
+        "id": "event-shakedown-s2",
+        "type": "stealth",
+        "where": "armory"
+      },
+      {
+        "id": "event-shakedown-s3",
+        "type": "collect",
+        "where": "armory"
+      }
+    ]
+  },
+  {
+    "id": "event-illegal-parcel",
+    "stages": [
+      {
+        "id": "event-illegal-parcel-s1",
+        "type": "choice",
+        "where": "warehouse"
+      },
+      {
+        "id": "event-illegal-parcel-s2",
+        "type": "deliver",
+        "where": "pier"
+      },
+      {
+        "id": "event-illegal-parcel-evidence",
+        "type": "deliver",
+        "where": "clinic"
+      }
+    ]
+  },
+  {
+    "id": "event-lost-tourist",
+    "stages": [
+      {
+        "id": "event-lost-tourist-s1",
+        "type": "choice",
+        "where": "observatory"
+      },
+      {
+        "id": "event-lost-tourist-s2",
+        "type": "escort",
+        "where": "hotel"
+      }
+    ]
+  },
+  {
+    "id": "event-rival-gang",
+    "stages": [
+      {
+        "id": "event-rival-gang-s1",
+        "type": "choice",
+        "where": "arcade"
+      },
+      {
+        "id": "event-rival-gang-s2",
+        "type": "defend",
+        "where": "arcade"
+      },
+      {
+        "id": "event-rival-gang-s3",
+        "type": "escort",
+        "where": "diner"
+      }
+    ]
+  },
+  {
+    "id": "event-runaway-driver",
+    "stages": [
+      {
+        "id": "event-runaway-driver-s1",
+        "type": "choice",
+        "where": "motel"
+      },
+      {
+        "id": "event-runaway-driver-s2",
+        "type": "escort",
+        "where": "clinic"
+      },
+      {
+        "id": "event-runaway-driver-s3",
+        "type": "escape",
+        "where": "clinic"
+      }
+    ]
+  },
+  {
+    "id": "event-club-dispute",
+    "stages": [
+      {
+        "id": "event-club-dispute-s1",
+        "type": "choice",
+        "where": "club"
+      },
+      {
+        "id": "event-club-dispute-s2",
+        "type": "collect",
+        "where": "records"
+      },
+      {
+        "id": "event-club-dispute-s3",
+        "type": "deliver",
+        "where": "club"
+      }
+    ]
+  },
+  {
+    "id": "event-bizarre-offer",
+    "stages": [
+      {
+        "id": "event-bizarre-offer-s1",
+        "type": "choice",
+        "where": "records"
+      },
+      {
+        "id": "event-bizarre-offer-s2",
+        "type": "investigate",
+        "where": "records"
+      },
+      {
+        "id": "event-bizarre-offer-s3",
+        "type": "deliver",
+        "where": "clinic"
+      }
+    ]
+  }
+]

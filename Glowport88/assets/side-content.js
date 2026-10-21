@@ -387,6 +387,136 @@ const events=[
    stage('deliver','clinic','Bring the certificates to the community legal volunteers',{item:'event-cooler-bonds',reward:{cash:185,reputation:3}})
   ])
 ];
+
+// Living City additions use new stable IDs; existing saved event stage indices stay intact.
+events.push(
+ encounter('missing-person','missing_person','The Missing Night Porter','hotel',['core'],1,620,3,
+  'Violet’s night porter missed two shifts. His sister has three conflicting stories and a cassette with no label.',[
+   stage('choice','hotel','Listen to the porter’s sister',{speaker:'NINA',text:'Tom never misses payday. The diner says he left with a radio engineer. Please find him.',choices:[choice('Follow Tom’s last movements.','event_missing','search'),choice('Let Nina contact the clinic first.','event_missing','declined',{nextStage:'complete'})]}),
+   stage('talk','diner','Ask Eddie about the missing porter',{inside:true,speaker:'EDDIE',text:'Tom bought coffee for two. The engineer gave him a Lookout maintenance pass, not a threat.'}),
+   stage('investigate','radio','Reconstruct the porter’s last call',{inside:true,clues:clues(['CALL LOG','Tom called the old tower when the clinic’s emergency pager failed.'],['WORK ORDER','He borrowed tools to fix the Lookout repeater.'],['VOICE TAPE','A weak message says his ankle is injured. He is waiting by the tower.'])}),
+   stage('escort','clinic','Bring the injured porter down from Crescent Lookout',{fromWhere:'observatory',timeLimit:210,checkpoint:true}),
+   stage('talk','clinic','Let Nina hear what happened',{speaker:'NINA',text:'He was fixing a radio so other people could call for help. Next time he is taking a lunch, a pager, and me.',reward:{cash:180,reputation:3},setFlag:{porterRescued:true}})
+  ]),
+ encounter('car-accident','car_accident','A Bad Place to Park','diner',['east'],1,480,4,
+  'A delivery van has clipped a stopped car outside East Diner. A passenger is shaken and the driver cannot find the first-aid kit.',[
+   stage('choice','diner','Choose how to respond to the crash',{speaker:'DELIVERY DRIVER',text:'Everyone is breathing. My passenger needs the clinic and the road needs clearing.',choices:[choice('Fetch the kit and get the passenger to help.','event_accident','assist'),choice('Photograph the freight tags for an insurance broker instead.','event_accident','broker',{nextStage:'event-car-accident-tags'}),choice('Leave the emergency staff room to work.','event_accident','ignored',{nextStage:'complete'})]}),
+   stage('collect','clinic','Collect a clinic first-aid pack',{item:'event-crash-kit',timeLimit:140}),
+   stage('deliver','diner','Bring the kit back to the crash',{item:'event-crash-kit'}),
+   stage('escort','clinic','Drive the shaken passenger to Marina Clinic',{fromWhere:'diner',timeLimit:180,reward:{cash:90,reputation:3},nextStage:'complete'}),
+   stage('interact','diner','Copy the crashed van’s freight tag',{id:'event-car-accident-tags',speaker:'YOU',text:'The carrier is a Meridian shell company. A broker will pay for the record; the injured passenger still needs staff.',givesItem:'event-crash-tags'}),
+   stage('deliver','records','Deliver the freight record to the broker',{item:'event-crash-tags',reward:{cash:150,reputation:-2}})
+  ]),
+ encounter('street-scam','street_scam','Genuine Artificial Gold','arcade',['west'],1,500,3,
+  'A sharply dressed street trader is selling a concert pass that appears to have been printed before the concert existed.',[
+   stage('choice','arcade','Respond to the trader’s bargain',{speaker:'LEON',text:'Forty dollars. Lifetime access. The lifetime in question belongs to the ticket.',choices:[choice('Buy the pass, then check its provenance.','event_scam','bought',{reward:{cash:-40,reputation:0},givesItem:'event-fake-pass'}),choice('Inspect the printing plate without buying.','event_scam','investigate'),choice('Walk away from the bargain.','event_scam','ignored',{nextStage:'complete'})]}),
+   stage('investigate','records','Compare the pass with Jax’s original posters',{inside:true,clues:clues(['PAPER STOCK','The ticket is printed on Meridian parking notices.'],['TYPESET','The concert date is next Friday; the ticket says February 31.'],['PRINT PLATE','Leon is not counterfeiting a concert. He is laundering the city’s confiscated ticket stock.'])}),
+   stage('choice','arcade','Confront Leon with the printing evidence',{speaker:'LEON',text:'Nobody was meant to read February closely. Can we settle this without the whole block finding out?',choices:[choice('Take $40 restitution and expose the printing scam.','event_scam','exposed',{reward:{cash:40,reputation:2},nextStage:'complete',flags:{scammerExposed:true}}),choice('Sell the printing evidence to his rival for $90.','event_scam','sold',{reward:{cash:90,reputation:-2},nextStage:'complete',flags:{scammerPartner:true}})]})
+  ]),
+ encounter('blackout','blackout','Dark Side of the Block','arcade',['west'],1,660,3,
+  'A whole block of signs goes dark. The arcade owner can hear a relay clicking under the pavement.',[
+   stage('choice','arcade','Investigate the blackout',{speaker:'ROXY',text:'That transformer did not trip itself. Bring a flashlight and the part of your brain that reads labels.',choices:[choice('Trace the sabotaged power circuit.','event_blackout','repair'),choice('Sell the transformer location to Meridian.','event_blackout','sold',{nextStage:'complete',reward:{cash:100,reputation:-3}}),choice('Let the utility crew handle it.','event_blackout','ignored',{nextStage:'complete'})]}),
+   stage('investigate','arcade','Trace the dead arcade circuit',{inside:true,clues:clues(['BREAKER','The safety breaker is locked open with a contractor’s tag.'],['SERVICE LOG','A replacement isolator was delivered to Dockside this morning.'],['CIRCUIT MAP','The isolator powers the corner clinic pager as well as the arcade signs.'])}),
+   stage('collect','warehouse','Collect the replacement isolator',{item:'event-power-isolator'}),
+   stage('deliver','arcade','Install the replacement isolator',{item:'event-power-isolator'}),
+   stage('heist','arcade','Synchronize the three power relays',{inside:false,beats:3,lawful:true,instructions:'Press LOCK SIGNAL in the gold window to synchronize each relay. Three missed pulses require a checkpoint retry.',checkpoint:true}),
+   stage('talk','arcade','Check the restored block with Roxy',{speaker:'ROXY',text:'Lights, pager, flamingo sign. In that order. Civilization is back on the grid.',reward:{cash:175,reputation:3},setFlag:{blockPowerRestored:true}})
+  ]),
+ encounter('lost-wallet','lost_wallet','A Name Behind the Money','hotel',['core'],1,360,4,
+  'A wallet lies beneath a bus timetable. Inside are rent money, a clinic appointment card, and a folded photograph.',[
+   stage('choice','hotel','Decide what to do with the wallet',{speaker:'YOU',text:'There is $85, a clinic appointment, and a name: Mara Bell. Somebody is having a worse day than me.',choices:[choice('Follow the appointment card to find the owner.','event_wallet','return',{givesItem:'event-found-wallet'}),choice('Keep the cash and leave the cards.','event_wallet','kept',{nextStage:'complete',reward:{cash:85,reputation:-3}}),choice('Leave it at Violet’s desk.','event_wallet','desk',{nextStage:'event-lost-wallet-desk',givesItem:'event-found-wallet'})]}),
+   stage('talk','clinic','Ask who missed their appointment',{inside:true,speaker:'RECEPTIONIST',text:'Mara is a diner cook. She ran back to work when she noticed the wallet missing.'}),
+   stage('deliver','diner','Return Mara’s wallet before her shift ends',{item:'event-found-wallet',timeLimit:180}),
+   stage('talk','diner','Hear Mara’s thanks',{inside:true,speaker:'MARA BELL',text:'The money was rent. The photograph was my dad. I can replace one of those, eventually. Thank you.',reward:{cash:30,reputation:4},setFlag:{walletOwnerHelped:true},nextStage:'complete'}),
+   stage('deliver','hotel','Leave the intact wallet with Violet',{id:'event-lost-wallet-desk',item:'event-found-wallet',reward:{cash:0,reputation:2},setFlag:{walletReturnedAtDesk:true}})
+  ]),
+ encounter('street-performer','street_performer','The Last Working Amplifier','club',['core'],1,420,3,
+  'A street singer has a crowd, a song, and an amplifier that is producing only municipal radio.',[
+   stage('choice','club','Help the street show',{speaker:'LENA',text:'Jax has a replacement lead. If you can get this thing sounding human, the whole block can hear the benefit song.',choices:[choice('Fetch the lead and run the sound check.','event_busker','help'),choice('Pay for a replacement lead and fetch it yourself.','event_busker','sponsor',{reward:{cash:-20,reputation:1}}),choice('Leave the show to its audience.','event_busker','ignored',{nextStage:'complete'})]}),
+   stage('collect','records','Pick up Jax’s shielded audio lead',{item:'event-audio-lead'}),
+   stage('deliver','club','Connect the new lead to Lena’s amplifier',{item:'event-audio-lead'}),
+   stage('heist','club','Keep the sound-check pulses in time',{inside:false,beats:4,lawful:true,instructions:'Tap LOCK SIGNAL on the gold beat. Four clean beats complete the sound check.',checkpoint:true}),
+   stage('talk','club','Stay for the first song',{speaker:'LENA',text:'No sponsor, no mayoral speech, no police frequency. Just a neighborhood singing too loudly. Your share of the tips.',reward:{cash:95,reputation:2},setFlag:{streetShowSupported:true}})
+  ]),
+ encounter('undercover','undercover_officer','Everybody Is a Customer','armory',['west'],2,600,2,
+  'A stranger outside Neon Armory offers easy money for a parcel delivered to a conveniently empty alley.',[
+   stage('choice','armory','Question the stranger’s easy job',{speaker:'MR. GREY',text:'No names. No questions. Just take this to the service alley. You look like someone who understands discretion.',choices:[choice('Investigate who is really paying.','event_undercover','investigate'),choice('Take the bait and carry the marked parcel.','event_undercover','bait',{nextStage:'event-undercover-bait',givesItem:'event-marked-parcel'}),choice('Refuse the offer.','event_undercover','refused',{nextStage:'complete'})]}),
+   stage('investigate','records','Check the stranger’s business card',{inside:true,clues:clues(['BUSINESS CARD','The print shop billed the Vice Division.'],['PHONE NUMBER','The callback number reaches a police evidence desk.'],['CASE FILE','The sting is designed to justify a Meridian street clearance, not recover stolen goods.'])}),
+   stage('collect','radio','Copy the public-frequency sting recording',{item:'event-sting-tape'}),
+   stage('deliver','clinic','Give the recording to a legal observer',{item:'event-sting-tape',reward:{cash:140,reputation:3},setFlag:{stingExposed:true},nextStage:'complete'}),
+   stage('deliver','warehouse','Carry the marked parcel to the service alley',{id:'event-undercover-bait',item:'event-marked-parcel',heat:2}),
+   stage('escape','warehouse','Escape the attempted sting without returning to the informant',{heat:2,maxWanted:0,hold:6,timeLimit:160,reward:{cash:210,reputation:-1},setFlag:{stingEscaped:true}})
+  ]),
+ encounter('stolen-recovery','stolen_vehicle_recovery','One Owner, One Set of Keys','hotel',['core'],2,540,3,
+  'A car pulls away from Violet Hotel while its owner stands at the curb holding both original keys.',[
+   stage('choice','hotel','Respond to the vehicle theft',{speaker:'CAR OWNER',text:'He copied the valet key. Stop him before he gets the car onto a transport.',choices:[choice('Intercept the stolen car.','event_stolen','recover'),choice('Accept a finder’s fee from the thief and stay quiet.','event_stolen','complicit',{nextStage:'complete',reward:{cash:75,reputation:-3}}),choice('Call the owner a cab and leave.','event_stolen','ignored',{nextStage:'complete'})]}),
+   stage('acquire_vehicle','hotel','Find a working vehicle for the interception'),
+   stage('chase','pier','Stop the thief before the harbor transfer',{duration:20,timeLimit:160,checkpoint:true}),
+   stage('collect','pier','Recover the copied valet key and impound slip',{item:'event-valet-key'}),
+   stage('deliver','hotel','Return the valet key so the owner can reclaim the stopped car',{item:'event-valet-key',reward:{cash:200,reputation:3},setFlag:{stolenCarRecovered:true}})
+  ]),
+ encounter('secret-transmission','secret_transmission','Numbers After Midnight','radio',['north'],2,720,2,
+  'An unused frequency repeats a four-note tune and an old municipal address. Sol says nobody has broadcast on it since 1978.',[
+   stage('choice','radio','Follow the unexplained transmission',{speaker:'DJ SOL',text:'That melody is the old tenant emergency signal. Somebody remembered the code. Let us remember the people.',choices:[choice('Trace the signal through the city.','event_signal','trace'),choice('Leave the frequency alone tonight.','event_signal','ignored',{nextStage:'complete'})]}),
+   stage('investigate','radio','Separate the old signal from the interference',{inside:true,clues:clues(['FREQUENCY','The carrier is bouncing off the Crescent Lookout relay.'],['TUNE','The four notes encode Dockside’s original street numbers.'],['CALL SIGN','The call sign belonged to a neighborhood station shut down before Meridian arrived.'])}),
+   stage('collect','observatory','Recover the relay’s forgotten archive cassette',{item:'event-signal-cassette'}),
+   stage('deliver','records','Ask Jax to restore the damaged cassette',{item:'event-signal-cassette',givesItem:'event-restored-signal'}),
+   stage('choice','radio','Choose who hears the restored neighborhood archive',{speaker:'DJ SOL',text:'It is their testimony, recorded ten years ago. We can broadcast it tonight or preserve the voices until the families agree.',choices:[choice('Broadcast the archive and expose the old clearance orders.','event_signal','broadcast',{reward:{cash:100,reputation:3},flags:{archiveBroadcast:true},nextStage:'complete'}),choice('Keep a protected copy for the families and the legal volunteers.','event_signal','sealed',{reward:{cash:65,reputation:4},flags:{archiveProtected:true},nextStage:'complete'})]})
+  ]),
+ encounter('shopkeeper','shopkeeper_problem','Eddie’s Midnight Stock Run','diner',['east'],1,480,4,
+  'Eddie’s delivery has gone missing and a crew has offered to sell him protection from the missing delivery.',[
+   stage('choice','diner','Hear Eddie’s problem',{speaker:'EDDIE',text:'They stole my stock, then offered me security. I am putting this under marketing expenses and asking you for help.',choices:[choice('Recover the stock and keep the crew away.','event_shopkeeper','help'),choice('Pay $60 to buy the stock back, then bring it yourself.','event_shopkeeper','buyback',{reward:{cash:-60,reputation:0}}),choice('Let Eddie deal with the supplier.','event_shopkeeper','ignored',{nextStage:'complete'})]}),
+   stage('collect','warehouse','Recover the diner’s labelled food crates',{item:'event-diner-stock'}),
+   stage('drive_route','diner','Bring the refrigerated crates through the delivery checkpoints',{checkpoints:2,timeLimit:180}),
+   stage('deliver','diner','Unload Eddie’s stock at the diner',{item:'event-diner-stock',needsCar:true}),
+   stage('defend','diner','Protect the delivery while Eddie clears the entrance',{count:2,duration:12,checkpoint:true}),
+   stage('talk','diner','Let Eddie reopen the kitchen',{inside:true,speaker:'EDDIE',text:'The pantry is full, the crew is gone, and your coffee is permanently cheaper. I believe in rewarding repeat business and improbable heroics.',reward:{cash:155,reputation:3},setFlag:{dinerDiscount:true}})
+  ]),
+ encounter('false-accusation','false_accusation','The Witness Who Wasn’t There','arcade',['west'],2,560,3,
+  'A security guard is accusing a delivery girl of breaking a shop window. Two witnesses are confidently describing different people.',[
+   stage('choice','arcade','Hear the accusation',{speaker:'DELIVERY GIRL',text:'I was at the diner. He says his witnesses saw everything. They cannot agree what color my jacket is.',choices:[choice('Check the witnesses before anyone is arrested.','event_accusation','investigate'),choice('Believe the guard and leave.','event_accusation','believed',{nextStage:'complete',reward:{cash:0,reputation:-2}}),choice('Refuse to choose without evidence.','event_accusation','ignored',{nextStage:'complete'})]}),
+   stage('talk','records','Question the first witness about the time',{inside:true,speaker:'FIRST WITNESS',text:'It happened at eight. Or nine. The guard gave me five dollars to remember the face.'}),
+   stage('talk','diner','Check Eddie’s delivery receipt',{inside:true,speaker:'EDDIE',text:'Her delivery is stamped eight-oh-two. She was carrying soup, not a brick.'}),
+   stage('investigate','radio','Compare the security dispatch recording',{inside:true,clues:clues(['DISPATCH','The guard requested a shop-clearance report before the window broke.'],['RECEIPT','The diner’s timestamp puts the girl across the river.'],['VOICEPRINT','The supposed second witness is the guard reading from his own report.'])}),
+   stage('choice','arcade','Present the evidence or sell your silence',{speaker:'SECURITY GUARD',text:'We can correct the paperwork, or I can make it worth your while to lose that tape.',choices:[choice('Clear the courier and give the tape to legal volunteers.','event_accusation','cleared',{reward:{cash:70,reputation:4},flags:{courierCleared:true},nextStage:'complete'}),choice('Take $180 and let the guard change the story quietly.','event_accusation','bribed',{reward:{cash:180,reputation:-4},flags:{accusationCoveredUp:true},nextStage:'complete'})]})
+  ]),
+ encounter('wrong-delivery','wrong_delivery','Apartment Zero','motel',['south'],1,500,3,
+  'A courier has delivered a parcel to a motel room that does not exist. The note inside is addressed to someone using your name.',[
+   stage('choice','motel','Choose what to do with the misdirected parcel',{speaker:'MOTEL CLERK',text:'Room zero. Guest name: yours. I have a very strict policy about mysteries before my second coffee.',choices:[choice('Follow the return address and find the intended recipient.','event_wrong_delivery','trace',{givesItem:'event-wrong-parcel'}),choice('Keep the parcel’s cash and destroy the note.','event_wrong_delivery','kept',{nextStage:'complete',reward:{cash:100,reputation:-3}}),choice('Leave it with the clerk.','event_wrong_delivery','ignored',{nextStage:'complete'})]}),
+   stage('talk','records','Ask Jax about the parcel’s obsolete address',{inside:true,speaker:'JAX',text:'Apartment Zero was a tenant radio code. It meant somebody needed a quiet way out. The address points to the old tower.'}),
+   stage('deliver','observatory','Bring the parcel to the waiting tenant organizer',{item:'event-wrong-parcel'}),
+   stage('choice','observatory','Choose how to protect the organizer’s documents',{speaker:'TENANT ORGANIZER',text:'Those are the original leases. I used your name because the city knows you are difficult to evict.',choices:[choice('Deliver the leases to the clinic’s legal archive.','event_wrong_delivery','archive',{givesItem:'event-original-leases'}),choice('Deliver them to Violet so the tenants can keep their own copies.','event_wrong_delivery','tenants',{givesItem:'event-original-leases',nextStage:'event-wrong-delivery-tenants'})]}),
+   stage('deliver','clinic','File the original leases with the legal volunteers',{item:'event-original-leases',reward:{cash:145,reputation:3},setFlag:{leasesArchived:true},nextStage:'complete'}),
+   stage('deliver','hotel','Give Violet the leases for the tenants’ own archive',{id:'event-wrong-delivery-tenants',item:'event-original-leases',reward:{cash:100,reputation:4},setFlag:{tenantLeasesReturned:true}})
+  ])
+);
+
+// Append to two existing encounters; completed old saves remain complete and existing
+// active stage numbers still identify the same objective.
+const breakdown=events.find(e=>e.id==='event-stranded-driver');
+breakdown.stages[2].reward={cash:0,reputation:0};
+breakdown.stages.push({id:'event-stranded-driver-repair',...stage('heist','diner','Fit and synchronize the replacement engine relay',{inside:false,beats:3,lawful:true,instructions:'Fit the relay by locking three pulses in the gold timing window. This is a repair, not a crime.',reward:{cash:140,reputation:1},setFlag:{strandedDriverHelped:true}})});
+const passenger=events.find(e=>e.id==='event-ride-request');
+passenger.stages.push(
+ {id:'event-ride-request-reveal',...stage('choice','clinic','Hear why your passenger cannot go home',{speaker:'NIGHT WORKER',text:'I saw the freight manifests. The clinic treated my hand, but someone followed us. Violet can hide me, or the freight boss will pay you to forget me.',choices:[choice('Take the witness to Violet’s protection.','event_ride_followup','protected'),choice('Take the freight boss’s $150 handoff.','event_ride_followup','betrayed',{nextStage:'event-ride-request-warehouse'})]})},
+ {id:'event-ride-request-safehouse',...stage('escort','hotel','Move the witness from the clinic to Violet’s protection',{fromWhere:'clinic',reward:{cash:80,reputation:3},setFlag:{nightWorkerProtected:true},nextStage:'complete'})},
+ {id:'event-ride-request-warehouse',...stage('escort','warehouse','Deliver the witness to the freight boss',{fromWhere:'clinic',reward:{cash:150,reputation:-4},setFlag:{nightWorkerBetrayed:true}})}
+);
+
+// Scene metadata is additive: it does not change the saved lifecycle or stage numbers.
+const scenes={
+ 'event-stranded-driver':'breakdown','event-car-accident':'accident','event-blackout':'blackout',
+ 'event-street-race':'race','event-stolen-recovery':'theft','event-store-robbery':'robbery',
+ 'event-street-performer':'performance','event-lost-wallet':'wallet','event-missing-person':'missing',
+ 'event-secret-transmission':'signal','event-street-scam':'scam','event-false-accusation':'dispute'
+};
+for(const event of events){event.scene=scenes[event.id]||'street';event.memoryKey=event.category;}
+for(const id of ['event-street-race','event-club-dispute','event-street-performer'])events.find(e=>e.id===id).hours=[17,5];
+events.find(e=>e.id==='event-secret-transmission').hours=[21,5];
+events.find(e=>e.id==='event-car-accident').weatherWeights={RAIN:2.4,FOG:1.5};
+events.find(e=>e.id==='event-medical-help').weatherWeights={RAIN:1.5};
+events.find(e=>e.id==='event-shopkeeper').reputationWeights={helpful:1.7};
+
 return {missions,events,contacts:[
  {id:'darla',name:'Darla Diamond',where:'club',description:'A former star learning what a comeback is for.'},
  {id:'bobby',name:'Bobby Two-Cars',where:'motel',description:'An excellent driver with a complicated relationship to ownership.'},

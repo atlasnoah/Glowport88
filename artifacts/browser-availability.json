@@ -1,0 +1,24 @@
+{
+  "chromium": {
+    "available": true,
+    "executable": "/usr/bin/chromium",
+    "testsRun": true
+  },
+  "firefox": {
+    "available": false,
+    "installationAttempted": true,
+    "testsRun": false,
+    "reason": "Playwright download CDN returned HTTP 403 Domain forbidden"
+  },
+  "webkit": {
+    "available": false,
+    "installationAttempted": true,
+    "testsRun": false,
+    "reason": "Separate Playwright WebKit installation also received HTTP 403 Domain forbidden"
+  },
+  "physicalDevices": {
+    "testsRun": false,
+    "reason": "No physical iPhone or Android device attached"
+  },
+  "scope": "Availability evidence; unavailable tests are not counted as passed."
+}

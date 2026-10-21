@@ -53,7 +53,7 @@ const check=async(name,fn)=>{await fn();passed.push(name);console.log('PASS',nam
  await check('completion previews the next unlocked story without autoaccepting it',async()=>{
   const before=await page.evaluate(()=>GlowportTest.system.engine.state.active.id);assert.equal(before,'m07');
   let result=await rendered();assert.equal(result.semantic.preview,true);assert.equal(result.semantic.mission,'m08');assert.equal(result.navigation.navigation,'exit');assert.match(result.hud.objective,/CHANGE OF A LIFETIME/);assert.match(result.hud.objective,/Jobs/i);assert.equal(result.hud.time,null);
-  await page.evaluate(()=>{GlowportTest.enterInterior('diner');GlowportTest.setInteriorPosition(403,149)});result=await rendered();assert.equal(result.navigation.preview,true);assert.equal(result.navigation.x,403);assert.equal(result.navigation.y,149);assert.match(result.prompt,/P · JOBS/,'Unaccepted job must guide to phone acceptance instead of a nonfunctional Interact action');
+  await page.evaluate(()=>{GlowportTest.enterInterior('diner');GlowportTest.setInteriorPosition(403,149)});result=await rendered();assert.equal(result.navigation.preview,true);assert.equal(result.navigation.x,403);assert.equal(result.navigation.y,149);assert.match(result.prompt,/E · START CHANGE OF A LIFETIME/,'Unaccepted job offers a functional direct start action');
   await page.evaluate(()=>GlowportTest.teleport('hotel'));result=await rendered();assert(result.arrows.some(a=>a.label==='NEXT JOB'));assert.equal(await page.evaluate(()=>GlowportTest.system.engine.state.active.id),'m07');
  });
  await check('next-story guidance survives save and reload',async()=>{

@@ -1,8 +1,8 @@
-# Mobile browser testing · 0.4.2
+# Mobile browser testing · 0.5.0
 
-Open https://atlasnoah.github.io/Glowport88/?v=0.4.2-navigation on your phone. No download or developer account is required. Start / Continue resumes local progress; New Story starts fresh. Both portrait and landscape keep the canvas, thumb controls and current objective accessible.
+Open https://atlasnoah.github.io/Glowport88/?v=0.5.0-living-city on your phone. No download or developer account is required. Start / Continue resumes local progress; New Story starts fresh. Both portrait and landscape keep the canvas, thumb controls and current objective accessible.
 
-Story navigation now points to the objective building entrance from the street, then to the exact objective inside. An EXIT marker guides you out when the next objective is elsewhere. Between operations, NEXT JOB marks the next story lead; the objective panel names it and explains Phone → Jobs acceptance. Existing saves keep their progress.
+Story navigation now points to the objective building entrance from the street, then to the exact objective inside. An EXIT marker guides you out when the next objective is elsewhere. Between operations, NEXT JOB marks the next story lead; the objective panel names it; INTERACT starts the briefing or PHONE → Jobs accepts it. Existing saves keep their progress.
 
 ## Controls
 
@@ -44,3 +44,7 @@ The former 7200×5040 backing canvas used about 145 MB of raw pixels and exceede
 The navigation suite adds 11 browser scenarios, including an actual touch investigation/handoff/completion/acceptance chain and a sweep of all 177 post-training story stages. The full npm test command also runs the existing 43 browser checks, model/content/art checks and accelerated campaign integration. Packaging checks separately verify desktop and touch play with all asset subrequests blocked. Public delivery is checked using a certificate-verified download, SHA-256 equality, and browser playback of those deployed bytes.
 
 Physical iPhones/Android devices, iOS Safari, real browser address-bar resizing, low-memory device behavior, thermal/battery use, and prolonged mobile sessions remain unverified. Please test on your phone as development continues. This browser beta is not an App Store submission or a store-approval claim.
+
+## Living City test pass
+
+At East Diner, verify INTERACT starts an available story on foot, a car requirement explains the next step, and ACTIONS lets you intentionally select the door, notice board or service. The tracked delivery should win over a nearby random-event offer. At Palm Motel, ACTIONS → PALM GARAGE opens vehicle buying and real upgrades. SOUND has music/effects sliders, mute and four original stations. Menus stop world input. Collect a cassette and reload; it must stay collected. Normal saves retain progress; ?debug=1 uses a separate QA save.

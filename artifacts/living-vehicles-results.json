@@ -1,0 +1,20 @@
+{
+  "time": "2026-10-21T23:34:14.955Z",
+  "passed": [
+    "ten distinct models and bounded original paint catalogue",
+    "model handling changes acceleration, top speed, steering and protection",
+    "garage acquisition and car purchase charge exactly once",
+    "full garage and insufficient money never charge or create extra vehicles",
+    "engine, handling and durability upgrades have actual bounded effects",
+    "durability reduces impact and disabled cars cannot gain power",
+    "paint changes exact approved sprite row and duplicate repaint is free",
+    "storage and reload retain upgrades, paint, model and disabled health",
+    "blocked pickup lanes retain garage inventory",
+    "repair is explicit, paid once and does not occur through storage",
+    "moving, distant and wanted players cannot transact",
+    "corrupt saved upgrade levels and unknown models are sanitized",
+    "mobile garage purchases, retrieval, upgrades, paint, input isolation and focus restoration"
+  ],
+  "errors": [],
+  "scope": "Production model/service/persistence checks and garage UI in isolated mobile Chromium. Host driving integration is separately covered by the game mobile suite."
+}

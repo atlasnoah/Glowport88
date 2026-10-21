@@ -1,0 +1,13 @@
+{
+  "time": "2026-10-21T23:36:06.425Z",
+  "passed": [
+    "actual driving uses distinct vehicle acceleration profiles",
+    "disabled vehicles stay stopped under actual acceleration input",
+    "Palm garage opens through actual accessible nearby actions",
+    "real workshop purchases, retrieves and customizes a vehicle",
+    "workshop blocks game input and upgraded garage storage survives reload",
+    "actual garage integration reports no critical browser errors"
+  ],
+  "errors": [],
+  "scope": "Real mobile game input, driving physics, garage interactions, purchases/upgrades and save/reload; fixture vehicle positioning and funded wallet."
+}

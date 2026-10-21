@@ -1,3 +1,14 @@
+# The Living City · 0.5.0
+
+- Fixed reproduced East Diner prompt/execution disagreement, encounter-stealing priority, clue radius mismatches and confusing on-foot driving interactions. E/touch now use one resolver; ACTIONS exposes alternatives and story markers start the actual briefing.
+- Added 12 event definitions (32 total), safe contextual street scenes, persistent outcome memory, blackout repair, accident hazards, lawful timing activities and physical race rivals with saved progress/results. Retained all 20 old event IDs and original stage slots.
+- Added 10 vehicle handling profiles,9 purchasable models, Palm workshop, paint/trim, real upgrades and paid repairs; disabled cars remain disabled through storage/loading.
+- Added 12 collectible cassette stories, citizen danger/shelter/return states and traffic responses, bounded roadblock cleanup, four original synthesized radio stations and audio settings, and journal sections.
+- Added mission recovery/optional-job resumption with reward protection, version 4 save backups/recovery and isolated developer-query saves.
+- Added focused diner, mission, encounter, vehicle, city/audio, save, host and multi-day endurance coverage. This is a development milestone; see LIVING_CITY_REPORT.md and LIVING_CITY_BACKLOG.md for tested scope and remaining work.
+
+---
+
 # Story navigation fix · 0.4.2
 
 - Restored street arrows for indoor objectives by guiding to the building entrance, then switching to the correct clue or objective inside.

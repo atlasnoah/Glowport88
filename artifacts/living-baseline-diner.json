@@ -1,0 +1,299 @@
+{
+  "source": "19abe84d159793d56adce9af0002920fc09f7ff2",
+  "time": "2026-10-21T23:16:24.935Z",
+  "urlSource": "/tmp/glowport-diner-baseline",
+  "results": [
+    {
+      "name": "diner-acquire-on-foot",
+      "before": {
+        "prompt": "E · OBJECTIVE",
+        "inside": null,
+        "inCar": false,
+        "mission": "m08",
+        "stage": 1,
+        "type": "acquire_vehicle",
+        "side": null,
+        "toast": "WELCOME TO GLOWPORT. FOLLOW THE PINK MISSION MARKER.",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      },
+      "after": {
+        "prompt": "E · EXIT BUILDING",
+        "inside": "diner",
+        "inCar": false,
+        "mission": "m08",
+        "stage": 1,
+        "type": "acquire_vehicle",
+        "side": null,
+        "toast": "ENTERED: EAST DINER",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      }
+    },
+    {
+      "name": "east-span-route-on-foot-at-diner",
+      "before": {
+        "prompt": "E · ENTER EAST DINER | SHIFT+E SIDE JOB",
+        "inside": null,
+        "inCar": false,
+        "mission": "m10",
+        "stage": 2,
+        "type": "drive_route",
+        "side": null,
+        "toast": "WELCOME TO GLOWPORT. FOLLOW THE PINK MISSION MARKER.",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      },
+      "after": {
+        "prompt": "E · EXIT BUILDING",
+        "inside": "diner",
+        "inCar": false,
+        "mission": "m10",
+        "stage": 2,
+        "type": "drive_route",
+        "side": null,
+        "toast": "ENTERED: EAST DINER",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      }
+    },
+    {
+      "name": "east-span-route-on-foot-at-checkpoint",
+      "before": {
+        "prompt": "E · ROUTE 1",
+        "inside": null,
+        "inCar": false,
+        "mission": "m10",
+        "stage": 2,
+        "type": "drive_route",
+        "side": null,
+        "toast": "WELCOME TO GLOWPORT. FOLLOW THE PINK MISSION MARKER.",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      },
+      "after": {
+        "prompt": "E · ROUTE 1",
+        "inside": null,
+        "inCar": false,
+        "mission": "m10",
+        "stage": 2,
+        "type": "drive_route",
+        "side": null,
+        "toast": "GET CLOSER TO A PERSON, DOOR, CAR, OR MISSION",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      }
+    },
+    {
+      "name": "east-span-delivery-on-foot",
+      "before": {
+        "prompt": "E · OBJECTIVE",
+        "inside": null,
+        "inCar": false,
+        "mission": "m10",
+        "stage": 3,
+        "type": "deliver",
+        "side": null,
+        "toast": "WELCOME TO GLOWPORT. FOLLOW THE PINK MISSION MARKER.",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      },
+      "after": {
+        "prompt": "E · OBJECTIVE",
+        "inside": null,
+        "inCar": false,
+        "mission": "m10",
+        "stage": 3,
+        "type": "deliver",
+        "side": null,
+        "toast": "THIS DELIVERY NEEDS A VEHICLE",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      }
+    },
+    {
+      "name": "mission-offer-steals-diner-delivery",
+      "before": {
+        "prompt": "E · OBJECTIVE",
+        "inside": null,
+        "inCar": true,
+        "mission": "m10",
+        "stage": 3,
+        "type": "deliver",
+        "side": null,
+        "toast": "WELCOME TO GLOWPORT. FOLLOW THE PINK MISSION MARKER.",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      },
+      "after": {
+        "prompt": "E · OBJECTIVE",
+        "inside": null,
+        "inCar": true,
+        "mission": "m10",
+        "stage": 3,
+        "type": "deliver",
+        "side": null,
+        "toast": "WELCOME TO GLOWPORT. FOLLOW THE PINK MISSION MARKER.",
+        "dialogue": true,
+        "who": "STRANGER",
+        "body": "The Lawn-Mower Engine. Want to get involved?"
+      }
+    },
+    {
+      "name": "false-flag-combat-interaction-on-foot",
+      "before": {
+        "prompt": "E · THREAT",
+        "inside": null,
+        "inCar": false,
+        "mission": "m27",
+        "stage": 0,
+        "type": "combat",
+        "side": null,
+        "toast": "MERIDIAN SECURITY · CLEAR THE AREA",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      },
+      "after": {
+        "prompt": "E · EXIT BUILDING",
+        "inside": "diner",
+        "inCar": false,
+        "mission": "m27",
+        "stage": 0,
+        "type": "combat",
+        "side": null,
+        "toast": "ENTERED: EAST DINER",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      }
+    },
+    {
+      "name": "investigate-prompt-outside-valid-radius",
+      "before": {
+        "prompt": "E · MIXING DESK",
+        "inside": "radio",
+        "inCar": false,
+        "mission": "m07",
+        "stage": 0,
+        "type": "investigate",
+        "side": null,
+        "toast": "ENTERED: DEAD AIR RADIO",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      },
+      "after": {
+        "prompt": "E · MIXING DESK",
+        "inside": "radio",
+        "inCar": false,
+        "mission": "m07",
+        "stage": 0,
+        "type": "investigate",
+        "side": null,
+        "toast": "ENTERED: DEAD AIR RADIO",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      }
+    },
+    {
+      "name": "diner-side-board-standard-e",
+      "before": {
+        "prompt": "E · ENTER EAST DINER | SHIFT+E SIDE JOB",
+        "inside": null,
+        "inCar": false,
+        "mission": "m07",
+        "stage": 0,
+        "type": "investigate",
+        "side": null,
+        "toast": "WELCOME TO GLOWPORT. FOLLOW THE PINK MISSION MARKER.",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      },
+      "after": {
+        "prompt": "E · EXIT BUILDING",
+        "inside": "diner",
+        "inCar": false,
+        "mission": "m07",
+        "stage": 0,
+        "type": "investigate",
+        "side": null,
+        "toast": "ENTERED: EAST DINER",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      }
+    },
+    {
+      "name": "diner-side-board-shift-e",
+      "before": {
+        "prompt": "E · ENTER EAST DINER | SHIFT+E SIDE JOB",
+        "inside": null,
+        "inCar": false,
+        "mission": "m07",
+        "stage": 0,
+        "type": "investigate",
+        "side": null,
+        "toast": "WELCOME TO GLOWPORT. FOLLOW THE PINK MISSION MARKER.",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      },
+      "after": {
+        "prompt": "E · ENTER EAST DINER | SHIFT+E SIDE JOB",
+        "inside": null,
+        "inCar": false,
+        "mission": "m07",
+        "stage": 0,
+        "type": "investigate",
+        "side": "motel",
+        "toast": "TAPE RUN STARTED · HEAD TO PALM MOTEL",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      }
+    },
+    {
+      "name": "next-story-marker-e-opens-door",
+      "before": {
+        "prompt": "P · JOBS · ACCEPT NEXT STORY",
+        "inside": null,
+        "inCar": false,
+        "mission": "m07",
+        "stage": 0,
+        "type": "investigate",
+        "side": null,
+        "toast": "WELCOME TO GLOWPORT. FOLLOW THE PINK MISSION MARKER.",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      },
+      "after": {
+        "prompt": "E · EXIT BUILDING",
+        "inside": "diner",
+        "inCar": false,
+        "mission": "m07",
+        "stage": 0,
+        "type": "investigate",
+        "side": null,
+        "toast": "ENTERED: EAST DINER",
+        "dialogue": false,
+        "who": "VEE",
+        "body": "Welcome to Glowport."
+      }
+    }
+  ],
+  "errors": [],
+  "scope": "Baseline real Chromium keyboard inputs at fixture-selected objectives; diagnoses advertised prompt versus actual handler. Not an end-to-end campaign playthrough."
+}

@@ -2,7 +2,7 @@
 // Accelerated adapter integration: actual objective evaluators and actions, with a deterministic
 // host replacing movement/aiming/AI. This proves transitions and inventory, not city navigation.
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
-global.window=global;for(const name of ['mission-engine','campaign','side-content','progression','police-system','gameplay'])require('../Glowport88/assets/'+name+'.js');
+global.window=global;for(const name of ['mission-engine','campaign','side-content','progression','police-system','encounter-system','gameplay'])require('../Glowport88/assets/'+name+'.js');
 global.GlowportPhone={active:false,close(){}};
 const keys=['hotel','armory','club','records','warehouse','radio','arcade','motel','diner','clinic','observatory','pier'];
 const locations=keys.map((key,i)=>({key,x:1000+(i%4)*600,y:1000+Math.floor(i/4)*600}));
@@ -57,7 +57,7 @@ function run(def,optionIndex=0){flush();assert.equal(game.definition().id,def.id
  case 'heist':{
   // Timing is covered through actual input in overhaul.cjs. Here invoke the same successful
   // close boundary as the host so every subsequent collect/deliver/escape chain is exercised.
-  at(stage);active.data.done=true;active.data.precision=1;game.forceWanted(Math.max(world.wanted,stage.heat||1.5));step();break;
+  at(stage);active.data.done=true;active.data.precision=1;if(!stage.lawful)game.forceWanted(Math.max(world.wanted,stage.heat||1.5));step();break;
  }
  default:throw Error('Unhandled '+stage.type);
  }

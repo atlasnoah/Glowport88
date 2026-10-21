@@ -1,0 +1,21 @@
+{
+  "time": "2026-10-21T23:36:00.476Z",
+  "passed": [
+    "available diner story starts on foot through E and presents its briefing",
+    "starting outside the mission radius cannot accidentally accept the job",
+    "available diner story also starts from a stopped vehicle without a car gate",
+    "diner entrance prompts and E agree from reachable approach directions",
+    "ordered investigation uses its actual 54px interaction radius",
+    "driving checkpoints cannot be completed on foot or by E",
+    "East Span Run advances through actual route handlers and retains checkpoint save data",
+    "tracked diner handoff outranks a nearby event and consumes evidence once",
+    "car-required delivery explains its requirement and allows deliberate door access",
+    "ordinary E can deliberately start a diner side job through MORE ACTIONS",
+    "diner food restores real health and the exit stays usable",
+    "False Flag starts through E and its combat advances using actual aimed shots",
+    "touch INTERACT uses the same direct diner mission-start interaction",
+    "diner regressions produce no critical browser errors or missing assets"
+  ],
+  "errors": [],
+  "scope": "Real Chromium E/menu/touch/weapon input with fixture-selected objectives and travel. m08 acceptance, m10 route/handoff, m27 combat, side work, food, save/reload. Not a real-time full campaign playthrough."
+}

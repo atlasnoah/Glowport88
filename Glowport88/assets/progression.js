@@ -18,8 +18,8 @@ const clone=value=>JSON.parse(JSON.stringify(value));
 const blank=()=>({version:VERSION,skills:{driving:0,shooting:0},reputation:0,inventory:{},properties:{},vehicles:{},inbox:[],flags:{},lastIncomeClock:null,incomeElapsed:0,vehicleSequence:0,messageSequence:0,totalIncome:0});
 function cleanVehicle(vehicle,id){
  if(!vehicle||typeof vehicle!=='object')return null;
- const health=clamp(vehicle.health??100,1,100),color=typeof vehicle.color==='string'&&/^#(?:[0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i.test(vehicle.color)?vehicle.color:'#6ea9b1';
- return {id:String(id).slice(0,80),color,health,style:Math.floor(clamp(vehicle.style??0,0,5)),model:typeof vehicle.model==='string'?vehicle.model.slice(0,40):'City sedan',personal:true,angle:number(vehicle.angle),tuning:Math.floor(clamp(vehicle.tuning||0,0,2))};
+ const health=clamp(vehicle.health??100,0,100),color=typeof vehicle.color==='string'&&/^#(?:[0-9a-f]{3}|[0-9a-f]{4}|[0-9a-f]{6}|[0-9a-f]{8})$/i.test(vehicle.color)?vehicle.color:'#6ea9b1';
+ return {id:String(id).slice(0,80),color,health,style:Math.floor(clamp(vehicle.style??0,0,5)),model:typeof vehicle.model==='string'?vehicle.model.slice(0,40):'City sedan',personal:true,angle:number(vehicle.angle),tuning:Math.floor(clamp(vehicle.tuning||0,0,2)),modelId:['compact','sedan','sport','muscle','van','pickup','taxi','police','delivery','rare'].includes(vehicle.modelId)?vehicle.modelId:vehicle.kind==='police'?'police':'sedan',kind:vehicle.kind==='police'||vehicle.modelId==='police'?'police':'car',paint:['rose','teal','ivory','blue','copper','violet','silver'].includes(vehicle.paint)?vehicle.paint:null,handling:Math.floor(clamp(vehicle.handling||0,0,2)),durability:Math.floor(clamp(vehicle.durability||0,0,2)),trim:Math.floor(clamp(vehicle.trim||0,0,2))};
 }
 class Progression{
  constructor(saved){this.state=blank();if(saved)this.import(saved)}

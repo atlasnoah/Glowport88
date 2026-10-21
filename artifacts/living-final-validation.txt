@@ -1,0 +1,252 @@
+
+> glowport88@0.5.0 test
+> node tests/syntax.cjs && node tests/missions.cjs && node tests/mission-engine.cjs && node tests/police-system.cjs && node tests/progression.cjs && node tests/save-system.cjs && node tests/living-missions.cjs && node tests/living-events.cjs && node tests/living-vehicles.cjs && node tests/living-city.cjs && node tests/campaign-content.cjs && node tests/campaign-playthrough.cjs && node tests/terrain-cache.cjs && node tests/smoke.cjs && node tests/gameplay.cjs && node tests/overhaul.cjs && node tests/navigation.cjs && node tests/touch-controls.cjs && node tests/mobile.cjs && node tests/east-diner.cjs && node tests/vehicle-host.cjs && node tests/living-city-host.cjs && node tests/encounter-host.cjs && node tests/living-endurance.cjs
+
+PASS JavaScript syntax and HTML asset references
+PASS investigation sequence, room isolation, route bounds, deadline, failure/retry, completion, state retention
+PASS mission engine: prerequisites and active mission exclusivity
+PASS mission engine: actual evaluator conditions and strict deadline
+PASS mission engine: checkpoint retry clears objective data but retains failures
+PASS mission engine: choices cannot resolve by proximity and terminal branches work
+PASS mission engine: an ending is not re-awarded by later free-roam jobs
+PASS mission engine: a final implicit choice advances without an explicit branch
+PASS mission engine: forward stage-id branches skip objectives safely
+PASS mission engine: interact signal and repeatable encounter run rewards
+PASS mission engine: checkpoint replay cannot farm stage payouts
+PASS mission engine: save/load restores objective state and pending rewards
+PASS mission engine: repeatable pending completions survive multiple unconsumed runs
+PASS mission engine: pending event duplicates are deduplicated on restore
+PASS mission engine: failed mission persists and resumes at its checkpoint
+PASS mission engine: suspend and resume preserve objective progress around a side activity
+PASS mission engine: bad and future saves cannot corrupt the engine or inject prototypes
+PASS mission engine: dynamic registration and immutable active definitions
+16 mission-engine checks passed
+PASS minor crime requires a living, in-range witness and clear line of sight
+PASS alarms and explicit script crimes dispatch without inventing witnesses
+PASS officers cannot see or engage through walls; last known position stays fixed
+PASS wanted level does not decay while officers see the player
+PASS breaking line of sight produces a finite search and successful escape
+PASS reacquisition renews pursuit and search; interiors cannot be magically observed
+PASS dispatch/backup and high-level roadblocks are rate limited
+PASS low-level stationary suspects can be arrested, with a fair hold and cancellation
+PASS missing geometry fails closed instead of granting omniscient perception
+PASS state roundtrips without restoring an unavoidable arrest and validates unsafe input
+PASS external hospital/reset and negative legacy heat adjustments clear pursuit
+11 police model checks passed
+PASS property affordability/upgrades, bounded income, inventory, skills, messages, vehicle storage, and safe progression persistence
+PASS save migration backups, corruption recovery, future-version preservation, explicit new-story backup and quota safety
+PASS living mission: next story starts on foot with briefing before vehicle acquisition
+PASS living mission: next story also starts in a vehicle and rejects outside activation radius
+PASS living mission: vehicle briefing explains requirements without advancing driving objectives
+PASS living mission: nearby cars remain available during vehicle-required stages
+PASS living mission: False Flag combat never advertises a nonfunctional interaction
+PASS living mission: East Diner handoff explains on-foot requirement then outranks nearby event
+PASS living mission: investigation prompt range and execution range are identical
+PASS living mission: moving handoffs ask the player to stop instead of delivering at speed
+PASS living mission: checkpoint restart invalidates queued callbacks and preserves unrelated items
+PASS living mission: checkpoint replay cannot duplicate cash or permanent granted items
+PASS living mission: replayed choice restores a needed package without repeating rewards
+PASS living mission: missing chase and escort targets fail with recoverable checkpoint reasons
+PASS living mission: failed objectives clear temporary enemies and contacts without changing rewards
+PASS living mission: damaged route state yields recovery instead of throwing during navigation
+PASS living mission: putting optional jobs aside resumes main and retains optional reward ledger
+PASS living mission: whole-operation restart retains its run and refuses to erase recorded choices
+PASS living mission: known damaged saved objectives retain mission identity and retry path
+17 living mission interaction/recovery checks passed
+PASS living encounters: 32 event types retain all 20 old event IDs and original objective slots
+PASS living encounters: required new canonical encounters contain actual stages and distinct outcomes
+PASS living encounters: time, district, progression, proximity and cooldown gates affect selection
+PASS living encounters: weather and reputation gates are enforceable and force still validates geometry
+PASS living encounters: safe spawn searches bounded alternatives and rejects inaccessible targets
+PASS living encounters: variety history avoids immediate repeats when alternatives exist
+PASS living encounters: offer and active street scenes use visible safe actors and bounded temporary cars
+PASS living encounters: scene witnesses visibly flee danger without moving into blocked geometry
+PASS living encounters: blackout darkens its local block, restores after relay stage, and cleans up
+PASS living encounters: road routes follow connected streets and route around solid blocks
+PASS living encounters: two physical race rivals wait for a vehicle, drive safe routes and record real finish times
+PASS living encounters: saved race progress restores rivals without duplicate cars or reset finish times
+PASS living encounters: temporary cleanup preserves the player’s controlled car
+PASS living encounters: outcome memory persists real choices and safely validates damaged imports
+14 Living City encounter checks passed
+PASS vehicles: ten distinct models and bounded original paint catalogue
+PASS vehicles: model handling changes acceleration, top speed, steering and protection
+PASS vehicles: garage acquisition and car purchase charge exactly once
+PASS vehicles: full garage and insufficient money never charge or create extra vehicles
+PASS vehicles: engine, handling and durability upgrades have actual bounded effects
+PASS vehicles: durability reduces impact and disabled cars cannot gain power
+PASS vehicles: paint changes exact approved sprite row and duplicate repaint is free
+PASS vehicles: storage and reload retain upgrades, paint, model and disabled health
+PASS vehicles: blocked pickup lanes retain garage inventory
+PASS vehicles: repair is explicit, paid once and does not occur through storage
+PASS vehicles: moving, distant and wanted players cannot transact
+PASS vehicles: corrupt saved upgrade levels and unknown models are sanitized
+PASS vehicles: mobile garage purchases, retrieval, upgrades, paint, input isolation and focus restoration
+13 vehicle checks passed
+PASS living city: twelve original archive sites have valid sampled access paths
+PASS living city: blocked maps omit inaccessible collectibles instead of spawning placeholders
+PASS living city: collecting requires the same on-foot radius advertised by its interaction
+PASS living city: collection receipts survive reload and prevent duplicate cash and evidence
+PASS living city: all twelve tapes unlock the archive record and pay its completion honorarium once
+PASS living city: weather, pursuits, hazards and crossing pedestrians change actual traffic caps
+PASS living city: citizens flee, return to routine, seek shelter and recover blocked routes
+PASS living city: multi-day policy simulation keeps NPC state storage bounded
+PASS living city: unsupported audio is a recoverable optional capability
+PASS living city: real user gesture unlocks Web Audio and the four-station mobile controls fit
+PASS living city: music/effects/station controls work and the audio modal captures gameplay keys
+PASS living city: rapid effects and engine/weather scheduling remain within the voice budget and pause cleans up
+PASS living city: background suspension, gesture resume and mute are safe with no browser errors
+13 living-city/audio checks passed
+PASS content structure: 40 main / 5 side contacts / 20 side / 32 encounter types; prerequisite graphs, branches, rewards, locations, and approved art preserved
+NOTE: Catalogue validation does not prove mission playability or campaign duration. Run real browser objectives.
+PASS accelerated campaign integration: 86 definitions / three choice sweeps / 1013 objectives; handoffs, routes, actors, pursuit, all endings, reward receipts, storage and migration
+PASS tiled terrain: 10 exact coordinate/seam views, 10 approved-art comparisons (<0.5% channel tolerance), 20 MiB peak of 24 MiB cache budget, LRU eviction and release
+PERF desktop reference 248ms; cached tile max 10ms; 15 tile bakes
+PASS menu and Start
+PASS city rendering
+PASS movement and camera
+PASS mapBtn
+PASS journalBtn
+PASS pauseBtn
+PASS pause freezes simulation time
+PASS enter, drive, brake and exit personal car
+PASS hotel entry and exit
+PASS intro conversation and chapter reward
+PASS weapon purchase and equip tutorial
+PASS weapon fire and reload
+PASS police response
+PASS save and restore
+PASS new story resets campaign
+PASS old-save migration to expanded campaign
+PASS clinic purchase and interactive arcade
+PASS distinct interior assets
+PASS night and rain rendering
+PASS no browser errors or missing assets
+20 checks passed
+PASS menu keyboard safety
+PASS all three training targets advance campaign
+PASS two-enforcer combat and chapter completion
+PASS Roxy conversation and next campaign lead
+PASS legacy driving chapter migrates to expanded campaign
+PASS 30-second traffic/NPC simulation
+PASS v2 save migrates the radio chapter into m07
+PASS phone freezes simulation and captures gameplay input
+PASS property purchase is a real one-time transaction
+PASS phone accepts a side story and persists it
+PASS actual ordered investigation advances and reloads
+PASS objective deadline fails and checkpoint retry grants no cash
+PASS heist uses actual timing-window input
+PASS street encounter offer can be accepted through its dialogue
+PASS all final choices resolve distinct endings with free roam
+PASS police search begins after losing sight inside
+PASS complete side story consumes its inventory and pays once
+PASS route checkpoints require driving and a stopped arrival
+PASS escort boards the getaway and reaches a real handoff
+PASS stealth requires crouching through the ordered quiet route
+PASS pursuit follows a physical traffic target before the handoff
+PASS garage storage, tuning and controlled vehicle survive reload
+PASS no critical browser errors or missing assets
+17 overhaul browser checks passed
+PASS indoor story objectives draw an outdoor entrance arrow
+PASS correct rooms preserve clue targets and wrong rooms show the exit
+PASS real investigation and handoff retain exit, street and entrance guidance
+PASS completion previews the next unlocked story without autoaccepting it
+PASS next-story guidance survives save and reload
+PASS phone acceptance replaces next-job guidance with the accepted entrance
+PASS route checkpoints and moving pursuit targets retain their world coordinates
+PASS all post-training story stages resolve world and room coordinates consistently
+PASS failed missions retain retry guidance and restore arrows after retry
+PASS finale completion keeps free roam without an obsolete story arrow
+PASS navigation changes produce no critical browser errors or missing assets
+11 navigation browser checks passed
+PASS touch controller: radial movement starts smoothly and clamps diagonal speed
+PASS touch controller: edge contact on the aiming pad cannot fire before a deliberate drag
+PASS touch controller: aim direction is normalized and firing has a release dead band
+PASS touch controller: movement, aim and held Fire keep independent pointer ownership
+PASS touch controller: driving filters tiny orthogonal drift without losing throttle
+PASS touch controller: keyboard and assistive click activation remains available once
+PASS touch controller: foreign movement and release events cannot steal another thumb
+PASS touch controller: a duplicate pointer cannot also press Fire while owning movement
+PASS touch controller: long-held action performs once and ignores compatibility clicks
+PASS touch controller: dragged-away and canceled action presses perform no action
+PASS touch controller: capture loss releases only its owner and cannot restart from a stale move
+PASS touch controller: window ownership tracks motion even when native capture is unavailable
+PASS touch controller: modal transitions cancel pending actions and require fresh contacts
+PASS touch controller: blur, page hiding and orientation resets release all held inputs
+PASS touch controller: destroy removes listeners and stale events cannot re-enable the controller
+PASS touch controller: unchanged frame updates do not rewrite touch presentation
+PASS touch controller: disabled desktop controller leaves keyboard state untouched across modes
+17 isolated touch-control checks passed
+PASS phone Start and portrait controls fit the viewport
+PASS touch joystick moves and releases without page scrolling
+PASS touch interaction enters a building and advances a real conversation
+PASS canvas taps do not accidentally fire a weapon
+PASS two thumbs can move and aim/fire independently
+PASS touch cancellation clears both sticks and held actions
+PASS touch crouch, weapon selection, fire and reload work
+PASS long touch actions activate once on release and cancel outside
+PASS hybrid keyboard and touch releases preserve independent sources
+PASS held Fire preserves aim while the movement thumb stays active
+PASS phone menus scroll natively and freeze the game
+PASS touch driving supports throttle, steering, braking and exit
+PASS pause and background handlers release held input and preserve time
+PASS landscape rotation retains usable game and touch targets
+PASS short landscape viewport and unsupported fullscreen stay usable
+PASS phone can complete the actual heist timing input
+PASS mobile arcade buttons and quit preserve the main game
+PASS mobile save/reload preserves progress and restores touch controls
+PASS small phone width has no horizontal overflow
+PASS desktop keyboard and layout retain their normal behavior
+PASS mobile browser has no critical errors or missing assets
+21 mobile browser checks passed
+PASS East Diner: available diner story starts on foot through E and presents its briefing
+PASS East Diner: starting outside the mission radius cannot accidentally accept the job
+PASS East Diner: available diner story also starts from a stopped vehicle without a car gate
+PASS East Diner: diner entrance prompts and E agree from reachable approach directions
+PASS East Diner: ordered investigation uses its actual 54px interaction radius
+PASS East Diner: driving checkpoints cannot be completed on foot or by E
+PASS East Diner: East Span Run advances through actual route handlers and retains checkpoint save data
+PASS East Diner: tracked diner handoff outranks a nearby event and consumes evidence once
+PASS East Diner: car-required delivery explains its requirement and allows deliberate door access
+PASS East Diner: ordinary E can deliberately start a diner side job through MORE ACTIONS
+PASS East Diner: diner food restores real health and the exit stays usable
+PASS East Diner: False Flag starts through E and its combat advances using actual aimed shots
+PASS East Diner: touch INTERACT uses the same direct diner mission-start interaction
+PASS East Diner: diner regressions produce no critical browser errors or missing assets
+14 East Diner browser checks passed
+PASS vehicle host: actual driving uses distinct vehicle acceleration profiles
+PASS vehicle host: disabled vehicles stay stopped under actual acceleration input
+PASS vehicle host: Palm garage opens through actual accessible nearby actions
+PASS vehicle host: real workshop purchases, retrieves and customizes a vehicle
+PASS vehicle host: workshop blocks game input and upgraded garage storage survives reload
+PASS vehicle host: actual garage integration reports no critical browser errors
+6 vehicle host browser checks passed
+PASS living-city host: all twelve archive tapes are safely placed in the actual city
+PASS living-city host: the actual touch Interact button collects a tape and pays once
+PASS living-city host: archive receipts, lore and currency survive actual save and reload
+PASS living-city host: all other archive locations expose working unified interaction candidates
+PASS living-city host: the in-game SOUND menu pauses simulation and captures world input
+PASS living-city host: radio preferences persist independently without changing player progress
+PASS living-city host: actual NPC updates expose living states with bounded reaction storage
+PASS living-city host: no critical browser errors or missing city/audio assets
+8 living-city host checks passed
+PASS encounter host: stranded-driver repair uses real timing input without creating wanted heat
+PASS encounter host: lost-wallet help travels through clues, returns the item, and records its owner
+PASS encounter host: blackout repairs restore the block and finish through the real activity
+PASS encounter host: real-city race rivals travel, survive reload, and award a single finish result
+PASS encounter host: journal sections expose side work, encounters, archive and statistics
+PASS encounter host: representative new encounters produce no browser errors
+6 encounter host checks passed
+Simulated day 1
+Simulated day 2
+Simulated day 3
+PASS endurance: three simulated days preserve finite geometry and bounded city entities
+PASS endurance: retained JS heap, terrain surfaces and save keys stay bounded
+PASS endurance: every encounter offer expires without payout or leftover mission enemies
+PASS endurance: soak state reloads with completed story and finite player position
+PASS endurance: endurance simulation produces no critical browser errors
+5 bounded endurance checks passed
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

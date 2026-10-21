@@ -133,6 +133,15 @@ class MissionEngine{
   const from=active.stage;active.attempt++;this._history('retried',active.id,{stage:active.checkpoint});this._emit('mission-retry',{fromStage:from,toStage:active.checkpoint});
   return this._enter(active.checkpoint,{retry:true,fromStage:from});
  }
+ restart(fromBeginning=false){
+  const active=this.state.active;if(!active||active.status==='complete')return false;
+  const from=active.stage,index=fromBeginning?0:active.checkpoint;
+  active.attempt++;active.failures++;if(fromBeginning)active.checkpoint=0;
+  // Keep the run and its receipt ledger: replaying a checkpoint cannot print rewards.
+  this._events=this._events.filter(e=>!(e.mission===active.id&&e.run===active.run&&['mission-start','stage-start','mission-failed'].includes(e.type)));
+  this._history('restarted',active.id,{stage:index});this._emit('mission-retry',{fromStage:from,toStage:index,manual:true});
+  return this._enter(index,{retry:true,restart:true,fromStage:from});
+ }
  suspend(){
   const active=this.state.active;if(!active||active.status==='complete')return null;
   const saved=json(active);this._emit('mission-suspended');
@@ -165,9 +174,12 @@ class MissionEngine{
  export(){return {...json(this.state),pendingEvents:json(this._events)}}
  _active(value){
   if(!plain(value)||!this.definitions.has(value.id))return null;
-  const d=this.definitions.get(value.id),stage=value.stage;if(!Number.isInteger(stage)||stage<0||stage>=d.stages.length)return null;
-  const status=['active','failed','complete'].includes(value.status)?value.status:'active';
+  const d=this.definitions.get(value.id),invalidStage=!Number.isInteger(value.stage)||value.stage<0||value.stage>=d.stages.length;
+  // A known mission with a damaged objective remains recoverable, rather than disappearing.
+  const stage=invalidStage?Math.min(d.stages.length-1,integer(value.checkpoint)):value.stage;
+  const status=invalidStage?'failed':['active','failed','complete'].includes(value.status)?value.status:'active';
   const active={id:value.id,stage,status,elapsed:Math.max(0,finite(value.elapsed)),stageElapsed:Math.max(0,finite(value.stageElapsed)),checkpoint:Math.min(stage,integer(value.checkpoint)),data:plain(value.data)?json(value.data):{},progress:value.progress===undefined?0:json(value.progress),reason:typeof value.reason==='string'?value.reason.slice(0,1000):null,run:Math.max(1,integer(value.run,1)),attempt:integer(value.attempt),failures:integer(value.failures),claimed:{},choices:{},ending:typeof value.ending==='string'?value.ending.slice(0,128):null};
+  if(invalidStage){active.data={};active.reason='Saved objective is invalid. Retry the checkpoint to recover this mission.';}
   if(plain(value.claimed))for(const [key,claimed] of Object.entries(value.claimed))if(/^(stage|choice):\d+$/.test(key)&&claimed===true)active.claimed[key]=true;
   if(plain(value.choices))for(const [key,choice] of Object.entries(value.choices))if(identifier(key)&&Number.isInteger(choice)&&choice>=0)active.choices[key]=choice;
   return active;

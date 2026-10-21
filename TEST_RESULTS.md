@@ -1,45 +1,68 @@
-# Test results · Mobile browser build 0.4.2
+# Test results — Living City 0.5.0
 
-## Executed checks
+## Executed validation
 
-`npm ci --cache /tmp/glowport-npm-cache --no-audit --no-fund` installs the frozen lockfile successfully. `npm test` runs syntax/asset-reference validation, the retained evidence/delivery logic suite, 16 mission-engine tests, 11 police model tests, progression/economy persistence checks, catalogue/geometry/art validation, accelerated campaign integration, and **75 gameplay browser checks** (20 smoke + 6 combat/gameplay + 17 overhaul + 21 mobile + 11 navigation scenarios), plus **17 isolated touch-controller browser checks**.
+The release runs `npm test`, `npm run release`, `npm run test:release`, and `node tests/public-demo.cjs`. Named JSON reports in artifacts and the final CLI transcript record outcomes. The full source suite is rerun after the final gameplay fixes; packaged and public-byte checks run against the resulting standalone HTML.
 
-The navigation suite checks street entrance arrows for indoor objectives, correct room clues, exit guidance, actual touch investigation/collection/delivery/completion, next-story preview and Phone Jobs acceptance, save/reload, route and pursuit targets, retry and ending free roam. A catalogue sweep checks all 177 post-training main stages across outdoor/correct-room/wrong-room coordinate spaces. These checks use fixture travel and do not establish a complete human playthrough.
+| Suite | Checks / scope |
+| --- | --- |
+| Retained browser/controller suites | 92: smoke 20, combat/gameplay 6, overhaul 17, navigation 11, isolated touch 17, mobile 21 |
+| East Diner | 14 actual E/menu/touch, briefing, vehicle, radius, route/reload, priority, food/exit and combat scenarios |
+| Vehicle host | 6 real-game driving/disabled vehicle/garage purchase/upgrades/modal/persistence scenarios |
+| City/audio host | 8 real-game cassette geometry/interaction/receipts/reload/audio-input/settings/NPC scenarios |
+| Encounter host | 6 mobile repair, wallet-return, blackout, physical race/save/results, journal and error checks |
+| Endurance | 5 accelerated simulation, bounded memory/entities/saves, all 32 offer expirations, reload and error checks |
+| Living mission model | 17 interaction, requirement, priority, callback, retry/restart, item/reward, optional-job and failure cleanup checks |
+| Encounter director | 14 catalogue compatibility, context/geometry/variety/scenes/reactions/blackout/roads/rivals/cleanup/memory checks |
+| Vehicle models and workshop | 13 mixed handling/economy/persistence and mobile workshop checks |
+| City/audio policies | 13 mixed geometry/receipts/behavior/traffic/audio-fallback/gesture/UI/voice-budget checks |
+| Existing models/content | 16 mission-engine tests, 11 police tests, progression/income/inventory/storage, save backups/recovery, objective logic, content/prerequisites/geometry/art, terrain caching and campaign integration |
 
-The mobile suite uses portrait 390×844, landscape 844×390, short landscape 844×320, and small-phone 320×568 contexts with real CDP multi-touch. It covers simultaneous movement/aim/fire and independent release, cancellation, actual driving/steering/braking/exit, touch conversations, owned-weapon switching/fire/reload/crouch, native list swipes, modal time freeze, background input release/pause, a real heist timing sequence, arcade controls, exact room save/reload and desktop input compatibility. Additional checks cover long-press single activation/drag-away cancellation, hybrid hardware keys, aim-to-Fire handoff and hidden unsupported fullscreen. The isolated controller suite covers radial precision, normalized aim/fire hysteresis, independent/duplicate pointer ownership, stale capture/click events, modal and destruction cleanup, accessible activation, window motion fallback, and zero unchanged-frame DOM mutations. Actual-device and Safari validation is still outstanding.
+The 131 retained/new gameplay, controller and soak scenarios above are browser-host checks; the additional focused suites mix model tests with their own small browser/UI cases. This avoids counting every assertion as a separate browser playthrough.
 
-Terrain tests cover ten exact coordinate/seam views, ten actual-art crop comparisons with documented raster-sampling tolerance, LRU budget/reuse/eviction and disposal. The game allocates 1024px terrain surfaces with a six-tile/24 MiB budget instead of one 36-million-pixel world canvas. All original art files are unchanged.
+All seven approved art PNG SHA256 values, art.js, 800×450 camera, 7200×5040 city and 20×15 road grid are preserved. Screenshots cover original city/interiors/night/rain, new diner interaction/touch, garage and radio UI.
 
-The approved hashes of all seven art PNGs and the camera/world/grid constants match their pre-overhaul baseline. The art renderer and original asset files were not regenerated.
+## What the campaign coverage establishes
 
-The browser checks exercise Start, movement, driving/braking, buildings, real shop purchases, aimed training shots and combat kills, conversations, pause/modal input isolation, map/journal, services, old-save migration, actual ordered clues with reload, deadline failure/checkpoint retry, the real heist timing input, street encounter acceptance, all three final decisions/free roam, line-of-sight pursuit/search, a complete Uncle Static story with item consumption and exactly one payout, route checkpoints, passenger pickup/delivery, crouch-gated stealth, a physical traffic pursuit, and garage repair/tuning/storage/retrieval/reload. Browser scenarios use fixture positioning to avoid travel; they do not bypass their objective handlers. No critical browser errors or missing assets occurred.
+All 40 main and 20 side mission definitions remain. There are 32 event definitions (12 added). All 92 definitions register and pass prerequisite/stage structure checks. The navigation sweep checks all 177 post-training main objectives in world/correct-room/wrong-room coordinates.
 
-`tests/campaign-playthrough.cjs` uses the production adapter and objective evaluators with a deterministic host: **74 new main/side/event definitions**, three ordered choice sweeps, and **910 objective resolutions**. It exercises every authored option across those sweeps, inventory handoffs, all three endings, performance payouts, reward receipts, optional-job suspension/resumption, garage identities, and completed-save migration. Movement and combat are substituted, and it invokes the successful heist boundary instead of playing the timing UI. This is integration coverage, not a full browser playthrough or a duration measurement. The six retained opening missions have separate smoke/combat browser coverage.
+`campaign-playthrough.cjs` resolves 86 post-training main/side/event definitions across three ordered choice sweeps and 1,013 objective resolutions. It runs the production evaluator and actions with deterministic travel/combat, and invokes the successful heist boundary. The six opening missions retain separate actual browser coverage. This proves much more than catalogue presence but is not a continuous human campaign, every branch combination, or a duration measurement.
 
-`npm run release && npm run test:release` verifies the self-contained HTML through a temporary HTTP server while blocking subresource requests. Desktop startup, rendered pixels, save/reload, map, phone, and a new campaign objective are checked, plus mobile Start/layout/real touch movement/input release/phone jobs/story entrance guidance with asset subrequests blocked. Direct file navigation remains restricted by this cloud browser policy.
+Dedicated East Diner tests use real input to start available missions, enter/exit, read briefings, inspect clues, run m10 checkpoints/handoff, avoid encounter-stealing priority, choose side jobs/services, and shoot four m27 combat opponents. New event browser scenarios play lawful timing, complete wallet/blackout chains and physical race rival/save/result behavior. Travel positioning is explicit fixture work.
 
-## Published delivery
+## Endurance and performance
 
-The mobile 0.4.2 release uses https://atlasnoah.github.io/Glowport88/?v=0.4.2-navigation. Its tested checksum is generated in dist/SHA256SUMS; public verification records the deployed checksum in artifacts/public-demo-results.json.
+`living-endurance-results.json` records 21,600 real city updates over three accelerated 12-minute game days, sampled weather, finite and collision-safe NPC positions, bounded counts, periodic rendering, terrain LRU limits, save payload/key bounds and retained JavaScript heap after explicit GC. It also force-tests expiration of every event offer without cash, leftover scene actors, temporary cars or mission enemies.
 
-`node tests/public-demo.cjs` downloads the public file with normal TLS verification, checks that hash, and plays the downloaded bytes in Chromium with subresources blocked. The public check covers mobile Start, touch movement, all 40/20/20 definitions, 60 phone jobs, map, and a rendered street arrow for an indoor story objective. Direct external navigation in cloud Chromium hit its read-only NSS proxy-trust database; TLS verification was not disabled. This check verifies deployed bytes plus local playback, not direct external browser navigation.
+The exact final measured wall time, CPU-update median/p95/p99/max, retained JS heap and entity/terrain bounds are in that report. Earlier runs observed clear, mist, rain and cloudy weather, at most 162 civilians and 44 cars, with 20 MiB of terrain surfaces within the 24 MiB budget. These measurements are accelerated CPU integration measurements and exclude GPU/process memory; they do not certify physical-device FPS, battery performance or a long real-time player session.
 
-## Evidence
+## Packaging and delivery
 
-- `artifacts/smoke-results.json`, `gameplay-results.json`, `overhaul-results.json`: actual named browser outcomes.
-- `artifacts/campaign-playthrough-results.json`: accelerated integration scope and objective counts.
-- `artifacts/navigation-results.json`, `navigation-entrance.png`: 11 navigation regressions and entrance guidance on a phone viewport.
-- `artifacts/touch-controls-results.json`: 17 isolated controller regressions.
-- `artifacts/mobile-results.json`, `mobile-portrait.png`, `mobile-landscape.png`: actual phone-emulation outcomes/screenshots.
-- `artifacts/terrain-cache-results.json`: coordinate/art comparisons, memory bounds and disposal.
-- `artifacts/release-results.json`, `standalone-mobile.png`: standalone desktop/touch checks.
-- `artifacts/public-demo-results.json`, `public-demo.png`: verified public delivery and browser playback of downloaded release bytes.
-- `artifacts/overhaul-phone.png`, `overhaul-heist.png`, `overhaul-ending.png`: actual new gameplay screens.
-- `artifacts/city-day.png`, `city-night-rain.png`, and room captures: existing artwork in the running game.
-- `GAMEPLAY_AUDIT.md`, `MISSION_TRACKER.md`, `SIDE_STORIES.md`: baseline audit and authored content inventory.
+The standalone checker blocks subresource requests and verifies desktop Start/render/save/map/phone/mission plus mobile layout, trusted touch/release, 60 phone jobs, entrance arrows, 32 events, 10 vehicle models, 12 cassette sites and four radio stations. It also loads the same standalone bytes under a simulated production HTTPS origin: normal play hides QA hooks; `?debug=1` uses a separate save; normal-origin progress remains unchanged. Simulated New Story backup failure preserves the old save and keeps the menu usable.
 
-## Outstanding validation
+The public checker uses normal certificate-verified HTTPS download, exact SHA256 equality, and local Chromium playback of those deployed bytes with subresources blocked. It checks mobile Start/movement/phone/map, catalogue/modules, entrance guidance, actual story completion and on-foot direct diner mission acceptance. Cloud Chromium's external proxy trust database limits direct remote navigation; TLS verification is never disabled.
 
-No 10–20-hour claim is supported yet. A continuous human playthrough of all 40 main missions, full city navigation, every choice combination, every complete side arc, difficulty/economy balance, prolonged traffic/police soak tests, and Firefox/Safari and physical mobile devices remain unverified. Touch controls have emulation coverage, not real-device certification. Individual objective handlers and accelerated transitions have substantially more coverage than those complete player experiences. Existing arcade high-score balance and diner/motel service paths still need deeper testing.
+Deployment evidence and exact URL/checksum are in `public-demo-results.json`. The intended 0.5.0 URL is https://atlasnoah.github.io/Glowport88/?v=0.5.0-living-city; publication is claimed only after this verification succeeds.
 
-The existing art, layout, light effects, basic civilian AI and traffic renderer are preserved. This does not add full tactical cover, crew-command AI, clothing, articulated vehicle-entry animation, or cinematic animation production. Heists share a timing mechanic with distinct authored preparation/escape sequences; they are not bespoke minigames for every target. NPC reactions and contact memory are lightweight persistent systems. These are concrete limits of this playable development build.
+## Failures found and resolved
+
+- Reproduced and fixed prompt/execution disagreement, differing clue radii, encounter-stealing priority and missing direct mission acceptance.
+- Restored the vehicle-entry helper removed during host refactoring; added disabled-vehicle checks.
+- Fixed the garage adapter's locations API fallback and zero-health persistence/display/free resurrection.
+- Fixed failed-mission actors, expired encounter scenes and expired hustle opponent cleanup.
+- Corrected QA assumptions about stale future-mission fixture completion, regenerating health, moving traffic/door-wall placement, and legitimate pagehide autosave before a debug navigation.
+- Updated fixed catalogue-size and original short-event assumptions to validate the expanded content.
+
+These failures were investigated and rerun; a failed intermediate attempt is not counted as passed.
+
+## Not run / limitations
+
+Firefox and WebKit were requested through separate Playwright installations; both CDN workflows returned HTTP 403 Domain forbidden. Neither browser ran. No physical iPhone/Android/Safari was attached. Availability evidence is in `browser-availability.json`. Subjective listening/art review, complete human campaign and side arcs, all branch combinations, campaign duration, real-time long-session play, platform store approval and native-device certification remain unverified.
+
+See LIVING_CITY_REPORT.md, ENCOUNTER_CATALOGUE.md and LIVING_CITY_BACKLOG.md for implemented scope and unfinished brief requirements. This is a working browser development milestone, not a certified finished 10–20-hour commercial release.
+
+## Final executed status
+
+Full `npm test` exited 0 after the final gameplay fixes. All 131 named host/controller/soak checks and the focused/model suites passed. The standalone test exited 0 with zero subresource requests, debug-save isolation and backup-quota safety. The CLI transcript is `artifacts/living-final-validation.txt`.
+
+The final soak measured 51038ms wall time for 21,600 updates; update median/p95/p99 were 1.9/4.1/7.4ms. Retained JS heap was 4863236 → 5547452 bytes after explicit GC. These are cloud CPU measurements, not phone FPS.

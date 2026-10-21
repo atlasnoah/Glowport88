@@ -1,0 +1,19 @@
+{
+  "time": "2026-10-21T23:36:13.735Z",
+  "passed": [
+    "all twelve archive tapes are safely placed in the actual city",
+    "the actual touch Interact button collects a tape and pays once",
+    "archive receipts, lore and currency survive actual save and reload",
+    "all other archive locations expose working unified interaction candidates",
+    "the in-game SOUND menu pauses simulation and captures world input",
+    "radio preferences persist independently without changing player progress",
+    "actual NPC updates expose living states with bounded reaction storage",
+    "no critical browser errors or missing city/audio assets"
+  ],
+  "errors": [],
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "scope": "Actual game host, safe world cassette placement, native touch collection, save/reload and audio UI/input isolation. Travel uses debug positioning; no physical device or speaker listening certification."
+}

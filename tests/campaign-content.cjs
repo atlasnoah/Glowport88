@@ -26,7 +26,7 @@ const campaign=scope.window.GlowportCampaign,side=scope.window.GlowportSideConte
 assert(campaign&&side,'Content globals missing');
 assert.equal(campaign.missions.length,40,'Main campaign must have forty entries');
 assert.equal(side.missions.length,20,'Side catalogue must have twenty entries');
-assert.equal(side.events.length,20,'Encounter catalogue must have twenty entries');
+assert.equal(side.events.length,32,'Living City retains twenty encounters and adds twelve canonical mini-adventures');
 const all=[...campaign.missions,...side.missions,...side.events];
 const ids=new Map();for(const def of all){assert(typeof def.id==='string'&&def.id.trim(), 'Definition has no stable ID');assert(!ids.has(def.id),`Duplicate ID ${def.id}`);ids.set(def.id,def)}
 const places=new Set(['hotel','armory','radio','arcade','warehouse','observatory','club','clinic','diner','records','motel','pier']);
@@ -65,7 +65,7 @@ function validate(def){
  });
 }
 all.forEach(validate);
-const registered=new scope.window.GlowportMissionEngine(all);assert.equal(registered.definitions.size,80,'All authored definitions must register in the real engine');
+const registered=new scope.window.GlowportMissionEngine(all);assert.equal(registered.definitions.size,all.length,'All authored definitions must register in the real engine');
 const visiting=new Set(),visited=new Set();function visit(id){assert(!visiting.has(id),`Prerequisite cycle at ${id}`);if(visited.has(id))return;visiting.add(id);for(const req of ids.get(id).requires||[])visit(req);visiting.delete(id);visited.add(id)}all.forEach(d=>visit(d.id));
 for(let act=1;act<=5;act++)assert.equal(campaign.missions.filter(d=>d.act===act).length,8,`Act ${act} needs eight missions`);
 campaign.missions.forEach((def,i)=>{assert.equal(def.id,`m${String(i+1).padStart(2,'0')}`);assert.equal(def.kind,'main');if(i)assert((def.requires||[]).includes(campaign.missions[i-1].id),`${def.id} lacks previous main prerequisite`);if(i<6){assert.equal(def.stages.length,1);assert.equal(def.stages[0].type,'legacy');assert.equal(def.stages[0].chapter,i+1)}else{assert(def.stages.length>=3,`${def.id} is too short to be a substantial mission`);assert(def.stages.some(s=>substantial.has(s.type)),`${def.id} has only marker/dialogue objectives`)}});
@@ -75,6 +75,6 @@ assert(new Set(finales.map(c=>c.ending)).size>=2,'Finale needs at least two expl
 assert(campaign.missions.filter(d=>d.stages.some(s=>s.type==='heist')).length>=4,'Campaign needs several actual heist objective sequences');
 const contacts=new Map();for(const def of side.missions){assert.equal(def.kind,'side');text(def.contact,`${def.id} contact`);assert(Number.isInteger(def.actUnlock)&&def.actUnlock>=1&&def.actUnlock<=5,`${def.id} act unlock invalid`);assert(def.stages.length>=3&&def.stages.some(s=>substantial.has(s.type)),`${def.id} needs substantial optional gameplay`);if(!contacts.has(def.contact))contacts.set(def.contact,[]);contacts.get(def.contact).push(def)}
 assert.equal(contacts.size,5,'Five recurring side-story contacts required');for(const [contact,defs] of contacts){assert.equal(defs.length,4,`${contact} needs four missions`);for(let i=1;i<defs.length;i++)assert((defs[i].requires||[]).includes(defs[i-1].id),`${contact} story chain is disconnected`)}
-const categories=new Set();for(const event of side.events){assert.equal(event.kind,'event');text(event.category,`${event.id} category`);assert(!categories.has(event.category),`Repeated event category ${event.category}`);categories.add(event.category);assert(Array.isArray(event.districts)&&event.districts.length,`${event.id} no districts`);assert(event.districts.every(d=>['west','core','north','south','east'].includes(d)),`${event.id} invalid district`);assert(event.cooldown>0&&event.rarity>0,`${event.id} needs rarity/cooldown`);assert(Number.isInteger(event.minAct)&&event.minAct>=1&&event.minAct<=5,`${event.id} minAct`);assert(event.stages.length<=3,`${event.id} exceeds intended short event sequence`)}
+const categories=new Set();for(const event of side.events){assert.equal(event.kind,'event');text(event.category,`${event.id} category`);assert(!categories.has(event.category),`Repeated event category ${event.category}`);categories.add(event.category);assert(Array.isArray(event.districts)&&event.districts.length,`${event.id} no districts`);assert(event.districts.every(d=>['west','core','north','south','east'].includes(d)),`${event.id} invalid district`);assert(event.cooldown>0&&event.rarity>0,`${event.id} needs rarity/cooldown`);assert(Number.isInteger(event.minAct)&&event.minAct>=1&&event.minAct<=5,`${event.id} minAct`);assert(event.stages.length<=12,`${event.id} exceeds bounded mini-adventure sequence`)}
 console.log(`PASS content structure: ${campaign.missions.length} main / ${contacts.size} side contacts / ${side.missions.length} side / ${categories.size} encounter types; prerequisite graphs, branches, rewards, locations, and approved art preserved`);
 console.log('NOTE: Catalogue validation does not prove mission playability or campaign duration. Run real browser objectives.');
