@@ -1,6 +1,21 @@
 {
-  "time": "2026-10-21T19:36:52.210Z",
+  "time": "2026-10-21T20:23:36.733Z",
   "selfContained": true,
+  "desktop": {
+    "start": true,
+    "render": true,
+    "saveReload": true,
+    "map": true,
+    "phone": true,
+    "expandedMission": true
+  },
+  "mobile": {
+    "start": true,
+    "responsiveLayout": true,
+    "touchMovement": true,
+    "releasedInput": true,
+    "phoneJobs": 60
+  },
   "localFileNavigation": "not tested: blocked by cloud browser policy",
   "errors": [],
   "networkRequests": []

@@ -1,0 +1,103 @@
+{
+  "time": "2026-10-21T20:23:03.523Z",
+  "passed": [
+    "phone Start and portrait controls fit the viewport",
+    "touch joystick moves and releases without page scrolling",
+    "touch interaction enters a building and advances a real conversation",
+    "canvas taps do not accidentally fire a weapon",
+    "two thumbs can move and aim/fire independently",
+    "touch cancellation clears both sticks and held actions",
+    "touch crouch, weapon selection, fire and reload work",
+    "phone menus scroll natively and freeze the game",
+    "touch driving supports throttle, steering, braking and exit",
+    "pause and background handlers release held input and preserve time",
+    "landscape rotation retains usable game and touch targets",
+    "phone can complete the actual heist timing input",
+    "mobile arcade buttons and quit preserve the main game",
+    "mobile save/reload preserves progress and restores touch controls",
+    "small phone width has no horizontal overflow",
+    "desktop keyboard and layout retain their normal behavior",
+    "mobile browser has no critical errors or missing assets"
+  ],
+  "errors": [],
+  "terrain": {
+    "draws": 559,
+    "hits": 2174,
+    "bakes": 5,
+    "evictions": 0,
+    "residentBytes": 20971520,
+    "peakResidentBytes": 20971520,
+    "totalBakeMs": 84.09999999962747,
+    "maxBakeMs": 31.5,
+    "lastBakeMs": 11.599999999627471,
+    "tileSize": 1024,
+    "maxTiles": 6,
+    "cachedTiles": 5,
+    "maxSurfacePixels": 1048576,
+    "estimatedResidentMiB": 20,
+    "tiles": [
+      {
+        "key": "3,2",
+        "x": 3072,
+        "y": 2048,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "1,0",
+        "x": 1024,
+        "y": 0,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "2,0",
+        "x": 2048,
+        "y": 0,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "1,1",
+        "x": 1024,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "2,1",
+        "x": 2048,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      }
+    ]
+  },
+  "devices": [
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "hasTouch": true,
+      "isMobile": true
+    },
+    {
+      "viewport": {
+        "width": 844,
+        "height": 390
+      },
+      "hasTouch": true,
+      "isMobile": true
+    },
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "hasTouch": true,
+      "isMobile": true
+    }
+  ],
+  "scope": "Chromium phone emulation with real CDP multi-touch, lifecycle-handler events and scenario positioning. Physical iOS/Android devices and Safari are not covered."
+}

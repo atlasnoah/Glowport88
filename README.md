@@ -4,9 +4,17 @@ An original open-world neon pixel-art browser crime adventure. This gameplay ove
 
 The implemented catalogue has **40 main missions in five acts**, **20 connected side stories** for five recurring contacts, and **20 contextual encounter types**. Multi-stage objectives include ordered investigations, timed driving routes, combat, protected escorts, stealth, physical vehicle pursuits, interactive heists, police searches, branching decisions, and three endings with free roam. The phone, properties, income, garages, tuning, skills, inventory, checkpoints, and saves are connected to gameplay.
 
-[Play the browser demo](https://atlasnoah.github.io/Glowport88/). Use **New Story** to experience the expanded campaign from the beginning; existing saves migrate without duplicate tutorial payments. The demo is a development build. Duration remains unmeasured; an uninterrupted human playthrough of all missions and balance tuning are outstanding.
+[Play the browser demo](https://atlasnoah.github.io/Glowport88/?v=0.4.0). Use **New Story** to experience the expanded campaign from the beginning; existing saves migrate without duplicate tutorial payments. The demo is a development build with touch controls and a bounded terrain cache for phones. Duration remains unmeasured; an uninterrupted human playthrough of all missions and balance tuning are outstanding.
 
-## Play
+## Play on a phone
+
+Open [the mobile browser demo](https://atlasnoah.github.io/Glowport88/?v=0.4.0), tap **Start / Continue**, and use portrait or landscape. The left stick moves or drives; the right stick aims and fires. **INTERACT** handles people, doors, objectives and cars. **WEAPON** cycles only owned weapons. **RELOAD**, **CROUCH**, hold **SPRINT/TURBO**, and **BRAKE** work without a keyboard. Tap **PHONE** for Jobs and contacts. **EXPAND** is offered only when browser fullscreen is available; fullscreen is optional.
+
+The game autosaves on browser background/pagehide and pauses active play. Tap Resume after returning. Room position and crouch state survive reload. Saves remain local to each browser/device; desktop progress does not automatically transfer to a phone. Avoid clearing website data if you want to keep a test save.
+
+The phone layout and real multi-touch gestures are tested in Chromium emulation at 390×844, 844×390, and 320×568. Actual iPhones/Android devices and Safari still need hands-on testing. See [MOBILE_TESTING.md](MOBILE_TESTING.md).
+
+## Play locally
 
 Use Python 3 from the project root:
 

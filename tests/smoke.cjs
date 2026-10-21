@@ -35,8 +35,9 @@ const check=async(name,fn)=>{await fn();results.push(name);console.log('PASS',na
  await check('save and restore',async()=>{await page.locator('#saveBtn').click();const before=await page.evaluate(()=>GlowportTest.getState());const saved=await page.evaluate(()=>JSON.parse(localStorage.getItem('glowport88-neongrid-v08')));assert.equal(saved.story,before.story);await page.reload();await page.locator('#startBtn').click();assert.equal(await page.evaluate(()=>GlowportTest.getState().story),before.story)});
  await check('new story resets campaign',async()=>{await page.reload();await page.locator('#newBtn').click();assert.equal(await page.evaluate(()=>GlowportTest.getState().story),0)});
  await check('old-save migration to expanded campaign',async()=>{
- await page.evaluate(()=>localStorage.setItem('glowport88-neongrid-v08',JSON.stringify({version:2,story:6,money:900,owned:[true,false,true,false,false],weapon:2,mag:{pistol:12},ammo:{pistol:36}})));
- await page.reload();await page.locator('#startBtn').click();const state=await page.evaluate(()=>GlowportTest.campaign().state);assert.equal(state.active.id,'m07');for(let i=1;i<=6;i++)assert(state.completed['m'+String(i).padStart(2,'0')]);assert.equal(await page.evaluate(()=>GlowportTest.getState().money),900);
+ // Active games autosave on pagehide; install migration fixtures after returning to the menu.
+ await page.reload();await page.waitForFunction(()=>window.GlowportTest);await page.evaluate(()=>localStorage.setItem('glowport88-neongrid-v08',JSON.stringify({version:2,story:6,money:900,owned:[true,false,true,false,false],weapon:2,mag:{pistol:12},ammo:{pistol:36}})));
+ await page.locator('#startBtn').click();const state=await page.evaluate(()=>GlowportTest.campaign().state);assert.equal(state.active.id,'m07');for(let i=1;i<=6;i++)assert(state.completed['m'+String(i).padStart(2,'0')]);assert.equal(await page.evaluate(()=>GlowportTest.getState().money),900);
  for(let n=0;n<40;n++){if(await page.locator('#conversationPanel').isVisible())await page.keyboard.press('Enter');await page.waitForTimeout(25);if(!await page.locator('#conversationPanel').isVisible()&&await page.evaluate(()=>GlowportTest.system.dialogues.length===0))break}
  });
  await check('clinic purchase and interactive arcade',async()=>{

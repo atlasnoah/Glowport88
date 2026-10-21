@@ -3,7 +3,7 @@ from pathlib import Path
 import base64,hashlib,json,re,zipfile
 ROOT=Path(__file__).resolve().parents[1];GAME=ROOT/'Glowport88';DIST=ROOT/'dist';DIST.mkdir(exist_ok=True)
 html=(GAME/'Glowport88_ArtRehaul_v11.html').read_text()
-html=html.replace('<link rel="stylesheet" href="assets/ui.css">','<style>'+(GAME/'assets/ui.css').read_text()+'</style>')
+html=re.sub(r'<link rel="stylesheet" href="(assets/[^"]+\.css)">',lambda m:'<style>'+(GAME/m[1]).read_text()+'</style>',html)
 images={p.stem:'data:image/png;base64,'+base64.b64encode(p.read_bytes()).decode() for p in (GAME/'assets').glob('*.png')}
 def embed(match):
  code=(GAME/match[1]).read_text()

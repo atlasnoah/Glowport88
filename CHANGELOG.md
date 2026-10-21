@@ -1,3 +1,13 @@
+# Mobile browser beta · 0.4.0
+
+- Added independent touch movement and aim/fire sticks, interaction, owned-weapon cycling, reload, crouch, sprint/turbo, brake, and optional fullscreen controls.
+- Added portrait/landscape phone layouts, safe-area/dynamic-viewport sizing, compact objective/status, finger-sized targets, and touch-scrollable menus.
+- Replaced the oversized whole-city canvas with bounded lazy terrain tiles while preserving all approved art and world/camera coordinates.
+- Added background autosave/pause, cancellation/release handling, room-coordinate restoration, and guards against canvas-tap firing and disabled touch controls interfering with desktop input.
+- Added 17 true-multitouch phone-emulation checks, terrain coordinate/art/cache checks, and standalone mobile playback validation. Physical iOS/Android and Safari testing remain pending.
+
+---
+
 # Gameplay overhaul · 0.3.0
 
 - Added reusable multi-stage mission lifecycle, prerequisites, strict deadlines, failure/checkpoint retry, suspended main objectives, persisted decisions, and exactly-once reward events.

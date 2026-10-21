@@ -1,0 +1,197 @@
+{
+  "time": "2026-10-21T20:22:11.728Z",
+  "coordinateComparisons": [
+    {
+      "x": 0,
+      "y": 0,
+      "differingChannels": 0
+    },
+    {
+      "x": 800,
+      "y": 800,
+      "differingChannels": 0
+    },
+    {
+      "x": 1024,
+      "y": 1024,
+      "differingChannels": 0
+    },
+    {
+      "x": 990,
+      "y": 1000,
+      "differingChannels": 0
+    },
+    {
+      "x": 6400,
+      "y": 4590,
+      "differingChannels": 0
+    },
+    {
+      "x": 3010,
+      "y": 2270,
+      "differingChannels": 0
+    },
+    {
+      "x": 6400,
+      "y": 0,
+      "differingChannels": 0
+    },
+    {
+      "x": 0,
+      "y": 4590,
+      "differingChannels": 0
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "differingChannels": 0
+    },
+    {
+      "x": 225,
+      "y": 575,
+      "differingChannels": 0
+    }
+  ],
+  "comparisons": [
+    {
+      "x": 0,
+      "y": 0,
+      "differingChannels": 0,
+      "maxDifference": 0,
+      "differingChannelFraction": 0
+    },
+    {
+      "x": 800,
+      "y": 800,
+      "differingChannels": 1058,
+      "maxDifference": 195,
+      "differingChannelFraction": 0.0007347222222222222
+    },
+    {
+      "x": 1024,
+      "y": 1024,
+      "differingChannels": 708,
+      "maxDifference": 195,
+      "differingChannelFraction": 0.0004916666666666666
+    },
+    {
+      "x": 990,
+      "y": 1000,
+      "differingChannels": 877,
+      "maxDifference": 195,
+      "differingChannelFraction": 0.0006090277777777778
+    },
+    {
+      "x": 6400,
+      "y": 4590,
+      "differingChannels": 141,
+      "maxDifference": 91,
+      "differingChannelFraction": 0.00009791666666666667
+    },
+    {
+      "x": 3010,
+      "y": 2270,
+      "differingChannels": 242,
+      "maxDifference": 78,
+      "differingChannelFraction": 0.00016805555555555557
+    },
+    {
+      "x": 6400,
+      "y": 0,
+      "differingChannels": 213,
+      "maxDifference": 164,
+      "differingChannelFraction": 0.00014791666666666667
+    },
+    {
+      "x": 0,
+      "y": 4590,
+      "differingChannels": 0,
+      "maxDifference": 0,
+      "differingChannelFraction": 0
+    },
+    {
+      "x": 0,
+      "y": 0,
+      "differingChannels": 0,
+      "maxDifference": 0,
+      "differingChannelFraction": 0
+    },
+    {
+      "x": 225,
+      "y": 575,
+      "differingChannels": 59,
+      "maxDifference": 43,
+      "differingChannelFraction": 0.000040972222222222225
+    }
+  ],
+  "fullBakeMs": 215.59999999962747,
+  "cache": {
+    "draws": 10,
+    "hits": 7,
+    "bakes": 15,
+    "evictions": 9,
+    "residentBytes": 20774912,
+    "peakResidentBytes": 20774912,
+    "totalBakeMs": 78.90000000409782,
+    "maxBakeMs": 7.199999999254942,
+    "lastBakeMs": 4.900000000372529,
+    "tileSize": 1024,
+    "maxTiles": 6,
+    "cachedTiles": 6,
+    "maxSurfacePixels": 1048576,
+    "estimatedResidentMiB": 19.8125,
+    "tiles": [
+      {
+        "key": "7,0",
+        "x": 7168,
+        "y": 0,
+        "width": 32,
+        "height": 1024
+      },
+      {
+        "key": "0,4",
+        "x": 0,
+        "y": 4096,
+        "width": 1024,
+        "height": 944
+      },
+      {
+        "key": "0,0",
+        "x": 0,
+        "y": 0,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "1,0",
+        "x": 1024,
+        "y": 0,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "0,1",
+        "x": 0,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "1,1",
+        "x": 1024,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      }
+    ]
+  },
+  "repeatedViewNewBakes": 0,
+  "zeroedEvictions": 9,
+  "allWorldArraysRetained": true,
+  "clear": {
+    "cachedTiles": 0,
+    "residentBytes": 0,
+    "allSurfacesReleased": true
+  },
+  "scope": "Desktop Chromium exact integer world-coordinate/seam validation and representative approved-art comparison against full-world reference. Translated/scaled atlas rasterization permits <0.5% differing channels per view, with observed differences reported. Cache hits/eviction and bounded surface allocations verified; actual iOS memory/performance requires device testing."
+}

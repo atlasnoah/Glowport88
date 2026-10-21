@@ -56,3 +56,11 @@
 - Verified the public HTTPS response and SHA-256 against the tested standalone. Start, phone/jobs, map and all 40/20/20 definitions passed when playing the downloaded public bytes with subresources blocked. Direct cloud Chromium HTTPS navigation is limited by a read-only proxy certificate database; no certificate verification was disabled.
 - Saved updated reusable startup instructions in the cloud environment draft. The install command remains the verified frozen npm ci workflow. Draft persistence does not publish a new environment snapshot; review/save Environment settings and publish to reuse those instructions.
 - Campaign duration remains unmeasured. All remaining human campaign validation and balance work is recorded in ROADMAP.md.
+
+## Mobile browser beta · 2026-10-21
+
+- Preserved the prior source in /tmp/glowport-before-mobile.tar.gz before edits. Added touch-controls.js and mobile.css while keeping approved art PNGs and art.js unchanged.
+- Implemented independent captured thumb sticks, aggregated firing, owned-weapon cycling, driving, accessible tap actions and portrait/landscape layouts. Actual phone-emulation screenshots were inspected.
+- Replaced the 36-million-pixel offscreen world surface with six bounded 1024px lazy terrain tiles. Cache tests verify coordinate seams, bounded sprite-sampling differences, eviction disposal and reuse. The observed mobile-emulation cache held 20 MiB, below its 24 MiB budget.
+- Added autosave and release/pause on browser interruption, preserved exact safe room coordinates on reload, and fixed disabled touch-state transitions clearing desktop keys. Old-save fixtures are now installed on the menu so they test migration without conflicting with intentional pagehide autosave.
+- Seventeen mobile browser checks pass, including native multi-touch, driving, touch conversations/heists/arcade, scrolling menus, background handling and save/reload. Full regression and release/public verification are recorded in TEST_RESULTS.md and artifacts. These are emulated devices; physical phone/Safari checks are still required.
