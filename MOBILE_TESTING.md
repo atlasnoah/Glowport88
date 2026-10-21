@@ -1,6 +1,6 @@
 # Mobile browser testing · 0.4.1
 
-Open https://atlasnoah.github.io/Glowport88/?v=0.4.1 on your phone. No download or developer account is required. Start / Continue resumes local progress; New Story starts fresh. Both portrait and landscape keep the canvas, thumb controls and current objective accessible.
+Open https://atlasnoah.github.io/Glowport88/?v=0.4.1-touch on your phone. No download or developer account is required. Start / Continue resumes local progress; New Story starts fresh. Both portrait and landscape keep the canvas, thumb controls and current objective accessible.
 
 ## Controls
 

@@ -1,8 +1,8 @@
 {
-  "time": "2026-10-21T20:24:37.981Z",
-  "url": "https://atlasnoah.github.io/Glowport88/?v=0.4.0",
+  "time": "2026-10-21T21:03:57.382Z",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.4.1-touch",
   "verifiedHTTPSDownload": true,
-  "sha256": "aaa2194c107b8c8cefa19fb56956a2353d8b696c9d6e6bc9b22c8362ba2c1f71",
+  "sha256": "bed6ccd2ad713612f6e2998cfaa211353a3a03624f6f458c467846962316bcf8",
   "matchesTestedRelease": true,
   "browserPlaybackOfDownloadedBytes": {
     "main": 40,

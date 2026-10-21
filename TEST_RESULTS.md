@@ -18,7 +18,7 @@ The browser checks exercise Start, movement, driving/braking, buildings, real sh
 
 ## Published delivery
 
-The mobile 0.4.1 release uses https://atlasnoah.github.io/Glowport88/?v=0.4.1. Its tested checksum is generated in dist/SHA256SUMS; public verification records the deployed checksum in artifacts/public-demo-results.json.
+The mobile 0.4.1 release uses https://atlasnoah.github.io/Glowport88/?v=0.4.1-touch. Its tested checksum is generated in dist/SHA256SUMS; public verification records the deployed checksum in artifacts/public-demo-results.json.
 
 `node tests/public-demo.cjs` downloads the public file with normal TLS verification, checks that hash, and plays the downloaded bytes in Chromium with subresources blocked. The public check covers mobile Start, touch movement, all 40/20/20 definitions, 60 phone jobs, and map. Direct external navigation in cloud Chromium hit its read-only NSS proxy-trust database; TLS verification was not disabled. This check verifies deployed bytes plus local playback, not direct external browser navigation.
 
