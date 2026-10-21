@@ -1,7 +1,8 @@
 {
-  "version": "0.4.1",
-  "sourceCommit": "1d3cbb9223058a6474bcaac3bc4dadf676c6cb5f",
-  "sha256": "bed6ccd2ad713612f6e2998cfaa211353a3a03624f6f458c467846962316bcf8",
+  "version": "0.4.2",
+  "sourceCommit": "ccbc2544458822a104d813033e9e8de93dc75c93",
+  "sha256": "1959d065d7be8a53a8e0ff707bcfd5a3642b4913d1f36679ec8a209afab96f97",
   "mobileTouch": true,
-  "touchRefinements": true
+  "touchRefinements": true,
+  "storyNavigation": true
 }
