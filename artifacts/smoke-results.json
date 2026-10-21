@@ -1,0 +1,20 @@
+{
+  "time": "2026-10-21T00:41:28.042Z",
+  "passed": [
+    "menu and Start",
+    "city rendering",
+    "movement and camera",
+    "mapBtn",
+    "journalBtn",
+    "pauseBtn",
+    "hotel entry and exit",
+    "intro conversation and chapter reward",
+    "weapon purchase and equip tutorial",
+    "weapon fire and reload",
+    "police response",
+    "save and restore",
+    "new story resets campaign",
+    "no browser errors or missing assets"
+  ],
+  "errors": []
+}

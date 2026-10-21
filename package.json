@@ -1,0 +1,6 @@
+{
+  "name": "glowport88", "version": "0.2.0", "private": true,
+  "description": "A standalone pixel-art city adventure",
+  "scripts": {"start": "python3 -m http.server 8000 --directory Glowport88", "test": "node tests/smoke.cjs", "assets": "python3 tools/build_assets.py"},
+  "devDependencies": {"playwright": "1.58.2"}
+}
