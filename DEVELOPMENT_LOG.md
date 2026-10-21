@@ -13,3 +13,12 @@
 - Preserved all city footprints, road coordinates, mission doors, campaign state, and save key.
 - Fixed simulation time continuing while menus, conversations, or pause overlays are open.
 - Fifteen browser smoke checks pass. Inspected actual day, night/rain, and hotel screenshots. Remaining art concerns: repetition, dark night exposure, and oversized/simple indoor furniture. Further polish is in progress.
+
+## Investigations, activities, and visual refinement
+- Integrated the first illustrated building sheet (original generated artwork with embedded provenance). Added authored character portraits and animated pose selection.
+- Added evidence chains for radio/warehouse/observatory/record-shop chapters; final evidence cannot be collected before the room clues. Progress survives reload and old saves initialize missing state.
+- Driving chapters now have checkpoint routes, delivery windows, and retryable timeout behavior. Deadline logic has direct tests; full driving chapters still need browser campaign coverage.
+- Added clinic care, diner meals, motel rest, and a playable arcade cabinet with movement, collectible tapes, interference hazards, a deadline, and earned rewards.
+- Opening dialogue records Vee trust and changes later Vee conversation text. This is a small relationship feature, not a branched campaign.
+- Added loading-state protection for Start/New Story and prevented gameplay keyboard actions from firing on the main menu or under overlays.
+- Expanded browser checks to 20 passing checks, including actual shop UI purchase, ammunition/reload behavior, vehicle operation, investigations, and arcade/clinic transactions.

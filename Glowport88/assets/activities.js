@@ -1,0 +1,20 @@
+/* The arcade is a small playable game, not a random-reward button. */
+window.GlowportActivities=(()=>{
+'use strict';
+let active=false,close=null;
+function courier(onFinish){if(active)return;active=true;
+ const panel=document.createElement('div');panel.className='window';panel.id='arcadeActivity';panel.innerHTML='<section class="modal arcade-modal"><div class="modalhead"><h2>DEAD DROP / 1988</h2><button class="close" id="arcadeQuit">EXIT</button></div><p class="modalnote">Catch gold tapes. Dodge pink interference. ← → or A / D to move. Three hits ends the run.</p><canvas width="320" height="200" id="arcadeCanvas" aria-label="Dead Drop arcade game"></canvas><div class="arcade-controls"><button class="tiny" id="arcadeLeft">◀ LEFT</button><span id="arcadeScore">READY</span><button class="tiny" id="arcadeRight">RIGHT ▶</button></div></section>';document.body.append(panel);
+ const canvas=panel.querySelector('canvas'),c=canvas.getContext('2d'),scoreEl=panel.querySelector('#arcadeScore');c.imageSmoothingEnabled=false;
+ let x=160,score=0,hits=0,elapsed=0,spawn=0,last=0,frame,ended=false;const keys={left:false,right:false},items=[];
+ const end=()=>{if(ended)return;ended=true;active=false;cancelAnimationFrame(frame);window.removeEventListener('keydown',down,true);window.removeEventListener('keyup',up,true);panel.remove();onFinish(score,hits);close=null};close=end;
+ const down=e=>{e.preventDefault();e.stopImmediatePropagation();if(['ArrowLeft','a','A'].includes(e.key))keys.left=true;if(['ArrowRight','d','D'].includes(e.key))keys.right=true;if(e.key==='Escape')end()};const up=e=>{e.preventDefault();e.stopImmediatePropagation();if(['ArrowLeft','a','A'].includes(e.key))keys.left=false;if(['ArrowRight','d','D'].includes(e.key))keys.right=false};
+ window.addEventListener('keydown',down,true);window.addEventListener('keyup',up,true);panel.querySelector('#arcadeQuit').onclick=end;
+ for(const [id,k] of [['arcadeLeft','left'],['arcadeRight','right']]){const b=panel.querySelector('#'+id);b.onpointerdown=e=>{e.preventDefault();b.setPointerCapture(e.pointerId);keys[k]=true};b.onpointerup=b.onpointercancel=()=>keys[k]=false}
+ function draw(now){if(ended)return;const dt=last?Math.min(.04,(now-last)/1000):0;last=now;elapsed+=dt;spawn-=dt;x=Math.max(13,Math.min(307,x+((keys.right?1:0)-(keys.left?1:0))*190*dt));if(spawn<=0){const i=Math.floor(elapsed*2);items.push({x:18+((i*97+53)%284),y:-10,bad:i%3===2});spawn=.46}
+ c.fillStyle='#10182d';c.fillRect(0,0,320,200);c.strokeStyle='#2b3453';c.lineWidth=1;for(let y=(elapsed*24)%20;y<200;y+=20){c.beginPath();c.moveTo(0,y);c.lineTo(320,y);c.stroke()}for(let xx=0;xx<320;xx+=32){c.beginPath();c.moveTo(xx,0);c.lineTo(xx,200);c.stroke()}
+ for(let i=items.length-1;i>=0;i--){const p=items[i];p.y+=dt*(65+elapsed*2);c.fillStyle=p.bad?'#ec7eab':'#f1cd90';c.fillRect(p.x-5,p.y-4,10,8);c.fillStyle='#202e44';c.fillRect(p.x-2,p.y-2,4,4);if(p.y>167&&p.y<190&&Math.abs(p.x-x)<16){if(p.bad)hits++;else score++;items.splice(i,1)}else if(p.y>205)items.splice(i,1)}
+ c.fillStyle='#86e1d5';c.fillRect(x-12,182,24,6);c.fillRect(x-7,177,14,5);scoreEl.textContent=`TAPES ${score} · ${3-hits} LIVES · ${Math.max(0,Math.ceil(20-elapsed))}s`;
+ if(hits>=3||elapsed>=20){end();return}frame=requestAnimationFrame(draw)}frame=requestAnimationFrame(draw);
+}
+return {courier,get active(){return active},stop:()=>close?.()};
+})();

@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-21T00:45:35.362Z",
+  "time": "2026-10-21T00:53:11.905Z",
   "passed": [
     "menu and Start",
     "city rendering",
@@ -7,6 +7,8 @@
     "mapBtn",
     "journalBtn",
     "pauseBtn",
+    "pause freezes simulation time",
+    "enter, drive, brake and exit personal car",
     "hotel entry and exit",
     "intro conversation and chapter reward",
     "weapon purchase and equip tutorial",
@@ -14,6 +16,9 @@
     "police response",
     "save and restore",
     "new story resets campaign",
+    "old-save migration and three-stage investigation",
+    "clinic purchase and interactive arcade",
+    "distinct interior assets",
     "night and rain rendering",
     "no browser errors or missing assets"
   ],

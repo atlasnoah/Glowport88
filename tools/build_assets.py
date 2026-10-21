@@ -19,7 +19,7 @@ def sprite(name,w,h,paint):
 def material(name,base,colors,kind):
  def paint(d,im):
   rng=random.Random(name);d.rectangle((0,0,15,15),fill=base)
-  for _ in range(45):
+  for _ in range(18 if kind=='grain' else 4):
    x=rng.randrange(16);y=rng.randrange(16);d.point((x,y),fill=rng.choice(colors))
   if kind=='brick':
    for y in [0,8]:
@@ -157,3 +157,38 @@ vehicles.save(OUT/'vehicles.png',optimize=True)
 # A JS descriptor keeps the game usable on file:// as well as through a static server.
 (OUT/'atlas.js').write_text('window.GLOWPORT_ATLAS='+json.dumps(manifest,separators=(',',':'))+';\n')
 print('Wrote original material, prop, character, and vehicle atlases to',OUT)
+# Original dialogue portraits: Vee, player, Jax, Roxy, DJ Sol, Mika; three expressions.
+portraits=Image.new('RGBA',(64*6,80*3))
+for person in range(6):
+ for expression in range(3):
+  im=Image.new('RGBA',(64,80));d=ImageDraw.Draw(im)
+  skin=['#bd8d77','#d1a082','#b17a64','#b99282','#956c60','#d7af91'][person]
+  shadow=['#895c60','#8b5f66','#7b5156','#886573','#634e5b','#9b7777'][person]
+  hair=['#28364a','#22243c','#725955','#b2698e','#292538','#51434b'][person]
+  coat=['#4d9e9b','#ce799e','#a28371','#8070b5','#727b9a','#aa946f'][person]
+  d.polygon([(1,80),(4,59),(17,51),(22,48),(43,48),(47,54),(60,62),(64,80)],fill=INK)
+  d.polygon([(5,80),(8,61),(23,53),(42,53),(57,64),(60,80)],fill=coat)
+  d.polygon([(10,62),(22,55),(24,79),(10,79)],fill='#4f596c');d.polygon([(42,55),(55,64),(57,79),(40,79)],fill='#303b53')
+  d.polygon([(24,45),(40,45),(42,56),(32,64),(23,55)],fill=shadow);d.polygon([(27,47),(38,47),(38,54),(32,58),(27,54)],fill=skin)
+  d.polygon([(18,15),(25,10),(40,11),(47,18),(47,35),(41,46),(32,51),(22,45),(16,33)],fill=INK)
+  d.polygon([(20,18),(28,13),(39,14),(44,20),(43,36),(38,44),(31,47),(24,42),(19,31)],fill=skin)
+  d.polygon([(19,22),(24,18),(24,36),(31,44),(36,45),(31,47),(24,42),(19,31)],fill=shadow)
+  d.polygon([(34,18),(40,21),(41,34),(36,39),(31,38),(34,31)],fill='#dcb59a' if person!=4 else '#b18a78')
+  d.polygon([(15,19),(17,10),(25,5),(40,6),(47,13),(50,24),(44,28),(42,18),(33,14),(22,23),(20,33),(16,31)],fill=hair)
+  d.line((22,12,31,9,41,11),fill='#88849b',width=2)
+  if person==0:
+   d.polygon([(18,18),(23,11),(30,9),(27,20),(19,29),(17,37),(15,25)],fill='#438a91');d.line((19,20,26,13),fill='#7ac7bb',width=2);d.rectangle((17,34,19,38),fill='#cbaa86')
+  if person==1:d.polygon([(23,9),(32,5),(42,10),(33,10),(27,18),(20,20)],fill='#6c6595')
+  if person==2:d.polygon([(23,38),(31,41),(41,36),(38,46),(31,49),(24,44)],fill='#66525a')
+  if person==3:d.polygon([(14,13),(23,8),(20,27),(17,43),(12,39)],fill='#a76eac');d.polygon([(42,12),(48,15),(50,42),(43,40)],fill='#775b92')
+  if person==4:
+   d.ellipse((12,7,49,27),fill=hair);d.rectangle((17,24,21,37),fill='#56667b');d.rectangle((44,24,48,37),fill='#56667b');d.line((19,20,19,11,42,11,46,24),fill='#8aa0b0',width=2)
+  eyeY=28 if expression!=1 else 29
+  d.line((24,eyeY-2,29,eyeY-3 if expression==2 else eyeY-2),fill=hair);d.line((36,eyeY-2,41,eyeY-3 if expression==2 else eyeY-2),fill=hair)
+  if expression==1:d.line((24,eyeY+1,29,eyeY),fill=INK);d.line((36,eyeY,41,eyeY+1),fill=INK)
+  else:
+   d.rectangle((24,eyeY,29,eyeY+2),fill='#d9d5c2');d.rectangle((36,eyeY,41,eyeY+2),fill='#e7dcc6');d.rectangle((27,eyeY,28,eyeY+2),fill='#283c49');d.rectangle((38,eyeY,39,eyeY+2),fill='#283c49')
+  d.line((32,30,31,35,34,36),fill=shadow);d.line((29,40,36,40 if expression!=2 else 39),fill='#6b4c5a');d.point((35,41),fill='#efbca3')
+  d.line((13,65,19,69,14,76),fill='#a3b6b6');d.line((49,66,51,77),fill='#738b9d');d.line((31,64,31,79),fill='#1f2b40');d.rectangle((39,68,45,69),fill='#bdd2c6')
+  portraits.alpha_composite(im,(person*64,expression*80))
+portraits.save(OUT/'portraits.png',optimize=True)

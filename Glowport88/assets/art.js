@@ -3,7 +3,7 @@ window.GlowportArt=(()=>{
 'use strict';
 const atlas=window.GLOWPORT_ATLAS,images={},patterns=new WeakMap(),lightGrid=new Map();
 const base=new URL('.',document.currentScript.src);
-const ready=Promise.all(['city-atlas','characters','vehicles'].map(name=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{images[name]=im;resolve()};im.onerror=()=>reject(Error('Could not load '+name+'.png'));im.src=new URL(name+'.png',base).href})));
+const ready=Promise.all(['city-atlas','characters','vehicles','buildings-illustrated','portraits'].map(name=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{images[name]=im;resolve()};im.onerror=()=>reject(Error('Could not load '+name+'.png'));im.src=new URL(name+'.png',base).href})));
 const palettes={
  west:{roof:'roof-rust',wall:'brick-warm',edge:'#a18a92',accent:'#ef99b1',label:'SUNSET'},
  core:{roof:'roof',wall:'brick-blue',edge:'#7a8da7',accent:'#71e4df',label:'DOWNTOWN'},
@@ -21,7 +21,7 @@ function line(c,points,col,width=1){c.strokeStyle=col;c.lineWidth=width;c.beginP
 function polygon(c,pts,col){c.fillStyle=col;c.beginPath();c.moveTo(...pts[0]);for(let i=1;i<pts.length;i++)c.lineTo(...pts[i]);c.closePath();c.fill()}
 function light(x,y,r,color,power=1,kind='neon'){const key=`${Math.floor(x/256)},${Math.floor(y/256)}`;if(!lightGrid.has(key))lightGrid.set(key,[]);lightGrid.get(key).push({x,y,r,color,power,kind,seed:hash(x,y)%100})}
 function label(c,text,x,y,w,color,size=8){c.font=`bold ${size}px monospace`;c.textAlign='center';c.fillStyle=color;c.fillText(text,x+w/2,y,w-5);c.textAlign='left'}
-function building(c,b){const {x,y,w,h}=b,s=hash(x,y),p=palettes[b.district],col=b.landmark?p.accent:neon[s%4];
+function modularBuilding(c,b){const {x,y,w,h}=b,s=hash(x,y),p=palettes[b.district],col=b.landmark?p.accent:neon[s%4];
  const face=Math.min(48,Math.max(31,h*.37)),fy=Math.round(y+h-face),roofH=fy-y;
  // Footprint stays unchanged. Facade, parapet, cast shadow, and overhanging canopy establish depth.
  polygon(c,[[x+7,y+7],[x+w+12,y+9],[x+w+15,y+h+14],[x+9,y+h+14]],'#101528');
@@ -46,6 +46,24 @@ function building(c,b){const {x,y,w,h}=b,s=hash(x,y),p=palettes[b.district],col=
  if(s%4===0&&w>80){rect(c,x+w-22,y+11,13,roofH-17,'#2a3045');for(let r=y+15;r<fy-10;r+=7)line(c,[[x+w-21,r],[x+w-10,r+3]],'#7b7b8e');line(c,[[x+w-23,y+12],[x+w-23,fy-6]],'#9b8996')}
  light(b.doorX,b.doorY-8,63,col,b.landmark?1.1:.6);
 }
+const buildingCells=[[0,0,512,530],[512,0,512,530],[1024,0,512,530],[0,530,512,494],[512,530,512,494],[1024,530,512,494]];
+function building(c,b){
+ const seed=hash(b.x,b.y),byKey={hotel:0,motel:0,armory:1,radio:2,diner:3,records:3,club:4,arcade:4,warehouse:5,observatory:2,pier:5,clinic:0};
+ const choices={west:[0,2,3],core:[0,1,4],north:[0,2,0],south:[3,0,3],east:[5,1,5]};
+ const index=b.landmark?byKey[b.landmark.key]??0:choices[b.district][seed%3];
+ // A true sprite sheet is the primary architecture source. Footprints and thresholds are unchanged.
+ const dx=b.x-3,dy=b.y-3,dw=b.w+6,dh=b.h+20;
+ c.drawImage(images['buildings-illustrated','portraits'],...buildingCells[index],dx,dy,dw,dh);
+ const col=b.landmark?palettes[b.district].accent:neon[seed%4];
+ // Small address plates give each reused architectural shell its in-world identity.
+ const plateY=b.y+b.h-17;
+ if(b.landmark){rect(c,b.x+5,plateY,b.w-10,10,'#131d30ed');label(c,b.name,b.x+5,plateY+8,b.w-10,col,7)}
+ if(seed%4===0&&b.w>95)sprite(c,'ac',b.x+b.w-35,b.y+9,22,18);
+ rect(c,b.doorX-9,b.doorY+3,18,1,col);
+ light(b.doorX,b.doorY-8,75,col,b.landmark?1.4:.85);
+ if(index===4)light(b.x+b.w*.75,b.y+b.h*.55,50,'#e589cb',.8);
+ if(index===0||index===3)light(b.x+b.w*.25,b.y+b.h*.6,38,'#efb786',.55);
+}
 function bakeTerrain(c,world){const {MW,MH,lands,roadXs,roadYs,STREET,buildings,trees,debris,streetlights}=world;lightGrid.clear();c.imageSmoothingEnabled=false;
  material(c,'concrete',0,0,MW,MH);
  // Blocks get small courtyards, paved service lanes, and useful negative space.
@@ -68,10 +86,10 @@ function vehicle(c,x,y,v){let dir=((Math.round((v.angle||0)/(Math.PI/8))%16)+16)
 const glowCache=new Map();
 function glow(c,x,y,r,col,power){let im=glowCache.get(col);if(!im){im=document.createElement('canvas');im.width=im.height=128;let q=im.getContext('2d'),g=q.createRadialGradient(64,64,1,64,64,64);g.addColorStop(0,col);g.addColorStop(.25,col+'a0');g.addColorStop(1,col+'00');q.fillStyle=g;q.fillRect(0,0,128,128);glowCache.set(col,im)}c.globalAlpha=power;c.drawImage(im,Math.round(x-r),Math.round(y-r),r*2,r*2);c.globalAlpha=1}
 function atmosphere(c,{clock,hour,weather,camera,W,H,cars,police}){
- const night=hour<5?.5:hour<8?.5*(8-hour)/3:hour>17?Math.min(.5,(hour-17)/4*.5):0;
+ const night=hour<5?.32:hour<8?.32*(8-hour)/3:hour>17?Math.min(.32,(hour-17)/4*.32):0;
  rect(c,0,0,W,H,`rgba(9,13,34,${.07+night})`);
  c.save();c.globalCompositeOperation='screen';
- for(let gx=Math.floor((camera.x-120)/256);gx<=Math.floor((camera.x+W+120)/256);gx++)for(let gy=Math.floor((camera.y-120)/256);gy<=Math.floor((camera.y+H+120)/256);gy++)for(let l of lightGrid.get(`${gx},${gy}`)||[]){const x=l.x-camera.x,y=l.y-camera.y;if(x<-l.r||x>W+l.r||y<-l.r||y>H+l.r)continue;const flicker=1-Math.max(0,Math.sin(clock*1.8+l.seed)-.96)*4;const power=(.12+night*.65)*l.power*flicker;glow(c,x,y,l.r,l.color,power);glow(c,x,y,8,l.color,.3*l.power);
+ for(let gx=Math.floor((camera.x-120)/256);gx<=Math.floor((camera.x+W+120)/256);gx++)for(let gy=Math.floor((camera.y-120)/256);gy<=Math.floor((camera.y+H+120)/256);gy++)for(let l of lightGrid.get(`${gx},${gy}`)||[]){const x=l.x-camera.x,y=l.y-camera.y;if(x<-l.r||x>W+l.r||y<-l.r||y>H+l.r)continue;const flicker=1-Math.max(0,Math.sin(clock*1.8+l.seed)-.96)*4;const power=(.23+night*.9)*l.power*flicker;glow(c,x,y,l.r,l.color,power);glow(c,x,y,8,l.color,.3*l.power);
  if(weather==='RAIN'){c.globalAlpha=.12*l.power;for(let i=0;i<9;i++){const yy=y+12+i*4,ww=(18-i)*1.5;rect(c,x-ww/2+Math.sin(clock*3+i+l.seed)*3,yy,ww,1,l.color)}c.globalAlpha=1}}
  if(night>.04||weather==='RAIN')for(let v of [...cars,...police]){const x=v.x-camera.x,y=v.y-camera.y;if(x<-90||x>W+90||y<-90||y>H+90)continue;const angle=v.angle||0;c.save();c.translate(x,y);c.rotate(angle);const grad=c.createLinearGradient(0,-18,0,-91);grad.addColorStop(0,'#c4dfe844');grad.addColorStop(1,'#a7d8ff00');polygon(c,[[-8,-18],[-27,-88],[27,-88],[8,-18]],grad);glow(c,-7,-20,12,'#f9ddae',.2);glow(c,7,-20,12,'#f9ddae',.2);glow(c,-7,20,12,'#ef698a',.2);glow(c,7,20,12,'#ef698a',.2);if(v.kind==='police'){glow(c,0,0,43,Math.sin(clock*12)>0?'#f1689c':'#7294f5',.6)}c.restore()}
  c.restore();
@@ -93,5 +111,6 @@ function interior(c,key,name,W,H){const club=key==='club',hotel=['hotel','motel'
  else{sprite(c,'table',92,120,70,54);sprite(c,'table',165,120,62,54);sprite(c,'sofa',275,252,76,40);sprite(c,'table',492,265,108,34);sprite(c,'vending',548,101,36,55);label(c,'LOCAL BUSINESS / OPEN LATE',470,90,230,accent,10)}
  rect(c,370,H-51,60,23,'#262f49');rect(c,370,H-51,60,1,accent);label(c,'EXIT [E]',370,H-35,60,accent,10);
 }
-return {ready,bakeTerrain,character,vehicle,atmosphere,interior,sprite,glow,palettes};
+function portrait(canvas,speaker,expression=0){const c=canvas.getContext('2d');c.imageSmoothingEnabled=false;c.clearRect(0,0,64,80);const name=speaker.toUpperCase(),index=name.includes('VEE')?0:name==='YOU'?1:name.includes('JAX')?2:name.includes('ROXY')?3:name.includes('SOL')?4:5;c.drawImage(images.portraits,index*64,expression*80,64,80,0,0,64,80)}
+return {portrait,ready,bakeTerrain,character,vehicle,atmosphere,interior,sprite,glow,palettes};
 })();
