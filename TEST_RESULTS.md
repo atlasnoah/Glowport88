@@ -12,11 +12,18 @@ The browser checks exercise Start, movement, driving/braking, buildings, real sh
 
 `npm run release && npm run test:release` verifies the self-contained HTML through a temporary HTTP server while blocking subresource requests. Startup, rendered pixels, save/reload, map, phone, and a new campaign objective are checked. Direct file navigation remains restricted by this cloud browser policy.
 
+## Published delivery
+
+The tested 0.3.0 build is published at https://atlasnoah.github.io/Glowport88/?v=0.3.0. A certificate-verified HTTPS download returned the exact SHA-256 of the tested standalone: `0fdbcc233c49212c3eb09625d8af006cfc08eb8aa67d44df8c27b342f9ff6b0a`.
+
+`node tests/public-demo.cjs` downloads the public file with normal TLS verification, checks that hash, and plays the downloaded bytes in Chromium with subresources blocked. Start, all 40/20/20 definitions, 60 phone jobs, and map passed. Direct external navigation in cloud Chromium hit its read-only NSS proxy-trust database; TLS verification was not disabled. This check verifies deployed bytes plus local playback, not direct external browser navigation.
+
 ## Evidence
 
 - `artifacts/smoke-results.json`, `gameplay-results.json`, `overhaul-results.json`: actual named browser outcomes.
 - `artifacts/campaign-playthrough-results.json`: accelerated integration scope and objective counts.
 - `artifacts/release-results.json`: standalone check.
+- `artifacts/public-demo-results.json`, `public-demo.png`: verified public delivery and browser playback of downloaded release bytes.
 - `artifacts/overhaul-phone.png`, `overhaul-heist.png`, `overhaul-ending.png`: actual new gameplay screens.
 - `artifacts/city-day.png`, `city-night-rain.png`, and room captures: existing artwork in the running game.
 - `GAMEPLAY_AUDIT.md`, `MISSION_TRACKER.md`, `SIDE_STORIES.md`: baseline audit and authored content inventory.

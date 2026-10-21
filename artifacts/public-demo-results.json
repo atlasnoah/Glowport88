@@ -1,0 +1,17 @@
+{
+  "time": "2026-10-21T19:40:18.672Z",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.3.0",
+  "verifiedHTTPSDownload": true,
+  "sha256": "0fdbcc233c49212c3eb09625d8af006cfc08eb8aa67d44df8c27b342f9ff6b0a",
+  "matchesTestedRelease": true,
+  "browserPlaybackOfDownloadedBytes": {
+    "main": 40,
+    "side": 20,
+    "encounters": 20,
+    "start": true,
+    "phone": true,
+    "map": true,
+    "errors": []
+  },
+  "directExternalBrowserNavigation": "blocked by cloud Chromium proxy trust database mounted read-only; TLS verification was not disabled"
+}

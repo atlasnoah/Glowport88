@@ -49,3 +49,10 @@
 - Browser tests caught encounter markers detached from their objectives, impossible indoor car requirements, and escort actions consuming vehicle-entry input. Corrected these and added coverage. Also preserved controlled cars, removed regenerated stored identities on load, and prevented restarting the active mission through the phone.
 - Expanded regression to 43 Chromium scenarios and model/content checks. Three accelerated adapter sweeps resolve 910 objectives across 74 new definitions; the host substitutes travel/combat and the heist success boundary. This is not a timed human campaign playthrough. No duration estimate is asserted.
 - Rebuilt the standalone demo, source archive and checksums after validation. See TEST_RESULTS.md for current evidence and ROADMAP.md for remaining human playtesting, balancing, performance and platform work.
+
+## Public demo delivery
+
+- Committed the gameplay overhaul as a6b288d and pushed its reviewable source to codex/gameplay-overhaul, leaving main untouched. Updated the authorized gh-pages demo in dd10d70.
+- Verified the public HTTPS response and SHA-256 against the tested standalone. Start, phone/jobs, map and all 40/20/20 definitions passed when playing the downloaded public bytes with subresources blocked. Direct cloud Chromium HTTPS navigation is limited by a read-only proxy certificate database; no certificate verification was disabled.
+- Saved updated reusable startup instructions in the cloud environment draft. The install command remains the verified frozen npm ci workflow. Draft persistence does not publish a new environment snapshot; review/save Environment settings and publish to reuse those instructions.
+- Campaign duration remains unmeasured. All remaining human campaign validation and balance work is recorded in ROADMAP.md.
