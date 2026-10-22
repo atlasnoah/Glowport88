@@ -1,15 +1,24 @@
 {
-  "version": "0.5.0",
-  "sourceCommit": "f03182c6fd90b49637d8739f739c354aa2cbf5d3",
-  "sha256": "51cd13889d9799aa229336d8f394391c9436f904dfb5c18e6d6ce4746d965dc6",
+  "version": "0.6.0",
+  "sourceCommit": "53e7a669d4d8440caf90a08d6d9b7bbaf4ef4e78",
+  "sha256": "f101a015ca6499ba862bd4af71886fbf393a6b97554ce24d79a649de8fb83e09",
   "mobileTouch": true,
   "touchRefinements": true,
   "storyNavigation": true,
   "livingCity": true,
+  "greatCityRebuild": true,
+  "saveVersion": 5,
+  "mapVersion": 2,
   "mainMissions": 40,
   "sideMissions": 20,
   "encounters": 32,
   "vehicleModels": 10,
   "cassettes": 12,
-  "radioStations": 4
+  "radioStations": 4,
+  "buildings": 415,
+  "houses": 252,
+  "houseVariants": 15,
+  "roads": 94,
+  "culdesacs": 10,
+  "comparison": "rebuild/rebuild-visual-comparison.html"
 }
