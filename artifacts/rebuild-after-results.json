@@ -1,0 +1,857 @@
+{
+  "time": "2026-10-22T23:13:24.274Z",
+  "phase": "after",
+  "baselineCommit": null,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "canvas": {
+    "width": 800,
+    "height": 450
+  },
+  "shots": [
+    {
+      "name": "downtown-day",
+      "where": "hotel",
+      "hour": 12,
+      "weather": "CLEAR",
+      "file": "rebuild-after-downtown-day.png",
+      "pixels": {
+        "meanLuminance": 79.65578060295006,
+        "luminanceStdDev": 46.29362849582161,
+        "min": 0,
+        "max": 251.70719999999997,
+        "saturatedPixelFraction": 0.06310277777777777
+      }
+    },
+    {
+      "name": "sunset-residential-day",
+      "where": "radio",
+      "hour": 12,
+      "weather": "CLEAR",
+      "file": "rebuild-after-sunset-residential-day.png",
+      "pixels": {
+        "meanLuminance": 90.13222844020959,
+        "luminanceStdDev": 35.4532867920783,
+        "min": 1.0722,
+        "max": 253.57479999999998,
+        "saturatedPixelFraction": 0.037191666666666665
+      }
+    },
+    {
+      "name": "crescent-day",
+      "where": "observatory",
+      "hour": 12,
+      "weather": "CLEAR",
+      "file": "rebuild-after-crescent-day.png",
+      "pixels": {
+        "meanLuminance": 90.37501470657635,
+        "luminanceStdDev": 35.173142789049614,
+        "min": 0.7874,
+        "max": 252.07219999999998,
+        "saturatedPixelFraction": 0.035505555555555554
+      }
+    },
+    {
+      "name": "palm-day",
+      "where": "clinic",
+      "hour": 12,
+      "weather": "CLEAR",
+      "file": "rebuild-after-palm-day.png",
+      "pixels": {
+        "meanLuminance": 99.5475916182849,
+        "luminanceStdDev": 40.270814593719386,
+        "min": 1.0722,
+        "max": 251.1444,
+        "saturatedPixelFraction": 0.05359722222222222
+      }
+    },
+    {
+      "name": "diner-day",
+      "where": "diner",
+      "hour": 12,
+      "weather": "CLEAR",
+      "file": "rebuild-after-diner-day.png",
+      "pixels": {
+        "meanLuminance": 90.06515995439557,
+        "luminanceStdDev": 34.55759153199442,
+        "min": 1,
+        "max": 253,
+        "saturatedPixelFraction": 0.026547222222222222
+      }
+    },
+    {
+      "name": "clear-morning",
+      "where": "hotel",
+      "hour": 8,
+      "weather": "CLEAR",
+      "file": "rebuild-after-clear-morning.png",
+      "pixels": {
+        "meanLuminance": 79.65578060295006,
+        "luminanceStdDev": 46.29362849582161,
+        "min": 0,
+        "max": 251.70719999999997,
+        "saturatedPixelFraction": 0.06310277777777777
+      }
+    },
+    {
+      "name": "clear-midday",
+      "where": "hotel",
+      "hour": 12,
+      "weather": "CLEAR",
+      "file": "rebuild-after-clear-midday.png",
+      "pixels": {
+        "meanLuminance": 79.65578060295006,
+        "luminanceStdDev": 46.29362849582161,
+        "min": 0,
+        "max": 251.70719999999997,
+        "saturatedPixelFraction": 0.06310277777777777
+      }
+    },
+    {
+      "name": "sunset",
+      "where": "hotel",
+      "hour": 18.5,
+      "weather": "CLEAR",
+      "file": "rebuild-after-sunset.png",
+      "pixels": {
+        "meanLuminance": 74.02679535010795,
+        "luminanceStdDev": 41.737550979041664,
+        "min": 1.0722,
+        "max": 231.5668,
+        "saturatedPixelFraction": 0.042805555555555555
+      }
+    },
+    {
+      "name": "clear-night",
+      "where": "hotel",
+      "hour": 23,
+      "weather": "CLEAR",
+      "file": "rebuild-after-clear-night.png",
+      "pixels": {
+        "meanLuminance": 65.97779143383305,
+        "luminanceStdDev": 35.15382032261492,
+        "min": 3.7192,
+        "max": 215,
+        "saturatedPixelFraction": 0.030133333333333335
+      }
+    },
+    {
+      "name": "rain-day",
+      "where": "hotel",
+      "hour": 12,
+      "weather": "RAIN",
+      "file": "rebuild-after-rain-day.png",
+      "pixels": {
+        "meanLuminance": 79.71599998239495,
+        "luminanceStdDev": 46.27842206830968,
+        "min": 0,
+        "max": 251.70719999999997,
+        "saturatedPixelFraction": 0.06305277777777778
+      }
+    },
+    {
+      "name": "rain-night",
+      "where": "hotel",
+      "hour": 23,
+      "weather": "RAIN",
+      "file": "rebuild-after-rain-night.png",
+      "pixels": {
+        "meanLuminance": 66.06747930105587,
+        "luminanceStdDev": 35.17159677881668,
+        "min": 3.7192,
+        "max": 215,
+        "saturatedPixelFraction": 0.030130555555555556
+      }
+    },
+    {
+      "name": "mist",
+      "where": "hotel",
+      "hour": 12,
+      "weather": "MIST",
+      "file": "rebuild-after-mist.png",
+      "pixels": {
+        "meanLuminance": 85.05603570062556,
+        "luminanceStdDev": 43.87716009506252,
+        "min": 3.7874,
+        "max": 249.4946,
+        "saturatedPixelFraction": 0.04839444444444444
+      }
+    },
+    {
+      "name": "downtown-neon-night",
+      "where": "club",
+      "hour": 23,
+      "weather": "CLEAR",
+      "file": "rebuild-after-downtown-neon-night.png",
+      "pixels": {
+        "meanLuminance": 66.29867044222182,
+        "luminanceStdDev": 32.59004964399437,
+        "min": 3.7192,
+        "max": 208.61119999999997,
+        "saturatedPixelFraction": 0.02595
+      }
+    },
+    {
+      "name": "residential-streetlights-night",
+      "where": "radio",
+      "hour": 23,
+      "weather": "CLEAR",
+      "file": "rebuild-after-residential-streetlights-night.png",
+      "pixels": {
+        "meanLuminance": 73.76592377398467,
+        "luminanceStdDev": 27.19790319169131,
+        "min": 3.7913999999999994,
+        "max": 202.6204,
+        "saturatedPixelFraction": 0.02280277777777778
+      }
+    }
+  ],
+  "performance": {
+    "coldDraw": {
+      "median": 65.40000000596046,
+      "p95": 123.20000000298023,
+      "p99": 123.20000000298023,
+      "max": 123.20000000298023
+    },
+    "hotDraw": {
+      "median": 0.09999999403953552,
+      "p95": 0.29999999701976776,
+      "p99": 1.300000011920929,
+      "max": 1.5
+    },
+    "update": {
+      "median": 2,
+      "p95": 4.299999997019768,
+      "p99": 7.299999997019768,
+      "max": 11.400000005960464
+    },
+    "samples": [
+      {
+        "where": "hotel",
+        "cold": 28.899999991059303,
+        "coldBakes": 1,
+        "hot": [
+          0.20000000298023224,
+          0.20000000298023224,
+          0.09999999403953552,
+          0.30000001192092896,
+          0.19999998807907104,
+          0.10000000894069672,
+          0,
+          0.20000000298023224,
+          0.19999998807907104,
+          0,
+          0.20000000298023224,
+          0.29999999701976776,
+          0,
+          0.10000000894069672,
+          0.09999999403953552,
+          0.29999999701976776,
+          1.300000011920929,
+          0.09999999403953552,
+          0.20000000298023224,
+          0.20000000298023224
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "radio",
+        "cold": 89.09999999403954,
+        "coldBakes": 4,
+        "hot": [
+          0.10000000894069672,
+          0,
+          0,
+          0.09999999403953552,
+          0.10000000894069672,
+          0,
+          0.09999999403953552,
+          0,
+          0,
+          0,
+          0.20000000298023224,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.09999999403953552,
+          0,
+          0.10000000894069672,
+          0
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "observatory",
+        "cold": 37.70000000298023,
+        "coldBakes": 1,
+        "hot": [
+          0.09999999403953552,
+          0.09999999403953552,
+          0.10000000894069672,
+          0,
+          0.09999999403953552,
+          0.10000000894069672,
+          0,
+          0.19999998807907104,
+          0.10000000894069672,
+          0,
+          0,
+          0,
+          0.09999999403953552,
+          0,
+          0.10000000894069672,
+          0,
+          0,
+          0.09999999403953552,
+          0,
+          0
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "clinic",
+        "cold": 105.29999999701977,
+        "coldBakes": 4,
+        "hot": [
+          0.20000000298023224,
+          0.4000000059604645,
+          0.29999999701976776,
+          0,
+          0.09999999403953552,
+          0.20000000298023224,
+          0.09999999403953552,
+          0.10000000894069672,
+          0.20000000298023224,
+          0.3999999910593033,
+          0.10000000894069672,
+          0,
+          0.09999999403953552,
+          0.09999999403953552,
+          0,
+          0,
+          0,
+          0.20000000298023224,
+          0.29999999701976776,
+          0.10000000894069672
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "diner",
+        "cold": 108.20000000298023,
+        "coldBakes": 4,
+        "hot": [
+          0,
+          0.09999999403953552,
+          0,
+          0.10000000894069672,
+          0,
+          0.09999999403953552,
+          0,
+          0,
+          0.20000000298023224,
+          0,
+          0.09999999403953552,
+          0,
+          0,
+          0,
+          0,
+          0.10000000894069672,
+          0.09999999403953552,
+          0,
+          0,
+          0
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "club",
+        "cold": 123.20000000298023,
+        "coldBakes": 4,
+        "hot": [
+          0,
+          0.20000000298023224,
+          1.5,
+          0.20000000298023224,
+          0.09999999403953552,
+          0.09999999403953552,
+          0.10000000894069672,
+          0,
+          0.09999999403953552,
+          0.10000000894069672,
+          0,
+          0.5,
+          0.09999999403953552,
+          0.09999999403953552,
+          0,
+          0,
+          0.10000000894069672,
+          0.20000000298023224,
+          0.09999999403953552,
+          0.20000000298023224
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "motel",
+        "cold": 65.40000000596046,
+        "coldBakes": 2,
+        "hot": [
+          0.09999999403953552,
+          0,
+          0.09999999403953552,
+          0,
+          0.20000000298023224,
+          0.10000000894069672,
+          0.09999999403953552,
+          0,
+          0,
+          0.20000000298023224,
+          0,
+          0,
+          0.20000000298023224,
+          0,
+          0,
+          0,
+          0,
+          0.09999999403953552,
+          0,
+          0.09999999403953552
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "pier",
+        "cold": 60.900000005960464,
+        "coldBakes": 2,
+        "hot": [
+          0.09999999403953552,
+          0.10000000894069672,
+          0.09999999403953552,
+          0,
+          0.09999999403953552,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.20000000298023224,
+          0,
+          0,
+          0.10000000894069672,
+          0,
+          0,
+          0,
+          0,
+          0.5
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "hotel",
+        "cold": 26.299999997019768,
+        "coldBakes": 1,
+        "hot": [
+          0.20000000298023224,
+          0.699999988079071,
+          0.10000000894069672,
+          0.09999999403953552,
+          0.20000000298023224,
+          0,
+          0.20000000298023224,
+          0.09999999403953552,
+          0.10000000894069672,
+          0,
+          0.09999999403953552,
+          0.09999999403953552,
+          0.20000000298023224,
+          0.10000000894069672,
+          0.09999999403953552,
+          0,
+          0.20000000298023224,
+          0.20000000298023224,
+          0.09999999403953552,
+          0.09999999403953552
+        ],
+        "hotBakes": 0
+      }
+    ],
+    "terrain": {
+      "draws": 209,
+      "hits": 473,
+      "bakes": 45,
+      "evictions": 16,
+      "residentBytes": 4194304,
+      "peakResidentBytes": 25165824,
+      "totalBakeMs": 976.4999999701977,
+      "maxBakeMs": 53.099999994039536,
+      "lastBakeMs": 18.900000005960464,
+      "tileSize": 1024,
+      "maxTiles": 6,
+      "cachedTiles": 1,
+      "maxSurfacePixels": 1048576,
+      "estimatedResidentMiB": 4,
+      "tiles": [
+        {
+          "key": "3,2",
+          "x": 3072,
+          "y": 2048,
+          "width": 1024,
+          "height": 1024
+        }
+      ]
+    },
+    "state": {
+      "interior": {
+        "x": 400,
+        "y": 380
+      },
+      "investigation": null,
+      "delivery": null,
+      "reserve": {
+        "pistol": 0,
+        "shotgun": 0,
+        "smg": 0
+      },
+      "ammo": {
+        "pistol": 0,
+        "shotgun": 0,
+        "smg": 0
+      },
+      "reloading": 0,
+      "trust": {
+        "vee": 0
+      },
+      "camera": {
+        "x": 3221.1710409760763,
+        "y": 2281.7626572564695
+      },
+      "time": 119.60000000000322,
+      "screen": "playing",
+      "story": 21,
+      "hp": 150,
+      "money": 600,
+      "wanted": 0,
+      "inside": null,
+      "player": {
+        "x": 3621.171040976047,
+        "y": 2506.7626572565487,
+        "weapon": 0
+      },
+      "cars": 46,
+      "buildings": 415,
+      "landmarks": 12,
+      "roadSegments": 389,
+      "mapW": 7200,
+      "mapH": 5040,
+      "roadCols": 20,
+      "roadRows": 15,
+      "dialogue": false,
+      "practice": 0,
+      "training": false,
+      "talking": 0,
+      "trafficMinGap": 113.59989189391581,
+      "enemies": 0,
+      "police": 0,
+      "bullets": 0,
+      "car": false,
+      "side": null
+    },
+    "landmarks": [
+      {
+        "key": "hotel",
+        "x": 3630,
+        "y": 2487,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "armory",
+        "x": 4001,
+        "y": 2147,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "club",
+        "x": 4361,
+        "y": 3167,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "records",
+        "x": 2921,
+        "y": 3167,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "radio",
+        "x": 1060,
+        "y": 2147,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 52.99999999999955,
+        "inside": true
+      },
+      {
+        "key": "arcade",
+        "x": 1481,
+        "y": 3507,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 52.999999999994316,
+        "inside": true
+      },
+      {
+        "key": "motel",
+        "x": 1121,
+        "y": 1467,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "warehouse",
+        "x": 6140,
+        "y": 2827,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "diner",
+        "x": 5801,
+        "y": 2147,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "observatory",
+        "x": 3641,
+        "y": 787,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "clinic",
+        "x": 4001,
+        "y": 4187,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "pier",
+        "x": 2921,
+        "y": 4527,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      }
+    ],
+    "layout": {
+      "buildings": 415,
+      "buildingsByKind": {
+        "landmark": 12,
+        "commercial": 55,
+        "house": 252,
+        "apartment": 44,
+        "industrial": 32,
+        "civic": 20
+      },
+      "zones": {
+        "special": 12,
+        "commercial": 55,
+        "residential": 252,
+        "apartment": 44,
+        "industrial": 32,
+        "civic": 20,
+        "park": 53
+      },
+      "byDistrict": {
+        "core": {
+          "total": 70,
+          "house": 13,
+          "commercial": 29,
+          "apartment": 15,
+          "industrial": 3,
+          "civic": 6,
+          "landmark": 4
+        },
+        "west": {
+          "total": 137,
+          "house": 109,
+          "commercial": 7,
+          "apartment": 15,
+          "industrial": 0,
+          "civic": 3,
+          "landmark": 3
+        },
+        "east": {
+          "total": 105,
+          "house": 42,
+          "commercial": 14,
+          "apartment": 9,
+          "industrial": 29,
+          "civic": 9,
+          "landmark": 2
+        },
+        "north": {
+          "total": 39,
+          "house": 37,
+          "commercial": 1,
+          "apartment": 0,
+          "industrial": 0,
+          "civic": 0,
+          "landmark": 1
+        },
+        "south": {
+          "total": 64,
+          "house": 51,
+          "commercial": 4,
+          "apartment": 5,
+          "industrial": 0,
+          "civic": 2,
+          "landmark": 2
+        }
+      },
+      "houseVariants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "neighborhoods": [
+        {
+          "id": "east-diner",
+          "district": "east",
+          "name": "EAST DINER NEIGHBORHOOD",
+          "x0": 5580,
+          "x1": 6380,
+          "y0": 1900,
+          "y1": 2480
+        }
+      ],
+      "driveways": 170,
+      "streetDetails": 397,
+      "roads": 94,
+      "curvedRoads": 44,
+      "culdesacs": 10,
+      "navNodes": 434,
+      "navEdges": 563,
+      "components": 1,
+      "vehicleComponents": 1,
+      "roadBuildingOverlaps": [],
+      "landmarkConnectivity": [
+        {
+          "key": "hotel",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "armory",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "club",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "records",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "radio",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "arcade",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "motel",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "warehouse",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "diner",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "observatory",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "clinic",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "pier",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        }
+      ]
+    }
+  },
+  "errors": [],
+  "scope": "Identical scene/camera/time/weather canvas captures and CPU draw/update samples in desktop cloud Chromium. Different rebuilt content intentionally changes pixels. Not a physical-device FPS or process/GPU memory claim."
+}

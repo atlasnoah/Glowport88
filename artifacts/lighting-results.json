@@ -1,0 +1,95 @@
+{
+  "time": "2026-10-22T23:14:05.445Z",
+  "day": {
+    "pixels": 0,
+    "fraction": 0,
+    "opaque": true,
+    "mean": 119.5
+  },
+  "morning": {
+    "pixels": 0,
+    "fraction": 0,
+    "opaque": true,
+    "mean": 119.5
+  },
+  "rain": {
+    "pixels": 1781,
+    "fraction": 0.018552083333333334,
+    "opaque": true,
+    "mean": 119.61672569444444
+  },
+  "mist": {
+    "pixels": 96000,
+    "fraction": 1,
+    "opaque": true,
+    "mean": 122.37333680555555
+  },
+  "night": {
+    "pixels": 96000,
+    "fraction": 1,
+    "opaque": true,
+    "mean": 94.51182638888889
+  },
+  "original": {
+    "pixels": 0,
+    "fraction": 0,
+    "opaque": true,
+    "mean": 119.5
+  },
+  "index": {
+    "initial": {
+      "sources": 3,
+      "streetlights": 1,
+      "neon": 2,
+      "cells": 2,
+      "builds": 1
+    },
+    "final": {
+      "sources": 3,
+      "streetlights": 1,
+      "neon": 2,
+      "cells": 2,
+      "builds": 1
+    }
+  },
+  "falloff": {
+    "illuminated": 2282,
+    "escapedFalloff": 0
+  },
+  "roadPixels": {
+    "actual": [
+      75,
+      86,
+      104,
+      255
+    ],
+    "ground": [
+      52,
+      60,
+      82,
+      255
+    ],
+    "oldGrid": [
+      52,
+      60,
+      82,
+      255
+    ],
+    "oldGridGround": [
+      52,
+      60,
+      82,
+      255
+    ],
+    "walkway": [
+      182,
+      162,
+      117,
+      255
+    ],
+    "allOpaque": true
+  },
+  "seamDifferences": 0,
+  "seamSamples": [],
+  "scope": "Desktop Chromium actual RGBA pixel comparisons. Confirms clear morning/midday identity, explicit-only fog, sparse rain, local lamp falloff, retained night detail, opaque road surfaces and per-world light index stability across translated tile bakes."
+}

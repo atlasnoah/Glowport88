@@ -1,0 +1,67 @@
+{
+  "time": "2026-10-22T18:26:08.399Z",
+  "passed": [
+    "v4 AI chase target reprojects circuit distance without a first-frame teleport",
+    "chase progress, run, marker, model and damaged health survive import",
+    "actual escort navigates residential corners without crossing solids",
+    "passenger disembarks safely beside a residential wall"
+  ],
+  "errors": [],
+  "before": {
+    "x": 831.1272187703881,
+    "y": 927.4906303136714
+  },
+  "after": {
+    "x": 829.9573770258573,
+    "y": 927.7170512964839
+  },
+  "jump": 1.1915520000002588,
+  "safe": true,
+  "road": true,
+  "id": "m12",
+  "stage": 2,
+  "run": 2,
+  "status": "active",
+  "tailBefore": 7,
+  "tailAfter": 7,
+  "marked": true,
+  "health": 71,
+  "modelId": "delivery",
+  "money": 12345,
+  "receipts": {
+    "audit-paid": true
+  },
+  "claimed": {
+    "stage:0": true
+  },
+  "escort": {
+    "start": {
+      "x": 2082,
+      "y": 591
+    },
+    "target": {
+      "x": 1841,
+      "y": 359
+    },
+    "pathPoints": 5,
+    "frames": 85,
+    "end": {
+      "x": 1863.0687751353053,
+      "y": 386.67543692643767
+    },
+    "gap": 35.39718414001172,
+    "solidFrames": 0,
+    "status": "active",
+    "index": 1
+  },
+  "dropoff": {
+    "building": "parcel-2",
+    "playerSafe": true,
+    "immediateSafe": true,
+    "finalSafe": true,
+    "health": 83,
+    "passenger": false,
+    "gap": 33.92204706860223
+  },
+  "scope": "Actual mobile Chromium host: synthetic v4 chase progress reloads through normal save controls and production traffic updates. Fixture-positioned escort scenarios run the production adapter and collision with advancing world time across residential corners and a wall-adjacent passenger dropoff."
+}

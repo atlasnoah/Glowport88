@@ -1,5 +1,5 @@
-/* Bounded city terrain surfaces for mobile browsers. The approved renderer and
- * world coordinates stay unchanged; only the offscreen backing-store size changes. */
+/* Bounded city terrain surfaces for mobile browsers. Rendering and collision share the rebuilt world coordinates;
+ * offscreen backing stores remain bounded independently of city detail. */
 window.GlowportTerrain=(()=>{
 'use strict';
 const finite=(value,fallback)=>Number.isFinite(Number(value))?Number(value):fallback;
@@ -24,8 +24,8 @@ function create({world,bake,tileSize=1024,maxTiles=6}={}){
   context.setTransform(1,0,0,1,-x,-y);
   const started=now();
   try{
-   // Keep the complete world object: the renderer also rebuilds the global
-   // lighting index, including lights outside this particular clipped surface.
+   // Keep the complete world object: its stable lighting index also includes
+   // sources outside this particular clipped surface.
    bake(context,world);
   }catch(error){canvas.width=0;canvas.height=0;throw error;}
   context.setTransform(1,0,0,1,0,0);

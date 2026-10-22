@@ -1,0 +1,11 @@
+{
+  "time": "2026-10-22T18:27:27.658Z",
+  "scenes": 14,
+  "screenshots": 28,
+  "allReferencedPngsExist": true,
+  "desktopBeforeAfterControls": true,
+  "mobileSceneJump": true,
+  "mobileNoHorizontalOverflow": true,
+  "errors": [],
+  "scope": "Actual Chromium gallery preview on temporary HTTP server, responsive views1440x900 and390x844; actual PNGs are retained separately. Performance values pending focused renderer optimization rerun."
+}

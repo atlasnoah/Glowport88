@@ -1,0 +1,182 @@
+{
+  "ok": true,
+  "elapsedMs": 288,
+  "testedLandmarkRoutes": 132,
+  "buildings": 415,
+  "buildingsByKind": {
+    "landmark": 12,
+    "commercial": 55,
+    "house": 252,
+    "apartment": 44,
+    "industrial": 32,
+    "civic": 20
+  },
+  "zones": {
+    "special": 12,
+    "commercial": 55,
+    "residential": 252,
+    "apartment": 44,
+    "industrial": 32,
+    "civic": 20,
+    "park": 53
+  },
+  "byDistrict": {
+    "core": {
+      "total": 70,
+      "house": 13,
+      "commercial": 29,
+      "apartment": 15,
+      "industrial": 3,
+      "civic": 6,
+      "landmark": 4
+    },
+    "west": {
+      "total": 137,
+      "house": 109,
+      "commercial": 7,
+      "apartment": 15,
+      "industrial": 0,
+      "civic": 3,
+      "landmark": 3
+    },
+    "east": {
+      "total": 105,
+      "house": 42,
+      "commercial": 14,
+      "apartment": 9,
+      "industrial": 29,
+      "civic": 9,
+      "landmark": 2
+    },
+    "north": {
+      "total": 39,
+      "house": 37,
+      "commercial": 1,
+      "apartment": 0,
+      "industrial": 0,
+      "civic": 0,
+      "landmark": 1
+    },
+    "south": {
+      "total": 64,
+      "house": 51,
+      "commercial": 4,
+      "apartment": 5,
+      "industrial": 0,
+      "civic": 2,
+      "landmark": 2
+    }
+  },
+  "houseVariants": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "neighborhoods": [
+    {
+      "id": "east-diner",
+      "district": "east",
+      "name": "EAST DINER NEIGHBORHOOD",
+      "x0": 5580,
+      "x1": 6380,
+      "y0": 1900,
+      "y1": 2480
+    }
+  ],
+  "driveways": 170,
+  "streetDetails": 397,
+  "roads": 94,
+  "curvedRoads": 44,
+  "culdesacs": 10,
+  "navNodes": 434,
+  "navEdges": 563,
+  "components": 1,
+  "vehicleComponents": 1,
+  "roadBuildingOverlaps": [],
+  "landmarkConnectivity": [
+    {
+      "key": "hotel",
+      "foot": true,
+      "vehicle": true,
+      "doorClear": true
+    },
+    {
+      "key": "armory",
+      "foot": true,
+      "vehicle": true,
+      "doorClear": true
+    },
+    {
+      "key": "club",
+      "foot": true,
+      "vehicle": true,
+      "doorClear": true
+    },
+    {
+      "key": "records",
+      "foot": true,
+      "vehicle": true,
+      "doorClear": true
+    },
+    {
+      "key": "radio",
+      "foot": true,
+      "vehicle": true,
+      "doorClear": true
+    },
+    {
+      "key": "arcade",
+      "foot": true,
+      "vehicle": true,
+      "doorClear": true
+    },
+    {
+      "key": "motel",
+      "foot": true,
+      "vehicle": true,
+      "doorClear": true
+    },
+    {
+      "key": "warehouse",
+      "foot": true,
+      "vehicle": true,
+      "doorClear": true
+    },
+    {
+      "key": "diner",
+      "foot": true,
+      "vehicle": true,
+      "doorClear": true
+    },
+    {
+      "key": "observatory",
+      "foot": true,
+      "vehicle": true,
+      "doorClear": true
+    },
+    {
+      "key": "clinic",
+      "foot": true,
+      "vehicle": true,
+      "doorClear": true
+    },
+    {
+      "key": "pier",
+      "foot": true,
+      "vehicle": true,
+      "doorClear": true
+    }
+  ]
+}

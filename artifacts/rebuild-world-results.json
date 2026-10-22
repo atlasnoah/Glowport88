@@ -1,0 +1,8138 @@
+{
+  "time": "2026-10-22T23:14:18.103Z",
+  "passed": [
+    "production host contains rebuilt districts, zoning and fifteen house designs",
+    "all twelve original landmark doors remain safe and expose real entrance actions",
+    "actual player collision blocks residential and commercial building facades",
+    "every landmark pair completes pedestrian and vehicle routes through host collision",
+    "walking and driving GPS routes avoid structures and citizen routes reach real destinations",
+    "East Diner services, parking and residential driveways connect to actual streets",
+    "full map and minimap display the same rebuilt road geometry as the playable city",
+    "real simulation keeps pedestrians, traffic and archive spawns finite and out of solids",
+    "actual keyboard driving follows a curved residential street and reverses safely",
+    "real renderer remains within the six-tile terrain budget without browser errors"
+  ],
+  "errors": [],
+  "world": {
+    "diagnostics": {
+      "buildings": 415,
+      "buildingsByKind": {
+        "landmark": 12,
+        "commercial": 55,
+        "house": 252,
+        "apartment": 44,
+        "industrial": 32,
+        "civic": 20
+      },
+      "zones": {
+        "special": 12,
+        "commercial": 55,
+        "residential": 252,
+        "apartment": 44,
+        "industrial": 32,
+        "civic": 20,
+        "park": 53
+      },
+      "byDistrict": {
+        "core": {
+          "total": 70,
+          "house": 13,
+          "commercial": 29,
+          "apartment": 15,
+          "industrial": 3,
+          "civic": 6,
+          "landmark": 4
+        },
+        "west": {
+          "total": 137,
+          "house": 109,
+          "commercial": 7,
+          "apartment": 15,
+          "industrial": 0,
+          "civic": 3,
+          "landmark": 3
+        },
+        "east": {
+          "total": 105,
+          "house": 42,
+          "commercial": 14,
+          "apartment": 9,
+          "industrial": 29,
+          "civic": 9,
+          "landmark": 2
+        },
+        "north": {
+          "total": 39,
+          "house": 37,
+          "commercial": 1,
+          "apartment": 0,
+          "industrial": 0,
+          "civic": 0,
+          "landmark": 1
+        },
+        "south": {
+          "total": 64,
+          "house": 51,
+          "commercial": 4,
+          "apartment": 5,
+          "industrial": 0,
+          "civic": 2,
+          "landmark": 2
+        }
+      },
+      "houseVariants": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "neighborhoods": [
+        {
+          "id": "east-diner",
+          "district": "east",
+          "name": "EAST DINER NEIGHBORHOOD",
+          "x0": 5580,
+          "x1": 6380,
+          "y0": 1900,
+          "y1": 2480
+        }
+      ],
+      "driveways": 170,
+      "streetDetails": 397,
+      "roads": 94,
+      "curvedRoads": 44,
+      "culdesacs": 10,
+      "navNodes": 434,
+      "navEdges": 563,
+      "components": 1,
+      "vehicleComponents": 1,
+      "roadBuildingOverlaps": [],
+      "landmarkConnectivity": [
+        {
+          "key": "hotel",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "armory",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "club",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "records",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "radio",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "arcade",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "motel",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "warehouse",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "diner",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "observatory",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "clinic",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        },
+        {
+          "key": "pier",
+          "foot": true,
+          "vehicle": true,
+          "doorClear": true
+        }
+      ]
+    },
+    "state": {
+      "interior": {
+        "x": 400,
+        "y": 380
+      },
+      "investigation": null,
+      "delivery": null,
+      "reserve": {
+        "pistol": 0,
+        "shotgun": 0,
+        "smg": 0
+      },
+      "ammo": {
+        "pistol": 0,
+        "shotgun": 0,
+        "smg": 0
+      },
+      "reloading": 0,
+      "trust": {
+        "vee": 0
+      },
+      "camera": {
+        "x": 3230,
+        "y": 2294
+      },
+      "time": 0.08399999999999988,
+      "screen": "playing",
+      "story": 21,
+      "hp": 150,
+      "money": 600,
+      "wanted": 0,
+      "inside": null,
+      "player": {
+        "x": 3630,
+        "y": 2519,
+        "weapon": 0
+      },
+      "cars": 46,
+      "buildings": 415,
+      "landmarks": 12,
+      "roadSegments": 389,
+      "mapW": 7200,
+      "mapH": 5040,
+      "roadCols": 20,
+      "roadRows": 15,
+      "dialogue": false,
+      "practice": 0,
+      "training": false,
+      "talking": 0,
+      "trafficMinGap": 365.26005510287735,
+      "enemies": 0,
+      "police": 0,
+      "bullets": 0,
+      "car": false,
+      "side": null
+    },
+    "architecture": {
+      "size": 30,
+      "limit": 128,
+      "bytes": 1811776,
+      "byteLimit": 8388608,
+      "hits": 0,
+      "misses": 30
+    }
+  },
+  "landmarks": [
+    {
+      "key": "hotel",
+      "x": 3630,
+      "y": 2487,
+      "safe": true,
+      "onLand": true,
+      "roadDistance": 53,
+      "inside": true,
+      "actions": [
+        {
+          "id": "door-hotel",
+          "label": "ENTER VIOLET HOTEL",
+          "priority": 60,
+          "distance": 10
+        },
+        {
+          "id": "npc-39",
+          "label": "TALK TO Jules",
+          "priority": 20,
+          "distance": 15.589813680255718
+        }
+      ]
+    },
+    {
+      "key": "armory",
+      "x": 4001,
+      "y": 2147,
+      "safe": true,
+      "onLand": true,
+      "roadDistance": 53,
+      "inside": true,
+      "actions": [
+        {
+          "id": "door-armory",
+          "label": "ENTER NEON ARMORY",
+          "priority": 60,
+          "distance": 10
+        }
+      ]
+    },
+    {
+      "key": "club",
+      "x": 4361,
+      "y": 3167,
+      "safe": true,
+      "onLand": true,
+      "roadDistance": 53,
+      "inside": true,
+      "actions": [
+        {
+          "id": "door-club",
+          "label": "ENTER CASSETTE CLUB",
+          "priority": 60,
+          "distance": 10
+        },
+        {
+          "id": "board-club",
+          "label": "JOBS · CASSETTE CLUB",
+          "priority": 55,
+          "distance": 10
+        }
+      ]
+    },
+    {
+      "key": "records",
+      "x": 2921,
+      "y": 3167,
+      "safe": true,
+      "onLand": true,
+      "roadDistance": 53,
+      "inside": true,
+      "actions": [
+        {
+          "id": "door-records",
+          "label": "ENTER RECORD EXCHANGE",
+          "priority": 60,
+          "distance": 10
+        },
+        {
+          "id": "board-records",
+          "label": "JOBS · RECORD EXCHANGE",
+          "priority": 55,
+          "distance": 10
+        }
+      ]
+    },
+    {
+      "key": "radio",
+      "x": 1060,
+      "y": 2147,
+      "safe": true,
+      "onLand": true,
+      "roadDistance": 52.99999999999955,
+      "inside": true,
+      "actions": [
+        {
+          "id": "door-radio",
+          "label": "ENTER DEAD AIR RADIO",
+          "priority": 60,
+          "distance": 10
+        },
+        {
+          "id": "board-radio",
+          "label": "JOBS · DEAD AIR RADIO",
+          "priority": 55,
+          "distance": 10
+        }
+      ]
+    },
+    {
+      "key": "arcade",
+      "x": 1481,
+      "y": 3507,
+      "safe": true,
+      "onLand": true,
+      "roadDistance": 52.999999999994316,
+      "inside": true,
+      "actions": [
+        {
+          "id": "door-arcade",
+          "label": "ENTER STAR ARCADE",
+          "priority": 60,
+          "distance": 10
+        },
+        {
+          "id": "board-arcade",
+          "label": "JOBS · STAR ARCADE",
+          "priority": 55,
+          "distance": 10
+        }
+      ]
+    },
+    {
+      "key": "motel",
+      "x": 1121,
+      "y": 1467,
+      "safe": true,
+      "onLand": true,
+      "roadDistance": 53,
+      "inside": true,
+      "actions": [
+        {
+          "id": "garage",
+          "label": "PALM GARAGE · BUY / CUSTOMIZE",
+          "priority": 65,
+          "distance": 10
+        },
+        {
+          "id": "door-motel",
+          "label": "ENTER PALM MOTEL",
+          "priority": 60,
+          "distance": 10
+        },
+        {
+          "id": "board-motel",
+          "label": "JOBS · PALM MOTEL",
+          "priority": 55,
+          "distance": 10
+        }
+      ]
+    },
+    {
+      "key": "warehouse",
+      "x": 6140,
+      "y": 2827,
+      "safe": true,
+      "onLand": true,
+      "roadDistance": 53,
+      "inside": true,
+      "actions": [
+        {
+          "id": "door-warehouse",
+          "label": "ENTER DOCKSIDE 88",
+          "priority": 60,
+          "distance": 10
+        }
+      ]
+    },
+    {
+      "key": "diner",
+      "x": 5801,
+      "y": 2147,
+      "safe": true,
+      "onLand": true,
+      "roadDistance": 53,
+      "inside": true,
+      "actions": [
+        {
+          "id": "door-diner",
+          "label": "ENTER EAST DINER",
+          "priority": 60,
+          "distance": 10
+        },
+        {
+          "id": "board-diner",
+          "label": "JOBS · EAST DINER",
+          "priority": 55,
+          "distance": 10
+        }
+      ]
+    },
+    {
+      "key": "observatory",
+      "x": 3641,
+      "y": 787,
+      "safe": true,
+      "onLand": true,
+      "roadDistance": 53,
+      "inside": true,
+      "actions": [
+        {
+          "id": "door-observatory",
+          "label": "ENTER CRESCENT LOOKOUT",
+          "priority": 60,
+          "distance": 10
+        }
+      ]
+    },
+    {
+      "key": "clinic",
+      "x": 4001,
+      "y": 4187,
+      "safe": true,
+      "onLand": true,
+      "roadDistance": 53,
+      "inside": true,
+      "actions": [
+        {
+          "id": "door-clinic",
+          "label": "ENTER MARINA CLINIC",
+          "priority": 60,
+          "distance": 10
+        },
+        {
+          "id": "board-clinic",
+          "label": "JOBS · MARINA CLINIC",
+          "priority": 55,
+          "distance": 10
+        }
+      ]
+    },
+    {
+      "key": "pier",
+      "x": 2921,
+      "y": 4527,
+      "safe": true,
+      "onLand": true,
+      "roadDistance": 53,
+      "inside": true,
+      "actions": [
+        {
+          "id": "door-pier",
+          "label": "ENTER BAYFRONT BOATHOUSE",
+          "priority": 60,
+          "distance": 10
+        },
+        {
+          "id": "board-pier",
+          "label": "JOBS · BAYFRONT BOATHOUSE",
+          "priority": 55,
+          "distance": 10
+        }
+      ]
+    }
+  ],
+  "buildingCollision": {
+    "tested": 83,
+    "results": [
+      {
+        "kind": "landmark",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "landmark",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "landmark",
+        "district": "south",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "commercial",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "commercial",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "industrial",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "industrial",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "industrial",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "apartment",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "commercial",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "apartment",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "north",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "south",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "south",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "commercial",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "south",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "apartment",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "apartment",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "commercial",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "north",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "north",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "north",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "north",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "apartment",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "apartment",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "north",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "south",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "south",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "commercial",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "commercial",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "south",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "south",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "south",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "south",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "south",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "civic",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "industrial",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "industrial",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "apartment",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "industrial",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "industrial",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "commercial",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "apartment",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "apartment",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "industrial",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "commercial",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "civic",
+        "district": "east",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "north",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "south",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "west",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "commercial",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "house",
+        "district": "north",
+        "centerSolid": true,
+        "crossed": false
+      },
+      {
+        "kind": "commercial",
+        "district": "core",
+        "centerSolid": true,
+        "crossed": false
+      }
+    ],
+    "failures": []
+  },
+  "routes": {
+    "pairs": 66,
+    "pedestrian": 66,
+    "vehicle": 66,
+    "steps": 114366,
+    "results": [
+      {
+        "id": "hotel→armory pedestrian",
+        "startGap": 0,
+        "endGap": 0.00001735849036779521,
+        "distance": 797.0000600005565,
+        "steps": 202,
+        "points": 6,
+        "end": {
+          "x": 4001.0000173584904,
+          "y": 2156.99999999997
+        }
+      },
+      {
+        "id": "hotel→armory vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 710.9997840000688,
+        "steps": 180,
+        "points": 4,
+        "end": {
+          "x": 4001,
+          "y": 2200
+        }
+      },
+      {
+        "id": "hotel→club pedestrian",
+        "startGap": 0,
+        "endGap": 0.000003773585376621005,
+        "distance": 1497.0001320004058,
+        "steps": 377,
+        "points": 8,
+        "end": {
+          "x": 4361.000003773585,
+          "y": 3176.9999999999986
+        }
+      },
+      {
+        "id": "hotel→club vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 1410.999928000008,
+        "steps": 355,
+        "points": 6,
+        "end": {
+          "x": 4361,
+          "y": 3220
+        }
+      },
+      {
+        "id": "hotel→records pedestrian",
+        "startGap": 0,
+        "endGap": 0.000003773584921873654,
+        "distance": 1474.999544000492,
+        "steps": 371,
+        "points": 8,
+        "end": {
+          "x": 2921.000003773585,
+          "y": 3176.9999999999986
+        }
+      },
+      {
+        "id": "hotel→records vehicle",
+        "startGap": 43,
+        "endGap": 43.00000000000465,
+        "distance": 1388.9997280000937,
+        "steps": 349,
+        "points": 6,
+        "end": {
+          "x": 2921.00002,
+          "y": 3220
+        }
+      },
+      {
+        "id": "hotel→radio pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 2995.999456000612,
+        "steps": 753,
+        "points": 10,
+        "end": {
+          "x": 1060,
+          "y": 2157
+        }
+      },
+      {
+        "id": "hotel→radio vehicle",
+        "startGap": 43,
+        "endGap": 42.99999999999946,
+        "distance": 2909.999634314662,
+        "steps": 730,
+        "points": 8,
+        "end": {
+          "x": 1060.0000056855556,
+          "y": 2199.999999999999
+        }
+      },
+      {
+        "id": "hotel→arcade pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 3254.999402000497,
+        "steps": 816,
+        "points": 11,
+        "end": {
+          "x": 1481,
+          "y": 3517
+        }
+      },
+      {
+        "id": "hotel→arcade vehicle",
+        "startGap": 43,
+        "endGap": 42.99999999999552,
+        "distance": 3168.9995660710833,
+        "steps": 794,
+        "points": 9,
+        "end": {
+          "x": 1481.000019929019,
+          "y": 3559.999999999991
+        }
+      },
+      {
+        "id": "hotel→motel pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 3412.197044977379,
+        "steps": 858,
+        "points": 14,
+        "end": {
+          "x": 1121,
+          "y": 1477
+        }
+      },
+      {
+        "id": "hotel→motel vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 3326.1972289769847,
+        "steps": 836,
+        "points": 12,
+        "end": {
+          "x": 1121,
+          "y": 1520
+        }
+      },
+      {
+        "id": "hotel→warehouse pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 2800.7077513619415,
+        "steps": 703,
+        "points": 11,
+        "end": {
+          "x": 6140,
+          "y": 2837
+        }
+      },
+      {
+        "id": "hotel→warehouse vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 2714.707567361548,
+        "steps": 681,
+        "points": 9,
+        "end": {
+          "x": 6140,
+          "y": 2880
+        }
+      },
+      {
+        "id": "hotel→diner pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 2596.999842000604,
+        "steps": 654,
+        "points": 11,
+        "end": {
+          "x": 5801,
+          "y": 2157
+        }
+      },
+      {
+        "id": "hotel→diner vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 2510.9996580002107,
+        "steps": 632,
+        "points": 9,
+        "end": {
+          "x": 5801,
+          "y": 2200
+        }
+      },
+      {
+        "id": "hotel→observatory pedestrian",
+        "startGap": 0,
+        "endGap": 0.000024150943318161283,
+        "distance": 2256.999998000647,
+        "steps": 570,
+        "points": 12,
+        "end": {
+          "x": 3641.0000241509433,
+          "y": 796.9999999999417
+        }
+      },
+      {
+        "id": "hotel→observatory vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 2171.0000540000683,
+        "steps": 548,
+        "points": 10,
+        "end": {
+          "x": 3641,
+          "y": 840
+        }
+      },
+      {
+        "id": "hotel→clinic pedestrian",
+        "startGap": 0,
+        "endGap": 0.00001735849036779521,
+        "distance": 2611.6327218383394,
+        "steps": 659,
+        "points": 13,
+        "end": {
+          "x": 4001.0000173584904,
+          "y": 4196.99999999997
+        }
+      },
+      {
+        "id": "hotel→clinic vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 2525.632813837851,
+        "steps": 637,
+        "points": 11,
+        "end": {
+          "x": 4001,
+          "y": 4240
+        }
+      },
+      {
+        "id": "hotel→pier pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 3986.6755727869718,
+        "steps": 1002,
+        "points": 14,
+        "end": {
+          "x": 2921,
+          "y": 4537
+        }
+      },
+      {
+        "id": "hotel→pier vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 3900.6757567865775,
+        "steps": 980,
+        "points": 12,
+        "end": {
+          "x": 2921,
+          "y": 4580
+        }
+      },
+      {
+        "id": "armory→club pedestrian",
+        "startGap": 0,
+        "endGap": 0.000003773585376621005,
+        "distance": 1466.000036000356,
+        "steps": 370,
+        "points": 8,
+        "end": {
+          "x": 4361.000003773585,
+          "y": 3176.9999999999986
+        }
+      },
+      {
+        "id": "armory→club vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 1380.0001080002526,
+        "steps": 348,
+        "points": 6,
+        "end": {
+          "x": 4361,
+          "y": 3220
+        }
+      },
+      {
+        "id": "armory→records pedestrian",
+        "startGap": 0,
+        "endGap": 0.000003773584921873654,
+        "distance": 2185.999604000265,
+        "steps": 551,
+        "points": 11,
+        "end": {
+          "x": 2921.000003773585,
+          "y": 3176.9999999999986
+        }
+      },
+      {
+        "id": "armory→records vehicle",
+        "startGap": 43,
+        "endGap": 43.00000000000465,
+        "distance": 2099.999512000162,
+        "steps": 529,
+        "points": 9,
+        "end": {
+          "x": 2921.00002,
+          "y": 3220
+        }
+      },
+      {
+        "id": "armory→radio pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 3027.0000920001257,
+        "steps": 762,
+        "points": 10,
+        "end": {
+          "x": 1060,
+          "y": 2157
+        }
+      },
+      {
+        "id": "armory→radio vehicle",
+        "startGap": 43,
+        "endGap": 42.99999999999946,
+        "distance": 2940.9999943144717,
+        "steps": 739,
+        "points": 8,
+        "end": {
+          "x": 1060.0000056855556,
+          "y": 2199.999999999999
+        }
+      },
+      {
+        "id": "armory→arcade pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 3965.9994620002694,
+        "steps": 996,
+        "points": 14,
+        "end": {
+          "x": 1481,
+          "y": 3517
+        }
+      },
+      {
+        "id": "armory→arcade vehicle",
+        "startGap": 43,
+        "endGap": 42.99999999999552,
+        "distance": 3879.999350071152,
+        "steps": 974,
+        "points": 12,
+        "end": {
+          "x": 1481.000019929019,
+          "y": 3559.999999999991
+        }
+      },
+      {
+        "id": "armory→motel pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 3443.197680976892,
+        "steps": 867,
+        "points": 14,
+        "end": {
+          "x": 1121,
+          "y": 1477
+        }
+      },
+      {
+        "id": "armory→motel vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 3357.1975889767937,
+        "steps": 845,
+        "points": 12,
+        "end": {
+          "x": 1121,
+          "y": 1520
+        }
+      },
+      {
+        "id": "armory→warehouse pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 2769.7071893617676,
+        "steps": 695,
+        "points": 11,
+        "end": {
+          "x": 6140,
+          "y": 2837
+        }
+      },
+      {
+        "id": "armory→warehouse vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 2683.7072813616687,
+        "steps": 673,
+        "points": 9,
+        "end": {
+          "x": 6140,
+          "y": 2880
+        }
+      },
+      {
+        "id": "armory→diner pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 1885.999908000138,
+        "steps": 475,
+        "points": 9,
+        "end": {
+          "x": 5801,
+          "y": 2157
+        }
+      },
+      {
+        "id": "armory→diner vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 1800.000000000039,
+        "steps": 453,
+        "points": 7,
+        "end": {
+          "x": 5801,
+          "y": 2200
+        }
+      },
+      {
+        "id": "armory→observatory pedestrian",
+        "startGap": 0,
+        "endGap": 0.000024150943318161283,
+        "distance": 2288.0002920003762,
+        "steps": 580,
+        "points": 12,
+        "end": {
+          "x": 3641.0000241509433,
+          "y": 796.9999999999417
+        }
+      },
+      {
+        "id": "armory→observatory vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 2202.0000720000944,
+        "steps": 558,
+        "points": 10,
+        "end": {
+          "x": 3641,
+          "y": 840
+        }
+      },
+      {
+        "id": "armory→clinic pedestrian",
+        "startGap": 0,
+        "endGap": 0.00001735849036779521,
+        "distance": 3322.6327818381124,
+        "steps": 839,
+        "points": 16,
+        "end": {
+          "x": 4001.0000173584904,
+          "y": 4196.99999999997
+        }
+      },
+      {
+        "id": "armory→clinic vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 3236.6325978379195,
+        "steps": 817,
+        "points": 14,
+        "end": {
+          "x": 4001,
+          "y": 4240
+        }
+      },
+      {
+        "id": "armory→pier pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 4697.675632786745,
+        "steps": 1182,
+        "points": 17,
+        "end": {
+          "x": 2921,
+          "y": 4537
+        }
+      },
+      {
+        "id": "armory→pier vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 4611.675540786647,
+        "steps": 1160,
+        "points": 15,
+        "end": {
+          "x": 2921,
+          "y": 4580
+        }
+      },
+      {
+        "id": "club→records pedestrian",
+        "startGap": 0,
+        "endGap": 0.000003773584921873654,
+        "distance": 1526.0000000000093,
+        "steps": 383,
+        "points": 8,
+        "end": {
+          "x": 2921.000003773585,
+          "y": 3176.9999999999986
+        }
+      },
+      {
+        "id": "club→records vehicle",
+        "startGap": 43,
+        "endGap": 43.00000000000465,
+        "distance": 1439.99998,
+        "steps": 361,
+        "points": 6,
+        "end": {
+          "x": 2921.00002,
+          "y": 3220
+        }
+      },
+      {
+        "id": "club→radio pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 4406.999426000303,
+        "steps": 1108,
+        "points": 15,
+        "end": {
+          "x": 1060,
+          "y": 2157
+        }
+      },
+      {
+        "id": "club→radio vehicle",
+        "startGap": 43,
+        "endGap": 42.99999999999946,
+        "distance": 4320.999400314743,
+        "steps": 1085,
+        "points": 13,
+        "end": {
+          "x": 1060.0000056855556,
+          "y": 2199.999999999999
+        }
+      },
+      {
+        "id": "club→arcade pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 3451.5144087209283,
+        "steps": 869,
+        "points": 12,
+        "end": {
+          "x": 1481,
+          "y": 3517
+        }
+      },
+      {
+        "id": "club→arcade vehicle",
+        "startGap": 43,
+        "endGap": 42.99999999999552,
+        "distance": 3365.5143687919044,
+        "steps": 847,
+        "points": 10,
+        "end": {
+          "x": 1481.000019929019,
+          "y": 3559.999999999991
+        }
+      },
+      {
+        "id": "club→motel pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 4823.1970149770705,
+        "steps": 1213,
+        "points": 19,
+        "end": {
+          "x": 1121,
+          "y": 1477
+        }
+      },
+      {
+        "id": "club→motel vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 4737.196994977065,
+        "steps": 1191,
+        "points": 17,
+        "end": {
+          "x": 1121,
+          "y": 1520
+        }
+      },
+      {
+        "id": "club→warehouse pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 2749.7072613616733,
+        "steps": 690,
+        "points": 11,
+        "end": {
+          "x": 6140,
+          "y": 2837
+        }
+      },
+      {
+        "id": "club→warehouse vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 2663.7072813616687,
+        "steps": 668,
+        "points": 9,
+        "end": {
+          "x": 6140,
+          "y": 2880
+        }
+      },
+      {
+        "id": "club→diner pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 2545.9994723003006,
+        "steps": 640,
+        "points": 11,
+        "end": {
+          "x": 5801,
+          "y": 2157
+        }
+      },
+      {
+        "id": "club→diner vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 2459.999492300296,
+        "steps": 618,
+        "points": 9,
+        "end": {
+          "x": 5801,
+          "y": 2200
+        }
+      },
+      {
+        "id": "club→observatory pedestrian",
+        "startGap": 0,
+        "endGap": 0.000024150943318161283,
+        "distance": 3667.999968000338,
+        "steps": 925,
+        "points": 17,
+        "end": {
+          "x": 3641.0000241509433,
+          "y": 796.9999999999417
+        }
+      },
+      {
+        "id": "club→observatory vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 3581.999820000149,
+        "steps": 903,
+        "points": 15,
+        "end": {
+          "x": 3641,
+          "y": 840
+        }
+      },
+      {
+        "id": "club→clinic pedestrian",
+        "startGap": 0,
+        "endGap": 0.00001735849036779521,
+        "distance": 2662.6329798379406,
+        "steps": 673,
+        "points": 13,
+        "end": {
+          "x": 4001.0000173584904,
+          "y": 4196.99999999997
+        }
+      },
+      {
+        "id": "club→clinic vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 2576.6328678378413,
+        "steps": 651,
+        "points": 11,
+        "end": {
+          "x": 4001,
+          "y": 4240
+        }
+      },
+      {
+        "id": "club→pier pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 4037.6758307865734,
+        "steps": 1016,
+        "points": 14,
+        "end": {
+          "x": 2921,
+          "y": 4537
+        }
+      },
+      {
+        "id": "club→pier vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 3951.6758107865685,
+        "steps": 994,
+        "points": 12,
+        "end": {
+          "x": 2921,
+          "y": 4580
+        }
+      },
+      {
+        "id": "records→radio pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 2966.999822000145,
+        "steps": 746,
+        "points": 10,
+        "end": {
+          "x": 1060,
+          "y": 2157
+        }
+      },
+      {
+        "id": "records→radio vehicle",
+        "startGap": 43,
+        "endGap": 42.99999999999946,
+        "distance": 2880.9997963145847,
+        "steps": 723,
+        "points": 8,
+        "end": {
+          "x": 1060.0000056855556,
+          "y": 2199.999999999999
+        }
+      },
+      {
+        "id": "records→arcade pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 2249.5144407209273,
+        "steps": 567,
+        "points": 9,
+        "end": {
+          "x": 1481,
+          "y": 3517
+        }
+      },
+      {
+        "id": "records→arcade vehicle",
+        "startGap": 43,
+        "endGap": 42.99999999999552,
+        "distance": 2163.514440791904,
+        "steps": 545,
+        "points": 7,
+        "end": {
+          "x": 1481.000019929019,
+          "y": 3559.999999999991
+        }
+      },
+      {
+        "id": "records→motel pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 3383.1974109769117,
+        "steps": 851,
+        "points": 14,
+        "end": {
+          "x": 1121,
+          "y": 1477
+        }
+      },
+      {
+        "id": "records→motel vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 3297.1973909769067,
+        "steps": 829,
+        "points": 12,
+        "end": {
+          "x": 1121,
+          "y": 1520
+        }
+      },
+      {
+        "id": "records→warehouse pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 4189.707295361646,
+        "steps": 1052,
+        "points": 16,
+        "end": {
+          "x": 6140,
+          "y": 2837
+        }
+      },
+      {
+        "id": "records→warehouse vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 4103.707315361642,
+        "steps": 1030,
+        "points": 14,
+        "end": {
+          "x": 6140,
+          "y": 2880
+        }
+      },
+      {
+        "id": "records→diner pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 3985.999386000309,
+        "steps": 1003,
+        "points": 16,
+        "end": {
+          "x": 5801,
+          "y": 2157
+        }
+      },
+      {
+        "id": "records→diner vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 3899.9994060003046,
+        "steps": 981,
+        "points": 14,
+        "end": {
+          "x": 5801,
+          "y": 2200
+        }
+      },
+      {
+        "id": "records→observatory pedestrian",
+        "startGap": 0,
+        "endGap": 0.000024150943318161283,
+        "distance": 3186.000090000351,
+        "steps": 803,
+        "points": 15,
+        "end": {
+          "x": 3641.0000241509433,
+          "y": 796.9999999999417
+        }
+      },
+      {
+        "id": "records→observatory vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 3099.999982000162,
+        "steps": 781,
+        "points": 13,
+        "end": {
+          "x": 3641,
+          "y": 840
+        }
+      },
+      {
+        "id": "records→clinic pedestrian",
+        "startGap": 0,
+        "endGap": 0.00001735849036779521,
+        "distance": 2180.63293983794,
+        "steps": 551,
+        "points": 12,
+        "end": {
+          "x": 4001.0000173584904,
+          "y": 4196.99999999997
+        }
+      },
+      {
+        "id": "records→clinic vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 2094.6328678378404,
+        "steps": 529,
+        "points": 10,
+        "end": {
+          "x": 4001,
+          "y": 4240
+        }
+      },
+      {
+        "id": "records→pier pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 3420.699727296503,
+        "steps": 864,
+        "points": 16,
+        "end": {
+          "x": 2921,
+          "y": 4537
+        }
+      },
+      {
+        "id": "records→pier vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 3334.6997472964986,
+        "steps": 842,
+        "points": 14,
+        "end": {
+          "x": 2921,
+          "y": 4580
+        }
+      },
+      {
+        "id": "radio→arcade pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 2782.891556024906,
+        "steps": 700,
+        "points": 10,
+        "end": {
+          "x": 1481,
+          "y": 3517
+        }
+      },
+      {
+        "id": "radio→arcade vehicle",
+        "startGap": 42.99999999999946,
+        "endGap": 43,
+        "distance": 2696.8915617104612,
+        "steps": 678,
+        "points": 8,
+        "end": {
+          "x": 1481,
+          "y": 3560
+        }
+      },
+      {
+        "id": "radio→motel pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 2302.197588976782,
+        "steps": 579,
+        "points": 9,
+        "end": {
+          "x": 1121,
+          "y": 1477
+        }
+      },
+      {
+        "id": "radio→motel vehicle",
+        "startGap": 42.99999999999946,
+        "endGap": 43,
+        "distance": 2216.1975832912267,
+        "steps": 556,
+        "points": 7,
+        "end": {
+          "x": 1121,
+          "y": 1520
+        }
+      },
+      {
+        "id": "radio→warehouse pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 5710.7072073617655,
+        "steps": 1434,
+        "points": 18,
+        "end": {
+          "x": 6140,
+          "y": 2837
+        }
+      },
+      {
+        "id": "radio→warehouse vehicle",
+        "startGap": 42.99999999999946,
+        "endGap": 43,
+        "distance": 5624.7072016762095,
+        "steps": 1411,
+        "points": 16,
+        "end": {
+          "x": 6140,
+          "y": 2880
+        }
+      },
+      {
+        "id": "radio→diner pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 4827.000000000067,
+        "steps": 1215,
+        "points": 16,
+        "end": {
+          "x": 5801,
+          "y": 2157
+        }
+      },
+      {
+        "id": "radio→diner vehicle",
+        "startGap": 42.99999999999946,
+        "endGap": 43,
+        "distance": 4740.999994314512,
+        "steps": 1192,
+        "points": 14,
+        "end": {
+          "x": 5801,
+          "y": 2200
+        }
+      },
+      {
+        "id": "radio→observatory pedestrian",
+        "startGap": 0,
+        "endGap": 0.000024150943318161283,
+        "distance": 4027.000025000192,
+        "steps": 1010,
+        "points": 12,
+        "end": {
+          "x": 3641.0000241509433,
+          "y": 796.9999999999417
+        }
+      },
+      {
+        "id": "radio→observatory vehicle",
+        "startGap": 42.99999999999946,
+        "endGap": 43,
+        "distance": 3940.9998913144527,
+        "steps": 987,
+        "points": 10,
+        "end": {
+          "x": 3641,
+          "y": 840
+        }
+      },
+      {
+        "id": "radio→clinic pedestrian",
+        "startGap": 0,
+        "endGap": 0.00001735849036779521,
+        "distance": 4833.665581858561,
+        "steps": 1218,
+        "points": 17,
+        "end": {
+          "x": 4001.0000173584904,
+          "y": 4196.99999999997
+        }
+      },
+      {
+        "id": "radio→clinic vehicle",
+        "startGap": 42.99999999999946,
+        "endGap": 43,
+        "distance": 4747.6654841729105,
+        "steps": 1195,
+        "points": 15,
+        "end": {
+          "x": 4001,
+          "y": 4240
+        }
+      },
+      {
+        "id": "radio→pier pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 4127.832715855093,
+        "steps": 1037,
+        "points": 11,
+        "end": {
+          "x": 2921,
+          "y": 4537
+        }
+      },
+      {
+        "id": "radio→pier vehicle",
+        "startGap": 42.99999999999946,
+        "endGap": 43,
+        "distance": 4041.8327101695377,
+        "steps": 1014,
+        "points": 9,
+        "end": {
+          "x": 2921,
+          "y": 4580
+        }
+      },
+      {
+        "id": "arcade→motel pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 3241.197485976825,
+        "steps": 814,
+        "points": 12,
+        "end": {
+          "x": 1121,
+          "y": 1477
+        }
+      },
+      {
+        "id": "arcade→motel vehicle",
+        "startGap": 42.99999999999552,
+        "endGap": 43,
+        "distance": 3155.1974660478063,
+        "steps": 792,
+        "points": 10,
+        "end": {
+          "x": 1121,
+          "y": 1520
+        }
+      },
+      {
+        "id": "arcade→warehouse pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 5969.70715336165,
+        "steps": 1497,
+        "points": 19,
+        "end": {
+          "x": 6140,
+          "y": 2837
+        }
+      },
+      {
+        "id": "arcade→warehouse vehicle",
+        "startGap": 42.99999999999552,
+        "endGap": 43,
+        "distance": 5883.707133432631,
+        "steps": 1475,
+        "points": 17,
+        "end": {
+          "x": 6140,
+          "y": 2880
+        }
+      },
+      {
+        "id": "arcade→diner pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 5765.999244000314,
+        "steps": 1448,
+        "points": 19,
+        "end": {
+          "x": 5801,
+          "y": 2157
+        }
+      },
+      {
+        "id": "arcade→diner vehicle",
+        "startGap": 42.99999999999552,
+        "endGap": 43,
+        "distance": 5679.999224071295,
+        "steps": 1426,
+        "points": 17,
+        "end": {
+          "x": 5801,
+          "y": 2200
+        }
+      },
+      {
+        "id": "arcade→observatory pedestrian",
+        "startGap": 0,
+        "endGap": 0.000024150943318161283,
+        "distance": 4965.999446000467,
+        "steps": 1249,
+        "points": 18,
+        "end": {
+          "x": 3641.0000241509433,
+          "y": 796.9999999999417
+        }
+      },
+      {
+        "id": "arcade→observatory vehicle",
+        "startGap": 42.99999999999552,
+        "endGap": 43,
+        "distance": 4879.999298071265,
+        "steps": 1227,
+        "points": 16,
+        "end": {
+          "x": 3641,
+          "y": 840
+        }
+      },
+      {
+        "id": "arcade→clinic pedestrian",
+        "startGap": 0,
+        "endGap": 0.00001735849036779521,
+        "distance": 3052.6656848586053,
+        "steps": 771,
+        "points": 14,
+        "end": {
+          "x": 4001.0000173584904,
+          "y": 4196.99999999997
+        }
+      },
+      {
+        "id": "arcade→clinic vehicle",
+        "startGap": 42.99999999999552,
+        "endGap": 43,
+        "distance": 2966.665572929492,
+        "steps": 749,
+        "points": 12,
+        "end": {
+          "x": 4001,
+          "y": 4240
+        }
+      },
+      {
+        "id": "arcade→pier pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 2346.8328188551372,
+        "steps": 590,
+        "points": 8,
+        "end": {
+          "x": 2921,
+          "y": 4537
+        }
+      },
+      {
+        "id": "arcade→pier vehicle",
+        "startGap": 42.99999999999552,
+        "endGap": 43,
+        "distance": 2260.8327989261184,
+        "steps": 568,
+        "points": 6,
+        "end": {
+          "x": 2921,
+          "y": 4580
+        }
+      },
+      {
+        "id": "motel→warehouse pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 6126.904796338532,
+        "steps": 1539,
+        "points": 22,
+        "end": {
+          "x": 6140,
+          "y": 2837
+        }
+      },
+      {
+        "id": "motel→warehouse vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 6040.904796338532,
+        "steps": 1517,
+        "points": 20,
+        "end": {
+          "x": 6140,
+          "y": 2880
+        }
+      },
+      {
+        "id": "motel→diner pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 5243.197588976835,
+        "steps": 1320,
+        "points": 20,
+        "end": {
+          "x": 5801,
+          "y": 2157
+        }
+      },
+      {
+        "id": "motel→diner vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 5157.197588976835,
+        "steps": 1298,
+        "points": 18,
+        "end": {
+          "x": 5801,
+          "y": 2200
+        }
+      },
+      {
+        "id": "motel→observatory pedestrian",
+        "startGap": 0,
+        "endGap": 0.000024150943318161283,
+        "distance": 3286.0003010002115,
+        "steps": 825,
+        "points": 12,
+        "end": {
+          "x": 3641.0000241509433,
+          "y": 796.9999999999417
+        }
+      },
+      {
+        "id": "motel→observatory vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 3200.0001730000276,
+        "steps": 803,
+        "points": 10,
+        "end": {
+          "x": 3641,
+          "y": 840
+        }
+      },
+      {
+        "id": "motel→clinic pedestrian",
+        "startGap": 0,
+        "endGap": 0.00001735849036779521,
+        "distance": 5249.863170835328,
+        "steps": 1323,
+        "points": 21,
+        "end": {
+          "x": 4001.0000173584904,
+          "y": 4196.99999999997
+        }
+      },
+      {
+        "id": "motel→clinic vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 5163.863078835233,
+        "steps": 1301,
+        "points": 19,
+        "end": {
+          "x": 4001,
+          "y": 4240
+        }
+      },
+      {
+        "id": "motel→pier pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 4544.03030483186,
+        "steps": 1142,
+        "points": 15,
+        "end": {
+          "x": 2921,
+          "y": 4537
+        }
+      },
+      {
+        "id": "motel→pier vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 4458.03030483186,
+        "steps": 1120,
+        "points": 13,
+        "end": {
+          "x": 2921,
+          "y": 4580
+        }
+      },
+      {
+        "id": "warehouse→diner pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 1451.7077456615177,
+        "steps": 366,
+        "points": 7,
+        "end": {
+          "x": 5801,
+          "y": 2157
+        }
+      },
+      {
+        "id": "warehouse→diner vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 1365.7077456615177,
+        "steps": 344,
+        "points": 5,
+        "end": {
+          "x": 5801,
+          "y": 2200
+        }
+      },
+      {
+        "id": "warehouse→observatory pedestrian",
+        "startGap": 0,
+        "endGap": 0.000024150943318161283,
+        "distance": 4489.707558061721,
+        "steps": 1127,
+        "points": 12,
+        "end": {
+          "x": 3641.0000241509433,
+          "y": 796.9999999999417
+        }
+      },
+      {
+        "id": "warehouse→observatory vehicle",
+        "startGap": 43,
+        "endGap": 43.00000000019051,
+        "distance": 4403.707558061537,
+        "steps": 1105,
+        "points": 10,
+        "end": {
+          "x": 3641.000128,
+          "y": 840
+        }
+      },
+      {
+        "id": "warehouse→clinic pedestrian",
+        "startGap": 0,
+        "endGap": 0.00001735849036779521,
+        "distance": 3584.999805000099,
+        "steps": 900,
+        "points": 9,
+        "end": {
+          "x": 4001.0000173584904,
+          "y": 4196.99999999997
+        }
+      },
+      {
+        "id": "warehouse→clinic vehicle",
+        "startGap": 43,
+        "endGap": 43.00000000009842,
+        "distance": 3498.9998050000045,
+        "steps": 878,
+        "points": 7,
+        "end": {
+          "x": 4001.0000919999998,
+          "y": 4240
+        }
+      },
+      {
+        "id": "warehouse→pier pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 4791.326519748304,
+        "steps": 1202,
+        "points": 11,
+        "end": {
+          "x": 2921,
+          "y": 4537
+        }
+      },
+      {
+        "id": "warehouse→pier vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 4705.326519748304,
+        "steps": 1180,
+        "points": 9,
+        "end": {
+          "x": 2921,
+          "y": 4580
+        }
+      },
+      {
+        "id": "diner→observatory pedestrian",
+        "startGap": 0,
+        "endGap": 0.000024150943318161283,
+        "distance": 3605.9997690002037,
+        "steps": 905,
+        "points": 10,
+        "end": {
+          "x": 3641.0000241509433,
+          "y": 796.9999999999417
+        }
+      },
+      {
+        "id": "diner→observatory vehicle",
+        "startGap": 43,
+        "endGap": 43.00000000019051,
+        "distance": 3519.99976900002,
+        "steps": 883,
+        "points": 8,
+        "end": {
+          "x": 3641.000128,
+          "y": 840
+        }
+      },
+      {
+        "id": "diner→clinic pedestrian",
+        "startGap": 0,
+        "endGap": 0.00001735849036779521,
+        "distance": 3925.9994453002205,
+        "steps": 986,
+        "points": 11,
+        "end": {
+          "x": 4001.0000173584904,
+          "y": 4196.99999999997
+        }
+      },
+      {
+        "id": "diner→clinic vehicle",
+        "startGap": 43,
+        "endGap": 43.00000000009842,
+        "distance": 3839.999445300126,
+        "steps": 964,
+        "points": 9,
+        "end": {
+          "x": 4001.0000919999998,
+          "y": 4240
+        }
+      },
+      {
+        "id": "diner→pier pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 5132.326160048426,
+        "steps": 1288,
+        "points": 13,
+        "end": {
+          "x": 2921,
+          "y": 4537
+        }
+      },
+      {
+        "id": "diner→pier vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 5046.326160048426,
+        "steps": 1266,
+        "points": 11,
+        "end": {
+          "x": 2921,
+          "y": 4580
+        }
+      },
+      {
+        "id": "observatory→clinic pedestrian",
+        "startGap": 0,
+        "endGap": 0.00001735849036779521,
+        "distance": 4322.633267838204,
+        "steps": 1091,
+        "points": 20,
+        "end": {
+          "x": 4001.0000173584904,
+          "y": 4196.99999999997
+        }
+      },
+      {
+        "id": "observatory→clinic vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 4236.63304783792,
+        "steps": 1069,
+        "points": 18,
+        "end": {
+          "x": 4001,
+          "y": 4240
+        }
+      },
+      {
+        "id": "observatory→pier pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 5697.676118786838,
+        "steps": 1434,
+        "points": 21,
+        "end": {
+          "x": 2921,
+          "y": 4537
+        }
+      },
+      {
+        "id": "observatory→pier vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 5611.675990786647,
+        "steps": 1412,
+        "points": 19,
+        "end": {
+          "x": 2921,
+          "y": 4580
+        }
+      },
+      {
+        "id": "clinic→pier pedestrian",
+        "startGap": 0,
+        "endGap": 0,
+        "distance": 2657.6760827866237,
+        "steps": 668,
+        "points": 9,
+        "end": {
+          "x": 2921,
+          "y": 4537
+        }
+      },
+      {
+        "id": "clinic→pier vehicle",
+        "startGap": 43,
+        "endGap": 43,
+        "distance": 2571.6759907865257,
+        "steps": 646,
+        "points": 7,
+        "end": {
+          "x": 2921,
+          "y": 4580
+        }
+      }
+    ],
+    "culdesacs": [
+      {
+        "name": "Juniper Court",
+        "vehicle": false,
+        "outward": {
+          "distance": 528.7010125872858,
+          "steps": 134,
+          "points": 4,
+          "end": {
+            "x": 480,
+            "y": 700
+          }
+        },
+        "back": {
+          "distance": 528.7010125872857,
+          "steps": 134,
+          "points": 4,
+          "end": {
+            "x": 920,
+            "y": 500
+          }
+        }
+      },
+      {
+        "name": "Juniper Court",
+        "vehicle": true,
+        "outward": {
+          "distance": 528.7010125872858,
+          "steps": 134,
+          "points": 4,
+          "end": {
+            "x": 480,
+            "y": 700
+          }
+        },
+        "back": {
+          "distance": 528.7010125872857,
+          "steps": 134,
+          "points": 4,
+          "end": {
+            "x": 920,
+            "y": 500
+          }
+        }
+      },
+      {
+        "name": "Garden Court",
+        "vehicle": false,
+        "outward": {
+          "distance": 256.1914910767015,
+          "steps": 65,
+          "points": 4,
+          "end": {
+            "x": 1460,
+            "y": 2000
+          }
+        },
+        "back": {
+          "distance": 256.1914910767015,
+          "steps": 65,
+          "points": 4,
+          "end": {
+            "x": 1570,
+            "y": 1780
+          }
+        }
+      },
+      {
+        "name": "Garden Court",
+        "vehicle": true,
+        "outward": {
+          "distance": 256.1914910767015,
+          "steps": 65,
+          "points": 4,
+          "end": {
+            "x": 1460,
+            "y": 2000
+          }
+        },
+        "back": {
+          "distance": 256.1914910767015,
+          "steps": 65,
+          "points": 4,
+          "end": {
+            "x": 1570,
+            "y": 1780
+          }
+        }
+      },
+      {
+        "name": "Willow Court",
+        "vehicle": false,
+        "outward": {
+          "distance": 408.08312289464203,
+          "steps": 103,
+          "points": 4,
+          "end": {
+            "x": 1000,
+            "y": 2900
+          }
+        },
+        "back": {
+          "distance": 408.08312289464203,
+          "steps": 103,
+          "points": 4,
+          "end": {
+            "x": 1260,
+            "y": 2620
+          }
+        }
+      },
+      {
+        "name": "Willow Court",
+        "vehicle": true,
+        "outward": {
+          "distance": 408.08312289464203,
+          "steps": 103,
+          "points": 4,
+          "end": {
+            "x": 1000,
+            "y": 2900
+          }
+        },
+        "back": {
+          "distance": 408.08312289464203,
+          "steps": 103,
+          "points": 4,
+          "end": {
+            "x": 1260,
+            "y": 2620
+          }
+        }
+      },
+      {
+        "name": "Palmetto Court",
+        "vehicle": false,
+        "outward": {
+          "distance": 533.1019662348432,
+          "steps": 136,
+          "points": 4,
+          "end": {
+            "x": 980,
+            "y": 4190
+          }
+        },
+        "back": {
+          "distance": 533.1019662348433,
+          "steps": 136,
+          "points": 4,
+          "end": {
+            "x": 1100,
+            "y": 4680
+          }
+        }
+      },
+      {
+        "name": "Palmetto Court",
+        "vehicle": true,
+        "outward": {
+          "distance": 533.1019662348432,
+          "steps": 136,
+          "points": 4,
+          "end": {
+            "x": 980,
+            "y": 4190
+          }
+        },
+        "back": {
+          "distance": 533.1019662348433,
+          "steps": 136,
+          "points": 4,
+          "end": {
+            "x": 1100,
+            "y": 4680
+          }
+        }
+      },
+      {
+        "name": "Lookout Estates",
+        "vehicle": false,
+        "outward": {
+          "distance": 395.3822729532572,
+          "steps": 100,
+          "points": 4,
+          "end": {
+            "x": 2880,
+            "y": 560
+          }
+        },
+        "back": {
+          "distance": 395.3822729532572,
+          "steps": 100,
+          "points": 4,
+          "end": {
+            "x": 3100,
+            "y": 240
+          }
+        }
+      },
+      {
+        "name": "Lookout Estates",
+        "vehicle": true,
+        "outward": {
+          "distance": 395.3822729532572,
+          "steps": 100,
+          "points": 4,
+          "end": {
+            "x": 2880,
+            "y": 560
+          }
+        },
+        "back": {
+          "distance": 395.3822729532572,
+          "steps": 100,
+          "points": 4,
+          "end": {
+            "x": 3100,
+            "y": 240
+          }
+        }
+      },
+      {
+        "name": "Crescent Gardens",
+        "vehicle": false,
+        "outward": {
+          "distance": 318.42607842723294,
+          "steps": 82,
+          "points": 4,
+          "end": {
+            "x": 4200,
+            "y": 600
+          }
+        },
+        "back": {
+          "distance": 318.42607842723294,
+          "steps": 82,
+          "points": 4,
+          "end": {
+            "x": 4320,
+            "y": 350
+          }
+        }
+      },
+      {
+        "name": "Crescent Gardens",
+        "vehicle": true,
+        "outward": {
+          "distance": 318.42607842723294,
+          "steps": 82,
+          "points": 4,
+          "end": {
+            "x": 4200,
+            "y": 600
+          }
+        },
+        "back": {
+          "distance": 318.42607842723294,
+          "steps": 82,
+          "points": 4,
+          "end": {
+            "x": 4320,
+            "y": 350
+          }
+        }
+      },
+      {
+        "name": "Marina Bungalow Court",
+        "vehicle": false,
+        "outward": {
+          "distance": 406.8885493304727,
+          "steps": 104,
+          "points": 5,
+          "end": {
+            "x": 2700,
+            "y": 4010
+          }
+        },
+        "back": {
+          "distance": 406.88854933047276,
+          "steps": 104,
+          "points": 5,
+          "end": {
+            "x": 3000,
+            "y": 3760
+          }
+        }
+      },
+      {
+        "name": "Marina Bungalow Court",
+        "vehicle": true,
+        "outward": {
+          "distance": 406.8885493304727,
+          "steps": 104,
+          "points": 5,
+          "end": {
+            "x": 2700,
+            "y": 4010
+          }
+        },
+        "back": {
+          "distance": 406.88854933047276,
+          "steps": 104,
+          "points": 5,
+          "end": {
+            "x": 3000,
+            "y": 3760
+          }
+        }
+      },
+      {
+        "name": "Seafoam Court",
+        "vehicle": false,
+        "outward": {
+          "distance": 452.7694725931972,
+          "steps": 115,
+          "points": 5,
+          "end": {
+            "x": 4430,
+            "y": 4180
+          }
+        },
+        "back": {
+          "distance": 452.7694725931972,
+          "steps": 115,
+          "points": 5,
+          "end": {
+            "x": 4620,
+            "y": 4570
+          }
+        }
+      },
+      {
+        "name": "Seafoam Court",
+        "vehicle": true,
+        "outward": {
+          "distance": 452.7694725931972,
+          "steps": 115,
+          "points": 5,
+          "end": {
+            "x": 4430,
+            "y": 4180
+          }
+        },
+        "back": {
+          "distance": 452.7694725931972,
+          "steps": 115,
+          "points": 5,
+          "end": {
+            "x": 4620,
+            "y": 4570
+          }
+        }
+      },
+      {
+        "name": "Foundry Family Court",
+        "vehicle": false,
+        "outward": {
+          "distance": 477.6905329882861,
+          "steps": 122,
+          "points": 4,
+          "end": {
+            "x": 6000,
+            "y": 900
+          }
+        },
+        "back": {
+          "distance": 477.6905329882861,
+          "steps": 122,
+          "points": 4,
+          "end": {
+            "x": 6200,
+            "y": 1260
+          }
+        }
+      },
+      {
+        "name": "Foundry Family Court",
+        "vehicle": true,
+        "outward": {
+          "distance": 477.6905329882861,
+          "steps": 122,
+          "points": 4,
+          "end": {
+            "x": 6000,
+            "y": 900
+          }
+        },
+        "back": {
+          "distance": 477.6905329882861,
+          "steps": 122,
+          "points": 4,
+          "end": {
+            "x": 6200,
+            "y": 1260
+          }
+        }
+      },
+      {
+        "name": "Worker Garden Court",
+        "vehicle": false,
+        "outward": {
+          "distance": 462.0360331117452,
+          "steps": 117,
+          "points": 4,
+          "end": {
+            "x": 5940,
+            "y": 4110
+          }
+        },
+        "back": {
+          "distance": 462.0360331117452,
+          "steps": 117,
+          "points": 4,
+          "end": {
+            "x": 6120,
+            "y": 3740
+          }
+        }
+      },
+      {
+        "name": "Worker Garden Court",
+        "vehicle": true,
+        "outward": {
+          "distance": 462.0360331117452,
+          "steps": 117,
+          "points": 4,
+          "end": {
+            "x": 5940,
+            "y": 4110
+          }
+        },
+        "back": {
+          "distance": 462.0360331117452,
+          "steps": 117,
+          "points": 4,
+          "end": {
+            "x": 6120,
+            "y": 3740
+          }
+        }
+      }
+    ],
+    "failures": []
+  },
+  "guidance": {
+    "gps": [
+      {
+        "vehicle": false,
+        "destination": {
+          "x": 1060,
+          "y": 2147,
+          "label": "ENTER"
+        },
+        "endpointGap": 0,
+        "points": 10,
+        "steps": 765,
+        "distance": 3005.999456000612
+      },
+      {
+        "vehicle": true,
+        "destination": {
+          "x": 1060,
+          "y": 2147,
+          "label": "ENTER"
+        },
+        "endpointGap": 52.99999999999955,
+        "points": 8,
+        "steps": 737,
+        "distance": 2909.99963299244
+      }
+    ],
+    "pedestrians": [
+      {
+        "id": "parcel-2",
+        "district": "west",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 14,
+        "steps": 964,
+        "distance": 3779.46976494025
+      },
+      {
+        "id": "parcel-10",
+        "district": "west",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 7,
+        "steps": 319,
+        "distance": 1239.1024200313727
+      },
+      {
+        "id": "parcel-18",
+        "district": "west",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 10,
+        "steps": 658,
+        "distance": 2576.9082623955783
+      },
+      {
+        "id": "parcel-26",
+        "district": "west",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 15,
+        "steps": 1039,
+        "distance": 4072.0431499832603
+      },
+      {
+        "id": "parcel-36",
+        "district": "east",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 11,
+        "steps": 607,
+        "distance": 2368.156293386759
+      },
+      {
+        "id": "parcel-50",
+        "district": "east",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 22,
+        "steps": 1587,
+        "distance": 6219.835744467125
+      },
+      {
+        "id": "parcel-67",
+        "district": "east",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 12,
+        "steps": 654,
+        "distance": 2552.8289088136385
+      },
+      {
+        "id": "parcel-76",
+        "district": "south",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 19,
+        "steps": 1097,
+        "distance": 4278.576547143614
+      },
+      {
+        "id": "parcel-84",
+        "district": "south",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 14,
+        "steps": 761,
+        "distance": 2961.0700560388855
+      },
+      {
+        "id": "parcel-95",
+        "district": "west",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 11,
+        "steps": 450,
+        "distance": 1737.8529564152595
+      },
+      {
+        "id": "parcel-103",
+        "district": "west",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 15,
+        "steps": 1226,
+        "distance": 4817.990622745396
+      },
+      {
+        "id": "parcel-110",
+        "district": "west",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 19,
+        "steps": 1046,
+        "distance": 4064.7373211536114
+      },
+      {
+        "id": "parcel-117",
+        "district": "west",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 15,
+        "steps": 1070,
+        "distance": 4192.743540238815
+      },
+      {
+        "id": "parcel-125",
+        "district": "west",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 10,
+        "steps": 426,
+        "distance": 1650.284823733072
+      },
+      {
+        "id": "parcel-131",
+        "district": "west",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 12,
+        "steps": 843,
+        "distance": 3305.2998534167514
+      },
+      {
+        "id": "parcel-140",
+        "district": "west",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 13,
+        "steps": 914,
+        "distance": 3585.204175566476
+      },
+      {
+        "id": "parcel-150",
+        "district": "west",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 19,
+        "steps": 1163,
+        "distance": 4540.7847995970205
+      },
+      {
+        "id": "parcel-158",
+        "district": "west",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 8,
+        "steps": 251,
+        "distance": 959.3265084821938
+      },
+      {
+        "id": "parcel-165",
+        "district": "west",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 16,
+        "steps": 1053,
+        "distance": 4127.174707527378
+      },
+      {
+        "id": "parcel-172",
+        "district": "north",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 11,
+        "steps": 609,
+        "distance": 2378.740608613153
+      },
+      {
+        "id": "parcel-178",
+        "district": "north",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 18,
+        "steps": 1146,
+        "distance": 4486.310463214066
+      },
+      {
+        "id": "parcel-184",
+        "district": "north",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 15,
+        "steps": 1139,
+        "distance": 4468.837482945972
+      },
+      {
+        "id": "parcel-190",
+        "district": "north",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 9,
+        "steps": 518,
+        "distance": 2022.0053535374104
+      },
+      {
+        "id": "parcel-208",
+        "district": "core",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 13,
+        "steps": 827,
+        "distance": 3236.3060538915515
+      },
+      {
+        "id": "parcel-218",
+        "district": "south",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 9,
+        "steps": 515,
+        "distance": 2005.764453291031
+      },
+      {
+        "id": "parcel-236",
+        "district": "core",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 15,
+        "steps": 820,
+        "distance": 3196.2358468634866
+      },
+      {
+        "id": "parcel-243",
+        "district": "south",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 17,
+        "steps": 1158,
+        "distance": 4531.307602936709
+      },
+      {
+        "id": "parcel-251",
+        "district": "south",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 20,
+        "steps": 1541,
+        "distance": 6051.113302971299
+      },
+      {
+        "id": "parcel-258",
+        "district": "west",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 13,
+        "steps": 870,
+        "distance": 3396.626109573817
+      },
+      {
+        "id": "parcel-264",
+        "district": "south",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 21,
+        "steps": 1427,
+        "distance": 5584.73548649641
+      },
+      {
+        "id": "parcel-295",
+        "district": "east",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 13,
+        "steps": 1081,
+        "distance": 4252.884282558795
+      },
+      {
+        "id": "parcel-306",
+        "district": "east",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 23,
+        "steps": 1839,
+        "distance": 7222.129788061878
+      },
+      {
+        "id": "parcel-320",
+        "district": "west",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 13,
+        "steps": 1004,
+        "distance": 3947.0279578896498
+      },
+      {
+        "id": "parcel-326",
+        "district": "south",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 16,
+        "steps": 936,
+        "distance": 3656.5442547132825
+      },
+      {
+        "id": "parcel-332",
+        "district": "west",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 20,
+        "steps": 1325,
+        "distance": 5184.218250012461
+      },
+      {
+        "id": "parcel-338",
+        "district": "west",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 10,
+        "steps": 341,
+        "distance": 1307.002174525716
+      },
+      {
+        "id": "parcel-349",
+        "district": "south",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 12,
+        "steps": 722,
+        "distance": 2815.43959229415
+      },
+      {
+        "id": "parcel-359",
+        "district": "west",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 15,
+        "steps": 884,
+        "distance": 3444.018369829573
+      },
+      {
+        "id": "parcel-367",
+        "district": "south",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 14,
+        "steps": 804,
+        "distance": 3125.9270675974926
+      },
+      {
+        "id": "parcel-377",
+        "district": "south",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 20,
+        "steps": 1312,
+        "distance": 5132.438124271318
+      },
+      {
+        "id": "parcel-384",
+        "district": "west",
+        "to": "hotel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 23,
+        "steps": 1329,
+        "distance": 5186.749022810762
+      },
+      {
+        "id": "parcel-393",
+        "district": "north",
+        "to": "motel",
+        "directBlocked": true,
+        "endpointGap": 0,
+        "points": 14,
+        "steps": 1005,
+        "distance": 3941.326792852636
+      }
+    ],
+    "blockedDirect": 42,
+    "failures": []
+  },
+  "neighborhoodAccess": {
+    "neighborhood": {
+      "id": "east-diner",
+      "district": "east",
+      "name": "EAST DINER NEIGHBORHOOD",
+      "x0": 5580,
+      "x1": 6380,
+      "y0": 1900,
+      "y1": 2480
+    },
+    "services": [
+      {
+        "name": "EAST DINER FUEL",
+        "neighborhood": "east-diner",
+        "endGap": 0,
+        "steps": 76,
+        "end": {
+          "x": 5991,
+          "y": 2145
+        }
+      },
+      {
+        "name": "MAGNOLIA CORNER STORE",
+        "neighborhood": "east-diner",
+        "endGap": 0,
+        "steps": 113,
+        "end": {
+          "x": 6141,
+          "y": 2145
+        }
+      }
+    ],
+    "parkingAccess": {
+      "steps": 92,
+      "end": {
+        "x": 6015,
+        "y": 2295
+      },
+      "endGap": 0
+    },
+    "driveways": [
+      {
+        "id": "parcel-2",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 43,
+        "end": {
+          "x": 1960,
+          "y": 383.7559138564393
+        }
+      },
+      {
+        "id": "parcel-3",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 51,
+        "end": {
+          "x": 1960,
+          "y": 547.7559138564393
+        }
+      },
+      {
+        "id": "parcel-5",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 51,
+        "end": {
+          "x": 1960,
+          "y": 1039.7559138564393
+        }
+      },
+      {
+        "id": "parcel-7",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 50,
+        "end": {
+          "x": 1960,
+          "y": 1367.7559138564393
+        }
+      },
+      {
+        "id": "parcel-8",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 36,
+        "end": {
+          "x": 1960,
+          "y": 1367.7559138564393
+        }
+      },
+      {
+        "id": "parcel-9",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 47,
+        "end": {
+          "x": 1960,
+          "y": 1531.7559138564393
+        }
+      },
+      {
+        "id": "parcel-10",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 43,
+        "end": {
+          "x": 1960,
+          "y": 1695.7559138564393
+        }
+      },
+      {
+        "id": "parcel-11",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 49,
+        "end": {
+          "x": 1960,
+          "y": 1859.7559138564393
+        }
+      },
+      {
+        "id": "parcel-13",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 45,
+        "end": {
+          "x": 1960,
+          "y": 2679.7559138564393
+        }
+      },
+      {
+        "id": "parcel-14",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 38,
+        "end": {
+          "x": 1960,
+          "y": 2679.7559138564393
+        }
+      },
+      {
+        "id": "parcel-16",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 46,
+        "end": {
+          "x": 1960,
+          "y": 3007.7559138564393
+        }
+      },
+      {
+        "id": "parcel-17",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 41,
+        "end": {
+          "x": 1960,
+          "y": 3171.7559138564393
+        }
+      },
+      {
+        "id": "parcel-18",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 38,
+        "end": {
+          "x": 1960,
+          "y": 3171.7559138564393
+        }
+      },
+      {
+        "id": "parcel-19",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 45,
+        "end": {
+          "x": 1960,
+          "y": 3335.7559138564393
+        }
+      },
+      {
+        "id": "parcel-21",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 50,
+        "end": {
+          "x": 1960,
+          "y": 3827.7559138564393
+        }
+      },
+      {
+        "id": "parcel-22",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 37,
+        "end": {
+          "x": 1960,
+          "y": 3827.7559138564393
+        }
+      },
+      {
+        "id": "parcel-24",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 37,
+        "end": {
+          "x": 1960,
+          "y": 4155.755913856439
+        }
+      },
+      {
+        "id": "parcel-25",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 46,
+        "end": {
+          "x": 1960,
+          "y": 4647.755913856439
+        }
+      },
+      {
+        "id": "parcel-26",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 38,
+        "end": {
+          "x": 1960,
+          "y": 4647.755913856439
+        }
+      },
+      {
+        "id": "parcel-27",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 48,
+        "end": {
+          "x": 5200,
+          "y": 369.44587233942
+        }
+      },
+      {
+        "id": "parcel-30",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 39,
+        "end": {
+          "x": 5200,
+          "y": 1025.44587233942
+        }
+      },
+      {
+        "id": "parcel-32",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 46,
+        "end": {
+          "x": 5200,
+          "y": 1353.44587233942
+        }
+      },
+      {
+        "id": "parcel-33",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 38,
+        "end": {
+          "x": 5200,
+          "y": 1353.44587233942
+        }
+      },
+      {
+        "id": "parcel-35",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 49,
+        "end": {
+          "x": 5200,
+          "y": 1681.44587233942
+        }
+      },
+      {
+        "id": "parcel-36",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 36,
+        "end": {
+          "x": 5200,
+          "y": 1681.44587233942
+        }
+      },
+      {
+        "id": "parcel-37",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 36,
+        "end": {
+          "x": 5200,
+          "y": 1845.44587233942
+        }
+      },
+      {
+        "id": "parcel-41",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 38,
+        "end": {
+          "x": 5200,
+          "y": 2337.44587233942
+        }
+      },
+      {
+        "id": "parcel-42",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 48,
+        "end": {
+          "x": 5200,
+          "y": 2665.44587233942
+        }
+      },
+      {
+        "id": "parcel-44",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 36,
+        "end": {
+          "x": 5200,
+          "y": 2829.44587233942
+        }
+      },
+      {
+        "id": "parcel-49",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 35,
+        "end": {
+          "x": 5200,
+          "y": 3485.44587233942
+        }
+      },
+      {
+        "id": "parcel-50",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 44,
+        "end": {
+          "x": 5200,
+          "y": 3649.44587233942
+        }
+      },
+      {
+        "id": "parcel-51",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 37,
+        "end": {
+          "x": 5200,
+          "y": 3649.44587233942
+        }
+      },
+      {
+        "id": "parcel-55",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 286.13420550129376,
+          "y": 2540
+        }
+      },
+      {
+        "id": "parcel-66",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 17,
+        "end": {
+          "x": 5698.134205501294,
+          "y": 2540
+        }
+      },
+      {
+        "id": "parcel-70",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 3024.077842227416,
+          "y": 840
+        }
+      },
+      {
+        "id": "parcel-71",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 3220.077842227416,
+          "y": 840
+        }
+      },
+      {
+        "id": "parcel-73",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 17,
+        "end": {
+          "x": 4396.077842227416,
+          "y": 840
+        }
+      },
+      {
+        "id": "parcel-74",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 18,
+        "end": {
+          "x": 4592.077842227416,
+          "y": 840
+        }
+      },
+      {
+        "id": "parcel-76",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 14,
+        "end": {
+          "x": 2875.95749125001,
+          "y": 4240
+        }
+      },
+      {
+        "id": "parcel-83",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 15,
+        "end": {
+          "x": 4187.95749125001,
+          "y": 4240
+        }
+      },
+      {
+        "id": "parcel-86",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 14,
+        "end": {
+          "x": 4679.95749125001,
+          "y": 4240
+        }
+      },
+      {
+        "id": "parcel-87",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 14,
+        "end": {
+          "x": 4843.95749125001,
+          "y": 4240
+        }
+      },
+      {
+        "id": "parcel-93",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 48,
+        "end": {
+          "x": 3400,
+          "y": 3883.895066667348
+        }
+      },
+      {
+        "id": "parcel-94",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 36,
+        "end": {
+          "x": 3400,
+          "y": 3883.895066667348
+        }
+      },
+      {
+        "id": "parcel-97",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 13,
+        "end": {
+          "x": 1533.3828336412553,
+          "y": 840
+        }
+      },
+      {
+        "id": "parcel-100",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 14,
+        "end": {
+          "x": 757.1930065402299,
+          "y": 948.9303858309232
+        }
+      },
+      {
+        "id": "parcel-102",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 23,
+        "end": {
+          "x": 644.3548558090953,
+          "y": 1053.48384224072
+        }
+      },
+      {
+        "id": "parcel-103",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 23,
+        "end": {
+          "x": 560.4715028071953,
+          "y": 1194.4078752839118
+        }
+      },
+      {
+        "id": "parcel-104",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 22,
+        "end": {
+          "x": 476.5881498052954,
+          "y": 1335.3319083271037
+        }
+      },
+      {
+        "id": "parcel-105",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 45,
+        "end": {
+          "x": 369.65814108942146,
+          "y": 1951.3198855863363
+        }
+      },
+      {
+        "id": "parcel-107",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 46,
+        "end": {
+          "x": 521.2437222277706,
+          "y": 2878.1093055694264
+        }
+      },
+      {
+        "id": "parcel-108",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 33,
+        "end": {
+          "x": 582.1517931498436,
+          "y": 3030.379482874609
+        }
+      },
+      {
+        "id": "parcel-109",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 50,
+        "end": {
+          "x": 582.1517931498436,
+          "y": 3030.379482874609
+        }
+      },
+      {
+        "id": "parcel-110",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 56,
+        "end": {
+          "x": 730.6512833941426,
+          "y": 3274.4473385176702
+        }
+      },
+      {
+        "id": "parcel-116",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 15,
+        "end": {
+          "x": 1503.074273466642,
+          "y": 380.9026068318803
+        }
+      },
+      {
+        "id": "parcel-117",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 1340.9407841429456,
+          "y": 356.23011932610046
+        }
+      },
+      {
+        "id": "parcel-119",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 1210.66719033422,
+          "y": 385.2629511838604
+        }
+      },
+      {
+        "id": "parcel-120",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 1058.1217340358833,
+          "y": 445.4782628805724
+        }
+      },
+      {
+        "id": "parcel-123",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 13,
+        "end": {
+          "x": 617.9126284781378,
+          "y": 2200
+        }
+      },
+      {
+        "id": "parcel-126",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 12,
+        "end": {
+          "x": 1458.4779641134442,
+          "y": 1786.9701272429097
+        }
+      },
+      {
+        "id": "parcel-127",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 13,
+        "end": {
+          "x": 1294.7973412422505,
+          "y": 1797.2001661723593
+        }
+      },
+      {
+        "id": "parcel-129",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 17,
+        "end": {
+          "x": 1165.3646286603966,
+          "y": 1843.8850073612757
+        }
+      },
+      {
+        "id": "parcel-130",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 17,
+        "end": {
+          "x": 1019.7728855027724,
+          "y": 1919.377022331896
+        }
+      },
+      {
+        "id": "parcel-135",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 40,
+        "end": {
+          "x": 1592.9858339278792,
+          "y": 2957.393754459093
+        }
+      },
+      {
+        "id": "parcel-137",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 1532.0067397382415,
+          "y": 3199.108115671893
+        }
+      },
+      {
+        "id": "parcel-138",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 1382.1416457645194,
+          "y": 3265.714824104658
+        }
+      },
+      {
+        "id": "parcel-140",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 13,
+        "end": {
+          "x": 1296.301177905174,
+          "y": 3560
+        }
+      },
+      {
+        "id": "parcel-142",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 15,
+        "end": {
+          "x": 1537.651099034827,
+          "y": 4566.53490025023
+        }
+      },
+      {
+        "id": "parcel-147",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 19,
+        "end": {
+          "x": 846.1783127427138,
+          "y": 4568.318457606794
+        }
+      },
+      {
+        "id": "parcel-149",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 45,
+        "end": {
+          "x": 565.4732464241521,
+          "y": 4371.764963083944
+        }
+      },
+      {
+        "id": "parcel-150",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 44,
+        "end": {
+          "x": 445.950260089744,
+          "y": 4066.317331340457
+        }
+      },
+      {
+        "id": "parcel-151",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 22,
+        "end": {
+          "x": 464.8182713552521,
+          "y": 3922.0551802517357
+        }
+      },
+      {
+        "id": "parcel-152",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 21,
+        "end": {
+          "x": 546.5675357335776,
+          "y": 3779.8825465502996
+        }
+      },
+      {
+        "id": "parcel-153",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 64,
+        "end": {
+          "x": 546.5675357335776,
+          "y": 3779.8825465502996
+        }
+      },
+      {
+        "id": "parcel-163",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 25,
+        "end": {
+          "x": 1748.5594378524602,
+          "y": 2413.135662711476
+        }
+      },
+      {
+        "id": "parcel-164",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 15,
+        "end": {
+          "x": 1732.9591769446026,
+          "y": 3987.323393482845
+        }
+      },
+      {
+        "id": "parcel-167",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 17,
+        "end": {
+          "x": 901.0628408344792,
+          "y": 3942.644906695815
+        }
+      },
+      {
+        "id": "parcel-169",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 51,
+        "end": {
+          "x": 1469.779889987517,
+          "y": 4194.010755407825
+        }
+      },
+      {
+        "id": "parcel-170",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 39,
+        "end": {
+          "x": 1433.6123919883132,
+          "y": 4088.2293951345537
+        }
+      },
+      {
+        "id": "parcel-171",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 47,
+        "end": {
+          "x": 2310.0240283928774,
+          "y": 750.216255535897
+        }
+      },
+      {
+        "id": "parcel-172",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 21,
+        "end": {
+          "x": 2368.538614929204,
+          "y": 423.08231897408325
+        }
+      },
+      {
+        "id": "parcel-173",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 21,
+        "end": {
+          "x": 2533.4095961030084,
+          "y": 317.09383107663746
+        }
+      },
+      {
+        "id": "parcel-176",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 19,
+        "end": {
+          "x": 3212.67137264563,
+          "y": 246.8285680391291
+        }
+      },
+      {
+        "id": "parcel-178",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 3408.3123979853435,
+          "y": 258.6855998778996
+        }
+      },
+      {
+        "id": "parcel-179",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 3603.953423325057,
+          "y": 270.54263171667014
+        }
+      },
+      {
+        "id": "parcel-180",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 17,
+        "end": {
+          "x": 3845.664072549317,
+          "y": 290.70800906866464
+        }
+      },
+      {
+        "id": "parcel-181",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 19,
+        "end": {
+          "x": 4040.1505363851957,
+          "y": 315.01881704814946
+        }
+      },
+      {
+        "id": "parcel-182",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 18,
+        "end": {
+          "x": 4234.637000221074,
+          "y": 339.32962502763434
+        }
+      },
+      {
+        "id": "parcel-183",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 26,
+        "end": {
+          "x": 4566.193968083905,
+          "y": 493.6131480489447
+        }
+      },
+      {
+        "id": "parcel-184",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 31,
+        "end": {
+          "x": 4723.226642946762,
+          "y": 635.6466251568327
+        }
+      },
+      {
+        "id": "parcel-186",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 21,
+        "end": {
+          "x": 2926.5673955756606,
+          "y": 1157.5708027617404
+        }
+      },
+      {
+        "id": "parcel-187",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 58,
+        "end": {
+          "x": 2404.848825599793,
+          "y": 916.3639430398136
+        }
+      },
+      {
+        "id": "parcel-189",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 54,
+        "end": {
+          "x": 2783.5283935326493,
+          "y": 1338.939750945709
+        }
+      },
+      {
+        "id": "parcel-190",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 3816.9524512002245,
+          "y": 1410
+        }
+      },
+      {
+        "id": "parcel-191",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 72,
+        "end": {
+          "x": 4546.860706876912,
+          "y": 1214.5668745461676
+        }
+      },
+      {
+        "id": "parcel-192",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 71,
+        "end": {
+          "x": 4667.657126161902,
+          "y": 1060.2158943486806
+        }
+      },
+      {
+        "id": "parcel-201",
+        "district": "core",
+        "streetEnd": true,
+        "steps": 35,
+        "end": {
+          "x": 4480,
+          "y": 2391.3036091451067
+        }
+      },
+      {
+        "id": "parcel-203",
+        "district": "core",
+        "streetEnd": true,
+        "steps": 42,
+        "end": {
+          "x": 4480,
+          "y": 2991.3036091451067
+        }
+      },
+      {
+        "id": "parcel-208",
+        "district": "core",
+        "streetEnd": true,
+        "steps": 35,
+        "end": {
+          "x": 2680,
+          "y": 3132.5826814584434
+        }
+      },
+      {
+        "id": "parcel-213",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 17,
+        "end": {
+          "x": 2423.4237195795868,
+          "y": 1520
+        }
+      },
+      {
+        "id": "parcel-216",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 14,
+        "end": {
+          "x": 2540.061998445308,
+          "y": 3560
+        }
+      },
+      {
+        "id": "parcel-217",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 14,
+        "end": {
+          "x": 2690.061998445308,
+          "y": 3560
+        }
+      },
+      {
+        "id": "parcel-218",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 13,
+        "end": {
+          "x": 2840.061998445308,
+          "y": 3560
+        }
+      },
+      {
+        "id": "parcel-221",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 15,
+        "end": {
+          "x": 4340.061998445308,
+          "y": 3560
+        }
+      },
+      {
+        "id": "parcel-234",
+        "district": "core",
+        "streetEnd": true,
+        "steps": 35,
+        "end": {
+          "x": 3760,
+          "y": 1742.367481336696
+        }
+      },
+      {
+        "id": "parcel-235",
+        "district": "core",
+        "streetEnd": true,
+        "steps": 46,
+        "end": {
+          "x": 4120,
+          "y": 2352.1232946543023
+        }
+      },
+      {
+        "id": "parcel-237",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 28,
+        "end": {
+          "x": 2138.3704288964627,
+          "y": 4418.370428896463
+        }
+      },
+      {
+        "id": "parcel-239",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 14,
+        "end": {
+          "x": 2555.6869713168126,
+          "y": 4580
+        }
+      },
+      {
+        "id": "parcel-246",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 3509.802559112355,
+          "y": 4707.320170607491
+        }
+      },
+      {
+        "id": "parcel-248",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 3837.0760908893226,
+          "y": 4729.138406059288
+        }
+      },
+      {
+        "id": "parcel-254",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 18,
+        "end": {
+          "x": 4854.414184047415,
+          "y": 4436.626412524747
+        }
+      },
+      {
+        "id": "parcel-255",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 13,
+        "end": {
+          "x": 3294.1470059999265,
+          "y": 4240
+        }
+      },
+      {
+        "id": "parcel-256",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 14,
+        "end": {
+          "x": 3130.1470059999265,
+          "y": 4240
+        }
+      },
+      {
+        "id": "parcel-258",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 13,
+        "end": {
+          "x": 2146.1470059999265,
+          "y": 4240
+        }
+      },
+      {
+        "id": "parcel-265",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 61,
+        "end": {
+          "x": 4702.805716365976,
+          "y": 3883.7837486348285
+        }
+      },
+      {
+        "id": "parcel-287",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 56,
+        "end": {
+          "x": 6760.468571323697,
+          "y": 1055.5733335780399
+        }
+      },
+      {
+        "id": "parcel-289",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 15,
+        "end": {
+          "x": 6450.164432582734,
+          "y": 1207.0806007998062
+        }
+      },
+      {
+        "id": "parcel-292",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 17,
+        "end": {
+          "x": 5769.968198216285,
+          "y": 1173.993639643257
+        }
+      },
+      {
+        "id": "parcel-295",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 14,
+        "end": {
+          "x": 5944.606261249516,
+          "y": 3775.0787477500967
+        }
+      },
+      {
+        "id": "parcel-298",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 34,
+        "end": {
+          "x": 6836.977133958934,
+          "y": 4350.0430982777725
+        }
+      },
+      {
+        "id": "parcel-300",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 63,
+        "end": {
+          "x": 6802.4347680871,
+          "y": 4522.413058907457
+        }
+      },
+      {
+        "id": "parcel-303",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 13,
+        "end": {
+          "x": 6148.124286838303,
+          "y": 4759.406214341915
+        }
+      },
+      {
+        "id": "parcel-313",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 48,
+        "end": {
+          "x": 5614.751786883079,
+          "y": 4093.2351677121956
+        }
+      },
+      {
+        "id": "parcel-314",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 15,
+        "end": {
+          "x": 5905.866483841865,
+          "y": 4425.293324192094
+        }
+      },
+      {
+        "id": "parcel-316",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 6279.192457583318,
+          "y": 4407.894949628385
+        }
+      },
+      {
+        "id": "parcel-319",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 40,
+        "end": {
+          "x": 186.72444692610796,
+          "y": 1681.542145290653
+        }
+      },
+      {
+        "id": "parcel-320",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 36,
+        "end": {
+          "x": 176.37819402251915,
+          "y": 2308.4292983828254
+        }
+      },
+      {
+        "id": "parcel-321",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 37,
+        "end": {
+          "x": 1418.397737670281,
+          "y": 1240.4901023074797
+        }
+      },
+      {
+        "id": "parcel-322",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 44,
+        "end": {
+          "x": 1454.9410051166321,
+          "y": 1400.366897385266
+        }
+      },
+      {
+        "id": "parcel-323",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 42,
+        "end": {
+          "x": 1454.9410051166321,
+          "y": 1400.366897385266
+        }
+      },
+      {
+        "id": "parcel-324",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 55,
+        "end": {
+          "x": 693.55990447856,
+          "y": 4230.352961734444
+        }
+      },
+      {
+        "id": "parcel-326",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 56,
+        "end": {
+          "x": 2264.954993282435,
+          "y": 3875.0750111959414
+        }
+      },
+      {
+        "id": "parcel-327",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 27,
+        "end": {
+          "x": 6522.573351899254,
+          "y": 314.92097757755823
+        }
+      },
+      {
+        "id": "parcel-328",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 42,
+        "end": {
+          "x": 6018.19857541142,
+          "y": 1734.6325921393864
+        }
+      },
+      {
+        "id": "parcel-329",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 13,
+        "end": {
+          "x": 819.1329074998876,
+          "y": 506.7244728333408
+        }
+      },
+      {
+        "id": "parcel-330",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 14,
+        "end": {
+          "x": 655.4961416114038,
+          "y": 517.6335905592398
+        }
+      },
+      {
+        "id": "parcel-331",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 68,
+        "end": {
+          "x": 553.5609983015337,
+          "y": 605.4215736123139
+        }
+      },
+      {
+        "id": "parcel-332",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 21,
+        "end": {
+          "x": 553.5609983015337,
+          "y": 605.4215736123139
+        }
+      },
+      {
+        "id": "parcel-333",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 30,
+        "end": {
+          "x": 1059.8012455950757,
+          "y": 4309.7018683926135
+        }
+      },
+      {
+        "id": "parcel-334",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 42,
+        "end": {
+          "x": 6183.05091696254,
+          "y": 1022.7128374755666
+        }
+      },
+      {
+        "id": "parcel-335",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 42,
+        "end": {
+          "x": 5200,
+          "y": 3526
+        }
+      },
+      {
+        "id": "parcel-336",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 40,
+        "end": {
+          "x": 374.35609838973005,
+          "y": 2149.2048855075705
+        }
+      },
+      {
+        "id": "parcel-338",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 1000.5111460976525,
+          "y": 1231.2095088152919
+        }
+      },
+      {
+        "id": "parcel-339",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 16,
+        "end": {
+          "x": 3145.7591429298086,
+          "y": 1402.5291978049927
+        }
+      },
+      {
+        "id": "parcel-340",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 66,
+        "end": {
+          "x": 4801.712912585534,
+          "y": 888.9223894740402
+        }
+      },
+      {
+        "id": "parcel-344",
+        "district": "core",
+        "streetEnd": true,
+        "steps": 33,
+        "end": {
+          "x": 2320,
+          "y": 2850
+        }
+      },
+      {
+        "id": "parcel-347",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 18,
+        "end": {
+          "x": 3047.1030237420864,
+          "y": 4611.591571709917
+        }
+      },
+      {
+        "id": "parcel-348",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 19,
+        "end": {
+          "x": 2087.3629411967336,
+          "y": 3586.0515106993316
+        }
+      },
+      {
+        "id": "parcel-355",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 27,
+        "end": {
+          "x": 2389.675993405174,
+          "y": 4169.79381398511
+        }
+      },
+      {
+        "id": "parcel-357",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 17,
+        "end": {
+          "x": 1169.5539836985135,
+          "y": 815.9286373917622
+        }
+      },
+      {
+        "id": "parcel-358",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 14,
+        "end": {
+          "x": 1250,
+          "y": 2200
+        }
+      },
+      {
+        "id": "parcel-359",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 20,
+        "end": {
+          "x": 916.0818000707721,
+          "y": 3236.1175122123836
+        }
+      },
+      {
+        "id": "parcel-360",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 13,
+        "end": {
+          "x": 1671,
+          "y": 3560
+        }
+      },
+      {
+        "id": "parcel-362",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 15,
+        "end": {
+          "x": 3530,
+          "y": 1410
+        }
+      },
+      {
+        "id": "parcel-365",
+        "district": "core",
+        "streetEnd": true,
+        "steps": 41,
+        "end": {
+          "x": 4120,
+          "y": 3060
+        }
+      },
+      {
+        "id": "parcel-369",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 51,
+        "end": {
+          "x": 6805.039324794975,
+          "y": 708.5738645262609
+        }
+      },
+      {
+        "id": "parcel-370",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 21,
+        "end": {
+          "x": 2887.2921827705286,
+          "y": 3912.96060909714
+        }
+      },
+      {
+        "id": "parcel-371",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 37,
+        "end": {
+          "x": 1960,
+          "y": 320
+        }
+      },
+      {
+        "id": "parcel-372",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 14,
+        "end": {
+          "x": 689.7912575444421,
+          "y": 3595.918845380057
+        }
+      },
+      {
+        "id": "parcel-377",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 18,
+        "end": {
+          "x": 4137.846559398135,
+          "y": 3912.9475071625197
+        }
+      },
+      {
+        "id": "parcel-378",
+        "district": "south",
+        "streetEnd": true,
+        "steps": 45,
+        "end": {
+          "x": 2328.8499566724113,
+          "y": 4378.050303293122
+        }
+      },
+      {
+        "id": "parcel-379",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 14,
+        "end": {
+          "x": 5559.223227027637,
+          "y": 3852.1553545944726
+        }
+      },
+      {
+        "id": "parcel-382",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 37,
+        "end": {
+          "x": 371.04315260748467,
+          "y": 2119.388373467362
+        }
+      },
+      {
+        "id": "parcel-383",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 21,
+        "end": {
+          "x": 829.7285655887986,
+          "y": 2157.0587385939575
+        }
+      },
+      {
+        "id": "parcel-387",
+        "district": "core",
+        "streetEnd": true,
+        "steps": 33,
+        "end": {
+          "x": 3760,
+          "y": 2070
+        }
+      },
+      {
+        "id": "parcel-390",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 30,
+        "end": {
+          "x": 6773.904251288257,
+          "y": 4218.163434511811
+        }
+      },
+      {
+        "id": "parcel-392",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 43,
+        "end": {
+          "x": 1344.2535625036332,
+          "y": 937.0142500145332
+        }
+      },
+      {
+        "id": "parcel-393",
+        "district": "north",
+        "streetEnd": true,
+        "steps": 27,
+        "end": {
+          "x": 4390.488218391596,
+          "y": 1060.2169859518206
+        }
+      },
+      {
+        "id": "parcel-394",
+        "district": "east",
+        "streetEnd": true,
+        "steps": 20,
+        "end": {
+          "x": 6088.618845137974,
+          "y": 939.3861533946553
+        }
+      },
+      {
+        "id": "parcel-395",
+        "district": "west",
+        "streetEnd": true,
+        "steps": 50,
+        "end": {
+          "x": 635.3790440238193,
+          "y": 3163.4476100595484
+        }
+      }
+    ],
+    "failures": [],
+    "terrainProps": 397,
+    "hudDistrict": "EAST DINER NEIGHBORHOOD"
+  },
+  "maps": {
+    "roadSamples": [
+      {
+        "road": "Sunset Parkway",
+        "type": "avenue",
+        "wx": 1960,
+        "wy": 2525,
+        "found": true
+      },
+      {
+        "road": "Harbor Avenue",
+        "type": "avenue",
+        "wx": 5200,
+        "wy": 2525,
+        "found": true
+      },
+      {
+        "road": "Neon Grand Avenue",
+        "type": "avenue",
+        "wx": 3600,
+        "wy": 2540,
+        "found": true
+      },
+      {
+        "road": "Crescent Boulevard",
+        "type": "avenue",
+        "wx": 3580,
+        "wy": 840,
+        "found": true
+      },
+      {
+        "road": "Palm Boulevard",
+        "type": "coastal",
+        "wx": 3580,
+        "wy": 4240,
+        "found": true
+      },
+      {
+        "road": "Cassette Avenue",
+        "type": "avenue",
+        "wx": 3400,
+        "wy": 2540,
+        "found": true
+      },
+      {
+        "road": "Sunset Treeway",
+        "type": "residential",
+        "wx": 1640,
+        "wy": 840,
+        "found": true
+      },
+      {
+        "road": "Sunset Treeway",
+        "type": "residential",
+        "wx": 1010,
+        "wy": 900,
+        "found": true
+      },
+      {
+        "road": "Sunset Treeway",
+        "type": "residential",
+        "wx": 575,
+        "wy": 1170,
+        "found": true
+      },
+      {
+        "road": "Sunset Treeway",
+        "type": "residential",
+        "wx": 405,
+        "wy": 1700,
+        "found": true
+      },
+      {
+        "road": "Sunset Treeway",
+        "type": "residential",
+        "wx": 395,
+        "wy": 2335,
+        "found": true
+      },
+      {
+        "road": "Sunset Treeway",
+        "type": "residential",
+        "wx": 540,
+        "wy": 2925,
+        "found": true
+      },
+      {
+        "road": "Sunset Treeway",
+        "type": "residential",
+        "wx": 845,
+        "wy": 3380,
+        "found": true
+      },
+      {
+        "road": "Sunset Treeway",
+        "type": "residential",
+        "wx": 1315,
+        "wy": 3630,
+        "found": true
+      },
+      {
+        "road": "Sunset Treeway",
+        "type": "residential",
+        "wx": 1775,
+        "wy": 3630,
+        "found": true
+      },
+      {
+        "road": "Sunset Treeway",
+        "type": "residential",
+        "wx": 1960,
+        "wy": 2200,
+        "found": true
+      },
+      {
+        "road": "Rosewood Crescent",
+        "type": "residential",
+        "wx": 1860,
+        "wy": 630,
+        "found": true
+      },
+      {
+        "road": "Rosewood Crescent",
+        "type": "residential",
+        "wx": 1530,
+        "wy": 385,
+        "found": true
+      },
+      {
+        "road": "Rosewood Crescent",
+        "type": "residential",
+        "wx": 1110,
+        "wy": 425,
+        "found": true
+      },
+      {
+        "road": "Rosewood Crescent",
+        "type": "residential",
+        "wx": 870,
+        "wy": 630,
+        "found": true
+      },
+      {
+        "road": "Rosewood Crescent",
+        "type": "residential",
+        "wx": 1070,
+        "wy": 800,
+        "found": true
+      },
+      {
+        "road": "Palm Motel Road",
+        "type": "neighborhood",
+        "wx": 778,
+        "wy": 1520,
+        "found": true
+      },
+      {
+        "road": "Palm Motel Road",
+        "type": "neighborhood",
+        "wx": 1540.5,
+        "wy": 1520,
+        "found": true
+      },
+      {
+        "road": "Dead Air Road",
+        "type": "neighborhood",
+        "wx": 720,
+        "wy": 2200,
+        "found": true
+      },
+      {
+        "road": "Dead Air Road",
+        "type": "neighborhood",
+        "wx": 1510,
+        "wy": 2200,
+        "found": true
+      },
+      {
+        "road": "Maple Bend",
+        "type": "residential",
+        "wx": 1765,
+        "wy": 1820,
+        "found": true
+      },
+      {
+        "road": "Maple Bend",
+        "type": "residential",
+        "wx": 1410,
+        "wy": 1790,
+        "found": true
+      },
+      {
+        "road": "Maple Bend",
+        "type": "residential",
+        "wx": 1115,
+        "wy": 1870,
+        "found": true
+      },
+      {
+        "road": "Maple Bend",
+        "type": "residential",
+        "wx": 890,
+        "wy": 2070,
+        "found": true
+      },
+      {
+        "road": "Willow Family Loop",
+        "type": "residential",
+        "wx": 615,
+        "wy": 2595,
+        "found": true
+      },
+      {
+        "road": "Willow Family Loop",
+        "type": "residential",
+        "wx": 1030,
+        "wy": 2580,
+        "found": true
+      },
+      {
+        "road": "Willow Family Loop",
+        "type": "residential",
+        "wx": 1420,
+        "wy": 2740,
+        "found": true
+      },
+      {
+        "road": "Willow Family Loop",
+        "type": "residential",
+        "wx": 1600,
+        "wy": 3010,
+        "found": true
+      },
+      {
+        "road": "Willow Family Loop",
+        "type": "residential",
+        "wx": 1440,
+        "wy": 3240,
+        "found": true
+      },
+      {
+        "road": "Willow Family Loop",
+        "type": "residential",
+        "wx": 1055,
+        "wy": 3270,
+        "found": true
+      },
+      {
+        "road": "Willow Family Loop",
+        "type": "residential",
+        "wx": 750,
+        "wy": 3210,
+        "found": true
+      },
+      {
+        "road": "Star Arcade Road",
+        "type": "neighborhood",
+        "wx": 1260.5,
+        "wy": 3560,
+        "found": true
+      },
+      {
+        "road": "Star Arcade Road",
+        "type": "neighborhood",
+        "wx": 1720.5,
+        "wy": 3560,
+        "found": true
+      },
+      {
+        "road": "Palmetto Crescent",
+        "type": "residential",
+        "wx": 1960,
+        "wy": 3900,
+        "found": true
+      },
+      {
+        "road": "Palmetto Crescent",
+        "type": "residential",
+        "wx": 1800,
+        "wy": 4390,
+        "found": true
+      },
+      {
+        "road": "Palmetto Crescent",
+        "type": "residential",
+        "wx": 1370,
+        "wy": 4610,
+        "found": true
+      },
+      {
+        "road": "Palmetto Crescent",
+        "type": "residential",
+        "wx": 850,
+        "wy": 4570,
+        "found": true
+      },
+      {
+        "road": "Palmetto Crescent",
+        "type": "residential",
+        "wx": 510,
+        "wy": 4230,
+        "found": true
+      },
+      {
+        "road": "Palmetto Crescent",
+        "type": "residential",
+        "wx": 535,
+        "wy": 3800,
+        "found": true
+      },
+      {
+        "road": "Palmetto Crescent",
+        "type": "residential",
+        "wx": 845,
+        "wy": 3580,
+        "found": true
+      },
+      {
+        "road": "Peach Tree Lane",
+        "type": "residential",
+        "wx": 1800,
+        "wy": 1140,
+        "found": true
+      },
+      {
+        "road": "Peach Tree Lane",
+        "type": "residential",
+        "wx": 1500,
+        "wy": 1100,
+        "found": true
+      },
+      {
+        "road": "Peach Tree Lane",
+        "type": "residential",
+        "wx": 1240,
+        "wy": 1140,
+        "found": true
+      },
+      {
+        "road": "Peach Tree Lane",
+        "type": "residential",
+        "wx": 980,
+        "wy": 1240,
+        "found": true
+      },
+      {
+        "road": "Peach Tree Lane",
+        "type": "residential",
+        "wx": 637.5,
+        "wy": 1410,
+        "found": true
+      },
+      {
+        "road": "Sunset School Street",
+        "type": "residential",
+        "wx": 1855,
+        "wy": 1730,
+        "found": true
+      },
+      {
+        "road": "Sunset School Street",
+        "type": "residential",
+        "wx": 1615,
+        "wy": 1555,
+        "found": true
+      },
+      {
+        "road": "Sunset School Street",
+        "type": "residential",
+        "wx": 1380,
+        "wy": 1545,
+        "found": true
+      },
+      {
+        "road": "Sunset School Street",
+        "type": "residential",
+        "wx": 1090,
+        "wy": 1640,
+        "found": true
+      },
+      {
+        "road": "Sunset School Street",
+        "type": "residential",
+        "wx": 775,
+        "wy": 1765,
+        "found": true
+      },
+      {
+        "road": "Sunset School Street",
+        "type": "residential",
+        "wx": 520,
+        "wy": 1820,
+        "found": true
+      },
+      {
+        "road": "Cypress Lane",
+        "type": "residential",
+        "wx": 1835,
+        "wy": 2465,
+        "found": true
+      },
+      {
+        "road": "Cypress Lane",
+        "type": "residential",
+        "wx": 1580,
+        "wy": 2410,
+        "found": true
+      },
+      {
+        "road": "Cypress Lane",
+        "type": "residential",
+        "wx": 1305,
+        "wy": 2380,
+        "found": true
+      },
+      {
+        "road": "Cypress Lane",
+        "type": "residential",
+        "wx": 1010,
+        "wy": 2350,
+        "found": true
+      },
+      {
+        "road": "Cypress Lane",
+        "type": "residential",
+        "wx": 760,
+        "wy": 2455,
+        "found": true
+      },
+      {
+        "road": "Willow East Link",
+        "type": "residential",
+        "wx": 1720,
+        "wy": 3100,
+        "found": true
+      },
+      {
+        "road": "Willow East Link",
+        "type": "residential",
+        "wx": 1890,
+        "wy": 2960,
+        "found": true
+      },
+      {
+        "road": "South Sunset Lane",
+        "type": "residential",
+        "wx": 1830,
+        "wy": 3950,
+        "found": true
+      },
+      {
+        "road": "South Sunset Lane",
+        "type": "residential",
+        "wx": 1550,
+        "wy": 3950,
+        "found": true
+      },
+      {
+        "road": "South Sunset Lane",
+        "type": "residential",
+        "wx": 1265,
+        "wy": 3860,
+        "found": true
+      },
+      {
+        "road": "South Sunset Lane",
+        "type": "residential",
+        "wx": 990,
+        "wy": 3895,
+        "found": true
+      },
+      {
+        "road": "South Sunset Lane",
+        "type": "residential",
+        "wx": 635,
+        "wy": 3985,
+        "found": true
+      },
+      {
+        "road": "Palmetto Garden Lane",
+        "type": "residential",
+        "wx": 1825,
+        "wy": 4465,
+        "found": true
+      },
+      {
+        "road": "Palmetto Garden Lane",
+        "type": "residential",
+        "wx": 1570,
+        "wy": 4265,
+        "found": true
+      },
+      {
+        "road": "Palmetto Garden Lane",
+        "type": "residential",
+        "wx": 1425,
+        "wy": 4040,
+        "found": true
+      },
+      {
+        "road": "Crescent Heights Scenic Loop",
+        "type": "residential",
+        "wx": 2300,
+        "wy": 660,
+        "found": true
+      },
+      {
+        "road": "Crescent Heights Scenic Loop",
+        "type": "residential",
+        "wx": 2420,
+        "wy": 390,
+        "found": true
+      },
+      {
+        "road": "Crescent Heights Scenic Loop",
+        "type": "residential",
+        "wx": 2830,
+        "wy": 270,
+        "found": true
+      },
+      {
+        "road": "Crescent Heights Scenic Loop",
+        "type": "residential",
+        "wx": 3430,
+        "wy": 260,
+        "found": true
+      },
+      {
+        "road": "Crescent Heights Scenic Loop",
+        "type": "residential",
+        "wx": 4040,
+        "wy": 315,
+        "found": true
+      },
+      {
+        "road": "Crescent Heights Scenic Loop",
+        "type": "residential",
+        "wx": 4500,
+        "wy": 455,
+        "found": true
+      },
+      {
+        "road": "Crescent Heights Scenic Loop",
+        "type": "residential",
+        "wx": 4760,
+        "wy": 700,
+        "found": true
+      },
+      {
+        "road": "Crescent Heights Scenic Loop",
+        "type": "residential",
+        "wx": 4660,
+        "wy": 970,
+        "found": true
+      },
+      {
+        "road": "Crescent Heights Scenic Loop",
+        "type": "residential",
+        "wx": 4180,
+        "wy": 1160,
+        "found": true
+      },
+      {
+        "road": "Crescent Heights Scenic Loop",
+        "type": "residential",
+        "wx": 3540,
+        "wy": 1210,
+        "found": true
+      },
+      {
+        "road": "Crescent Heights Scenic Loop",
+        "type": "residential",
+        "wx": 2910,
+        "wy": 1155,
+        "found": true
+      },
+      {
+        "road": "Crescent Heights Scenic Loop",
+        "type": "residential",
+        "wx": 2470,
+        "wy": 975,
+        "found": true
+      },
+      {
+        "road": "Crescent School Turnoff",
+        "type": "residential",
+        "wx": 2470,
+        "wy": 1145,
+        "found": true
+      },
+      {
+        "road": "Crescent School Turnoff",
+        "type": "residential",
+        "wx": 2140,
+        "wy": 1180,
+        "found": true
+      },
+      {
+        "road": "Crescent Estate Lane",
+        "type": "residential",
+        "wx": 2460,
+        "wy": 580,
+        "found": true
+      },
+      {
+        "road": "Crescent Estate Lane",
+        "type": "residential",
+        "wx": 2870,
+        "wy": 630,
+        "found": true
+      },
+      {
+        "road": "Crescent Estate Lane",
+        "type": "residential",
+        "wx": 3250,
+        "wy": 520,
+        "found": true
+      },
+      {
+        "road": "Crescent Estate Lane",
+        "type": "residential",
+        "wx": 3640,
+        "wy": 460,
+        "found": true
+      },
+      {
+        "road": "Crescent Estate Lane",
+        "type": "residential",
+        "wx": 4105,
+        "wy": 485,
+        "found": true
+      },
+      {
+        "road": "Crescent Estate Lane",
+        "type": "residential",
+        "wx": 4505,
+        "wy": 535,
+        "found": true
+      },
+      {
+        "road": "Crescent Garden Terrace",
+        "type": "residential",
+        "wx": 2720,
+        "wy": 1250,
+        "found": true
+      },
+      {
+        "road": "Crescent Garden Terrace",
+        "type": "residential",
+        "wx": 3080,
+        "wy": 1400,
+        "found": true
+      },
+      {
+        "road": "Crescent Garden Terrace",
+        "type": "residential",
+        "wx": 3620,
+        "wy": 1410,
+        "found": true
+      },
+      {
+        "road": "Crescent Garden Terrace",
+        "type": "residential",
+        "wx": 4190,
+        "wy": 1355,
+        "found": true
+      },
+      {
+        "road": "Crescent Garden Terrace",
+        "type": "residential",
+        "wx": 4660,
+        "wy": 1070,
+        "found": true
+      },
+      {
+        "road": "Downtown Circuit",
+        "type": "downtown",
+        "wx": 3580,
+        "wy": 1860,
+        "found": true
+      },
+      {
+        "road": "Downtown Circuit",
+        "type": "downtown",
+        "wx": 4480,
+        "wy": 2540,
+        "found": true
+      },
+      {
+        "road": "Downtown Circuit",
+        "type": "downtown",
+        "wx": 3580,
+        "wy": 3220,
+        "found": true
+      },
+      {
+        "road": "Downtown Circuit",
+        "type": "downtown",
+        "wx": 2680,
+        "wy": 2540,
+        "found": true
+      },
+      {
+        "road": "Armory Street",
+        "type": "downtown",
+        "wx": 3580,
+        "wy": 2200,
+        "found": true
+      },
+      {
+        "road": "Violet North Street",
+        "type": "downtown",
+        "wx": 3580,
+        "wy": 1520,
+        "found": true
+      },
+      {
+        "road": "Violet South Street",
+        "type": "downtown",
+        "wx": 3580,
+        "wy": 3560,
+        "found": true
+      },
+      {
+        "road": "Record Service Alley",
+        "type": "alley",
+        "wx": 3040,
+        "wy": 2370,
+        "found": true
+      },
+      {
+        "road": "Record Service Alley",
+        "type": "alley",
+        "wx": 3400,
+        "wy": 2880,
+        "found": true
+      },
+      {
+        "road": "Record Service Alley",
+        "type": "alley",
+        "wx": 3760,
+        "wy": 3050,
+        "found": true
+      },
+      {
+        "road": "Cassette Service Alley",
+        "type": "alley",
+        "wx": 4660,
+        "wy": 1860,
+        "found": true
+      },
+      {
+        "road": "Cassette Service Alley",
+        "type": "alley",
+        "wx": 4840,
+        "wy": 2540,
+        "found": true
+      },
+      {
+        "road": "Cassette Service Alley",
+        "type": "alley",
+        "wx": 4660,
+        "wy": 3220,
+        "found": true
+      },
+      {
+        "road": "Downtown West Street",
+        "type": "downtown",
+        "wx": 2320,
+        "wy": 2540,
+        "found": true
+      },
+      {
+        "road": "Downtown East Street",
+        "type": "downtown",
+        "wx": 4840,
+        "wy": 2540,
+        "found": true
+      },
+      {
+        "road": "Record Avenue",
+        "type": "downtown",
+        "wx": 3040,
+        "wy": 2540,
+        "found": true
+      },
+      {
+        "road": "Violet Avenue",
+        "type": "downtown",
+        "wx": 3760,
+        "wy": 2540,
+        "found": true
+      },
+      {
+        "road": "Arcade Avenue",
+        "type": "downtown",
+        "wx": 4120,
+        "wy": 2540,
+        "found": true
+      },
+      {
+        "road": "Neon South Street",
+        "type": "downtown",
+        "wx": 3580,
+        "wy": 2880,
+        "found": true
+      },
+      {
+        "road": "Palm Waterfront Drive",
+        "type": "coastal",
+        "wx": 2130,
+        "wy": 4410,
+        "found": true
+      },
+      {
+        "road": "Palm Waterfront Drive",
+        "type": "coastal",
+        "wx": 2610.5,
+        "wy": 4580,
+        "found": true
+      },
+      {
+        "road": "Palm Waterfront Drive",
+        "type": "coastal",
+        "wx": 3160.5,
+        "wy": 4640,
+        "found": true
+      },
+      {
+        "road": "Palm Waterfront Drive",
+        "type": "coastal",
+        "wx": 3700,
+        "wy": 4720,
+        "found": true
+      },
+      {
+        "road": "Palm Waterfront Drive",
+        "type": "coastal",
+        "wx": 4310,
+        "wy": 4655,
+        "found": true
+      },
+      {
+        "road": "Palm Waterfront Drive",
+        "type": "coastal",
+        "wx": 4910,
+        "wy": 4405,
+        "found": true
+      },
+      {
+        "road": "Palm Waterfront Drive",
+        "type": "coastal",
+        "wx": 3580,
+        "wy": 4240,
+        "found": true
+      },
+      {
+        "road": "Bungalow Bend",
+        "type": "residential",
+        "wx": 2180,
+        "wy": 3605,
+        "found": true
+      },
+      {
+        "road": "Bungalow Bend",
+        "type": "residential",
+        "wx": 2700,
+        "wy": 3705,
+        "found": true
+      },
+      {
+        "road": "Bungalow Bend",
+        "type": "residential",
+        "wx": 3310,
+        "wy": 3720,
+        "found": true
+      },
+      {
+        "road": "Bungalow Bend",
+        "type": "residential",
+        "wx": 3930,
+        "wy": 3665,
+        "found": true
+      },
+      {
+        "road": "Bungalow Bend",
+        "type": "residential",
+        "wx": 4520,
+        "wy": 3735,
+        "found": true
+      },
+      {
+        "road": "Bungalow Bend",
+        "type": "residential",
+        "wx": 5000,
+        "wy": 4030,
+        "found": true
+      },
+      {
+        "road": "Seafoam Lane",
+        "type": "residential",
+        "wx": 2410,
+        "wy": 3730,
+        "found": true
+      },
+      {
+        "road": "Seafoam Lane",
+        "type": "residential",
+        "wx": 2740,
+        "wy": 3975,
+        "found": true
+      },
+      {
+        "road": "Seafoam Lane",
+        "type": "residential",
+        "wx": 3190,
+        "wy": 4015,
+        "found": true
+      },
+      {
+        "road": "Seafoam Lane",
+        "type": "residential",
+        "wx": 3560,
+        "wy": 3975,
+        "found": true
+      },
+      {
+        "road": "Seafoam Lane",
+        "type": "residential",
+        "wx": 3910,
+        "wy": 3935,
+        "found": true
+      },
+      {
+        "road": "Seafoam Lane",
+        "type": "residential",
+        "wx": 4290,
+        "wy": 3965,
+        "found": true
+      },
+      {
+        "road": "Seafoam Lane",
+        "type": "residential",
+        "wx": 4640,
+        "wy": 3925,
+        "found": true
+      },
+      {
+        "road": "Boathouse Neighborhood Lane",
+        "type": "residential",
+        "wx": 2320,
+        "wy": 4440,
+        "found": true
+      },
+      {
+        "road": "Boathouse Neighborhood Lane",
+        "type": "residential",
+        "wx": 2470,
+        "wy": 4270,
+        "found": true
+      },
+      {
+        "road": "Marina Garden Lane",
+        "type": "residential",
+        "wx": 3420,
+        "wy": 4355,
+        "found": true
+      },
+      {
+        "road": "Marina Garden Lane",
+        "type": "residential",
+        "wx": 3580,
+        "wy": 4500,
+        "found": true
+      },
+      {
+        "road": "Marina Garden Lane",
+        "type": "residential",
+        "wx": 3885,
+        "wy": 4495,
+        "found": true
+      },
+      {
+        "road": "Marina Garden Lane",
+        "type": "residential",
+        "wx": 4225,
+        "wy": 4475,
+        "found": true
+      },
+      {
+        "road": "Marina Garden Lane",
+        "type": "residential",
+        "wx": 4510,
+        "wy": 4530,
+        "found": true
+      },
+      {
+        "road": "Eastside Freight Loop",
+        "type": "industrial",
+        "wx": 5500,
+        "wy": 1460,
+        "found": true
+      },
+      {
+        "road": "Eastside Freight Loop",
+        "type": "industrial",
+        "wx": 6150,
+        "wy": 1460,
+        "found": true
+      },
+      {
+        "road": "Eastside Freight Loop",
+        "type": "industrial",
+        "wx": 6660,
+        "wy": 1720,
+        "found": true
+      },
+      {
+        "road": "Eastside Freight Loop",
+        "type": "industrial",
+        "wx": 6850,
+        "wy": 2230,
+        "found": true
+      },
+      {
+        "road": "Eastside Freight Loop",
+        "type": "industrial",
+        "wx": 6780,
+        "wy": 2880,
+        "found": true
+      },
+      {
+        "road": "Eastside Freight Loop",
+        "type": "industrial",
+        "wx": 6390,
+        "wy": 3390,
+        "found": true
+      },
+      {
+        "road": "Eastside Freight Loop",
+        "type": "industrial",
+        "wx": 5810,
+        "wy": 3490,
+        "found": true
+      },
+      {
+        "road": "Eastside Freight Loop",
+        "type": "industrial",
+        "wx": 5360,
+        "wy": 3320,
+        "found": true
+      },
+      {
+        "road": "Eastside Freight Loop",
+        "type": "industrial",
+        "wx": 5200,
+        "wy": 2370,
+        "found": true
+      },
+      {
+        "road": "East Diner Road",
+        "type": "neighborhood",
+        "wx": 5500.5,
+        "wy": 2200,
+        "found": true
+      },
+      {
+        "road": "East Diner Road",
+        "type": "neighborhood",
+        "wx": 6324,
+        "wy": 2200,
+        "found": true
+      },
+      {
+        "road": "Dockside Access",
+        "type": "industrial",
+        "wx": 5670,
+        "wy": 2880,
+        "found": true
+      },
+      {
+        "road": "Dockside Access",
+        "type": "industrial",
+        "wx": 6460,
+        "wy": 2880,
+        "found": true
+      },
+      {
+        "road": "Foundry Workers Crescent",
+        "type": "residential",
+        "wx": 5340,
+        "wy": 630,
+        "found": true
+      },
+      {
+        "road": "Foundry Workers Crescent",
+        "type": "residential",
+        "wx": 5740,
+        "wy": 365,
+        "found": true
+      },
+      {
+        "road": "Foundry Workers Crescent",
+        "type": "residential",
+        "wx": 6300,
+        "wy": 365,
+        "found": true
+      },
+      {
+        "road": "Foundry Workers Crescent",
+        "type": "residential",
+        "wx": 6735,
+        "wy": 610,
+        "found": true
+      },
+      {
+        "road": "Foundry Workers Crescent",
+        "type": "residential",
+        "wx": 6795,
+        "wy": 975,
+        "found": true
+      },
+      {
+        "road": "Foundry Workers Crescent",
+        "type": "residential",
+        "wx": 6460,
+        "wy": 1205,
+        "found": true
+      },
+      {
+        "road": "Foundry Workers Crescent",
+        "type": "residential",
+        "wx": 5950,
+        "wy": 1210,
+        "found": true
+      },
+      {
+        "road": "Foundry Workers Crescent",
+        "type": "residential",
+        "wx": 5450,
+        "wy": 1000,
+        "found": true
+      },
+      {
+        "road": "Eastside Garden Loop",
+        "type": "residential",
+        "wx": 5360,
+        "wy": 4050,
+        "found": true
+      },
+      {
+        "road": "Eastside Garden Loop",
+        "type": "residential",
+        "wx": 5820,
+        "wy": 3800,
+        "found": true
+      },
+      {
+        "road": "Eastside Garden Loop",
+        "type": "residential",
+        "wx": 6390,
+        "wy": 3860,
+        "found": true
+      },
+      {
+        "road": "Eastside Garden Loop",
+        "type": "residential",
+        "wx": 6770,
+        "wy": 4210,
+        "found": true
+      },
+      {
+        "road": "Eastside Garden Loop",
+        "type": "residential",
+        "wx": 6720,
+        "wy": 4610,
+        "found": true
+      },
+      {
+        "road": "Eastside Garden Loop",
+        "type": "residential",
+        "wx": 6260,
+        "wy": 4765,
+        "found": true
+      },
+      {
+        "road": "Eastside Garden Loop",
+        "type": "residential",
+        "wx": 5720,
+        "wy": 4665,
+        "found": true
+      },
+      {
+        "road": "Eastside Garden Loop",
+        "type": "residential",
+        "wx": 5340,
+        "wy": 4410,
+        "found": true
+      },
+      {
+        "road": "Foundry Logistics Road",
+        "type": "industrial",
+        "wx": 5440,
+        "wy": 1805,
+        "found": true
+      },
+      {
+        "road": "Foundry Logistics Road",
+        "type": "industrial",
+        "wx": 5940,
+        "wy": 1790,
+        "found": true
+      },
+      {
+        "road": "Foundry Logistics Road",
+        "type": "industrial",
+        "wx": 6390,
+        "wy": 1830,
+        "found": true
+      },
+      {
+        "road": "Foundry Logistics Road",
+        "type": "industrial",
+        "wx": 6700,
+        "wy": 1875,
+        "found": true
+      },
+      {
+        "road": "Dockyard Service Road",
+        "type": "industrial",
+        "wx": 5560,
+        "wy": 2030,
+        "found": true
+      },
+      {
+        "road": "Dockyard Service Road",
+        "type": "industrial",
+        "wx": 5650,
+        "wy": 2710,
+        "found": true
+      },
+      {
+        "road": "Dockyard Service Road",
+        "type": "industrial",
+        "wx": 5720,
+        "wy": 3165,
+        "found": true
+      },
+      {
+        "road": "Freight Factory Road",
+        "type": "industrial",
+        "wx": 6485,
+        "wy": 1860,
+        "found": true
+      },
+      {
+        "road": "Freight Factory Road",
+        "type": "industrial",
+        "wx": 6465,
+        "wy": 2370,
+        "found": true
+      },
+      {
+        "road": "Freight Factory Road",
+        "type": "industrial",
+        "wx": 6475,
+        "wy": 2710,
+        "found": true
+      },
+      {
+        "road": "Freight Factory Road",
+        "type": "industrial",
+        "wx": 6585,
+        "wy": 3050,
+        "found": true
+      },
+      {
+        "road": "Foundry Family Lane",
+        "type": "residential",
+        "wx": 5370,
+        "wy": 790,
+        "found": true
+      },
+      {
+        "road": "Foundry Family Lane",
+        "type": "residential",
+        "wx": 5660,
+        "wy": 680,
+        "found": true
+      },
+      {
+        "road": "Foundry Family Lane",
+        "type": "residential",
+        "wx": 6030,
+        "wy": 610,
+        "found": true
+      },
+      {
+        "road": "Foundry Family Lane",
+        "type": "residential",
+        "wx": 6440,
+        "wy": 710,
+        "found": true
+      },
+      {
+        "road": "Foundry Family Lane",
+        "type": "residential",
+        "wx": 6660,
+        "wy": 985,
+        "found": true
+      },
+      {
+        "road": "Worker Garden Lane",
+        "type": "residential",
+        "wx": 5585,
+        "wy": 4020,
+        "found": true
+      },
+      {
+        "road": "Worker Garden Lane",
+        "type": "residential",
+        "wx": 5725,
+        "wy": 4300,
+        "found": true
+      },
+      {
+        "road": "Worker Garden Lane",
+        "type": "residential",
+        "wx": 6000,
+        "wy": 4430,
+        "found": true
+      },
+      {
+        "road": "Worker Garden Lane",
+        "type": "residential",
+        "wx": 6385,
+        "wy": 4365,
+        "found": true
+      },
+      {
+        "road": "Worker Garden Lane",
+        "type": "residential",
+        "wx": 6615,
+        "wy": 4135,
+        "found": true
+      },
+      {
+        "road": "Sunset West Garden Lane",
+        "type": "residential",
+        "wx": 320,
+        "wy": 1480,
+        "found": true
+      },
+      {
+        "road": "Sunset West Garden Lane",
+        "type": "residential",
+        "wx": 180,
+        "wy": 1890,
+        "found": true
+      },
+      {
+        "road": "Sunset West Garden Lane",
+        "type": "residential",
+        "wx": 180,
+        "wy": 2370,
+        "found": true
+      },
+      {
+        "road": "Maple Garden Link",
+        "type": "residential",
+        "wx": 1360,
+        "wy": 1000,
+        "found": true
+      },
+      {
+        "road": "Maple Garden Link",
+        "type": "residential",
+        "wx": 1440,
+        "wy": 1335,
+        "found": true
+      },
+      {
+        "road": "Willow Parkside Lane",
+        "type": "residential",
+        "wx": 1060,
+        "wy": 3370,
+        "found": true
+      },
+      {
+        "road": "Willow Parkside Lane",
+        "type": "residential",
+        "wx": 1160,
+        "wy": 3060,
+        "found": true
+      },
+      {
+        "road": "Willow Parkside Lane",
+        "type": "residential",
+        "wx": 1250,
+        "wy": 2780,
+        "found": true
+      },
+      {
+        "road": "Palmetto West Link",
+        "type": "residential",
+        "wx": 655,
+        "wy": 4325,
+        "found": true
+      },
+      {
+        "road": "Palmetto West Link",
+        "type": "residential",
+        "wx": 780,
+        "wy": 4080,
+        "found": true
+      },
+      {
+        "road": "Crescent Overlook Lane",
+        "type": "residential",
+        "wx": 2400,
+        "wy": 500,
+        "found": true
+      },
+      {
+        "road": "Crescent Overlook Lane",
+        "type": "residential",
+        "wx": 2680,
+        "wy": 680,
+        "found": true
+      },
+      {
+        "road": "Crescent Overlook Lane",
+        "type": "residential",
+        "wx": 3020,
+        "wy": 925,
+        "found": true
+      },
+      {
+        "road": "Crescent Overlook Lane",
+        "type": "residential",
+        "wx": 3455,
+        "wy": 1025,
+        "found": true
+      },
+      {
+        "road": "Crescent Overlook Lane",
+        "type": "residential",
+        "wx": 3915,
+        "wy": 990,
+        "found": true
+      },
+      {
+        "road": "Crescent Overlook Lane",
+        "type": "residential",
+        "wx": 4300,
+        "wy": 1020,
+        "found": true
+      },
+      {
+        "road": "Palm Bay Gardens",
+        "type": "residential",
+        "wx": 2325,
+        "wy": 3775,
+        "found": true
+      },
+      {
+        "road": "Palm Bay Gardens",
+        "type": "residential",
+        "wx": 2265,
+        "wy": 4000,
+        "found": true
+      },
+      {
+        "road": "Palm Bay Gardens",
+        "type": "residential",
+        "wx": 2390,
+        "wy": 4170,
+        "found": true
+      },
+      {
+        "road": "Marina Cottage Lane",
+        "type": "residential",
+        "wx": 3730,
+        "wy": 4075,
+        "found": true
+      },
+      {
+        "road": "Marina Cottage Lane",
+        "type": "residential",
+        "wx": 3730,
+        "wy": 4355,
+        "found": true
+      },
+      {
+        "road": "Foundry North Homes",
+        "type": "residential",
+        "wx": 5480,
+        "wy": 315,
+        "found": true
+      },
+      {
+        "road": "Foundry North Homes",
+        "type": "residential",
+        "wx": 5740,
+        "wy": 185,
+        "found": true
+      },
+      {
+        "road": "Foundry North Homes",
+        "type": "residential",
+        "wx": 6230,
+        "wy": 195,
+        "found": true
+      },
+      {
+        "road": "Foundry North Homes",
+        "type": "residential",
+        "wx": 6530,
+        "wy": 325,
+        "found": true
+      },
+      {
+        "road": "Worker Bay Terrace",
+        "type": "residential",
+        "wx": 5975,
+        "wy": 4635,
+        "found": true
+      },
+      {
+        "road": "Worker Bay Terrace",
+        "type": "residential",
+        "wx": 6095,
+        "wy": 4480,
+        "found": true
+      },
+      {
+        "road": "Diner Magnolia Lane",
+        "type": "residential",
+        "wx": 5900,
+        "wy": 1520,
+        "found": true
+      },
+      {
+        "road": "Diner Magnolia Lane",
+        "type": "residential",
+        "wx": 6025,
+        "wy": 1770,
+        "found": true
+      },
+      {
+        "road": "Diner Magnolia Lane",
+        "type": "residential",
+        "wx": 6145,
+        "wy": 1955,
+        "found": true
+      },
+      {
+        "road": "Diner Magnolia Lane",
+        "type": "residential",
+        "wx": 6290,
+        "wy": 2105,
+        "found": true
+      },
+      {
+        "road": "Diner Palm Lane",
+        "type": "residential",
+        "wx": 5801,
+        "wy": 2290,
+        "found": true
+      },
+      {
+        "road": "Diner Palm Lane",
+        "type": "residential",
+        "wx": 5920.5,
+        "wy": 2400,
+        "found": true
+      },
+      {
+        "road": "Diner Palm Lane",
+        "type": "residential",
+        "wx": 6165,
+        "wy": 2390,
+        "found": true
+      },
+      {
+        "road": "Diner Palm Lane",
+        "type": "residential",
+        "wx": 6375,
+        "wy": 2450,
+        "found": true
+      },
+      {
+        "road": "Juniper Court",
+        "type": "culdesac",
+        "wx": 770,
+        "wy": 510,
+        "found": true
+      },
+      {
+        "road": "Juniper Court",
+        "type": "culdesac",
+        "wx": 550,
+        "wy": 610,
+        "found": true
+      },
+      {
+        "road": "Juniper Court Turning Circle",
+        "type": "turnaround",
+        "wx": 502.5,
+        "wy": 700,
+        "found": true
+      },
+      {
+        "road": "Garden Court",
+        "type": "culdesac",
+        "wx": 1560,
+        "wy": 1840,
+        "found": true
+      },
+      {
+        "road": "Garden Court",
+        "type": "culdesac",
+        "wx": 1505,
+        "wy": 1950,
+        "found": true
+      },
+      {
+        "road": "Garden Court Turning Circle",
+        "type": "turnaround",
+        "wx": 1482.5,
+        "wy": 2000,
+        "found": true
+      },
+      {
+        "road": "Willow Court",
+        "type": "culdesac",
+        "wx": 1200,
+        "wy": 2735,
+        "found": true
+      },
+      {
+        "road": "Willow Court",
+        "type": "culdesac",
+        "wx": 1070,
+        "wy": 2875,
+        "found": true
+      },
+      {
+        "road": "Willow Court Turning Circle",
+        "type": "turnaround",
+        "wx": 1022.5,
+        "wy": 2900,
+        "found": true
+      },
+      {
+        "road": "Palmetto Court",
+        "type": "culdesac",
+        "wx": 1110,
+        "wy": 4540,
+        "found": true
+      },
+      {
+        "road": "Palmetto Court",
+        "type": "culdesac",
+        "wx": 1050,
+        "wy": 4295,
+        "found": true
+      },
+      {
+        "road": "Palmetto Court Turning Circle",
+        "type": "turnaround",
+        "wx": 1002.5,
+        "wy": 4190,
+        "found": true
+      },
+      {
+        "road": "Lookout Estates",
+        "type": "culdesac",
+        "wx": 3050,
+        "wy": 345,
+        "found": true
+      },
+      {
+        "road": "Lookout Estates",
+        "type": "culdesac",
+        "wx": 2940,
+        "wy": 505,
+        "found": true
+      },
+      {
+        "road": "Lookout Estates Turning Circle",
+        "type": "turnaround",
+        "wx": 2902.5,
+        "wy": 560,
+        "found": true
+      },
+      {
+        "road": "Crescent Gardens",
+        "type": "culdesac",
+        "wx": 4325,
+        "wy": 430,
+        "found": true
+      },
+      {
+        "road": "Crescent Gardens",
+        "type": "culdesac",
+        "wx": 4265,
+        "wy": 555,
+        "found": true
+      },
+      {
+        "road": "Crescent Gardens Turning Circle",
+        "type": "turnaround",
+        "wx": 4222.5,
+        "wy": 600,
+        "found": true
+      },
+      {
+        "road": "Marina Bungalow Court",
+        "type": "culdesac",
+        "wx": 2930,
+        "wy": 3855,
+        "found": true
+      },
+      {
+        "road": "Marina Bungalow Court",
+        "type": "culdesac",
+        "wx": 2780,
+        "wy": 3980,
+        "found": true
+      },
+      {
+        "road": "Marina Bungalow Court Turning Circle",
+        "type": "turnaround",
+        "wx": 2722.5,
+        "wy": 4010,
+        "found": true
+      },
+      {
+        "road": "Seafoam Court",
+        "type": "culdesac",
+        "wx": 4600,
+        "wy": 4455,
+        "found": true
+      },
+      {
+        "road": "Seafoam Court",
+        "type": "culdesac",
+        "wx": 4505,
+        "wy": 4260,
+        "found": true
+      },
+      {
+        "road": "Seafoam Court Turning Circle",
+        "type": "turnaround",
+        "wx": 4452.5,
+        "wy": 4180,
+        "found": true
+      },
+      {
+        "road": "Foundry Family Court",
+        "type": "culdesac",
+        "wx": 6190,
+        "wy": 1120,
+        "found": true
+      },
+      {
+        "road": "Foundry Family Court",
+        "type": "culdesac",
+        "wx": 6090,
+        "wy": 940,
+        "found": true
+      },
+      {
+        "road": "Foundry Family Court Turning Circle",
+        "type": "turnaround",
+        "wx": 6022.5,
+        "wy": 900,
+        "found": true
+      },
+      {
+        "road": "Worker Garden Court",
+        "type": "culdesac",
+        "wx": 6120,
+        "wy": 3860,
+        "found": true
+      },
+      {
+        "road": "Worker Garden Court",
+        "type": "culdesac",
+        "wx": 6030,
+        "wy": 4045,
+        "found": true
+      },
+      {
+        "road": "Worker Garden Court Turning Circle",
+        "type": "turnaround",
+        "wx": 5962.5,
+        "wy": 4110,
+        "found": true
+      },
+      {
+        "road": "VIOLET HOTEL Approach",
+        "type": "walkway",
+        "wx": 3630,
+        "wy": 2513.5,
+        "found": true
+      },
+      {
+        "road": "NEON ARMORY Approach",
+        "type": "walkway",
+        "wx": 4001,
+        "wy": 2173.5,
+        "found": true
+      },
+      {
+        "road": "CASSETTE CLUB Approach",
+        "type": "walkway",
+        "wx": 4361,
+        "wy": 3193.5,
+        "found": true
+      },
+      {
+        "road": "RECORD EXCHANGE Approach",
+        "type": "walkway",
+        "wx": 2921,
+        "wy": 3193.5,
+        "found": true
+      },
+      {
+        "road": "DEAD AIR RADIO Approach",
+        "type": "walkway",
+        "wx": 1060,
+        "wy": 2173.5,
+        "found": true
+      },
+      {
+        "road": "STAR ARCADE Approach",
+        "type": "walkway",
+        "wx": 1481,
+        "wy": 3533.5,
+        "found": true
+      },
+      {
+        "road": "PALM MOTEL Approach",
+        "type": "walkway",
+        "wx": 1121,
+        "wy": 1493.5,
+        "found": true
+      },
+      {
+        "road": "DOCKSIDE 88 Approach",
+        "type": "walkway",
+        "wx": 6140,
+        "wy": 2853.5,
+        "found": true
+      },
+      {
+        "road": "EAST DINER Approach",
+        "type": "walkway",
+        "wx": 5801,
+        "wy": 2173.5,
+        "found": true
+      },
+      {
+        "road": "CRESCENT LOOKOUT Approach",
+        "type": "walkway",
+        "wx": 3641,
+        "wy": 813.5,
+        "found": true
+      },
+      {
+        "road": "MARINA CLINIC Approach",
+        "type": "walkway",
+        "wx": 4001,
+        "wy": 4213.5,
+        "found": true
+      },
+      {
+        "road": "BAYFRONT BOATHOUSE Approach",
+        "type": "walkway",
+        "wx": 2921,
+        "wy": 4553.5,
+        "found": true
+      }
+    ],
+    "roadCoverage": 1,
+    "fullMapBaseMatch": 0.9847617924528302,
+    "minimapBaseMatch": 0.9912424242424243
+  },
+  "simulation": {
+    "snapshots": [
+      {
+        "time": 300,
+        "npcs": 167,
+        "traffic": 37,
+        "npcSolid": [],
+        "trafficSolid": [],
+        "trafficOffRoad": [],
+        "nonfinite": 0
+      },
+      {
+        "time": 600,
+        "npcs": 167,
+        "traffic": 37,
+        "npcSolid": [],
+        "trafficSolid": [],
+        "trafficOffRoad": [],
+        "nonfinite": 0
+      },
+      {
+        "time": 900,
+        "npcs": 167,
+        "traffic": 37,
+        "npcSolid": [],
+        "trafficSolid": [],
+        "trafficOffRoad": [],
+        "nonfinite": 0
+      },
+      {
+        "time": 1200,
+        "npcs": 167,
+        "traffic": 37,
+        "npcSolid": [],
+        "trafficSolid": [],
+        "trafficOffRoad": [],
+        "nonfinite": 0
+      },
+      {
+        "time": 1500,
+        "npcs": 167,
+        "traffic": 37,
+        "npcSolid": [],
+        "trafficSolid": [],
+        "trafficOffRoad": [],
+        "nonfinite": 0
+      },
+      {
+        "time": 1800,
+        "npcs": 167,
+        "traffic": 37,
+        "npcSolid": [],
+        "trafficSolid": [],
+        "trafficOffRoad": [],
+        "nonfinite": 0
+      }
+    ],
+    "trafficProgress": [
+      {
+        "ring": "west",
+        "distance": 1733.8918924192576,
+        "maxStalled": 0,
+        "x": 414.6435822524323,
+        "y": 1581.1558593496393
+      },
+      {
+        "ring": "west",
+        "distance": 1696.2637148347462,
+        "maxStalled": 0,
+        "x": 594.9619640807007,
+        "y": 3081.2529870267226
+      },
+      {
+        "ring": "west",
+        "distance": 1216.4372812613287,
+        "maxStalled": 3.4666666666666592,
+        "x": 1449.824422129411,
+        "y": 3671.542161659533
+      },
+      {
+        "ring": "west",
+        "distance": 1557.9563012375988,
+        "maxStalled": 2.033333333333331,
+        "x": 1972,
+        "y": 2191.3879868759977
+      },
+      {
+        "ring": "west",
+        "distance": 1421.1050985680188,
+        "maxStalled": 0,
+        "x": 1881.9986053090042,
+        "y": 833
+      },
+      {
+        "ring": "core",
+        "distance": 1782.2248793923404,
+        "maxStalled": 0,
+        "x": 4468,
+        "y": 1901.2180920099772
+      },
+      {
+        "ring": "core",
+        "distance": 2386.1201773100024,
+        "maxStalled": 0.4666666666666666,
+        "x": 4468,
+        "y": 2957.6260895297814
+      },
+      {
+        "ring": "core",
+        "distance": 2052.7545422186836,
+        "maxStalled": 1.2833333333333337,
+        "x": 4468,
+        "y": 3075.6299574917934
+      },
+      {
+        "ring": "core",
+        "distance": 1718.6731373000791,
+        "maxStalled": 2.1333333333333306,
+        "x": 4468,
+        "y": 3192.5061630962186
+      },
+      {
+        "ring": "core",
+        "distance": 1376.7854367660116,
+        "maxStalled": 6.6166666666666485,
+        "x": 4397.787951249731,
+        "y": 3208
+      },
+      {
+        "ring": "core",
+        "distance": 2233.450779075647,
+        "maxStalled": 0.6833333333333338,
+        "x": 3088.5864773282283,
+        "y": 3208
+      },
+      {
+        "ring": "core",
+        "distance": 1873.5929469656883,
+        "maxStalled": 2.583333333333329,
+        "x": 2997.2524408519203,
+        "y": 3208
+      },
+      {
+        "ring": "core",
+        "distance": 1992.2014655603048,
+        "maxStalled": 1.2833333333333337,
+        "x": 2692,
+        "y": 2968.005473816802
+      },
+      {
+        "ring": "core",
+        "distance": 1610.2622246666897,
+        "maxStalled": 3.516666666666659,
+        "x": 2692,
+        "y": 2898.0053278483538
+      },
+      {
+        "ring": "core",
+        "distance": 2737.9283083632768,
+        "maxStalled": 0,
+        "x": 3207.0166800168236,
+        "y": 1872
+      },
+      {
+        "ring": "core",
+        "distance": 2411.241438042158,
+        "maxStalled": 0.4333333333333333,
+        "x": 3331.772460848926,
+        "y": 1872
+      },
+      {
+        "ring": "core",
+        "distance": 2113.2925979349147,
+        "maxStalled": 3.26666666666666,
+        "x": 3500.505639219049,
+        "y": 1872
+      },
+      {
+        "ring": "core",
+        "distance": 1904.9501172390478,
+        "maxStalled": 1.4,
+        "x": 3741.961508697461,
+        "y": 1872
+      },
+      {
+        "ring": "core",
+        "distance": 2118.704381989851,
+        "maxStalled": 0,
+        "x": 4407.575442735034,
+        "y": 1872
+      },
+      {
+        "ring": "north",
+        "distance": 1854.0264333342116,
+        "maxStalled": 0,
+        "x": 3934.361231985136,
+        "y": 308.8496295279032
+      },
+      {
+        "ring": "north",
+        "distance": 1573.0030181502723,
+        "maxStalled": 0,
+        "x": 4780.103518514457,
+        "y": 874.6238353407689
+      },
+      {
+        "ring": "north",
+        "distance": 1916.9806376571107,
+        "maxStalled": 0,
+        "x": 3039.7816187211843,
+        "y": 1168.0547536542663
+      },
+      {
+        "ring": "north",
+        "distance": 1410.0108832112496,
+        "maxStalled": 0,
+        "x": 2310.502106511833,
+        "y": 691.131262639538
+      },
+      {
+        "ring": "south",
+        "distance": 1927.344856308791,
+        "maxStalled": 0,
+        "x": 3895.566548281641,
+        "y": 4742.057747712466
+      },
+      {
+        "ring": "south",
+        "distance": 1699.3570246004924,
+        "maxStalled": 0,
+        "x": 4755.510980421852,
+        "y": 4503.253704628003
+      },
+      {
+        "ring": "south",
+        "distance": 1763.105154866924,
+        "maxStalled": 0.5833333333333335,
+        "x": 4542.499405946616,
+        "y": 4228
+      },
+      {
+        "ring": "south",
+        "distance": 1238.6049754629603,
+        "maxStalled": 1.2500000000000004,
+        "x": 3922.220562384512,
+        "y": 4228
+      },
+      {
+        "ring": "south",
+        "distance": 1814.4927004124838,
+        "maxStalled": 0,
+        "x": 2220.800809691097,
+        "y": 4228
+      },
+      {
+        "ring": "south",
+        "distance": 1828.8038049120348,
+        "maxStalled": 0,
+        "x": 2671.749970150119,
+        "y": 4589
+      },
+      {
+        "ring": "east",
+        "distance": 2331.616254849702,
+        "maxStalled": 0,
+        "x": 6867.160090096254,
+        "y": 2531.900223013805
+      },
+      {
+        "ring": "east",
+        "distance": 2140.462870309479,
+        "maxStalled": 0,
+        "x": 6695.67034910599,
+        "y": 3124.19270468763
+      },
+      {
+        "ring": "east",
+        "distance": 2154.678915281918,
+        "maxStalled": 1.2000000000000006,
+        "x": 6050.221272086163,
+        "y": 3535.639810042721
+      },
+      {
+        "ring": "east",
+        "distance": 2373.699855430104,
+        "maxStalled": 0,
+        "x": 5212,
+        "y": 3111.072158100601
+      },
+      {
+        "ring": "east",
+        "distance": 2334.2370659628978,
+        "maxStalled": 0,
+        "x": 5212,
+        "y": 2330.3784578024906
+      },
+      {
+        "ring": "east",
+        "distance": 2205.8033511305466,
+        "maxStalled": 1.733333333333332,
+        "x": 5212,
+        "y": 1636.955134682624
+      },
+      {
+        "ring": "east",
+        "distance": 2308.4359233210753,
+        "maxStalled": 0,
+        "x": 5978.065804263733,
+        "y": 1442.7006162083414
+      },
+      {
+        "ring": "east",
+        "distance": 2548.7415657567944,
+        "maxStalled": 0,
+        "x": 6808.5045329952745,
+        "y": 1925.7927996370165
+      }
+    ],
+    "archives": [
+      {
+        "id": "city-tape-01",
+        "where": "hotel",
+        "x": 3694,
+        "y": 2522,
+        "collected": false,
+        "safe": true
+      },
+      {
+        "id": "city-tape-02",
+        "where": "armory",
+        "x": 4065,
+        "y": 2182,
+        "collected": false,
+        "safe": true
+      },
+      {
+        "id": "city-tape-03",
+        "where": "club",
+        "x": 4425,
+        "y": 3202,
+        "collected": false,
+        "safe": true
+      },
+      {
+        "id": "city-tape-04",
+        "where": "records",
+        "x": 2985,
+        "y": 3202,
+        "collected": false,
+        "safe": true
+      },
+      {
+        "id": "city-tape-05",
+        "where": "warehouse",
+        "x": 6204,
+        "y": 2862,
+        "collected": false,
+        "safe": true
+      },
+      {
+        "id": "city-tape-06",
+        "where": "radio",
+        "x": 1124,
+        "y": 2182,
+        "collected": false,
+        "safe": true
+      },
+      {
+        "id": "city-tape-07",
+        "where": "arcade",
+        "x": 1545,
+        "y": 3542,
+        "collected": false,
+        "safe": true
+      },
+      {
+        "id": "city-tape-08",
+        "where": "motel",
+        "x": 1185,
+        "y": 1502,
+        "collected": false,
+        "safe": true
+      },
+      {
+        "id": "city-tape-09",
+        "where": "diner",
+        "x": 5865,
+        "y": 2182,
+        "collected": false,
+        "safe": true
+      },
+      {
+        "id": "city-tape-10",
+        "where": "clinic",
+        "x": 4065,
+        "y": 4222,
+        "collected": false,
+        "safe": true
+      },
+      {
+        "id": "city-tape-11",
+        "where": "observatory",
+        "x": 3705,
+        "y": 822,
+        "collected": false,
+        "safe": true
+      },
+      {
+        "id": "city-tape-12",
+        "where": "pier",
+        "x": 2985,
+        "y": 4562,
+        "collected": false,
+        "safe": true
+      }
+    ]
+  },
+  "driving": {
+    "road": "Sunset Treeway",
+    "type": "residential",
+    "points": 11,
+    "frames": 7310,
+    "completed": true,
+    "waypointsReached": 11,
+    "solidFrames": 0,
+    "offRoadFrames": 0,
+    "minHealth": 100,
+    "routeEnd": {
+      "x": 1960.9220681254453,
+      "y": 852.9706466132185
+    },
+    "reverseDistance": 57.29166666666533,
+    "samples": [
+      {
+        "frame": 0,
+        "waypoint": 1,
+        "x": 1959.8972222222221,
+        "y": 840,
+        "speed": 6.166666666666667,
+        "error": 0
+      },
+      {
+        "frame": 120,
+        "waypoint": 1,
+        "x": 1835.1474272496387,
+        "y": 840,
+        "speed": 63.936048248098786,
+        "error": 0
+      },
+      {
+        "frame": 240,
+        "waypoint": 1,
+        "x": 1706.2545392219633,
+        "y": 840,
+        "speed": 68.06209976435319,
+        "error": 0
+      },
+      {
+        "frame": 360,
+        "waypoint": 1,
+        "x": 1577.5690868248328,
+        "y": 840,
+        "speed": 64.64585170941527,
+        "error": 0
+      },
+      {
+        "frame": 480,
+        "waypoint": 1,
+        "x": 1448.8506441125833,
+        "y": 840,
+        "speed": 61.22787174390184,
+        "error": 0
+      },
+      {
+        "frame": 600,
+        "waypoint": 2,
+        "x": 1321.1338007478068,
+        "y": 841.7139535572312,
+        "speed": 66.81392623541356,
+        "error": -0.028763144473391785
+      },
+      {
+        "frame": 720,
+        "waypoint": 2,
+        "x": 1194.0701184308127,
+        "y": 862.6303625995589,
+        "speed": 63.30298346911115,
+        "error": -0.005069849031511752
+      },
+      {
+        "frame": 840,
+        "waypoint": 2,
+        "x": 1067.6495056678784,
+        "y": 886.8783415050774,
+        "speed": 67.61355714582591,
+        "error": -0.006804660183499012
+      },
+      {
+        "frame": 960,
+        "waypoint": 2,
+        "x": 941.0914068091013,
+        "y": 911.1526907933909,
+        "speed": 63.998450158328,
+        "error": -0.010355617917523707
+      },
+      {
+        "frame": 1080,
+        "waypoint": 2,
+        "x": 814.5396138126033,
+        "y": 935.4258305921118,
+        "speed": 68.16462231359054,
+        "error": -0.021631185945052644
+      },
+      {
+        "frame": 1200,
+        "waypoint": 3,
+        "x": 693.4704656697104,
+        "y": 969.673686619987,
+        "speed": 66.21547576642774,
+        "error": -0.14913496606839516
+      },
+      {
+        "frame": 1320,
+        "waypoint": 3,
+        "x": 625.0657265091938,
+        "y": 1078.7508580708272,
+        "speed": 62.740310614375204,
+        "error": -0.03283352376533211
+      },
+      {
+        "frame": 1440,
+        "waypoint": 3,
+        "x": 559.5136558286416,
+        "y": 1189.593678218779,
+        "speed": 66.97611466109123,
+        "error": -0.007000330805749133
+      },
+      {
+        "frame": 1560,
+        "waypoint": 3,
+        "x": 494.47362378553896,
+        "y": 1300.8570392640797,
+        "speed": 63.35194898457004,
+        "error": -0.016828717317757924
+      },
+      {
+        "frame": 1680,
+        "waypoint": 4,
+        "x": 447.0487551785697,
+        "y": 1417.2770517403435,
+        "speed": 61.55866291337006,
+        "error": -0.006252537662646329
+      },
+      {
+        "frame": 1800,
+        "waypoint": 4,
+        "x": 427.8257798680815,
+        "y": 1544.7288930459533,
+        "speed": 65.6546405028233,
+        "error": -0.007926501153408427
+      },
+      {
+        "frame": 1920,
+        "waypoint": 4,
+        "x": 408.6089370945701,
+        "y": 1672.1400745100525,
+        "speed": 62.0749834938207,
+        "error": -0.010827113143522027
+      },
+      {
+        "frame": 2040,
+        "waypoint": 4,
+        "x": 389.4044214644981,
+        "y": 1799.469524759077,
+        "speed": 66.3185543826789,
+        "error": -0.017059214485519725
+      },
+      {
+        "frame": 2160,
+        "waypoint": 4,
+        "x": 370.69907625389357,
+        "y": 1926.8047488913382,
+        "speed": 62.89343958174444,
+        "error": -0.0024666173328240504
+      },
+      {
+        "frame": 2280,
+        "waypoint": 5,
+        "x": 365.443148600824,
+        "y": 2053.772129375869,
+        "speed": 60.880484501618675,
+        "error": -0.005226100216097397
+      },
+      {
+        "frame": 2400,
+        "waypoint": 5,
+        "x": 378.6484709764935,
+        "y": 2182.001421249225,
+        "speed": 64.95135888677717,
+        "error": -0.006652970761065437
+      },
+      {
+        "frame": 2520,
+        "waypoint": 5,
+        "x": 391.8273514700466,
+        "y": 2309.973951210744,
+        "speed": 61.60761763877692,
+        "error": -0.009147998596525287
+      },
+      {
+        "frame": 2640,
+        "waypoint": 5,
+        "x": 405.02899275517785,
+        "y": 2438.1674981306937,
+        "speed": 65.72907749725178,
+        "error": -0.014643834959992464
+      },
+      {
+        "frame": 2760,
+        "waypoint": 5,
+        "x": 418.3600381388364,
+        "y": 2566.243614133085,
+        "speed": 62.24099078242013,
+        "error": -0.0026837362414602554
+      },
+      {
+        "frame": 2880,
+        "waypoint": 6,
+        "x": 447.17444644704517,
+        "y": 2689.9596048387566,
+        "speed": 67.93229534274813,
+        "error": -0.020701720281324467
+      },
+      {
+        "frame": 3000,
+        "waypoint": 6,
+        "x": 492.2437834889373,
+        "y": 2810.519382144846,
+        "speed": 64.49113951841176,
+        "error": -0.02702870677017468
+      },
+      {
+        "frame": 3120,
+        "waypoint": 6,
+        "x": 538.35673176992,
+        "y": 2930.7192189070693,
+        "speed": 61.03357949794264,
+        "error": -0.0020807636850508574
+      },
+      {
+        "frame": 3240,
+        "waypoint": 6,
+        "x": 587.5027603098421,
+        "y": 3049.9613691484187,
+        "speed": 65.03205611754143,
+        "error": -0.003720086658786559
+      },
+      {
+        "frame": 3360,
+        "waypoint": 6,
+        "x": 636.5167528848606,
+        "y": 3168.883162835391,
+        "speed": 61.71312287548165,
+        "error": -0.017420986129491632
+      },
+      {
+        "frame": 3480,
+        "waypoint": 7,
+        "x": 719.5614614259309,
+        "y": 3263.957460333264,
+        "speed": 67.44063570686605,
+        "error": -0.02597355252318614
+      },
+      {
+        "frame": 3600,
+        "waypoint": 7,
+        "x": 812.3018126007973,
+        "y": 3353.4794830259325,
+        "speed": 63.78065464917113,
+        "error": -0.0041417211665442325
+      },
+      {
+        "frame": 3720,
+        "waypoint": 7,
+        "x": 907.3232167407284,
+        "y": 3440.3856809783483,
+        "speed": 68.0454537125401,
+        "error": -0.007106819157085798
+      },
+      {
+        "frame": 3840,
+        "waypoint": 7,
+        "x": 1002.3386756441873,
+        "y": 3527.286441441155,
+        "speed": 64.54242630530547,
+        "error": -0.025072516379036423
+      },
+      {
+        "frame": 3960,
+        "waypoint": 8,
+        "x": 1116.5586902928155,
+        "y": 3578.1550216382784,
+        "speed": 62.548381624778756,
+        "error": -0.014392771721819986
+      },
+      {
+        "frame": 4080,
+        "waypoint": 8,
+        "x": 1240.8370020997759,
+        "y": 3612.057824867713,
+        "speed": 66.74101485475121,
+        "error": -0.01952321018455574
+      },
+      {
+        "frame": 4200,
+        "waypoint": 8,
+        "x": 1365.086766834818,
+        "y": 3645.952840529492,
+        "speed": 63.21968134706393,
+        "error": -0.03034835978084807
+      },
+      {
+        "frame": 4320,
+        "waypoint": 8,
+        "x": 1490.0346901304115,
+        "y": 3676.732522791572,
+        "speed": 67.56331082493224,
+        "error": -0.005263161188618493
+      },
+      {
+        "frame": 4440,
+        "waypoint": 9,
+        "x": 1613.9996993664354,
+        "y": 3689.165358537106,
+        "speed": 65.44630772589447,
+        "error": -0.02144972040192019
+      },
+      {
+        "frame": 4560,
+        "waypoint": 9,
+        "x": 1735.5769450842156,
+        "y": 3646.7360685850635,
+        "speed": 61.96332845924509,
+        "error": -0.03288497580179975
+      },
+      {
+        "frame": 4680,
+        "waypoint": 9,
+        "x": 1855.9391011249188,
+        "y": 3600.911763026924,
+        "speed": 66.17498209441993,
+        "error": -0.007337164268031127
+      },
+      {
+        "frame": 4800,
+        "waypoint": 10,
+        "x": 1966.7317525064168,
+        "y": 3544.2718177202846,
+        "speed": 64.1928836527747,
+        "error": -0.354144467607709
+      },
+      {
+        "frame": 4920,
+        "waypoint": 10,
+        "x": 1968.7779877509267,
+        "y": 3415.5994674934136,
+        "speed": 60.65231384536715,
+        "error": -0.007525941902215361
+      },
+      {
+        "frame": 5040,
+        "waypoint": 10,
+        "x": 1969.3087991882096,
+        "y": 3286.7866991145397,
+        "speed": 64.82651343843239,
+        "error": -0.007921758296532988
+      },
+      {
+        "frame": 5160,
+        "waypoint": 10,
+        "x": 1969.8390565878592,
+        "y": 3158.1083798379964,
+        "speed": 61.450374099308455,
+        "error": -0.008361488723687383
+      },
+      {
+        "frame": 5280,
+        "waypoint": 10,
+        "x": 1970.3702568787503,
+        "y": 3029.2012477994886,
+        "speed": 65.52800556586416,
+        "error": -0.00885332779486372
+      },
+      {
+        "frame": 5400,
+        "waypoint": 10,
+        "x": 1970.9010408697486,
+        "y": 2900.3951398494783,
+        "speed": 62.00035638493813,
+        "error": -0.00940676058837322
+      },
+      {
+        "frame": 5520,
+        "waypoint": 10,
+        "x": 1971.4317121182794,
+        "y": 2771.6163912749466,
+        "speed": 66.23128406477323,
+        "error": -0.010033182798469898
+      },
+      {
+        "frame": 5640,
+        "waypoint": 10,
+        "x": 1971.961963798464,
+        "y": 2642.9394599491084,
+        "speed": 62.842010397405915,
+        "error": -0.010749134236304657
+      },
+      {
+        "frame": 5760,
+        "waypoint": 10,
+        "x": 1972.4929846923706,
+        "y": 2514.0758624326168,
+        "speed": 66.9870089313147,
+        "error": -0.011575532679787306
+      },
+      {
+        "frame": 5880,
+        "waypoint": 10,
+        "x": 1973.0238475278775,
+        "y": 2385.2506211733476,
+        "speed": 63.422035270465805,
+        "error": -0.012540305288167875
+      },
+      {
+        "frame": 6000,
+        "waypoint": 10,
+        "x": 1973.5542974956454,
+        "y": 2256.525571116935,
+        "speed": 67.73283735355162,
+        "error": -0.013678275502934123
+      },
+      {
+        "frame": 6120,
+        "waypoint": 10,
+        "x": 1974.0850418827042,
+        "y": 2127.729073911593,
+        "speed": 64.1928836527747,
+        "error": -0.015045731888198046
+      },
+      {
+        "frame": 6240,
+        "waypoint": 10,
+        "x": 1974.6159283203299,
+        "y": 1998.8981050923621,
+        "speed": 60.65231384536715,
+        "error": -0.016717444458288957
+      },
+      {
+        "frame": 6360,
+        "waypoint": 10,
+        "x": 1975.1467397576127,
+        "y": 1870.085336713489,
+        "speed": 64.82651343843239,
+        "error": -0.018804349319184753
+      },
+      {
+        "frame": 6480,
+        "waypoint": 10,
+        "x": 1975.6769971572623,
+        "y": 1741.407017436944,
+        "speed": 61.450374099308455,
+        "error": -0.02148631113502855
+      },
+      {
+        "frame": 6600,
+        "waypoint": 10,
+        "x": 1976.2081974481534,
+        "y": 1612.4998853984378,
+        "speed": 65.52800556586416,
+        "error": -0.02506376266089674
+      },
+      {
+        "frame": 6720,
+        "waypoint": 10,
+        "x": 1976.7389814391518,
+        "y": 1483.6937774484254,
+        "speed": 62.00035638493813,
+        "error": -0.03007123740172826
+      },
+      {
+        "frame": 6840,
+        "waypoint": 10,
+        "x": 1976.0391923133466,
+        "y": 1354.9295691183163,
+        "speed": 66.23128406477323,
+        "error": -0.0033775150120194616
+      },
+      {
+        "frame": 6960,
+        "waypoint": 10,
+        "x": 1972.468384840794,
+        "y": 1226.301099655789,
+        "speed": 62.842010397405915,
+        "error": -0.004499441051036857
+      },
+      {
+        "frame": 7080,
+        "waypoint": 10,
+        "x": 1968.8923973486244,
+        "y": 1097.486034304186,
+        "speed": 66.9870089313147,
+        "error": -0.006739029139214449
+      },
+      {
+        "frame": 7200,
+        "waypoint": 10,
+        "x": 1965.3174742493388,
+        "y": 968.7093107642041,
+        "speed": 63.422035270465805,
+        "error": -0.013426673019745006
+      }
+    ]
+  },
+  "terrain": {
+    "draws": 12,
+    "hits": 6,
+    "bakes": 18,
+    "evictions": 12,
+    "residentBytes": 24510464,
+    "peakResidentBytes": 25165824,
+    "totalBakeMs": 429,
+    "maxBakeMs": 73.20000000298023,
+    "lastBakeMs": 28.19999998807907,
+    "tileSize": 1024,
+    "maxTiles": 6,
+    "cachedTiles": 6,
+    "maxSurfacePixels": 1048576,
+    "estimatedResidentMiB": 23.375,
+    "tiles": [
+      {
+        "key": "5,2",
+        "x": 5120,
+        "y": 2048,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "6,2",
+        "x": 6144,
+        "y": 2048,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "2,4",
+        "x": 2048,
+        "y": 4096,
+        "width": 1024,
+        "height": 944
+      },
+      {
+        "key": "3,4",
+        "x": 3072,
+        "y": 4096,
+        "width": 1024,
+        "height": 944
+      },
+      {
+        "key": "0,1",
+        "x": 0,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "1,1",
+        "x": 1024,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      }
+    ]
+  },
+  "scope": "Production mobile Chromium host: actual collision traversal of 66 pedestrian and 66 vehicle routes, original landmark entrance actions, house-to-landmark citizen routes and walking/driving GPS, East Diner services/parking, car-radius driveway traversal, full/minimap pixels, simulation safety and keyboard/updateDriving curved-road/reverse run. Travel/traffic isolation fixtures used; campaign regressions are covered by the separate existing gameplay suites. Not a physical-device performance claim."
+}

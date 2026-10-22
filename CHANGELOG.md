@@ -1,3 +1,14 @@
+# The Great City Rebuild · 0.6.0
+
+- Replaced the city-wide street grid and repeated storefront generation with one connected, district-zoned road/parcel/navigation/collision model, curved subdivisions and ten cul-de-sacs.
+- Added fifteen structurally distinct house architectures, residential lots, varied apartment/commercial/civic/industrial buildings, public spaces and ordinary street details; preserved the original landmark/interior artwork and all twelve story entrances.
+- Removed the persistent blue daytime wash, all-day lighting overlays and oversized bloom. Added independently configurable ambient, shadows, streetlight, neon, vehicle and weather components, stable light indexing and exact world-aligned terrain rasterization.
+- Updated traffic, citizen and police routes, full map, minimap and street-following GPS. Preserved existing mission acceptance, touch controls and campaign content.
+- Added version-five save/route migration with original-save backups, blocked-position recovery and retained vehicle upgrades, choices, objective progress and reward receipts.
+- Added geometry/collision/driveway/architecture/lighting/migration/browser route tests and real before/after captures. See CITY_REBUILD_REPORT.md for executed results and development limitations.
+
+---
+
 # The Living City · 0.5.0
 
 - Fixed reproduced East Diner prompt/execution disagreement, encounter-stealing priority, clue radius mismatches and confusing on-foot driving interactions. E/touch now use one resolver; ACTIONS exposes alternatives and story markers start the actual briefing.

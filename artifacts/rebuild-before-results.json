@@ -1,0 +1,679 @@
+{
+  "time": "2026-10-21T23:50:02.139Z",
+  "phase": "before",
+  "baselineCommit": "c9b4af6",
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "canvas": {
+    "width": 800,
+    "height": 450
+  },
+  "shots": [
+    {
+      "name": "downtown-day",
+      "where": "hotel",
+      "hour": 12,
+      "weather": "CLEAR",
+      "file": "rebuild-before-downtown-day.png",
+      "pixels": {
+        "meanLuminance": 60.26902419946739,
+        "luminanceStdDev": 22.97039283224592,
+        "min": 12.087,
+        "max": 234.36219999999997,
+        "saturatedPixelFraction": 0.09140555555555556
+      }
+    },
+    {
+      "name": "sunset-residential-day",
+      "where": "radio",
+      "hour": 12,
+      "weather": "CLEAR",
+      "file": "rebuild-before-sunset-residential-day.png",
+      "pixels": {
+        "meanLuminance": 59.35509240668492,
+        "luminanceStdDev": 21.670377284361788,
+        "min": 11.5134,
+        "max": 232.0802,
+        "saturatedPixelFraction": 0.07591111111111111
+      }
+    },
+    {
+      "name": "crescent-day",
+      "where": "observatory",
+      "hour": 12,
+      "weather": "CLEAR",
+      "file": "rebuild-before-crescent-day.png",
+      "pixels": {
+        "meanLuminance": 59.74341593169454,
+        "luminanceStdDev": 21.02969736811633,
+        "min": 12.008000000000001,
+        "max": 233.22059999999996,
+        "saturatedPixelFraction": 0.0714
+      }
+    },
+    {
+      "name": "palm-day",
+      "where": "clinic",
+      "hour": 12,
+      "weather": "CLEAR",
+      "file": "rebuild-before-palm-day.png",
+      "pixels": {
+        "meanLuminance": 60.55790495110381,
+        "luminanceStdDev": 21.58768867872577,
+        "min": 12.5214,
+        "max": 232.99599999999998,
+        "saturatedPixelFraction": 0.07187777777777778
+      }
+    },
+    {
+      "name": "diner-day",
+      "where": "diner",
+      "hour": 12,
+      "weather": "CLEAR",
+      "file": "rebuild-before-diner-day.png",
+      "pixels": {
+        "meanLuminance": 61.89819883502927,
+        "luminanceStdDev": 25.292897920334156,
+        "min": 11.300799999999999,
+        "max": 231.2928,
+        "saturatedPixelFraction": 0.061427777777777776
+      }
+    },
+    {
+      "name": "clear-morning",
+      "where": "hotel",
+      "hour": 8,
+      "weather": "CLEAR",
+      "file": "rebuild-before-clear-morning.png",
+      "pixels": {
+        "meanLuminance": 60.37407463280049,
+        "luminanceStdDev": 23.083718946382252,
+        "min": 12.087,
+        "max": 235.14959999999996,
+        "saturatedPixelFraction": 0.0915138888888889
+      }
+    },
+    {
+      "name": "clear-midday",
+      "where": "hotel",
+      "hour": 12,
+      "weather": "CLEAR",
+      "file": "rebuild-before-clear-midday.png",
+      "pixels": {
+        "meanLuminance": 60.26902419946739,
+        "luminanceStdDev": 22.97039283224592,
+        "min": 12.087,
+        "max": 234.36219999999997,
+        "saturatedPixelFraction": 0.09140555555555556
+      }
+    },
+    {
+      "name": "sunset",
+      "where": "hotel",
+      "hour": 18.5,
+      "weather": "CLEAR",
+      "file": "rebuild-before-sunset.png",
+      "pixels": {
+        "meanLuminance": 58.48867203280916,
+        "luminanceStdDev": 22.21446279456922,
+        "min": 11.5856,
+        "max": 220.076,
+        "saturatedPixelFraction": 0.07886111111111112
+      }
+    },
+    {
+      "name": "clear-night",
+      "where": "hotel",
+      "hour": 23,
+      "weather": "CLEAR",
+      "file": "rebuild-before-clear-night.png",
+      "pixels": {
+        "meanLuminance": 55.619744079991676,
+        "luminanceStdDev": 22.40503429692727,
+        "min": 11.9466,
+        "max": 218.26099999999997,
+        "saturatedPixelFraction": 0.06791111111111112
+      }
+    },
+    {
+      "name": "rain-day",
+      "where": "hotel",
+      "hour": 12,
+      "weather": "RAIN",
+      "file": "rebuild-before-rain-day.png",
+      "pixels": {
+        "meanLuminance": 60.66888478114087,
+        "luminanceStdDev": 23.241455014164504,
+        "min": 12.087,
+        "max": 234.36219999999997,
+        "saturatedPixelFraction": 0.091375
+      }
+    },
+    {
+      "name": "rain-night",
+      "where": "hotel",
+      "hour": 23,
+      "weather": "RAIN",
+      "file": "rebuild-before-rain-night.png",
+      "pixels": {
+        "meanLuminance": 55.87114538832641,
+        "luminanceStdDev": 22.568066886167152,
+        "min": 11.9466,
+        "max": 218.26099999999997,
+        "saturatedPixelFraction": 0.06840277777777778
+      }
+    },
+    {
+      "name": "mist",
+      "where": "hotel",
+      "hour": 12,
+      "weather": "MIST",
+      "file": "rebuild-before-mist.png",
+      "pixels": {
+        "meanLuminance": 63.655510235077756,
+        "luminanceStdDev": 21.206701125028815,
+        "min": 13.5856,
+        "max": 230.43439999999998,
+        "saturatedPixelFraction": 0.08401388888888889
+      }
+    },
+    {
+      "name": "downtown-neon-night",
+      "where": "club",
+      "hour": 23,
+      "weather": "CLEAR",
+      "file": "rebuild-before-downtown-neon-night.png",
+      "pixels": {
+        "meanLuminance": 52.67873671333747,
+        "luminanceStdDev": 20.26430166128495,
+        "min": 11.5174,
+        "max": 215.04839999999996,
+        "saturatedPixelFraction": 0.05162222222222222
+      }
+    },
+    {
+      "name": "residential-streetlights-night",
+      "where": "radio",
+      "hour": 23,
+      "weather": "CLEAR",
+      "file": "rebuild-before-residential-streetlights-night.png",
+      "pixels": {
+        "meanLuminance": 52.44621808719333,
+        "luminanceStdDev": 20.224745471339926,
+        "min": 12.3048,
+        "max": 197.879,
+        "saturatedPixelFraction": 0.03908888888888889
+      }
+    }
+  ],
+  "performance": {
+    "coldDraw": {
+      "median": 53.10000000055879,
+      "p95": 158.1000000005588,
+      "p99": 158.1000000005588,
+      "max": 158.1000000005588
+    },
+    "hotDraw": {
+      "median": 0.2999999998137355,
+      "p95": 1.099999999627471,
+      "p99": 94.30000000074506,
+      "max": 160.40000000037253
+    },
+    "update": {
+      "median": 3.300000000745058,
+      "p95": 11.5,
+      "p99": 145.3999999994412,
+      "max": 185
+    },
+    "samples": [
+      {
+        "where": "hotel",
+        "cold": 14.799999999813735,
+        "coldBakes": 1,
+        "hot": [
+          1.2000000001862645,
+          1.099999999627471,
+          0.20000000018626451,
+          0.599999999627471,
+          0.2999999998137355,
+          0.30000000074505806,
+          0.19999999925494194,
+          0.30000000074505806,
+          0.2999999998137355,
+          0.39999999944120646,
+          0.40000000037252903,
+          0.5,
+          0.5,
+          0.2999999998137355,
+          1.7999999998137355,
+          0.40000000037252903,
+          0.30000000074505806,
+          1.2999999998137355,
+          0.599999999627471,
+          0.40000000037252903
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "radio",
+        "cold": 79.40000000037253,
+        "coldBakes": 4,
+        "hot": [
+          0.7000000001862645,
+          0.10000000055879354,
+          0.2999999998137355,
+          0.2999999998137355,
+          0.40000000037252903,
+          0.19999999925494194,
+          0.8000000007450581,
+          0.39999999944120646,
+          0.2999999998137355,
+          0.7000000001862645,
+          0.2999999998137355,
+          0.30000000074505806,
+          0.2999999998137355,
+          0.09999999962747097,
+          0.7999999998137355,
+          0.20000000018626451,
+          0.2999999998137355,
+          0.10000000055879354,
+          0.20000000018626451,
+          0.19999999925494194
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "observatory",
+        "cold": 15.800000000745058,
+        "coldBakes": 1,
+        "hot": [
+          0.09999999962747097,
+          0.2999999998137355,
+          0.10000000055879354,
+          0.19999999925494194,
+          0.10000000055879354,
+          0.20000000018626451,
+          0.19999999925494194,
+          0.10000000055879354,
+          0.09999999962747097,
+          0.20000000018626451,
+          0.20000000018626451,
+          0.09999999962747097,
+          0.20000000018626451,
+          0.40000000037252903,
+          0.09999999962747097,
+          0.2999999998137355,
+          0.20000000018626451,
+          0.20000000018626451,
+          0.09999999962747097,
+          0.2999999998137355
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "clinic",
+        "cold": 65.29999999981374,
+        "coldBakes": 4,
+        "hot": [
+          0.39999999944120646,
+          0.40000000037252903,
+          0.900000000372529,
+          0.19999999925494194,
+          0.20000000018626451,
+          0.7000000001862645,
+          0.599999999627471,
+          0.7000000001862645,
+          0.2999999998137355,
+          0.20000000018626451,
+          4.7999999998137355,
+          0.5,
+          0.30000000074505806,
+          0.19999999925494194,
+          0.20000000018626451,
+          0.10000000055879354,
+          0.19999999925494194,
+          0.20000000018626451,
+          0.5,
+          0.6000000005587935
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "diner",
+        "cold": 158.1000000005588,
+        "coldBakes": 4,
+        "hot": [
+          0.20000000018626451,
+          0.2999999998137355,
+          0.09999999962747097,
+          0.2999999998137355,
+          0.10000000055879354,
+          0.2999999998137355,
+          0.09999999962747097,
+          0.30000000074505806,
+          0.2999999998137355,
+          0.20000000018626451,
+          0.19999999925494194,
+          0.20000000018626451,
+          0.10000000055879354,
+          0.19999999925494194,
+          0.30000000074505806,
+          0.2999999998137355,
+          0.20000000018626451,
+          0.2999999998137355,
+          0.2999999998137355,
+          0.2999999998137355
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "club",
+        "cold": 145.09999999962747,
+        "coldBakes": 4,
+        "hot": [
+          0.20000000018626451,
+          0.40000000037252903,
+          0.2999999998137355,
+          0.2999999998137355,
+          0.5,
+          0.09999999962747097,
+          0.40000000037252903,
+          0.09999999962747097,
+          0.10000000055879354,
+          0.20000000018626451,
+          0.2999999998137355,
+          0.39999999944120646,
+          0.30000000074505806,
+          0.19999999925494194,
+          0.40000000037252903,
+          0.599999999627471,
+          1.7000000001862645,
+          0.7999999998137355,
+          0.7000000001862645,
+          0.7000000001862645
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "motel",
+        "cold": 44.89999999944121,
+        "coldBakes": 2,
+        "hot": [
+          0.30000000074505806,
+          0.2999999998137355,
+          0.2999999998137355,
+          0.20000000018626451,
+          0.2999999998137355,
+          0.20000000018626451,
+          0.20000000018626451,
+          0.19999999925494194,
+          94.30000000074506,
+          1,
+          0.2999999998137355,
+          0.2999999998137355,
+          0.20000000018626451,
+          0.39999999944120646,
+          0.30000000074505806,
+          0.19999999925494194,
+          0.40000000037252903,
+          0.2999999998137355,
+          0.2999999998137355,
+          0.20000000018626451
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "pier",
+        "cold": 53.10000000055879,
+        "coldBakes": 2,
+        "hot": [
+          0.2999999998137355,
+          0.2999999998137355,
+          0.5,
+          0.2999999998137355,
+          0.20000000018626451,
+          0.20000000018626451,
+          0.09999999962747097,
+          0.20000000018626451,
+          0.20000000018626451,
+          0.2999999998137355,
+          0.09999999962747097,
+          0.20000000018626451,
+          0.2999999998137355,
+          0.30000000074505806,
+          0.09999999962747097,
+          0.20000000018626451,
+          0.2999999998137355,
+          0.09999999962747097,
+          160.40000000037253,
+          5.900000000372529
+        ],
+        "hotBakes": 0
+      },
+      {
+        "where": "hotel",
+        "cold": 18.90000000037253,
+        "coldBakes": 1,
+        "hot": [
+          0.2999999998137355,
+          0.2999999998137355,
+          0.40000000037252903,
+          0.40000000037252903,
+          0.39999999944120646,
+          0.2999999998137355,
+          0.20000000018626451,
+          0.20000000018626451,
+          0.09999999962747097,
+          0.30000000074505806,
+          0.2999999998137355,
+          0.39999999944120646,
+          0.20000000018626451,
+          0.20000000018626451,
+          0.20000000018626451,
+          0.39999999944120646,
+          0.40000000037252903,
+          0.5,
+          0.5,
+          0.20000000018626451
+        ],
+        "hotBakes": 0
+      }
+    ],
+    "terrain": {
+      "draws": 207,
+      "hits": 471,
+      "bakes": 45,
+      "evictions": 16,
+      "residentBytes": 4194304,
+      "peakResidentBytes": 25165824,
+      "totalBakeMs": 787.5000000009313,
+      "maxBakeMs": 185.3999999994412,
+      "lastBakeMs": 10.200000000186265,
+      "tileSize": 1024,
+      "maxTiles": 6,
+      "cachedTiles": 1,
+      "maxSurfacePixels": 1048576,
+      "estimatedResidentMiB": 4,
+      "tiles": [
+        {
+          "key": "3,2",
+          "x": 3072,
+          "y": 2048,
+          "width": 1024,
+          "height": 1024
+        }
+      ]
+    },
+    "state": {
+      "interior": {
+        "x": 400,
+        "y": 380
+      },
+      "investigation": null,
+      "delivery": null,
+      "reserve": {
+        "pistol": 0,
+        "shotgun": 0,
+        "smg": 0
+      },
+      "ammo": {
+        "pistol": 0,
+        "shotgun": 0,
+        "smg": 0
+      },
+      "reloading": 0,
+      "trust": {
+        "vee": 0
+      },
+      "camera": {
+        "x": 3264.6237657512033,
+        "y": 2251.0334138453686
+      },
+      "time": 119.60000000000322,
+      "screen": "playing",
+      "story": 21,
+      "hp": 150,
+      "money": 600,
+      "wanted": 0,
+      "inside": null,
+      "player": {
+        "x": 3664.633246083862,
+        "y": 2476.018827338466,
+        "weapon": 0
+      },
+      "cars": 44,
+      "buildings": 808,
+      "landmarks": 12,
+      "roadSegments": 35,
+      "mapW": 7200,
+      "mapH": 5040,
+      "roadCols": 20,
+      "roadRows": 15,
+      "dialogue": false,
+      "practice": 0,
+      "training": false,
+      "talking": 0,
+      "trafficMinGap": 216.75308782260316,
+      "enemies": 0,
+      "police": 0,
+      "bullets": 0,
+      "car": false,
+      "side": null
+    },
+    "landmarks": [
+      {
+        "key": "hotel",
+        "x": 3630,
+        "y": 2487,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "armory",
+        "x": 4001,
+        "y": 2147,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "club",
+        "x": 4361,
+        "y": 3167,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "records",
+        "x": 2921,
+        "y": 3167,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "radio",
+        "x": 1060,
+        "y": 2147,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "arcade",
+        "x": 1481,
+        "y": 3507,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "motel",
+        "x": 1121,
+        "y": 1467,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "warehouse",
+        "x": 6140,
+        "y": 2827,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "diner",
+        "x": 5801,
+        "y": 2147,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "observatory",
+        "x": 3641,
+        "y": 787,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "clinic",
+        "x": 4001,
+        "y": 4187,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      },
+      {
+        "key": "pier",
+        "x": 2921,
+        "y": 4527,
+        "safe": true,
+        "onLand": true,
+        "roadDistance": 53,
+        "inside": true
+      }
+    ],
+    "layout": null
+  },
+  "errors": [],
+  "scope": "Identical scene/camera/time/weather canvas captures and CPU draw/update samples in desktop cloud Chromium. Different rebuilt content intentionally changes pixels. Not a physical-device FPS or process/GPU memory claim."
+}

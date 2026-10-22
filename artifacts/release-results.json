@@ -1,6 +1,12 @@
 {
-  "time": "2026-10-21T23:36:15.085Z",
+  "time": "2026-10-22T23:14:35.928Z",
   "selfContained": true,
+  "cityRebuild": {
+    "buildings": 415,
+    "houseVariants": 15,
+    "roads": 94,
+    "culdesacs": 10
+  },
   "desktop": {
     "start": true,
     "render": true,

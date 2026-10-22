@@ -1,0 +1,12 @@
+{
+  "time": "2026-10-22T18:26:05.419Z",
+  "passed": [
+    "v4 player inside a rebuilt footprint loads safely with objective, rewards and choices intact",
+    "normal browser save writes v5 and preserves exact old-save migration bytes",
+    "old controlled and parked cars move out of buildings with their models and upgrades preserved",
+    "all authored driving, racing and outdoor stealth checkpoints remain connected on the rebuilt city",
+    "actual phone browser migration reports no script or asset errors"
+  ],
+  "errors": [],
+  "scope": "Actual phone-sized browser loads synthetic v4 progress from localStorage inside rebuilt footprints, restores vehicles, writes the normal v5 save and checks every authored outdoor route against real collision geometry."
+}

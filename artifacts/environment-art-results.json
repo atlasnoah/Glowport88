@@ -1,0 +1,559 @@
+{
+  "time": "2026-10-22T23:13:14.788Z",
+  "passed": [
+    "fifteen named architectures have distinct recorded geometry",
+    "all fifteen renders repeat exactly after cache disposal",
+    "raster coordinates are integers and strokes use the pixel grid",
+    "apartment, commercial, industrial, civic and special render independently",
+    "five park layouts and community, plaza and parking spaces render distinctly",
+    "ordinary city details render as twelve distinct native pixel props",
+    "side and north paths reach streets and vehicle-width openings stay clear",
+    "sprite cache is bounded, reused and releases evicted surfaces",
+    "standalone Chromium rendering raises no runtime errors"
+  ],
+  "errors": [],
+  "metadata": [
+    {
+      "id": "cottage",
+      "name": "Single-story cottage",
+      "roofType": "cross-gable",
+      "features": [
+        "front-gable",
+        "side-chimney",
+        "paired-windows"
+      ]
+    },
+    {
+      "id": "family",
+      "name": "Two-story family house",
+      "roofType": "hip",
+      "features": [
+        "two-floors",
+        "upper-shutters",
+        "central-entry"
+      ]
+    },
+    {
+      "id": "ranch",
+      "name": "Low ranch house",
+      "roofType": "long-hip",
+      "features": [
+        "low-profile",
+        "picture-window",
+        "long-front-stoop"
+      ]
+    },
+    {
+      "id": "split",
+      "name": "Split-level house",
+      "roofType": "stepped-gable",
+      "features": [
+        "offset-levels",
+        "raised-wing",
+        "recessed-entry"
+      ]
+    },
+    {
+      "id": "duplex",
+      "name": "Twin-gable duplex",
+      "roofType": "twin-gable",
+      "features": [
+        "two-roofs",
+        "two-entrances",
+        "shared-wall"
+      ]
+    },
+    {
+      "id": "townhouse",
+      "name": "Three townhouses",
+      "roofType": "stepped-parapet",
+      "features": [
+        "three-units",
+        "two-floors",
+        "individual-stoops"
+      ]
+    },
+    {
+      "id": "row",
+      "name": "Attached row homes",
+      "roofType": "sawtooth-parapet",
+      "features": [
+        "four-units",
+        "staggered-cornices",
+        "repeated-bays"
+      ]
+    },
+    {
+      "id": "bungalow",
+      "name": "Craftsman bungalow",
+      "roofType": "hip-and-porch-gable",
+      "features": [
+        "wide-eaves",
+        "front-porch",
+        "stone-piers"
+      ]
+    },
+    {
+      "id": "estate",
+      "name": "Upscale garden house",
+      "roofType": "three-hip",
+      "features": [
+        "central-pavilion",
+        "two-wings",
+        "balustrade"
+      ]
+    },
+    {
+      "id": "weathered",
+      "name": "Weathered saltbox house",
+      "roofType": "saltbox",
+      "features": [
+        "unequal-roof-slopes",
+        "lean-to",
+        "patched-clapboards"
+      ]
+    },
+    {
+      "id": "starter",
+      "name": "Compact starter home",
+      "roofType": "narrow-gable",
+      "features": [
+        "narrow-footprint",
+        "side-stoop",
+        "garden-window"
+      ]
+    },
+    {
+      "id": "porch",
+      "name": "Wraparound porch house",
+      "roofType": "gable-and-veranda",
+      "features": [
+        "wraparound-veranda",
+        "porch-columns",
+        "roof-dormer"
+      ]
+    },
+    {
+      "id": "attached",
+      "name": "House with attached garage",
+      "roofType": "offset-hip",
+      "features": [
+        "low-garage-wing",
+        "sectional-door",
+        "covered-entry"
+      ]
+    },
+    {
+      "id": "detached",
+      "name": "House and detached garage",
+      "roofType": "separate-gables",
+      "features": [
+        "separate-garage",
+        "open-side-drive",
+        "small-main-house"
+      ]
+    },
+    {
+      "id": "corner",
+      "name": "Corner-lot L house",
+      "roofType": "L-cross-gable",
+      "features": [
+        "L-shaped-plan",
+        "side-entry",
+        "corner-window"
+      ]
+    }
+  ],
+  "variants": [
+    {
+      "variant": 0,
+      "name": "Single-story cottage",
+      "geometryHash": "815ea3f3",
+      "pixelHash": "8526babb",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "815ea3f3",
+      "repeatPixelHash": "8526babb",
+      "commands": 430
+    },
+    {
+      "variant": 1,
+      "name": "Two-story family house",
+      "geometryHash": "562467b0",
+      "pixelHash": "74eabc5c",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "562467b0",
+      "repeatPixelHash": "74eabc5c",
+      "commands": 393
+    },
+    {
+      "variant": 2,
+      "name": "Low ranch house",
+      "geometryHash": "b16a82be",
+      "pixelHash": "55368b10",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "b16a82be",
+      "repeatPixelHash": "55368b10",
+      "commands": 253
+    },
+    {
+      "variant": 3,
+      "name": "Split-level house",
+      "geometryHash": "08576dd0",
+      "pixelHash": "d44c43c8",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "08576dd0",
+      "repeatPixelHash": "d44c43c8",
+      "commands": 321
+    },
+    {
+      "variant": 4,
+      "name": "Twin-gable duplex",
+      "geometryHash": "aacb4bdb",
+      "pixelHash": "41c9195d",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "aacb4bdb",
+      "repeatPixelHash": "41c9195d",
+      "commands": 333
+    },
+    {
+      "variant": 5,
+      "name": "Three townhouses",
+      "geometryHash": "ba4477b7",
+      "pixelHash": "ed7e2d11",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "ba4477b7",
+      "repeatPixelHash": "ed7e2d11",
+      "commands": 385
+    },
+    {
+      "variant": 6,
+      "name": "Attached row homes",
+      "geometryHash": "7e62b52a",
+      "pixelHash": "bfd1efe9",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "7e62b52a",
+      "repeatPixelHash": "bfd1efe9",
+      "commands": 415
+    },
+    {
+      "variant": 7,
+      "name": "Craftsman bungalow",
+      "geometryHash": "271bddbe",
+      "pixelHash": "ee8fb4c1",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "271bddbe",
+      "repeatPixelHash": "ee8fb4c1",
+      "commands": 414
+    },
+    {
+      "variant": 8,
+      "name": "Upscale garden house",
+      "geometryHash": "65c6ce89",
+      "pixelHash": "dd17a986",
+      "opaquePixels": 24016,
+      "repeatGeometryHash": "65c6ce89",
+      "repeatPixelHash": "dd17a986",
+      "commands": 437
+    },
+    {
+      "variant": 9,
+      "name": "Weathered saltbox house",
+      "geometryHash": "e5c99392",
+      "pixelHash": "3b84e231",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "e5c99392",
+      "repeatPixelHash": "3b84e231",
+      "commands": 375
+    },
+    {
+      "variant": 10,
+      "name": "Compact starter home",
+      "geometryHash": "a8c2ec12",
+      "pixelHash": "616368da",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "a8c2ec12",
+      "repeatPixelHash": "616368da",
+      "commands": 200
+    },
+    {
+      "variant": 11,
+      "name": "Wraparound porch house",
+      "geometryHash": "1cf5bbdb",
+      "pixelHash": "2033d365",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "1cf5bbdb",
+      "repeatPixelHash": "2033d365",
+      "commands": 302
+    },
+    {
+      "variant": 12,
+      "name": "House with attached garage",
+      "geometryHash": "a7f0618b",
+      "pixelHash": "a57e9377",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "a7f0618b",
+      "repeatPixelHash": "a57e9377",
+      "commands": 287
+    },
+    {
+      "variant": 13,
+      "name": "House and detached garage",
+      "geometryHash": "b0ec72b8",
+      "pixelHash": "b645b70f",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "b0ec72b8",
+      "repeatPixelHash": "b645b70f",
+      "commands": 255
+    },
+    {
+      "variant": 14,
+      "name": "Corner-lot L house",
+      "geometryHash": "92b6ceb5",
+      "pixelHash": "b6938413",
+      "opaquePixels": 23976,
+      "repeatGeometryHash": "92b6ceb5",
+      "repeatPixelHash": "b6938413",
+      "commands": 331
+    }
+  ],
+  "badCoordinates": [],
+  "families": [
+    {
+      "kind": "apartment",
+      "geometryHash": "8851ea23",
+      "opaquePixels": 24048
+    },
+    {
+      "kind": "commercial",
+      "geometryHash": "02258cfa",
+      "opaquePixels": 23976
+    },
+    {
+      "kind": "industrial",
+      "geometryHash": "b153b416",
+      "opaquePixels": 23976
+    },
+    {
+      "kind": "civic",
+      "geometryHash": "1c2a47da",
+      "opaquePixels": 24048
+    },
+    {
+      "kind": "special",
+      "geometryHash": "379c88cf",
+      "opaquePixels": 23976
+    }
+  ],
+  "spaces": [
+    {
+      "kind": "park",
+      "variant": 0,
+      "geometryHash": "ad1fbb2b",
+      "pixelHash": "c02942c5",
+      "commands": 101,
+      "opaquePixels": 25536
+    },
+    {
+      "kind": "park",
+      "variant": 1,
+      "geometryHash": "eef207e1",
+      "pixelHash": "3ea950d8",
+      "commands": 133,
+      "opaquePixels": 25536
+    },
+    {
+      "kind": "park",
+      "variant": 2,
+      "geometryHash": "45183931",
+      "pixelHash": "b5d6193e",
+      "commands": 98,
+      "opaquePixels": 25536
+    },
+    {
+      "kind": "park",
+      "variant": 3,
+      "geometryHash": "08741a4c",
+      "pixelHash": "b92da698",
+      "commands": 96,
+      "opaquePixels": 25536
+    },
+    {
+      "kind": "park",
+      "variant": 4,
+      "geometryHash": "5dc86183",
+      "pixelHash": "65c13405",
+      "commands": 164,
+      "opaquePixels": 25536
+    },
+    {
+      "kind": "community",
+      "variant": 0,
+      "geometryHash": "36c9af55",
+      "pixelHash": "22ebd938",
+      "commands": 125,
+      "opaquePixels": 25536
+    },
+    {
+      "kind": "plaza",
+      "variant": 0,
+      "geometryHash": "79cd4b77",
+      "pixelHash": "3fdc4ac3",
+      "commands": 67,
+      "opaquePixels": 25536
+    },
+    {
+      "kind": "parking",
+      "variant": 0,
+      "geometryHash": "ea1068f6",
+      "pixelHash": "4bf0ab9d",
+      "commands": 48,
+      "opaquePixels": 25536
+    }
+  ],
+  "details": [
+    {
+      "kind": "bench",
+      "pixelHash": "c9a2726d",
+      "opaquePixels": 148
+    },
+    {
+      "kind": "busstop",
+      "pixelHash": "652febbd",
+      "opaquePixels": 376
+    },
+    {
+      "kind": "bicycle",
+      "pixelHash": "335599e2",
+      "opaquePixels": 106
+    },
+    {
+      "kind": "phonebooth",
+      "pixelHash": "c3d52cf6",
+      "opaquePixels": 442
+    },
+    {
+      "kind": "noticeboard",
+      "pixelHash": "626804e8",
+      "opaquePixels": 292
+    },
+    {
+      "kind": "roadsign",
+      "pixelHash": "5a463bbd",
+      "opaquePixels": 190
+    },
+    {
+      "kind": "parkingmeter",
+      "pixelHash": "aef24739",
+      "opaquePixels": 82
+    },
+    {
+      "kind": "dumpster",
+      "pixelHash": "9ef92e32",
+      "opaquePixels": 265
+    },
+    {
+      "kind": "barrier",
+      "pixelHash": "ee72fcb5",
+      "opaquePixels": 211
+    },
+    {
+      "kind": "hydrant",
+      "pixelHash": "107a9b61",
+      "opaquePixels": 77
+    },
+    {
+      "kind": "trashbin",
+      "pixelHash": "eeefdeec",
+      "opaquePixels": 84
+    },
+    {
+      "kind": "powerpole",
+      "pixelHash": "165a3d5d",
+      "opaquePixels": 130
+    }
+  ],
+  "access": {
+    "northEndpoint": [
+      186,
+      178,
+      154,
+      255
+    ],
+    "driveCenter": [
+      164,
+      164,
+      146,
+      255
+    ],
+    "driveUpper": [
+      164,
+      164,
+      146,
+      255
+    ],
+    "driveLower": [
+      164,
+      164,
+      146,
+      255
+    ],
+    "fenceOpening": [
+      164,
+      164,
+      146,
+      255
+    ],
+    "nonhomeEndpoint": [
+      186,
+      178,
+      154,
+      255
+    ],
+    "unregisteredGarage": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "registeredGarage": [
+      73,
+      71,
+      88,
+      255
+    ]
+  },
+  "cache": {
+    "bounded": {
+      "size": 128,
+      "limit": 128,
+      "bytes": 7602176,
+      "byteLimit": 8388608,
+      "hits": 0,
+      "misses": 200
+    },
+    "afterHit": {
+      "size": 128,
+      "limit": 128,
+      "bytes": 7602176,
+      "byteLimit": 8388608,
+      "hits": 1,
+      "misses": 200
+    },
+    "cleared": {
+      "size": 0,
+      "limit": 128,
+      "bytes": 0,
+      "byteLimit": 8388608,
+      "hits": 0,
+      "misses": 0
+    },
+    "sizeBeforeHit": 128,
+    "hitsBefore": 0,
+    "allocatedSurfaces": 200,
+    "residentSurfaces": 128,
+    "residentBytes": 7602176,
+    "zeroedEvictions": 72,
+    "allSurfacesReleased": true
+  },
+  "scope": "Isolated production Canvas renderer in desktop Chromium. Recorded paint-independent geometry distinguishes 15 house architectures; exact pixels verify repeatability, not visual quality. Cache reuse, 128-surface ceiling, eviction and explicit backing-store disposal are checked. The labeled contact sheet supports separate human art review. Host zoning, collisions, landmark preservation, gameplay and real-device performance require their integration suites."
+}

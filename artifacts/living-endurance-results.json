@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-21T23:37:23.739Z",
+  "time": "2026-10-22T18:25:51.204Z",
   "passed": [
     "three simulated days preserve finite geometry and bounded city entities",
     "retained JS heap, terrain surfaces and save keys stay bounded",
@@ -13,22 +13,22 @@
     "simulatedDays": 3,
     "updates": 21600,
     "deltaSeconds": 0.1,
-    "wallMilliseconds": 51038,
+    "wallMilliseconds": 52556,
     "updateMilliseconds": {
       "median": 1.9,
-      "p95": 4.1,
-      "p99": 7.4,
-      "max": 161.8
+      "p95": 4.4,
+      "p99": 7.6,
+      "max": 182.4
     },
     "heapBytes": {
-      "before": 4863236,
-      "after": 5547452,
+      "before": 6519212,
+      "after": 7334384,
       "measurement": "Chromium Runtime.getHeapUsage after explicit GC; excludes GPU surfaces and process memory"
     },
     "baseline": {
-      "clock": 0.11789999999999998,
-      "npcs": 162,
-      "cars": 44,
+      "clock": 0.10079999999999985,
+      "npcs": 167,
+      "cars": 46,
       "enemies": 0,
       "police": 0,
       "finite": true,
@@ -41,9 +41,9 @@
         "evictions": 0,
         "residentBytes": 20971520,
         "peakResidentBytes": 20971520,
-        "totalBakeMs": 105.00000000093132,
-        "maxBakeMs": 27.100000000558794,
-        "lastBakeMs": 21.40000000037253,
+        "totalBakeMs": 185.80000001192093,
+        "maxBakeMs": 56.8999999910593,
+        "lastBakeMs": 18.200000002980232,
         "tileSize": 1024,
         "maxTiles": 6,
         "cachedTiles": 5,
@@ -92,7 +92,7 @@
         "total": 12,
         "placed": 12,
         "states": {
-          "WALKING": 162
+          "WALKING": 167
         },
         "sites": [
           {
@@ -182,29 +182,29 @@
         ]
       },
       "storageKeys": 1,
-      "storageBytes": 19714,
+      "storageBytes": 19738,
       "screen": "playing",
       "inside": null
     },
     "after": {
-      "clock": 2165.095799999131,
-      "npcs": 162,
-      "cars": 44,
+      "clock": 2165.2959999991317,
+      "npcs": 167,
+      "cars": 46,
       "enemies": 0,
       "police": 0,
       "finite": true,
       "invalidNPCs": [],
-      "weather": "CLEAR",
+      "weather": "RAIN",
       "terrain": {
-        "draws": 279,
-        "hits": 1102,
+        "draws": 291,
+        "hits": 1150,
         "bakes": 5,
         "evictions": 0,
         "residentBytes": 20971520,
         "peakResidentBytes": 20971520,
-        "totalBakeMs": 105.00000000093132,
-        "maxBakeMs": 27.100000000558794,
-        "lastBakeMs": 21.40000000037253,
+        "totalBakeMs": 185.80000001192093,
+        "maxBakeMs": 56.8999999910593,
+        "lastBakeMs": 18.200000002980232,
         "tileSize": 1024,
         "maxTiles": 6,
         "cachedTiles": 5,
@@ -253,8 +253,8 @@
         "total": 12,
         "placed": 12,
         "states": {
-          "WORKING": 68,
-          "WALKING": 94
+          "WALKING": 123,
+          "WORKING": 44
         },
         "sites": [
           {
@@ -344,19 +344,19 @@
         ]
       },
       "storageKeys": 2,
-      "storageBytes": 39598,
+      "storageBytes": 39648,
       "screen": "playing",
       "inside": null
     },
     "observedWeather": [
       "CLEAR",
       "RAIN",
-      "CLOUDY",
-      "MIST"
+      "MIST",
+      "CLOUDY"
     ],
     "bounds": {
-      "maxNPCs": 162,
-      "maxCars": 44,
+      "maxNPCs": 167,
+      "maxCars": 46,
       "maxEnemies": 0,
       "maxTerrainMiB": 20
     }

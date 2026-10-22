@@ -1,0 +1,46 @@
+{
+  "time": "2026-10-22T23:13:24.274Z",
+  "before": {
+    "hotDraw": {
+      "median": 0.2999999998137355,
+      "p95": 1.099999999627471,
+      "p99": 94.30000000074506,
+      "max": 160.40000000037253
+    },
+    "coldDraw": {
+      "median": 53.10000000055879,
+      "p95": 158.1000000005588,
+      "p99": 158.1000000005588,
+      "max": 158.1000000005588
+    },
+    "update": {
+      "median": 3.300000000745058,
+      "p95": 11.5,
+      "p99": 145.3999999994412,
+      "max": 185
+    },
+    "peakTerrainBytes": 25165824
+  },
+  "after": {
+    "hotDraw": {
+      "median": 0.09999999403953552,
+      "p95": 0.29999999701976776,
+      "p99": 1.300000011920929,
+      "max": 1.5
+    },
+    "coldDraw": {
+      "median": 65.40000000596046,
+      "p95": 123.20000000298023,
+      "p99": 123.20000000298023,
+      "max": 123.20000000298023
+    },
+    "update": {
+      "median": 2,
+      "p95": 4.299999997019768,
+      "p99": 7.299999997019768,
+      "max": 11.400000005960464
+    },
+    "peakTerrainBytes": 25165824
+  },
+  "scope": "Identical scene/camera/time/weather canvas captures and CPU draw/update samples in desktop cloud Chromium. Different rebuilt content intentionally changes pixels. Not a physical-device FPS or process/GPU memory claim."
+}

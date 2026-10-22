@@ -91,3 +91,13 @@
 - Focused host tests found and fixed vehicle entry, garage API fallback, zero-health persistence/display, stale QA progression and health-regeneration assertion issues. Firefox browser installation was attempted; CDN downloads returned HTTP 403 Domain forbidden. Firefox/WebKit and real devices remain not run.
 - Final source npm test exits0:131 retained/new host/controller/soak scenarios,17 mission interaction/recovery checks,14 director checks,13 vehicle/model/UI checks,13 city/audio checks, existing models/content/art and86-definition/1,013-objective integration. Three game days/21,600 actual city updates pass bounded scene cleanup, entities, terrain, retained JS heap and reload. Standalone desktop/mobile, production QA gating, debug-save isolation and backup-quota safety also pass with zero subresource requests.
 - Published reviewed source f03182c to codex/living-city-update and tested demo 562549a to gh-pages. Public 0.5.0 metadata matched; certificate-verified download matched SHA256 51cd13889d9799aa229336d8f394391c9436f904dfb5c18e6d6ce4746d965dc6; playback of those exact bytes passed mobile movement, phone/map, entrance arrows,32 events/10 models/12 cassettes and actual on-foot diner mission acceptance with no errors. Verified URL: https://atlasnoah.github.io/Glowport88/?v=0.5.0-living-city. Main remains untouched.
+
+## The Great City Rebuild · 0.6.0
+
+- Preserved the published `c9b4af6` Living City baseline and captured matching real gameplay views and true cold/hot cache measurements before edits.
+- Moved world generation into an authoritative geometry module; rendering, collision, traffic, citizens, police, objective checkpoint projection and GPS now share that street network. Legacy road arrays remain compatibility anchors for unchanged story doors.
+- Added original procedural architecture and lots without changing the approved PNGs or landmark/interior rendering.
+- Traced persistent haze to a host blue wash plus all-day ambient/bloom/vignette. Removed these in clear daylight, localized night sources and retained fog only for MIST.
+- Browser integration revealed diagonal Canvas stroke clipping differences between full and tiled terrain. World-aligned integer span rasterization removed the mismatch without allocating larger surfaces.
+- Added safe house-door approach connectors and corrected route-cache reuse for moving endpoints. Map and home-door collision checks exercise actual host geometry.
+- Final test counts, screenshots, measurements and verified deployment details are recorded in CITY_REBUILD_REPORT.md and TEST_RESULTS.md.
