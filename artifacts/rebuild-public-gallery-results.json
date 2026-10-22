@@ -1,0 +1,22 @@
+{
+  "time": "2026-10-22T23:16:33Z",
+  "url": "https://atlasnoah.github.io/Glowport88/rebuild/rebuild-visual-comparison.html?v=0.6.0",
+  "verifiedHTTPS": true,
+  "checks": [
+    {
+      "file": "rebuild-visual-comparison.html",
+      "sha256": "68f10b3093d5385c50b5d81559ccc31392bb06064b61ee0034faa5d0c693e533",
+      "matches": true
+    },
+    {
+      "file": "rebuild-after-sunset-residential-day.png",
+      "sha256": "0d3d2f3f179e19bd6b716d219a6472772546b9cad5ca1103544e9a3960e2695c",
+      "matches": true
+    },
+    {
+      "file": "rebuild-before-sunset-residential-day.png",
+      "sha256": "cde41f133ac011e3fe02c6b438e9d12af245d2f9c0a0d34f59699fd7c6d382f5",
+      "matches": true
+    }
+  ]
+}

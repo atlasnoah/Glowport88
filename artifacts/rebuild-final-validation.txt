@@ -503,3 +503,7 @@ npm notice New major version of npm available! 11.9.0 -> 12.2.1
 npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
 npm notice To update run: npm install -g npm@12.2.1
 npm notice
+
+Verified public deployment:
+PASS public delivery: verified HTTPS, exact release SHA-256, isolated playback of deployed bytes, mobile touch/Start/phone/map/story entrance guidance/direct diner start and 40/20/32 catalogue; no browser errors
+PASS public gallery and representative image SHA-256 equality

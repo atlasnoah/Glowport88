@@ -110,4 +110,14 @@ Palm South’s coastal treatment consists of its drive and sandy boundary within
 
 The complete `npm test` source suite exited 0. The final rendering optimization also passed architecture, lighting, exact tile/seam, real-world collision/navigation, paired performance and standalone release checks. The retained 131 gameplay/controller/endurance checks plus five migration, four host-audit and ten rebuilt-world checks provide 150 named host/controller checks; focused renderer/model suites are additional.
 
-The tested standalone file embeds all code and images. Public delivery is verified by normal HTTPS, exact release SHA-256 equality, and mobile browser playback of the deployed bytes. Source/Pages commit IDs and the verified link are appended after deployment verification.
+The tested standalone file embeds all code and images. Public delivery is verified by normal HTTPS, exact release SHA-256 equality, and mobile browser playback of the deployed bytes. Verified October 22, 2026:
+
+- **[Play the updated browser demo](https://atlasnoah.github.io/Glowport88/?v=0.6.0-city-rebuild)**. Tap Start / Continue on your phone; the game opens directly in the browser.
+- [Before/after comparison](https://atlasnoah.github.io/Glowport88/rebuild/rebuild-visual-comparison.html?v=0.6.0).
+- Implementation/source commit: [`53e7a66`](https://github.com/atlasnoah/Glowport88/commit/53e7a669d4d8440caf90a08d6d9b7bbaf4ef4e78), branch `codex/great-city-rebuild`.
+- Pages deployment commit: [`5727b09`](https://github.com/atlasnoah/Glowport88/commit/5727b09fa14a41e1a7d39ba525f68ecb0398daf8).
+- Standalone SHA-256: `f101a015ca6499ba862bd4af71886fbf393a6b97554ce24d79a649de8fb83e09`.
+- Live metadata matches the source commit and checksum. The certificate-verified public download matches the tested standalone bytes exactly. Playback of those bytes passed mobile Start, trusted touch movement, phone, map, story entrance guidance and direct on-foot East Diner mission acceptance, with no browser errors.
+- The served gallery and representative before/after images also match the tested files. Evidence: [public demo](artifacts/public-demo-results.json), [live metadata](artifacts/rebuild-public-build.json), [public gallery](artifacts/rebuild-public-gallery-results.json), [packaging](artifacts/release-results.json), [full source/focused validation transcript](artifacts/rebuild-final-validation.txt).
+
+The published build contains all 415 buildings, fifteen house designs, 94 roads and ten cul-de-sacs. The normal save key remains unchanged. The final source branch includes this delivery report and verification artifacts; `main` is unchanged.

@@ -22,3 +22,5 @@ The source suite is `npm test`. Packaging is `npm run release` followed by `npm 
 Terrain cache surface accounting is separate from the bounded architecture sprite cache. CPU cloud measurements do not establish physical-phone FPS, GPU/process memory or battery life. Accelerated objective resolution is not a continuous human campaign playthrough; duration, every branch combination, actual iOS/Android/Safari and native store approval remain unverified.
 
 See [CITY_REBUILD_REPORT.md](CITY_REBUILD_REPORT.md) for the complete layout/zoning, screenshots, final measured performance, executed validation, resolved failures, deployment evidence and known limits.
+
+Final delivery passed: exact public SHA-256 `f101a015ca6499ba862bd4af71886fbf393a6b97554ce24d79a649de8fb83e09`, source `53e7a66`, Pages `5727b09`. Public mobile playback and the comparison gallery were verified; no browser errors were reported.

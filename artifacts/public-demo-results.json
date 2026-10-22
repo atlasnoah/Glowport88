@@ -1,10 +1,16 @@
 {
-  "time": "2026-10-21T23:38:46.643Z",
-  "url": "https://atlasnoah.github.io/Glowport88/?v=0.5.0-living-city",
+  "time": "2026-10-22T23:16:32.695Z",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.0-city-rebuild",
   "verifiedHTTPSDownload": true,
-  "sha256": "51cd13889d9799aa229336d8f394391c9436f904dfb5c18e6d6ce4746d965dc6",
+  "sha256": "f101a015ca6499ba862bd4af71886fbf393a6b97554ce24d79a649de8fb83e09",
   "matchesTestedRelease": true,
   "browserPlaybackOfDownloadedBytes": {
+    "cityRebuild": {
+      "buildings": 415,
+      "houseVariants": 15,
+      "roads": 94,
+      "culdesacs": 10
+    },
     "main": 40,
     "side": 20,
     "encounters": 32,
