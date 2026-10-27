@@ -32,9 +32,9 @@ These galleries let reviewers select the historical original and each subsequent
 
 | Reference | Original screenshot | Restored screenshot |
 | --- | --- | --- |
-| Downtown neon | [Original](artifacts/restoration-original-downtown-neon-night.png) | [Lighting-refined](artifacts/restoration-stage-d-downtown-neon-night.png) |
-| East Diner | [Original](artifacts/restoration-original-diner-day.png) | [Restored](artifacts/restoration-stage-d-diner-day.png) |
-| Sunset residential block | [Original night](artifacts/restoration-infill-original-west-3-7-night.png) | [Limited additions at night](artifacts/restoration-infill-stage-d-west-3-7-night.png) |
+| Downtown neon | [Original](artifacts/restoration-original-downtown-neon-night.png) | [Verified final](artifacts/restoration-final-downtown-neon-night.png) |
+| East Diner | [Original](artifacts/restoration-original-diner-day.png) | [Verified final](artifacts/restoration-final-diner-day.png) |
+| Sunset residential block | [Original night](artifacts/restoration-infill-original-west-3-7-night.png) | [Verified limited additions](artifacts/restoration-infill-final-west-3-7-night.png) |
 | Superseded suburban result | [0.6.0 Crescent Heights](artifacts/rebuild-after-crescent-day.png) | [Recovered original Crescent Heights](artifacts/restoration-stage-d-crescent-day.png) |
 
 ## Residential designs
@@ -96,6 +96,12 @@ Physical iPhone/Android, Safari and Firefox checks remain unexecuted. A continuo
 
 ## Playable delivery
 
-**Public deployment verification pending.** The intended updated demo URL is [Glowport ’88 · original city](https://atlasnoah.github.io/Glowport88/?v=0.6.1-original-city). Until verification is recorded, that address must not be described as the verified corrected release.
+**Published and verified:** [Play Glowport ’88 · restored original city](https://atlasnoah.github.io/Glowport88/?v=0.6.1-original-city). Use **Start / Continue** to resume existing progress.
 
-Final delivery will record the pushed source commit, Pages commit, exact standalone SHA-256 and public mobile playback results here. Public verification uses normal certificate-verified HTTPS and exact-byte equality with the tested standalone, then isolated browser playback of those deployed bytes. The source branch is `codex/restore-original-city`; `main` remains unchanged.
+- Tested release source: [`4bc54f4f79fc49318985fde045e49d9e73153e71`](https://github.com/atlasnoah/Glowport88/commit/4bc54f4f79fc49318985fde045e49d9e73153e71), pushed on `codex/restore-original-city`; `main` remains unchanged. Subsequent report/evidence commits do not change the game payload.
+- Pages deployment: [`c8383a38f8f2b86117003022b71823bd6810c3d3`](https://github.com/atlasnoah/Glowport88/commit/c8383a38f8f2b86117003022b71823bd6810c3d3). The live `build.json` identifies 0.6.1, original commit `c9b4af6`, 808 buildings, 35 roads, sixteen residential facades, schema 6 and map 3.
+- Exact standalone/public SHA-256: `eeed920efb719c230c267ee279e6a097dcf51d28faeddd2f03e3f27da7dedae8`.
+- **PASS** `node tests/public-demo.cjs`: normal certificate-verified HTTPS download matched the tested standalone byte for byte. Playback of those exact downloaded bytes in isolated 390×844 mobile Chromium passed Start, touch movement, phone/jobs, map, story entrance guidance and direct East Diner mission acceptance. Content remains 40 main / 20 side / 32 encounter types, ten vehicle models and twelve placed cassettes; no script errors.
+- **PASS** both [public city comparisons](https://atlasnoah.github.io/Glowport88/restoration/restoration-visual-comparison.html) and [public residential comparisons](https://atlasnoah.github.io/Glowport88/restoration/restoration-infill-comparison.html), plus six representative original/final PNG downloads, match tested local hashes. Local gallery browsers verified 184 PNG references, eighteen stage selections and 58 scene jumps across desktop/phone layouts, with no overflow or browser errors.
+
+The separate direct external Chromium probe is **environment-blocked** by `ERR_CERT_AUTHORITY_INVALID` in the cloud proxy trust setup. TLS checks were not disabled. The verified-HTTPS-download/exact-byte-playback checks above passed; direct public-origin Chromium navigation and physical handheld testing are not claimed. Evidence is in `artifacts/public-demo-results.json`, `restoration-public-build.json`, `restoration-public-gallery-results.json` and `restoration-public-direct-browser.json`.

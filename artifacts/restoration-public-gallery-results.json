@@ -1,0 +1,48 @@
+{
+  "time": "2026-10-27T19:12:40.463Z",
+  "verifiedHTTPS": true,
+  "base": "https://atlasnoah.github.io/Glowport88/restoration/",
+  "results": [
+    {
+      "file": "restoration-visual-comparison.html",
+      "sha256": "1c3a2d2f93162161e649d89735bb08644097a19a7b4af4a5d435b1f0fd557ca6",
+      "matchesTestedBytes": true
+    },
+    {
+      "file": "restoration-infill-comparison.html",
+      "sha256": "44833345811211f6291a879d08316c825f4df8fd202767317437c952872489d2",
+      "matchesTestedBytes": true
+    },
+    {
+      "file": "restoration-original-downtown-neon-night.png",
+      "sha256": "a001bcd8f22ba6dafdc4b65d18d87d8d2cfe7f268d2c2810ce38327191b8c40a",
+      "matchesTestedBytes": true
+    },
+    {
+      "file": "restoration-final-downtown-neon-night.png",
+      "sha256": "a001bcd8f22ba6dafdc4b65d18d87d8d2cfe7f268d2c2810ce38327191b8c40a",
+      "matchesTestedBytes": true
+    },
+    {
+      "file": "restoration-original-diner-day.png",
+      "sha256": "17d5ff9c0751b8162f2ef1da9fdf60e97c86824da7fa385c7853458a1a175dfa",
+      "matchesTestedBytes": true
+    },
+    {
+      "file": "restoration-final-diner-day.png",
+      "sha256": "f8ad11d7812e1e255a3faf5e38d87a0208c72fd589592630061fd530c34ed4a8",
+      "matchesTestedBytes": true
+    },
+    {
+      "file": "restoration-infill-original-west-3-7-day.png",
+      "sha256": "a2fbf1ffee1f4f7c5e7702b85dea1f8a503c9b3c95049c4a2de1d5558dbf1cbc",
+      "matchesTestedBytes": true
+    },
+    {
+      "file": "restoration-infill-final-west-3-7-day.png",
+      "sha256": "aff6d52a6c05325f984ea667b44db9616a9acc6326187e1ef8ec3842a5317d8b",
+      "matchesTestedBytes": true
+    }
+  ],
+  "scope": "Certificate-verified public HTTPS downloads of both comparison galleries and representative original/final city, East Diner and residential images match tested local bytes."
+}
