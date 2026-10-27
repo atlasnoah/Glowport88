@@ -1,0 +1,124 @@
+{
+  "time": "2026-10-27T19:02:00.417Z",
+  "originalCommit": "c9b4af6",
+  "originalRendererSHA256": "fd658afd96c0a5488a7ce844dfe18ef280cbe8d711e8a692b9c45cd8ec1d1b47",
+  "scenes": [
+    {
+      "hour": 8,
+      "weather": "CLEAR",
+      "changedChannels": 219966,
+      "meanDifference": 1.1484869791666668,
+      "maxDifference": 9
+    },
+    {
+      "hour": 8,
+      "weather": "RAIN",
+      "changedChannels": 218383,
+      "meanDifference": 1.1318385416666668,
+      "maxDifference": 9
+    },
+    {
+      "hour": 8,
+      "weather": "MIST",
+      "changedChannels": 212704,
+      "meanDifference": 1.0639947916666668,
+      "maxDifference": 9
+    },
+    {
+      "hour": 12,
+      "weather": "CLEAR",
+      "changedChannels": 219966,
+      "meanDifference": 1.1484869791666668,
+      "maxDifference": 9
+    },
+    {
+      "hour": 12,
+      "weather": "RAIN",
+      "changedChannels": 218383,
+      "meanDifference": 1.1318385416666668,
+      "maxDifference": 9
+    },
+    {
+      "hour": 12,
+      "weather": "MIST",
+      "changedChannels": 212704,
+      "meanDifference": 1.0639947916666668,
+      "maxDifference": 9
+    },
+    {
+      "hour": 18.5,
+      "weather": "CLEAR",
+      "changedChannels": 180574,
+      "meanDifference": 0.6079635416666667,
+      "maxDifference": 7
+    },
+    {
+      "hour": 18.5,
+      "weather": "RAIN",
+      "changedChannels": 180189,
+      "meanDifference": 0.6058463541666667,
+      "maxDifference": 7
+    },
+    {
+      "hour": 18.5,
+      "weather": "MIST",
+      "changedChannels": 170290,
+      "meanDifference": 0.5637708333333333,
+      "maxDifference": 6
+    },
+    {
+      "hour": 23,
+      "weather": "CLEAR",
+      "changedChannels": 0,
+      "meanDifference": 0,
+      "maxDifference": 0
+    },
+    {
+      "hour": 23,
+      "weather": "RAIN",
+      "changedChannels": 0,
+      "meanDifference": 0,
+      "maxDifference": 0
+    },
+    {
+      "hour": 23,
+      "weather": "MIST",
+      "changedChannels": 0,
+      "meanDifference": 0,
+      "maxDifference": 0
+    }
+  ],
+  "hostWash": [
+    {
+      "hour": 0,
+      "alpha": 0.07
+    },
+    {
+      "hour": 5,
+      "alpha": 0.07
+    },
+    {
+      "hour": 8,
+      "alpha": 0.045
+    },
+    {
+      "hour": 12,
+      "alpha": 0.045
+    },
+    {
+      "hour": 18.5,
+      "alpha": 0.054375
+    },
+    {
+      "hour": 23,
+      "alpha": 0.07
+    }
+  ],
+  "nightLights": {
+    "brightenedPixels": 37497,
+    "brightenedCyan": 26703,
+    "brightenedPink": 30207
+  },
+  "errors": [],
+  "scope": "Actual Chromium RGBA comparisons of original and corrected host wash plus atmosphere using identical ground colors, neon sources, streetlight, vehicles, clear/rain/mist and fixed time. Full-night pixels must remain exact; bounded day/dusk adjustment and visible pink/cyan night light effects are required. Full gameplay screenshots are covered separately."
+}

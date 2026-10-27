@@ -100,11 +100,17 @@ function character(c,x,y,e,hero,clock,moving=false){const face={down:0,left:1,ri
 function vehicle(c,x,y,v){let dir=((Math.round((v.angle||0)/(Math.PI/8))%16)+16)%16;let index=v.kind==='police'?7:hash((v.color||'pink').split('').reduce((a,k)=>a+k.charCodeAt(0),0))%7;c.save();c.globalAlpha=.5;c.fillStyle='#091020';c.beginPath();c.ellipse(x+3,y+10,17,11,0,0,Math.PI*2);c.fill();c.restore();c.drawImage(images.vehicles,dir*64,index*64,64,64,Math.round(x-32),Math.round(y-32),64,64)}
 const glowCache=new Map();
 function glow(c,x,y,r,col,power){let im=glowCache.get(col);if(!im){im=document.createElement('canvas');im.width=im.height=128;let q=im.getContext('2d'),g=q.createRadialGradient(64,64,1,64,64,64);g.addColorStop(0,col);g.addColorStop(.25,col+'a0');g.addColorStop(1,col+'00');q.fillStyle=g;q.fillRect(0,0,128,128);glowCache.set(col,im)}c.globalAlpha=power;c.drawImage(im,Math.round(x-r),Math.round(y-r),r*2,r*2);c.globalAlpha=1}
-function atmosphere(c,{clock,hour,weather,camera,W,H,cars,police}){
+// Keep the original night wash and reduce only the redundant daytime tint.
+function hostWashAlpha(hour){
  const night=hour<5?.32:hour<8?.32*(8-hour)/3:hour>17?Math.min(.32,(hour-17)/4*.32):0;
- rect(c,0,0,W,H,`rgba(9,13,34,${.07+night})`);
+ const daylight=1-Math.min(1,night/.32);
+ return .045*daylight+.07*(1-daylight);
+}
+function atmosphere(c,{clock,hour,weather,camera,W,H,cars,police}){
+ const night=hour<5?.32:hour<8?.32*(8-hour)/3:hour>17?Math.min(.32,(hour-17)/4*.32):0,daylight=1-Math.min(1,night/.32);
+ rect(c,0,0,W,H,`rgba(9,13,34,${.07+night-.03*daylight})`);
  c.save();c.globalCompositeOperation='screen';
- for(let gx=Math.floor((camera.x-120)/256);gx<=Math.floor((camera.x+W+120)/256);gx++)for(let gy=Math.floor((camera.y-120)/256);gy<=Math.floor((camera.y+H+120)/256);gy++)for(let l of lightGrid.get(`${gx},${gy}`)||[]){const x=l.x-camera.x,y=l.y-camera.y;if(x<-l.r||x>W+l.r||y<-l.r||y>H+l.r)continue;const flicker=1-Math.max(0,Math.sin(clock*1.8+l.seed)-.96)*4;const power=(.23+night*.9)*l.power*flicker;glow(c,x,y,l.r,l.color,power);glow(c,x,y,8,l.color,.3*l.power);
+ for(let gx=Math.floor((camera.x-120)/256);gx<=Math.floor((camera.x+W+120)/256);gx++)for(let gy=Math.floor((camera.y-120)/256);gy<=Math.floor((camera.y+H+120)/256);gy++)for(let l of lightGrid.get(`${gx},${gy}`)||[]){const x=l.x-camera.x,y=l.y-camera.y;if(x<-l.r||x>W+l.r||y<-l.r||y>H+l.r)continue;const flicker=1-Math.max(0,Math.sin(clock*1.8+l.seed)-.96)*4;const power=(.23+night*.9-.04*daylight)*l.power*flicker;glow(c,x,y,l.r,l.color,power);glow(c,x,y,8,l.color,.3*l.power);
  if(weather==='RAIN'){c.globalAlpha=.12*l.power;for(let i=0;i<9;i++){const yy=y+12+i*4,ww=(18-i)*1.5;rect(c,x-ww/2+Math.sin(clock*3+i+l.seed)*3,yy,ww,1,l.color)}c.globalAlpha=1}}
  if(night>.04||weather==='RAIN')for(let v of [...cars,...police]){const x=v.x-camera.x,y=v.y-camera.y;if(x<-90||x>W+90||y<-90||y>H+90)continue;const angle=v.angle||0;c.save();c.translate(x,y);c.rotate(angle);const grad=c.createLinearGradient(0,-18,0,-91);grad.addColorStop(0,'#c4dfe844');grad.addColorStop(1,'#a7d8ff00');polygon(c,[[-8,-18],[-27,-88],[27,-88],[8,-18]],grad);glow(c,-7,-20,12,'#f9ddae',.2);glow(c,7,-20,12,'#f9ddae',.2);glow(c,-7,20,12,'#ef698a',.2);glow(c,7,20,12,'#ef698a',.2);if(v.kind==='police'){glow(c,0,0,43,Math.sin(clock*12)>0?'#f1689c':'#7294f5',.6)}c.restore()}
  c.restore();
@@ -127,5 +133,5 @@ function interior(c,key,name,W,H){const club=key==='club',hotel=['hotel','motel'
  rect(c,370,H-51,60,23,'#262f49');rect(c,370,H-51,60,1,accent);label(c,'EXIT [E]',370,H-35,60,accent,10);
 }
 function portrait(canvas,speaker,expression=0){const c=canvas.getContext('2d');c.imageSmoothingEnabled=false;c.clearRect(0,0,64,80);const name=speaker.toUpperCase(),index=name.includes('VEE')?0:name==='YOU'?1:name.includes('JAX')?2:name.includes('ROXY')?3:name.includes('SOL')?4:5;c.drawImage(images.portraits,index*64,expression*80,64,80,0,0,64,80)}
-return {furniture,roomSolids,portrait,ready,bakeTerrain,character,vehicle,atmosphere,interior,sprite,glow,palettes};
+return {furniture,roomSolids,portrait,ready,bakeTerrain,character,vehicle,atmosphere,interior,sprite,glow,palettes,hostWashAlpha};
 })();
