@@ -1,0 +1,312 @@
+{
+  "time": "2026-10-27T13:17:01.532Z",
+  "phase": "original",
+  "originalCommit": "c9b4af6",
+  "manifestPath": "/tmp/restoration-infill-manifest.json",
+  "blocks": [
+    {
+      "id": "west-3-7",
+      "district": "west",
+      "ix": 3,
+      "iy": 7,
+      "x": 1240,
+      "y": 2540,
+      "w": 360,
+      "h": 340,
+      "cx": 1420,
+      "cy": 2710,
+      "count": 1
+    },
+    {
+      "id": "north-11-2",
+      "district": "north",
+      "ix": 11,
+      "iy": 2,
+      "x": 4120,
+      "y": 840,
+      "w": 360,
+      "h": 340,
+      "cx": 4300,
+      "cy": 1010,
+      "count": 1
+    },
+    {
+      "id": "south-9-11",
+      "district": "south",
+      "ix": 9,
+      "iy": 11,
+      "x": 3400,
+      "y": 3900,
+      "w": 360,
+      "h": 340,
+      "cx": 3580,
+      "cy": 4070,
+      "count": 1
+    },
+    {
+      "id": "east-17-4",
+      "district": "east",
+      "ix": 17,
+      "iy": 4,
+      "x": 6280,
+      "y": 1520,
+      "w": 360,
+      "h": 340,
+      "cx": 6460,
+      "cy": 1690,
+      "count": 1
+    }
+  ],
+  "sites": [
+    {
+      "id": "residential-165",
+      "block": "west:3:7",
+      "rect": {
+        "x": 1432,
+        "y": 2721,
+        "w": 96,
+        "h": 75
+      },
+      "renderBounds": {
+        "x": 1420,
+        "y": 2709,
+        "w": 120,
+        "h": 119
+      },
+      "variant": 0
+    },
+    {
+      "id": "residential-487",
+      "block": "north:11:2",
+      "rect": {
+        "x": 4312,
+        "y": 1021,
+        "w": 102,
+        "h": 75
+      },
+      "renderBounds": {
+        "x": 4300,
+        "y": 1009,
+        "w": 126,
+        "h": 119
+      },
+      "variant": 1
+    },
+    {
+      "id": "residential-430",
+      "block": "south:9:11",
+      "rect": {
+        "x": 3592,
+        "y": 4081,
+        "w": 93,
+        "h": 68
+      },
+      "renderBounds": {
+        "x": 3580,
+        "y": 4069,
+        "w": 117,
+        "h": 112
+      },
+      "variant": 2
+    },
+    {
+      "id": "residential-731",
+      "block": "east:17:4",
+      "rect": {
+        "x": 6472,
+        "y": 1588,
+        "w": 103,
+        "h": 74
+      },
+      "renderBounds": {
+        "x": 6460,
+        "y": 1576,
+        "w": 127,
+        "h": 118
+      },
+      "variant": 3
+    }
+  ],
+  "geometryHashes": {
+    "MW": "3c5d8ca315f8c36d4cd4beecbc55b34c92a2d6eb1df730908df6f23dd2aa08f7",
+    "MH": "68bc5ec90a2d9464eba42cbe67ccf5a442629e039a2e7d21942c0ea7420b4576",
+    "STREET": "3ada92f28b4ceda38562ebf047c6ff05400d4c572352a1142eedfef67d21e662",
+    "roadXs": "5d17df04bb08568cd85567c282bd567a5a189d97031c224fe408c4dff8ba1b2b",
+    "roadYs": "2a65137060173cb6c3d8e22afb8bb6df3faa8c37dc40084e7d8b7ff19f584dec",
+    "lands": "b8cb927d2f3fe502035e41e03d22015f9584073f5d2d23b02c764e03c56c6653",
+    "footprints": "98f34e30c74dbb7118348fe2e0d9dbab51575179b0b88e9c829bf9154fbffdf1",
+    "trees": "1b8ecd4eb2773a7da26b2470d348bc02a8f4e358a9796bb563ba34aad049b450",
+    "debris": "9eb5dbe5a087b8d2f331818fbde1e9f720d8634b24cb06f549e24787990918c2",
+    "streetlights": "b377d82bf83e5a863802b32f2d2349cb73d14299e4f58c6dfa532f71fdb3d40c"
+  },
+  "buildingCount": 808,
+  "shots": [
+    {
+      "name": "west-3-7-day",
+      "block": "west-3-7",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 1020,
+        "y": 2485
+      },
+      "file": "restoration-infill-original-west-3-7-day.png",
+      "terrainFile": "restoration-infill-original-west-3-7-terrain.png",
+      "sha256": "a2fbf1ffee1f4f7c5e7702b85dea1f8a503c9b3c95049c4a2de1d5558dbf1cbc"
+    },
+    {
+      "name": "west-3-7-night",
+      "block": "west-3-7",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 1020,
+        "y": 2485
+      },
+      "file": "restoration-infill-original-west-3-7-night.png",
+      "terrainFile": "restoration-infill-original-west-3-7-terrain.png",
+      "sha256": "b4cd93ec1291532f757135e695461472ba7a5f15aaf50734a2cf53ac5174b2e6"
+    },
+    {
+      "name": "north-11-2-day",
+      "block": "north-11-2",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3900,
+        "y": 785
+      },
+      "file": "restoration-infill-original-north-11-2-day.png",
+      "terrainFile": "restoration-infill-original-north-11-2-terrain.png",
+      "sha256": "e6cebdb3e1912ceeb262cebd1acd7ae830c1632cf1b62c48f61866b89d2c3e01"
+    },
+    {
+      "name": "north-11-2-night",
+      "block": "north-11-2",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3900,
+        "y": 785
+      },
+      "file": "restoration-infill-original-north-11-2-night.png",
+      "terrainFile": "restoration-infill-original-north-11-2-terrain.png",
+      "sha256": "ce3b94d91e231ecc5eb3f1a2a3d4abade4ec68646abd2d61610e0369a978de22"
+    },
+    {
+      "name": "south-9-11-day",
+      "block": "south-9-11",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3180,
+        "y": 3845
+      },
+      "file": "restoration-infill-original-south-9-11-day.png",
+      "terrainFile": "restoration-infill-original-south-9-11-terrain.png",
+      "sha256": "5cb9f0823cd16ceb90523f4e2d9731ffd286da541ed2385eb24715da151c33c4"
+    },
+    {
+      "name": "south-9-11-night",
+      "block": "south-9-11",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3180,
+        "y": 3845
+      },
+      "file": "restoration-infill-original-south-9-11-night.png",
+      "terrainFile": "restoration-infill-original-south-9-11-terrain.png",
+      "sha256": "57d5953902834737dcec3e86d651fcf93e48c7ca00aa835a71d59485b12afc6a"
+    },
+    {
+      "name": "east-17-4-day",
+      "block": "east-17-4",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 6060,
+        "y": 1465
+      },
+      "file": "restoration-infill-original-east-17-4-day.png",
+      "terrainFile": "restoration-infill-original-east-17-4-terrain.png",
+      "sha256": "d0a60dca39709fce4fdd84d90786bdebfa2651a765fa247f4ce5421d92425256"
+    },
+    {
+      "name": "east-17-4-night",
+      "block": "east-17-4",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 6060,
+        "y": 1465
+      },
+      "file": "restoration-infill-original-east-17-4-night.png",
+      "terrainFile": "restoration-infill-original-east-17-4-terrain.png",
+      "sha256": "23cac84c89f8cc13d5e849d8ee3bb6df1598ec0d29f87b6887561d57476dd2ee"
+    }
+  ],
+  "comparisons": [],
+  "terrain": {
+    "draws": 8,
+    "hits": 10,
+    "bakes": 10,
+    "evictions": 4,
+    "residentBytes": 24838144,
+    "peakResidentBytes": 25165824,
+    "totalBakeMs": 231.50000005960464,
+    "maxBakeMs": 47.10000002384186,
+    "lastBakeMs": 13.599999964237213,
+    "tileSize": 1024,
+    "maxTiles": 6,
+    "cachedTiles": 6,
+    "maxSurfacePixels": 1048576,
+    "estimatedResidentMiB": 23.6875,
+    "tiles": [
+      {
+        "key": "3,1",
+        "x": 3072,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "4,1",
+        "x": 4096,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "3,3",
+        "x": 3072,
+        "y": 3072,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "3,4",
+        "x": 3072,
+        "y": 4096,
+        "width": 1024,
+        "height": 944
+      },
+      {
+        "key": "5,1",
+        "x": 5120,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "6,1",
+        "x": 6144,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      }
+    ]
+  },
+  "errors": [],
+  "scope": "Supplemental actual Chromium terrain/lighting captures at exact selected original-block centers. Footprints, all grid coordinates, districts, trees, decorations and lamps must remain identical. Raw terrain changes are constrained to selected facade render bounds; day/night composites also show atmosphere, without transient actors/UI."
+}

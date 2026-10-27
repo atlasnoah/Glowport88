@@ -3,7 +3,7 @@ window.GlowportArt=(()=>{
 'use strict';
 const atlas=window.GLOWPORT_ATLAS,images={},patterns=new WeakMap(),lightGrid=new Map();
 const base=new URL('.',document.currentScript.src);
-const ready=Promise.all(['city-atlas','characters','vehicles','buildings-illustrated','neighborhoods-illustrated','portraits','furniture-illustrated'].map(name=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{images[name]=im;resolve()};im.onerror=()=>reject(Error('Could not load '+name+'.png'));im.src=new URL(name+'.png',base).href})));
+const ready=Promise.all(['city-atlas','characters','vehicles','buildings-illustrated','neighborhoods-illustrated','portraits','furniture-illustrated','residential-illustrated'].map(name=>new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>{images[name]=im;resolve()};im.onerror=()=>reject(Error('Could not load '+name+'.png'));im.src=new URL(name+'.png',base).href})));
 const palettes={
  west:{roof:'roof-rust',wall:'brick-warm',edge:'#a18a92',accent:'#ef99b1',label:'SUNSET'},
  core:{roof:'roof',wall:'brick-blue',edge:'#7a8da7',accent:'#71e4df',label:'DOWNTOWN'},
@@ -58,6 +58,16 @@ function building(c,b){
  if(landmark){const special={hotel:0,armory:1,radio:2,warehouse:5};if(special[landmark]!==undefined){index=special[landmark];sheet='buildings-illustrated';cells=buildingCells}else index={motel:0,diner:2,records:4,club:3,arcade:4,observatory:5,pier:5,clinic:0}[landmark]??0}
  // Full illustrated architectural sprites are anchored at the original collision footprint and door.
  const dx=b.x-3,dy=b.y-3,dw=b.w+6,dh=b.h+20;
+ // Controlled facade swaps share the original footprint, scale and light field.
+ // All other buildings, especially the story landmarks, retain their old path.
+ if(!landmark&&Number.isInteger(b.residentialVariant)&&b.residentialVariant>=0&&b.residentialVariant<4){
+  const homes=[[41,57,539,538],[624,82,596,521],[37,607,560,587],[626,640,595,546]];
+  c.drawImage(images['residential-illustrated'],...homes[b.residentialVariant],dx,dy,dw,dh);
+  const col=neon[seed%4];light(b.doorX,b.doorY-8,75,col,.85);
+  if(index===3)light(b.x+b.w*.75,b.y+b.h*.55,50,'#e589cb',.8);
+  if(index===0||index===2)light(b.x+b.w*.25,b.y+b.h*.6,38,'#efb786',.55);
+  return;
+ }
  c.drawImage(images[sheet],...cells[index],dx,dy,dw,dh);
  const col=landmark?palettes[b.district].accent:neon[seed%4];
  // An in-world business plaque labels the unlettered neighborhood shells.

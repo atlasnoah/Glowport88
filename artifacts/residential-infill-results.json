@@ -1,0 +1,489 @@
+{
+  "time": "2026-10-27T13:18:41.179Z",
+  "passed": [
+    "Stage B changes exactly four facades in four established city blocks",
+    "Stage C refines only those same four blocks and preserves the initial facades",
+    "all 808 original buildings, properties, footprints and roads remain unchanged",
+    "downtown and all landmark buildings are excluded and their approaches remain protected",
+    "selection is deterministic, bounded and does not consume random numbers",
+    "reducing a stage restores unselected facades rather than accumulating houses",
+    "all selected original facade entrances retain walking and vehicle access"
+  ],
+  "buildingCount": 808,
+  "affectedBuildingFraction": 0.019801980198019802,
+  "affectedBlocks": 4,
+  "totalOriginalBlocks": 266,
+  "initial": {
+    "count": 4,
+    "limit": 4,
+    "sites": [
+      {
+        "id": "residential-165",
+        "index": 165,
+        "x": 1432,
+        "y": 2721,
+        "w": 96,
+        "h": 75,
+        "doorX": 1480,
+        "doorY": 2809,
+        "variant": 0,
+        "district": "west",
+        "block": "west:3:7",
+        "blockcenter": {
+          "x": 1420,
+          "y": 2710
+        }
+      },
+      {
+        "id": "residential-487",
+        "index": 487,
+        "x": 4312,
+        "y": 1021,
+        "w": 102,
+        "h": 75,
+        "doorX": 4363,
+        "doorY": 1109,
+        "variant": 1,
+        "district": "north",
+        "block": "north:11:2",
+        "blockcenter": {
+          "x": 4300,
+          "y": 1010
+        }
+      },
+      {
+        "id": "residential-430",
+        "index": 430,
+        "x": 3592,
+        "y": 4081,
+        "w": 93,
+        "h": 68,
+        "doorX": 3638,
+        "doorY": 4162,
+        "variant": 2,
+        "district": "south",
+        "block": "south:9:11",
+        "blockcenter": {
+          "x": 3580,
+          "y": 4070
+        }
+      },
+      {
+        "id": "residential-731",
+        "index": 731,
+        "x": 6472,
+        "y": 1588,
+        "w": 103,
+        "h": 74,
+        "doorX": 6523,
+        "doorY": 1675,
+        "variant": 3,
+        "district": "east",
+        "block": "east:17:4",
+        "blockcenter": {
+          "x": 6460,
+          "y": 1690
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "id": "west:3:7",
+        "district": "west",
+        "ix": 3,
+        "iy": 7,
+        "x": 1240,
+        "y": 2540,
+        "w": 360,
+        "h": 340,
+        "cx": 1420,
+        "cy": 2710,
+        "count": 1
+      },
+      {
+        "id": "north:11:2",
+        "district": "north",
+        "ix": 11,
+        "iy": 2,
+        "x": 4120,
+        "y": 840,
+        "w": 360,
+        "h": 340,
+        "cx": 4300,
+        "cy": 1010,
+        "count": 1
+      },
+      {
+        "id": "south:9:11",
+        "district": "south",
+        "ix": 9,
+        "iy": 11,
+        "x": 3400,
+        "y": 3900,
+        "w": 360,
+        "h": 340,
+        "cx": 3580,
+        "cy": 4070,
+        "count": 1
+      },
+      {
+        "id": "east:17:4",
+        "district": "east",
+        "ix": 17,
+        "iy": 4,
+        "x": 6280,
+        "y": 1520,
+        "w": 360,
+        "h": 340,
+        "cx": 6460,
+        "cy": 1690,
+        "count": 1
+      }
+    ],
+    "variantnames": [
+      "Illustrated bungalow",
+      "Illustrated duplex",
+      "Victorian urban house",
+      "Mid-century house with garage"
+    ]
+  },
+  "refined": {
+    "count": 16,
+    "limit": 16,
+    "sites": [
+      {
+        "id": "residential-165",
+        "index": 165,
+        "x": 1432,
+        "y": 2721,
+        "w": 96,
+        "h": 75,
+        "doorX": 1480,
+        "doorY": 2809,
+        "variant": 0,
+        "district": "west",
+        "block": "west:3:7",
+        "blockcenter": {
+          "x": 1420,
+          "y": 2710
+        }
+      },
+      {
+        "id": "residential-487",
+        "index": 487,
+        "x": 4312,
+        "y": 1021,
+        "w": 102,
+        "h": 75,
+        "doorX": 4363,
+        "doorY": 1109,
+        "variant": 1,
+        "district": "north",
+        "block": "north:11:2",
+        "blockcenter": {
+          "x": 4300,
+          "y": 1010
+        }
+      },
+      {
+        "id": "residential-430",
+        "index": 430,
+        "x": 3592,
+        "y": 4081,
+        "w": 93,
+        "h": 68,
+        "doorX": 3638,
+        "doorY": 4162,
+        "variant": 2,
+        "district": "south",
+        "block": "south:9:11",
+        "blockcenter": {
+          "x": 3580,
+          "y": 4070
+        }
+      },
+      {
+        "id": "residential-731",
+        "index": 731,
+        "x": 6472,
+        "y": 1588,
+        "w": 103,
+        "h": 74,
+        "doorX": 6523,
+        "doorY": 1675,
+        "variant": 3,
+        "district": "east",
+        "block": "east:17:4",
+        "blockcenter": {
+          "x": 6460,
+          "y": 1690
+        }
+      },
+      {
+        "id": "residential-163",
+        "index": 163,
+        "x": 1309,
+        "y": 2721,
+        "w": 95,
+        "h": 73,
+        "doorX": 1356,
+        "doorY": 2807,
+        "variant": 1,
+        "district": "west",
+        "block": "west:3:7",
+        "blockcenter": {
+          "x": 1420,
+          "y": 2710
+        }
+      },
+      {
+        "id": "residential-486",
+        "index": 486,
+        "x": 4312,
+        "y": 908,
+        "w": 101,
+        "h": 74,
+        "doorX": 4363,
+        "doorY": 995,
+        "variant": 2,
+        "district": "north",
+        "block": "north:11:2",
+        "blockcenter": {
+          "x": 4300,
+          "y": 1010
+        }
+      },
+      {
+        "id": "residential-427",
+        "index": 427,
+        "x": 3469,
+        "y": 3968,
+        "w": 86,
+        "h": 80,
+        "doorX": 3512,
+        "doorY": 4061,
+        "variant": 3,
+        "district": "south",
+        "block": "south:9:11",
+        "blockcenter": {
+          "x": 3580,
+          "y": 4070
+        }
+      },
+      {
+        "id": "residential-729",
+        "index": 729,
+        "x": 6349,
+        "y": 1588,
+        "w": 96,
+        "h": 68,
+        "doorX": 6397,
+        "doorY": 1669,
+        "variant": 0,
+        "district": "east",
+        "block": "east:17:4",
+        "blockcenter": {
+          "x": 6460,
+          "y": 1690
+        }
+      },
+      {
+        "id": "residential-164",
+        "index": 164,
+        "x": 1432,
+        "y": 2608,
+        "w": 87,
+        "h": 81,
+        "doorX": 1476,
+        "doorY": 2702,
+        "variant": 2,
+        "district": "west",
+        "block": "west:3:7",
+        "blockcenter": {
+          "x": 1420,
+          "y": 2710
+        }
+      },
+      {
+        "id": "residential-485",
+        "index": 485,
+        "x": 4189,
+        "y": 1021,
+        "w": 94,
+        "h": 77,
+        "doorX": 4236,
+        "doorY": 1111,
+        "variant": 3,
+        "district": "north",
+        "block": "north:11:2",
+        "blockcenter": {
+          "x": 4300,
+          "y": 1010
+        }
+      },
+      {
+        "id": "residential-428",
+        "index": 428,
+        "x": 3469,
+        "y": 4081,
+        "w": 99,
+        "h": 76,
+        "doorX": 3519,
+        "doorY": 4170,
+        "variant": 0,
+        "district": "south",
+        "block": "south:9:11",
+        "blockcenter": {
+          "x": 3580,
+          "y": 4070
+        }
+      },
+      {
+        "id": "residential-732",
+        "index": 732,
+        "x": 6472,
+        "y": 1701,
+        "w": 102,
+        "h": 77,
+        "doorX": 6523,
+        "doorY": 1791,
+        "variant": 1,
+        "district": "east",
+        "block": "east:17:4",
+        "blockcenter": {
+          "x": 6460,
+          "y": 1690
+        }
+      },
+      {
+        "id": "residential-162",
+        "index": 162,
+        "x": 1309,
+        "y": 2608,
+        "w": 87,
+        "h": 74,
+        "doorX": 1353,
+        "doorY": 2695,
+        "variant": 3,
+        "district": "west",
+        "block": "west:3:7",
+        "blockcenter": {
+          "x": 1420,
+          "y": 2710
+        }
+      },
+      {
+        "id": "residential-484",
+        "index": 484,
+        "x": 4189,
+        "y": 908,
+        "w": 88,
+        "h": 72,
+        "doorX": 4233,
+        "doorY": 993,
+        "variant": 0,
+        "district": "north",
+        "block": "north:11:2",
+        "blockcenter": {
+          "x": 4300,
+          "y": 1010
+        }
+      },
+      {
+        "id": "residential-429",
+        "index": 429,
+        "x": 3592,
+        "y": 3968,
+        "w": 98,
+        "h": 79,
+        "doorX": 3641,
+        "doorY": 4060,
+        "variant": 1,
+        "district": "south",
+        "block": "south:9:11",
+        "blockcenter": {
+          "x": 3580,
+          "y": 4070
+        }
+      },
+      {
+        "id": "residential-730",
+        "index": 730,
+        "x": 6349,
+        "y": 1701,
+        "w": 100,
+        "h": 79,
+        "doorX": 6399,
+        "doorY": 1793,
+        "variant": 2,
+        "district": "east",
+        "block": "east:17:4",
+        "blockcenter": {
+          "x": 6460,
+          "y": 1690
+        }
+      }
+    ],
+    "blocks": [
+      {
+        "id": "west:3:7",
+        "district": "west",
+        "ix": 3,
+        "iy": 7,
+        "x": 1240,
+        "y": 2540,
+        "w": 360,
+        "h": 340,
+        "cx": 1420,
+        "cy": 2710,
+        "count": 4
+      },
+      {
+        "id": "north:11:2",
+        "district": "north",
+        "ix": 11,
+        "iy": 2,
+        "x": 4120,
+        "y": 840,
+        "w": 360,
+        "h": 340,
+        "cx": 4300,
+        "cy": 1010,
+        "count": 4
+      },
+      {
+        "id": "south:9:11",
+        "district": "south",
+        "ix": 9,
+        "iy": 11,
+        "x": 3400,
+        "y": 3900,
+        "w": 360,
+        "h": 340,
+        "cx": 3580,
+        "cy": 4070,
+        "count": 4
+      },
+      {
+        "id": "east:17:4",
+        "district": "east",
+        "ix": 17,
+        "iy": 4,
+        "x": 6280,
+        "y": 1520,
+        "w": 360,
+        "h": 340,
+        "cx": 6460,
+        "cy": 1690,
+        "count": 4
+      }
+    ],
+    "variantnames": [
+      "Illustrated bungalow",
+      "Illustrated duplex",
+      "Victorian urban house",
+      "Mid-century house with garage"
+    ]
+  },
+  "scope": "Actual restored 808-building host generation, metadata-only four-facade initial pass and sixteen-facade refinement, exact legacy-property/road/terrain retention and selected entrance collision routes."
+}

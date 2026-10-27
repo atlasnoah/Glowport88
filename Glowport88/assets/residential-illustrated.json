@@ -1,0 +1,43 @@
+{
+  "source": "Original generated artwork for controlled Glowport residential infill; approved original PNGs unchanged",
+  "generator": "image_gen",
+  "date": "2026-10-27",
+  "sha256": "15fe7966f78c070dee7506086006cfd27eb72bd5a76c7a1f68615170ce43aae5",
+  "width": 1254,
+  "height": 1254,
+  "cells": [
+    [
+      41,
+      57,
+      539,
+      538
+    ],
+    [
+      624,
+      82,
+      596,
+      521
+    ],
+    [
+      37,
+      607,
+      560,
+      587
+    ],
+    [
+      626,
+      640,
+      595,
+      546
+    ]
+  ],
+  "variants": [
+    "Porch bungalow",
+    "Urban duplex",
+    "Victorian townhouse",
+    "Mid-century garage house"
+  ],
+  "background": "transparent",
+  "reference": "neighborhoods-illustrated.png",
+  "limits": "four original blocks; at most sixteen existing facade replacements; no new roads, footprints or terrain"
+}
