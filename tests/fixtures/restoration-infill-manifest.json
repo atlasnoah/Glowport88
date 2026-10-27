@@ -1,0 +1,134 @@
+{
+  "count": 4,
+  "limit": 4,
+  "sites": [
+    {
+      "id": "residential-165",
+      "index": 165,
+      "x": 1432,
+      "y": 2721,
+      "w": 96,
+      "h": 75,
+      "doorX": 1480,
+      "doorY": 2809,
+      "variant": 0,
+      "district": "west",
+      "block": "west:3:7",
+      "blockcenter": {
+        "x": 1420,
+        "y": 2710
+      }
+    },
+    {
+      "id": "residential-487",
+      "index": 487,
+      "x": 4312,
+      "y": 1021,
+      "w": 102,
+      "h": 75,
+      "doorX": 4363,
+      "doorY": 1109,
+      "variant": 1,
+      "district": "north",
+      "block": "north:11:2",
+      "blockcenter": {
+        "x": 4300,
+        "y": 1010
+      }
+    },
+    {
+      "id": "residential-430",
+      "index": 430,
+      "x": 3592,
+      "y": 4081,
+      "w": 93,
+      "h": 68,
+      "doorX": 3638,
+      "doorY": 4162,
+      "variant": 2,
+      "district": "south",
+      "block": "south:9:11",
+      "blockcenter": {
+        "x": 3580,
+        "y": 4070
+      }
+    },
+    {
+      "id": "residential-731",
+      "index": 731,
+      "x": 6472,
+      "y": 1588,
+      "w": 103,
+      "h": 74,
+      "doorX": 6523,
+      "doorY": 1675,
+      "variant": 3,
+      "district": "east",
+      "block": "east:17:4",
+      "blockcenter": {
+        "x": 6460,
+        "y": 1690
+      }
+    }
+  ],
+  "blocks": [
+    {
+      "id": "west:3:7",
+      "district": "west",
+      "ix": 3,
+      "iy": 7,
+      "x": 1240,
+      "y": 2540,
+      "w": 360,
+      "h": 340,
+      "cx": 1420,
+      "cy": 2710,
+      "count": 1
+    },
+    {
+      "id": "north:11:2",
+      "district": "north",
+      "ix": 11,
+      "iy": 2,
+      "x": 4120,
+      "y": 840,
+      "w": 360,
+      "h": 340,
+      "cx": 4300,
+      "cy": 1010,
+      "count": 1
+    },
+    {
+      "id": "south:9:11",
+      "district": "south",
+      "ix": 9,
+      "iy": 11,
+      "x": 3400,
+      "y": 3900,
+      "w": 360,
+      "h": 340,
+      "cx": 3580,
+      "cy": 4070,
+      "count": 1
+    },
+    {
+      "id": "east:17:4",
+      "district": "east",
+      "ix": 17,
+      "iy": 4,
+      "x": 6280,
+      "y": 1520,
+      "w": 360,
+      "h": 340,
+      "cx": 6460,
+      "cy": 1690,
+      "count": 1
+    }
+  ],
+  "variantnames": [
+    "Illustrated bungalow",
+    "Illustrated duplex",
+    "Victorian urban house",
+    "Mid-century house with garage"
+  ]
+}

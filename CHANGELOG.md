@@ -1,3 +1,14 @@
+# Original city restoration · 0.6.1
+
+- Recovered the authentic `c9b4af6` Living City map generation and illustrated neon renderer instead of creating another map. Restored all 808 original building footprints, 35 streets at their original 66px widths, district boundaries, landmarks, terrain, sidewalks, street details and original traffic circuits.
+- Preserved newer mission acceptance, East Diner interaction, navigation arrows, touch controls, events, vehicles, shops, combat, progression, audio and save recovery. Adapted shared pathfinding/collision to the original grid without regenerating world geometry.
+- Introduced four detailed illustrated residential designs on only 16 existing facades across four original blocks. Downtown, landmarks, building dimensions, doors, terrain and streets are unchanged.
+- Reduced only small daylight wash, ambient and halo strengths. Full-night atmosphere, cyan/pink light sources, shadows, weather effects and original illustrated sprites remain intact.
+- Added version-six/map-three migration retaining v5 and earlier durable backups, earned progress, receipts, vehicles and active/suspended objectives while repairing obsolete street positions and routes.
+- Added staged, fixed-camera browser screenshots, exact original-world hashes, raw-terrain facade-bound checks, original-renderer night comparisons and real-host save migration coverage. See RESTORATION_REPORT.md and TEST_RESULTS.md for executed results and delivery status.
+
+---
+
 # The Great City Rebuild · 0.6.0
 
 - Replaced the city-wide street grid and repeated storefront generation with one connected, district-zoned road/parcel/navigation/collision model, curved subdivisions and ten cul-de-sacs.

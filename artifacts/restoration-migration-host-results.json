@@ -1,0 +1,106 @@
+{
+  "time": "2026-10-27T19:05:46.935Z",
+  "passed": [
+    "v5 suburban player and active objectives migrate to original streets without losing earned progress",
+    "normal v6 saves retain exact v5 bytes and all existing durable migration backups",
+    "old controlled and parked cars retain models, upgrades, damage and objective progress",
+    "a saved suburban chase target joins the original circuit before its first physics frame",
+    "all authored driving, racing and outdoor stealth routes remain reachable on original streets",
+    "actual phone browser reports no script or missing-asset errors"
+  ],
+  "errors": [],
+  "player": {
+    "mapVersion": 3,
+    "safe": true,
+    "x": 991.4000000000001,
+    "y": 840.0000020800001,
+    "money": 43210,
+    "hp": 127,
+    "id": "m10",
+    "stage": 2,
+    "status": "active",
+    "run": 2,
+    "goal": 1,
+    "routeMapVersion": 3,
+    "elapsed": 193,
+    "stageElapsed": 41,
+    "claimed": {
+      "stage:0": true
+    },
+    "choices": {
+      "saved-decision": 1
+    },
+    "completed": [
+      "m09"
+    ],
+    "inventory": {
+      "duplicate_tape": 1,
+      "collectible-cassette": 3
+    },
+    "receipts": {
+      "already-paid": true
+    },
+    "flag": "public",
+    "pointsSafe": true,
+    "checkpointSafe": true
+  },
+  "backups": {
+    "schema": 6,
+    "mapVersion": 3,
+    "v5Exact": true,
+    "olderMigrationExact": true,
+    "v4Exact": true
+  },
+  "vehicles": {
+    "controlledSafe": true,
+    "parkedSafe": true,
+    "upgradesAndDamagePreserved": true
+  },
+  "chase": {
+    "before": {
+      "x": 991.3999999999996,
+      "y": 1192
+    },
+    "after": {
+      "x": 992.5680000000002,
+      "y": 1192
+    },
+    "jump": 1.1680000000005748,
+    "safe": true,
+    "road": true,
+    "trafficMapVersion": 3,
+    "id": "m12",
+    "stage": 2,
+    "status": "active",
+    "tail": 7,
+    "health": 71,
+    "modelId": "delivery",
+    "claimed": {
+      "stage:0": true
+    },
+    "receipts": {
+      "audit-paid": true
+    },
+    "money": 43210
+  },
+  "routes": {
+    "checked": 34,
+    "failures": []
+  },
+  "formerSuburbanPosition": {
+    "x": 991.4000000000001,
+    "y": 903.6,
+    "formerRoad": {
+      "a": [
+        1320,
+        840
+      ],
+      "b": [
+        700,
+        960
+      ],
+      "t": 0.5299999999999999
+    }
+  },
+  "scope": "Actual restored mobile Chromium host imports synthetic v5 saves using former 0.6 street polylines, normal Start/Save touch actions and production physics. Tests original-road migration and progress preservation; does not certify physical phones."
+}

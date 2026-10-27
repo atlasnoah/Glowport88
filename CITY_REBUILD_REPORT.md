@@ -1,3 +1,5 @@
+> Historical report: the 0.6.0 suburban rebuild is superseded by the [0.6.1 original city restoration](RESTORATION_REPORT.md). Its layout and test results do not describe the current game.
+
 # GLOWPORT ’88 — The Great City Rebuild · 0.6.0
 
 ## 1. Implemented world layout

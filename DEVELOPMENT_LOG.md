@@ -101,3 +101,13 @@
 - Browser integration revealed diagonal Canvas stroke clipping differences between full and tiled terrain. World-aligned integer span rasterization removed the mismatch without allocating larger surfaces.
 - Added safe house-door approach connectors and corrected route-cache reuse for moving endpoints. Map and home-door collision checks exercise actual host geometry.
 - Final test counts, screenshots, measurements and verified deployment details are recorded in CITY_REBUILD_REPORT.md and TEST_RESULTS.md.
+
+
+## Original city restoration · 0.6.1 · 2026-10-27
+
+- Followed the corrective brief by recovering the actual `c9b4af6` Living City world/renderer from Git, rather than designing another map. Preserved newer gameplay modules and selectively restored original generation, map/traffic/pedestrian rendering integration and illustrated atmosphere.
+- Stage A (`0952adc`) restored all 808 buildings, 35 original streets at 66px widths, five district boundaries, twelve landmarks and original terrain/decoration/light arrays. All 21 deterministic historical views matched exact RGBA; actor/vehicle and four interior renders also matched before any new houses were added.
+- Stage B (`5a2f707`) introduced four original-style illustrated residential facades across four existing blocks. Stage C (`d611976`) refined those same blocks to sixteen facade substitutions, 1.98% of original buildings. Original footprints, metadata, doors, streets, terrain and landmarks remain unchanged. Downtown is excluded; raw terrain outside facade envelopes is identical.
+- Stage D (`9153604`) reduced only daylight blue wash/ambient/halo strengths, keeping original night curves, color sources, weather, sprites and shadows. Focused original-renderer night pixels and all captured city/block full-night scenes remain exact.
+- Retained current mission acceptance/E/touch resolver, East Diner actions, next-story arrows, shared street GPS, events/vehicles/audio and original save key. Schema-six/map-three migration preserves v5 bytes and earlier backups, progress/receipts and vehicle state while repairing obsolete suburban positions/routes.
+- Complete `npm test` passed, including 1,013 accelerated campaign objectives, all 14 East Diner browser checks, mobile/GPS/host regression, three simulated days and every restoration suite. Final strict terrain comparisons find zero changed pixels outside the sixteen actual facade draw rectangles. Standalone release build/playback also passed. Verified delivery is recorded in RESTORATION_REPORT.md and TEST_RESULTS.md. Physical devices and continuous human campaign validation remain outstanding.

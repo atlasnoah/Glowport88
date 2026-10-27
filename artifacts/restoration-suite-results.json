@@ -1,0 +1,54 @@
+{
+  "time": "2026-10-27T19:07:30.983Z",
+  "version": "0.6.1",
+  "originalCommit": "c9b4af6",
+  "npmTest": {
+    "exitCode": 0,
+    "logSHA256": "40e17ce8948586be1c664540638946f2994c8d9e1fd2cbd8c165fc579a4a7901",
+    "suiteSummaries": [
+      "16 mission-engine checks passed",
+      "11 police model checks passed",
+      "17 living mission interaction/recovery checks passed",
+      "14 Living City encounter checks passed",
+      "13 vehicle checks passed",
+      "13 living-city/audio checks passed",
+      "PASS accelerated campaign integration: 86 definitions / three choice sweeps / 1013 objectives; handoffs, routes, actors, pursuit, all endings, reward receipts, storage and migration",
+      "PASS tiled terrain: 10 exact coordinate/seam views, 10 approved-art comparisons (<0.5% channel tolerance), 20 MiB peak of 24 MiB cache budget, LRU eviction and release",
+      "20 checks passed",
+      "17 overhaul browser checks passed",
+      "11 navigation browser checks passed",
+      "17 isolated touch-control checks passed",
+      "21 mobile browser checks passed",
+      "14 East Diner browser checks passed",
+      "6 vehicle host browser checks passed",
+      "8 living-city host checks passed",
+      "6 encounter host checks passed",
+      "5 bounded endurance checks passed",
+      "8 restored-grid model checks passed",
+      "7 controlled residential infill checks passed",
+      "7 restored-city save and route checks passed",
+      "6 restored-city migration browser checks passed",
+      "PASS restored lighting: original clear/rain/mist night pixels exact; bounded daytime clarification; cyan/pink atmosphere and vehicle lights retained",
+      "PASS restoration final: 21 fixed static views, 3 actual host shots, map, four interiors, actor/vehicle probe, exact static matches 4/21; 808 buildings; no browser errors; terrain <=24MiB",
+      "PASS restoration infill final: 4 original blocks, 8 matched day/night views, 16 selected facade sites, 808 original footprints; no terrain changes outside facade bounds; no browser errors"
+    ]
+  },
+  "standalone": {
+    "exitCode": 0,
+    "sha256": "eeed920efb719c230c267ee279e6a097dcf51d28faeddd2f03e3f27da7dedae8",
+    "result": "release-results.json"
+  },
+  "visual": {
+    "city": "restoration-final-results.json",
+    "infill": "restoration-infill-final-results.json",
+    "original": "restoration-original-results.json",
+    "initialRestoration": "restoration-stage-a-results.json"
+  },
+  "scope": "Actual required npm test and standalone build/browser checks executed against restored production source. Public deployment is recorded separately. No physical device or continuous human campaign claim.",
+  "gallery": {
+    "exitCode": 0,
+    "result": "restoration-gallery-results.json",
+    "command": "node tests/restoration-gallery.cjs",
+    "note": "Executed separately after final captures; now included in the default restoration script."
+  }
+}
