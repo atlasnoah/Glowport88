@@ -164,7 +164,7 @@ for(let i=0;i<roadXs.length-1;i++)for(let j=0;j<roadYs.length-1;j++){
 for(let s of segments){let len=distance(s.a.x,s.a.y,s.b.x,s.b.y);for(let u=85;u<len-60;u+=125){let dx=(s.b.x-s.a.x)/len,dy=(s.b.y-s.a.y)/len;for(let side of [-1,1]){let x=s.a.x+u*dx+(-dy)*side*(s.w/2+9),y=s.a.y+u*dy+dx*side*(s.w/2+9);if(onLand(x,y))streetlights.push({x,y})}}}
 // The city above is recovered verbatim from c9b4af6. This adapter indexes that
 // existing geometry for newer gameplay; it generates no streets or buildings.
-const residentialInfill=GlowportResidential.apply(buildings,{landmarks,roadXs,roadYs,limit:4});
+const residentialInfill=GlowportResidential.apply(buildings,{landmarks,roadXs,roadYs,limit:16});
 cityLayout=GlowportRestoredCity.create({MW,MH,lands,roadXs,roadYs,STREET,buildings,trees,debris,streetlights,roads:streetPaths,segments,districtRings,landmarks});
 for(const ring of Object.values(districtRings)){ring.lanes=ring.map(()=>12);ring.signals=ring.map(()=>true)}
 const terrainWorld={MW,MH,lands,roadXs,roadYs,STREET,buildings,trees,debris,streetlights,roads:streetPaths,segments};

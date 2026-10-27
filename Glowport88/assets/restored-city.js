@@ -7,6 +7,17 @@ function bounds(a,b,pad=0){return{x:Math.min(a.x,b.x)-pad,y:Math.min(a.y,b.y)-pa
 function project(p,a,b){const dx=b.x-a.x,dy=b.y-a.y,t=clamp(((p.x-a.x)*dx+(p.y-a.y)*dy)/(dx*dx+dy*dy||1),0,1),x=a.x+dx*t,y=a.y+dy*t;return{x,y,t,d:Math.hypot(x-p.x,y-p.y)}}
 function intersects(a,b,pad=0){return a.x<=b.x+b.w+pad&&a.x+a.w>=b.x-pad&&a.y<=b.y+b.h+pad&&a.y+a.h>=b.y-pad}
 function lineRect(a,b,box,r=0){let lo=0,hi=1;const dx=b.x-a.x,dy=b.y-a.y;for(const[p,q]of[[-dx,a.x-box.x+r],[dx,box.x+box.w+r-a.x],[-dy,a.y-box.y+r],[dy,box.y+box.h+r-a.y]]){if(Math.abs(p)<EPS){if(q<0)return false}else{const t=q/p;if(p<0)lo=Math.max(lo,t);else hi=Math.min(hi,t);if(lo>hi)return false}}return true}
+// A moving circular body sweeps a capsule, not a square expansion of the
+// obstacle. Exact segment/rectangle distance preserves legal corner positions
+// that the original movement collision permits.
+function sweptRect(a,b,box,r=0){
+ if(lineRect(a,b,box))return true;
+ if(r<=0)return false;
+ const squared=p=>{const dx=Math.max(box.x-p.x,0,p.x-box.x-box.w),dy=Math.max(box.y-p.y,0,p.y-box.y-box.h);return dx*dx+dy*dy};
+ let minimum=Math.min(squared(a),squared(b));
+ for(const p of[{x:box.x,y:box.y},{x:box.x+box.w,y:box.y},{x:box.x,y:box.y+box.h},{x:box.x+box.w,y:box.y+box.h}]){const q=project(p,a,b);minimum=Math.min(minimum,q.d*q.d)}
+ return minimum+EPS<r*r;
+}
 function spatial(size){const cells=new Map();return{add(value,b=value){for(let x=Math.floor(b.x/size);x<=Math.floor((b.x+b.w)/size);x++)for(let y=Math.floor(b.y/size);y<=Math.floor((b.y+b.h)/size);y++){const key=x+':'+y;if(!cells.has(key))cells.set(key,[]);cells.get(key).push(value)}},query(b){const found=new Set();for(let x=Math.floor(b.x/size);x<=Math.floor((b.x+b.w)/size);x++)for(let y=Math.floor(b.y/size);y<=Math.floor((b.y+b.h)/size);y++)for(const value of cells.get(x+':'+y)||[])found.add(value);return[...found]}}}
 function create(options={}){
  const {MW=7200,MH=5040,STREET=66,lands=[],roadXs=[],roadYs=[],buildings=[],landmarks=[],trees=[],debris=[],streetlights=[],districtRings={}}=options;
@@ -14,7 +25,7 @@ function create(options={}){
  for(const b of buildings)buildingIndex.add(b);
  for(const r of roads){const xs=r.points.map(p=>p.x),ys=r.points.map(p=>p.y),pad=(r.w||STREET)/2;roadIndex.add(r,{x:Math.min(...xs)-pad,y:Math.min(...ys)-pad,w:Math.max(...xs)-Math.min(...xs)+pad*2,h:Math.max(...ys)-Math.min(...ys)+pad*2})}
  function solid(x,y,r=0){if(!Number.isFinite(x)||!Number.isFinite(y)||x-r<=20||y-r<=20||x+r>=MW-20||y+r>=MH-20)return true;return buildingIndex.query({x:x-r,y:y-r,w:r*2,h:r*2}).some(b=>{const dx=Math.max(b.x-x,0,x-b.x-b.w),dy=Math.max(b.y-y,0,y-b.y-b.h);return r>0?dx*dx+dy*dy<r*r:x>b.x&&x<b.x+b.w&&y>b.y&&y<b.y+b.h})}
- function clearLine(a,b,r=9){return !!a&&!!b&&[a.x,a.y,b.x,b.y].every(Number.isFinite)&&!solid(a.x,a.y,r)&&!solid(b.x,b.y,r)&&!buildingIndex.query(bounds(a,b,r)).some(v=>lineRect(a,b,v,r))}
+ function clearLine(a,b,r=9){return !!a&&!!b&&[a.x,a.y,b.x,b.y].every(Number.isFinite)&&!solid(a.x,a.y,r)&&!solid(b.x,b.y,r)&&!buildingIndex.query(bounds(a,b,r)).some(v=>sweptRect(a,b,v,r))}
  // Split the recovered road centre lines only for topology. The original
  // render geometry and each caller-owned road/rectangle stay untouched.
  const nodes=[],edges=[],byPoint=new Map(),edgePairs=new Set(),splits=segments.map(()=>[0,1]);

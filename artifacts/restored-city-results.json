@@ -1,0 +1,164 @@
+{
+  "time": "2026-10-27T13:18:40.921Z",
+  "passed": [
+    "authentic c9b4af6 geometry, density, terrain and landmarks remain exact",
+    "one connected original grid serves both walking and driving",
+    "all 132 landmark pair routes complete at real original entrances",
+    "all 808 original building door positions retain safe walking access",
+    "spatial collisions match the original circle/rectangle movement boundaries",
+    "exact swept-circle casts preserve legal corners and reject actual corner cuts",
+    "moving checkpoint projections never reuse a stale route direction",
+    "road clearance and sidewalk queries use the original 66px widths"
+  ],
+  "landmarkRoutes": 132,
+  "buildingRoutes": 808,
+  "samples": 431530,
+  "elapsedMs": 538.415303,
+  "diagnostics": {
+    "baseline": "c9b4af6",
+    "mapVersion": 3,
+    "buildings": 808,
+    "buildingsByKind": {
+      "landmark": 12,
+      "store": 321,
+      "homes": 161,
+      "lowrise": 149,
+      "tower": 165
+    },
+    "byDistrict": {
+      "core": {
+        "total": 125,
+        "landmark": 4,
+        "tower": 24,
+        "store": 46,
+        "lowrise": 24,
+        "homes": 27
+      },
+      "west": {
+        "total": 257,
+        "landmark": 3,
+        "store": 101,
+        "homes": 48,
+        "lowrise": 50,
+        "tower": 55
+      },
+      "east": {
+        "total": 252,
+        "landmark": 2,
+        "store": 99,
+        "lowrise": 49,
+        "tower": 50,
+        "homes": 52
+      },
+      "north": {
+        "total": 83,
+        "landmark": 1,
+        "store": 35,
+        "tower": 19,
+        "lowrise": 14,
+        "homes": 14
+      },
+      "south": {
+        "total": 91,
+        "landmark": 2,
+        "homes": 20,
+        "tower": 17,
+        "store": 40,
+        "lowrise": 12
+      }
+    },
+    "roads": 35,
+    "roadSegments": 35,
+    "roadCols": 20,
+    "roadRows": 15,
+    "streetWidth": 66,
+    "houseVariants": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "residentialAdditions": 4,
+    "curvedRoads": 0,
+    "culdesacs": 0,
+    "navNodes": 370,
+    "navEdges": 635,
+    "components": 1,
+    "vehicleComponents": 1,
+    "landmarkConnectivity": [
+      {
+        "key": "hotel",
+        "doorClear": true,
+        "foot": true,
+        "vehicle": true
+      },
+      {
+        "key": "armory",
+        "doorClear": true,
+        "foot": true,
+        "vehicle": true
+      },
+      {
+        "key": "club",
+        "doorClear": true,
+        "foot": true,
+        "vehicle": true
+      },
+      {
+        "key": "records",
+        "doorClear": true,
+        "foot": true,
+        "vehicle": true
+      },
+      {
+        "key": "radio",
+        "doorClear": true,
+        "foot": true,
+        "vehicle": true
+      },
+      {
+        "key": "arcade",
+        "doorClear": true,
+        "foot": true,
+        "vehicle": true
+      },
+      {
+        "key": "motel",
+        "doorClear": true,
+        "foot": true,
+        "vehicle": true
+      },
+      {
+        "key": "warehouse",
+        "doorClear": true,
+        "foot": true,
+        "vehicle": true
+      },
+      {
+        "key": "diner",
+        "doorClear": true,
+        "foot": true,
+        "vehicle": true
+      },
+      {
+        "key": "observatory",
+        "doorClear": true,
+        "foot": true,
+        "vehicle": true
+      },
+      {
+        "key": "clinic",
+        "doorClear": true,
+        "foot": true,
+        "vehicle": true
+      },
+      {
+        "key": "pier",
+        "doorClear": true,
+        "foot": true,
+        "vehicle": true
+      }
+    ]
+  },
+  "scope": "Actual recovered host generation; hashes from c9b4af6, no fixture city regeneration. Exact swept-circle segment clearance plus original circle-body collision and all original facade endpoints."
+}

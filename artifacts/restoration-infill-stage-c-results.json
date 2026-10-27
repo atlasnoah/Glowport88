@@ -1,0 +1,717 @@
+{
+  "time": "2026-10-27T13:19:06.340Z",
+  "phase": "stage-c",
+  "originalCommit": "c9b4af6",
+  "manifestPath": "/tmp/restoration-infill-manifest.json",
+  "blocks": [
+    {
+      "id": "west-3-7",
+      "district": "west",
+      "ix": 3,
+      "iy": 7,
+      "x": 1240,
+      "y": 2540,
+      "w": 360,
+      "h": 340,
+      "cx": 1420,
+      "cy": 2710,
+      "count": 1
+    },
+    {
+      "id": "north-11-2",
+      "district": "north",
+      "ix": 11,
+      "iy": 2,
+      "x": 4120,
+      "y": 840,
+      "w": 360,
+      "h": 340,
+      "cx": 4300,
+      "cy": 1010,
+      "count": 1
+    },
+    {
+      "id": "south-9-11",
+      "district": "south",
+      "ix": 9,
+      "iy": 11,
+      "x": 3400,
+      "y": 3900,
+      "w": 360,
+      "h": 340,
+      "cx": 3580,
+      "cy": 4070,
+      "count": 1
+    },
+    {
+      "id": "east-17-4",
+      "district": "east",
+      "ix": 17,
+      "iy": 4,
+      "x": 6280,
+      "y": 1520,
+      "w": 360,
+      "h": 340,
+      "cx": 6460,
+      "cy": 1690,
+      "count": 1
+    }
+  ],
+  "sites": [
+    {
+      "id": "residential-165",
+      "block": "west:3:7",
+      "rect": {
+        "x": 1432,
+        "y": 2721,
+        "w": 96,
+        "h": 75
+      },
+      "renderBounds": {
+        "x": 1420,
+        "y": 2709,
+        "w": 120,
+        "h": 119
+      },
+      "variant": 0
+    },
+    {
+      "id": "residential-487",
+      "block": "north:11:2",
+      "rect": {
+        "x": 4312,
+        "y": 1021,
+        "w": 102,
+        "h": 75
+      },
+      "renderBounds": {
+        "x": 4300,
+        "y": 1009,
+        "w": 126,
+        "h": 119
+      },
+      "variant": 1
+    },
+    {
+      "id": "residential-430",
+      "block": "south:9:11",
+      "rect": {
+        "x": 3592,
+        "y": 4081,
+        "w": 93,
+        "h": 68
+      },
+      "renderBounds": {
+        "x": 3580,
+        "y": 4069,
+        "w": 117,
+        "h": 112
+      },
+      "variant": 2
+    },
+    {
+      "id": "residential-731",
+      "block": "east:17:4",
+      "rect": {
+        "x": 6472,
+        "y": 1588,
+        "w": 103,
+        "h": 74
+      },
+      "renderBounds": {
+        "x": 6460,
+        "y": 1576,
+        "w": 127,
+        "h": 118
+      },
+      "variant": 3
+    },
+    {
+      "id": "residential-163",
+      "block": "west:3:7",
+      "rect": {
+        "x": 1309,
+        "y": 2721,
+        "w": 95,
+        "h": 73
+      },
+      "renderBounds": {
+        "x": 1297,
+        "y": 2709,
+        "w": 119,
+        "h": 117
+      },
+      "variant": 1
+    },
+    {
+      "id": "residential-486",
+      "block": "north:11:2",
+      "rect": {
+        "x": 4312,
+        "y": 908,
+        "w": 101,
+        "h": 74
+      },
+      "renderBounds": {
+        "x": 4300,
+        "y": 896,
+        "w": 125,
+        "h": 118
+      },
+      "variant": 2
+    },
+    {
+      "id": "residential-427",
+      "block": "south:9:11",
+      "rect": {
+        "x": 3469,
+        "y": 3968,
+        "w": 86,
+        "h": 80
+      },
+      "renderBounds": {
+        "x": 3457,
+        "y": 3956,
+        "w": 110,
+        "h": 124
+      },
+      "variant": 3
+    },
+    {
+      "id": "residential-729",
+      "block": "east:17:4",
+      "rect": {
+        "x": 6349,
+        "y": 1588,
+        "w": 96,
+        "h": 68
+      },
+      "renderBounds": {
+        "x": 6337,
+        "y": 1576,
+        "w": 120,
+        "h": 112
+      },
+      "variant": 0
+    },
+    {
+      "id": "residential-164",
+      "block": "west:3:7",
+      "rect": {
+        "x": 1432,
+        "y": 2608,
+        "w": 87,
+        "h": 81
+      },
+      "renderBounds": {
+        "x": 1420,
+        "y": 2596,
+        "w": 111,
+        "h": 125
+      },
+      "variant": 2
+    },
+    {
+      "id": "residential-485",
+      "block": "north:11:2",
+      "rect": {
+        "x": 4189,
+        "y": 1021,
+        "w": 94,
+        "h": 77
+      },
+      "renderBounds": {
+        "x": 4177,
+        "y": 1009,
+        "w": 118,
+        "h": 121
+      },
+      "variant": 3
+    },
+    {
+      "id": "residential-428",
+      "block": "south:9:11",
+      "rect": {
+        "x": 3469,
+        "y": 4081,
+        "w": 99,
+        "h": 76
+      },
+      "renderBounds": {
+        "x": 3457,
+        "y": 4069,
+        "w": 123,
+        "h": 120
+      },
+      "variant": 0
+    },
+    {
+      "id": "residential-732",
+      "block": "east:17:4",
+      "rect": {
+        "x": 6472,
+        "y": 1701,
+        "w": 102,
+        "h": 77
+      },
+      "renderBounds": {
+        "x": 6460,
+        "y": 1689,
+        "w": 126,
+        "h": 121
+      },
+      "variant": 1
+    },
+    {
+      "id": "residential-162",
+      "block": "west:3:7",
+      "rect": {
+        "x": 1309,
+        "y": 2608,
+        "w": 87,
+        "h": 74
+      },
+      "renderBounds": {
+        "x": 1297,
+        "y": 2596,
+        "w": 111,
+        "h": 118
+      },
+      "variant": 3
+    },
+    {
+      "id": "residential-484",
+      "block": "north:11:2",
+      "rect": {
+        "x": 4189,
+        "y": 908,
+        "w": 88,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 4177,
+        "y": 896,
+        "w": 112,
+        "h": 116
+      },
+      "variant": 0
+    },
+    {
+      "id": "residential-429",
+      "block": "south:9:11",
+      "rect": {
+        "x": 3592,
+        "y": 3968,
+        "w": 98,
+        "h": 79
+      },
+      "renderBounds": {
+        "x": 3580,
+        "y": 3956,
+        "w": 122,
+        "h": 123
+      },
+      "variant": 1
+    },
+    {
+      "id": "residential-730",
+      "block": "east:17:4",
+      "rect": {
+        "x": 6349,
+        "y": 1701,
+        "w": 100,
+        "h": 79
+      },
+      "renderBounds": {
+        "x": 6337,
+        "y": 1689,
+        "w": 124,
+        "h": 123
+      },
+      "variant": 2
+    }
+  ],
+  "geometryHashes": {
+    "MW": "3c5d8ca315f8c36d4cd4beecbc55b34c92a2d6eb1df730908df6f23dd2aa08f7",
+    "MH": "68bc5ec90a2d9464eba42cbe67ccf5a442629e039a2e7d21942c0ea7420b4576",
+    "STREET": "3ada92f28b4ceda38562ebf047c6ff05400d4c572352a1142eedfef67d21e662",
+    "roadXs": "5d17df04bb08568cd85567c282bd567a5a189d97031c224fe408c4dff8ba1b2b",
+    "roadYs": "2a65137060173cb6c3d8e22afb8bb6df3faa8c37dc40084e7d8b7ff19f584dec",
+    "lands": "b8cb927d2f3fe502035e41e03d22015f9584073f5d2d23b02c764e03c56c6653",
+    "footprints": "98f34e30c74dbb7118348fe2e0d9dbab51575179b0b88e9c829bf9154fbffdf1",
+    "trees": "1b8ecd4eb2773a7da26b2470d348bc02a8f4e358a9796bb563ba34aad049b450",
+    "debris": "9eb5dbe5a087b8d2f331818fbde1e9f720d8634b24cb06f549e24787990918c2",
+    "streetlights": "b377d82bf83e5a863802b32f2d2349cb73d14299e4f58c6dfa532f71fdb3d40c"
+  },
+  "buildingCount": 808,
+  "shots": [
+    {
+      "name": "west-3-7-day",
+      "block": "west-3-7",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 1020,
+        "y": 2485
+      },
+      "file": "restoration-infill-stage-c-west-3-7-day.png",
+      "terrainFile": "restoration-infill-stage-c-west-3-7-terrain.png",
+      "sha256": "12cb3ea5c6a5be701da9f0cb565d34f03ddba93b402d4ba4c7f4e8d8c6d92708"
+    },
+    {
+      "name": "west-3-7-night",
+      "block": "west-3-7",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 1020,
+        "y": 2485
+      },
+      "file": "restoration-infill-stage-c-west-3-7-night.png",
+      "terrainFile": "restoration-infill-stage-c-west-3-7-terrain.png",
+      "sha256": "1ce09c41f61978975b12f9240504408161e12644d5ac84ed5b4ac96f14eb62bf"
+    },
+    {
+      "name": "north-11-2-day",
+      "block": "north-11-2",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3900,
+        "y": 785
+      },
+      "file": "restoration-infill-stage-c-north-11-2-day.png",
+      "terrainFile": "restoration-infill-stage-c-north-11-2-terrain.png",
+      "sha256": "a62d6a974f354089340c932534bbd3bc19677742ad7c99f6803dc4b29fc5e50d"
+    },
+    {
+      "name": "north-11-2-night",
+      "block": "north-11-2",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3900,
+        "y": 785
+      },
+      "file": "restoration-infill-stage-c-north-11-2-night.png",
+      "terrainFile": "restoration-infill-stage-c-north-11-2-terrain.png",
+      "sha256": "d8d10e96239201a9741c15a27f1e8c77d76236c3eabf5a71cde15ace150b0951"
+    },
+    {
+      "name": "south-9-11-day",
+      "block": "south-9-11",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3180,
+        "y": 3845
+      },
+      "file": "restoration-infill-stage-c-south-9-11-day.png",
+      "terrainFile": "restoration-infill-stage-c-south-9-11-terrain.png",
+      "sha256": "18a9a74cf167f8a4ffb2e74f210c62b14f1674fb826475ffb5381514183c28c1"
+    },
+    {
+      "name": "south-9-11-night",
+      "block": "south-9-11",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3180,
+        "y": 3845
+      },
+      "file": "restoration-infill-stage-c-south-9-11-night.png",
+      "terrainFile": "restoration-infill-stage-c-south-9-11-terrain.png",
+      "sha256": "0bdeab25888aaa4d901b6a53de3a332c0f9b5c27393cbe6af35610cebb6bbf36"
+    },
+    {
+      "name": "east-17-4-day",
+      "block": "east-17-4",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 6060,
+        "y": 1465
+      },
+      "file": "restoration-infill-stage-c-east-17-4-day.png",
+      "terrainFile": "restoration-infill-stage-c-east-17-4-terrain.png",
+      "sha256": "f2bf205b0f2037b312c505d3c35ebb550905e777510b3b94977fa637dc85c663"
+    },
+    {
+      "name": "east-17-4-night",
+      "block": "east-17-4",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 6060,
+        "y": 1465
+      },
+      "file": "restoration-infill-stage-c-east-17-4-night.png",
+      "terrainFile": "restoration-infill-stage-c-east-17-4-terrain.png",
+      "sha256": "f257bdd3ea844806dab4fa8a2944c5067a80aa1ce5078f81ab0232208c5a9b85"
+    }
+  ],
+  "comparisons": [
+    {
+      "name": "west-3-7-day",
+      "changedPixels": 33921,
+      "pixelFraction": 0.094225,
+      "outsidePixels": 0,
+      "outsideSamples": [],
+      "perSite": {
+        "residential-165": 8767,
+        "residential-487": 0,
+        "residential-430": 0,
+        "residential-731": 0,
+        "residential-163": 8654,
+        "residential-486": 0,
+        "residential-427": 0,
+        "residential-729": 0,
+        "residential-164": 8546,
+        "residential-485": 0,
+        "residential-428": 0,
+        "residential-732": 0,
+        "residential-162": 8026,
+        "residential-484": 0,
+        "residential-429": 0,
+        "residential-730": 0
+      }
+    },
+    {
+      "name": "west-3-7-night",
+      "changedPixels": 33921,
+      "pixelFraction": 0.094225,
+      "outsidePixels": 0,
+      "outsideSamples": [],
+      "perSite": {
+        "residential-165": 8767,
+        "residential-487": 0,
+        "residential-430": 0,
+        "residential-731": 0,
+        "residential-163": 8654,
+        "residential-486": 0,
+        "residential-427": 0,
+        "residential-729": 0,
+        "residential-164": 8546,
+        "residential-485": 0,
+        "residential-428": 0,
+        "residential-732": 0,
+        "residential-162": 8026,
+        "residential-484": 0,
+        "residential-429": 0,
+        "residential-730": 0
+      }
+    },
+    {
+      "name": "north-11-2-day",
+      "changedPixels": 35010,
+      "pixelFraction": 0.09725,
+      "outsidePixels": 0,
+      "outsideSamples": [],
+      "perSite": {
+        "residential-165": 0,
+        "residential-487": 9318,
+        "residential-430": 0,
+        "residential-731": 0,
+        "residential-163": 0,
+        "residential-486": 9047,
+        "residential-427": 0,
+        "residential-729": 0,
+        "residential-164": 0,
+        "residential-485": 8725,
+        "residential-428": 0,
+        "residential-732": 0,
+        "residential-162": 0,
+        "residential-484": 7920,
+        "residential-429": 0,
+        "residential-730": 0
+      }
+    },
+    {
+      "name": "north-11-2-night",
+      "changedPixels": 35010,
+      "pixelFraction": 0.09725,
+      "outsidePixels": 0,
+      "outsideSamples": [],
+      "perSite": {
+        "residential-165": 0,
+        "residential-487": 9318,
+        "residential-430": 0,
+        "residential-731": 0,
+        "residential-163": 0,
+        "residential-486": 9047,
+        "residential-427": 0,
+        "residential-729": 0,
+        "residential-164": 0,
+        "residential-485": 8725,
+        "residential-428": 0,
+        "residential-732": 0,
+        "residential-162": 0,
+        "residential-484": 7920,
+        "residential-429": 0,
+        "residential-730": 0
+      }
+    },
+    {
+      "name": "south-9-11-day",
+      "changedPixels": 34491,
+      "pixelFraction": 0.09580833333333333,
+      "outsidePixels": 0,
+      "outsideSamples": [],
+      "perSite": {
+        "residential-165": 0,
+        "residential-487": 0,
+        "residential-430": 7924,
+        "residential-731": 0,
+        "residential-163": 0,
+        "residential-486": 0,
+        "residential-427": 7772,
+        "residential-729": 0,
+        "residential-164": 0,
+        "residential-485": 0,
+        "residential-428": 9044,
+        "residential-732": 0,
+        "residential-162": 0,
+        "residential-484": 0,
+        "residential-429": 9792,
+        "residential-730": 0
+      }
+    },
+    {
+      "name": "south-9-11-night",
+      "changedPixels": 34491,
+      "pixelFraction": 0.09580833333333333,
+      "outsidePixels": 0,
+      "outsideSamples": [],
+      "perSite": {
+        "residential-165": 0,
+        "residential-487": 0,
+        "residential-430": 7924,
+        "residential-731": 0,
+        "residential-163": 0,
+        "residential-486": 0,
+        "residential-427": 7772,
+        "residential-729": 0,
+        "residential-164": 0,
+        "residential-485": 0,
+        "residential-428": 9044,
+        "residential-732": 0,
+        "residential-162": 0,
+        "residential-484": 0,
+        "residential-429": 9792,
+        "residential-730": 0
+      }
+    },
+    {
+      "name": "east-17-4-day",
+      "changedPixels": 36982,
+      "pixelFraction": 0.10272777777777778,
+      "outsidePixels": 0,
+      "outsideSamples": [],
+      "perSite": {
+        "residential-165": 0,
+        "residential-487": 0,
+        "residential-430": 0,
+        "residential-731": 9257,
+        "residential-163": 0,
+        "residential-486": 0,
+        "residential-427": 0,
+        "residential-729": 8174,
+        "residential-164": 0,
+        "residential-485": 0,
+        "residential-428": 0,
+        "residential-732": 9957,
+        "residential-162": 0,
+        "residential-484": 0,
+        "residential-429": 0,
+        "residential-730": 9594
+      }
+    },
+    {
+      "name": "east-17-4-night",
+      "changedPixels": 36982,
+      "pixelFraction": 0.10272777777777778,
+      "outsidePixels": 0,
+      "outsideSamples": [],
+      "perSite": {
+        "residential-165": 0,
+        "residential-487": 0,
+        "residential-430": 0,
+        "residential-731": 9257,
+        "residential-163": 0,
+        "residential-486": 0,
+        "residential-427": 0,
+        "residential-729": 8174,
+        "residential-164": 0,
+        "residential-485": 0,
+        "residential-428": 0,
+        "residential-732": 9957,
+        "residential-162": 0,
+        "residential-484": 0,
+        "residential-429": 0,
+        "residential-730": 9594
+      }
+    }
+  ],
+  "terrain": {
+    "draws": 8,
+    "hits": 10,
+    "bakes": 10,
+    "evictions": 4,
+    "residentBytes": 24838144,
+    "peakResidentBytes": 25165824,
+    "totalBakeMs": 248,
+    "maxBakeMs": 43.5,
+    "lastBakeMs": 11.399999976158142,
+    "tileSize": 1024,
+    "maxTiles": 6,
+    "cachedTiles": 6,
+    "maxSurfacePixels": 1048576,
+    "estimatedResidentMiB": 23.6875,
+    "tiles": [
+      {
+        "key": "3,1",
+        "x": 3072,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "4,1",
+        "x": 4096,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "3,3",
+        "x": 3072,
+        "y": 3072,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "3,4",
+        "x": 3072,
+        "y": 4096,
+        "width": 1024,
+        "height": 944
+      },
+      {
+        "key": "5,1",
+        "x": 5120,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      },
+      {
+        "key": "6,1",
+        "x": 6144,
+        "y": 1024,
+        "width": 1024,
+        "height": 1024
+      }
+    ]
+  },
+  "errors": [],
+  "scope": "Supplemental actual Chromium terrain/lighting captures at exact selected original-block centers. Footprints, all grid coordinates, districts, trees, decorations and lamps must remain identical. Raw terrain changes are constrained to selected facade render bounds; day/night composites also show atmosphere, without transient actors/UI."
+}
