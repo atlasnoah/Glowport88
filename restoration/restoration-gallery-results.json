@@ -1,0 +1,79 @@
+{
+  "time": "2026-10-27T19:07:37.304Z",
+  "references": [
+    {
+      "gallery": "city",
+      "localPNGReferences": 128,
+      "allReferencesExist": true
+    },
+    {
+      "gallery": "infill",
+      "localPNGReferences": 56,
+      "allReferencesExist": true
+    }
+  ],
+  "results": [
+    {
+      "gallery": "city",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scenes": 21,
+      "stages": 5,
+      "allStageImagesLoaded": true,
+      "allSceneJumps": true,
+      "originalImagesPreserved": true,
+      "crossGalleryLink": true,
+      "noHorizontalOverflow": true,
+      "screenshot": "restoration-gallery-1440.png"
+    },
+    {
+      "gallery": "city",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scenes": 21,
+      "stages": 5,
+      "allStageImagesLoaded": true,
+      "allSceneJumps": true,
+      "originalImagesPreserved": true,
+      "crossGalleryLink": true,
+      "noHorizontalOverflow": true,
+      "screenshot": "restoration-gallery-390.png"
+    },
+    {
+      "gallery": "infill",
+      "viewport": {
+        "width": 1440,
+        "height": 1000
+      },
+      "scenes": 8,
+      "stages": 4,
+      "allStageImagesLoaded": true,
+      "allSceneJumps": true,
+      "originalImagesPreserved": true,
+      "crossGalleryLink": true,
+      "noHorizontalOverflow": true,
+      "screenshot": "restoration-infill-gallery-1440.png"
+    },
+    {
+      "gallery": "infill",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "scenes": 8,
+      "stages": 4,
+      "allStageImagesLoaded": true,
+      "allSceneJumps": true,
+      "originalImagesPreserved": true,
+      "crossGalleryLink": true,
+      "noHorizontalOverflow": true,
+      "screenshot": "restoration-infill-gallery-390.png"
+    }
+  ],
+  "errors": [],
+  "scope": "Actual Chromium rendering of both final comparison galleries at desktop and phone widths. Every stage image is decoded, every scene selector is exercised, original references remain unchanged, and cross-gallery links/layout are verified. Separate from gameplay and physical-device testing."
+}
