@@ -1,0 +1,17 @@
+{
+  "time": "2026-10-28T14:13:53.067Z",
+  "version": "0.6.2",
+  "sourceCommit": "f1830cbe1d38309d93ef8601aa3c2e5b653ba853",
+  "pagesCommit": "c6a4dbded4752486e55fb2a4adc25ee479a606de",
+  "sha256": "ccb6d103ddb2af673acd6b03e3f1e2fa1df0810539cf5fa39daf52e1ef900263",
+  "verifiedHTTPSDownload": true,
+  "matchesTestedRelease": true,
+  "mobilePlaybackResult": "public-demo-results.json",
+  "publicEvidence": "bugfix-public-qa-results.json",
+  "directExternalBrowser": {
+    "status": "environment-blocked",
+    "result": "bugfix-public-direct-browser.json",
+    "tlsVerificationDisabled": false
+  },
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.2-bugfix"
+}

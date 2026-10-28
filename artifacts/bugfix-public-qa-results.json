@@ -1,0 +1,36 @@
+{
+  "time": "2026-10-28T14:13:44.363Z",
+  "verifiedHTTPS": true,
+  "results": [
+    {
+      "url": "https://atlasnoah.github.io/Glowport88/qa/all-missions-host-results.json",
+      "sha256": "76c71735cf99dfa3523eebcab8dd5ddf6bdbc7c00ce853e7338cb4e18fe8370e",
+      "matchesLocal": true
+    },
+    {
+      "url": "https://atlasnoah.github.io/Glowport88/qa/all-entrances-host-results.json",
+      "sha256": "5b4e84996c7c441ceabebb4a38836190b00b052d5c1f178cf0b10c6388186a76",
+      "matchesLocal": true
+    },
+    {
+      "url": "https://atlasnoah.github.io/Glowport88/qa/all-entrances-desktop.png",
+      "sha256": "920565870827ed735256a1b2fedc0fe1cac73b71df94beb2feacbd5ae57f8a62",
+      "matchesLocal": true
+    },
+    {
+      "url": "https://atlasnoah.github.io/Glowport88/qa/all-entrances-mobile.png",
+      "sha256": "b49f618c31ccb517095b8c02b9f027c76b815b6c981647e68be9dadb9ec8ee60",
+      "matchesLocal": true
+    },
+    {
+      "url": "https://atlasnoah.github.io/Glowport88/restoration/restoration-visual-comparison.html",
+      "sha256": "6a67cb99aa2962b7921da4c4b22f81e574e7194107f9c35abb654813b918a4ef",
+      "matchesLocal": true
+    },
+    {
+      "url": "https://atlasnoah.github.io/Glowport88/restoration/restoration-infill-comparison.html",
+      "sha256": "4f05247b1d5413a6bff3538a17caea52b755e1e690ae84eda307272228f5f0bd",
+      "matchesLocal": true
+    }
+  ]
+}

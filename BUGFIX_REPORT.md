@@ -43,4 +43,12 @@ Physical iPhone/Android, Safari/Firefox, subjective speaker/audio quality, every
 
 ## Verified delivery
 
-Publication pending final verification. The intended playable URL is https://atlasnoah.github.io/Glowport88/?v=0.6.2-bugfix. This section will record the tested source, Pages deployment and exact release checksum.
+**Published and verified:** [Play the updated phone/browser demo](https://atlasnoah.github.io/Glowport88/?v=0.6.2-bugfix). Choose **Start / Continue** to resume progress.
+
+- Tested source: [`f1830cbe1d38309d93ef8601aa3c2e5b653ba853`](https://github.com/atlasnoah/Glowport88/commit/f1830cbe1d38309d93ef8601aa3c2e5b653ba853) on `codex/gameplay-bug-audit`; `main` remains unchanged. Later evidence/report commits do not change the game payload.
+- Pages deployment: [`c6a4dbded4752486e55fb2a4adc25ee479a606de`](https://github.com/atlasnoah/Glowport88/commit/c6a4dbded4752486e55fb2a4adc25ee479a606de). Live metadata identifies 0.6.2, all 390 verified stages and all 12 playable buildings.
+- Standalone/live SHA-256: `ccb6d103ddb2af673acd6b03e3f1e2fa1df0810539cf5fa39daf52e1ef900263`.
+- **PASS** `node tests/public-demo.cjs`: certificate-verified HTTPS download matches the tested standalone exactly. Isolated 390×844 playback of those public bytes passes Start, touch movement, phone/jobs, map, entrance guidance and direct East Diner acceptance with no script errors.
+- **PASS** public mission/entrance result JSONs, two entrance screenshots and both comparison galleries match local hashes through normal HTTPS. [Published mission evidence](https://atlasnoah.github.io/Glowport88/qa/all-missions-host-results.json) and [entrance evidence](https://atlasnoah.github.io/Glowport88/qa/all-entrances-host-results.json) are available alongside the game.
+
+The separate direct external Chromium navigation probe is environment-blocked by `ERR_CERT_AUTHORITY_INVALID` in the cloud proxy trust setup. TLS verification was not disabled. Certificate-verified downloads and playback of those exact deployed bytes passed; direct public-origin cloud Chromium navigation is not claimed. Evidence is in `artifacts/public-demo-results.json`, `bugfix-public-build.json`, `bugfix-public-direct-browser.json` and `bugfix-public-qa-results.json`.

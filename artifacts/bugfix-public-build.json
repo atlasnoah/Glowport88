@@ -1,0 +1,43 @@
+{
+  "version": "0.6.2",
+  "sourceCommit": "f1830cbe1d38309d93ef8601aa3c2e5b653ba853",
+  "sha256": "ccb6d103ddb2af673acd6b03e3f1e2fa1df0810539cf5fa39daf52e1ef900263",
+  "mobileTouch": true,
+  "touchRefinements": true,
+  "storyNavigation": true,
+  "livingCity": true,
+  "originalCityRestored": true,
+  "originalCommit": "c9b4af6",
+  "saveVersion": 6,
+  "mapVersion": 3,
+  "mainMissions": 40,
+  "sideMissions": 20,
+  "encounters": 32,
+  "vehicleModels": 10,
+  "cassettes": 12,
+  "radioStations": 4,
+  "buildings": 808,
+  "roads": 35,
+  "streetWidth": 66,
+  "residentialFacades": 16,
+  "residentialVariants": 4,
+  "comparison": "restoration/restoration-visual-comparison.html",
+  "residentialComparison": "restoration/restoration-infill-comparison.html",
+  "bugfixAudit": true,
+  "missionVerification": {
+    "main": 40,
+    "side": 20,
+    "events": 32,
+    "authoredStages": 390,
+    "completedRuns": 176,
+    "objectiveResolutions": 580,
+    "projectileShots": 631,
+    "timingInputs": 121
+  },
+  "entranceVerification": {
+    "playableBuildings": 12,
+    "roundTrips": 48,
+    "activeMissionStates": 12
+  },
+  "verification": "qa/bug-audit-suite-results.json"
+}

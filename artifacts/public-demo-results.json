@@ -1,8 +1,8 @@
 {
-  "time": "2026-10-27T19:12:33.403Z",
-  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.1-original-city",
+  "time": "2026-10-28T14:13:53.067Z",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.2-bugfix",
   "verifiedHTTPSDownload": true,
-  "sha256": "eeed920efb719c230c267ee279e6a097dcf51d28faeddd2f03e3f27da7dedae8",
+  "sha256": "ccb6d103ddb2af673acd6b03e3f1e2fa1df0810539cf5fa39daf52e1ef900263",
   "matchesTestedRelease": true,
   "browserPlaybackOfDownloadedBytes": {
     "originalCity": {
@@ -27,5 +27,5 @@
     },
     "errors": []
   },
-  "directExternalBrowserNavigation": "blocked by cloud Chromium proxy trust database mounted read-only; TLS verification was not disabled"
+  "directExternalBrowserNavigation": "not exercised by this script; direct navigation is recorded by a separate browser probe"
 }
