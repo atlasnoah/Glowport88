@@ -1,0 +1,14 @@
+{
+  "time": "2026-10-28T13:58:50.670Z",
+  "passed": [
+    "reading the last unread message retains focus inside the active phone",
+    "unavailable contact actions retain focus on the replacement contact button",
+    "property purchase and upgrades stay keyboard-accessible after model refresh",
+    "Tab recaptures focus if another browser action places it behind the dialog",
+    "phone captures world input and Escape restores the opener and live movement",
+    "touch action refresh also keeps phone focus and native scrolling available",
+    "no script or missing-asset errors occur during keyboard/touch action refreshes"
+  ],
+  "errors": [],
+  "scope": "Actual restored game host in desktop and phone-sized Chromium, native Enter/Tab/Escape and touch actions. Fixtures supply one unread message/cash and skip travel; no physical-device claim."
+}

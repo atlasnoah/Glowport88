@@ -48,7 +48,7 @@ class Gameplay{
 
  restoreMissionItems(value,definition=this.definition()){const needed=missionItemIds(definition);for(const id of grantedItemIds(value))if(needed.has(id)&&!this.progression.count(id))this.progression.addItem(id,1)}
 
- export(){return {version:1,encounters:this.encounters?.export()||null,engine:this.engine.export(),progression:this.progression.export(),police:this.police.export(),stack:clone(this.stack),actor:clone(this.actor),offer:clone(this.offer),eventTimes:clone(this.eventTimes),nextEvent:this.nextEvent,checkpoint:clone(this.checkpoint),startCheckpoint:clone(this.startCheckpoint),abandoned:clone(this.abandoned),rewardReceipts:clone(this.rewardReceipts),runStats:clone(this.runStats),vehicleSequence:this.vehicleSequence,drivenCars:this.api.cars().filter(c=>c.wasDriven&&c!==this.api.player().inCar).map(c=>this.vehicleRecord(c)),controlledCar:this.vehicleRecord(this.api.player().inCar),enemies:clone(this.api.enemies().filter(e=>e._mission)),targetCar:this.vehicleRecord(this.api.cars().find(c=>c._missionTarget)||null)};}
+ export(){return {version:1,encounters:this.encounters?.export()||null,engine:this.engine.export(),progression:this.progression.export(),police:this.police.export(),stack:clone(this.stack),actor:clone(this.actor),offer:clone(this.offer),eventTimes:clone(this.eventTimes),nextEvent:this.nextEvent,checkpoint:clone(this.checkpoint),startCheckpoint:clone(this.startCheckpoint),abandoned:clone(this.abandoned),rewardReceipts:clone(this.rewardReceipts),runStats:clone(this.runStats),vehicleSequence:this.vehicleSequence,drivenCars:this.api.cars().filter(c=>(c.wasDriven||c.personal&&c.id)&&c!==this.api.player().inCar).map(c=>this.vehicleRecord(c)),controlledCar:this.vehicleRecord(this.api.player().inCar),enemies:clone(this.api.enemies().filter(e=>e._mission)),targetCar:this.vehicleRecord(this.api.cars().find(c=>c._missionTarget)||null)};}
  definition(){return this.engine.currentDefinition()}
  stage(){return this.engine.currentStage()}
  active(){return this.engine.state.active?.status==='active'}
@@ -209,7 +209,14 @@ class Gameplay{
   if(stage.type==='escort'){const before=this.key();this.engine.interact(this.snapshot());this.pumpEvents();return before!==this.key()||!this.active()}
   if(stage.type==='investigate'){const clues=stage.clues||defaultClues,node=clues[data.clue||0];if(p.inside!==stage.where||!node||dist({x:p.ix,y:p.iy},node)>54)return false;this.queue([{speaker:node.speaker||stage.speaker||'YOU',text:node.text||'A new lead.'}],this.guard(key,()=>{data.clue=(data.clue||0)+1;if(data.clue>=clues.length){data.done=true;if(stage.item)this.progression.addItem(stage.item,1)}this.engine.tick(0,this.snapshot());this.pumpEvents();this.api.save()}));return true}
   if(!this.near(stage,stage.inside?75:85))return false;
-  if(stage.type==='choice'){this.api.choice(stage.speaker||'VEE',stage.text||'Which way do we take this?',stage.choices,this.guard(key,()=>{}),index=>{if(this.key()!==key)return;const option=stage.choices[index];if(option.reward?.cash<0&&p.money< -option.reward.cash){this.api.announce('NOT ENOUGH CASH',2);return}this.engine.choose(index);this.pumpEvents();this.api.save()});return true}
+  if(stage.type==='choice'){
+   const generation=this.callbackGeneration,recorded=this.engine.state.active.choices[stage.id],replay=Number.isInteger(recorded)&&recorded>=0&&recorded<stage.choices.length,choices=replay?[{...stage.choices[recorded],label:'Keep recorded decision · '+stage.choices[recorded].label}]:stage.choices;
+   this.api.choice(stage.speaker||'VEE',(stage.text||'Which way do we take this?')+(replay?'\nYour earlier decision is preserved.':''),choices,this.guard(key,()=>{}),index=>{
+    if(!this.active()||this.key()!==key||this.callbackGeneration!==generation)return;const selected=replay?(index===0?recorded:null):index,option=stage.choices[selected];if(!option)return;
+    if(!this.engine.state.active.claimed['choice:'+this.engine.state.active.stage]&&option.reward?.cash<0&&p.money< -option.reward.cash){this.api.announce('NOT ENOUGH CASH',2);return}
+    if(this.engine.choose(selected)){this.pumpEvents();this.api.save()}
+   });return true;
+  }
   if(stage.type==='heist'){this.openOperation(stage);return true}
   if(stage.type==='talk'||stage.type==='interact'){this.queue(stage.lines||[{speaker:stage.speaker||'CONTACT',text:stage.text||stage.label}],this.guard(key,()=>{data.done=true;this.engine.tick(0,this.snapshot());this.pumpEvents();this.api.save()}));return true}
   if(stage.type==='collect'){this.progression.addItem(stage.item||'package',1);data.collected=true;this.api.announce('COLLECTED · '+(stage.item||'PACKAGE'),3)}
@@ -239,6 +246,7 @@ class Gameplay{
  crewHealth(base){const flags=this.engine.state.flags;return base+(flags.witnessPolicy==='protect'?20:0)+(flags.evacuationPriority==='civilians'?30:0)}
  performanceBonus(def,event){if(def.kind!=='main'||def.stages.every(s=>s.type==='legacy'))return 0;const precision=this.runStats[event.run]?.precision||[],clean=!(event.record?.failures),accurate=precision.length&&precision.every(n=>n>=.99);return Math.floor((def.reward.cash||0)*((clean?.1:0)+(accurate?.1:0)))}
  rememberChoice(option,event){
+  if(event.rewardClaimed)return;
   const flags=this.engine.state.flags,effects={jaxPartnership:['JAX',option.value==='partner'?3:1],gangAlliance:['MISS VIOLET',2],witnessPolicy:['MIKA',3],veeDecision:['VEE',option.value==='replace'?-3:option.value==='forgive'?3:1],evacuationPriority:['ROXY',2]};
   if(effects[option.flag]){const [who,delta]=effects[option.flag];this.engine.state.relationships[who]=clamp((this.engine.state.relationships[who]||0)+delta,-100,100)}
   if(option.flag==='reservePolicy')this.reward(flags.reservePolicy==='operation'?{cash:1000,reputation:-2}:{cash:0,reputation:6},event.id+'-reserve');
@@ -263,8 +271,23 @@ class Gameplay{
   p.money-=cost;if(kind==='repair')car.health=100;else car.tuning=(car.tuning||0)+1;car.wasDriven=true;this.api.save();return {ok:true,reason:kind==='repair'?'Vehicle repaired.':'Engine tuned. Acceleration and top speed improved.'};
  }
  purchase(id,upgrade=false){const p=this.api.player(),result=upgrade?this.progression.upgradeProperty(id,p.money):this.progression.purchaseProperty(id,p.money);if(result.ok){p.money-=result.cost;this.api.announce(result.reason||'PROPERTY SECURED',3);this.api.save()}return result}
- storeVehicle(id){const p=this.api.player(),meta=GlowportProgression.properties.find(d=>d.id===id),loc=this.location(meta?.where||meta?.location);if(!p.inCar||Math.abs(p.inCar.speed)>8||dist(p.inCar,loc)>120)return {ok:false,reason:'Bring a stopped vehicle to this property first.'};const result=this.progression.storeVehicle(id,p.inCar);if(result.ok){const car=p.inCar;p.x=car.x+30;p.y=car.y;p.inCar=null;this.api.cars().splice(this.api.cars().indexOf(car),1);this.api.save()}return result}
- retrieveVehicle(id,vehicle){const meta=GlowportProgression.properties.find(d=>d.id===id),loc=this.location(meta?.where||meta?.location);if(this.api.player().inside||dist(this.focus(),loc)>140)return {ok:false,reason:'Meet the garage dispatcher at the property first.'};const result=this.progression.retrieveVehicle(id,vehicle);if(result.ok){const point=this.api.road(loc.x,loc.y);this.api.cars().push({...result.vehicle,x:point.x,y:point.y,speed:0,ai:false,parked:true,personal:true,health:result.vehicle.health??100});this.api.save()}return result}
+ storeVehicle(id){
+  const p=this.api.player(),meta=GlowportProgression.properties.find(d=>d.id===id),loc=this.location(meta?.where||meta?.location),car=p.inCar,cars=this.api.cars();
+  if(!meta?.capacity||p.inside||!car||Math.abs(car.speed||0)>8||dist(car,loc)>120)return {ok:false,reason:'Bring a stopped vehicle to this property first.'};
+  if(this.api.world().wanted>.1)return {ok:false,reason:'Lose the police search before using the garage.'};
+  let exit=null;for(let i=0;i<8;i++){const angle=i*Math.PI/4,point={x:car.x+Math.cos(angle)*38,y:car.y+Math.sin(angle)*38};if(!this.api.solid(point.x,point.y,10)&&!cars.some(other=>other!==car&&dist(other,point)<29)){exit=point;break}}
+  if(!exit)return {ok:false,reason:'No safe place to step out. Clear the doorway before storing.'};
+  const result=this.progression.storeVehicle(id,car);if(result.ok){p.x=exit.x;p.y=exit.y;p.inCar=null;const index=cars.indexOf(car);if(index>=0)cars.splice(index,1);this.api.recenter();this.api.save()}return result;
+ }
+ retrieveVehicle(id,vehicle){
+  const p=this.api.player(),meta=GlowportProgression.properties.find(d=>d.id===id),loc=this.location(meta?.where||meta?.location),cars=this.api.cars();
+  if(!meta?.capacity||p.inside||dist(this.focus(),loc)>140)return {ok:false,reason:'Meet the garage dispatcher at the property first.'};
+  if(Math.abs(p.inCar?.speed||0)>8)return {ok:false,reason:'Stop the vehicle before using the garage.'};
+  if(this.api.world().wanted>.1)return {ok:false,reason:'Lose the police search before using the garage.'};
+  let point=null;for(const offset of [0,60,-60,120,-120,180,-180,240,-240]){const candidate=this.api.road(loc.x+offset,loc.y+offset*.5);if(candidate&&Number.isFinite(candidate.x)&&Number.isFinite(candidate.y)&&!this.api.solid(candidate.x,candidate.y,20)&&!cars.some(car=>dist(car,candidate)<45)){point=candidate;break}}
+  if(!point)return {ok:false,reason:'The pickup lane is blocked. Clear it and try again.'};
+  const result=this.progression.retrieveVehicle(id,vehicle);if(result.ok){cars.push({...result.vehicle,x:point.x,y:point.y,speed:0,ai:false,parked:true,personal:true,health:result.vehicle.health??100});this.api.save()}return result;
+ }
  enemyTarget(){return this.stage()?.type==='defend'&&this.actor?.hp>0?this.actor:null}
  hitActor(bullet){if(!this.actor||this.actor.passenger||bullet.team==='player'||this.actor.hp<=0)return false;if(dist(this.actor,bullet)>12)return false;this.actor.hp-=bullet.damage||6;return true}
  roomSolids(){if(this.stage()?.type!=='investigate'||!this.active()||this.api.player().inside!==this.stage().where)return [];return (this.stage().clues||defaultClues).map(n=>[n.x-22,n.y-17,n.x+22,n.y+20])}

@@ -1,0 +1,12 @@
+{
+  "time": "2026-10-28T13:58:39.069Z",
+  "passed": [
+    "phone checkpoint restart replays authored m31 without duplicating Vee trust",
+    "recorded choice and single consequence survive actual Save, reload and another phone restart",
+    "paid street-scam replay remains completable through touch with zero remaining cash",
+    "a recorded third choice replays its original consequence through the single touch option",
+    "mission recovery touch interactions produce no browser or missing-asset errors"
+  ],
+  "errors": [],
+  "scope": "Actual 390x844 mobile Chromium Interact, dialogue choices, phone Contacts restart, Save/reload. QA fixtures select m31 or street-scam and travel positions; production handlers complete each investigated clue/talk/choice. No physical-device or continuous campaign claim."
+}

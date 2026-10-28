@@ -1,0 +1,11 @@
+{
+  "time": "2026-10-28T13:58:24.182Z",
+  "passed": [
+    "m31 checkpoint replay preserves one recorded Vee consequence",
+    "recorded engine choices cannot switch branches after checkpoint restart or reload",
+    "paid street-scam choice can replay with zero cash without charging again",
+    "stale choice callbacks cannot resolve a newly restarted instance of the same stage",
+    "unentered owned cars export durably and restored starter identity does not duplicate"
+  ],
+  "scope": "Production adapter and engine with deterministic host; authored m31 investigation/talk/choice retries, paid street-scam replay, stale callbacks and owned-car save identity. Actual geometry and phone interactions are verified in the separate persistence host audit."
+}

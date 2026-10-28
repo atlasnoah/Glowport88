@@ -1,0 +1,127 @@
+{
+  "time": "2026-10-28T13:58:45.724Z",
+  "passed": [
+    "workshop purchase and on-foot upgrades persist before the first drive",
+    "repeated loads keep one starter and one retrieved vehicle without charging again",
+    "phone retrieval persists an undriven car and finds a free lane beside an existing car",
+    "blocked and missing pickup routes preserve stored vehicles and wallet",
+    "phone storage safely exits vehicles at all three original properties",
+    "unsafe exit and moving or wanted storage attempts leave both car and inventory unchanged",
+    "workshop keyboard focus survives purchases, upgrades and paint while trapping background controls",
+    "persistence and property flows have no script or missing-asset errors"
+  ],
+  "errors": [],
+  "workshop": {
+    "money": 15430,
+    "wasDriven": false,
+    "stored": 0,
+    "saved": {
+      "id": "owned-car-1",
+      "color": "#7894bb",
+      "health": 100,
+      "style": 0,
+      "model": "Sparrow 88",
+      "personal": true,
+      "angle": 2.7,
+      "tuning": 0,
+      "modelId": "compact",
+      "kind": "car",
+      "paint": "blue",
+      "handling": 1,
+      "durability": 0,
+      "trim": 0,
+      "x": 1121,
+      "y": 1520.00000112,
+      "speed": 0,
+      "ai": false,
+      "parked": true,
+      "wasDriven": false
+    }
+  },
+  "phone": {
+    "first": "owned-car-1",
+    "second": "owned-car-2",
+    "gap": 60
+  },
+  "blocked": {
+    "blocked": {
+      "ok": false,
+      "reason": "The pickup lane is blocked. Clear it and try again."
+    },
+    "missing": {
+      "ok": false,
+      "reason": "The pickup lane is blocked. Clear it and try again."
+    },
+    "carsUnchanged": true,
+    "moneyUnchanged": true,
+    "stored": true
+  },
+  "safeExits": [
+    {
+      "property": "palm-garage",
+      "ok": true,
+      "safe": true,
+      "exited": true,
+      "stored": 1,
+      "removed": true,
+      "from": {
+        "x": 1027,
+        "y": 1449
+      },
+      "to": {
+        "x": 1053.8700576850888,
+        "y": 1475.8700576850888
+      }
+    },
+    {
+      "property": "dockside-lockup",
+      "ok": true,
+      "safe": true,
+      "exited": true,
+      "stored": 1,
+      "removed": true,
+      "from": {
+        "x": 6022,
+        "y": 2809
+      },
+      "to": {
+        "x": 6048.870057685089,
+        "y": 2835.870057685089
+      }
+    },
+    {
+      "property": "bayfront-boathouse",
+      "ok": true,
+      "safe": true,
+      "exited": true,
+      "stored": 1,
+      "removed": true,
+      "from": {
+        "x": 2827,
+        "y": 4453
+      },
+      "to": {
+        "x": 2827,
+        "y": 4491
+      }
+    }
+  ],
+  "refusals": {
+    "blocked": {
+      "ok": false,
+      "reason": "No safe place to step out. Clear the doorway before storing."
+    },
+    "moving": {
+      "ok": false,
+      "reason": "Bring a stopped vehicle to this property first."
+    },
+    "wanted": {
+      "ok": false,
+      "reason": "Lose the police search before using the garage."
+    },
+    "sameInventory": true,
+    "stillDriving": true,
+    "present": true
+  },
+  "scope": "Actual mobile/desktop Chromium production host, real touch workshop/phone/Save/Start and keyboard actions, immediate repeated reloads. Funded fixtures and exact safe original-map property points isolate paid-vehicle persistence, pickup occupancy, safe exits and modal focus."
+}

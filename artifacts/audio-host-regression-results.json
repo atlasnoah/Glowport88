@@ -1,0 +1,11 @@
+{
+  "time": "2026-10-28T13:58:56.394Z",
+  "passed": [
+    "user-requested sound preview survives paused updates while game time remains frozen",
+    "completed sound preview releases every voice",
+    "closing the sound panel cancels its preview",
+    "muted preview stays silent and explains the mute setting"
+  ],
+  "errors": [],
+  "scope": "Real mobile Chromium Sound controls and Web Audio voice lifecycle, actual host pause guard and production paused-update calls. This verifies scheduling, not physical speakers or subjective audio quality."
+}

@@ -1,0 +1,12 @@
+{
+  "time": "2026-10-28T13:58:53.481Z",
+  "passed": [
+    "race rivals wait until the player first acquires a vehicle",
+    "started rivals continue moving when the player leaves their vehicle",
+    "disabled opponents stop while undamaged rivals keep racing",
+    "reloading a race while on foot resumes opponents without duplicating cars",
+    "all 32 event scenes spawn safely and remove their temporary actors and cars"
+  ],
+  "errors": [],
+  "scope": "Actual restored mobile Chromium host, production updates and normal Save/Start taps; controlled time steps test race lifecycle and all32offer/active-scene spawn/cleanup geometry. No physical device or full human event-outcome claim."
+}

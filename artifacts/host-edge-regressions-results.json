@@ -1,0 +1,16 @@
+{
+  "time": "2026-10-28T13:59:05.988Z",
+  "passed": [
+    "menu Tab reaches controls without starting the game",
+    "focused New Story Enter uses its native action and preserves the old backup",
+    "menu Space activates the focused Continue button",
+    "bare Enter still resumes the existing save",
+    "continued on-foot save centers the camera before the first simulation frame",
+    "dialogue Tab and Enter select the highlighted response exactly once",
+    "map journal shop and pause keep keyboard focus inside their active window",
+    "advertised engine-part handoff works from the stopped car at its destination"
+  ],
+  "failed": [],
+  "errors": [],
+  "scope": "Actual menu keyboard controls, safe save continuation first-frame camera, and real ACTIONS engine-part handoff using the controlled-car location. Animation is frozen to expose initial state without travel timing."
+}

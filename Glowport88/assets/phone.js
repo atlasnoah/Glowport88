@@ -53,11 +53,16 @@ function render(){if(!panel)return;
  panel.querySelector('#phoneMission').textContent=[model.chapter?String(model.chapter):'',model.title||'FREE ROAM'].filter(Boolean).join(' · ');
  panel.querySelector('#phoneCash').textContent=money(model.cash);panel.querySelector('#phoneReputation').textContent='REPUTATION '+Math.round(Number(model.reputation)||0);
  for(const [id] of tabs)panel.querySelector('#phoneTab-'+id).setAttribute('aria-selected',String(tab===id));
- const content=panel.querySelector('#phoneContent');content.replaceChildren();({messages,jobs,contacts,properties,stats}[tab]||messages)(content);
+ const content=panel.querySelector('#phoneContent'),focused=document.activeElement,restoreFocus=content.contains(focused);
+ const focusKey=restoreFocus?['jobId','contactId','propertyId','upgradeId'].find(key=>focused.dataset?.[key]!==undefined):null,focusValue=focusKey?focused.dataset[focusKey]:null;
+ content.replaceChildren();({messages,jobs,contacts,properties,stats}[tab]||messages)(content);
+ // Actions can remove or disable their own button (for example MARK READ).
+ // Keep keyboard focus inside the phone after rebuilding its contents.
+ if(restoreFocus){const replacement=focusKey?[...content.querySelectorAll('button:not(:disabled)')].find(node=>node.dataset[focusKey]===focusValue):null;(replacement||panel.querySelector('#phoneTab-'+tab)).focus({preventScroll:true})}
 }
 function down(event){if(!panel)return;event.stopImmediatePropagation();
  if(event.key==='Escape'||event.key.toLowerCase()==='p'){event.preventDefault();close();return}
- if(event.key==='Tab'){const list=[...panel.querySelectorAll('button:not(:disabled),[tabindex="0"]')].filter(node=>node.getClientRects().length);if(!list.length){event.preventDefault();return}const first=list[0],last=list[list.length-1];if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}return}
+ if(event.key==='Tab'){const list=[...panel.querySelectorAll('button:not(:disabled),[tabindex="0"]')].filter(node=>node.getClientRects().length);if(!list.length){event.preventDefault();return}const first=list[0],last=list[list.length-1];if(!panel.contains(document.activeElement)){event.preventDefault();(event.shiftKey?last:first).focus()}else if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}return}
  const selected=tabs.findIndex(([id])=>document.activeElement?.id==='phoneTab-'+id);
  if(selected>=0&&['ArrowLeft','ArrowRight'].includes(event.key)){event.preventDefault();tab=tabs[(selected+(event.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length][0];render();panel.querySelector('#phoneTab-'+tab).focus();return}
  if(['w','a','s','d','f','r','e','q','1','2','3','4','5','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(event.key)&&document.activeElement?.tagName!=='BUTTON')event.preventDefault();

@@ -1,0 +1,14 @@
+{
+  "time": "2026-10-28T13:59:11.337Z",
+  "passed": [
+    "Tab and Shift-Tab cycle arcade buttons without leaking behind the game",
+    "native Enter and Space activate the focused arcade Exit button",
+    "native keyboard activation moves the paddle through both direction buttons",
+    "arrow and letter controls move the arcade while world input and clock remain frozen",
+    "lost pointer capture releases arcade movement immediately",
+    "ACTIONS native Enter chooses the highlighted door once and closes the picker"
+  ],
+  "failed": [],
+  "errors": [],
+  "scope": "Actual restored host, real service dialogue, keyboard/native button activation, canvas-observed paddle movement, real pointer capture loss and unified ACTIONS door selection. Cloud Chromium only; no physical-device or audio-quality claim."
+}

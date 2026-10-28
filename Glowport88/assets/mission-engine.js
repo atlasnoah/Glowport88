@@ -103,6 +103,7 @@ class MissionEngine{
  }
  choose(index){
   const active=this.state.active,stage=this.currentStage();if(!active||active.status!=='active'||stage?.type!=='choice'||!Number.isInteger(index)||index<0||index>=stage.choices.length)return false;
+  const recorded=active.choices[stage.id];if(Number.isInteger(recorded)&&recorded>=0&&recorded<stage.choices.length&&recorded!==index)return false;
   const option=stage.choices[index];if(!plain(option))return false;
   const target=this._target(option.nextStage??stage.nextStage,active.stage+1);if(target===null)return false;
   const choiceReward=this._claim('choice:'+active.stage,option.reward);
