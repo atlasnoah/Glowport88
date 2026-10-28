@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-27T19:02:39.878Z",
+  "time": "2026-10-28T14:02:26.367Z",
   "coordinateComparisons": [
     {
       "x": 0,
@@ -124,7 +124,7 @@
       "differingChannelFraction": 0.000040972222222222225
     }
   ],
-  "fullBakeMs": 320.60000002384186,
+  "fullBakeMs": 356.8999999985099,
   "cache": {
     "draws": 10,
     "hits": 7,
@@ -132,9 +132,9 @@
     "evictions": 9,
     "residentBytes": 20774912,
     "peakResidentBytes": 20774912,
-    "totalBakeMs": 101.59999996423721,
-    "maxBakeMs": 10.5,
-    "lastBakeMs": 6.800000011920929,
+    "totalBakeMs": 128.30000000447035,
+    "maxBakeMs": 18,
+    "lastBakeMs": 5.199999995529652,
     "tileSize": 1024,
     "maxTiles": 6,
     "cachedTiles": 6,

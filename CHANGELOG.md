@@ -1,3 +1,15 @@
+# Mission and entrance verification · 0.6.2
+
+- Fixed checkpoint decision replay so recorded choices, relationship effects and paid choices remain consistent without duplicate consequences or repeat charges.
+- Preserved retrieved personal vehicles before their first drive; phone garage storage/retrieval now validates safe exits, available pickup space and stopped/unwanted state before changing inventory.
+- Fixed rival cars spawning into one another, freezing when the player exits, and continuing after destruction.
+- Fixed menu/dialogue/overlay keyboard activation and focus, phone/workshop action refresh focus, arcade keyboard controls and lost pointer capture, and paused sound previews.
+- Centered continued saves before the first simulation frame and corrected engine-part delivery interaction from a car.
+- Added actual-host mission completion, every playable entrance, indoor objective reachability and targeted bug regressions. Original city geometry, artwork and lighting remain unchanged; saves retain schema 6/map 3.
+- See BUGFIX_REPORT.md and TEST_RESULTS.md for executed verification and delivery.
+
+---
+
 # Original city restoration · 0.6.1
 
 - Recovered the authentic `c9b4af6` Living City map generation and illustrated neon renderer instead of creating another map. Restored all 808 original building footprints, 35 streets at their original 66px widths, district boundaries, landmarks, terrain, sidewalks, street details and original traffic circuits.

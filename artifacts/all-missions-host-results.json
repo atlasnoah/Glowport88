@@ -1,0 +1,4399 @@
+{
+  "time": "2026-10-28T14:08:11.042Z",
+  "primaryDefinitions": 92,
+  "uniqueAuthoredStageCoverage": 390,
+  "expectedAuthoredStages": 390,
+  "coveredStageKeys": [
+    "event-alley-ambush:0",
+    "event-alley-ambush:1",
+    "event-bizarre-offer:0",
+    "event-bizarre-offer:1",
+    "event-bizarre-offer:2",
+    "event-blackout:0",
+    "event-blackout:1",
+    "event-blackout:2",
+    "event-blackout:3",
+    "event-blackout:4",
+    "event-blackout:5",
+    "event-car-accident:0",
+    "event-car-accident:1",
+    "event-car-accident:2",
+    "event-car-accident:3",
+    "event-car-accident:4",
+    "event-car-accident:5",
+    "event-car-thief:0",
+    "event-car-thief:1",
+    "event-car-thief:2",
+    "event-club-dispute:0",
+    "event-club-dispute:1",
+    "event-club-dispute:2",
+    "event-drunk-philosopher:0",
+    "event-drunk-philosopher:1",
+    "event-false-accusation:0",
+    "event-false-accusation:1",
+    "event-false-accusation:2",
+    "event-false-accusation:3",
+    "event-false-accusation:4",
+    "event-illegal-parcel:0",
+    "event-illegal-parcel:1",
+    "event-illegal-parcel:2",
+    "event-lost-tourist:0",
+    "event-lost-tourist:1",
+    "event-lost-wallet:0",
+    "event-lost-wallet:1",
+    "event-lost-wallet:2",
+    "event-lost-wallet:3",
+    "event-lost-wallet:4",
+    "event-medical-help:0",
+    "event-medical-help:1",
+    "event-medical-help:2",
+    "event-missing-person:0",
+    "event-missing-person:1",
+    "event-missing-person:2",
+    "event-missing-person:3",
+    "event-missing-person:4",
+    "event-mugging:0",
+    "event-mugging:1",
+    "event-passing-pursuit:0",
+    "event-passing-pursuit:1",
+    "event-passing-pursuit:2",
+    "event-ride-request:0",
+    "event-ride-request:1",
+    "event-ride-request:2",
+    "event-ride-request:3",
+    "event-ride-request:4",
+    "event-rival-gang:0",
+    "event-rival-gang:1",
+    "event-rival-gang:2",
+    "event-runaway-driver:0",
+    "event-runaway-driver:1",
+    "event-runaway-driver:2",
+    "event-secret-transmission:0",
+    "event-secret-transmission:1",
+    "event-secret-transmission:2",
+    "event-secret-transmission:3",
+    "event-secret-transmission:4",
+    "event-security-convoy:0",
+    "event-security-convoy:1",
+    "event-security-convoy:2",
+    "event-shakedown:0",
+    "event-shakedown:1",
+    "event-shakedown:2",
+    "event-shopkeeper:0",
+    "event-shopkeeper:1",
+    "event-shopkeeper:2",
+    "event-shopkeeper:3",
+    "event-shopkeeper:4",
+    "event-shopkeeper:5",
+    "event-stolen-recovery:0",
+    "event-stolen-recovery:1",
+    "event-stolen-recovery:2",
+    "event-stolen-recovery:3",
+    "event-stolen-recovery:4",
+    "event-store-robbery:0",
+    "event-store-robbery:1",
+    "event-stranded-driver:0",
+    "event-stranded-driver:1",
+    "event-stranded-driver:2",
+    "event-stranded-driver:3",
+    "event-street-argument:0",
+    "event-street-argument:1",
+    "event-street-performer:0",
+    "event-street-performer:1",
+    "event-street-performer:2",
+    "event-street-performer:3",
+    "event-street-performer:4",
+    "event-street-race:0",
+    "event-street-race:1",
+    "event-street-scam:0",
+    "event-street-scam:1",
+    "event-street-scam:2",
+    "event-suspicious-van:0",
+    "event-suspicious-van:1",
+    "event-undercover:0",
+    "event-undercover:1",
+    "event-undercover:2",
+    "event-undercover:3",
+    "event-undercover:4",
+    "event-undercover:5",
+    "event-wrong-delivery:0",
+    "event-wrong-delivery:1",
+    "event-wrong-delivery:2",
+    "event-wrong-delivery:3",
+    "event-wrong-delivery:4",
+    "event-wrong-delivery:5",
+    "m01:0",
+    "m02:0",
+    "m03:0",
+    "m04:0",
+    "m05:0",
+    "m06:0",
+    "m07:0",
+    "m07:1",
+    "m07:2",
+    "m07:3",
+    "m08:0",
+    "m08:1",
+    "m08:2",
+    "m08:3",
+    "m08:4",
+    "m08:5",
+    "m08:6",
+    "m09:0",
+    "m09:1",
+    "m09:2",
+    "m09:3",
+    "m10:0",
+    "m10:1",
+    "m10:2",
+    "m10:3",
+    "m10:4",
+    "m11:0",
+    "m11:1",
+    "m11:2",
+    "m11:3",
+    "m11:4",
+    "m12:0",
+    "m12:1",
+    "m12:2",
+    "m12:3",
+    "m12:4",
+    "m12:5",
+    "m13:0",
+    "m13:1",
+    "m13:2",
+    "m13:3",
+    "m13:4",
+    "m14:0",
+    "m14:1",
+    "m14:2",
+    "m14:3",
+    "m14:4",
+    "m15:0",
+    "m15:1",
+    "m15:2",
+    "m15:3",
+    "m15:4",
+    "m15:5",
+    "m15:6",
+    "m16:0",
+    "m16:1",
+    "m16:2",
+    "m16:3",
+    "m16:4",
+    "m17:0",
+    "m17:1",
+    "m17:2",
+    "m17:3",
+    "m17:4",
+    "m17:5",
+    "m18:0",
+    "m18:1",
+    "m18:2",
+    "m18:3",
+    "m18:4",
+    "m19:0",
+    "m19:1",
+    "m19:2",
+    "m19:3",
+    "m20:0",
+    "m20:1",
+    "m20:2",
+    "m20:3",
+    "m20:4",
+    "m21:0",
+    "m21:1",
+    "m21:2",
+    "m21:3",
+    "m22:0",
+    "m22:1",
+    "m22:2",
+    "m22:3",
+    "m22:4",
+    "m23:0",
+    "m23:1",
+    "m23:2",
+    "m23:3",
+    "m23:4",
+    "m24:0",
+    "m24:1",
+    "m24:2",
+    "m24:3",
+    "m24:4",
+    "m24:5",
+    "m24:6",
+    "m25:0",
+    "m25:1",
+    "m25:2",
+    "m25:3",
+    "m26:0",
+    "m26:1",
+    "m26:2",
+    "m26:3",
+    "m27:0",
+    "m27:1",
+    "m27:2",
+    "m27:3",
+    "m27:4",
+    "m27:5",
+    "m28:0",
+    "m28:1",
+    "m28:2",
+    "m28:3",
+    "m28:4",
+    "m29:0",
+    "m29:1",
+    "m29:2",
+    "m29:3",
+    "m29:4",
+    "m29:5",
+    "m29:6",
+    "m30:0",
+    "m30:1",
+    "m30:2",
+    "m30:3",
+    "m30:4",
+    "m31:0",
+    "m31:1",
+    "m31:2",
+    "m31:3",
+    "m31:4",
+    "m32:0",
+    "m32:1",
+    "m32:2",
+    "m32:3",
+    "m32:4",
+    "m33:0",
+    "m33:1",
+    "m33:2",
+    "m33:3",
+    "m33:4",
+    "m33:5",
+    "m34:0",
+    "m34:1",
+    "m34:2",
+    "m34:3",
+    "m34:4",
+    "m35:0",
+    "m35:1",
+    "m35:2",
+    "m35:3",
+    "m35:4",
+    "m36:0",
+    "m36:1",
+    "m36:2",
+    "m36:3",
+    "m36:4",
+    "m36:5",
+    "m37:0",
+    "m37:1",
+    "m37:2",
+    "m37:3",
+    "m38:0",
+    "m38:1",
+    "m38:2",
+    "m38:3",
+    "m38:4",
+    "m39:0",
+    "m39:1",
+    "m39:2",
+    "m39:3",
+    "m40:0",
+    "m40:1",
+    "m40:2",
+    "m40:3",
+    "m40:4",
+    "m40:5",
+    "m40:6",
+    "side-bobby-1:0",
+    "side-bobby-1:1",
+    "side-bobby-1:2",
+    "side-bobby-1:3",
+    "side-bobby-2:0",
+    "side-bobby-2:1",
+    "side-bobby-2:2",
+    "side-bobby-2:3",
+    "side-bobby-2:4",
+    "side-bobby-3:0",
+    "side-bobby-3:1",
+    "side-bobby-3:2",
+    "side-bobby-3:3",
+    "side-bobby-3:4",
+    "side-bobby-4:0",
+    "side-bobby-4:1",
+    "side-bobby-4:2",
+    "side-bobby-4:3",
+    "side-bobby-4:4",
+    "side-darla-1:0",
+    "side-darla-1:1",
+    "side-darla-1:2",
+    "side-darla-1:3",
+    "side-darla-2:0",
+    "side-darla-2:1",
+    "side-darla-2:2",
+    "side-darla-2:3",
+    "side-darla-2:4",
+    "side-darla-3:0",
+    "side-darla-3:1",
+    "side-darla-3:2",
+    "side-darla-3:3",
+    "side-darla-3:4",
+    "side-darla-4:0",
+    "side-darla-4:1",
+    "side-darla-4:2",
+    "side-darla-4:3",
+    "side-darla-4:4",
+    "side-sol-1:0",
+    "side-sol-1:1",
+    "side-sol-1:2",
+    "side-sol-1:3",
+    "side-sol-2:0",
+    "side-sol-2:1",
+    "side-sol-2:2",
+    "side-sol-2:3",
+    "side-sol-3:0",
+    "side-sol-3:1",
+    "side-sol-3:2",
+    "side-sol-3:3",
+    "side-sol-4:0",
+    "side-sol-4:1",
+    "side-sol-4:2",
+    "side-sol-4:3",
+    "side-sol-4:4",
+    "side-static-1:0",
+    "side-static-1:1",
+    "side-static-1:2",
+    "side-static-1:3",
+    "side-static-2:0",
+    "side-static-2:1",
+    "side-static-2:2",
+    "side-static-2:3",
+    "side-static-3:0",
+    "side-static-3:1",
+    "side-static-3:2",
+    "side-static-3:3",
+    "side-static-4:0",
+    "side-static-4:1",
+    "side-static-4:2",
+    "side-static-4:3",
+    "side-violet-1:0",
+    "side-violet-1:1",
+    "side-violet-1:2",
+    "side-violet-1:3",
+    "side-violet-2:0",
+    "side-violet-2:1",
+    "side-violet-2:2",
+    "side-violet-2:3",
+    "side-violet-3:0",
+    "side-violet-3:1",
+    "side-violet-3:2",
+    "side-violet-3:3",
+    "side-violet-3:4",
+    "side-violet-4:0",
+    "side-violet-4:1",
+    "side-violet-4:2",
+    "side-violet-4:3",
+    "side-violet-4:4"
+  ],
+  "main": 40,
+  "side": 20,
+  "events": 32,
+  "primaryCompleted": [
+    "m01",
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m07",
+    "m08",
+    "m09",
+    "m10",
+    "m11",
+    "m12",
+    "m13",
+    "m14",
+    "m15",
+    "m16",
+    "m17",
+    "m18",
+    "m19",
+    "m20",
+    "m21",
+    "m22",
+    "m23",
+    "m24",
+    "m25",
+    "m26",
+    "m27",
+    "m28",
+    "m29",
+    "m30",
+    "m31",
+    "m32",
+    "m33",
+    "m34",
+    "m35",
+    "m36",
+    "m37",
+    "m38",
+    "m39",
+    "m40",
+    "side-darla-1",
+    "side-darla-2",
+    "side-darla-3",
+    "side-darla-4",
+    "side-bobby-1",
+    "side-bobby-2",
+    "side-bobby-3",
+    "side-bobby-4",
+    "side-static-1",
+    "side-static-2",
+    "side-static-3",
+    "side-static-4",
+    "side-violet-1",
+    "side-violet-2",
+    "side-violet-3",
+    "side-violet-4",
+    "side-sol-1",
+    "side-sol-2",
+    "side-sol-3",
+    "side-sol-4",
+    "event-mugging",
+    "event-passing-pursuit",
+    "event-ride-request",
+    "event-store-robbery",
+    "event-car-thief",
+    "event-suspicious-van",
+    "event-alley-ambush",
+    "event-medical-help",
+    "event-stranded-driver",
+    "event-street-race",
+    "event-street-argument",
+    "event-drunk-philosopher",
+    "event-security-convoy",
+    "event-shakedown",
+    "event-illegal-parcel",
+    "event-lost-tourist",
+    "event-rival-gang",
+    "event-runaway-driver",
+    "event-club-dispute",
+    "event-bizarre-offer",
+    "event-missing-person",
+    "event-car-accident",
+    "event-street-scam",
+    "event-blackout",
+    "event-lost-wallet",
+    "event-street-performer",
+    "event-undercover",
+    "event-stolen-recovery",
+    "event-secret-transmission",
+    "event-shopkeeper",
+    "event-false-accusation",
+    "event-wrong-delivery"
+  ],
+  "completedRuns": 176,
+  "objectiveResolutions": 580,
+  "realProjectileShots": 631,
+  "realTimingInputs": 121,
+  "branchRuns": 84,
+  "records": [
+    {
+      "id": "m01",
+      "selection": 0,
+      "stages": [
+        {
+          "index": 0,
+          "type": "legacy"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m02",
+      "selection": 0,
+      "stages": [
+        {
+          "index": 0,
+          "type": "legacy"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m03",
+      "selection": 0,
+      "stages": [
+        {
+          "index": 0,
+          "type": "legacy"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m04",
+      "selection": 0,
+      "stages": [
+        {
+          "index": 0,
+          "type": "legacy"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m05",
+      "selection": 0,
+      "stages": [
+        {
+          "index": 0,
+          "type": "legacy"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m06",
+      "selection": 0,
+      "stages": [
+        {
+          "index": 0,
+          "type": "legacy"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m07",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        },
+        {
+          "index": 3,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m08",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "talk"
+        },
+        {
+          "index": 1,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 2,
+          "type": "heist"
+        },
+        {
+          "index": 3,
+          "type": "collect"
+        },
+        {
+          "index": 4,
+          "type": "escape"
+        },
+        {
+          "index": 5,
+          "type": "deliver"
+        },
+        {
+          "index": 6,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m09",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "combat"
+        },
+        {
+          "index": 1,
+          "type": "investigate"
+        },
+        {
+          "index": 2,
+          "type": "talk"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m10",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "drive_route"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m11",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "stealth"
+        },
+        {
+          "index": 1,
+          "type": "investigate"
+        },
+        {
+          "index": 2,
+          "type": "collect"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m12",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "combat"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "chase"
+        },
+        {
+          "index": 3,
+          "type": "escape"
+        },
+        {
+          "index": 4,
+          "type": "deliver"
+        },
+        {
+          "index": 5,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m13",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "collect"
+        },
+        {
+          "index": 1,
+          "type": "deliver"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "talk"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m14",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "stealth"
+        },
+        {
+          "index": 1,
+          "type": "investigate"
+        },
+        {
+          "index": 2,
+          "type": "collect"
+        },
+        {
+          "index": 3,
+          "type": "drive_route"
+        },
+        {
+          "index": 4,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m15",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 2,
+          "type": "chase"
+        },
+        {
+          "index": 3,
+          "type": "heist"
+        },
+        {
+          "index": 4,
+          "type": "collect"
+        },
+        {
+          "index": 5,
+          "type": "escape"
+        },
+        {
+          "index": 6,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m16",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "drive_route"
+        },
+        {
+          "index": 1,
+          "type": "interact"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "investigate"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m17",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "stealth"
+        },
+        {
+          "index": 1,
+          "type": "investigate"
+        },
+        {
+          "index": 2,
+          "type": "collect"
+        },
+        {
+          "index": 3,
+          "type": "escape"
+        },
+        {
+          "index": 4,
+          "type": "deliver"
+        },
+        {
+          "index": 5,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m18",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "combat"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "escort"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m19",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "escort"
+        },
+        {
+          "index": 1,
+          "type": "defend"
+        },
+        {
+          "index": 2,
+          "type": "talk"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m20",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 1,
+          "type": "race"
+        },
+        {
+          "index": 2,
+          "type": "interact"
+        },
+        {
+          "index": 3,
+          "type": "drive_route"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m21",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "combat"
+        },
+        {
+          "index": 2,
+          "type": "escort"
+        },
+        {
+          "index": 3,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m22",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "stealth"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "escape"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m23",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "collect"
+        },
+        {
+          "index": 1,
+          "type": "deliver"
+        },
+        {
+          "index": 2,
+          "type": "escort"
+        },
+        {
+          "index": 3,
+          "type": "defend"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m24",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 2,
+          "type": "heist"
+        },
+        {
+          "index": 3,
+          "type": "collect"
+        },
+        {
+          "index": 4,
+          "type": "race"
+        },
+        {
+          "index": 5,
+          "type": "deliver"
+        },
+        {
+          "index": 6,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m25",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "defend"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "talk"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m26",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "combat"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "investigate"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m27",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "combat"
+        },
+        {
+          "index": 1,
+          "type": "chase"
+        },
+        {
+          "index": 2,
+          "type": "collect"
+        },
+        {
+          "index": 3,
+          "type": "escape"
+        },
+        {
+          "index": 4,
+          "type": "deliver"
+        },
+        {
+          "index": 5,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m28",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "stealth"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "escape"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "defend"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m29",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 2,
+          "type": "heist"
+        },
+        {
+          "index": 3,
+          "type": "collect"
+        },
+        {
+          "index": 4,
+          "type": "escape"
+        },
+        {
+          "index": 5,
+          "type": "deliver"
+        },
+        {
+          "index": 6,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m30",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "collect"
+        },
+        {
+          "index": 1,
+          "type": "drive_route"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m31",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "talk"
+        },
+        {
+          "index": 2,
+          "type": "choice"
+        },
+        {
+          "index": 3,
+          "type": "collect"
+        },
+        {
+          "index": 4,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m32",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "combat"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "talk"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m33",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 1,
+          "type": "drive_route"
+        },
+        {
+          "index": 2,
+          "type": "collect"
+        },
+        {
+          "index": 3,
+          "type": "drive_route"
+        },
+        {
+          "index": 4,
+          "type": "deliver"
+        },
+        {
+          "index": 5,
+          "type": "defend"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m34",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "interact"
+        },
+        {
+          "index": 2,
+          "type": "combat"
+        },
+        {
+          "index": 3,
+          "type": "interact"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m35",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "combat"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "talk"
+        },
+        {
+          "index": 3,
+          "type": "collect"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m36",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "stealth"
+        },
+        {
+          "index": 1,
+          "type": "heist"
+        },
+        {
+          "index": 2,
+          "type": "collect"
+        },
+        {
+          "index": 3,
+          "type": "escape"
+        },
+        {
+          "index": 4,
+          "type": "deliver"
+        },
+        {
+          "index": 5,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m37",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "defend"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "investigate"
+        },
+        {
+          "index": 3,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m38",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "race"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m39",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        },
+        {
+          "index": 3,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m40",
+      "kind": "main",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 1,
+          "type": "drive_route"
+        },
+        {
+          "index": 2,
+          "type": "heist"
+        },
+        {
+          "index": 3,
+          "type": "combat"
+        },
+        {
+          "index": 4,
+          "type": "escape"
+        },
+        {
+          "index": 5,
+          "type": "escort"
+        },
+        {
+          "index": 6,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-darla-1",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "collect"
+        },
+        {
+          "index": 1,
+          "type": "drive_route"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-darla-2",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "stealth"
+        },
+        {
+          "index": 2,
+          "type": "collect"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-darla-3",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 1,
+          "type": "race"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "escape"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-darla-4",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "heist"
+        },
+        {
+          "index": 2,
+          "type": "drive_route"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-bobby-1",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "drive_route"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-bobby-2",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "stealth"
+        },
+        {
+          "index": 2,
+          "type": "collect"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-bobby-3",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 3,
+          "type": "chase"
+        },
+        {
+          "index": 4,
+          "type": "defend"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-bobby-4",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "heist"
+        },
+        {
+          "index": 1,
+          "type": "combat"
+        },
+        {
+          "index": 2,
+          "type": "drive_route"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-static-1",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-static-2",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "collect"
+        },
+        {
+          "index": 1,
+          "type": "stealth"
+        },
+        {
+          "index": 2,
+          "type": "heist"
+        },
+        {
+          "index": 3,
+          "type": "drive_route"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-static-3",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-static-4",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "heist"
+        },
+        {
+          "index": 2,
+          "type": "combat"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-violet-1",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "collect"
+        },
+        {
+          "index": 1,
+          "type": "deliver"
+        },
+        {
+          "index": 2,
+          "type": "combat"
+        },
+        {
+          "index": 3,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-violet-2",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "stealth"
+        },
+        {
+          "index": 2,
+          "type": "heist"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-violet-3",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "drive_route"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-violet-4",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "collect"
+        },
+        {
+          "index": 1,
+          "type": "heist"
+        },
+        {
+          "index": 2,
+          "type": "escape"
+        },
+        {
+          "index": 3,
+          "type": "drive_route"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-sol-1",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "collect"
+        },
+        {
+          "index": 1,
+          "type": "investigate"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-sol-2",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "stealth"
+        },
+        {
+          "index": 1,
+          "type": "heist"
+        },
+        {
+          "index": 2,
+          "type": "drive_route"
+        },
+        {
+          "index": 3,
+          "type": "escort"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-sol-3",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "combat"
+        },
+        {
+          "index": 2,
+          "type": "escape"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-sol-4",
+      "kind": "side",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "collect"
+        },
+        {
+          "index": 1,
+          "type": "heist"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-mugging",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "combat"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-passing-pursuit",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "chase"
+        },
+        {
+          "index": 2,
+          "type": "escape"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-ride-request",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "choice"
+        },
+        {
+          "index": 3,
+          "type": "escort"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-store-robbery",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "defend"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-car-thief",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-suspicious-van",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "investigate"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-alley-ambush",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "combat"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-medical-help",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-stranded-driver",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        },
+        {
+          "index": 3,
+          "type": "heist"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-street-race",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "race"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-street-argument",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "defend"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-drunk-philosopher",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-security-convoy",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "chase"
+        },
+        {
+          "index": 2,
+          "type": "heist"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-shakedown",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-illegal-parcel",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-lost-tourist",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-rival-gang",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "defend"
+        },
+        {
+          "index": 2,
+          "type": "escort"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-runaway-driver",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "escape"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-club-dispute",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-bizarre-offer",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "investigate"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-missing-person",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "talk"
+        },
+        {
+          "index": 2,
+          "type": "investigate"
+        },
+        {
+          "index": 3,
+          "type": "escort"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-car-accident",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        },
+        {
+          "index": 3,
+          "type": "escort"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-street-scam",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "investigate"
+        },
+        {
+          "index": 2,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-blackout",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "investigate"
+        },
+        {
+          "index": 2,
+          "type": "collect"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "heist"
+        },
+        {
+          "index": 5,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-lost-wallet",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "talk"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        },
+        {
+          "index": 3,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-street-performer",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        },
+        {
+          "index": 3,
+          "type": "heist"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-undercover",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "investigate"
+        },
+        {
+          "index": 2,
+          "type": "collect"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-stolen-recovery",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 2,
+          "type": "chase"
+        },
+        {
+          "index": 3,
+          "type": "collect"
+        },
+        {
+          "index": 4,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-secret-transmission",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "investigate"
+        },
+        {
+          "index": 2,
+          "type": "collect"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-shopkeeper",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "drive_route"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "defend"
+        },
+        {
+          "index": 5,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-false-accusation",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "talk"
+        },
+        {
+          "index": 2,
+          "type": "talk"
+        },
+        {
+          "index": 3,
+          "type": "investigate"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-wrong-delivery",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "talk"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        },
+        {
+          "index": 4,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m09",
+      "kind": "main",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "combat"
+        },
+        {
+          "index": 1,
+          "type": "investigate"
+        },
+        {
+          "index": 2,
+          "type": "talk"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m13",
+      "kind": "main",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "collect"
+        },
+        {
+          "index": 1,
+          "type": "deliver"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "talk"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m16",
+      "kind": "main",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "drive_route"
+        },
+        {
+          "index": 1,
+          "type": "interact"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "investigate"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m18",
+      "kind": "main",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "combat"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "escort"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m19",
+      "kind": "main",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "escort"
+        },
+        {
+          "index": 1,
+          "type": "defend"
+        },
+        {
+          "index": 2,
+          "type": "talk"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m19",
+      "kind": "main",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "escort"
+        },
+        {
+          "index": 1,
+          "type": "defend"
+        },
+        {
+          "index": 2,
+          "type": "talk"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m25",
+      "kind": "main",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "defend"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "talk"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m26",
+      "kind": "main",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "combat"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "investigate"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m29",
+      "kind": "main",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 2,
+          "type": "heist"
+        },
+        {
+          "index": 3,
+          "type": "collect"
+        },
+        {
+          "index": 4,
+          "type": "escape"
+        },
+        {
+          "index": 5,
+          "type": "deliver"
+        },
+        {
+          "index": 6,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m31",
+      "kind": "main",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "talk"
+        },
+        {
+          "index": 2,
+          "type": "choice"
+        },
+        {
+          "index": 3,
+          "type": "collect"
+        },
+        {
+          "index": 4,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m31",
+      "kind": "main",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "talk"
+        },
+        {
+          "index": 2,
+          "type": "choice"
+        },
+        {
+          "index": 3,
+          "type": "collect"
+        },
+        {
+          "index": 4,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m32",
+      "kind": "main",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "combat"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "talk"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m35",
+      "kind": "main",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "combat"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "talk"
+        },
+        {
+          "index": 3,
+          "type": "collect"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m38",
+      "kind": "main",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "race"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m40",
+      "kind": "main",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 1,
+          "type": "drive_route"
+        },
+        {
+          "index": 2,
+          "type": "heist"
+        },
+        {
+          "index": 3,
+          "type": "combat"
+        },
+        {
+          "index": 4,
+          "type": "escape"
+        },
+        {
+          "index": 5,
+          "type": "escort"
+        },
+        {
+          "index": 6,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "m40",
+      "kind": "main",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 1,
+          "type": "drive_route"
+        },
+        {
+          "index": 2,
+          "type": "heist"
+        },
+        {
+          "index": 3,
+          "type": "combat"
+        },
+        {
+          "index": 4,
+          "type": "escape"
+        },
+        {
+          "index": 5,
+          "type": "escort"
+        },
+        {
+          "index": 6,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-darla-4",
+      "kind": "side",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "heist"
+        },
+        {
+          "index": 2,
+          "type": "drive_route"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-bobby-4",
+      "kind": "side",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "heist"
+        },
+        {
+          "index": 1,
+          "type": "combat"
+        },
+        {
+          "index": 2,
+          "type": "drive_route"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-static-1",
+      "kind": "side",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-static-4",
+      "kind": "side",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "investigate"
+        },
+        {
+          "index": 1,
+          "type": "heist"
+        },
+        {
+          "index": 2,
+          "type": "combat"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-violet-3",
+      "kind": "side",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "acquire_vehicle"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "drive_route"
+        },
+        {
+          "index": 4,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "side-sol-4",
+      "kind": "side",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "collect"
+        },
+        {
+          "index": 1,
+          "type": "heist"
+        },
+        {
+          "index": 2,
+          "type": "defend"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-mugging",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-mugging",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-passing-pursuit",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-passing-pursuit",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-ride-request",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "escort"
+        },
+        {
+          "index": 2,
+          "type": "choice"
+        },
+        {
+          "index": 4,
+          "type": "escort"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-ride-request",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-store-robbery",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-store-robbery",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-car-thief",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-car-thief",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-suspicious-van",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-suspicious-van",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-alley-ambush",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-alley-ambush",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-medical-help",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-medical-help",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-stranded-driver",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        },
+        {
+          "index": 3,
+          "type": "heist"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-stranded-driver",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-street-race",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-street-argument",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-street-argument",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-drunk-philosopher",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-drunk-philosopher",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-security-convoy",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-security-convoy",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-shakedown",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "stealth"
+        },
+        {
+          "index": 2,
+          "type": "collect"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-shakedown",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-illegal-parcel",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-illegal-parcel",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-lost-tourist",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-lost-tourist",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-rival-gang",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-rival-gang",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-runaway-driver",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-runaway-driver",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-club-dispute",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-club-dispute",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-bizarre-offer",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-bizarre-offer",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-missing-person",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-car-accident",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 4,
+          "type": "interact"
+        },
+        {
+          "index": 5,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-car-accident",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-street-scam",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "investigate"
+        },
+        {
+          "index": 2,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-street-scam",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-blackout",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-blackout",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-lost-wallet",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-lost-wallet",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 4,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-street-performer",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        },
+        {
+          "index": 3,
+          "type": "heist"
+        },
+        {
+          "index": 4,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-street-performer",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-undercover",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 4,
+          "type": "deliver"
+        },
+        {
+          "index": 5,
+          "type": "escape"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-undercover",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-stolen-recovery",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-stolen-recovery",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-secret-transmission",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-shopkeeper",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "collect"
+        },
+        {
+          "index": 2,
+          "type": "drive_route"
+        },
+        {
+          "index": 3,
+          "type": "deliver"
+        },
+        {
+          "index": 4,
+          "type": "defend"
+        },
+        {
+          "index": 5,
+          "type": "talk"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-shopkeeper",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-false-accusation",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-false-accusation",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-wrong-delivery",
+      "kind": "event",
+      "selection": 1,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-wrong-delivery",
+      "kind": "event",
+      "selection": 2,
+      "choicePlan": null,
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        }
+      ],
+      "finished": true
+    },
+    {
+      "id": "event-wrong-delivery",
+      "kind": "event",
+      "selection": 0,
+      "choicePlan": {
+        "3": 1
+      },
+      "stages": [
+        {
+          "index": 0,
+          "type": "choice"
+        },
+        {
+          "index": 1,
+          "type": "talk"
+        },
+        {
+          "index": 2,
+          "type": "deliver"
+        },
+        {
+          "index": 3,
+          "type": "choice"
+        },
+        {
+          "index": 5,
+          "type": "deliver"
+        }
+      ],
+      "finished": true
+    }
+  ],
+  "errors": [],
+  "failures": [],
+  "scope": "Actual Chromium production host. First six legacy tutorials, successive main-story E handoffs, phone side-job acceptance and encounter offers finish through production handlers. QA accelerates travel, supplies equipment/invulnerability and drives a deterministic browser RAF clock. Combat uses real weapon/projectile damage; timing activities use their actual meter/DOM controls. No evaluator override, direct stage completion, enemy-health mutation or heist success injection. Additional per-definition option sweeps cover authored options, not every combination. Not physical-device, balance, campaign-duration or continuous real-time human validation."
+}

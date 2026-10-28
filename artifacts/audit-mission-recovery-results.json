@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-28T13:58:24.182Z",
+  "time": "2026-10-28T14:07:02.042Z",
   "passed": [
     "m31 checkpoint replay preserves one recorded Vee consequence",
     "recorded engine choices cannot switch branches after checkpoint restart or reload",

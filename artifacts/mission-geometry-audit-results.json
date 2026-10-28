@@ -1,0 +1,5777 @@
+{
+  "time": "2026-10-28T13:58:31.859Z",
+  "definitions": 92,
+  "stages": 390,
+  "interiorStages": 137,
+  "landmarks": 12,
+  "roomConfigurations": 21,
+  "types": {
+    "legacy": 6,
+    "investigate": 32,
+    "collect": 46,
+    "deliver": 50,
+    "talk": 46,
+    "acquire_vehicle": 15,
+    "heist": 18,
+    "escape": 16,
+    "combat": 16,
+    "choice": 56,
+    "drive_route": 17,
+    "stealth": 12,
+    "chase": 7,
+    "defend": 21,
+    "interact": 5,
+    "escort": 22,
+    "race": 5
+  },
+  "rows": [
+    {
+      "id": "m01:0",
+      "type": "legacy",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m02:0",
+      "type": "legacy",
+      "where": "armory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m03:0",
+      "type": "legacy",
+      "where": "armory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m04:0",
+      "type": "legacy",
+      "where": "armory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m05:0",
+      "type": "legacy",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m06:0",
+      "type": "legacy",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m07:0",
+      "type": "investigate",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "MIXING DESK",
+            "text": "A torn splice marks the stolen hour. Its service tag points to the east archive circuit."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "ARCHIVE POWER",
+            "text": "Reset the isolated relay. The recorder wakes with one unplayed cartridge still inside."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "LAST TRANSMISSION",
+            "text": "A voice lists shell companies, unpaid tenants, and one standing order: clear the blocks."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m07:1",
+      "type": "collect",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m07:2",
+      "type": "deliver",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m07:3",
+      "type": "talk",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m08:0",
+      "type": "talk",
+      "where": "diner",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m08:1",
+      "type": "acquire_vehicle",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m08:2",
+      "type": "heist",
+      "where": "diner",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m08:3",
+      "type": "collect",
+      "where": "diner",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m08:4",
+      "type": "escape",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m08:5",
+      "type": "deliver",
+      "where": "motel",
+      "inside": true,
+      "reachableSamples": 10356,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m08:6",
+      "type": "talk",
+      "where": "motel",
+      "inside": true,
+      "reachableSamples": 10356,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m09:0",
+      "type": "combat",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m09:1",
+      "type": "investigate",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "SLEEVE NOTES",
+            "text": "Jax hid account numbers in fake album reviews. The two-star review is a municipal bond."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "CATALOGUE",
+            "text": "Match the dates to the city’s eviction notices. Every notice follows a payment by one day."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "THE FIXER",
+            "text": "A recurring signature belongs to Detective Hollis, a vice officer with a private delivery route."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m09:2",
+      "type": "talk",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m09:3",
+      "type": "choice",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m10:0",
+      "type": "acquire_vehicle",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m10:1",
+      "type": "collect",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m10:2",
+      "type": "drive_route",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m10:3",
+      "type": "deliver",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m10:4",
+      "type": "talk",
+      "where": "diner",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m11:0",
+      "type": "stealth",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m11:1",
+      "type": "investigate",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "MANIFEST",
+            "text": "The same crate was logged twice under two companies with the same accountant."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "CUSTOMS SEAL",
+            "text": "The seal’s number is genuine. The dockworker who signed it has been declared missing."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "COLD LEDGER",
+            "text": "The ledger contains payment for a warehouse fire before the fire happened."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m11:2",
+      "type": "collect",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m11:3",
+      "type": "deliver",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m11:4",
+      "type": "talk",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m12:0",
+      "type": "combat",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m12:1",
+      "type": "collect",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m12:2",
+      "type": "chase",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m12:3",
+      "type": "escape",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m12:4",
+      "type": "deliver",
+      "where": "pier",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m12:5",
+      "type": "talk",
+      "where": "pier",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m13:0",
+      "type": "collect",
+      "where": "pier",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m13:1",
+      "type": "deliver",
+      "where": "club",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m13:2",
+      "type": "defend",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m13:3",
+      "type": "talk",
+      "where": "club",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m13:4",
+      "type": "choice",
+      "where": "club",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m14:0",
+      "type": "stealth",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m14:1",
+      "type": "investigate",
+      "where": "observatory",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "FREQUENCY LOG",
+            "text": "Most units report their serial numbers every thirty seconds. One test channel never checks in."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "ANTENNA CONTROL",
+            "text": "Retune the array. The clean channel lights a service locker in the archive."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "UNREGISTERED UNIT",
+            "text": "The locker holds a transmitter and a pencilled note: for emergencies they cannot authorize."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m14:2",
+      "type": "collect",
+      "where": "observatory",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m14:3",
+      "type": "drive_route",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m14:4",
+      "type": "deliver",
+      "where": "club",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m15:0",
+      "type": "investigate",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "SHIFT SHEET",
+            "text": "The cash arrives between guard changes. The relief team signs in before the van is unloaded."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "CAMERA LOOP",
+            "text": "A loading camera sees the pavement, not the counter. The blind side lasts long enough."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "PAYROLL TAG",
+            "text": "The real payroll crate carries a violet customs mark. The other crates are empty decoys."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m15:1",
+      "type": "acquire_vehicle",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m15:2",
+      "type": "chase",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m15:3",
+      "type": "heist",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m15:4",
+      "type": "collect",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m15:5",
+      "type": "escape",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m15:6",
+      "type": "deliver",
+      "where": "pier",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m16:0",
+      "type": "drive_route",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m16:1",
+      "type": "interact",
+      "where": "arcade",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m16:2",
+      "type": "defend",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m16:3",
+      "type": "investigate",
+      "where": "pier",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "BURNT RECEIVER",
+            "text": "A private channel carried the rendezvous before the crew arrived."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "CALL RECORD",
+            "text": "The leak used a Meridian analyst access code. The timestamp predates the payroll job."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "SECOND SIGNAL",
+            "text": "Someone in the crew gave Meridian the address. The broadcast was not the trap; the crew was."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m16:4",
+      "type": "choice",
+      "where": "pier",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m17:0",
+      "type": "stealth",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m17:1",
+      "type": "investigate",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "FALSE BAND",
+            "text": "A fake band’s catalogue number repeats the date Jax quit Meridian."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "SIDE B",
+            "text": "The sleeves lead to a locker receipt paid for by the mayor’s campaign office."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "BACKUP DRIVE",
+            "text": "Every payment has a copy. The largest account is marked SIREN, not real estate."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m17:2",
+      "type": "collect",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m17:3",
+      "type": "escape",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m17:4",
+      "type": "deliver",
+      "where": "motel",
+      "inside": true,
+      "reachableSamples": 10356,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m17:5",
+      "type": "talk",
+      "where": "motel",
+      "inside": true,
+      "reachableSamples": 10356,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m18:0",
+      "type": "combat",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m18:1",
+      "type": "collect",
+      "where": "motel",
+      "inside": true,
+      "reachableSamples": 10356,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m18:2",
+      "type": "escort",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m18:3",
+      "type": "deliver",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m18:4",
+      "type": "choice",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m19:0",
+      "type": "escort",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m19:1",
+      "type": "defend",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m19:2",
+      "type": "talk",
+      "where": "diner",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m19:3",
+      "type": "choice",
+      "where": "diner",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m20:0",
+      "type": "acquire_vehicle",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m20:1",
+      "type": "race",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m20:2",
+      "type": "interact",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m20:3",
+      "type": "drive_route",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m20:4",
+      "type": "talk",
+      "where": "motel",
+      "inside": true,
+      "reachableSamples": 10356,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m21:0",
+      "type": "investigate",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "TENANT LIST",
+            "text": "The city database calls the building vacant. Forty-three names disagree."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "CONTRACT DATE",
+            "text": "The demolition order predates the inspection that supposedly justified it."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "MOVING ORDERS",
+            "text": "Security is coming before the notice can be appealed. The family must leave now."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m21:1",
+      "type": "combat",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m21:2",
+      "type": "escort",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m21:3",
+      "type": "talk",
+      "where": "clinic",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m22:0",
+      "type": "stealth",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m22:1",
+      "type": "collect",
+      "where": "diner",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m22:2",
+      "type": "escape",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m22:3",
+      "type": "deliver",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m22:4",
+      "type": "talk",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m23:0",
+      "type": "collect",
+      "where": "armory",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m23:1",
+      "type": "deliver",
+      "where": "club",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m23:2",
+      "type": "escort",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m23:3",
+      "type": "defend",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m23:4",
+      "type": "talk",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m24:0",
+      "type": "investigate",
+      "where": "armory",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "DELIVERY NOTE",
+            "text": "The jewels arrived in gun cases. The insurance lists municipal property as collateral."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "LOCKER ROTATION",
+            "text": "The lock changes sequence with each guard shift. The current pattern is on the service card."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "SIREN INVOICE",
+            "text": "The shipment funds SIREN: a city-wide system for tracking and clearing people, not merely buildings."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m24:1",
+      "type": "acquire_vehicle",
+      "where": "armory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m24:2",
+      "type": "heist",
+      "where": "armory",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m24:3",
+      "type": "collect",
+      "where": "armory",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m24:4",
+      "type": "race",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m24:5",
+      "type": "deliver",
+      "where": "pier",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m24:6",
+      "type": "talk",
+      "where": "pier",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m25:0",
+      "type": "defend",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m25:1",
+      "type": "escort",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m25:2",
+      "type": "talk",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m25:3",
+      "type": "choice",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m26:0",
+      "type": "combat",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m26:1",
+      "type": "escort",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m26:2",
+      "type": "investigate",
+      "where": "clinic",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "INTAKE RECORD",
+            "text": "The clinic treated dockworkers before the official time of the warehouse fire."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "MEDICAL TAPE",
+            "text": "A security-radio recording orders the exits locked while workers are still inside."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "WITNESS STATEMENT",
+            "text": "Mika identifies Director Vale’s voice. Her account ties SIREN to the fire."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m26:3",
+      "type": "choice",
+      "where": "clinic",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m27:0",
+      "type": "combat",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m27:1",
+      "type": "chase",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m27:2",
+      "type": "collect",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m27:3",
+      "type": "escape",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m27:4",
+      "type": "deliver",
+      "where": "clinic",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m27:5",
+      "type": "talk",
+      "where": "clinic",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m28:0",
+      "type": "stealth",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m28:1",
+      "type": "collect",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m28:2",
+      "type": "escape",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m28:3",
+      "type": "deliver",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m28:4",
+      "type": "defend",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m29:0",
+      "type": "investigate",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "TRANSFER LIST",
+            "text": "The clearing terminal holds wages, deposits, and the city’s emergency reserve in one release window."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "ACCESS CYCLE",
+            "text": "Three authorization steps and a manual release. Break the sequence and the reserve freezes."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "GETAWAY WINDOW",
+            "text": "Hollis can delay the first dispatch. After that, every patrol in Glowport gets the same address."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m29:1",
+      "type": "acquire_vehicle",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m29:2",
+      "type": "heist",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m29:3",
+      "type": "collect",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m29:4",
+      "type": "escape",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m29:5",
+      "type": "deliver",
+      "where": "pier",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m29:6",
+      "type": "choice",
+      "where": "pier",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m30:0",
+      "type": "collect",
+      "where": "club",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m30:1",
+      "type": "drive_route",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m30:2",
+      "type": "defend",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m30:3",
+      "type": "deliver",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m30:4",
+      "type": "talk",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m31:0",
+      "type": "investigate",
+      "where": "observatory",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "ACCESS LOG",
+            "text": "The rendezvous code was issued to Vee while she still worked at Meridian."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "SECURITY ORDER",
+            "text": "The leak moved a security team away from Mika’s family. The crew became the distraction."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "UNSENT MESSAGE",
+            "text": "Vee drafted a warning, then deleted it. She chose the outcome and denied the crew a choice."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m31:1",
+      "type": "talk",
+      "where": "observatory",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m31:2",
+      "type": "choice",
+      "where": "observatory",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m31:3",
+      "type": "collect",
+      "where": "observatory",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m31:4",
+      "type": "deliver",
+      "where": "arcade",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m32:0",
+      "type": "combat",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m32:1",
+      "type": "escort",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m32:2",
+      "type": "defend",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m32:3",
+      "type": "talk",
+      "where": "clinic",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m32:4",
+      "type": "choice",
+      "where": "clinic",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m33:0",
+      "type": "acquire_vehicle",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m33:1",
+      "type": "drive_route",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m33:2",
+      "type": "collect",
+      "where": "observatory",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m33:3",
+      "type": "drive_route",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m33:4",
+      "type": "deliver",
+      "where": "diner",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m33:5",
+      "type": "defend",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m34:0",
+      "type": "investigate",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "INTERFERENCE",
+            "text": "The interference repeats on a maintenance clock, not a broadcast clock."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "SERVICE PANEL",
+            "text": "A contractor control channel links the jammer to Meridian’s district equipment."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "OVERRIDE",
+            "text": "The manual override works only after the local controller is physically reset."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m34:1",
+      "type": "interact",
+      "where": "observatory",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m34:2",
+      "type": "combat",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m34:3",
+      "type": "interact",
+      "where": "club",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m34:4",
+      "type": "talk",
+      "where": "club",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m35:0",
+      "type": "combat",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m35:1",
+      "type": "escort",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m35:2",
+      "type": "talk",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m35:3",
+      "type": "collect",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m35:4",
+      "type": "choice",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m36:0",
+      "type": "stealth",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m36:1",
+      "type": "heist",
+      "where": "motel",
+      "inside": true,
+      "reachableSamples": 10356,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m36:2",
+      "type": "collect",
+      "where": "motel",
+      "inside": true,
+      "reachableSamples": 10356,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m36:3",
+      "type": "escape",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m36:4",
+      "type": "deliver",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m36:5",
+      "type": "talk",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m37:0",
+      "type": "defend",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m37:1",
+      "type": "escort",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m37:2",
+      "type": "investigate",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "ISOLATOR",
+            "text": "Disconnect the studio from the registered city feed. Meridian loses its remote cutoff."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "BACKUP POWER",
+            "text": "Tie the carrier to the emergency bus. Roxy signs the inspection slip: probably fine."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "OPEN CHANNEL",
+            "text": "Five district receivers answer. The final patch is ready for the vault archive."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m37:3",
+      "type": "talk",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m38:0",
+      "type": "acquire_vehicle",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m38:1",
+      "type": "collect",
+      "where": "armory",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m38:2",
+      "type": "race",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m38:3",
+      "type": "deliver",
+      "where": "pier",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m38:4",
+      "type": "choice",
+      "where": "pier",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m39:0",
+      "type": "investigate",
+      "where": "observatory",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "THE ORDER",
+            "text": "The mayor authorized civilian tracking as a temporary emergency measure. It has no expiry date."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "THE BUYER",
+            "text": "Vale promised control of SIREN to whichever national bidder paid first. Glowport is the demonstration."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "THE KILL SWITCH",
+            "text": "The same vault session can publish the archive or transfer its authority. The city’s future is a permission setting."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m39:1",
+      "type": "collect",
+      "where": "observatory",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m39:2",
+      "type": "deliver",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m39:3",
+      "type": "talk",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m40:0",
+      "type": "acquire_vehicle",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m40:1",
+      "type": "drive_route",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m40:2",
+      "type": "heist",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "m40:3",
+      "type": "combat",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m40:4",
+      "type": "escape",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m40:5",
+      "type": "escort",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "m40:6",
+      "type": "choice",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-darla-1:0",
+      "type": "collect",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-1:1",
+      "type": "drive_route",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-1:2",
+      "type": "defend",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-1:3",
+      "type": "talk",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-2:0",
+      "type": "investigate",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "DELIVERY LABEL",
+            "text": "Darla’s costume cases were relabelled as executive upholstery."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "RETURN SLIP",
+            "text": "The return address is a shell company renting the club’s back room."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "INVOICE",
+            "text": "The invoice includes an extortion fee disguised as sequins."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-darla-2:1",
+      "type": "stealth",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-2:2",
+      "type": "collect",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-2:3",
+      "type": "deliver",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-2:4",
+      "type": "talk",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-3:0",
+      "type": "acquire_vehicle",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-3:1",
+      "type": "race",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-3:2",
+      "type": "defend",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-3:3",
+      "type": "escape",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-3:4",
+      "type": "talk",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-4:0",
+      "type": "investigate",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "CONTRACT",
+            "text": "Meridian purchased Darla’s back catalogue through a city arts charity."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "BANK SLIP",
+            "text": "The charity paid the producer to suppress her neighborhood benefit concert."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "SIDE LETTER",
+            "text": "A signed side letter lets Darla release the recording if the charity’s fraud is exposed."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-darla-4:1",
+      "type": "heist",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-darla-4:2",
+      "type": "drive_route",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-4:3",
+      "type": "choice",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-darla-4:4",
+      "type": "talk",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-1:0",
+      "type": "acquire_vehicle",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-1:1",
+      "type": "collect",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-1:2",
+      "type": "drive_route",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-1:3",
+      "type": "deliver",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-2:0",
+      "type": "investigate",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "CHASSIS TAG",
+            "text": "The vehicle’s tag matches a clinic refrigeration unit."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "DELIVERY NOTE",
+            "text": "The supplies were diverted by Meridian security."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "SPARE KEY",
+            "text": "Bobby hid the spare key inside a novelty steering-wheel lock."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-bobby-2:1",
+      "type": "stealth",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-2:2",
+      "type": "collect",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-2:3",
+      "type": "deliver",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-2:4",
+      "type": "talk",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-3:0",
+      "type": "investigate",
+      "where": "armory",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "VIN RUBBING",
+            "text": "Several seized cars were taken before their owners missed a payment."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "AUCTION LIST",
+            "text": "All buyers lead back to the same Meridian subsidiary."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "LOCK CODE",
+            "text": "A recovered lock code identifies the next transport."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-bobby-3:1",
+      "type": "collect",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-3:2",
+      "type": "acquire_vehicle",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-3:3",
+      "type": "chase",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-3:4",
+      "type": "defend",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-4:0",
+      "type": "heist",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-bobby-4:1",
+      "type": "combat",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-4:2",
+      "type": "drive_route",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-4:3",
+      "type": "choice",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-bobby-4:4",
+      "type": "talk",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-static-1:0",
+      "type": "investigate",
+      "where": "hotel",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "RADIO CLOCK",
+            "text": "The clock broadcasts a short data burst every midnight."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "ROOM PHONE",
+            "text": "The phone’s service label belongs to a Meridian contractor."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "TOASTER",
+            "text": "The toaster is ordinary. Static is disappointed. The room phone is not."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-static-1:1",
+      "type": "collect",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-static-1:2",
+      "type": "deliver",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-static-1:3",
+      "type": "choice",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-static-2:0",
+      "type": "collect",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-static-2:1",
+      "type": "stealth",
+      "where": "armory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-static-2:2",
+      "type": "heist",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-static-2:3",
+      "type": "drive_route",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-static-3:0",
+      "type": "acquire_vehicle",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-static-3:1",
+      "type": "escort",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-static-3:2",
+      "type": "defend",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-static-3:3",
+      "type": "talk",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-static-4:0",
+      "type": "investigate",
+      "where": "observatory",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "RELAY MAP",
+            "text": "The network reaches clinics, apartment lobbies, and every city permit office."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "ACCESS LOG",
+            "text": "City officials used it to target tenants resisting eviction."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "MASTER KEY",
+            "text": "The maintenance key can either erase the archive or open it to the public."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-static-4:1",
+      "type": "heist",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-static-4:2",
+      "type": "combat",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-static-4:3",
+      "type": "choice",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-1:0",
+      "type": "collect",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-1:1",
+      "type": "deliver",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-1:2",
+      "type": "combat",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-1:3",
+      "type": "talk",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-2:0",
+      "type": "investigate",
+      "where": "clinic",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "RECEIPTS",
+            "text": "The clinic received donations that never reached its accounts."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "BILLING CODE",
+            "text": "A false billing code routes the money to a freight subsidiary."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "TRANSFER ORDER",
+            "text": "The next withdrawal is scheduled at Dockside 88."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-violet-2:1",
+      "type": "stealth",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-2:2",
+      "type": "heist",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-violet-2:3",
+      "type": "deliver",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-3:0",
+      "type": "acquire_vehicle",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-3:1",
+      "type": "escort",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-3:2",
+      "type": "defend",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-3:3",
+      "type": "drive_route",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-3:4",
+      "type": "choice",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-4:0",
+      "type": "collect",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-4:1",
+      "type": "heist",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-violet-4:2",
+      "type": "escape",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-4:3",
+      "type": "drive_route",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-violet-4:4",
+      "type": "talk",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-sol-1:0",
+      "type": "collect",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-sol-1:1",
+      "type": "investigate",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "PATCH BAY",
+            "text": "The public channel has been rerouted into a dead input."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "POWER UNIT",
+            "text": "A service switch will bring the old transmitter online."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "TAPE DECK",
+            "text": "The benefit tape is cued. The station finally sounds like the neighborhood."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-sol-1:2",
+      "type": "defend",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-sol-1:3",
+      "type": "talk",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-sol-2:0",
+      "type": "stealth",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-sol-2:1",
+      "type": "heist",
+      "where": "observatory",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-sol-2:2",
+      "type": "drive_route",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-sol-2:3",
+      "type": "escort",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-sol-3:0",
+      "type": "investigate",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "REQUEST SLIP",
+            "text": "The request’s numbers match freight container seals."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "VOICE MEMO",
+            "text": "The worker recorded a threat from a Meridian supervisor."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "DELIVERY ADDRESS",
+            "text": "The surviving witness is being treated at Marina Clinic."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-sol-3:1",
+      "type": "combat",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-sol-3:2",
+      "type": "escape",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-sol-3:3",
+      "type": "deliver",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-sol-4:0",
+      "type": "collect",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-sol-4:1",
+      "type": "heist",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "side-sol-4:2",
+      "type": "defend",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-sol-4:3",
+      "type": "choice",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "side-sol-4:4",
+      "type": "talk",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-mugging:0",
+      "type": "choice",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-mugging:1",
+      "type": "combat",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-passing-pursuit:0",
+      "type": "choice",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-passing-pursuit:1",
+      "type": "chase",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-passing-pursuit:2",
+      "type": "escape",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-ride-request:0",
+      "type": "choice",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-ride-request:1",
+      "type": "escort",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-ride-request:2",
+      "type": "choice",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-ride-request:3",
+      "type": "escort",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-ride-request:4",
+      "type": "escort",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-store-robbery:0",
+      "type": "choice",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-store-robbery:1",
+      "type": "defend",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-car-thief:0",
+      "type": "choice",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-car-thief:1",
+      "type": "collect",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-car-thief:2",
+      "type": "deliver",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-suspicious-van:0",
+      "type": "choice",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-suspicious-van:1",
+      "type": "investigate",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "SEAL",
+            "text": "The security seal is for a medical contractor."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "TEMPERATURE LOG",
+            "text": "The cargo is a shipment of stolen clinic supplies."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "MANIFEST",
+            "text": "The destination is an unauthorized Meridian cold store."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-alley-ambush:0",
+      "type": "choice",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-alley-ambush:1",
+      "type": "combat",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-medical-help:0",
+      "type": "choice",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-medical-help:1",
+      "type": "collect",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-medical-help:2",
+      "type": "deliver",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-stranded-driver:0",
+      "type": "choice",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-stranded-driver:1",
+      "type": "collect",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-stranded-driver:2",
+      "type": "deliver",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-stranded-driver:3",
+      "type": "heist",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-street-race:0",
+      "type": "choice",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-street-race:1",
+      "type": "race",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-street-argument:0",
+      "type": "choice",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-street-argument:1",
+      "type": "defend",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-drunk-philosopher:0",
+      "type": "choice",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-drunk-philosopher:1",
+      "type": "escort",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-security-convoy:0",
+      "type": "choice",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-security-convoy:1",
+      "type": "chase",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-security-convoy:2",
+      "type": "heist",
+      "where": "warehouse",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 520,
+            "y": 195
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 520,
+            "y": 197
+          },
+          "distance": 2
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-shakedown:0",
+      "type": "choice",
+      "where": "armory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-shakedown:1",
+      "type": "stealth",
+      "where": "armory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-shakedown:2",
+      "type": "collect",
+      "where": "armory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-illegal-parcel:0",
+      "type": "choice",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-illegal-parcel:1",
+      "type": "deliver",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-illegal-parcel:2",
+      "type": "deliver",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-lost-tourist:0",
+      "type": "choice",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-lost-tourist:1",
+      "type": "escort",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-rival-gang:0",
+      "type": "choice",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-rival-gang:1",
+      "type": "defend",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-rival-gang:2",
+      "type": "escort",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-runaway-driver:0",
+      "type": "choice",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-runaway-driver:1",
+      "type": "escort",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-runaway-driver:2",
+      "type": "escape",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-club-dispute:0",
+      "type": "choice",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-club-dispute:1",
+      "type": "collect",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-club-dispute:2",
+      "type": "deliver",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-bizarre-offer:0",
+      "type": "choice",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-bizarre-offer:1",
+      "type": "investigate",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "BUSINESS CARD",
+            "text": "The business card belongs to a company that ceased existing twice."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "COOLER LINING",
+            "text": "The lining contains stolen municipal bond certificates."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "LEGAL NOTE",
+            "text": "A note says the bonds were intended to fund the city’s eviction program. The cooler is still empty of food."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-bizarre-offer:2",
+      "type": "deliver",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-missing-person:0",
+      "type": "choice",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-missing-person:1",
+      "type": "talk",
+      "where": "diner",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-missing-person:2",
+      "type": "investigate",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "CALL LOG",
+            "text": "Tom called the old tower when the clinic’s emergency pager failed."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "WORK ORDER",
+            "text": "He borrowed tools to fix the Lookout repeater."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "VOICE TAPE",
+            "text": "A weak message says his ankle is injured. He is waiting by the tower."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-missing-person:3",
+      "type": "escort",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-missing-person:4",
+      "type": "talk",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-car-accident:0",
+      "type": "choice",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-car-accident:1",
+      "type": "collect",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-car-accident:2",
+      "type": "deliver",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-car-accident:3",
+      "type": "escort",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-car-accident:4",
+      "type": "interact",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-car-accident:5",
+      "type": "deliver",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-street-scam:0",
+      "type": "choice",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-street-scam:1",
+      "type": "investigate",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "PAPER STOCK",
+            "text": "The ticket is printed on Meridian parking notices."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "TYPESET",
+            "text": "The concert date is next Friday; the ticket says February 31."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "PRINT PLATE",
+            "text": "Leon is not counterfeiting a concert. He is laundering the city’s confiscated ticket stock."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-street-scam:2",
+      "type": "choice",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-blackout:0",
+      "type": "choice",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-blackout:1",
+      "type": "investigate",
+      "where": "arcade",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "BREAKER",
+            "text": "The safety breaker is locked open with a contractor’s tag."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "SERVICE LOG",
+            "text": "A replacement isolator was delivered to Dockside this morning."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "CIRCUIT MAP",
+            "text": "The isolator powers the corner clinic pager as well as the arcade signs."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-blackout:2",
+      "type": "collect",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-blackout:3",
+      "type": "deliver",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-blackout:4",
+      "type": "heist",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-blackout:5",
+      "type": "talk",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-lost-wallet:0",
+      "type": "choice",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-lost-wallet:1",
+      "type": "talk",
+      "where": "clinic",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-lost-wallet:2",
+      "type": "deliver",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-lost-wallet:3",
+      "type": "talk",
+      "where": "diner",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-lost-wallet:4",
+      "type": "deliver",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-street-performer:0",
+      "type": "choice",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-street-performer:1",
+      "type": "collect",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-street-performer:2",
+      "type": "deliver",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-street-performer:3",
+      "type": "heist",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-street-performer:4",
+      "type": "talk",
+      "where": "club",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-undercover:0",
+      "type": "choice",
+      "where": "armory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-undercover:1",
+      "type": "investigate",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "BUSINESS CARD",
+            "text": "The print shop billed the Vice Division."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "PHONE NUMBER",
+            "text": "The callback number reaches a police evidence desk."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "CASE FILE",
+            "text": "The sting is designed to justify a Meridian street clearance, not recover stolen goods."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-undercover:2",
+      "type": "collect",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-undercover:3",
+      "type": "deliver",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-undercover:4",
+      "type": "deliver",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-undercover:5",
+      "type": "escape",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-stolen-recovery:0",
+      "type": "choice",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-stolen-recovery:1",
+      "type": "acquire_vehicle",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-stolen-recovery:2",
+      "type": "chase",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-stolen-recovery:3",
+      "type": "collect",
+      "where": "pier",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-stolen-recovery:4",
+      "type": "deliver",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-secret-transmission:0",
+      "type": "choice",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-secret-transmission:1",
+      "type": "investigate",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "FREQUENCY",
+            "text": "The carrier is bouncing off the Crescent Lookout relay."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "TUNE",
+            "text": "The four notes encode Dockside’s original street numbers."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "CALL SIGN",
+            "text": "The call sign belonged to a neighborhood station shut down before Meridian arrived."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-secret-transmission:2",
+      "type": "collect",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-secret-transmission:3",
+      "type": "deliver",
+      "where": "records",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-secret-transmission:4",
+      "type": "choice",
+      "where": "radio",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-shopkeeper:0",
+      "type": "choice",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-shopkeeper:1",
+      "type": "collect",
+      "where": "warehouse",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-shopkeeper:2",
+      "type": "drive_route",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-shopkeeper:3",
+      "type": "deliver",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-shopkeeper:4",
+      "type": "defend",
+      "where": "diner",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-shopkeeper:5",
+      "type": "talk",
+      "where": "diner",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-false-accusation:0",
+      "type": "choice",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-false-accusation:1",
+      "type": "talk",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-false-accusation:2",
+      "type": "talk",
+      "where": "diner",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-false-accusation:3",
+      "type": "investigate",
+      "where": "radio",
+      "inside": true,
+      "reachableSamples": 9704,
+      "targets": [
+        {
+          "point": {
+            "x": 211,
+            "y": 223,
+            "label": "DISPATCH",
+            "text": "The guard requested a shop-clearance report before the window broke."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 212,
+            "y": 197
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 651,
+            "y": 195,
+            "label": "RECEIPT",
+            "text": "The diner’s timestamp puts the girl across the river."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 652,
+            "y": 169
+          },
+          "distance": 26.019223662515373
+        },
+        {
+          "point": {
+            "x": 403,
+            "y": 149,
+            "label": "VOICEPRINT",
+            "text": "The supposed second witness is the guard reading from his own report."
+          },
+          "radius": 54,
+          "nearest": {
+            "x": 404,
+            "y": 125
+          },
+          "distance": 24.020824298928627
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-false-accusation:4",
+      "type": "choice",
+      "where": "arcade",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-wrong-delivery:0",
+      "type": "choice",
+      "where": "motel",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-wrong-delivery:1",
+      "type": "talk",
+      "where": "records",
+      "inside": true,
+      "reachableSamples": 10222,
+      "targets": [
+        {
+          "point": {
+            "x": 403,
+            "y": 149
+          },
+          "radius": 75,
+          "nearest": {
+            "x": 404,
+            "y": 149
+          },
+          "distance": 1
+        }
+      ],
+      "exitReachable": true
+    },
+    {
+      "id": "event-wrong-delivery:2",
+      "type": "deliver",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-wrong-delivery:3",
+      "type": "choice",
+      "where": "observatory",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-wrong-delivery:4",
+      "type": "deliver",
+      "where": "clinic",
+      "inside": false,
+      "doorClear": true
+    },
+    {
+      "id": "event-wrong-delivery:5",
+      "type": "deliver",
+      "where": "hotel",
+      "inside": false,
+      "doorClear": true
+    }
+  ],
+  "failures": [],
+  "errors": [],
+  "scope": "Actual production host/catalogue/landmarks and room solids. Four-pixel cardinal movement flood fill from exact entry spawn checks every interior objective interaction radius, including solid investigation props, all indoor stealth points and exit return. Outdoor objective landmark doors checked against actual world collision. This verifies geometry, not objective completion or difficulty."
+}

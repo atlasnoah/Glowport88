@@ -1,0 +1,69 @@
+{
+  "time": "2026-10-28T14:08:11.042Z",
+  "version": "0.6.2",
+  "gameplayFixCommit": "7c04e87",
+  "regressionPrefix": {
+    "command": "npm test",
+    "exitCode": 0,
+    "logSHA256": "f4eb62d71ddb8ece44766c90d571eec52fc4fe6c3618c289744d3c1526c57174",
+    "note": "Executed regression+restoration+48bugchecks before the newly added playability suites were appended to the default test script."
+  },
+  "playability": {
+    "actualMissions": {
+      "command": "node tests/all-missions-host.cjs",
+      "exitCode": 0,
+      "result": "all-missions-host-results.json"
+    },
+    "entrances": {
+      "command": "node tests/all-entrances-host.cjs",
+      "exitCode": 0,
+      "result": "all-entrances-host-results.json"
+    },
+    "geometry": {
+      "command": "node tests/mission-geometry-audit.cjs",
+      "exitCode": 0,
+      "result": "mission-geometry-audit-results.json"
+    },
+    "roomMovement": {
+      "command": "node tests/room-reachability.cjs",
+      "exitCode": 0,
+      "result": "room-reachability-results.json"
+    }
+  },
+  "productionSHA256": {
+    "Glowport88/Glowport88_ArtRehaul_v11.html": "e080692a690f28698da3b987891b25bed0f08b8a60a00919e54c1381d7000295",
+    "Glowport88/assets/activities.js": "9208a7499dad65571f530fad9e1c5ce1df949145d2351b097a73497786a47af8",
+    "Glowport88/assets/art.js": "bf5413c67192213a88d60c60a91cd76a2cbf2d591e458ab1735f87bc577649d9",
+    "Glowport88/assets/atlas.js": "5b46e6c9ec30c34bc34140be368430126bea8380f0a71346db0927c9ddc2da6d",
+    "Glowport88/assets/campaign.js": "8c81e3cd751fbb611fdd0dca444fe6edaa6f4da82f00562326a92ff0079c97c5",
+    "Glowport88/assets/city-audio.js": "f254cfbe0415eae4d23cbf3ad061fbb8cc918c95af4ba646f0809eeba89c788b",
+    "Glowport88/assets/city-layout.js": "5c8898691df97cd877134ea3e478ff33450349e39d052d43a7e9edca3b1bf28d",
+    "Glowport88/assets/encounter-system.js": "6a15f8bc062aa20f3a816b13bec85d1129540838269bb6d44034e7213712077a",
+    "Glowport88/assets/environment-art.js": "929583a95d0f6a579c4e42eac05b9971ac2e3b3b30ce12dd6a9f851b234c78b1",
+    "Glowport88/assets/gameplay.js": "c9dfc07c9df2c04cbbd52c71d16adc26ae08d075170673959a2884a6fecf64da",
+    "Glowport88/assets/interactions.js": "b2f73d7c329765f0c2ed5783cb6fdc54b51b5fbf23d67978b910183da1a02f30",
+    "Glowport88/assets/living-city.js": "53644150ff07f5108f9455fa7bf076c467bf388ab82c1a9e537fd50adb2dc514",
+    "Glowport88/assets/mission-engine.js": "002f6575d4d5a804bb6f5bc153dc8f6aef60d92c79adb82053da92b17d0f9800",
+    "Glowport88/assets/missions.js": "35fb76d9ba5a4fb5e48bc5aea333e0970622aad80d60d5abe019325400a89da7",
+    "Glowport88/assets/phone.js": "47fe81bf0a59e90b121aae7e4814b8c253f184028130ef7a72f1ebc5ce429573",
+    "Glowport88/assets/police-system.js": "42f8727a704a259ce368cdc3fb3bb9ad4686a57f55b522e4c22f31a01dfcc0a5",
+    "Glowport88/assets/progression.js": "22808e2a2c077846fa59a9d8ceed77444f7f071182692bd9e92efac4a7c9d6c2",
+    "Glowport88/assets/residential-infill.js": "b6b272a80e3d9412f564edeef4ffaf5173a1de1aa31ce2d85a51a36af5a0fcd7",
+    "Glowport88/assets/restored-city.js": "7cf76a0b2da393269eb712f3ba295eaa83bdde5e153dfa95a709d43789e4abc5",
+    "Glowport88/assets/save-system.js": "0951b0c25bc44a6f8dcf6c25049cafe09b1762a2aed919d3e35972f1aa4f70b9",
+    "Glowport88/assets/side-content.js": "fe380abbd3ef76c3d6717f42279b6d139273eff96454fa6f45d5e6571630fec8",
+    "Glowport88/assets/terrain-cache.js": "d2c952c4a6bec8da56f95350f1dcdb81817bb37bbf6ef86f6a3dba12631595bf",
+    "Glowport88/assets/touch-controls.js": "965e523c51718f18a2aa8495fe92464e7aa23d7302fef9f22229766aff44da36",
+    "Glowport88/assets/vehicle-system.js": "5a92479fcb4a80e279f205b8872eea77ce84cb1b6efe8d27e811d331a9a29171"
+  },
+  "visualPreservation": "bugfix-visual-preservation-results.json",
+  "limitations": "QA-accelerated travel/time, supplied equipment/invulnerability. Not difficulty, every choice combination, physical devices or human campaign duration. Public verification recorded separately.",
+  "standalone": {
+    "buildCommand": "npm run release",
+    "buildExitCode": 0,
+    "testCommand": "npm run test:release",
+    "testExitCode": 0,
+    "sha256": "ccb6d103ddb2af673acd6b03e3f1e2fa1df0810539cf5fa39daf52e1ef900263",
+    "result": "release-results.json"
+  }
+}

@@ -1,0 +1,6415 @@
+{
+  "time": "2026-10-28T13:59:54.007Z",
+  "landmarks": [
+    "hotel",
+    "armory",
+    "club",
+    "records",
+    "radio",
+    "arcade",
+    "motel",
+    "warehouse",
+    "diner",
+    "observatory",
+    "clinic",
+    "pier"
+  ],
+  "baseRooms": [
+    {
+      "where": "hotel",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "central objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "central objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "counter/services",
+          "target": {
+            "x": 570,
+            "y": 195,
+            "radius": 55,
+            "label": "counter/services"
+          },
+          "standpoint": {
+            "x": 540,
+            "y": 241
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "where": "armory",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "central objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "central objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "counter/services",
+          "target": {
+            "x": 570,
+            "y": 195,
+            "radius": 55,
+            "label": "counter/services"
+          },
+          "standpoint": {
+            "x": 540,
+            "y": 241
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "where": "club",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "central objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "central objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "counter/services",
+          "target": {
+            "x": 570,
+            "y": 195,
+            "radius": 55,
+            "label": "counter/services"
+          },
+          "standpoint": {
+            "x": 540,
+            "y": 241
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "where": "records",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "central objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "central objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "counter/services",
+          "target": {
+            "x": 570,
+            "y": 195,
+            "radius": 55,
+            "label": "counter/services"
+          },
+          "standpoint": {
+            "x": 540,
+            "y": 241
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "where": "radio",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "central objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "central objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "counter/services",
+          "target": {
+            "x": 570,
+            "y": 195,
+            "radius": 55,
+            "label": "counter/services"
+          },
+          "standpoint": {
+            "x": 540,
+            "y": 241
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "where": "arcade",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "central objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "central objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "counter/services",
+          "target": {
+            "x": 570,
+            "y": 195,
+            "radius": 55,
+            "label": "counter/services"
+          },
+          "standpoint": {
+            "x": 540,
+            "y": 241
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "where": "motel",
+      "reachableCells": 10356,
+      "targets": [
+        {
+          "label": "central objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "central objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "counter/services",
+          "target": {
+            "x": 570,
+            "y": 195,
+            "radius": 55,
+            "label": "counter/services"
+          },
+          "standpoint": {
+            "x": 540,
+            "y": 241
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "where": "warehouse",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "central objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "central objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "counter/services",
+          "target": {
+            "x": 570,
+            "y": 195,
+            "radius": 55,
+            "label": "counter/services"
+          },
+          "standpoint": {
+            "x": 540,
+            "y": 241
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "where": "diner",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "central objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "central objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "counter/services",
+          "target": {
+            "x": 570,
+            "y": 195,
+            "radius": 55,
+            "label": "counter/services"
+          },
+          "standpoint": {
+            "x": 540,
+            "y": 241
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "where": "observatory",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "central objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "central objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "counter/services",
+          "target": {
+            "x": 570,
+            "y": 195,
+            "radius": 55,
+            "label": "counter/services"
+          },
+          "standpoint": {
+            "x": 540,
+            "y": 241
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "where": "clinic",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "central objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "central objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "counter/services",
+          "target": {
+            "x": 570,
+            "y": 195,
+            "radius": 55,
+            "label": "counter/services"
+          },
+          "standpoint": {
+            "x": 540,
+            "y": 241
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "where": "pier",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "central objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "central objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "counter/services",
+          "target": {
+            "x": 570,
+            "y": 195,
+            "radius": 55,
+            "label": "counter/services"
+          },
+          "standpoint": {
+            "x": 540,
+            "y": 241
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    }
+  ],
+  "objectives": [
+    {
+      "mission": "m07",
+      "index": 0,
+      "where": "radio",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "A torn splice marks the stolen hour. Its service tag points to the east archive circuit.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "Reset the isolated relay. The recorder wakes with one unplayed cartridge still inside.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "A voice lists shell companies, unpaid tenants, and one standing order: clear the blocks.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m07",
+      "index": 1,
+      "where": "radio",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m07",
+      "index": 2,
+      "where": "records",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m07",
+      "index": 3,
+      "where": "records",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m08",
+      "index": 0,
+      "where": "diner",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m08",
+      "index": 2,
+      "where": "diner",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m08",
+      "index": 3,
+      "where": "diner",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m08",
+      "index": 5,
+      "where": "motel",
+      "type": "deliver",
+      "reachableCells": 10356,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m08",
+      "index": 6,
+      "where": "motel",
+      "type": "talk",
+      "reachableCells": 10356,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m09",
+      "index": 1,
+      "where": "records",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "Jax hid account numbers in fake album reviews. The two-star review is a municipal bond.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "Match the dates to the city’s eviction notices. Every notice follows a payment by one day.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "A recurring signature belongs to Detective Hollis, a vice officer with a private delivery route.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m09",
+      "index": 2,
+      "where": "records",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m09",
+      "index": 3,
+      "where": "records",
+      "type": "choice",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "choice objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "choice objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m10",
+      "index": 1,
+      "where": "records",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m10",
+      "index": 4,
+      "where": "diner",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m11",
+      "index": 1,
+      "where": "warehouse",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The same crate was logged twice under two companies with the same accountant.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The seal’s number is genuine. The dockworker who signed it has been declared missing.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The ledger contains payment for a warehouse fire before the fire happened.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m11",
+      "index": 2,
+      "where": "warehouse",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m11",
+      "index": 3,
+      "where": "hotel",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m11",
+      "index": 4,
+      "where": "hotel",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m12",
+      "index": 4,
+      "where": "pier",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m12",
+      "index": 5,
+      "where": "pier",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m13",
+      "index": 0,
+      "where": "pier",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m13",
+      "index": 1,
+      "where": "club",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m13",
+      "index": 3,
+      "where": "club",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m13",
+      "index": 4,
+      "where": "club",
+      "type": "choice",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "choice objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "choice objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m14",
+      "index": 1,
+      "where": "observatory",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "Most units report their serial numbers every thirty seconds. One test channel never checks in.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "Retune the array. The clean channel lights a service locker in the archive.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The locker holds a transmitter and a pencilled note: for emergencies they cannot authorize.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m14",
+      "index": 2,
+      "where": "observatory",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m14",
+      "index": 4,
+      "where": "club",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m15",
+      "index": 0,
+      "where": "warehouse",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The cash arrives between guard changes. The relief team signs in before the van is unloaded.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "A loading camera sees the pavement, not the counter. The blind side lasts long enough.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The real payroll crate carries a violet customs mark. The other crates are empty decoys.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m15",
+      "index": 3,
+      "where": "warehouse",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m15",
+      "index": 4,
+      "where": "warehouse",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m15",
+      "index": 6,
+      "where": "pier",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m16",
+      "index": 1,
+      "where": "arcade",
+      "type": "interact",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "interact objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "interact objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m16",
+      "index": 3,
+      "where": "pier",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "A private channel carried the rendezvous before the crew arrived.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The leak used a Meridian analyst access code. The timestamp predates the payroll job.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "Someone in the crew gave Meridian the address. The broadcast was not the trap; the crew was.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m16",
+      "index": 4,
+      "where": "pier",
+      "type": "choice",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "choice objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "choice objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m17",
+      "index": 1,
+      "where": "records",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "A fake band’s catalogue number repeats the date Jax quit Meridian.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The sleeves lead to a locker receipt paid for by the mayor’s campaign office.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "Every payment has a copy. The largest account is marked SIREN, not real estate.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m17",
+      "index": 2,
+      "where": "records",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m17",
+      "index": 4,
+      "where": "motel",
+      "type": "deliver",
+      "reachableCells": 10356,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m17",
+      "index": 5,
+      "where": "motel",
+      "type": "talk",
+      "reachableCells": 10356,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m18",
+      "index": 1,
+      "where": "motel",
+      "type": "collect",
+      "reachableCells": 10356,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m18",
+      "index": 3,
+      "where": "hotel",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m18",
+      "index": 4,
+      "where": "hotel",
+      "type": "choice",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "choice objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "choice objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m19",
+      "index": 2,
+      "where": "diner",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m19",
+      "index": 3,
+      "where": "diner",
+      "type": "choice",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "choice objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "choice objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m20",
+      "index": 4,
+      "where": "motel",
+      "type": "talk",
+      "reachableCells": 10356,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m21",
+      "index": 0,
+      "where": "hotel",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The city database calls the building vacant. Forty-three names disagree.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The demolition order predates the inspection that supposedly justified it.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "Security is coming before the notice can be appealed. The family must leave now.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m21",
+      "index": 3,
+      "where": "clinic",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m22",
+      "index": 1,
+      "where": "diner",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m22",
+      "index": 3,
+      "where": "records",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m22",
+      "index": 4,
+      "where": "records",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m23",
+      "index": 0,
+      "where": "armory",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m23",
+      "index": 1,
+      "where": "club",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m23",
+      "index": 4,
+      "where": "warehouse",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m24",
+      "index": 0,
+      "where": "armory",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The jewels arrived in gun cases. The insurance lists municipal property as collateral.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The lock changes sequence with each guard shift. The current pattern is on the service card.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The shipment funds SIREN: a city-wide system for tracking and clearing people, not merely buildings.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m24",
+      "index": 2,
+      "where": "armory",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m24",
+      "index": 3,
+      "where": "armory",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m24",
+      "index": 5,
+      "where": "pier",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m24",
+      "index": 6,
+      "where": "pier",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m25",
+      "index": 2,
+      "where": "hotel",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m25",
+      "index": 3,
+      "where": "hotel",
+      "type": "choice",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "choice objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "choice objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m26",
+      "index": 2,
+      "where": "clinic",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The clinic treated dockworkers before the official time of the warehouse fire.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "A security-radio recording orders the exits locked while workers are still inside.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "Mika identifies Director Vale’s voice. Her account ties SIREN to the fire.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m26",
+      "index": 3,
+      "where": "clinic",
+      "type": "choice",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "choice objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "choice objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m27",
+      "index": 4,
+      "where": "clinic",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m27",
+      "index": 5,
+      "where": "clinic",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m28",
+      "index": 1,
+      "where": "hotel",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m28",
+      "index": 3,
+      "where": "radio",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m29",
+      "index": 0,
+      "where": "hotel",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The clearing terminal holds wages, deposits, and the city’s emergency reserve in one release window.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "Three authorization steps and a manual release. Break the sequence and the reserve freezes.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "Hollis can delay the first dispatch. After that, every patrol in Glowport gets the same address.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m29",
+      "index": 2,
+      "where": "hotel",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m29",
+      "index": 3,
+      "where": "hotel",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m29",
+      "index": 5,
+      "where": "pier",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m29",
+      "index": 6,
+      "where": "pier",
+      "type": "choice",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "choice objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "choice objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m30",
+      "index": 0,
+      "where": "club",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m30",
+      "index": 3,
+      "where": "radio",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m30",
+      "index": 4,
+      "where": "radio",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m31",
+      "index": 0,
+      "where": "observatory",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The rendezvous code was issued to Vee while she still worked at Meridian.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The leak moved a security team away from Mika’s family. The crew became the distraction.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "Vee drafted a warning, then deleted it. She chose the outcome and denied the crew a choice.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m31",
+      "index": 1,
+      "where": "observatory",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m31",
+      "index": 2,
+      "where": "observatory",
+      "type": "choice",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "choice objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "choice objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m31",
+      "index": 3,
+      "where": "observatory",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m31",
+      "index": 4,
+      "where": "arcade",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m32",
+      "index": 3,
+      "where": "clinic",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m32",
+      "index": 4,
+      "where": "clinic",
+      "type": "choice",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "choice objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "choice objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m33",
+      "index": 2,
+      "where": "observatory",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m33",
+      "index": 4,
+      "where": "diner",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m34",
+      "index": 0,
+      "where": "radio",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The interference repeats on a maintenance clock, not a broadcast clock.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "A contractor control channel links the jammer to Meridian’s district equipment.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The manual override works only after the local controller is physically reset.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m34",
+      "index": 1,
+      "where": "observatory",
+      "type": "interact",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "interact objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "interact objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m34",
+      "index": 3,
+      "where": "club",
+      "type": "interact",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "interact objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "interact objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m34",
+      "index": 4,
+      "where": "club",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m35",
+      "index": 2,
+      "where": "hotel",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m35",
+      "index": 3,
+      "where": "hotel",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m35",
+      "index": 4,
+      "where": "hotel",
+      "type": "choice",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "choice objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "choice objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m36",
+      "index": 1,
+      "where": "motel",
+      "type": "heist",
+      "reachableCells": 10356,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m36",
+      "index": 2,
+      "where": "motel",
+      "type": "collect",
+      "reachableCells": 10356,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m36",
+      "index": 4,
+      "where": "records",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m36",
+      "index": 5,
+      "where": "records",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m37",
+      "index": 2,
+      "where": "radio",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "Disconnect the studio from the registered city feed. Meridian loses its remote cutoff.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "Tie the carrier to the emergency bus. Roxy signs the inspection slip: probably fine.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "Five district receivers answer. The final patch is ready for the vault archive.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m37",
+      "index": 3,
+      "where": "radio",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m38",
+      "index": 1,
+      "where": "armory",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m38",
+      "index": 3,
+      "where": "pier",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m38",
+      "index": 4,
+      "where": "pier",
+      "type": "choice",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "choice objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "choice objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m39",
+      "index": 0,
+      "where": "observatory",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The mayor authorized civilian tracking as a temporary emergency measure. It has no expiry date.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "Vale promised control of SIREN to whichever national bidder paid first. Glowport is the demonstration.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The same vault session can publish the archive or transfer its authority. The city’s future is a permission setting.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m39",
+      "index": 1,
+      "where": "observatory",
+      "type": "collect",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "collect objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "collect objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m39",
+      "index": 2,
+      "where": "hotel",
+      "type": "deliver",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "deliver objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "deliver objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m39",
+      "index": 3,
+      "where": "hotel",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m40",
+      "index": 2,
+      "where": "warehouse",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "m40",
+      "index": 6,
+      "where": "radio",
+      "type": "choice",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "choice objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "choice objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-darla-2",
+      "index": 0,
+      "where": "warehouse",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "Darla’s costume cases were relabelled as executive upholstery.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The return address is a shell company renting the club’s back room.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The invoice includes an extortion fee disguised as sequins.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-darla-4",
+      "index": 0,
+      "where": "hotel",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "Meridian purchased Darla’s back catalogue through a city arts charity.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The charity paid the producer to suppress her neighborhood benefit concert.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "A signed side letter lets Darla release the recording if the charity’s fraud is exposed.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-darla-4",
+      "index": 1,
+      "where": "warehouse",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-bobby-2",
+      "index": 0,
+      "where": "warehouse",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The vehicle’s tag matches a clinic refrigeration unit.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The supplies were diverted by Meridian security.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "Bobby hid the spare key inside a novelty steering-wheel lock.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-bobby-3",
+      "index": 0,
+      "where": "armory",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "Several seized cars were taken before their owners missed a payment.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "All buyers lead back to the same Meridian subsidiary.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "A recovered lock code identifies the next transport.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-bobby-4",
+      "index": 0,
+      "where": "warehouse",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-static-1",
+      "index": 0,
+      "where": "hotel",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The clock broadcasts a short data burst every midnight.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The phone’s service label belongs to a Meridian contractor.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The toaster is ordinary. Static is disappointed. The room phone is not.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-static-2",
+      "index": 2,
+      "where": "records",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-static-4",
+      "index": 0,
+      "where": "observatory",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The network reaches clinics, apartment lobbies, and every city permit office.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "City officials used it to target tenants resisting eviction.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The maintenance key can either erase the archive or open it to the public.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-static-4",
+      "index": 1,
+      "where": "radio",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-violet-2",
+      "index": 0,
+      "where": "clinic",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The clinic received donations that never reached its accounts.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "A false billing code routes the money to a freight subsidiary.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The next withdrawal is scheduled at Dockside 88.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-violet-2",
+      "index": 2,
+      "where": "warehouse",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-violet-4",
+      "index": 1,
+      "where": "warehouse",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-sol-1",
+      "index": 1,
+      "where": "radio",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The public channel has been rerouted into a dead input.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "A service switch will bring the old transmitter online.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The benefit tape is cued. The station finally sounds like the neighborhood.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-sol-2",
+      "index": 1,
+      "where": "observatory",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-sol-3",
+      "index": 0,
+      "where": "warehouse",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The request’s numbers match freight container seals.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The worker recorded a threat from a Meridian supervisor.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The surviving witness is being treated at Marina Clinic.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "side-sol-4",
+      "index": 1,
+      "where": "radio",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-suspicious-van",
+      "index": 1,
+      "where": "warehouse",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The security seal is for a medical contractor.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The cargo is a shipment of stolen clinic supplies.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The destination is an unauthorized Meridian cold store.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-security-convoy",
+      "index": 2,
+      "where": "warehouse",
+      "type": "heist",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "heist objective",
+          "target": {
+            "x": 520,
+            "y": 195,
+            "radius": 60,
+            "label": "heist objective"
+          },
+          "standpoint": {
+            "x": 488,
+            "y": 245
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-bizarre-offer",
+      "index": 1,
+      "where": "records",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The business card belongs to a company that ceased existing twice.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The lining contains stolen municipal bond certificates.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "A note says the bonds were intended to fund the city’s eviction program. The cooler is still empty of food.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-missing-person",
+      "index": 1,
+      "where": "diner",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-missing-person",
+      "index": 2,
+      "where": "radio",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "Tom called the old tower when the clinic’s emergency pager failed.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "He borrowed tools to fix the Lookout repeater.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "A weak message says his ankle is injured. He is waiting by the tower.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-street-scam",
+      "index": 1,
+      "where": "records",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The ticket is printed on Meridian parking notices.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The concert date is next Friday; the ticket says February 31.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "Leon is not counterfeiting a concert. He is laundering the city’s confiscated ticket stock.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-blackout",
+      "index": 1,
+      "where": "arcade",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The safety breaker is locked open with a contractor’s tag.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "A replacement isolator was delivered to Dockside this morning.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The isolator powers the corner clinic pager as well as the arcade signs.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-lost-wallet",
+      "index": 1,
+      "where": "clinic",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-lost-wallet",
+      "index": 3,
+      "where": "diner",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-undercover",
+      "index": 1,
+      "where": "records",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The print shop billed the Vice Division.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The callback number reaches a police evidence desk.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The sting is designed to justify a Meridian street clearance, not recover stolen goods.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-secret-transmission",
+      "index": 1,
+      "where": "radio",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The carrier is bouncing off the Crescent Lookout relay.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The four notes encode Dockside’s original street numbers.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The call sign belonged to a neighborhood station shut down before Meridian arrived.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-shopkeeper",
+      "index": 5,
+      "where": "diner",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-false-accusation",
+      "index": 1,
+      "where": "records",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-false-accusation",
+      "index": 2,
+      "where": "diner",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-false-accusation",
+      "index": 3,
+      "where": "radio",
+      "type": "investigate",
+      "reachableCells": 9704,
+      "targets": [
+        {
+          "label": "clue 1",
+          "target": {
+            "x": 211,
+            "y": 223,
+            "label": "clue 1",
+            "text": "The guard requested a shop-clearance report before the window broke.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 240,
+            "y": 257
+          }
+        },
+        {
+          "label": "clue 2",
+          "target": {
+            "x": 651,
+            "y": 195,
+            "label": "clue 2",
+            "text": "The diner’s timestamp puts the girl across the river.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 628,
+            "y": 233
+          }
+        },
+        {
+          "label": "clue 3",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "label": "clue 3",
+            "text": "The supposed second witness is the guard reading from his own report.",
+            "radius": 45
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 193
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    },
+    {
+      "mission": "event-wrong-delivery",
+      "index": 1,
+      "where": "records",
+      "type": "talk",
+      "reachableCells": 10222,
+      "targets": [
+        {
+          "label": "talk objective",
+          "target": {
+            "x": 403,
+            "y": 149,
+            "radius": 60,
+            "label": "talk objective"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 205
+          }
+        },
+        {
+          "label": "exit",
+          "target": {
+            "x": 400,
+            "y": 370,
+            "radius": 35,
+            "label": "exit"
+          },
+          "standpoint": {
+            "x": 400,
+            "y": 377
+          }
+        }
+      ]
+    }
+  ],
+  "movement": [
+    {
+      "configuration": "base:hotel",
+      "where": "hotel",
+      "targets": 3,
+      "productionMovementFrames": 112
+    },
+    {
+      "configuration": "base:armory",
+      "where": "armory",
+      "targets": 3,
+      "productionMovementFrames": 112
+    },
+    {
+      "configuration": "base:club",
+      "where": "club",
+      "targets": 3,
+      "productionMovementFrames": 112
+    },
+    {
+      "configuration": "base:records",
+      "where": "records",
+      "targets": 3,
+      "productionMovementFrames": 112
+    },
+    {
+      "configuration": "base:radio",
+      "where": "radio",
+      "targets": 3,
+      "productionMovementFrames": 112
+    },
+    {
+      "configuration": "base:arcade",
+      "where": "arcade",
+      "targets": 3,
+      "productionMovementFrames": 112
+    },
+    {
+      "configuration": "base:motel",
+      "where": "motel",
+      "targets": 3,
+      "productionMovementFrames": 112
+    },
+    {
+      "configuration": "base:warehouse",
+      "where": "warehouse",
+      "targets": 3,
+      "productionMovementFrames": 112
+    },
+    {
+      "configuration": "base:diner",
+      "where": "diner",
+      "targets": 3,
+      "productionMovementFrames": 112
+    },
+    {
+      "configuration": "base:observatory",
+      "where": "observatory",
+      "targets": 3,
+      "productionMovementFrames": 112
+    },
+    {
+      "configuration": "base:clinic",
+      "where": "clinic",
+      "targets": 3,
+      "productionMovementFrames": 112
+    },
+    {
+      "configuration": "base:pier",
+      "where": "pier",
+      "targets": 3,
+      "productionMovementFrames": 112
+    },
+    {
+      "configuration": "investigation:radio:[[88,108,230,185],[270,250,350,298],[486,260,616,304],[486,100,646,170],[189,206,233,243],[629,178,673,215],[381,132,425,169]]",
+      "where": "radio",
+      "targets": 4,
+      "productionMovementFrames": 209
+    },
+    {
+      "configuration": "investigation:records:[[88,108,230,185],[270,250,350,298],[486,260,616,304],[486,100,646,170],[189,206,233,243],[629,178,673,215],[381,132,425,169]]",
+      "where": "records",
+      "targets": 4,
+      "productionMovementFrames": 209
+    },
+    {
+      "configuration": "investigation:warehouse:[[88,108,230,185],[270,250,350,298],[486,260,616,304],[486,100,646,170],[189,206,233,243],[629,178,673,215],[381,132,425,169]]",
+      "where": "warehouse",
+      "targets": 4,
+      "productionMovementFrames": 209
+    },
+    {
+      "configuration": "investigation:observatory:[[88,108,230,185],[270,250,350,298],[486,260,616,304],[486,100,646,170],[189,206,233,243],[629,178,673,215],[381,132,425,169]]",
+      "where": "observatory",
+      "targets": 4,
+      "productionMovementFrames": 209
+    },
+    {
+      "configuration": "investigation:pier:[[88,108,230,185],[270,250,350,298],[486,260,616,304],[486,100,646,170],[189,206,233,243],[629,178,673,215],[381,132,425,169]]",
+      "where": "pier",
+      "targets": 4,
+      "productionMovementFrames": 209
+    },
+    {
+      "configuration": "investigation:hotel:[[88,108,230,185],[270,250,350,298],[486,260,616,304],[486,100,646,170],[189,206,233,243],[629,178,673,215],[381,132,425,169]]",
+      "where": "hotel",
+      "targets": 4,
+      "productionMovementFrames": 209
+    },
+    {
+      "configuration": "investigation:armory:[[88,108,230,185],[270,250,350,298],[486,260,616,304],[486,100,646,170],[189,206,233,243],[629,178,673,215],[381,132,425,169]]",
+      "where": "armory",
+      "targets": 4,
+      "productionMovementFrames": 209
+    },
+    {
+      "configuration": "investigation:clinic:[[88,108,230,185],[270,250,350,298],[486,260,616,304],[486,100,646,170],[189,206,233,243],[629,178,673,215],[381,132,425,169]]",
+      "where": "clinic",
+      "targets": 4,
+      "productionMovementFrames": 209
+    },
+    {
+      "configuration": "investigation:arcade:[[88,108,230,185],[270,250,350,298],[486,260,616,304],[486,100,646,170],[189,206,233,243],[629,178,673,215],[381,132,425,169]]",
+      "where": "arcade",
+      "targets": 4,
+      "productionMovementFrames": 209
+    }
+  ],
+  "failures": [],
+  "scope": "Actual browser room definitions: exhaustive 4px connected-component checks from the standard entry against the host exact padded rectangle collision rule; all authored interior objective interaction ranges and exits. Production keydown/keyup plus update() walk every base room and each distinct investigation collider arrangement. Setup fixtures choose rooms/stages and initial position only; no completion flags or objective evaluator overrides. Entry/exit E and touch interaction are verified by the companion all-entrances-host suite.",
+  "errors": []
+}

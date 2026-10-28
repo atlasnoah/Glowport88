@@ -1,0 +1,7 @@
+{
+  "time": "2026-10-28T14:06:33.341Z",
+  "baselineCommit": "1d23d83",
+  "matchedStaticImages": 29,
+  "unchanged": true,
+  "scope": "Exact PNG byte comparison of all21city+8residential static views against verified restored0.6.1. No world/art/light edits in the bug pass."
+}

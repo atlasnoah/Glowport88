@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-28T13:59:11.337Z",
+  "time": "2026-10-28T14:07:53.432Z",
   "passed": [
     "Tab and Shift-Tab cycle arcade buttons without leaking behind the game",
     "native Enter and Space activate the focused arcade Exit button",
