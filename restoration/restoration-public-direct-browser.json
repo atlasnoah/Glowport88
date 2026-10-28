@@ -1,0 +1,7 @@
+{
+  "time": "2026-10-27T19:12:27.596Z",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.1-original-city",
+  "tlsVerificationDisabled": false,
+  "directNavigation": false,
+  "reason": "page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://atlasnoah.github.io/Glowport88/?v=0.6.1-original-city\nCall log:\n\u001b[2m  - navigating to \"https://atlasnoah.github.io/Glowport88/?v=0.6.1-original-city\", waiting until \"load\"\u001b[22m\n"
+}

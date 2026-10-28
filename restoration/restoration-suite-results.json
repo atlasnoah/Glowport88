@@ -50,5 +50,19 @@
     "result": "restoration-gallery-results.json",
     "command": "node tests/restoration-gallery.cjs",
     "note": "Executed separately after final captures; now included in the default restoration script."
+  },
+  "publicDelivery": {
+    "exitCode": 0,
+    "command": "node tests/public-demo.cjs",
+    "result": "public-demo-results.json",
+    "sourceCommit": "4bc54f4f79fc49318985fde045e49d9e73153e71",
+    "pagesCommit": "c8383a38f8f2b86117003022b71823bd6810c3d3",
+    "publicManifest": "restoration-public-build.json",
+    "galleryHashes": "restoration-public-gallery-results.json",
+    "directBrowserProbe": {
+      "status": "environment-blocked",
+      "result": "restoration-public-direct-browser.json",
+      "reason": "ERR_CERT_AUTHORITY_INVALID; TLS verification was not disabled"
+    }
   }
 }
