@@ -1,3 +1,12 @@
+# Corner HUD · 0.6.3
+
+- Added a GTA-style interface layout: bottom-left minimap and health bar, top-right equipped weapon silhouette/name/ammo, cash/wanted indicators, and bottom-right speed.
+- Kept full phone objectives in a reserved strip, with existing touch controls, retry/actions and menus accessible.
+- Changed only HUD markup and added presentation CSS/JavaScript. Existing game scripts, inline simulation code and PNG artwork remain byte-identical to 0.6.2.
+- Verified ten exact canvas comparisons across five desktop/phone sizes, responsive/live HUD values and relevant interaction checks. See HUD_REPORT.md for evidence and delivery.
+
+---
+
 # Mission and entrance verification · 0.6.2
 
 - Fixed checkpoint decision replay so recorded choices, relationship effects and paid choices remain consistent without duplicate consequences or repeat charges.

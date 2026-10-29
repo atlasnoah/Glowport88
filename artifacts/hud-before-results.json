@@ -1,0 +1,825 @@
+{
+  "time": "2026-10-29T18:02:36.055Z",
+  "phase": "before",
+  "baselineCommit": "4313c45",
+  "inlineHashes": [
+    "b66d292057a0c5c0f17a5b28f721040631db718b5b644d643b569b0b91f6f06d"
+  ],
+  "assetHashes": {
+    "activities.js": "9208a7499dad65571f530fad9e1c5ce1df949145d2351b097a73497786a47af8",
+    "art.js": "bf5413c67192213a88d60c60a91cd76a2cbf2d591e458ab1735f87bc577649d9",
+    "atlas.js": "5b46e6c9ec30c34bc34140be368430126bea8380f0a71346db0927c9ddc2da6d",
+    "buildings-illustrated.png": "4e0aaad31c743d1bd779f2f194557dbba922316959f9232eee983cd732cc438e",
+    "campaign.js": "8c81e3cd751fbb611fdd0dca444fe6edaa6f4da82f00562326a92ff0079c97c5",
+    "characters.png": "0e3ea49095f5d519601cbd587862454eadbe4fbcba7f75c1c167fe33d5dabd8b",
+    "city-atlas.png": "964bbaf24f1d374e5992ee60756c45223a27b9e1e720c0dafefaaa4a0ac7dd4f",
+    "city-audio.js": "f254cfbe0415eae4d23cbf3ad061fbb8cc918c95af4ba646f0809eeba89c788b",
+    "city-layout.js": "5c8898691df97cd877134ea3e478ff33450349e39d052d43a7e9edca3b1bf28d",
+    "encounter-system.js": "6a15f8bc062aa20f3a816b13bec85d1129540838269bb6d44034e7213712077a",
+    "environment-art.js": "929583a95d0f6a579c4e42eac05b9971ac2e3b3b30ce12dd6a9f851b234c78b1",
+    "furniture-illustrated.png": "00ca5377c351f078ad3d4d39ac8c3687b1d9734c5b8e85671124d33bb6960b49",
+    "gameplay.js": "c9dfc07c9df2c04cbbd52c71d16adc26ae08d075170673959a2884a6fecf64da",
+    "interactions.js": "b2f73d7c329765f0c2ed5783cb6fdc54b51b5fbf23d67978b910183da1a02f30",
+    "living-city.js": "53644150ff07f5108f9455fa7bf076c467bf388ab82c1a9e537fd50adb2dc514",
+    "mission-engine.js": "002f6575d4d5a804bb6f5bc153dc8f6aef60d92c79adb82053da92b17d0f9800",
+    "missions.js": "35fb76d9ba5a4fb5e48bc5aea333e0970622aad80d60d5abe019325400a89da7",
+    "neighborhoods-illustrated.png": "de124d9ae06e1e88faffc733ca8215aa5f7c0790346699ae09ae517576d23166",
+    "phone.js": "47fe81bf0a59e90b121aae7e4814b8c253f184028130ef7a72f1ebc5ce429573",
+    "police-system.js": "42f8727a704a259ce368cdc3fb3bb9ad4686a57f55b522e4c22f31a01dfcc0a5",
+    "portraits.png": "4506507edf4b0be8e70901065f3aa51ffa66ec28d05cc367cf0d35e4cd39935e",
+    "progression.js": "22808e2a2c077846fa59a9d8ceed77444f7f071182692bd9e92efac4a7c9d6c2",
+    "residential-illustrated.png": "15fe7966f78c070dee7506086006cfd27eb72bd5a76c7a1f68615170ce43aae5",
+    "residential-infill.js": "b6b272a80e3d9412f564edeef4ffaf5173a1de1aa31ce2d85a51a36af5a0fcd7",
+    "restored-city.js": "7cf76a0b2da393269eb712f3ba295eaa83bdde5e153dfa95a709d43789e4abc5",
+    "save-system.js": "0951b0c25bc44a6f8dcf6c25049cafe09b1762a2aed919d3e35972f1aa4f70b9",
+    "side-content.js": "fe380abbd3ef76c3d6717f42279b6d139273eff96454fa6f45d5e6571630fec8",
+    "terrain-cache.js": "d2c952c4a6bec8da56f95350f1dcdb81817bb37bbf6ef86f6a3dba12631595bf",
+    "touch-controls.js": "965e523c51718f18a2aa8495fe92464e7aa23d7302fef9f22229766aff44da36",
+    "vehicle-system.js": "5a92479fcb4a80e279f205b8872eea77ce84cb1b6efe8d27e811d331a9a29171",
+    "vehicles.png": "1c6e15cf1c96ba2de9d181a4acfbd3687de4cc517099f1f1e4593183dc58c3ef"
+  },
+  "shots": [
+    {
+      "device": "desktop",
+      "scene": "downtown-night",
+      "file": "hud-before-desktop-downtown-night-canvas.png",
+      "sha256": "885cb5e560b6245a33d0430ab1bfab8341168beed6c8065935fda16d7edc1077"
+    },
+    {
+      "device": "desktop",
+      "scene": "radio-rain",
+      "file": "hud-before-desktop-radio-rain-canvas.png",
+      "sha256": "290ce6d61de5d5fce2faa2540d7f0094b570d82cdf49e1f19285afde3b636361"
+    },
+    {
+      "device": "phone",
+      "scene": "downtown-night",
+      "file": "hud-before-phone-downtown-night-canvas.png",
+      "sha256": "01d64707cd754e1ae5a0acf4601ee0a48deddcd650823bff646ced5fae2839d8"
+    },
+    {
+      "device": "phone",
+      "scene": "radio-rain",
+      "file": "hud-before-phone-radio-rain-canvas.png",
+      "sha256": "c8e830a29a58b2243cece79d6a778bba0e4c3c3cd8803fb45fd591a656911cf7"
+    },
+    {
+      "device": "landscape",
+      "scene": "downtown-night",
+      "file": "hud-before-landscape-downtown-night-canvas.png",
+      "sha256": "01d64707cd754e1ae5a0acf4601ee0a48deddcd650823bff646ced5fae2839d8"
+    },
+    {
+      "device": "landscape",
+      "scene": "radio-rain",
+      "file": "hud-before-landscape-radio-rain-canvas.png",
+      "sha256": "c8e830a29a58b2243cece79d6a778bba0e4c3c3cd8803fb45fd591a656911cf7"
+    },
+    {
+      "device": "short-landscape",
+      "scene": "downtown-night",
+      "file": "hud-before-short-landscape-downtown-night-canvas.png",
+      "sha256": "01d64707cd754e1ae5a0acf4601ee0a48deddcd650823bff646ced5fae2839d8"
+    },
+    {
+      "device": "short-landscape",
+      "scene": "radio-rain",
+      "file": "hud-before-short-landscape-radio-rain-canvas.png",
+      "sha256": "c8e830a29a58b2243cece79d6a778bba0e4c3c3cd8803fb45fd591a656911cf7"
+    },
+    {
+      "device": "small-phone",
+      "scene": "downtown-night",
+      "file": "hud-before-small-phone-downtown-night-canvas.png",
+      "sha256": "01d64707cd754e1ae5a0acf4601ee0a48deddcd650823bff646ced5fae2839d8"
+    },
+    {
+      "device": "small-phone",
+      "scene": "radio-rain",
+      "file": "hud-before-small-phone-radio-rain-canvas.png",
+      "sha256": "c8e830a29a58b2243cece79d6a778bba0e4c3c3cd8803fb45fd591a656911cf7"
+    }
+  ],
+  "layouts": [
+    {
+      "device": "desktop",
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 1440,
+        "bottom": 1000,
+        "width": 1440,
+        "height": 1000
+      },
+      "scrollWidth": 1440,
+      "rects": {
+        "game": {
+          "left": 25,
+          "top": 174.65625,
+          "right": 1138,
+          "bottom": 800.71875,
+          "width": 1113,
+          "height": 626.0625,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "hud": {
+          "left": 1157,
+          "top": 173.65625,
+          "right": 1416,
+          "bottom": 911.640625,
+          "width": 259,
+          "height": 737.984375,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "minimap": {
+          "left": 1173,
+          "top": 284.25,
+          "right": 1400,
+          "bottom": 439.65625,
+          "width": 227,
+          "height": 155.40625,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "health": {
+          "left": 1353.78125,
+          "top": 571.65625,
+          "right": 1400,
+          "bottom": 583.65625,
+          "width": 46.21875,
+          "height": 12,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "healthBar": {
+          "left": 1173,
+          "top": 590.65625,
+          "right": 1354.59375,
+          "bottom": 595.65625,
+          "width": 181.59375,
+          "height": 5,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "weapon": {
+          "left": 1173,
+          "top": 630.65625,
+          "right": 1400,
+          "bottom": 641.65625,
+          "width": 227,
+          "height": 11,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "speed": {
+          "left": 1353.78125,
+          "top": 548.65625,
+          "right": 1400,
+          "bottom": 566.65625,
+          "width": 46.21875,
+          "height": 18,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "objective": {
+          "left": 1173,
+          "top": 746.25,
+          "right": 1400,
+          "bottom": 805.640625,
+          "width": 227,
+          "height": 59.390625,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "chapter": {
+          "left": 1173,
+          "top": 720.65625,
+          "right": 1400,
+          "bottom": 738.25,
+          "width": 227,
+          "height": 17.59375,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "phoneBtn": {
+          "left": 1177.34375,
+          "top": 99.5,
+          "right": 1264.765625,
+          "bottom": 132.5,
+          "width": 87.421875,
+          "height": 33,
+          "display": "block",
+          "visibility": "visible"
+        }
+      },
+      "canvasLogical": {
+        "width": 800,
+        "height": 450
+      }
+    },
+    {
+      "device": "phone",
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "scrollWidth": 390,
+      "rects": {
+        "game": {
+          "left": 9,
+          "top": 97,
+          "right": 381,
+          "bottom": 306.25,
+          "width": 372,
+          "height": 209.25,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "hud": {
+          "left": 8,
+          "top": 553.25,
+          "right": 382,
+          "bottom": 647.9375,
+          "width": 374,
+          "height": 94.6875,
+          "display": "grid",
+          "visibility": "visible"
+        },
+        "minimap": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "health": {
+          "left": 66.984375,
+          "top": 582.25,
+          "right": 109,
+          "bottom": 593.25,
+          "width": 42.015625,
+          "height": 11,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "healthBar": {
+          "left": 17,
+          "top": 598.25,
+          "right": 90.59375,
+          "bottom": 603.25,
+          "width": 73.59375,
+          "height": 5,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "weapon": {
+          "left": 17,
+          "top": 627.25,
+          "right": 109,
+          "bottom": 638.9375,
+          "width": 92,
+          "height": 11.6875,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "speed": {
+          "left": 75.390625,
+          "top": 562.25,
+          "right": 109,
+          "bottom": 577.25,
+          "width": 33.609375,
+          "height": 15,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "objective": {
+          "left": 134,
+          "top": 579.75,
+          "right": 373,
+          "bottom": 623.25,
+          "width": 239,
+          "height": 43.5,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "chapter": {
+          "left": 134,
+          "top": 562.25,
+          "right": 373,
+          "bottom": 575.75,
+          "width": 239,
+          "height": 13.5,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "phoneBtn": {
+          "left": 197.5,
+          "top": 34,
+          "right": 255.65625,
+          "bottom": 78,
+          "width": 58.15625,
+          "height": 44,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "movePad": {
+          "left": 8,
+          "top": 357.359375,
+          "right": 118.765625,
+          "bottom": 468.125,
+          "width": 110.765625,
+          "height": 110.765625,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "aimPad": {
+          "left": 271.21875,
+          "top": 357.359375,
+          "right": 382,
+          "bottom": 468.140625,
+          "width": 110.78125,
+          "height": 110.78125,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "touchE": {
+          "left": 125.765625,
+          "top": 317.25,
+          "right": 192.484375,
+          "bottom": 361.25,
+          "width": 66.71875,
+          "height": 44,
+          "display": "flex",
+          "visibility": "visible"
+        }
+      },
+      "canvasLogical": {
+        "width": 800,
+        "height": 450
+      }
+    },
+    {
+      "device": "landscape",
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 844,
+        "bottom": 390,
+        "width": 844,
+        "height": 390
+      },
+      "scrollWidth": 844,
+      "rects": {
+        "game": {
+          "left": 228.328125,
+          "top": 59,
+          "right": 615.65625,
+          "bottom": 276.859375,
+          "width": 387.328125,
+          "height": 217.859375,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "hud": {
+          "left": 8,
+          "top": 332.859375,
+          "right": 836,
+          "bottom": 384.546875,
+          "width": 828,
+          "height": 51.6875,
+          "display": "grid",
+          "visibility": "visible"
+        },
+        "minimap": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "health": {
+          "left": 16,
+          "top": 353.359375,
+          "right": 88.5,
+          "bottom": 364.359375,
+          "width": 72.5,
+          "height": 11,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "healthBar": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "weapon": {
+          "left": 16,
+          "top": 366.859375,
+          "right": 166,
+          "bottom": 378.546875,
+          "width": 150,
+          "height": 11.6875,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "speed": {
+          "left": 93.5,
+          "top": 340.359375,
+          "right": 166,
+          "bottom": 349.359375,
+          "width": 72.5,
+          "height": 9,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "objective": {
+          "left": 188,
+          "top": 353,
+          "right": 828,
+          "bottom": 365.140625,
+          "width": 640,
+          "height": 12.140625,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "chapter": {
+          "left": 188,
+          "top": 338.859375,
+          "right": 828,
+          "bottom": 351,
+          "width": 640,
+          "height": 12.140625,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "phoneBtn": {
+          "left": 439.484375,
+          "top": 4,
+          "right": 513.5,
+          "bottom": 48,
+          "width": 74.015625,
+          "height": 44,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "movePad": {
+          "left": 11,
+          "top": 117.921875,
+          "right": 111,
+          "bottom": 217.921875,
+          "width": 100,
+          "height": 100,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "aimPad": {
+          "left": 733,
+          "top": 117.921875,
+          "right": 833,
+          "bottom": 217.921875,
+          "width": 100,
+          "height": 100,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "touchE": {
+          "left": 8,
+          "top": 283.859375,
+          "right": 107.125,
+          "bottom": 327.859375,
+          "width": 99.125,
+          "height": 44,
+          "display": "flex",
+          "visibility": "visible"
+        }
+      },
+      "canvasLogical": {
+        "width": 800,
+        "height": 450
+      }
+    },
+    {
+      "device": "short-landscape",
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 844,
+        "bottom": 320,
+        "width": 844,
+        "height": 320
+      },
+      "scrollWidth": 844,
+      "rects": {
+        "game": {
+          "left": 279,
+          "top": 59,
+          "right": 565,
+          "bottom": 219.875,
+          "width": 286,
+          "height": 160.875,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "hud": {
+          "left": 8,
+          "top": 275.875,
+          "right": 836,
+          "bottom": 313.875,
+          "width": 828,
+          "height": 38,
+          "display": "grid",
+          "visibility": "visible"
+        },
+        "minimap": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "health": {
+          "left": 119.328125,
+          "top": 282.375,
+          "right": 166,
+          "bottom": 293.375,
+          "width": 46.671875,
+          "height": 11,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "healthBar": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "weapon": {
+          "left": 67.65625,
+          "top": 296.03125,
+          "right": 166,
+          "bottom": 307.71875,
+          "width": 98.34375,
+          "height": 11.6875,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "speed": {
+          "left": 67.65625,
+          "top": 283.375,
+          "right": 114.328125,
+          "bottom": 292.375,
+          "width": 46.671875,
+          "height": 9,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "objective": {
+          "left": 188,
+          "top": 281.875,
+          "right": 828,
+          "bottom": 294.015625,
+          "width": 640,
+          "height": 12.140625,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "chapter": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "display": "none",
+          "visibility": "visible"
+        },
+        "phoneBtn": {
+          "left": 439.484375,
+          "top": 4,
+          "right": 513.5,
+          "bottom": 48,
+          "width": 74.015625,
+          "height": 44,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "movePad": {
+          "left": 11,
+          "top": 89.4375,
+          "right": 111,
+          "bottom": 189.4375,
+          "width": 100,
+          "height": 100,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "aimPad": {
+          "left": 733,
+          "top": 89.4375,
+          "right": 833,
+          "bottom": 189.4375,
+          "width": 100,
+          "height": 100,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "touchE": {
+          "left": 8,
+          "top": 226.875,
+          "right": 107.125,
+          "bottom": 270.875,
+          "width": 99.125,
+          "height": 44,
+          "display": "flex",
+          "visibility": "visible"
+        }
+      },
+      "canvasLogical": {
+        "width": 800,
+        "height": 450
+      }
+    },
+    {
+      "device": "small-phone",
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 322,
+        "bottom": 572,
+        "width": 322,
+        "height": 572
+      },
+      "scrollWidth": 322,
+      "rects": {
+        "game": {
+          "left": 6,
+          "top": 94,
+          "right": 314,
+          "bottom": 267.25,
+          "width": 308,
+          "height": 173.25,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "hud": {
+          "left": 5,
+          "top": 474.25,
+          "right": 315,
+          "bottom": 549.25,
+          "width": 310,
+          "height": 75,
+          "display": "grid",
+          "visibility": "visible"
+        },
+        "minimap": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "health": {
+          "left": 12,
+          "top": 507.046875,
+          "right": 58.21875,
+          "bottom": 518.046875,
+          "width": 46.21875,
+          "height": 11,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "healthBar": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "weapon": {
+          "left": 12,
+          "top": 528.078125,
+          "right": 98,
+          "bottom": 538.46875,
+          "width": 86,
+          "height": 10.390625,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "speed": {
+          "left": 62.21875,
+          "top": 486.515625,
+          "right": 98,
+          "bottom": 495.515625,
+          "width": 35.78125,
+          "height": 9,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "objective": {
+          "left": 119,
+          "top": 498.75,
+          "right": 308,
+          "bottom": 542.25,
+          "width": 189,
+          "height": 43.5,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "chapter": {
+          "left": 119,
+          "top": 481.25,
+          "right": 308,
+          "bottom": 494.75,
+          "width": 189,
+          "height": 13.5,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "phoneBtn": {
+          "left": 162.5,
+          "top": 31,
+          "right": 210,
+          "bottom": 75,
+          "width": 47.5,
+          "height": 44,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "movePad": {
+          "left": 5,
+          "top": 326.75,
+          "right": 96,
+          "bottom": 417.75,
+          "width": 91,
+          "height": 91,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "aimPad": {
+          "left": 224,
+          "top": 326.75,
+          "right": 315,
+          "bottom": 417.75,
+          "width": 91,
+          "height": 91,
+          "display": "block",
+          "visibility": "visible"
+        },
+        "touchE": {
+          "left": 101,
+          "top": 278.25,
+          "right": 158,
+          "bottom": 322.25,
+          "width": 57,
+          "height": 44,
+          "display": "flex",
+          "visibility": "visible"
+        }
+      },
+      "canvasLogical": {
+        "width": 800,
+        "height": 450
+      }
+    }
+  ],
+  "checks": [],
+  "errors": [],
+  "devices": [
+    "desktop",
+    "phone",
+    "landscape",
+    "short-landscape",
+    "small-phone"
+  ],
+  "scope": "Actual Chromium responsive HUD captures at the recorded desktop/phone sizes. Fixed clock/camera/actors compare exact 800x450 canvas PNGs and unchanged existing JS/art hashes; placement, live values, overlay/touch reachability and existing map/phone/retry controls are checked without changing gameplay."
+}

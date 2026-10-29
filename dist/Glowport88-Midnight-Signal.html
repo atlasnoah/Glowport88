@@ -329,14 +329,155 @@ body.touch-mode #phonePanel #phoneStatus { min-height: 17px; margin: 8px 0 0; fo
   body.touch-mode #hud .panel:nth-child(2) .weapon { grid-column: 2 / -1; }
   body.touch-mode #hud .chapter { display: none; }
 }
+</style><style>/* Corner HUD only. The game canvas, city artwork, controls and simulation are unchanged. */
+.layout { grid-template-columns: minmax(0, 1fr); }
+.play-column, .play-surface { min-width: 0; }
+.play-surface { position: relative; container-type: inline-size; --hud-strip-height: 0px; --hud-map-width: clamp(110px, 17cqw, 210px); }
+.play-surface .screen { width: 100%; }
+#hud.game-hud {
+  --hud-detached: 0;
+  --hud-gap: clamp(8px, 1.5cqw, 22px);
+  --hud-map-width: clamp(110px, 17cqw, 210px);
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 5;
+  pointer-events: none;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 0 1px 3px #000d;
+}
+.hud-symbols { position: absolute; width: 0; height: 0; overflow: hidden; }
+.hud-source { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.hud-map { position: absolute; left: var(--hud-gap); bottom: var(--hud-gap); width: var(--hud-map-width); }
+.hud-map-meta { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 5px; font-size: 9px; font-weight: 700; letter-spacing: .04em; }
+.hud-map-meta #weather { color: #f58eb5; }
+.hud-map-frame { position: relative; padding: 3px; border: 1px solid #ef6d9b; border-radius: 8px; background: #10131ce8; box-shadow: 0 2px 12px #0008; overflow: hidden; }
+#minimap { display: block; width: 100%; height: auto; aspect-ratio: 220 / 150; border: 0; border-radius: 4px; filter: none; image-rendering: pixelated; }
+.hud-north { position: absolute; top: 6px; right: 6px; border: 1px solid #ffffff70; border-radius: 50%; background: #0a0d15dd; width: 16px; height: 16px; display: grid; place-items: center; font: 700 9px Arial, sans-serif; }
+.hud-health { margin-top: 6px; }
+.hud-health-label { display: flex; justify-content: space-between; font: 700 8px/1.2 Arial, sans-serif; letter-spacing: .06em; margin: 0 1px 4px; }
+.hud-health-label > span:first-child { color: #98e7bc; }
+.hud-health-track { height: 7px; padding: 1px; background: #0c111be8; border: 1px solid #ffffff40; box-shadow: 0 1px 4px #0009; }
+#healthBar { display: block; width: 100%; height: 100%; background: #5cdb9b; }
+.hud-health.is-critical #healthBar { background: #ff577d; }
+.hud-health.is-critical .hud-health-label > span:first-child { color: #ff9eae; }
+.hud-district { margin-top: 7px; font-size: 10px; line-height: 1.2; font-weight: 800; letter-spacing: .08em; overflow-wrap: anywhere; }
+.hud-weapon { position: absolute; top: var(--hud-gap); right: var(--hud-gap); min-width: 160px; text-align: right; }
+.hud-cash { font-size: 22px; line-height: 1; font-weight: 800; letter-spacing: .025em; color: #c2f3cc; }
+.hud-wanted { margin: 5px 0 9px; font-size: 14px; letter-spacing: .14em; color: #ffd8e7; }
+.hud-weapon-row { display: flex; justify-content: flex-end; align-items: center; gap: 10px; border-right: 3px solid #eb729e; background: linear-gradient(90deg, transparent, #131722c9); padding: 7px 9px 7px 0; }
+.hud-weapon-icon { display: block; width: 74px; height: 38px; fill: #f4f1ed; filter: drop-shadow(1px 2px 1px #000b); }
+.hud-weapon-name { font-size: 9px; line-height: 1.3; font-weight: 800; letter-spacing: .08em; }
+.hud-ammo { display: flex; justify-content: flex-end; align-items: baseline; gap: 5px; margin-top: 3px; font-size: 12px; font-weight: 700; color: #c2c5ce; }
+.hud-ammo[hidden], .hud-melee[hidden] { display: none; }
+.hud-ammo strong { font-size: 29px; line-height: 1; color: #fff; letter-spacing: -.04em; }
+.hud-melee { margin-top: 5px; color: #b8bec9; font-size: 9px; letter-spacing: .12em; }
+.hud-speed { position: absolute; right: var(--hud-gap); bottom: var(--hud-gap); display: flex; align-items: baseline; gap: 7px; padding-right: 9px; border-right: 3px solid #e96794; }
+#hud-speed-value { font-size: clamp(28px, 4cqw, 54px); line-height: .9; font-weight: 900; font-style: italic; letter-spacing: -.06em; }
+#hud-speed-unit { font-size: 10px; font-weight: 800; color: #f694b6; }
+.hud-speed[data-mode="foot"] #hud-speed-value { font-size: 11px; letter-spacing: .12em; font-style: normal; }
+.hud-mission { position: absolute; top: var(--hud-gap); left: var(--hud-gap); width: clamp(210px, 28cqw, 350px); padding: 11px 13px; border-left: 3px solid #e06d98; border-radius: 0 4px 4px 0; background: linear-gradient(90deg, #10151edb, #10151e90); }
+.hud-mission-label { font-size: 8px; font-weight: 800; letter-spacing: .14em; color: #ef96b7; margin-bottom: 7px; }
+#hud-mission #chapter { font-size: 11px; line-height: 1.4; font-weight: 800; color: #fff; margin: 0 0 5px; }
+#hud-mission #objective { font-size: 11px; line-height: 1.5; color: #e0e1e5; overflow-wrap: anywhere; }
+.hud-secondary { margin-top: 7px; font-size: 9px; line-height: 1.4; color: #aeb9c6; }
+.hud-secondary #side, .hud-secondary #dialog { margin-top: 4px; }
+.hud-secondary #eventStatus { color: #f1c78c; }
+#hud-mission #missionRetryBtn { pointer-events: auto; margin-top: 8px; min-height: 44px; width: 100%; font-size: 10px; }
+.hud-context { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 6; display: flex; flex-direction: column-reverse; align-items: center; gap: 6px; width: max-content; max-width: calc(100% - 2 * var(--hud-map-width, 110px) - 32px); pointer-events: none; }
+.play-surface .hud-context .prompt { position: static; transform: none; max-width: 100%; margin: 0; }
+.play-surface .hud-context #interactionMore { position: static !important; transform: none; min-height: 32px !important; max-width: 100% !important; font-size: 9px; padding: 5px 9px; pointer-events: auto; }
+.play-surface .toast { top: 44%; max-width: 50%; z-index: 7; padding: 8px 12px; font-size: 9px; }
+
+@media (max-width: 700px) {
+  #hud.game-hud { --hud-gap: 6px; --hud-map-width: 96px; }
+}
+/* The existing phone controls keep their rails and action bank. Only HUD placement changes. */
+body.touch-mode #hud.game-hud { --hud-detached: 1; --hud-gap: 6px; --hud-map-width: 96px; display: block; }
+body.touch-mode .play-surface { --hud-map-width: 96px; margin-bottom: var(--hud-strip-height); }
+body.touch-mode .play-surface:has(#hud.hidden) { margin-bottom: 0; }
+body.touch-mode .hud-map-meta { font-size: 6px; margin-bottom: 3px; }
+body.touch-mode .hud-map-frame { padding: 2px; border-radius: 5px; }
+body.touch-mode .hud-north { top: 4px; right: 4px; width: 12px; height: 12px; font-size: 7px; }
+body.touch-mode .hud-health { margin-top: 4px; }
+body.touch-mode .hud-health-label { font-size: 6px; margin-bottom: 2px; }
+body.touch-mode .hud-health-track { height: 6px; }
+body.touch-mode #hud .hud-district { margin-top: 4px; font-size: 7px; letter-spacing: .04em; }
+body.touch-mode .hud-weapon { min-width: 96px; max-width: 118px; }
+body.touch-mode #hud .hud-cash { font-size: 14px; }
+body.touch-mode #hud .hud-wanted { font-size: 10px; margin: 3px 0 5px; }
+body.touch-mode .hud-weapon-row { gap: 3px; padding: 4px 5px 4px 0; border-right-width: 2px; }
+body.touch-mode .hud-weapon-icon { width: 37px; height: 24px; }
+body.touch-mode .hud-weapon-name { font-size: 7px; letter-spacing: .025em; }
+body.touch-mode .hud-ammo { font-size: 8px; gap: 3px; margin-top: 2px; }
+body.touch-mode .hud-ammo strong { font-size: 21px; }
+body.touch-mode .hud-melee { font-size: 6px; margin-top: 3px; }
+body.touch-mode .hud-speed { padding-right: 5px; gap: 4px; border-right-width: 2px; }
+body.touch-mode #hud-speed-value { font-size: 28px; }
+body.touch-mode #hud-speed-unit { font-size: 7px; }
+body.touch-mode .hud-speed[data-mode="foot"] #hud-speed-value { font-size: 8px; }
+body.touch-mode #hud .hud-mission { top: calc(100% + 6px); left: 0; width: 100%; padding: 7px 9px; background: #141d2a; }
+body.touch-mode .hud-mission-label { display: none; }
+body.touch-mode #hud-mission #chapter { font-size: 10px; line-height: 1.3; margin: 0 0 3px; }
+body.touch-mode #hud-mission #objective { font-size: 10px; line-height: 1.4; }
+body.touch-mode .hud-secondary { display: none; }
+body.touch-mode #hud-mission #missionRetryBtn { width: 100%; min-height: 44px; }
+body.touch-mode .hud-context { bottom: 6px; gap: 4px; }
+body.touch-mode .play-surface .hud-context #interactionMore { min-height: 44px !important; max-width: 100% !important; font-size: 8px; }
+body.touch-mode .play-surface .prompt { font-size: 8px; line-height: 1.3; padding: 4px 5px; }
+body.touch-mode .play-surface .toast { font-size: 7px; line-height: 1.3; max-width: 52%; padding: 5px 6px; }
+
+@media (orientation: landscape) and (max-height: 600px) {
+  body.touch-mode .play-surface { grid-column: 2; grid-row: 1; justify-self: center; width: min(100%, calc((100dvh - 171px - max(0px, var(--hud-strip-height) - 42px) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) * 16 / 9)); }
+  body.touch-mode .play-surface .screen { width: 100%; }
+  body.touch-mode .play-surface:has(#menu:not(.hidden)) { grid-column: 1 / -1; width: min(100%, calc((100dvh - 70px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) * 16 / 9)); }
+  body.touch-mode #hud .hud-mission { left: 50%; transform: translateX(-50%); width: calc(100dvw - 2 * (8px + env(safe-area-inset-left, 0px) + env(safe-area-inset-right, 0px))); display: grid; grid-template-columns: minmax(120px, .36fr) minmax(0, 1fr); gap: 8px; align-items: center; padding: 5px 8px; }
+  body.touch-mode #hud .hud-mission:has(#missionRetryBtn:not(.hidden)) { grid-template-columns: minmax(120px, .3fr) minmax(0, 1fr) 100px; }
+  body.touch-mode #hud-mission #chapter { font-size: 9px; margin: 0; }
+  body.touch-mode #hud-mission #objective { font-size: 9px; line-height: 1.35; }
+  body.touch-mode #hud-mission #missionRetryBtn { width: 100px; margin: 0; font-size: 8px; }
+}
+@media (orientation: landscape) and (max-height: 350px) {
+  body.touch-mode .play-surface { --hud-map-width: 78px; width: min(100%, calc((100dvh - 158px - max(0px, var(--hud-strip-height) - 42px) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) * 16 / 9)); }
+  body.touch-mode #hud.game-hud { --hud-map-width: 78px; }
+  body.touch-mode .hud-map-meta #weather { display: none; }
+  body.touch-mode .hud-weapon { min-width: 80px; max-width: 102px; }
+  body.touch-mode .hud-weapon-icon { width: 29px; height: 20px; }
+  body.touch-mode #hud .hud-cash { font-size: 12px; }
+  body.touch-mode #hud .hud-wanted { font-size: 8px; margin: 2px 0 4px; }
+  body.touch-mode .hud-ammo strong { font-size: 18px; }
+}
 </style></head>
 <body><main class="wrapper"><div class="mast"><div><div class="logo">GLOWPORT ’88 <span style="color:#ff72c4">/ MIDNIGHT SIGNAL</span></div><div class="subtitle">AN ORIGINAL OPEN-WORLD PIXEL CRIME ADVENTURE · MIDNIGHT SIGNAL</div></div><div class="buttons"><button id="mapBtn" class="tiny">🗺 MAP [M]</button><button id="journalBtn" class="tiny">📖 STORY [J]</button><button id="saveBtn" class="tiny">💾 SAVE</button><button id="phoneBtn" class="tiny">PHONE [P]</button><button id="pauseBtn" class="tiny">Ⅱ PAUSE</button><button id="soundBtn" class="tiny">SOUND</button></div></div>
-<div class="layout"><div><div class="screen"><canvas id="game" width="800" height="450" tabindex="0"></canvas>
-<div id="toast" class="toast"></div><div id="prompt" class="prompt hidden"></div><button id="interactionMore" class="tiny hidden" type="button" style="position:absolute;right:8px;top:8px;z-index:6;min-height:44px;max-width:32%" aria-label="Choose another nearby action">ACTIONS</button>
+<div class="layout"><div class="play-column"><div class="play-surface"><div class="screen"><canvas id="game" width="800" height="450" tabindex="0"></canvas>
+<div id="toast" class="toast"></div><div class="hud-context"><div id="prompt" class="prompt hidden"></div><button id="interactionMore" class="tiny hidden" type="button" style="position:absolute;right:8px;top:8px;z-index:6;min-height:44px;max-width:32%" aria-label="Choose another nearby action">ACTIONS</button></div>
 <div id="menu" class="overlay"><div class="glow">AN OPEN-WORLD NEON NOIR ADVENTURE</div><h1>GLOWPORT<br>’88</h1><h2>MIDNIGHT SIGNAL</h2><p>Five districts. One city for sale. Follow a stolen broadcast into the heart of Meridian Holdings—or take the long way home. The streets have stories of their own.</p><button class="playbtn" id="startBtn" disabled>LOADING CITY…</button><button class="tiny" id="newBtn" disabled>↻ NEW STORY</button><div class="menu-mini">WASD MOVE • E TALK / INTERACT • 1–5 SWITCH WEAPONS • CLICK / F FIRE • M MAP</div></div></div>
+<aside id="hud" class="hud game-hud hidden" aria-label="Game status">
+<svg class="hud-symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><defs>
+<symbol id="hud-icon-fists" viewBox="0 0 100 48"><path d="M31 37V22l-5-7 4-4 8 7V8a4 4 0 0 1 8 0v9-12a4 4 0 0 1 8 0v12-10a4 4 0 0 1 8 0v12-7a4 4 0 0 1 8 0v13l-7 12v6H38v-6Z"/></symbol>
+<symbol id="hud-icon-bat" viewBox="0 0 100 48"><path d="m18 38 5 4 11-10 6-2L86 8q5-4 1-7t-8 0L35 25l-3 6Z"/><path d="m17 37-4 3 9 8 4-4Z"/></symbol>
+<symbol id="hud-icon-pistol" viewBox="0 0 100 48"><path d="M10 8h71v13H47l-5 7H30l-5 14H13l6-22h-9Zm25 17h7l2-4H32Zm43-12h10v5H78Z"/></symbol>
+<symbol id="hud-icon-shotgun" viewBox="0 0 100 48"><path d="M5 17h25l7-5h56v5H45v5h-9l-4 7-9-3-12 12-8-5 11-13H5Zm48 3h28v7H53Z"/></symbol>
+<symbol id="hud-icon-smg" viewBox="0 0 100 48"><path d="M7 15h18l5-6h41v5h23v6H72v9H56l-2 15H43l2-18h-8l-4 13H22l3-17H7Zm36-9h17v3H43Z"/></symbol>
+</defs></svg>
+<section id="hud-map" class="hud-map" aria-label="Minimap and health">
+<div class="hud-map-meta"><span id="cityClock">8:20 AM</span><span id="weather">CLEAR</span></div>
+<div class="hud-map-frame"><canvas id="minimap" width="220" height="150" aria-label="City minimap with player and mission markers"></canvas><span class="hud-north" aria-hidden="true">N</span></div>
+<div id="hud-health" class="hud-health"><div class="hud-health-label"><span><span aria-hidden="true">✚</span> HEALTH</span><span id="health">150/150</span></div><div id="hud-health-track" class="hud-health-track" role="progressbar" aria-label="Health" aria-valuemin="0" aria-valuemax="150" aria-valuenow="150"><span id="healthBar"></span></div></div>
+<div id="district" class="hud-district">NEON DOWNTOWN</div>
+</section>
+<section id="hud-weapon" class="hud-weapon" data-weapon="fists" aria-label="Equipped weapon and money">
+<div id="cash" class="hud-cash">$600</div><div id="stars" class="hud-wanted" aria-label="Wanted level">☆☆☆☆☆</div>
+<div class="hud-weapon-row"><svg class="hud-weapon-icon" aria-hidden="true"><use id="hud-weapon-symbol" href="#hud-icon-fists"></use></svg><div><div id="hud-weapon-name" class="hud-weapon-name">FISTS</div><div id="hud-ammo" class="hud-ammo" hidden><strong id="hud-magazine">0</strong><span>/ <span id="hud-reserve">0</span></span></div><div id="hud-melee" class="hud-melee">UNARMED</div></div></div>
+<span id="weapon" class="hud-source">FISTS</span>
+</section>
+<section id="hud-speed" class="hud-speed" data-mode="foot" aria-label="Movement status"><div id="hud-speed-value">ON FOOT</div><div id="hud-speed-unit"></div><span id="speed" class="hud-source">ON FOOT</span></section>
+<section id="hud-mission" class="hud-mission" aria-label="Current objective"><div class="hud-mission-heading"><div class="hud-mission-label"><span aria-hidden="true">◆</span> CURRENT OBJECTIVE</div><div id="chapter">01 · A CITY FOR SALE</div></div><div id="objective">Find Vee at the Violet Hotel.</div><button id="missionRetryBtn" class="tiny hidden">RETRY CHECKPOINT</button><div class="hud-secondary"><div id="eventStatus">NO ACTIVE STREET EVENT</div><div id="side">Side hustles: visit cyan S markers.</div><div id="dialog"></div></div></section>
+</aside></div>
 <div class="touch hidden" id="touch" aria-label="Touch game controls"></div>
 <div class="bottomhelp"><b>WASD / arrows</b> walk or drive · <b>Shift</b> sprint/turbo · <b>E</b> talk / doors / vehicles / story · <b>ACTIONS</b> choose nearby side jobs, doors and services · <b>Click / F</b> shoot · <b>1–5 / Q</b> swap weapons · <b>R</b> reload · <b>Space</b> brake · <b>M</b> map · <b>J</b> journal. Story conversations have choices. Save is automatic, with a manual Save button.</div></div>
-<aside id="hud" class="hud hidden"><div class="panel"><div class="panelhead">THE CITY MAP</div><div class="district" id="district">NEON BASIN</div><div class="city-info"><span>🕓 <b id="cityClock">8:20 AM</b></span><span>☁ <b id="weather">CLEAR</b></span></div><div id="eventStatus" class="event-info">NO ACTIVE STREET EVENT</div><canvas class="mapmini" id="minimap" width="220" height="150"></canvas><div class="keys">PINK = STORY · CYAN = SIDE JOB · GOLD = EVENT / ROUTE</div></div><div class="panel"><div class="panelhead">YOUR STATUS</div><div class="bigstat"><span id="cash" class="cash">$260</span><span id="speed">ON FOOT</span></div><div class="bigstat"><span>HEALTH</span><span id="health">150/150</span></div><div class="bar"><span id="healthBar"></span></div><div id="stars" class="stars">☆☆☆☆☆</div><div class="weapon" id="weapon">FISTS</div></div><div class="panel"><div class="panelhead">MAIN STORY</div><div class="chapter" id="chapter">01 · A CITY FOR SALE</div><div class="objective" id="objective">Find Vee at the Violet Hotel.</div><div class="side" id="side">Side hustles around the map.</div><button id="missionRetryBtn" class="tiny hidden">RETRY CHECKPOINT</button><div class="dialog" id="dialog"></div></div></aside></div>
+</div>
 <div id="mapPanel" class="window hidden"><div class="modal"><div class="modalhead"><h2>THE CITY OF GLOWPORT</h2><button id="mapClose" class="close">CLOSE [M]</button></div><canvas id="fullmap" class="fullmap" width="800" height="530"></canvas><p class="modalnote">The original Glowport streets: Sunset District, Neon Downtown, Crescent Heights, Palm South and Eastside Industrial. Pink routes show your story destination. Cyan S symbols mark local jobs.</p></div></div>
 <div id="journalPanel" class="window hidden"><div class="modal"><div class="modalhead"><h2>STORY JOURNAL</h2><button id="journalClose" class="close">CLOSE [J]</button></div><div id="journalContent" class="questpanel"></div></div></div>
 <div id="shopPanel" class="window hidden"><div class="modal" style="max-width:650px"><div class="modalhead"><h2>NEON ARMORY · WEAPONS & SUPPLIES</h2><button id="shopClose" class="close">LEAVE SHOP</button></div><p class="modalnote">Buy a weapon once, then refill ammunition whenever you need it. Switch weapons with 1–5 or Q. Click or press F to attack, R to reload.</p><div class="shopcash" id="shopCash">$0</div><div id="shopItems"></div></div></div>
@@ -3223,6 +3364,41 @@ function mount(api){
  return {reset,update,get enabled(){return enabled},diagnostics:()=>({enabled,available,movePointer,aimPointer,aimFire,held:[...owners.values()].filter(v=>v.kind==='hold').map(v=>v.name),owners:owners.size}),destroy(){if(destroyed)return;reset();destroyed=true;for(const remove of cleanup)remove();document.body.classList.remove('touch-mode')}};
 }
 return {mount};
+})();
+</script>
+<script>/* Presentation only: mirrors the existing HUD text without reading or changing game state. */
+(()=>{
+ 'use strict';
+ const byId=id=>document.getElementById(id),hud=byId('hud'),surface=document.querySelector('.play-surface');
+ if(!hud||!surface)return;
+ const text=(id,value)=>{const node=byId(id);if(node.textContent!==value)node.textContent=value};
+ let pending=false;
+ function measure(){
+  const detached=getComputedStyle(hud).getPropertyValue('--hud-detached').trim()==='1',visible=!hud.classList.contains('hidden');
+  const value=detached&&visible?Math.ceil(byId('hud-mission').getBoundingClientRect().height)+8:0,px=value+'px';
+  if(surface.style.getPropertyValue('--hud-strip-height')!==px)surface.style.setProperty('--hud-strip-height',px);
+ }
+ function refresh(){
+  pending=false;
+  const value=byId('weapon').textContent.trim(),match=value.match(/^(.*?)\s+(\d+)\/(\d+)$/),name=match?match[1]:value;
+  const kind=/SMG/.test(name)?'smg':/SHOTGUN/.test(name)?'shotgun':/PISTOL/.test(name)?'pistol':/BAT/.test(name)?'bat':'fists';
+  byId('hud-weapon').dataset.weapon=kind;text('hud-weapon-name',name);byId('hud-ammo').hidden=!match;byId('hud-melee').hidden=!!match;
+  if(match){text('hud-magazine',match[2]);text('hud-reserve',match[3])}else text('hud-melee',kind==='fists'?'UNARMED':'MELEE');
+  const icon='#hud-icon-'+kind;if(byId('hud-weapon-symbol').getAttribute('href')!==icon)byId('hud-weapon-symbol').setAttribute('href',icon);
+  const health=byId('health').textContent.match(/([\d.]+)\s*\/\s*([\d.]+)/);
+  if(health){byId('hud-health-track').setAttribute('aria-valuenow',health[1]);byId('hud-health-track').setAttribute('aria-valuemax',health[2]);byId('hud-health').classList.toggle('is-critical',Number(health[1])<=Number(health[2])*.25)}
+  const speed=byId('speed').textContent.trim(),driving=speed.match(/^(\d+)\s+(MPH)$/);
+  byId('hud-speed').dataset.mode=driving?'driving':'foot';text('hud-speed-value',driving?driving[1]:speed);text('hud-speed-unit',driving?driving[2]:'');
+  measure();
+ }
+ const schedule=()=>{if(!pending){pending=true;queueMicrotask(refresh)}};
+ const observer=new MutationObserver(schedule);
+ for(const id of ['weapon','health','speed','chapter','objective'])observer.observe(byId(id),{childList:true,characterData:true,subtree:true});
+ observer.observe(hud,{attributes:true,attributeFilter:['class']});observer.observe(byId('missionRetryBtn'),{attributes:true,attributeFilter:['class']});
+ observer.observe(document.body,{attributes:true,attributeFilter:['class']});
+ if(typeof ResizeObserver==='function')new ResizeObserver(measure).observe(byId('hud-mission'));
+ window.addEventListener('resize',measure,{passive:true});
+ hud.dataset.presentation='ready';refresh();
 })();
 </script>
 <script>/* Bounded city terrain surfaces for mobile browsers. Rendering and collision share the rebuilt world coordinates;

@@ -1,0 +1,119 @@
+/* Corner HUD only. The game canvas, city artwork, controls and simulation are unchanged. */
+.layout { grid-template-columns: minmax(0, 1fr); }
+.play-column, .play-surface { min-width: 0; }
+.play-surface { position: relative; container-type: inline-size; --hud-strip-height: 0px; --hud-map-width: clamp(110px, 17cqw, 210px); }
+.play-surface .screen { width: 100%; }
+#hud.game-hud {
+  --hud-detached: 0;
+  --hud-gap: clamp(8px, 1.5cqw, 22px);
+  --hud-map-width: clamp(110px, 17cqw, 210px);
+  position: absolute;
+  inset: 0;
+  display: block;
+  z-index: 5;
+  pointer-events: none;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-shadow: 0 1px 3px #000d;
+}
+.hud-symbols { position: absolute; width: 0; height: 0; overflow: hidden; }
+.hud-source { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.hud-map { position: absolute; left: var(--hud-gap); bottom: var(--hud-gap); width: var(--hud-map-width); }
+.hud-map-meta { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 5px; font-size: 9px; font-weight: 700; letter-spacing: .04em; }
+.hud-map-meta #weather { color: #f58eb5; }
+.hud-map-frame { position: relative; padding: 3px; border: 1px solid #ef6d9b; border-radius: 8px; background: #10131ce8; box-shadow: 0 2px 12px #0008; overflow: hidden; }
+#minimap { display: block; width: 100%; height: auto; aspect-ratio: 220 / 150; border: 0; border-radius: 4px; filter: none; image-rendering: pixelated; }
+.hud-north { position: absolute; top: 6px; right: 6px; border: 1px solid #ffffff70; border-radius: 50%; background: #0a0d15dd; width: 16px; height: 16px; display: grid; place-items: center; font: 700 9px Arial, sans-serif; }
+.hud-health { margin-top: 6px; }
+.hud-health-label { display: flex; justify-content: space-between; font: 700 8px/1.2 Arial, sans-serif; letter-spacing: .06em; margin: 0 1px 4px; }
+.hud-health-label > span:first-child { color: #98e7bc; }
+.hud-health-track { height: 7px; padding: 1px; background: #0c111be8; border: 1px solid #ffffff40; box-shadow: 0 1px 4px #0009; }
+#healthBar { display: block; width: 100%; height: 100%; background: #5cdb9b; }
+.hud-health.is-critical #healthBar { background: #ff577d; }
+.hud-health.is-critical .hud-health-label > span:first-child { color: #ff9eae; }
+.hud-district { margin-top: 7px; font-size: 10px; line-height: 1.2; font-weight: 800; letter-spacing: .08em; overflow-wrap: anywhere; }
+.hud-weapon { position: absolute; top: var(--hud-gap); right: var(--hud-gap); min-width: 160px; text-align: right; }
+.hud-cash { font-size: 22px; line-height: 1; font-weight: 800; letter-spacing: .025em; color: #c2f3cc; }
+.hud-wanted { margin: 5px 0 9px; font-size: 14px; letter-spacing: .14em; color: #ffd8e7; }
+.hud-weapon-row { display: flex; justify-content: flex-end; align-items: center; gap: 10px; border-right: 3px solid #eb729e; background: linear-gradient(90deg, transparent, #131722c9); padding: 7px 9px 7px 0; }
+.hud-weapon-icon { display: block; width: 74px; height: 38px; fill: #f4f1ed; filter: drop-shadow(1px 2px 1px #000b); }
+.hud-weapon-name { font-size: 9px; line-height: 1.3; font-weight: 800; letter-spacing: .08em; }
+.hud-ammo { display: flex; justify-content: flex-end; align-items: baseline; gap: 5px; margin-top: 3px; font-size: 12px; font-weight: 700; color: #c2c5ce; }
+.hud-ammo[hidden], .hud-melee[hidden] { display: none; }
+.hud-ammo strong { font-size: 29px; line-height: 1; color: #fff; letter-spacing: -.04em; }
+.hud-melee { margin-top: 5px; color: #b8bec9; font-size: 9px; letter-spacing: .12em; }
+.hud-speed { position: absolute; right: var(--hud-gap); bottom: var(--hud-gap); display: flex; align-items: baseline; gap: 7px; padding-right: 9px; border-right: 3px solid #e96794; }
+#hud-speed-value { font-size: clamp(28px, 4cqw, 54px); line-height: .9; font-weight: 900; font-style: italic; letter-spacing: -.06em; }
+#hud-speed-unit { font-size: 10px; font-weight: 800; color: #f694b6; }
+.hud-speed[data-mode="foot"] #hud-speed-value { font-size: 11px; letter-spacing: .12em; font-style: normal; }
+.hud-mission { position: absolute; top: var(--hud-gap); left: var(--hud-gap); width: clamp(210px, 28cqw, 350px); padding: 11px 13px; border-left: 3px solid #e06d98; border-radius: 0 4px 4px 0; background: linear-gradient(90deg, #10151edb, #10151e90); }
+.hud-mission-label { font-size: 8px; font-weight: 800; letter-spacing: .14em; color: #ef96b7; margin-bottom: 7px; }
+#hud-mission #chapter { font-size: 11px; line-height: 1.4; font-weight: 800; color: #fff; margin: 0 0 5px; }
+#hud-mission #objective { font-size: 11px; line-height: 1.5; color: #e0e1e5; overflow-wrap: anywhere; }
+.hud-secondary { margin-top: 7px; font-size: 9px; line-height: 1.4; color: #aeb9c6; }
+.hud-secondary #side, .hud-secondary #dialog { margin-top: 4px; }
+.hud-secondary #eventStatus { color: #f1c78c; }
+#hud-mission #missionRetryBtn { pointer-events: auto; margin-top: 8px; min-height: 44px; width: 100%; font-size: 10px; }
+.hud-context { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 6; display: flex; flex-direction: column-reverse; align-items: center; gap: 6px; width: max-content; max-width: calc(100% - 2 * var(--hud-map-width, 110px) - 32px); pointer-events: none; }
+.play-surface .hud-context .prompt { position: static; transform: none; max-width: 100%; margin: 0; }
+.play-surface .hud-context #interactionMore { position: static !important; transform: none; min-height: 32px !important; max-width: 100% !important; font-size: 9px; padding: 5px 9px; pointer-events: auto; }
+.play-surface .toast { top: 44%; max-width: 50%; z-index: 7; padding: 8px 12px; font-size: 9px; }
+
+@media (max-width: 700px) {
+  #hud.game-hud { --hud-gap: 6px; --hud-map-width: 96px; }
+}
+/* The existing phone controls keep their rails and action bank. Only HUD placement changes. */
+body.touch-mode #hud.game-hud { --hud-detached: 1; --hud-gap: 6px; --hud-map-width: 96px; display: block; }
+body.touch-mode .play-surface { --hud-map-width: 96px; margin-bottom: var(--hud-strip-height); }
+body.touch-mode .play-surface:has(#hud.hidden) { margin-bottom: 0; }
+body.touch-mode .hud-map-meta { font-size: 6px; margin-bottom: 3px; }
+body.touch-mode .hud-map-frame { padding: 2px; border-radius: 5px; }
+body.touch-mode .hud-north { top: 4px; right: 4px; width: 12px; height: 12px; font-size: 7px; }
+body.touch-mode .hud-health { margin-top: 4px; }
+body.touch-mode .hud-health-label { font-size: 6px; margin-bottom: 2px; }
+body.touch-mode .hud-health-track { height: 6px; }
+body.touch-mode #hud .hud-district { margin-top: 4px; font-size: 7px; letter-spacing: .04em; }
+body.touch-mode .hud-weapon { min-width: 96px; max-width: 118px; }
+body.touch-mode #hud .hud-cash { font-size: 14px; }
+body.touch-mode #hud .hud-wanted { font-size: 10px; margin: 3px 0 5px; }
+body.touch-mode .hud-weapon-row { gap: 3px; padding: 4px 5px 4px 0; border-right-width: 2px; }
+body.touch-mode .hud-weapon-icon { width: 37px; height: 24px; }
+body.touch-mode .hud-weapon-name { font-size: 7px; letter-spacing: .025em; }
+body.touch-mode .hud-ammo { font-size: 8px; gap: 3px; margin-top: 2px; }
+body.touch-mode .hud-ammo strong { font-size: 21px; }
+body.touch-mode .hud-melee { font-size: 6px; margin-top: 3px; }
+body.touch-mode .hud-speed { padding-right: 5px; gap: 4px; border-right-width: 2px; }
+body.touch-mode #hud-speed-value { font-size: 28px; }
+body.touch-mode #hud-speed-unit { font-size: 7px; }
+body.touch-mode .hud-speed[data-mode="foot"] #hud-speed-value { font-size: 8px; }
+body.touch-mode #hud .hud-mission { top: calc(100% + 6px); left: 0; width: 100%; padding: 7px 9px; background: #141d2a; }
+body.touch-mode .hud-mission-label { display: none; }
+body.touch-mode #hud-mission #chapter { font-size: 10px; line-height: 1.3; margin: 0 0 3px; }
+body.touch-mode #hud-mission #objective { font-size: 10px; line-height: 1.4; }
+body.touch-mode .hud-secondary { display: none; }
+body.touch-mode #hud-mission #missionRetryBtn { width: 100%; min-height: 44px; }
+body.touch-mode .hud-context { bottom: 6px; gap: 4px; }
+body.touch-mode .play-surface .hud-context #interactionMore { min-height: 44px !important; max-width: 100% !important; font-size: 8px; }
+body.touch-mode .play-surface .prompt { font-size: 8px; line-height: 1.3; padding: 4px 5px; }
+body.touch-mode .play-surface .toast { font-size: 7px; line-height: 1.3; max-width: 52%; padding: 5px 6px; }
+
+@media (orientation: landscape) and (max-height: 600px) {
+  body.touch-mode .play-surface { grid-column: 2; grid-row: 1; justify-self: center; width: min(100%, calc((100dvh - 171px - max(0px, var(--hud-strip-height) - 42px) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) * 16 / 9)); }
+  body.touch-mode .play-surface .screen { width: 100%; }
+  body.touch-mode .play-surface:has(#menu:not(.hidden)) { grid-column: 1 / -1; width: min(100%, calc((100dvh - 70px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) * 16 / 9)); }
+  body.touch-mode #hud .hud-mission { left: 50%; transform: translateX(-50%); width: calc(100dvw - 2 * (8px + env(safe-area-inset-left, 0px) + env(safe-area-inset-right, 0px))); display: grid; grid-template-columns: minmax(120px, .36fr) minmax(0, 1fr); gap: 8px; align-items: center; padding: 5px 8px; }
+  body.touch-mode #hud .hud-mission:has(#missionRetryBtn:not(.hidden)) { grid-template-columns: minmax(120px, .3fr) minmax(0, 1fr) 100px; }
+  body.touch-mode #hud-mission #chapter { font-size: 9px; margin: 0; }
+  body.touch-mode #hud-mission #objective { font-size: 9px; line-height: 1.35; }
+  body.touch-mode #hud-mission #missionRetryBtn { width: 100px; margin: 0; font-size: 8px; }
+}
+@media (orientation: landscape) and (max-height: 350px) {
+  body.touch-mode .play-surface { --hud-map-width: 78px; width: min(100%, calc((100dvh - 158px - max(0px, var(--hud-strip-height) - 42px) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) * 16 / 9)); }
+  body.touch-mode #hud.game-hud { --hud-map-width: 78px; }
+  body.touch-mode .hud-map-meta #weather { display: none; }
+  body.touch-mode .hud-weapon { min-width: 80px; max-width: 102px; }
+  body.touch-mode .hud-weapon-icon { width: 29px; height: 20px; }
+  body.touch-mode #hud .hud-cash { font-size: 12px; }
+  body.touch-mode #hud .hud-wanted { font-size: 8px; margin: 2px 0 4px; }
+  body.touch-mode .hud-ammo strong { font-size: 18px; }
+}

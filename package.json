@@ -1,6 +1,6 @@
 {
   "name": "glowport88",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "private": true,
   "description": "A standalone pixel-art city adventure",
   "scripts": {
@@ -16,7 +16,8 @@
     "test:living": "node tests/save-system.cjs && node tests/living-missions.cjs && node tests/living-events.cjs && node tests/living-vehicles.cjs && node tests/living-city.cjs && node tests/east-diner.cjs && node tests/vehicle-host.cjs && node tests/living-city-host.cjs && node tests/encounter-host.cjs && node tests/living-endurance.cjs",
     "test:restoration": "node tests/restored-city.cjs && node tests/residential-infill.cjs && node tests/restoration-migration.cjs && node tests/restoration-migration-host.cjs && node tests/restored-lighting.cjs && GLOWPORT_RESTORATION_PHASE=final node tests/restoration-visual.cjs && GLOWPORT_RESTORATION_PHASE=final node tests/restoration-infill-visual.cjs && node tests/restoration-gallery.cjs",
     "test:bugs": "node tests/audit-mission-recovery.cjs && node tests/audit-mission-recovery-host.cjs && node tests/audit-persistence-host.cjs && node tests/mobile-ui-audit.cjs && node tests/encounter-edge-regressions.cjs && node tests/audio-host-regressions.cjs && node tests/host-edge-regressions.cjs && node tests/arcade-actions-audit.cjs",
-    "test:playability": "node tests/mission-geometry-audit.cjs && node tests/room-reachability.cjs && node tests/all-entrances-host.cjs && node tests/all-missions-host.cjs"
+    "test:playability": "node tests/mission-geometry-audit.cjs && node tests/room-reachability.cjs && node tests/all-entrances-host.cjs && node tests/all-missions-host.cjs",
+    "test:hud": "node tests/hud-layout.cjs"
   },
   "devDependencies": {
     "playwright": "1.58.2"

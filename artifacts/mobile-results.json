@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-28T14:04:08.359Z",
+  "time": "2026-10-29T17:58:36.822Z",
   "passed": [
     "phone Start and portrait controls fit the viewport",
     "touch joystick moves and releases without page scrolling",
@@ -25,15 +25,15 @@
   ],
   "errors": [],
   "terrain": {
-    "draws": 775,
-    "hits": 2990,
+    "draws": 796,
+    "hits": 3071,
     "bakes": 5,
     "evictions": 0,
     "residentBytes": 20971520,
     "peakResidentBytes": 20971520,
-    "totalBakeMs": 229.89999999850988,
-    "maxBakeMs": 87.30000000447035,
-    "lastBakeMs": 25.100000001490116,
+    "totalBakeMs": 133.59999999403954,
+    "maxBakeMs": 42.400000005960464,
+    "lastBakeMs": 27.19999998807907,
     "tileSize": 1024,
     "maxTiles": 6,
     "cachedTiles": 5,

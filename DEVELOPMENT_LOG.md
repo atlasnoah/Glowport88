@@ -121,3 +121,10 @@
 - All 12 playable entrances passed 48 keyboard/touch round trips and 12 active-mission interior states. Room audits cover 137 indoor stages, 338 standpoints and 21 walked collision configurations. No new entrance defect found; the motel garage's advertised ACTIONS alternative enters its room.
 - Regression prefix, three-day soak, save migration and all 14 East Diner checks pass. All 29 static city/residential views remain byte-identical to restored 0.6.1. Final package/deployment evidence is in BUGFIX_REPORT.md. Physical devices, normal balancing and continuous human play remain outside verified scope.
 - Pushed tested source `f1830cb` and published Pages `c6a4dbd`. Live 0.6.2 metadata and certificate-verified public download match the tested standalone SHA-256. Downloaded-byte mobile playback, public mission/entrance JSONs, screenshots and galleries pass. Direct public-origin cloud Chromium is environment-blocked by proxy trust; TLS validation was preserved.
+
+## Corner HUD · 0.6.3 · 2026-10-29
+
+- Added an interface-only corner layout following the supplied reference: minimap/health lower left, equipped weapon/ammo and cash upper right, speed lower right, compact objectives and a reserved phone objective strip.
+- Kept every original inline game statement, existing JavaScript module and PNG asset byte-identical to 0.6.2. New HUD presentation reads existing status DOM text and adds no gameplay state or developer-API dependency.
+- Passed 25 guards across five viewports and ten exact 800×450 before/after canvas captures. Mobile 21, smoke 20, navigation 11, all 12 entrances and host-edge eight checks pass. Corrected a visually detected narrow-screen context/health overlap with a shared prompt/ACTIONS stack.
+- Screenshot, packaging and public-delivery evidence is recorded in HUD_REPORT.md. Physical devices/Safari are not covered by the Chromium checks.
