@@ -38,4 +38,12 @@ Run `npm run test:hud` for the scoped UI baseline/placement checks. It reads com
 
 ## Delivery
 
-Standalone/public verification pending. Intended updated demo: https://atlasnoah.github.io/Glowport88/?v=0.6.3-hud.
+**Published and verified:** [Play the updated HUD](https://atlasnoah.github.io/Glowport88/?v=0.6.3-hud). Choose **Start / Continue** to resume existing progress.
+
+- Tested source: [`5340c4c41b230eadb55fdffde6a24da1e2bf455f`](https://github.com/atlasnoah/Glowport88/commit/5340c4c41b230eadb55fdffde6a24da1e2bf455f), pushed on `codex/gta-style-hud`; `main` remains unchanged. Later report/evidence commits do not change the game payload.
+- Pages deployment: [`5cd4cfc3247662442cd792b5f3f457e0bed16373`](https://github.com/atlasnoah/Glowport88/commit/5cd4cfc3247662442cd792b5f3f457e0bed16373).
+- Standalone/live SHA-256: `fd1065d3144672eeb6111e863f0e57f61890d5f3c689c7b2684af20aadb8361d`.
+- **PASS** `node tests/public-demo.cjs`: certificate-verified HTTPS download matches the tested standalone. Isolated playback of those public bytes passes visible minimap/health, equipped-weapon mirroring/presenter readiness, touch movement, Start, phone/map, story guidance and East Diner acceptance without script errors.
+- **PASS** public HUD evidence JSON and desktop/portrait/short-landscape/before screenshots match local hashes through normal HTTPS. [Desktop preview](https://atlasnoah.github.io/Glowport88/hud/hud-after-desktop.png) · [Phone preview](https://atlasnoah.github.io/Glowport88/hud/hud-after-phone.png).
+
+The separate direct public-origin cloud Chromium probe is environment-blocked by `ERR_CERT_AUTHORITY_INVALID` in its proxy trust setup. No TLS validation was bypassed. Verified HTTPS downloads and playback of those exact bytes passed; direct external Chromium navigation and physical-device testing are not claimed. Delivery evidence is in `artifacts/public-demo-results.json`, `hud-public-build.json`, `hud-public-evidence-results.json` and `hud-public-direct-browser.json`.

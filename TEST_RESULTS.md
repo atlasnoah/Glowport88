@@ -9,3 +9,5 @@ The final context-stack change was followed by the complete five-viewport HUD su
 See [HUD_REPORT.md](HUD_REPORT.md) for runtime scope, before/after screenshots, exact checks, reproduction and delivery evidence. Physical phones and Safari/Firefox remain outside this Chromium verification.
 
 Standalone build and playback also pass (`npm run release`, `npm run test:release`), with no subresource requests and production/debug save isolation intact. Public delivery is recorded in the HUD report.
+
+Public delivery also passes: the verified HTTPS payload matches the tested standalone, downloaded-byte mobile playback exposes the new minimap/health/weapon HUD and supports existing controls, and published screenshots/evidence match local hashes. Direct external cloud Chromium is environment-blocked by proxy trust; TLS validation was preserved.

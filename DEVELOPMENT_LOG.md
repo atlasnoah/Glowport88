@@ -128,3 +128,4 @@
 - Kept every original inline game statement, existing JavaScript module and PNG asset byte-identical to 0.6.2. New HUD presentation reads existing status DOM text and adds no gameplay state or developer-API dependency.
 - Passed 25 guards across five viewports and ten exact 800×450 before/after canvas captures. Mobile 21, smoke 20, navigation 11, all 12 entrances and host-edge eight checks pass. Corrected a visually detected narrow-screen context/health overlap with a shared prompt/ACTIONS stack.
 - Screenshot, packaging and public-delivery evidence is recorded in HUD_REPORT.md. Physical devices/Safari are not covered by the Chromium checks.
+- Published tested source `5340c4c` through Pages `5cd4cfc`. Live 0.6.3 download matches the tested standalone SHA; downloaded-byte mobile HUD/control playback and public screenshot/evidence hashes pass. Direct external Chromium remains blocked by cloud proxy trust; certificate validation was preserved.

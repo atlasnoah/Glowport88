@@ -1,0 +1,31 @@
+{
+  "time": "2026-10-29T18:12:49.610Z",
+  "verifiedHTTPS": true,
+  "results": [
+    {
+      "url": "https://atlasnoah.github.io/Glowport88/hud/hud-after-results.json",
+      "sha256": "a618a2f8598142aa0e5760b78a40441ec2652131551584d9db0522fae54b6bb3",
+      "matchesLocal": true
+    },
+    {
+      "url": "https://atlasnoah.github.io/Glowport88/hud/hud-after-desktop.png",
+      "sha256": "e0074e0837fed0cbf849d64e13209ee06b76a22ed92d759940e2be93d27409fd",
+      "matchesLocal": true
+    },
+    {
+      "url": "https://atlasnoah.github.io/Glowport88/hud/hud-after-phone.png",
+      "sha256": "7748862e77747367f66d9de45b4d5a5559caac7d874d47dcf56878ebddbf18cd",
+      "matchesLocal": true
+    },
+    {
+      "url": "https://atlasnoah.github.io/Glowport88/hud/hud-after-short-landscape.png",
+      "sha256": "d9ea1be921c0027e3765d344bf10418c099ee9771bba2e46679f65ca948f0829",
+      "matchesLocal": true
+    },
+    {
+      "url": "https://atlasnoah.github.io/Glowport88/hud/hud-before-desktop.png",
+      "sha256": "b734df35ceaf0546f98a06a0ae571af31b2934bac84ee18331e606fec445c442",
+      "matchesLocal": true
+    }
+  ]
+}
