@@ -1,0 +1,98 @@
+{
+  "time": "2026-10-29T18:09:04.054Z",
+  "version": "0.6.3",
+  "scope": "HUD presentation only",
+  "baselineCommit": "4313c45",
+  "existingJavaScriptModules": 23,
+  "existingPNGs": 8,
+  "inlineGameCodeIdentical": true,
+  "matchingCanvasScenes": 10,
+  "viewports": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 1440,
+        "bottom": 1000,
+        "width": 1440,
+        "height": 1000
+      }
+    },
+    {
+      "name": "phone",
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      }
+    },
+    {
+      "name": "landscape",
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 844,
+        "bottom": 390,
+        "width": 844,
+        "height": 390
+      }
+    },
+    {
+      "name": "short-landscape",
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 844,
+        "bottom": 320,
+        "width": 844,
+        "height": 320
+      }
+    },
+    {
+      "name": "small-phone",
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 322,
+        "bottom": 572,
+        "width": 322,
+        "height": 572
+      }
+    }
+  ],
+  "hudGuards": 25,
+  "errors": [],
+  "regressions": {
+    "mobile": {
+      "exitCode": 0,
+      "logSHA256": "3ea763ebc11f78a58edb1c083c3e1a5cd9ae99947916e6a5b8069af9f6902ada"
+    },
+    "smoke": {
+      "exitCode": 0,
+      "logSHA256": "b6e69e3b527935970c78f923173645c57ee53ab40842977d046a482ea767618b"
+    },
+    "navigation": {
+      "exitCode": 0,
+      "logSHA256": "9354063e02abbc9c1a1315f081215457a8579aaad72dbb521bf5d3d79384cc27"
+    },
+    "entrances": {
+      "exitCode": 0,
+      "logSHA256": "f990730c055aeb497577adaac382b6f86d62fed8cc4901b1722eae5703320c10"
+    },
+    "hostEdges": {
+      "exitCode": 0,
+      "logSHA256": "a06e698b5aaf67e64e7848851645d48f24ab4d84aeaf2655d8f544c0c8cf995f"
+    }
+  },
+  "limitations": "Chromium desktop/touch emulation only. Full390mission-stage audit not repeated; protected gameplay modules and inline code are identical to verified0.6.2.",
+  "standalone": {
+    "buildExitCode": 0,
+    "testExitCode": 0,
+    "sha256": "fd1065d3144672eeb6111e863f0e57f61890d5f3c689c7b2684af20aadb8361d",
+    "results": "release-results.json"
+  }
+}
