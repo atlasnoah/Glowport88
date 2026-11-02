@@ -97,5 +97,6 @@
     "mobileChecks": 21,
     "vehicleHostChecks": 6,
     "encounterHostChecks": 6
-  }
+  },
+  "deliveryVerification": "escape-update/escape-public-delivery-results.json"
 }

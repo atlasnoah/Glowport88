@@ -1,0 +1,42 @@
+{
+  "time": "2026-11-02T13:58:33.060234+00:00",
+  "verifiedHTTPS": true,
+  "files": [
+    {
+      "file": "minimap-size-before-phone.png",
+      "url": "https://atlasnoah.github.io/Glowport88/escape-update/minimap-size-before-phone.png",
+      "sha256": "5e06648ad65a73b970bd9d43abebce569dd0e54d45b65a0fe55c7afaa80b9a47",
+      "matchesLocal": true
+    },
+    {
+      "file": "minimap-size-after-phone.png",
+      "url": "https://atlasnoah.github.io/Glowport88/escape-update/minimap-size-after-phone.png",
+      "sha256": "3611b8ba26beae3f23ca9267a730e136fdc5af049cbd00dc4a1b7f93e92e527b",
+      "matchesLocal": true
+    },
+    {
+      "file": "minimap-size-after-short-landscape.png",
+      "url": "https://atlasnoah.github.io/Glowport88/escape-update/minimap-size-after-short-landscape.png",
+      "sha256": "e0b00195aeda817851217b936b8fcb8d1a5e1171254be3f6c8f85b3988c15756",
+      "matchesLocal": true
+    },
+    {
+      "file": "minimap-size-results.json",
+      "url": "https://atlasnoah.github.io/Glowport88/escape-update/minimap-size-results.json",
+      "sha256": "70f8a4ef207718a7e99229996fb4cf7a4fcf9a75811888ff9cb57daa7971002c",
+      "matchesLocal": true
+    },
+    {
+      "file": "escape-speed-host-results.json",
+      "url": "https://atlasnoah.github.io/Glowport88/escape-update/escape-speed-host-results.json",
+      "sha256": "ee7e52aa24f992f478769e4441413345440678c94d007c876a6d7d30cefc8771",
+      "matchesLocal": true
+    },
+    {
+      "file": "escape-update-suite-results.json",
+      "url": "https://atlasnoah.github.io/Glowport88/escape-update/escape-update-suite-results.json",
+      "sha256": "f1299ffefce0f56bda2acc39a007937e24c3e20c38cd3e0911216bf6c1eac9d6",
+      "matchesLocal": true
+    }
+  ]
+}

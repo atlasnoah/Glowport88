@@ -1,0 +1,50 @@
+{
+  "time": "2026-11-02T13:58:43.890Z",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.5-escape",
+  "verifiedHTTPSDownload": true,
+  "sha256": "5dcb08dd1375dd182a7e8e62884871b32b6db4abc70f45a13eb2521d030ffa3b",
+  "matchesTestedRelease": true,
+  "browserPlaybackOfDownloadedBytes": {
+    "originalCity": {
+      "buildings": 808,
+      "roads": 35,
+      "originalCommit": "c9b4af6"
+    },
+    "main": 40,
+    "side": 20,
+    "encounters": 32,
+    "start": true,
+    "phone": true,
+    "map": true,
+    "touchMovement": true,
+    "hud": {
+      "minimap": true,
+      "healthBar": true,
+      "equippedWeapon": true,
+      "presentationReady": true
+    },
+    "entranceGuidance": true,
+    "dinerStart": true,
+    "vehicleModels": 10,
+    "cassetteSites": 12,
+    "cityLife": {
+      "facades": 72,
+      "blocks": 18,
+      "trafficScale": 1.15,
+      "trafficPopulation": 43,
+      "pedestrianPopulation": 163
+    },
+    "escapeHud": {
+      "base": 175,
+      "driver": 218.75,
+      "workingMinimum": 164.0625,
+      "minimapWidth": 108
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "errors": []
+  },
+  "directExternalBrowserNavigation": "not exercised by this script; direct navigation is recorded by a separate browser probe"
+}
