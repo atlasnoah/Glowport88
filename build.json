@@ -1,13 +1,15 @@
 {
-  "version": "0.6.3",
-  "sourceCommit": "5340c4c41b230eadb55fdffde6a24da1e2bf455f",
-  "sha256": "fd1065d3144672eeb6111e863f0e57f61890d5f3c689c7b2684af20aadb8361d",
+  "version": "0.6.4",
+  "sourceCommit": "22a929e24cb70e259447d1e5fd3b70c4f8d00890",
+  "sha256": "6c2f4e73827ee02503320cc4db8b24ef332aeb504e312a5efef774bae9149b5d",
+  "publishedAt": "2026-11-02T13:36:34.705564+00:00",
   "mobileTouch": true,
   "touchRefinements": true,
   "storyNavigation": true,
   "livingCity": true,
   "originalCityRestored": true,
   "originalCommit": "c9b4af6",
+  "preservedVisualBaseline": "b334fc070b9d06a84084093834b5577ccd2d0b65",
   "saveVersion": 6,
   "mapVersion": 3,
   "mainMissions": 40,
@@ -21,9 +23,22 @@
   "streetWidth": 66,
   "residentialFacades": 16,
   "residentialVariants": 4,
-  "comparison": "restoration/restoration-visual-comparison.html",
+  "neighborhoodFacades": 72,
+  "neighborhoodBlocks": 18,
+  "additionalHouseFacades": 24,
+  "apartmentFacades": 8,
+  "decorativeProps": 136,
+  "cityDiversity": true,
+  "ambientNavigation": true,
+  "trafficSpeedMultiplier": 1.15,
+  "ambientTrafficCap": 43,
+  "pedestrianCap": 170,
+  "cornerHUD": true,
+  "uiOnly": false,
+  "comparison": "city-life/citylife-visual-comparison.html",
+  "originalRestorationComparison": "restoration/restoration-visual-comparison.html",
   "residentialComparison": "restoration/restoration-infill-comparison.html",
-  "bugfixAudit": true,
+  "verification": "city-life/citylife-suite-results.json",
   "missionVerification": {
     "main": 40,
     "side": 20,
@@ -31,7 +46,7 @@
     "authoredStages": 390,
     "completedRuns": 176,
     "objectiveResolutions": 580,
-    "projectileShots": 631,
+    "projectileShots": 628,
     "timingInputs": 121
   },
   "entranceVerification": {
@@ -39,17 +54,24 @@
     "roundTrips": 48,
     "activeMissionStates": 12
   },
-  "verification": "qa/bug-audit-suite-results.json",
-  "cornerHUD": true,
-  "uiOnly": true,
-  "preservedGameplayBaseline": "4313c45",
-  "hudVerification": {
-    "viewports": 5,
-    "matchingCanvasScenes": 10,
-    "guards": 25,
-    "unchangedExistingJavaScriptModules": 23,
-    "unchangedPNGs": 8
+  "preservationVerification": {
+    "pairedScenes": 49,
+    "unchangedEstablishedScenes": 13,
+    "reviewedBlockScenes": 36,
+    "outsideFacadePixelChanges": 0,
+    "hudViewports": 5,
+    "unchangedOriginalPNGs": 8
   },
-  "hudPreview": "hud/hud-after-desktop.png",
-  "hudPhonePreview": "hud/hud-after-phone.png"
+  "ambientVerification": {
+    "trafficModelGuards": 14,
+    "pedestrianModelGuards": 12,
+    "scheduleGuards": 6,
+    "jointSimulatedMinutes": 30,
+    "rollingProgressWindows": 84,
+    "finalLifecycleHostGuards": 5,
+    "productionEnduranceSeconds": 2160,
+    "scope": "Joint motion soak and final lifecycle patch have separately recorded source scope and actual-host validation; see city-life/citylife-host-validation-scope.json."
+  },
+  "hudPreview": "city-life/citylife-after-hud-desktop.png",
+  "hudPhonePreview": "city-life/citylife-after-hud-phone.png"
 }

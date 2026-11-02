@@ -538,32 +538,54 @@ function modularBuilding(c,b){const {x,y,w,h}=b,s=hash(x,y),p=palettes[b.distric
 }
 const buildingCells=[[0,0,512,530],[512,0,512,530],[1024,0,512,530],[0,530,512,494],[512,530,512,494],[1024,530,512,494]];
 const neighborhoodCells=[[36,58,467,424],[530,92,469,387],[1029,60,473,419],[25,534,484,407],[535,547,472,392],[1029,534,485,400]];
+// Optional neighborhood furniture uses the same approved atlas and lies inside
+// the existing facade footprint. It contributes no new collision or light.
+function neighborhoodProps(c,b){for(const p of b.neighborhoodDetail?.props||[]){
+ if(p.type==='mailbox'){rect(c,p.x+4,p.y+4,2,p.h-4,'#62717f');rect(c,p.x,p.y,p.w,6,'#24394e');rect(c,p.x+1,p.y+1,p.w-2,1,'#91a7b2');rect(c,p.x+p.w-2,p.y+1,1,3,'#b8778e')}
+ else if(p.type==='fence'){rect(c,p.x,p.y+1,p.w,1,'#8694a3');rect(c,p.x,p.y+3,p.w,1,'#46546c');for(let x=p.x;x<p.x+p.w;x+=5)rect(c,x,p.y,1,p.h,'#778397')}
+ else if(p.type==='weathering'){for(let k=0;k<5;k++){const x=p.x+(k*7)%p.w,y=p.y+(k*5)%p.h;rect(c,x,y,Math.min(5,p.x+p.w-x),1,k%2?'#a07d92':'#404259')}}
+ else sprite(c,p.type,p.x,p.y,p.w,p.h);
+}}
 function building(c,b){
  const seed=hash(b.x,b.y),landmark=b.landmark?.key;
  const choices={west:[0,2,4],core:[1,3,4],north:[0,0,4],south:[2,0,1],east:[5,5,1]};
  let index=choices[b.district][seed%3],sheet='neighborhoods-illustrated',cells=neighborhoodCells;
  if(landmark){const special={hotel:0,armory:1,radio:2,warehouse:5};if(special[landmark]!==undefined){index=special[landmark];sheet='buildings-illustrated';cells=buildingCells}else index={motel:0,diner:2,records:4,club:3,arcade:4,observatory:5,pier:5,clinic:0}[landmark]??0}
+ // Preserve the original local light field even when an optional facade uses
+ // another approved architectural cell. Neighborhood selection never relights a block.
+ const lightIndex=index,detail=!landmark?b.neighborhoodDetail:null;
+ if(detail){sheet=detail.sheet;index=detail.cell;cells=sheet==='buildings-illustrated'?buildingCells:neighborhoodCells}
  // Full illustrated architectural sprites are anchored at the original collision footprint and door.
  const dx=b.x-3,dy=b.y-3,dw=b.w+6,dh=b.h+20;
  // Controlled facade swaps share the original footprint, scale and light field.
  // All other buildings, especially the story landmarks, retain their old path.
- if(!landmark&&Number.isInteger(b.residentialVariant)&&b.residentialVariant>=0&&b.residentialVariant<4){
+ if(!landmark&&((Number.isInteger(b.residentialVariant)&&b.residentialVariant>=0&&b.residentialVariant<4)||detail?.sheet==='residential-illustrated')){
   const homes=[[41,57,539,538],[624,82,596,521],[37,607,560,587],[626,640,595,546]];
-  c.drawImage(images['residential-illustrated'],...homes[b.residentialVariant],dx,dy,dw,dh);
+  c.drawImage(images['residential-illustrated'],...homes[Number.isInteger(b.residentialVariant)?b.residentialVariant:detail.cell],dx,dy,dw,dh);
   const col=neon[seed%4];light(b.doorX,b.doorY-8,75,col,.85);
-  if(index===3)light(b.x+b.w*.75,b.y+b.h*.55,50,'#e589cb',.8);
-  if(index===0||index===2)light(b.x+b.w*.25,b.y+b.h*.6,38,'#efb786',.55);
+  if(lightIndex===3)light(b.x+b.w*.75,b.y+b.h*.55,50,'#e589cb',.8);
+  if(lightIndex===0||lightIndex===2)light(b.x+b.w*.25,b.y+b.h*.6,38,'#efb786',.55);
+  neighborhoodProps(c,b);
   return;
  }
  c.drawImage(images[sheet],...cells[index],dx,dy,dw,dh);
+ // Existing freight artwork supplies a second industrial silhouette. Relabel
+ // only its original sign's lettering band; retain the weathered board/logo,
+ // roof equipment and loading doors rather than duplicating the story depot.
+ if(detail?.kind==='industrial'&&sheet==='buildings-illustrated'){
+  const sx=dx+dw*.18,sy=dy+dh*.445,sw=dw*.72,sh=Math.max(7,dh*.09);
+  rect(c,sx,sy,sw,sh,'#9da7ac');rect(c,sx,sy,sw,1,'#7d8c96');
+  label(c,detail.displayName,sx,sy+sh-2,sw,'#26394f',Math.min(7,Math.max(5,b.w/19)));
+ }
  const col=landmark?palettes[b.district].accent:neon[seed%4];
  // An in-world business plaque labels the unlettered neighborhood shells.
  const plateY=Math.round(dy+dh*.6),plateW=Math.min(b.w-14,112);
- if(sheet==='neighborhoods-illustrated'||landmark){rect(c,b.doorX-plateW/2,plateY,plateW,9,'#131d30ed');label(c,b.name,b.doorX-plateW/2,plateY+7,plateW,col,7)}
+ if(sheet==='neighborhoods-illustrated'||landmark){rect(c,b.doorX-plateW/2,plateY,plateW,9,'#131d30ed');label(c,detail?.displayName||b.name,b.doorX-plateW/2,plateY+7,plateW,col,7)}
  rect(c,b.doorX-9,b.doorY+3,18,1,col);
  light(b.doorX,b.doorY-8,75,col,landmark?1.4:.85);
- if(index===3)light(b.x+b.w*.75,b.y+b.h*.55,50,'#e589cb',.8);
- if(index===0||index===2)light(b.x+b.w*.25,b.y+b.h*.6,38,'#efb786',.55);
+ if(lightIndex===3)light(b.x+b.w*.75,b.y+b.h*.55,50,'#e589cb',.8);
+ if(lightIndex===0||lightIndex===2)light(b.x+b.w*.25,b.y+b.h*.6,38,'#efb786',.55);
+ neighborhoodProps(c,b);
 }
 function bakeTerrain(c,world){const {MW,MH,lands,roadXs,roadYs,STREET,buildings,trees,debris,streetlights}=world;lightGrid.clear();c.imageSmoothingEnabled=false;
  material(c,'concrete',0,0,MW,MH);
@@ -760,6 +782,351 @@ function apply(buildings,options={}){
 }
 global.GlowportResidential=Object.freeze({apply,variantnames});
 if(typeof module!=='undefined'&&module.exports)module.exports=global.GlowportResidential;
+})(typeof window!=='undefined'?window:globalThis);
+</script>
+<script>/* Small, deterministic architectural selections inside the recovered city.
+ * This module annotates existing facades only: it creates no world geometry,
+ * consumes no game RNG, adds no lights and changes no interactive entrances. */
+(function(global){
+'use strict';
+const hash=(x,y=0)=>{let n=Math.imul(x|0,374761393)^Math.imul(y|0,668265263);n=Math.imul(n^(n>>>13),1274126177);return(n^(n>>>16))>>>0};
+const profiles=Object.freeze({
+ residential:Object.freeze({pedestrians:.65,traffic:.7}),
+ older:Object.freeze({pedestrians:.8,traffic:.8}),
+ mixed:Object.freeze({pedestrians:1,traffic:1}),
+ commercial:Object.freeze({pedestrians:1.3,traffic:1.15}),
+ industrial:Object.freeze({pedestrians:.45,traffic:.9})
+});
+const plans=Object.freeze([
+ {district:'west',kind:'residential',x:1500,y:2800,blocks:2},
+ {district:'north',kind:'residential',x:4400,y:1100,blocks:2},
+ {district:'south',kind:'residential',x:3450,y:4000,blocks:2},
+ {district:'east',kind:'residential',x:6500,y:1500,blocks:2},
+ {district:'east',kind:'industrial',x:6200,y:3150,blocks:3},
+ {district:'west',kind:'mixed',x:2000,y:3200,blocks:1},
+ {district:'south',kind:'mixed',x:4500,y:3850,blocks:1},
+ {district:'north',kind:'mixed',x:2900,y:1250,blocks:1},
+ {district:'west',kind:'older',x:850,y:2350,blocks:1},
+ {district:'east',kind:'older',x:5600,y:1850,blocks:1},
+ {district:'core',kind:'commercial',x:3200,y:1900,blocks:1},
+ {district:'core',kind:'commercial',x:4500,y:2500,blocks:1}
+]);
+const names=Object.freeze({
+ residential:['PALM COURT','SUNSET FLATS','CRESCENT HOMES','BAYVIEW COURT'],
+ industrial:['EASTSIDE AUTO','FREIGHT & STORAGE','BAY MACHINERY','DOCK REPAIRS'],
+ mixed:['CORNER MARKET','UPSTAIRS FLATS','NIGHT NOODLES','RADIO REPAIR'],
+ older:['CEDAR ROOMS','OLD PALM FLATS','88 CORNER STORE','EASTSIDE ROOMS'],
+ commercial:['NIGHT OFFICE','VIOLET DINING','NEON SAVINGS','MIDNIGHT HOTEL']
+});
+function between(values,n){for(let i=0;i<values.length-1;i++)if(n>values[i]&&n<values[i+1])return i;return -1}
+function apply(buildings,options={}){
+ const {roadXs=[],roadYs=[],landmarks=[]}=options,sites=[],blocks=[],props=[],counts={},groups=new Map();
+ // Only this pass's metadata is removed. Existing residentialVariant and every
+ // historical building property remain owned by their original systems.
+ if(Array.isArray(buildings))for(const b of buildings)delete b.neighborhoodDetail;
+ if(Array.isArray(buildings)&&roadXs.length>1&&roadYs.length>1)buildings.forEach((b,index)=>{
+  if(b.landmark||b.kind==='landmark'||Number.isInteger(b.residentialVariant))return;
+  const cx=b.x+b.w/2,cy=b.y+b.h/2,ix=between(roadXs,cx),iy=between(roadYs,cy);
+  if(ix<0||iy<0||b.w<58||b.h<56||landmarks.some(l=>Math.hypot(cx-l.x,cy-l.y)<360||Math.hypot(b.doorX-l.x,b.doorY-l.y)<360))return;
+  const key=b.district+':'+ix+':'+iy;
+  if(!groups.has(key))groups.set(key,{id:key,district:b.district,ix,iy,x:roadXs[ix],y:roadYs[iy],w:roadXs[ix+1]-roadXs[ix],h:roadYs[iy+1]-roadYs[iy],cx:(roadXs[ix]+roadXs[ix+1])/2,cy:(roadYs[iy]+roadYs[iy+1])/2,candidates:[]});
+  groups.get(key).candidates.push({b,index});
+ });
+ const used=new Set(),limit=Math.max(0,Math.min(72,Number.isFinite(options.limit)?Math.floor(options.limit):72));
+ for(const plan of plans){
+  const choices=[...groups.values()].filter(g=>g.district===plan.district&&!used.has(g.id)&&g.candidates.length>=4);
+  choices.sort((a,b)=>Math.hypot(a.cx-plan.x,a.cy-plan.y)-Math.hypot(b.cx-plan.x,b.cy-plan.y)||a.iy-b.iy||a.ix-b.ix);
+  for(const source of choices.slice(0,plan.blocks)){
+   if(sites.length>=limit)break;
+   used.add(source.id);const block={id:source.id,district:source.district,ix:source.ix,iy:source.iy,x:source.x,y:source.y,w:source.w,h:source.h,cx:source.cx,cy:source.cy,kind:plan.kind,count:0};blocks.push(block);
+   // Four compact existing facades make the purpose of a block legible without
+   // changing its parcel dimensions, density or street connections.
+   source.candidates.sort((a,b)=>a.b.y-b.b.y||a.b.x-b.b.x||a.index-b.index);
+   for(const [style,{b,index}]of source.candidates.slice(0,4).entries()){
+    if(sites.length>=limit)break;
+    const seed=hash(b.x,b.y),kind=plan.kind;let sheet='neighborhoods-illustrated',cell=0,design;
+    if(kind==='residential'){
+     if(style===3){cell=0;design='Low-rise apartments'}
+     else{sheet='residential-illustrated';cell=(style+source.ix+source.iy)%4;design=['Porch bungalow','Urban duplex','Victorian townhouse','Mid-century garage house'][cell]}
+    }else if(kind==='industrial'){sheet=style===1||style===2?'buildings-illustrated':'neighborhoods-illustrated';cell=5;design=['Auto workshop','Freight depot','Storage warehouse','Utility workshop'][style]}
+    else if(kind==='mixed'){cell=[0,1,2,4][style];design=['Apartments above shops','Corner grocer','Neighborhood restaurant','Small repair business'][style]}
+    else if(kind==='older'){cell=[0,0,4,0][style];design=['Older apartments','Weathered flats','Older corner store','Working-class apartments'][style]}
+    else{cell=[1,2,3,4][style];design=['Office storefront','Late-night restaurant','Neon lounge','Local bank office'][style]}
+    const detail={kind,sheet,cell,style,design,displayName:names[kind][style],block:source.id,props:[]};
+    const add=(type,x,y,w,h)=>{
+     const prop={id:'neighborhood-'+index+'-'+type,type,x:Math.round(x),y:Math.round(y),w,h,building:index,kind};
+     // Decorations stay inside the pre-existing impassable footprint. They can
+     // never create a new invisible obstacle or obstruct a sidewalk/door.
+     if(prop.x<b.x||prop.y<b.y||prop.x+w>b.x+b.w||prop.y+h>b.y+b.h)return;
+     if(Math.abs(prop.x+w/2-b.doorX)<24&&prop.y+h>b.y+b.h-25)return;
+     detail.props.push(prop);props.push(prop);
+    };
+    if(kind==='industrial'){
+     add(style%2?'crates':'dumpster',b.x+4,b.y+b.h-18,15,14);add('ac',b.x+b.w-24,b.y+9,17,13);
+    }else if(kind==='older'){
+     add(style%2?'dumpster':'planter',b.x+4,b.y+b.h-17,12,13);add('weathering',b.x+b.w-26,b.y+b.h-24,17,13);
+    }else if(kind==='residential'){
+     add(style===3?'planter':'mailbox',b.x+4,b.y+b.h-15,10,12);add(style===3?'ac':'fence',b.x+b.w-27,b.y+(style===3?8:b.h-7),20,style===3?15:5);
+    }else{
+     add(style%2?'vending':'bench',b.x+4,b.y+b.h-17,16,14);add(style%2?'ac':'planter',b.x+b.w-24,b.y+8,16,14);
+    }
+    b.neighborhoodDetail=detail;block.count++;counts[kind]=(counts[kind]||0)+1;
+    sites.push({id:'neighborhood-'+index,index,x:b.x,y:b.y,w:b.w,h:b.h,doorX:b.doorX,doorY:b.doorY,renderBounds:{x:b.x-3,y:b.y-3,w:b.w+6,h:b.h+20},district:b.district,block:source.id,kind,sheet,cell,style,design,props:detail.props.map(p=>({...p}))});
+   }
+  }
+ }
+ // The sixteen previously approved homes also keep their quieter street
+ // character; they need no visual annotation or replacement in this update.
+ const originalHomes=new Map();
+ if(Array.isArray(buildings))for(const b of buildings)if(Number.isInteger(b.residentialVariant)){
+  const ix=between(roadXs,b.x+b.w/2),iy=between(roadYs,b.y+b.h/2);if(ix<0||iy<0)continue;
+  const id=b.district+':'+ix+':'+iy;originalHomes.set(id,{id,district:b.district,kind:'residential',x:roadXs[ix],y:roadYs[iy],w:roadXs[ix+1]-roadXs[ix],h:roadYs[iy+1]-roadYs[iy],cx:(roadXs[ix]+roadXs[ix+1])/2,cy:(roadYs[iy]+roadYs[iy+1])/2});
+ }
+ const activityBlocks=[...blocks,...originalHomes.values()];
+ function classify(x,y,district){
+  // A road takes its activity character from the closest selected block; the
+  // classifier never changes the game's actual district boundaries.
+  const nearby=activityBlocks.filter(b=>x>=b.x-55&&x<=b.x+b.w+55&&y>=b.y-55&&y<=b.y+b.h+55).sort((a,b)=>Math.hypot(x-a.cx,y-a.cy)-Math.hypot(x-b.cx,y-b.cy)||a.id.localeCompare(b.id));
+  if(nearby.length)return nearby[0].kind;
+  return district==='core'?'commercial':district==='east'?'industrial':district==='north'?'residential':'mixed';
+ }
+ return{count:sites.length,limit,sites,blocks,props,counts,profiles,classify,activityBlocks};
+}
+global.GlowportNeighborhoods=Object.freeze({apply,profiles});
+if(typeof module!=='undefined'&&module.exports)module.exports=global.GlowportNeighborhoods;
+})(typeof window!=='undefined'?window:globalThis);
+</script>
+<script>/* Ambient traffic on the preserved road grid. No world, artwork, player handling,
+ * mission logic, or global random-generator mutation belongs to this module. */
+(function(global){
+'use strict';
+const clamp=(n,a,b)=>Math.max(a,Math.min(b,n)),finite=(n,f=0)=>Number.isFinite(n)?n:f,dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),hash=s=>{let n=2166136261;for(const c of String(s))n=Math.imul(n^c.charCodeAt(0),16777619);return n>>>0};
+const dirs=[{x:1,y:0},{x:0,y:1},{x:-1,y:0},{x:0,y:-1}];
+function create(options={}){
+ const xs=[...(options.roadXs||[])],ys=[...(options.roadYs||[])],lane=12,extent=42,stopOffset=76,cap=clamp(Math.floor(finite(options.cap,43)),0,100),speedScale=1.15;
+ const signalOffsets=new Map((options.signals||[]).filter(p=>Number.isFinite(p.x)&&Number.isFinite(p.y)&&Number.isFinite(p.offset)).map(p=>[p.x+','+p.y,p.offset]));
+ const nodes=[],edges=[],byKey=new Map(),states=new Map(),owners=new Map(),templates=[],blockedRoads=new Map(),retiredAt=new Map();
+ let clock=0,sequence=0,manageAt=0,context={},lastCars=[],peak=0,obstaclesAt=-1;
+ const totals={distance:0,trips:0,turns:0,recoveries:0,recycled:0,spawned:0,blockedRecoveries:0,invalidSteps:0,maxPopulation:0,uTurns:0,retired:0};
+ for(let y=0;y<ys.length;y++)for(let x=0;x<xs.length;x++)nodes.push({id:y*xs.length+x,ix:x,iy:y,x:xs[x],y:ys[y],out:[]});
+ for(const a of nodes)for(let dir=0;dir<4;dir++){const d=dirs[dir],x=a.ix+d.x,y=a.iy+d.y;if(x<0||x>=xs.length||y<0||y>=ys.length)continue;const b=nodes[y*xs.length+x],key=a.id+'>'+b.id,edge={key,a,b,dir,dx:d.x,dy:d.y,length:dist(a,b)-extent*2,start:{x:a.x+d.x*extent-d.y*lane,y:a.y+d.y*extent+d.x*lane},end:{x:b.x-d.x*extent-d.y*lane,y:b.y-d.y*extent+d.x*lane}};edges.push(edge);byKey.set(key,edge);a.out.push(edge)}
+ function protectedCar(car){return !!(car.personal||car.wasDriven||car._mission||car._missionTarget||car._encounterScene||car._encounterRace||car._chase||car._escort||car===context.playerCar)}
+ function eligible(car){return !!car?.ai&&car!==context.playerCar}
+ function solid(x,y){return options.solid?.(x,y,19)||false}
+ function isRoad(x,y){return options.isRoad?options.isRoad(x,y,19):xs.some(n=>Math.abs(n-x)<=14.01)||ys.some(n=>Math.abs(n-y)<=14.01)}
+ function point(edge,along){return {x:edge.start.x+edge.dx*along,y:edge.start.y+edge.dy*along,angle:Math.atan2(edge.dx,-edge.dy)}}
+ function offscreen(p,margin=170){const camera=context.camera;if(camera&&Number.isFinite(camera.x)&&Number.isFinite(camera.y))return p.x<camera.x-margin||p.x>camera.x+finite(context.width,800)+margin||p.y<camera.y-margin||p.y>camera.y+finite(context.height,450)+margin;const focus=context.focus;return !focus||dist(p,focus)>700}
+ function random(s){s.seed=(Math.imul(s.seed,1664525)+1013904223)>>>0;return s.seed/4294967296}
+ function district(p){return options.district?.(p.x,p.y)?.id||options.district?.(p.x,p.y)||'core'}
+ function signal(edge,time=clock){const n=edge.b,offset=signalOffsets.get(n.x+','+n.y);if(offset!==undefined){const legacyPhase=(time+offset)%28;return legacyPhase<17?'green':legacyPhase<21?'amber':'red'}const phase=(time+(n.ix*7+n.iy*3)%17)%28,horizontal=edge.dir%2===0;return horizontal?(phase<11?'green':phase<14?'amber':'red'):(phase>=14&&phase<25?'green':phase>=25?'amber':'red')}
+ function release(s){for(const [id,car]of owners)if(car===s.car)owners.delete(id)}
+ function destination(s){const from=s.edge.b;let node=null;for(let i=0;i<20;i++){const p=nodes[Math.floor(random(s)*nodes.length)];if(p&&Math.abs(p.ix-from.ix)+Math.abs(p.iy-from.iy)>=6){node=p;break}}s.destination=node||nodes[(from.id+Math.floor(nodes.length/2))%nodes.length];s.visited.add(district(from));s.car.trafficDestination={x:s.destination.x,y:s.destination.y};s.trips++;totals.trips++}
+ function chooseNext(s,blocked=null){const at=s.edge.b;if(!s.destination||at.id===s.destination.id)destination(s);let choices=at.out.filter(e=>e.b!==s.edge.a&&e!==blocked&&!blockedRoads.has(e.key));if(!choices.length)choices=at.out.filter(e=>e!==blocked&&!blockedRoads.has(e.key));if(!choices.length)return null;let best=null,score=Infinity;for(const edge of choices){const nextCost=Math.abs(edge.b.ix-s.destination.ix)+Math.abs(edge.b.iy-s.destination.iy),cost=nextCost+random(s)*.7;if(cost<score){score=cost;best=edge}}return best}
+ function turnPath(from,to){const a=from.end,b=to.start,den=from.dx*to.dy-from.dy*to.dx;if(!den)return {a,b,c:null,length:dist(a,b),turn:false};
+  const delta={x:b.x-a.x,y:b.y-a.y},t=(delta.x*to.dy-delta.y*to.dx)/den,c={x:a.x+from.dx*t,y:a.y+from.dy*t},radius=8;
+  // Trim the lane-line corner, then ease through a short quadratic. A single
+  // wide quadratic cuts the outside curb; these tangent connectors keep even
+  // the navigation adapter's conservative 19px vehicle clearance on the road.
+  const enter={x:c.x-from.dx*radius,y:c.y-from.dy*radius},exit={x:c.x+to.dx*radius,y:c.y+to.dy*radius},samples=[{...a,d:0}];
+  const add=p=>samples.push({...p,d:samples.at(-1).d+dist(samples.at(-1),p)});add(enter);
+  for(let i=1;i<=16;i++){const v=i/16,u=1-v;add({x:u*u*enter.x+2*u*v*c.x+v*v*exit.x,y:u*u*enter.y+2*u*v*c.y+v*v*exit.y})}add(b);
+  return {a,b,c,length:samples.at(-1).d,turn:true,samples};
+ }
+ function curve(path,t){if(!path.samples)return {x:path.a.x+(path.b.x-path.a.x)*t,y:path.a.y+(path.b.y-path.a.y)*t,angle:Math.atan2(path.b.x-path.a.x,-(path.b.y-path.a.y))};
+  const along=clamp(t,0,1)*path.length,samples=path.samples;let i=1;while(i<samples.length-1&&samples[i].d<along)i++;const a=samples[i-1],b=samples[i],v=(along-a.d)/(b.d-a.d||1);return {x:a.x+(b.x-a.x)*v,y:a.y+(b.y-a.y)*v,angle:Math.atan2(b.x-a.x,-(b.y-a.y))};
+ }
+ function nearest(car){let best=null;const dx=Math.sin(finite(car.angle)),dy=-Math.cos(finite(car.angle));for(const edge of edges){const along=clamp((car.x-edge.start.x)*edge.dx+(car.y-edge.start.y)*edge.dy,0,edge.length),p=point(edge,along),d=dist(car,p),cost=d+(dx*edge.dx+dy*edge.dy<-.1?28:0);if((!best||cost<best.cost)&&!solid(p.x,p.y)&&isRoad(p.x,p.y))best={edge,along,p,cost,d}}return best}
+ function state(car){return states.get(car)}
+ function restore(car,cars=lastCars,ctx=context){if(!car?.ai)return car;context={...context,...ctx};let s=states.get(car);if(s&&dist(car,s.last)<8)return car;if(s)release(s);const near=nearest(car);if(!near)return car;
+  const id=car.id||'traffic-roam-'+(++sequence),oldSeed=hash(id);s={car,edge:near.edge,along:near.along,next:null,path:null,pathAlong:0,destination:null,seed:oldSeed,wait:0,stuck:0,distance:0,trips:0,turns:0,visited:new Set(),last:{x:car.x,y:car.y},arrived:0,cruise:clamp(finite(car._ambientBaseSpeed,finite(car.targetSpeed,90)),30,110)*speedScale,reason:'cruising'};
+  car.id=id;car._ambientBaseSpeed=s.cruise/speedScale;car.targetSpeed=s.cruise;car.speed=clamp(finite(car.speed),0,s.cruise);car._trafficMapVersion=3;car._ambientManaged=true;
+  // Loading/bootstrap happens before the first displayed play frame. Never use
+  // this projection to recover an already active visible car.
+  Object.assign(car,near.p);s.last={x:car.x,y:car.y};states.set(car,s);destination(s);s.next=chooseNext(s);return car;
+ }
+ function gapAt(p,cars,ignore,radius=85){return cars.every(o=>o===ignore||dist(p,o)>=radius)}
+ function findSpawn(s,cars,initial=false){const focus=context.focus||{x:(options.MW||7200)/2,y:(options.MH||5040)/2};let best=null,bestScore=Infinity;for(let i=0;i<260;i++){const edge=edges[Math.floor(random(s)*edges.length)];if(!edge)break;const along=60+random(s)*Math.max(1,edge.length-120),p=point(edge,along);if((!initial&&!offscreen(p,220))||solid(p.x,p.y)||!isRoad(p.x,p.y)||!gapAt(p,cars,s.car,95))continue;const kind=options.classify?.(p.x,p.y),weight={residential:.7,older:.8,mixed:1,commercial:1.15,industrial:.9}[kind]||1;if(random(s)>weight/1.15)continue;const d=dist(p,focus),score=initial?random(s)*1000:Math.abs(d-1100)+random(s)*350;if(score<bestScore){bestScore=score;best={edge,along,p}}}return best}
+ function relocate(s,cars,initial=false){if(!initial&&(protectedCar(s.car)||!offscreen(s.car,220)))return false;const spawn=findSpawn(s,cars,initial);if(!spawn)return false;release(s);s.edge=spawn.edge;s.along=spawn.along;s.path=null;s.recovery=null;s.pathAlong=0;s.wait=0;s.stuck=0;s.arrived=0;s.destination=null;Object.assign(s.car,spawn.p);s.car.speed=0;s.last={x:s.car.x,y:s.car.y};destination(s);s.next=chooseNext(s);if(!initial){totals.recoveries++;totals.recycled++}return true}
+ function bootstrap(cars,ctx={}){reset();context=ctx;lastCars=cars;for(const car of cars.filter(eligible)){const template={};for(const key of ['color','modelId','w','h','style','health','dir'])if(car[key]!==undefined)template[key]=car[key];template.baseSpeed=finite(car.targetSpeed,90);templates.push(template);restore(car,cars,ctx)}
+  // Preserve population and approved sprites, but distribute it across the
+  // existing city instead of confining it to five disjoint rectangular loops.
+  for(const car of cars.filter(eligible)){const s=state(car);if(!s)continue;relocate(s,cars,true);car.speed=s.cruise*.65}
+  peak=cars.filter(eligible).length;totals.maxPopulation=peak;return diagnostics();
+ }
+ function reset(){states.clear();owners.clear();blockedRoads.clear();retiredAt.clear();obstaclesAt=-1;templates.length=0;clock=0;sequence=0;manageAt=0;lastCars=[];peak=0;for(const key of Object.keys(totals))totals[key]=0}
+ function grid(values,size){const cells=new Map();for(const o of values){const key=Math.floor(o.x/size)+','+Math.floor(o.y/size);if(!cells.has(key))cells.set(key,[]);cells.get(key).push(o)}return (p,r)=>{const found=[];for(let x=Math.floor((p.x-r)/size);x<=Math.floor((p.x+r)/size);x++)for(let y=Math.floor((p.y-r)/size);y<=Math.floor((p.y+r)/size);y++)found.push(...cells.get(x+','+y)||[]);return found}}
+ function nextPoint(s,advance){if(s.path)return curve(s.path,clamp((s.pathAlong+advance)/s.path.length,0,1));return point(s.edge,Math.min(s.edge.length,s.along+advance))}
+ function boxBlocked(s,nearCars){if(!s.next)return true;const exit=point(s.next,Math.min(80,s.next.length));for(const o of nearCars(exit,115)){if(o===s.car)continue;const dx=o.x-s.next.start.x,dy=o.y-s.next.start.y,forward=dx*s.next.dx+dy*s.next.dy,side=Math.abs(dx*-s.next.dy+dy*s.next.dx);if(forward>-18&&forward<94&&side<23)return true}return false}
+ function pedestrianLimit(car,peds,cruise){let cap=cruise,clearance=Infinity;const dx=Math.sin(car.angle),dy=-Math.cos(car.angle);for(const p of peds){const px=p.x-car.x,py=p.y-car.y,forward=px*dx+py*dy,side=Math.abs(px*-dy+py*dx);if(forward>0&&forward<100&&side<21){const gap=Math.max(0,forward-31);clearance=Math.min(clearance,gap);cap=Math.min(cap,Math.sqrt(2*180*gap))}}return {speed:cap,gap:clearance}}
+ function refreshBlockedRoads(cars){if(clock<obstaclesAt+1&&clock>=obstaclesAt)return;obstaclesAt=clock;blockedRoads.clear();
+  for(const car of cars){if(car.ai||Math.abs(finite(car.speed))>4)continue;for(const edge of edges){const dx=car.x-edge.start.x,dy=car.y-edge.start.y,along=dx*edge.dx+dy*edge.dy,side=Math.abs(dx*-edge.dy+dy*edge.dx);if(along>-12&&along<edge.length+12&&side<23)blockedRoads.set(edge.key,car)}}
+ }
+ function tryRoadRecovery(s,cars,pedestrians){if(s.path||s.recovery||s.stuck<6||s.along<45||s.edge.length-s.along<45||s.car.speed>2)return false;
+  const obstacle=blockedRoads.get(s.edge.key);if(!obstacle)return false;const edge=s.edge,dx=obstacle.x-s.car.x,dy=obstacle.y-s.car.y,forward=dx*edge.dx+dy*edge.dy;if(forward<28||forward>150)return false;
+  const reverse=byKey.get(edge.b.id+'>'+edge.a.id);if(!reverse)return false;const center={x:s.car.x+edge.dy*lane,y:s.car.y-edge.dx*lane},samples=[];
+  for(let i=0;i<=32;i++){const theta=i/32*Math.PI,p={x:center.x-edge.dy*lane*Math.cos(theta)+edge.dx*lane*Math.sin(theta),y:center.y+edge.dx*lane*Math.cos(theta)+edge.dy*lane*Math.sin(theta)};if(solid(p.x,p.y)||!isRoad(p.x,p.y))return false;for(const o of cars)if(o!==s.car&&dist(p,o)<38)return false;for(const n of pedestrians||[])if(dist(p,n)<32)return false;samples.push({...p,d:i?0:0});if(i)samples[i].d=samples[i-1].d+dist(samples[i-1],p)}
+  release(s);delete s.releaseNode;s.recovery={a:samples[0],b:samples.at(-1),samples,length:samples.at(-1).d,along:0,center,edge:reverse};s.car.speed=0;s.wait=0;s.reason='safe-u-turn';return true;
+ }
+ function recoveryClosure(car,own){let gap=Infinity;const fx=Math.sin(car.angle),fy=-Math.cos(car.angle);for(const s of states.values()){if(s===own||!s.recovery)continue;const p=s.recovery.center,dx=p.x-car.x,dy=p.y-car.y,forward=dx*fx+dy*fy,side=Math.abs(dx*-fy+dy*fx);if(forward>0&&forward<200&&side<42)gap=Math.min(gap,Math.max(0,forward-61))}return gap}
+ function recoverStep(s,dt,cars,pedestrians){const r=s.recovery,car=s.car,advance=Math.min(r.length-r.along,Math.min(28,car.speed+70*dt)*dt),p=curve(r,(r.along+advance)/r.length);let safe=!solid(p.x,p.y)&&isRoad(p.x,p.y);for(const o of cars)if(o!==car&&dist(p,o)<23.5)safe=false;for(const n of pedestrians||[])if(dist(p,n)<30)safe=false;const before={x:car.x,y:car.y};if(safe){Object.assign(car,p);r.along+=advance;car.speed=dt?dist(before,p)/dt:0}else car.speed=0;const moved=dist(before,car);s.distance+=moved;totals.distance+=moved;s.stuck=moved<.1?s.stuck+dt:0;s.last={x:car.x,y:car.y};s.reason='safe-u-turn';car.trafficState=s.reason;car.trafficDistance=s.distance;
+  if(r.along>=r.length-.001){s.edge=r.edge;s.along=clamp((car.x-s.edge.start.x)*s.edge.dx+(car.y-s.edge.start.y)*s.edge.dy,0,s.edge.length);s.recovery=null;s.next=chooseNext(s);s.stuck=0;s.wait=0;s.turns++;totals.turns++;totals.uTurns++}
+ }
+ function ambientPopulation(cars){return cars.filter(car=>eligible(car)&&!protectedCar(car)).length}
+ function manage(cars){
+  for(const car of retiredAt.keys())if(!cars.includes(car)||car.ai||protectedCar(car))retiredAt.delete(car);
+  for(let i=cars.length-1;i>=0;i--){const car=cars[i];if(!car._ambientManaged||car.ai||protectedCar(car))continue;
+   // A completed chase can leave a healthy parked ambient car. Give contact
+   // interactions a full minute; only retire it after protection has ended
+   // and the car is out of view. Durable player cars retain their own rules.
+   if(!retiredAt.has(car))retiredAt.set(car,clock);const elapsed=clock-retiredAt.get(car);
+   if((car.health<=0||elapsed>=60)&&offscreen(car,220)){const s=states.get(car);if(s)release(s);states.delete(car);retiredAt.delete(car);cars.splice(i,1);totals.recycled++;totals.retired++}
+  }
+  for(const [car,s]of states)if(!cars.includes(car)||!eligible(car)){release(s);states.delete(car)}const count=ambientPopulation(cars);peak=Math.max(peak,count);totals.maxPopulation=Math.max(totals.maxPopulation,count);
+  // Recycle only offscreen ambient entities; mission, owned and driven cars
+  // have lifetime rules outside this ambient manager.
+  for(const [car,s]of states){if(!eligible(car)||protectedCar(car))continue;const focus=context.focus,tooFar=focus&&dist(car,focus)>3500;if(s.stuck>38||car.health<=0||tooFar){const wasBlocked=s.stuck>38;if(car.health<=0){if(offscreen(car,220)){release(s);states.delete(car);cars.splice(cars.indexOf(car),1);totals.recycled++}}else if(relocate(s,cars))totals.blockedRecoveries+=Number(wasBlocked)}}
+  let ordinary=ambientPopulation(cars);if(ordinary>cap){for(let i=cars.length-1;i>=0&&ordinary>cap;i--){const car=cars[i];if(eligible(car)&&!protectedCar(car)&&offscreen(car,220)){const s=states.get(car);if(s)release(s);states.delete(car);cars.splice(i,1);ordinary--}}}
+  if(ordinary<cap&&templates.length&&options.replenish!==false){let add=Math.min(2,cap-ordinary);while(add-->0){const template=templates[sequence%templates.length],car={...template,id:'traffic-roam-'+(++sequence),ai:true,targetSpeed:template.baseSpeed,speed:0,health:100,parked:false},s={car,seed:hash(car.id)};const spawn=findSpawn(s,cars);if(!spawn)break;Object.assign(car,spawn.p);cars.push(car);restore(car,cars);totals.spawned++}}
+ }
+ function update(delta,ctx={}){const dt=clamp(finite(delta),0,.1);if(!dt)return;context=ctx;clock=finite(ctx.clock,clock+dt);const cars=ctx.cars||lastCars;lastCars=cars;if(!Array.isArray(cars))return;
+  for(const car of cars)if(eligible(car)&&!states.has(car))restore(car,cars,ctx);
+  refreshBlockedRoads(cars);const query=grid(cars,100),peds=grid(ctx.pedestrians||[],100);for(const [node,car]of owners)if(!cars.includes(car)||!eligible(car))owners.delete(node);
+  const active=cars.filter(eligible).sort((a,b)=>{const sa=state(a),sb=state(b);return finite(sb?.wait)-finite(sa?.wait)||String(a.id).localeCompare(String(b.id))});
+  for(const car of active){const s=state(car);if(!s)continue;if(car.health<=0){car.speed=0;continue}tryRoadRecovery(s,cars,ctx.pedestrians);if(s.recovery){recoverStep(s,dt,cars,ctx.pedestrians);continue}let cruise=s.cruise;if(ctx.weather==='RAIN')cruise*=.78;else if(ctx.weather==='FOG'||ctx.weather==='MIST')cruise*=.65;let target=cruise,hardGap=Infinity;s.reason='cruising';
+   const heading={x:Math.sin(car.angle),y:-Math.cos(car.angle)},near=query(car,180);for(const o of near){if(o===car)continue;const dx=o.x-car.x,dy=o.y-car.y,forward=dx*heading.x+dy*heading.y,side=Math.abs(dx*-heading.y+dy*heading.x);if(forward<=0||side>22)continue;
+    // Opposite-direction traffic has its own 24px separated lane. On bends,
+    // the junction reservation supplies the additional conflict protection.
+    const sameHeading=heading.x*Math.sin(finite(o.angle))+heading.y*-Math.cos(finite(o.angle));if(o.ai&&sameHeading<-.5&&side>18)continue;
+    const gap=forward-52;if(gap<hardGap)hardGap=gap;if(gap<150){target=Math.min(target,Math.sqrt(Math.max(0,2*185*gap)),Math.max(0,gap*1.7));s.reason='following'}
+   }
+   const closure=recoveryClosure(car,s);if(closure<Infinity){hardGap=Math.min(hardGap,closure);target=Math.min(target,Math.sqrt(2*185*closure));s.reason='recovery-yield'}
+   const crossing=pedestrianLimit(car,peds(car,110),target);if(crossing.speed<target)s.reason='pedestrian';target=crossing.speed;hardGap=Math.min(hardGap,crossing.gap);
+   for(const h of ctx.hazards||[])if(dist(car,h)<85){target=0;s.reason='hazard'}
+   for(const cop of ctx.cops||[])if(finite(ctx.wanted)>0&&dist(car,cop)<125)target=Math.min(target,cruise*.48);
+   if(!s.path){if(!s.next||blockedRoads.has(s.next.key))s.next=chooseNext(s);const remaining=s.edge.length-s.along,entryDistance=remaining-(stopOffset-extent),holder=owners.get(s.edge.b.id),blocked=boxBlocked(s,query);let allowed=holder===car;const reachesLine=hardGap>Math.max(2,entryDistance+2);if(allowed&&!reachesLine&&car.speed<2){owners.delete(s.edge.b.id);allowed=false;s.wait=0;}
+    if(!allowed&&remaining<140){s.wait+=dt;const green=signal(s.edge)!=='red';if(!owners.has(s.edge.b.id)&&!blocked&&green&&reachesLine){owners.set(s.edge.b.id,car);allowed=true;s.arrived=clock}}
+    if(!allowed){const gap=Math.max(0,entryDistance);target=Math.min(target,Math.sqrt(2*185*gap));hardGap=Math.min(hardGap,gap);if(remaining<150)s.reason=blocked?'exit-blocked':'junction'}
+    // An occupied exit is never an excuse to enter and block the junction.
+    if(!allowed&&blocked&&s.wait>8&&clock-finite(s.rerouteAt,-99)>5){const alternate=chooseNext(s,s.next);if(alternate){s.next=alternate;s.rerouteAt=clock}}
+    if(remaining<90&&s.next&&s.next.dir!==s.edge.dir)target=Math.min(target,48);
+    if(allowed&&clock-s.arrived>12&&remaining>5&&car.speed<1){owners.delete(s.edge.b.id);s.wait=0}
+   }else if(s.path.turn)target=Math.min(target,48);
+   const oldSpeed=finite(car.speed),accel=92,decel=205;car.speed=clamp(oldSpeed+clamp(target-oldSpeed,-decel*dt,accel*dt),0,s.cruise);let travel=Math.min(car.speed*dt,Math.max(0,hardGap));if(travel<car.speed*dt-.001)car.speed=travel/dt;
+   let moved=0;while(travel>.0001){const step=Math.min(4,travel),before={x:car.x,y:car.y};if(!s.path&&s.along+step>=s.edge.length){const rest=s.edge.length-s.along;if(rest>.0001){const p=point(s.edge,s.edge.length);if(solid(p.x,p.y)||!isRoad(p.x,p.y)){car.speed=0;totals.invalidSteps++;break}Object.assign(car,p);moved+=rest;travel-=rest;s.along=s.edge.length}if(owners.get(s.edge.b.id)!==car){car.speed=0;break}if(!s.next){car.speed=0;break}s.path=turnPath(s.edge,s.next);s.pathAlong=0;if(s.path.turn){s.turns++;totals.turns++}continue}
+    let p=nextPoint(s,step);if(solid(p.x,p.y)||!isRoad(p.x,p.y)){car.speed=0;totals.invalidSteps++;break}Object.assign(car,p);moved+=dist(before,car);travel-=step;
+    if(s.path){s.pathAlong+=step;if(s.pathAlong>=s.path.length-.001){const completed=s.edge.b.id;s.edge=s.next;s.along=0;s.path=null;s.pathAlong=0;s.next=chooseNext(s);s.wait=0;s.visited.add(district(s.edge.a));s.releaseNode=completed}}
+    else{s.along+=step;if(s.releaseNode!==undefined&&s.along>12){if(owners.get(s.releaseNode)===car)owners.delete(s.releaseNode);delete s.releaseNode}}
+   }
+   s.distance+=moved;totals.distance+=moved;s.stuck=moved<.1?s.stuck+dt:Math.max(0,s.stuck-dt*2);s.last={x:car.x,y:car.y};car.trackDist=s.distance;car.ring=district(car);car.trafficState=s.reason;car.trafficDistance=s.distance;car.trafficTrips=s.trips;car.trafficTurns=s.turns;
+  }
+  if(clock>=manageAt){manage(cars);manageAt=clock+2}
+ }
+ function diagnostics(){const rows=[...states.values()].filter(s=>eligible(s.car)).map(s=>({id:s.car.id,x:s.car.x,y:s.car.y,speed:s.car.speed,cruise:s.cruise,edge:s.edge.key,destination:s.destination?.id,next:s.next?.key||null,inJunction:!!s.path,recovering:!!s.recovery,distance:s.distance,trips:s.trips,turns:s.turns,stuck:s.stuck,wait:s.wait,reason:s.reason,visited:[...s.visited],protected:protectedCar(s.car),road:isRoad(s.car.x,s.car.y),solid:solid(s.car.x,s.car.y)}));return{version:1,cap,speedScale,laneOffset:lane,junctionStopOffset:stopOffset,nodes:nodes.length,edges:edges.length,clock,population:ambientPopulation(lastCars),managed:rows.length,peak,...totals,reservations:[...owners.keys()],reservationOwners:[...owners].map(([node,car])=>({node,id:car.id})),blockedRoads:[...blockedRoads.keys()],cars:rows}}
+ return{bootstrap,restore,update,reset,diagnostics,signal,protectedCar};
+}
+global.GlowportAmbientTraffic=Object.freeze({create});if(typeof module!=='undefined'&&module.exports)module.exports=global.GlowportAmbientTraffic;
+})(typeof window!=='undefined'?window:globalThis);
+</script>
+<script>/* Ambient citizens use the existing painted crossings and sidewalks. No map,
+ * mission actor, rendering or input data is generated or changed here. */
+(function(global){
+'use strict';
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v)),dist=(a,b)=>Math.hypot(a.x-b.x,a.y-b.y),point=p=>({x:p.x,y:p.y}),finite=p=>p&&Number.isFinite(p.x)&&Number.isFinite(p.y);
+function create(options={}){
+ const {roadXs=[],roadYs=[],STREET=66,MW=7200,MH=5040,landmarks=[],solid=()=>false,clearLine=(a,b)=>!solid(a.x,a.y,9)&&!solid(b.x,b.y,9),districtFor=()=>({id:'core'}),visible=()=>false}=options;
+ const offset=STREET/2+10,cap=clamp(Math.floor(options.cap||170),20,220),nodes=[],edges=[],corners=new Map(),trees=new Map(),routeCacheLimit=clamp(Math.floor(options.routeCacheLimit||128),24,256);let treeBuilds=0,treeHits=0,routeFailures=0,recoveries=0,rebalanced=0,maxPopulation=0,nextPopulation=0,obstaclesAt=-Infinity,obstacleStamp='';const blockedEdges=new Set();let parkedObstacles=[];
+ const protectedNpc=n=>!n||n.mission||n.missionId||n.quest||n.scripted||n.persistent||n.storyActor||n._mission||n._missionActor||n._encounterScene;
+ const forbidden=p=>landmarks.some(l=>dist(p,l)<38);
+ function node(x,y){const id=nodes.length;nodes.push({id,x,y,edges:[]});return id}
+ function edge(a,b,crossing=false){if(!clearLine(nodes[a],nodes[b],9))return;const e={id:edges.length,a,b,crossing,length:dist(nodes[a],nodes[b])};edges.push(e);nodes[a].edges.push(e.id);nodes[b].edges.push(e.id)}
+ for(let ix=0;ix<roadXs.length;ix++)for(let iy=0;iy<roadYs.length;iy++)for(const sx of[-1,1])for(const sy of[-1,1]){const x=roadXs[ix]+sx*offset,y=roadYs[iy]+sy*offset;if(!solid(x,y,9))corners.set([ix,iy,sx,sy].join(':'),node(x,y))}
+ const corner=(i,j,s,t)=>corners.get([i,j,s,t].join(':'));
+ function connect(a,b,crossing){if(a!==undefined&&b!==undefined)edge(a,b,crossing)}
+ for(let i=0;i<roadXs.length;i++)for(let j=0;j<roadYs.length;j++){
+  for(const s of[-1,1]){connect(corner(i,j,-1,s),corner(i,j,1,s),true);connect(corner(i,j,s,-1),corner(i,j,s,1),true);if(i+1<roadXs.length)connect(corner(i,j,1,s),corner(i+1,j,-1,s),false);if(j+1<roadYs.length)connect(corner(i,j,s,1),corner(i,j+1,s,-1),false)}
+ }
+ const edgeCells=new Map(),cellSize=350;
+ for(const e of edges){const a=nodes[e.a],b=nodes[e.b];for(let x=Math.floor(Math.min(a.x,b.x)/cellSize);x<=Math.floor(Math.max(a.x,b.x)/cellSize);x++)for(let y=Math.floor(Math.min(a.y,b.y)/cellSize);y<=Math.floor(Math.max(a.y,b.y)/cellSize);y++){const key=x+':'+y;if(!edgeCells.has(key))edgeCells.set(key,[]);edgeCells.get(key).push(e)}}
+ function project(p,a,b){const dx=b.x-a.x,dy=b.y-a.y,t=clamp(((p.x-a.x)*dx+(p.y-a.y)*dy)/(dx*dx+dy*dy||1),0,1);return{x:a.x+dx*t,y:a.y+dy*t}}
+ function onCrosswalk(p){return roadXs.some(x=>Math.abs(Math.abs(p.x-x)-offset)<8&&roadYs.some(y=>Math.abs(p.y-y)<=offset+1))||roadYs.some(y=>Math.abs(Math.abs(p.y-y)-offset)<8&&roadXs.some(x=>Math.abs(p.x-x)<=offset+1))}
+ function onRoad(p){return roadXs.some(x=>Math.abs(p.x-x)<STREET/2-1)||roadYs.some(y=>Math.abs(p.y-y)<STREET/2-1)}
+ function connector(a,b){if(!clearLine(a,b,9))return false;const len=dist(a,b),steps=Math.max(1,Math.ceil(len/8));for(let k=0;k<=steps;k++){const p={x:a.x+(b.x-a.x)*k/steps,y:a.y+(b.y-a.y)*k/steps};if(onRoad(p)&&!onCrosswalk(p))return false}return true}
+ function nearest(p,{sidewalkOnly=false,connect=true}={}){
+  if(!finite(p))return null;let best=null;const cx=Math.floor(p.x/cellSize),cy=Math.floor(p.y/cellSize),seen=new Set();
+  for(let radius=0;radius<4;radius++){for(let x=cx-radius;x<=cx+radius;x++)for(let y=cy-radius;y<=cy+radius;y++){if(radius&&Math.abs(x-cx)!==radius&&Math.abs(y-cy)!==radius)continue;for(const e of edgeCells.get(x+':'+y)||[]){if(seen.has(e.id)||sidewalkOnly&&e.crossing)continue;seen.add(e.id);const q=project(p,nodes[e.a],nodes[e.b]),distance=dist(p,q);if((!best||distance<best.d)&&(!connect||connector(p,q)))best={...q,e,d:distance}}}if(best&&best.d<Math.max(1,radius*cellSize-100))break}
+  return best;
+ }
+ function obstacleClear(a,b){return !parkedObstacles.some(c=>dist(c,project(c,a,b))<27)}
+ function refreshObstacles(cars,clock){if(clock<obstaclesAt+1&&clock>=obstaclesAt)return;obstaclesAt=clock;parkedObstacles=(cars||[]).filter(c=>finite(c)&&!c.ai&&Math.abs(c.speed||0)<8);const stamp=parkedObstacles.map(c=>Math.round(c.x/4)+':'+Math.round(c.y/4)).join('|');if(stamp===obstacleStamp)return;obstacleStamp=stamp;blockedEdges.clear();for(const c of parkedObstacles){const cx=Math.floor(c.x/cellSize),cy=Math.floor(c.y/cellSize);for(let x=cx-1;x<=cx+1;x++)for(let y=cy-1;y<=cy+1;y++)for(const e of edgeCells.get(x+':'+y)||[])if(dist(c,project(c,nodes[e.a],nodes[e.b]))<27)blockedEdges.add(e.id)}trees.clear()}
+ function heapPush(heap,value){heap.push(value);let i=heap.length-1;while(i){const p=(i-1)>>1;if(heap[p][0]<=value[0])break;heap[i]=heap[p];i=p}heap[i]=value}
+ function heapPop(heap){const first=heap[0],tail=heap.pop();if(heap.length){let i=0;while(i*2+1<heap.length){let n=i*2+1;if(n+1<heap.length&&heap[n+1][0]<heap[n][0])n++;if(heap[n][0]>=tail[0])break;heap[i]=heap[n];i=n}heap[i]=tail}return first}
+ function tree(start){if(trees.has(start)){treeHits++;const old=trees.get(start);trees.delete(start);trees.set(start,old);return old}treeBuilds++;const costs=new Float64Array(nodes.length).fill(Infinity),previous=new Int32Array(nodes.length).fill(-1),via=new Int32Array(nodes.length).fill(-1),heap=[];costs[start]=0;heapPush(heap,[0,start]);while(heap.length){const[cost,id]=heapPop(heap);if(cost!==costs[id])continue;for(const eid of nodes[id].edges){if(blockedEdges.has(eid))continue;const e=edges[eid],other=e.a===id?e.b:e.a,next=cost+e.length+(e.crossing?16:0);if(next<costs[other]){costs[other]=next;previous[other]=id;via[other]=eid;heapPush(heap,[next,other])}}}const result={costs,previous,via};trees.set(start,result);if(trees.size>routeCacheLimit)trees.delete(trees.keys().next().value);return result}
+ function sameSideCurb(from,to){for(const center of roadXs)if((from.x-center)*(to.x-center)<-.01)return false;for(const center of roadYs)if((from.y-center)*(to.y-center)<-.01)return false;return true}
+ function pavementError(p){let error=Infinity;for(const x of roadXs)error=Math.min(error,Math.abs(Math.abs(p.x-x)-offset));for(const y of roadYs)error=Math.min(error,Math.abs(Math.abs(p.y-y)-offset));return error}
+ function route(from,to){
+  if(!finite(from)||!finite(to)||solid(from.x,from.y,9)||solid(to.x,to.y,9))return[];
+  const a=nearest(from),b=nearest(to);if(!a||!b){if(!a){const curb=nearest(from,{sidewalkOnly:true,connect:false});if(curb&&curb.d>.01&&curb.d<=offset&&sameSideCurb(from,curb)&&clearLine(from,curb,9)){const tail=route(curb,to);if(tail.length)return[point(from),...tail]}}routeFailures++;return[]}
+  if(a.e.id===b.e.id&&connector(a,b)&&obstacleClear(a,b)){const out=[point(from),{...point(a),crossing:a.e.crossing},{...point(b),crossing:a.e.crossing},point(to)];return out.filter((p,i)=>!i||dist(p,out[i-1])>.1)}
+  let best=null;for(const start of[a.e.a,a.e.b]){if(!obstacleClear(a,nodes[start]))continue;const t=tree(start);for(const end of[b.e.a,b.e.b]){if(!obstacleClear(b,nodes[end]))continue;const cost=dist(a,nodes[start])+t.costs[end]+dist(b,nodes[end]);if(Number.isFinite(cost)&&(!best||cost<best.cost))best={start,end,t,cost}}}if(!best){routeFailures++;return[]}
+  const ids=[];for(let id=best.end;id>=0;id=best.t.previous[id])ids.push(id);ids.reverse();const out=[point(from),{...point(a),crossing:a.e.crossing}];for(let k=0;k<ids.length;k++){const incoming=k?edges[best.t.via[ids[k]]]:a.e;out.push({...point(nodes[ids[k]]),crossing:incoming.crossing})}out.push({...point(b),crossing:b.e.crossing},point(to));return out.filter((p,i)=>!i||dist(p,out[i-1])>.1);
+ }
+ function setDestination(n,to){if(protectedNpc(n)||!finite(to))return false;const sameGoal=finite(n.goal)&&dist(n.goal,to)<3;n.goal=point(to);n.waypoints=route(n,to);n._ambientRouteFailures=n.waypoints.length?0:(n._ambientRouteFailures||0)+1;n.waypoint=0;n.stuckTime=0;n._ambientCrossing=false;n._ambientWaitingCrossing=false;if(!sameGoal){n._ambientAnchor={x:n.x,y:n.y};n._ambientAnchorTime=undefined;n._ambientNoProgress=0}return n.waypoints.length>0}
+ function safePoint(p){const q=nearest(p,{sidewalkOnly:true,connect:false});if(!q)return null;const a=nodes[q.e.a],b=nodes[q.e.b],length=dist(a,b)||1,candidates=[point(q),...[-58,58,-94,94].map(delta=>({x:clamp(q.x+(b.x-a.x)/length*delta,Math.min(a.x,b.x),Math.max(a.x,b.x)),y:clamp(q.y+(b.y-a.y)/length*delta,Math.min(a.y,b.y),Math.max(a.y,b.y))})),a,b];return candidates.find(v=>!solid(v.x,v.y,10)&&!forbidden(v))?point(candidates.find(v=>!solid(v.x,v.y,10)&&!forbidden(v))):null}
+ function reset(){trees.clear();treeBuilds=0;treeHits=0;parkedObstacles=[];blockedEdges.clear();obstaclesAt=-Infinity;obstacleStamp='';routeFailures=0;recoveries=0;rebalanced=0;maxPopulation=0;nextPopulation=0}
+ function bootstrap(npcs,context={}){reset();if(!Array.isArray(npcs))return;const placed=[],focus=context.focus;
+  for(const n of npcs){if(protectedNpc(n)){placed.push(n);continue}let p=safePoint(n);if(!p)continue;for(let trial=0;trial<20&&placed.some(o=>dist(o,p)<23);trial++){const edge=edges[((Number(n.id)||0)*977+trial*613)%edges.length];if(!edge||edge.crossing)continue;const a=nodes[edge.a],b=nodes[edge.b],candidate={x:(a.x+b.x)/2,y:(a.y+b.y)/2};if(!forbidden(candidate)&&!solid(candidate.x,candidate.y,10))p=candidate}n.x=p.x;n.y=p.y;n.home=safePoint(n.home)||point(p);n.homeX=n.home.x;n.homeY=n.home.y;n.work=safePoint(n.work)||point(p);n.leisure=safePoint(n.leisure)||point(p);n._ambientAnchorTime=Number(context.clock)||0;for(const key of['_ambientTrips','_ambientDistance','_ambientCrossings','_ambientRecoveries'])n[key]=0;setDestination(n,n.phase==='home'?n.home:n.phase==='work'?n.work:n.leisure);placed.push(n)}
+  // The old initializer clustered 44 people around every start. Spread only
+  // excess initial ambient citizens before the first playable frame.
+  if(finite(focus)){const type=options.classify?.(focus.x,focus.y,districtFor(focus.x,focus.y)?.id),district=districtFor(focus.x,focus.y)?.id||'core',target=type==='industrial'||district==='east'?7:type==='residential'||district==='north'?10:district==='core'?22:14;let local=0;for(const n of npcs){if(protectedNpc(n)||dist(n,focus)>=720)continue;if(++local<=target)continue;for(let trial=0;trial<40;trial++){const e=edges[((Number(n.id)||0)*2377+trial*661)%edges.length];if(e.crossing)continue;const a=nodes[e.a],b=nodes[e.b],candidate={x:(a.x+b.x)/2,y:(a.y+b.y)/2};if(dist(candidate,focus)<850||forbidden(candidate)||npcs.some(o=>o!==n&&dist(o,candidate)<25))continue;n.x=candidate.x;n.y=candidate.y;n.home=point(candidate);n.homeX=n.x;n.homeY=n.y;setDestination(n,n.phase==='home'?n.home:n.phase==='work'?n.work:n.leisure);break}}}
+  maxPopulation=npcs.length;
+ }
+ function destination(n,spread=850){const center=n.phase==='work'?n.work:n.phase==='home'?n.home:n.leisure,origin=finite(center)?center:n,seed=((Number(n.id)||0)*1103515245+Math.floor(n._ambientTrips||0)*12345+Math.floor(n._ambientRecoveries||0)*7649+Math.floor(n._ambientRouteFailures||0)*8191)>>>0;let best=null;
+  for(let i=0;i<16;i++){const e=edges[(seed+i*7919)%Math.max(1,edges.length)];if(!e||e.crossing)continue;const a=nodes[e.a],b=nodes[e.b],t=.2+((seed+i*31)%60)/100,p={x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t},distance=dist(origin,p);if(distance>spread||dist(n,p)<90||forbidden(p)||!obstacleClear(p,p))continue;if(!best||distance<best.d)best={...p,d:distance}}
+  if(best)return point(best);const local=nearest(n,{sidewalkOnly:true,connect:false});if(local){const e=local.e,a=nodes[e.a],b=nodes[e.b];return point(dist(n,a)>dist(n,b)?a:b)}return finite(center)?point(center):point(n);
+ }
+ function vehicleThreat(n,target,cars){const a=point(n),b=target,dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy)||1;for(const c of cars||[]){const speed=Math.abs(c.speed||0);if(speed<8||!finite(c)||dist(c,n)>260)continue;const fx=Math.sin(c.angle||0)*(c.speed<0?-1:1),fy=-Math.cos(c.angle||0)*(c.speed<0?-1:1),ahead=speed*2.8+32,end={x:c.x+fx*ahead,y:c.y+fy*ahead};const q=project(c,a,b),r=project(q,c,end);if(dist(q,r)<25&&(q.x-c.x)*fx+(q.y-c.y)*fy>-18)return true}return false}
+ function move(n,dx,dy){if(options.moveCircle)return !!options.moveCircle(n,dx,dy,9);let blocked=false;const steps=Math.max(1,Math.ceil(Math.max(Math.abs(dx),Math.abs(dy))/4));for(let i=0;i<steps;i++){if(!solid(n.x+dx/steps,n.y,9))n.x+=dx/steps;else blocked=true;if(!solid(n.x,n.y+dy/steps,9))n.y+=dy/steps;else blocked=true}return blocked}
+ function step(n,dt,context={}){
+  if(protectedNpc(n))return false;dt=clamp(Number(dt)||0,0,.1);const clock=Number(context.clock)||0;refreshObstacles(context.cars,clock);maxPopulation=Math.max(maxPopulation,Number(context.population)||0);n._ambientDistance=Number(n._ambientDistance)||0;n._ambientTrips=Number(n._ambientTrips)||0;n._ambientCrossings=Number(n._ambientCrossings)||0;
+  if(n.panic>0&&finite(context.focus)&&clock>=(n._ambientPanicRouteAt||0)){n._ambientPanicRouteAt=clock+1;const away={x:clamp(n.x+(n.x-context.focus.x)*3,60,MW-60),y:clamp(n.y+(n.y-context.focus.y)*3,60,MH-60)},goal=safePoint(away);if(goal)setDestination(n,goal)}
+  if(!Array.isArray(n.waypoints))n.waypoints=[];if(!Number.isFinite(n.waypoint))n.waypoint=0;
+  while(n.waypoint<n.waypoints.length&&dist(n,n.waypoints[n.waypoint])<1){if(n.waypoints[n.waypoint].crossing)n._ambientCrossings++;n.waypoint++}
+  if(n.waypoint>=n.waypoints.length){n._ambientCrossing=false;n._ambientWaitingCrossing=false;if(n._ambientHadRoute){n._ambientTrips++;n._ambientHadRoute=false;n.dwell=2+(Number(n.id)||0)%7}n.dwell=(Number(n.dwell)||0)-dt;if(n.dwell<=0){n.dwell=2+(Number(n.id)||0)%7;setDestination(n,destination(n));}return true}
+  if(!obstacleClear(n,n.waypoints[n.waypoint])){n._ambientRecoveries=(n._ambientRecoveries||0)+1;recoveries++;const goal=n.goal;setDestination(n,goal);if(!n.waypoints.length){n.dwell=.5;return true}while(n.waypoint<n.waypoints.length&&dist(n,n.waypoints[n.waypoint])<1)n.waypoint++;if(n.waypoint>=n.waypoints.length)return true}n._ambientHadRoute=true;const target=n.waypoints[n.waypoint],distance=dist(n,target);if(!distance)return true;
+  if(target.crossing){if(!n._ambientCrossing&&vehicleThreat(n,target,context.cars)){n._ambientWaitingCrossing=true;n.stuckTime=0;return true}n._ambientWaitingCrossing=false;n._ambientCrossing=true}else{n._ambientCrossing=false;n._ambientWaitingCrossing=false}
+  let vx=(target.x-n.x)/distance,vy=(target.y-n.y)/distance,scale=clamp(Number(context.speedMultiplier)||1,.2,2),speed=clamp(Number(n.speed)||36,20,60)*scale*(n.panic>0?1.7:1),wait=false;
+  // Passing corrections stay small; do not steer citizens off the graph into
+  // walls or apply reciprocal repulsion that cancels both walkers' velocity.
+  for(const other of context.peers||[]){if(other===n||protectedNpc(other)||!finite(other))continue;const dx=other.x-n.x,dy=other.y-n.y,forward=dx*vx+dy*vy,side=dx*-vy+dy*vx;if(forward<=0||forward>25||Math.abs(side)>13)continue;if(forward<13&&(Number(other.id)||0)<(Number(n.id)||0)){wait=true;break}const sign=(Number(n.id)||0)<(Number(other.id)||0)?1:-1,q={x:n.x-vy*sign*5,y:n.y+vx*sign*5};if(!n._ambientCrossing&&!solid(q.x,q.y,9)){vx=(target.x-q.x)/Math.max(1,dist(q,target))-vy*sign*.35;vy=(target.y-q.y)/Math.max(1,dist(q,target))+vx*sign*.35;const mag=Math.hypot(vx,vy)||1;vx/=mag;vy/=mag}}
+  const before=point(n),amount=Math.min(distance,speed*dt);let blocked=false;
+  // Peer passing must stay on the original pavement/crosswalk band. The former
+  // constant lateral bias could drift a walker into an asphalt lane, where its
+  // next schedule connector failed forever. A displaced citizen may walk back
+  // toward the same-side curb; no position is snapped or teleported.
+  const proposed={x:n.x+vx*amount,y:n.y+vy*amount},currentError=pavementError(n),nextError=pavementError(proposed);
+  if(nextError>7&&nextError>currentError+.001){vx=(target.x-n.x)/distance;vy=(target.y-n.y)/distance}
+  if(!wait)blocked=move(n,vx*amount,vy*amount);const moved=dist(before,n);n._ambientDistance+=moved;n.step=(Number(n.step)||0)+(moved>0?dt*7:0);n.face=Math.abs(vx)>Math.abs(vy)?(vx>0?'right':'left'):(vy>0?'down':'up');n.angle=Math.atan2(vy,vx);
+  n.stuckTime=moved<.12?(Number(n.stuckTime)||0)+dt:Math.max(0,(Number(n.stuckTime)||0)-dt*.8);n._ambientNoProgress=moved<.12?(Number(n._ambientNoProgress)||0)+dt:Math.max(0,(Number(n._ambientNoProgress)||0)-dt*.8);
+  if(!n._ambientAnchor||!Number.isFinite(n._ambientAnchorTime)||dist(n,n._ambientAnchor)>22){n._ambientAnchor=point(n);n._ambientAnchorTime=clock}
+  const stalled=clock-n._ambientAnchorTime>6;
+  if((n.stuckTime>2.2||n._ambientNoProgress>2.2||stalled)&&clock>=(n._ambientRetryAt||0)){n._ambientRetryAt=clock+2;n._ambientRecoveries=(n._ambientRecoveries||0)+1;recoveries++;const goal=destination(n,600);setDestination(n,goal);n._ambientAnchorTime=clock}
+  if(blocked&&n.stuckTime>.4&&n.waypoint>0){const previous=n.waypoints[n.waypoint-1];if(connector(n,previous)&&dist(n,previous)>12){n.waypoints=[point(n),point(previous),...n.waypoints.slice(n.waypoint)];n.waypoint=1}}
+  return true;
+ }
+ function maintain(npcs,context={}){
+  if(!Array.isArray(npcs))return;const clock=Number(context.clock)||0;refreshObstacles(context.cars,clock);maxPopulation=Math.max(maxPopulation,npcs.length);if(clock<nextPopulation)return;nextPopulation=clock+5;
+  // Existing citizens are reused off camera, rather than an unbounded spawner.
+  for(let i=npcs.length-1;i>=0&&npcs.length>cap;i--)if(!protectedNpc(npcs[i])&&!visible(npcs[i],context)){npcs.splice(i,1)}
+  const focus=context.focus;if(!finite(focus)||!nodes.length)return;const district=districtFor(focus.x,focus.y)?.id||'core',type=options.classify?.(focus.x,focus.y,district),target=type==='industrial'||district==='east'?7:type==='residential'||district==='north'?10:district==='core'?22:14,local=npcs.filter(n=>!protectedNpc(n)&&dist(n,focus)<720).length;
+  if(local>=target)return;let count=0;for(const n of npcs){if(count>=Math.min(3,target-local))break;if(protectedNpc(n)||visible(n,context)||dist(n,focus)<1900||n.panic>0||clock<(n._ambientRelocatedAt||-100)+30)continue;
+   const e=edges[((Number(n.id)||0)*1171+Math.floor(clock/5)*79)%edges.length];if(!e||e.crossing)continue;const a=nodes[e.a],b=nodes[e.b],p={x:(a.x+b.x)/2,y:(a.y+b.y)/2};if(dist(p,focus)<580||dist(p,focus)>1100||visible(p,context)||forbidden(p)||npcs.some(o=>o!==n&&dist(o,p)<28))continue;
+   n.x=p.x;n.y=p.y;n._ambientRelocatedAt=clock;n._ambientAnchorTime=clock;setDestination(n,destination(n,650));rebalanced++;count++;
+  }
+ }
+ function diagnostics(npcs=[]){return{nodes:nodes.length,edges:edges.length,crosswalks:edges.filter(e=>e.crossing).length,routeCache:trees.size,routeCacheLimit,treeBuilds,treeHits,blockedEdges:blockedEdges.size,cap,maxPopulation,population:npcs.length,routeFailures,recoveries,rebalanced,moved:npcs.filter(n=>(n._ambientDistance||0)>30).length,trips:npcs.reduce((sum,n)=>sum+(n._ambientTrips||0),0),crossings:npcs.reduce((sum,n)=>sum+(n._ambientCrossings||0),0),entities:npcs.map(n=>({id:n.id,x:n.x,y:n.y,goal:n.goal,waypoint:n.waypoint,waypoints:n.waypoints?.length||0,moved:n._ambientDistance||0,trips:n._ambientTrips||0,crossings:n._ambientCrossings||0,recoveries:n._ambientRecoveries||0,crossing:!!n._ambientCrossing,waitingCrossing:!!n._ambientWaitingCrossing,protected:!!protectedNpc(n)}))}}
+ return{route,setDestination,safePoint,destination,step,maintain,bootstrap,reset,diagnostics,protectedNpc,nodes,edges,onCrosswalk,onRoad,cap};
+}
+global.GlowportPedestrians=Object.freeze({create});if(typeof module!=='undefined'&&module.exports)module.exports=global.GlowportPedestrians;
 })(typeof window!=='undefined'?window:globalThis);
 </script>
 <script>/* Evidence objectives and checkpoint deliveries. State is plain JSON for old-save migration. */
@@ -3588,6 +3955,10 @@ for(let s of segments){let len=distance(s.a.x,s.a.y,s.b.x,s.b.y);for(let u=85;u<
 const residentialInfill=GlowportResidential.apply(buildings,{landmarks,roadXs,roadYs,limit:16});
 cityLayout=GlowportRestoredCity.create({MW,MH,lands,roadXs,roadYs,STREET,buildings,trees,debris,streetlights,roads:streetPaths,segments,districtRings,landmarks});
 for(const ring of Object.values(districtRings)){ring.lanes=ring.map(()=>12);ring.signals=ring.map(()=>true)}
+// Facade annotations and ambient graphs reuse the recovered geometry above.
+const neighborhoodDetails=typeof GlowportNeighborhoods==='undefined'?null:GlowportNeighborhoods.apply(buildings,{landmarks,roadXs,roadYs,STREET});
+const ambientTraffic=typeof GlowportAmbientTraffic==='undefined'?null:GlowportAmbientTraffic.create({roadXs,roadYs,STREET,MW,MH,solid:solidWorld,isRoad:(x,y,r)=>cityLayout.navigation.isRoad(x,y,r),district:districtFor,classify:(x,y)=>neighborhoodDetails?.classify(x,y,districtFor(x,y).id),signals:Object.entries(districtRings).flatMap(([id,ring])=>ring.map((p,k)=>({...p,offset:lands.findIndex(d=>d.id===id)*4+k*7}))),cap:43});
+const ambientPedestrians=typeof GlowportPedestrians==='undefined'?null:GlowportPedestrians.create({roadXs,roadYs,STREET,MW,MH,landmarks,solid:solidWorld,clearLine:segmentClear,moveCircle,districtFor,classify:(x,y)=>neighborhoodDetails?.classify(x,y,districtFor(x,y).id),cap:170,visible:(p,context={})=>{const view=context.camera||camera;return p.x>view.x-140&&p.x<view.x+W+140&&p.y>view.y-140&&p.y<view.y+H+140}});
 const terrainWorld={MW,MH,lands,roadXs,roadYs,STREET,buildings,trees,debris,streetlights,roads:streetPaths,segments};
 const terrain=GlowportTerrain.create({world:terrainWorld,bake:GlowportArt.bakeTerrain,tileSize:1024,maxTiles:6});
 function neonRect(c,x,y,w,h,color,alpha=.24){c.save();c.globalAlpha=alpha;for(let i=3;i>=1;i--){c.fillStyle=color;c.fillRect(Math.floor(x-i),Math.floor(y-i),Math.floor(w+i*2),Math.floor(h+i*2))}c.restore()}
@@ -3708,6 +4079,7 @@ const eventCatalog=[
  {id:'outage',title:'BLACKOUT BLOCK',desc:'The local power box blew. Restore the streetlights.',pay:190}
 ];
 let streetEvent=null,eventSpawnAt=22,weather='CLEAR',nextWeatherAt=115,cityAlert='',cityAlertUntil=0,cityEventsFinished=0,relations={},trafficTick=0;
+let npcScheduleClock=-Infinity,npcScheduleCount=0;
 function cityMinute(){return (CITY_START_MINUTES+Math.floor(world.clock*1440/CITY_DAY_SECONDS))%1440}
 function formatCityClock(){let t=cityMinute(),h=Math.floor(t/60),m=t%60;return ((h+11)%12+1)+':'+String(m).padStart(2,'0')+(h<12?' AM':' PM')}
 function timePhase(){let hour=cityMinute()/60;return hour<7||hour>=22?'home':hour<16?'work':'leisure'}
@@ -3738,10 +4110,21 @@ function pedestrianRoute(from,to){
  const safe=out.every((p,i)=>!i||segmentClear(out[i-1],p,9))?out:route;
  return safe.filter((p,i)=>i||distance(p.x,p.y,from.x,from.y)>4);
 }
-function setNpcDestination(n,to){n.goal={x:to.x,y:to.y};n.waypoints=pedestrianRoute(n,n.goal);n.waypoint=0;n.stuckTime=0;}
+function setNpcDestination(n,to){if(ambientPedestrians)return ambientPedestrians.setDestination(n,to);n.goal={x:to.x,y:to.y};n.waypoints=pedestrianRoute(n,n.goal);n.waypoint=0;n.stuckTime=0;}
 
-function settleNpcSchedule(n,force=false){let phase=timePhase();if(!force&&n.phase===phase)return;n.phase=phase;
- let dest=phase==='home'?n.home:phase==='work'?n.work:n.leisure;
+function settleNpcSchedule(n,force=false){
+ if(ambientPedestrians?.protectedNpc?.(n))return;
+ const phase=timePhase();if(!force&&n.phase===phase){delete n._ambientPendingPhase;delete n._ambientScheduleDue;return}
+ // Ambient residents change routines over a few seconds instead of rebuilding
+ // every sidewalk route in one frame. Initial/load placement remains immediate.
+ if(!force&&ambientPedestrians&&n.phase!=null){
+  if(n._ambientPendingPhase!==phase){n._ambientPendingPhase=phase;n._ambientScheduleDue=world.clock+((Math.abs(Number(n.id)||0)*37)%61)*.05}
+  if(world.clock<n._ambientScheduleDue)return;
+  if(npcScheduleClock!==world.clock){npcScheduleClock=world.clock;npcScheduleCount=0}
+  if(npcScheduleCount>=8)return;npcScheduleCount++;
+ }
+ delete n._ambientPendingPhase;delete n._ambientScheduleDue;n.phase=phase;
+ const dest=phase==='home'?n.home:phase==='work'?n.work:n.leisure;
  setNpcDestination(n,dest);n.dwell=0;
 }
 function socialFavor(n,delta){relations[n.id]=clamp((relations[n.id]||0)+delta,-4,6);n.affinity=relations[n.id];}
@@ -3782,7 +4165,7 @@ function updateCityLife(dt){
  if(world.clock>=nextWeatherAt){let next=pick(WEATHER_TYPES);if(next!==weather){weather=next;setCityAlert('WEATHER UPDATE: '+weather,3)}nextWeatherAt=world.clock+rnd(85,155)}
  if(streetEvent){if(world.clock>streetEvent.expiry){setCityAlert('STREET EVENT EXPIRED',2);streetEvent=null;eventSpawnAt=world.clock+rnd(16,35)}}
  else if(!gameplay&&world.clock>=eventSpawnAt)startStreetEvent();
- for(let n of npcs)settleNpcSchedule(n);
+ for(let n of npcs)if(!ambientPedestrians?.protectedNpc?.(n))settleNpcSchedule(n);
 }
 function drawStreetSignals(){
  for(let d of lands){let ring=districtRings[d.id];for(let k=0;k<ring.length;k++){
@@ -3819,6 +4202,7 @@ function loopAt(r,metres,lane=null){let total=loopLength(r),d=((metres%total)+to
  }
 }
 function restoreTraffic(car){
+ if(ambientTraffic)return ambientTraffic.restore(car,cars,{focus:player.inCar||player,playerCar:player.inCar,camera,width:W,height:H});
  if(!car?.ai)return car;
  const current=districtRings[car.ring];
  if(car._trafficMapVersion===3&&current&&Number.isFinite(car.trackDist)){
@@ -3846,6 +4230,7 @@ function spawnTraffic(){cars.length=0;
  }
  let place=closestRoadPoint(player.x+65,player.y+35);
  cars.push({id:'starter',modelId:'sedan',model:'Harbor Regent',x:place.x,y:place.y,angle:0,speed:0,health:100,color:'#ff60b3',ai:false,parked:true,personal:true,w:18,h:35,style:2});
+ ambientTraffic?.bootstrap(cars,{focus:player,playerCar:player.inCar,camera:{x:clamp(player.x-W/2,0,MW-W),y:clamp(player.y-H/2,0,MH-H)},width:W,height:H});
 }
 
 function spawnPedestrians(){npcs.length=0;
@@ -3862,6 +4247,7 @@ function spawnPedestrians(){npcs.length=0;
     dwell:rnd(0,8),affinity:relations[i]||0,waypoints:[],waypoint:0,stuckTime:0};
   settleNpcSchedule(n,true);npcs.push(n);
  }
+ ambientPedestrians?.bootstrap?.(npcs,{clock:world.clock,focus:player,camera:{x:clamp(player.x-W/2,0,MW-W),y:clamp(player.y-H/2,0,MH-H)},width:W,height:H});
 }
 function spawnCollectibles(){pickups.length=0;for(let k=0;k<55;k++){let d=pick(lands),p=pointAt(d,rnd(0,TAU),rnd(.25,.79));if(solidWorld(p.x,p.y,13))continue;pickups.push({x:p.x,y:p.y,amount:pick([15,25,40,55]),collected:false})}}
 function initialState(){GlowportInteractions.close();GlowportVehicles.closeGarage();GlowportAudio.close();resetInputs();pointer.active=false;damageFlash=0;saveClock=0;toastTimer=0;world={mapVersion:3,trust:{vee:0},story:0,side:null,wanted:0,crimeTimer:0,clock:0,nearHit:0,lastCopSpawn:-10};const h=lm('hotel');player={x:h?h.x:2410,y:h?h.y+32:1580,hp:150,maxHp:150,money:600,inCar:null,inside:null,ix:400,iy:380,face:'down',angle:0,walk:0,invuln:1.5,weapon:0,owned:[true,false,false,false,false],ammo:{pistol:0,shotgun:0,smg:0},mag:{pistol:0,shotgun:0,smg:0},cool:0,reload:0,armor:0};
@@ -3909,7 +4295,10 @@ function showConversationPage(){
  $('conversationBody').textContent=node.text;
  const opts=$('conversationChoices');opts.innerHTML='';
  let choices=node.choices||[{label:d.index===d.lines.length-1?'[ Continue ]':'[ Next ]',reaction:null}];
- choices.forEach((choice,i)=>{let btn=document.createElement('button');btn.className='chat-choice';btn.textContent=(i+1)+'. '+choice.label;btn.onclick=()=>advanceConversation(i);opts.appendChild(btn)});opts.querySelector('button')?.focus({preventScroll:true})
+ choices.forEach((choice,i)=>{let btn=document.createElement('button'),pressed=false;btn.className='chat-choice';btn.textContent=(i+1)+'. '+choice.label;
+  // A touch release can open this panel under the same finger. Its synthetic
+  // click must not select a new response that never received its own press.
+  btn.onpointerdown=()=>{pressed=true};btn.onpointercancel=()=>{pressed=false};btn.onclick=event=>{if(event.detail>0&&!pressed)return;pressed=false;advanceConversation(i)};opts.appendChild(btn)});opts.querySelector('button')?.focus({preventScroll:true})
 }
 function advanceConversation(i=0){
  if(!activeDialogue)return;let d=activeDialogue,node=d.lines[d.index],choice=(node.choices||[{label:'Next'}])[i];if(!choice)return;
@@ -3971,7 +4360,7 @@ function talkToInformant(){
 }
 function ambientSpeech(dt){
  let p=player.inCar||player,near=0;
- for(let n of npcs){n.sayTime=Math.max(0,(n.sayTime||0)-dt);n.nextSay-=dt;
+ for(let n of npcs){if(ambientPedestrians?.protectedNpc?.(n))continue;n.sayTime=Math.max(0,(n.sayTime||0)-dt);n.nextSay-=dt;
   let d=distance(n.x,n.y,p.x,p.y);
   if(d>150)n.contactLock=false;
   if(d<195&&n.sayTime>0)near++;
@@ -4149,6 +4538,7 @@ function updateBullets(dt){for(let bullet of bullets){bullet.life-=dt;let count=
  }}bullets.splice(0,bullets.length,...bullets.filter(b=>b.life>0));npcs.splice(0,npcs.length,...npcs.filter(n=>n.hp>0))}
 function trafficSignal(ring,corner){let order=['west','core','north','south','east'].indexOf(ring);let phase=(world.clock+(order*4+corner*7))%28;return phase<17?'green':phase<21?'amber':'red'}
 function updateTraffic(dt){
+ if(ambientTraffic){ambientTraffic.update(dt,{cars,clock:world.clock,focus:player.inCar||player,playerCar:player.inCar,camera,width:W,height:H,weather,wanted:world.wanted,cops:police,pedestrians:npcs,hazards:gameplay?.encounters?.hazards?.()||[]});return}
  for(let c of cars){if(!c.ai||c===player.inCar)continue;
   let rr=districtRings[c.ring],total=loopLength(rr),ahead=Infinity;
   for(let o of cars){if(o===c||!o.ai||o.ring!==c.ring)continue;let gap=(o.trackDist-c.trackDist+total)%total;if(gap>.001&&gap<ahead)ahead=gap}
@@ -4187,8 +4577,9 @@ function separatePedestrians(){
 function updateNpcs(dt){
  let focus=player.inCar||player,cell=56,spatial=new Map();
  for(let n of npcs){let k=Math.floor(n.x/cell)+','+Math.floor(n.y/cell);if(!spatial.has(k))spatial.set(k,[]);spatial.get(k).push(n)}
- for(let n of npcs){const cityMotion=livingCity?.updateNPC(n,dt,{clock:world.clock,weather,wanted:world.wanted,focus,reroute:setNpcDestination,hazards:gameplay?.encounters?.hazards?.()||[]});n.step+=dt*7;n.panic=Math.max(0,n.panic-dt);let d=distance(n.x,n.y,focus.x,focus.y);
+ for(let n of npcs){if(ambientPedestrians?.protectedNpc?.(n))continue;const cityMotion=livingCity?.updateNPC(n,dt,{clock:world.clock,weather,wanted:world.wanted,focus,reroute:setNpcDestination,hazards:gameplay?.encounters?.hazards?.()||[]});if(!ambientPedestrians)n.step+=dt*7;n.panic=Math.max(0,n.panic-dt);let d=distance(n.x,n.y,focus.x,focus.y);
   if(world.wanted>1&&d<150)n.panic=Math.max(n.panic,3);
+  if(ambientPedestrians){const peers=[],cx=Math.floor(n.x/cell),cy=Math.floor(n.y/cell);for(let ox=-1;ox<=1;ox++)for(let oy=-1;oy<=1;oy++)peers.push(...spatial.get((cx+ox)+','+(cy+oy))||[]);ambientPedestrians.step(n,dt,{clock:world.clock,focus,cars,peers,speedMultiplier:cityMotion?.speedMultiplier||1,population:npcs.length});continue}
   if(n.panic>0){n.angle=Math.atan2(n.y-focus.y,n.x-focus.x);n.waypoint=Math.max(0,n.waypoint)}
   else if(n.waypoint>=n.waypoints.length){n.dwell-=dt;
    if(n.dwell<=0){n.dwell=rnd(3,11);let center=n.phase==='home'?n.home:n.phase==='work'?n.work:n.leisure;
@@ -4210,7 +4601,7 @@ function updateNpcs(dt){
     else{setNpcDestination(n,n.goal||randomSidewalkNear(n.x,n.y,130));}}
   n.face=Math.abs(vx)>Math.abs(vy)?(vx>0?'right':'left'):(vy>0?'down':'up');n.angle=Math.atan2(vy,vx);
  }
- for(let pass=0;pass<2;pass++)separatePedestrians();ambientSpeech(dt);
+ if(ambientPedestrians)ambientPedestrians.maintain(npcs,{clock:world.clock,focus,camera,width:W,height:H});else for(let pass=0;pass<2;pass++)separatePedestrians();ambientSpeech(dt);
 }
 function updateDriving(dt){let car=player.inCar;const model=GlowportVehicles.profile(car);let input=movementInput(),go=-input.y,boost=controls.shift,cap=model.maxSpeed*(boost?model.boostMultiplier:1)*(1+(gameplay?.progression.state.skills.driving||0)*.001)*clamp((car.health??100)/100,.55,1);
  if(model.disabled){car.speed=0;return}
@@ -4333,7 +4724,7 @@ $('interactionMore').addEventListener('click',openInteractionMenu);$('soundBtn')
 touchInput=GlowportTouch.mount({root:$('touch'),state:()=>({playing:screen==='playing',blocked:!canPlayInput(),inCar:!!player?.inCar,inside:!!player?.inside,sneaking:!!player?.sneaking}),move:(x,y)=>{mobileMove=x||y?{x,y}:null;touchControls.left=x<-.01;touchControls.right=x>.01;touchControls.up=y<-.01;touchControls.down=y>.01;syncControls()},aim:(x,y)=>{mobileAim=x||y?{x,y}:null;pointer.active=false},control:(name,held)=>{if(name in touchControls){const pressed=held&&!controls[name];touchControls[name]=held;syncControls();if(name==='fire'&&pressed)shoot()}},action:touchAction,canFullscreen:()=>!!document.fullscreenEnabled&&typeof document.documentElement.requestFullscreen==='function'});
 if(touchInput.enabled){document.querySelector('.menu-mini').textContent='LEFT STICK: MOVE / DRIVE · DRAG RIGHT STICK: AIM + FIRE · INTERACT: TALK / ENTER';document.querySelector('.convo-hint').textContent='Tap a response or Continue.';}
 // Diagnostics for gameplay regression checks, not required by players.
-if(DEV_MODE)window.GlowportTest={get cityLayout(){return cityLayout},get residentialInfill(){return residentialInfill},getWorld:()=>terrainWorld,worldDiagnostics:()=>cityLayout.diagnostics(),get mapBase(){return mapBase},guidance:dest=>streetGuidance(dest),pedestrianRoute:(from,to)=>pedestrianRoute(from,to),interactions:()=>resolvedInteractions().map(({id,label,priority,distance})=>({id,label,priority,distance})),get livingCity(){return livingCity},debugSaveKey:memoryKey,terrain:()=>terrain.diagnostics(),input:()=>({controls:{...controls},keyboard:{...keyboardControls},touchControls:{...touchControls},pointer:{...pointer},move:mobileMove,aim:mobileAim,paused,touch:touchInput?.diagnostics()}),get system(){return gameplay},campaign:()=>gameplay?.diagnostics(),setMission:id=>gameplay?.fixture(id,0),setMissionStage:(id,index)=>gameplay?.fixture(id,index),landmarks:()=>landmarks.map(l=>({key:l.key,x:l.x,y:l.y,safe:!solidWorld(l.x,l.y+10,9),onLand:onLand(l.x,l.y+10),roadDistance:closestRoadPoint(l.x,l.y).d,inside:!!l.building})),getState:()=>({interior:{x:player?.ix,y:player?.iy},investigation:GlowportMissions.current(storyAt(),world),delivery:world.delivery?JSON.parse(JSON.stringify(world.delivery)):null,reserve:player?.ammo?{...player.ammo}:null,ammo:player?.mag?{...player.mag}:null,reloading:player?.reload,trust:world.trust,camera:{...camera},time:world.clock,screen,story:world.story,hp:player.hp,money:player.money,wanted:world.wanted,inside:player.inside,player:{x:player.x,y:player.y,weapon:player.weapon},cars:cars.length,buildings:buildings.length,landmarks:landmarks.length,roadSegments:segments.length,mapW:MW,mapH:MH,roadCols:roadXs.length,roadRows:roadYs.length,dialogue:!!activeDialogue,practice:(world.practice||[]).length,training:world.trainingSpawned,talking:world.talkCount,trafficMinGap:Math.min(...cars.filter(c=>c.ai).map(c=>Math.min(...cars.filter(o=>o!==c&&o.ai&&o.ring===c.ring).map(o=>distance(c.x,c.y,o.x,o.y))))),enemies:enemies.length,police:police.length,bullets:bullets.length,car:!!player.inCar,side:world.side?.to||null}),launch,teleport:key=>{let a=lm(key);player.inside=null;player.inCar=null;player.x=a.x;player.y=a.y+10;camera.x=clamp(player.x-W/2,0,MW-W);camera.y=clamp(player.y-H/2,0,MH-H);updateHud()},getTargets:()=>world.practice.map(t=>({...t})),getNPCs:()=>npcs.map(n=>({id:n.id,state:n.state,x:n.x,y:n.y,phase:n.phase,role:n.role,waypoints:n.waypoints.length,stuck:n.stuckTime,sayTime:n.sayTime})),getEnemies:()=>enemies.map(e=>({hp:e.hp,x:e.x,y:e.y})),getPolice:()=>police.map(p=>({x:p.x,y:p.y,foot:p.foot})),getTraffic:()=>cars.filter(c=>c.ai).map(c=>({x:c.x,y:c.y,ring:c.ring,speed:c.speed,trackDist:c.trackDist})),canStand:(x,y)=>!solidWorld(x,y,9),setInteriorPosition:(x,y)=>{player.ix=x;player.iy=y},setPosition:(x,y,angle=null)=>{player.inside=null;player.inCar=null;player.x=x;player.y=y;if(angle!==null)player.angle=angle;camera.x=clamp(x-W/2,0,MW-W);camera.y=clamp(y-H/2,0,MH-H);pointer.active=false;player.cool=0},resetCooldown:()=>player.cool=0,setWanted:v=>{gameplay?gameplay.forceWanted(v<0?0:Math.min(5,world.wanted+v)):crime(v);updateHud()},setEnvironment:(hour,type)=>{world.clock=((hour*60-CITY_START_MINUTES+1440)%1440)/1440*CITY_DAY_SECONDS;weather=type;nextWeatherAt=world.clock+9999;eventSpawnAt=world.clock+9999;updateHud()},getVehicles:()=>cars.map(c=>({x:c.x,y:c.y,angle:c.angle,personal:c.personal,speed:c.speed})),getCity:()=>({time:formatCityClock(),weather,event:streetEvent?{...streetEvent}:null,finished:cityEventsFinished,relations:{...relations}}),startStreetEvent,interactStreetEvent,setEvent:e=>{streetEvent=e;updateHud()},getSignals:()=>lands.map(d=>({ring:d.id,signal:trafficSignal(d.id,0)})),talkToInformant,advanceConversation,buyItem,initPractice,spawnTutorialEnforcers,shoot,updateBullets,equip,action,update,drawGame,storyAdvance,enterInterior,leaveInterior};
+if(DEV_MODE)window.GlowportTest={get neighborhoodDetails(){return neighborhoodDetails},get ambientTraffic(){return ambientTraffic},get ambientPedestrians(){return ambientPedestrians},ambientDiagnostics:()=>({traffic:ambientTraffic?.diagnostics(),pedestrians:ambientPedestrians?.diagnostics(npcs)}),ambientStep:(seconds,dt=.05)=>{const total=clamp(Number(seconds)||0,0,3600),step=clamp(Number(dt)||.05,.01,.1);for(let elapsed=0;elapsed<total-1e-8;){const tick=Math.min(step,total-elapsed);world.clock+=tick;for(const n of npcs)if(!ambientPedestrians?.protectedNpc?.(n))settleNpcSchedule(n);updateTraffic(tick);updateNpcs(tick);elapsed+=tick}return world.clock},get cityLayout(){return cityLayout},get residentialInfill(){return residentialInfill},getWorld:()=>terrainWorld,worldDiagnostics:()=>cityLayout.diagnostics(),get mapBase(){return mapBase},guidance:dest=>streetGuidance(dest),pedestrianRoute:(from,to)=>pedestrianRoute(from,to),interactions:()=>resolvedInteractions().map(({id,label,priority,distance})=>({id,label,priority,distance})),get livingCity(){return livingCity},debugSaveKey:memoryKey,terrain:()=>terrain.diagnostics(),input:()=>({controls:{...controls},keyboard:{...keyboardControls},touchControls:{...touchControls},pointer:{...pointer},move:mobileMove,aim:mobileAim,paused,touch:touchInput?.diagnostics()}),get system(){return gameplay},campaign:()=>gameplay?.diagnostics(),setMission:id=>gameplay?.fixture(id,0),setMissionStage:(id,index)=>gameplay?.fixture(id,index),landmarks:()=>landmarks.map(l=>({key:l.key,x:l.x,y:l.y,safe:!solidWorld(l.x,l.y+10,9),onLand:onLand(l.x,l.y+10),roadDistance:closestRoadPoint(l.x,l.y).d,inside:!!l.building})),getState:()=>({interior:{x:player?.ix,y:player?.iy},investigation:GlowportMissions.current(storyAt(),world),delivery:world.delivery?JSON.parse(JSON.stringify(world.delivery)):null,reserve:player?.ammo?{...player.ammo}:null,ammo:player?.mag?{...player.mag}:null,reloading:player?.reload,trust:world.trust,camera:{...camera},time:world.clock,screen,story:world.story,hp:player.hp,money:player.money,wanted:world.wanted,inside:player.inside,player:{x:player.x,y:player.y,weapon:player.weapon},cars:cars.length,buildings:buildings.length,landmarks:landmarks.length,roadSegments:segments.length,mapW:MW,mapH:MH,roadCols:roadXs.length,roadRows:roadYs.length,dialogue:!!activeDialogue,practice:(world.practice||[]).length,training:world.trainingSpawned,talking:world.talkCount,trafficMinGap:Math.min(...cars.filter(c=>c.ai).map(c=>Math.min(...cars.filter(o=>o!==c&&o.ai&&o.ring===c.ring).map(o=>distance(c.x,c.y,o.x,o.y))))),enemies:enemies.length,police:police.length,bullets:bullets.length,car:!!player.inCar,side:world.side?.to||null}),launch,teleport:key=>{let a=lm(key);player.inside=null;player.inCar=null;player.x=a.x;player.y=a.y+10;camera.x=clamp(player.x-W/2,0,MW-W);camera.y=clamp(player.y-H/2,0,MH-H);updateHud()},getTargets:()=>world.practice.map(t=>({...t})),getNPCs:()=>npcs.map(n=>({id:n.id,state:n.state,x:n.x,y:n.y,phase:n.phase,role:n.role,waypoints:n.waypoints.length,stuck:n.stuckTime,sayTime:n.sayTime})),getEnemies:()=>enemies.map(e=>({hp:e.hp,x:e.x,y:e.y})),getPolice:()=>police.map(p=>({x:p.x,y:p.y,foot:p.foot})),getTraffic:()=>cars.filter(c=>c.ai).map(c=>({x:c.x,y:c.y,ring:c.ring,speed:c.speed,trackDist:c.trackDist})),canStand:(x,y)=>!solidWorld(x,y,9),setInteriorPosition:(x,y)=>{player.ix=x;player.iy=y},setPosition:(x,y,angle=null)=>{player.inside=null;player.inCar=null;player.x=x;player.y=y;if(angle!==null)player.angle=angle;camera.x=clamp(x-W/2,0,MW-W);camera.y=clamp(y-H/2,0,MH-H);pointer.active=false;player.cool=0},resetCooldown:()=>player.cool=0,setWanted:v=>{gameplay?gameplay.forceWanted(v<0?0:Math.min(5,world.wanted+v)):crime(v);updateHud()},setEnvironment:(hour,type)=>{world.clock=((hour*60-CITY_START_MINUTES+1440)%1440)/1440*CITY_DAY_SECONDS;weather=type;nextWeatherAt=world.clock+9999;eventSpawnAt=world.clock+9999;updateHud()},getVehicles:()=>cars.map(c=>({x:c.x,y:c.y,angle:c.angle,personal:c.personal,speed:c.speed})),getCity:()=>({time:formatCityClock(),weather,event:streetEvent?{...streetEvent}:null,finished:cityEventsFinished,relations:{...relations}}),startStreetEvent,interactStreetEvent,setEvent:e=>{streetEvent=e;updateHud()},getSignals:()=>lands.map(d=>({ring:d.id,signal:trafficSignal(d.id,0)})),talkToInformant,advanceConversation,buyItem,initPractice,spawnTutorialEnforcers,shoot,updateBullets,equip,action,update,drawGame,storyAdvance,enterInterior,leaveInterior};
 $('startBtn').disabled=false;$('startBtn').textContent='▶ START / CONTINUE';$('newBtn').disabled=false;
 console.log('GLOWPORT88 MIDNIGHT SIGNAL READY',lands.length,'districts',buildings.length,'buildings',landmarks.length,'interiors');
 requestAnimationFrame(doFrame);

@@ -1,0 +1,76 @@
+{
+  "time": "2026-10-30T19:55:13.411485+00:00",
+  "baseline": {
+    "commit": "b334fc0",
+    "updates": 18000,
+    "simulatedSeconds": 1800,
+    "wallMilliseconds": 49329,
+    "updateMilliseconds": {
+      "median": 1.800000011920929,
+      "p95": 4.4000000059604645,
+      "p99": 8.599999994039536,
+      "max": 140.40000000596046
+    },
+    "trafficPopulation": 43,
+    "npcPopulation": 163
+  },
+  "updated": {
+    "updates": 21600,
+    "simulatedSeconds": 2160,
+    "wallMilliseconds": 62067,
+    "updateMilliseconds": {
+      "median": 2.1,
+      "p95": 4.8,
+      "p99": 9,
+      "max": 389
+    },
+    "heapBytes": {
+      "before": 7071844,
+      "after": 8221004,
+      "measurement": "Chromium Runtime.getHeapUsage after explicit GC; excludes GPU surfaces and process memory"
+    },
+    "bounds": {
+      "maxNPCs": 163,
+      "maxCars": 44,
+      "maxEnemies": 0,
+      "maxTerrainMiB": 20
+    },
+    "passed": [
+      "three simulated days preserve finite geometry and bounded city entities",
+      "retained JS heap, terrain surfaces and save keys stay bounded",
+      "every encounter offer expires without payout or leftover mission enemies",
+      "soak state reloads with completed story and finite player position",
+      "endurance simulation produces no critical browser errors"
+    ]
+  },
+  "scope": "Actual production-host accelerated100ms updates in cloud Chromium. Baseline1800s sample walltime also includes separate300s obstruction probe, so walltimes are not like-for-like. Final updated2160s endurance includes periodic draws, weather/schedules, heap/storage and event expiry checks. Final median/p95/p99=2.1/4.8/9.0ms vs baseline1.8/4.4/8.6ms; scheduler/pathing/cold-cache maximum389ms retained. Earlier pre-optimization updated110srun retained separately. These are cloud wall-clock update samples, not controlled hardware benchmarks or physical-device FPS.",
+  "earlierUpdatedBeforeSchedulingRecoveryFixes": {
+    "updates": 21600,
+    "simulatedSeconds": 2160,
+    "wallMilliseconds": 110027,
+    "updateMilliseconds": {
+      "median": 2.8,
+      "p95": 11.7,
+      "p99": 32.1,
+      "max": 1142
+    },
+    "heapBytes": {
+      "before": 6443160,
+      "after": 7841616,
+      "measurement": "Chromium Runtime.getHeapUsage after explicit GC; excludes GPU surfaces and process memory"
+    },
+    "bounds": {
+      "maxNPCs": 163,
+      "maxCars": 44,
+      "maxEnemies": 0,
+      "maxTerrainMiB": 20
+    },
+    "passed": [
+      "three simulated days preserve finite geometry and bounded city entities",
+      "retained JS heap, terrain surfaces and save keys stay bounded",
+      "every encounter offer expires without payout or leftover mission enemies",
+      "soak state reloads with completed story and finite player position",
+      "endurance simulation produces no critical browser errors"
+    ]
+  }
+}

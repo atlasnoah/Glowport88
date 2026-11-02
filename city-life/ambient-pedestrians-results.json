@@ -1,0 +1,1600 @@
+{
+  "time": "2026-10-30T19:44:38.179Z",
+  "passed": [
+    "cached graph follows the existing 66px sidewalks and painted junction crossings",
+    "cross-city routes turn corners without using road-centerline fallback",
+    "crossing pedestrians yield before commitment and continue once committed",
+    "ambient-only updates never mutate scripted or persistent mission characters",
+    "failed/invalid connections reject unsafe building spawns and mid-road destinations",
+    "initial bootstrap repairs sidewalk positions and protects mission entrances before play",
+    "opposing pedestrians pass and continue after temporary interruptions",
+    "a sidewalk-blocking parked car triggers a route around another existing crossing",
+    "legacy junction-edge starts and small curb displacements recover by walking without teleporting",
+    "a schedule change recovers id72 and deeper same-side curb displacements by walking",
+    "thirty-minute real movement stays bounded, reaches destinations and keeps roaming",
+    "density management reuses offscreen citizens, preserves identities and enforces caps"
+  ],
+  "routes": 70,
+  "graph": {
+    "nodes": 1200,
+    "edges": 2330,
+    "crosswalks": 1200,
+    "routeCache": 128,
+    "routeCacheLimit": 128,
+    "treeBuilds": 140,
+    "treeHits": 0,
+    "blockedEdges": 0,
+    "cap": 170,
+    "maxPopulation": 1,
+    "population": 0,
+    "routeFailures": 0,
+    "recoveries": 0,
+    "rebalanced": 0,
+    "moved": 0,
+    "trips": 0,
+    "crossings": 0,
+    "entities": []
+  },
+  "simulation": {
+    "seconds": 1800,
+    "dt": 0.1,
+    "entities": [
+      {
+        "id": 0,
+        "x": 899,
+        "y": 1477,
+        "goal": {
+          "x": 656.16,
+          "y": 797
+        },
+        "waypoint": 23,
+        "waypoints": 29,
+        "moved": 49381.62016423352,
+        "trips": 72,
+        "crossings": 103,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 1,
+        "x": 1879.9999999999995,
+        "y": 3517,
+        "goal": {
+          "x": 203,
+          "y": 3686.82
+        },
+        "waypoint": 7,
+        "waypoints": 18,
+        "moved": 57474.26868935808,
+        "trips": 81,
+        "crossings": 122,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 2,
+        "x": 1557,
+        "y": 1989.8000000000077,
+        "goal": {
+          "x": 477,
+          "y": 941.42
+        },
+        "waypoint": 22,
+        "waypoints": 35,
+        "moved": 65972.82209301332,
+        "trips": 72,
+        "crossings": 155,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 3,
+        "x": 1345.799999999997,
+        "y": 2243,
+        "goal": {
+          "x": 477,
+          "y": 4788.1
+        },
+        "waypoint": 10,
+        "waypoints": 31,
+        "moved": 51403.16075347523,
+        "trips": 37,
+        "crossings": 130,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 4,
+        "x": 1165.8004739866935,
+        "y": 1562.8225680808055,
+        "goal": {
+          "x": 837,
+          "y": 2103.66
+        },
+        "waypoint": 16,
+        "waypoints": 21,
+        "moved": 49755.00427386848,
+        "trips": 87,
+        "crossings": 111,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 5,
+        "x": 1557,
+        "y": 1512.400000000001,
+        "goal": {
+          "x": 1557,
+          "y": 1347.46
+        },
+        "waypoint": 14,
+        "waypoints": 16,
+        "moved": 58332.93155371099,
+        "trips": 75,
+        "crossings": 132,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 6,
+        "x": 923,
+        "y": 4249.000000000004,
+        "goal": {
+          "x": 1856.72,
+          "y": 4197
+        },
+        "waypoint": 4,
+        "waypoints": 10,
+        "moved": 46511.94783146899,
+        "trips": 54,
+        "crossings": 118,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 7,
+        "x": 2277,
+        "y": 1563,
+        "goal": {
+          "x": 2277,
+          "y": 1563
+        },
+        "waypoint": 2,
+        "waypoints": 2,
+        "moved": 64249.82808586613,
+        "trips": 115,
+        "crossings": 139,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 8,
+        "x": 1557.0710697712957,
+        "y": 873.4000041535937,
+        "goal": {
+          "x": 1557,
+          "y": 728.42
+        },
+        "waypoint": 3,
+        "waypoints": 5,
+        "moved": 67987.26553683891,
+        "trips": 127,
+        "crossings": 143,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 9,
+        "x": 1643,
+        "y": 3187.400000000002,
+        "goal": {
+          "x": 2183.84,
+          "y": 2923
+        },
+        "waypoint": 7,
+        "waypoints": 12,
+        "moved": 52551.028329775036,
+        "trips": 84,
+        "crossings": 123,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 10,
+        "x": 2932.4999999999973,
+        "y": 1223,
+        "goal": {
+          "x": 2723,
+          "y": 1223
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 55304.80467250517,
+        "trips": 100,
+        "crossings": 121,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 11,
+        "x": 4660,
+        "y": 2497,
+        "goal": {
+          "x": 4523,
+          "y": 2497
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 42225.56209298782,
+        "trips": 72,
+        "crossings": 90,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 12,
+        "x": 3165.9199999999964,
+        "y": 3517,
+        "goal": {
+          "x": 3083,
+          "y": 3517
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 43908.925374986255,
+        "trips": 90,
+        "crossings": 89,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 13,
+        "x": 3083,
+        "y": 2497,
+        "goal": {
+          "x": 3083,
+          "y": 2497
+        },
+        "waypoint": 2,
+        "waypoints": 2,
+        "moved": 48067.47147429545,
+        "trips": 90,
+        "crossings": 99,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 14,
+        "x": 2855.1001752625934,
+        "y": 4197.078427588801,
+        "goal": {
+          "x": 2805.2,
+          "y": 4197
+        },
+        "waypoint": 8,
+        "waypoints": 9,
+        "moved": 52418.32871543762,
+        "trips": 105,
+        "crossings": 95,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 15,
+        "x": 4071,
+        "y": 3177,
+        "goal": {
+          "x": 4077,
+          "y": 3072.86
+        },
+        "waypoint": 8,
+        "waypoints": 10,
+        "moved": 58438.2413889726,
+        "trips": 108,
+        "crossings": 118,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 16,
+        "x": 4163,
+        "y": 457,
+        "goal": {
+          "x": 4163,
+          "y": 457
+        },
+        "waypoint": 2,
+        "waypoints": 2,
+        "moved": 60454.42947534455,
+        "trips": 125,
+        "crossings": 125,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 17,
+        "x": 3083,
+        "y": 3943,
+        "goal": {
+          "x": 3083,
+          "y": 3943
+        },
+        "waypoint": 2,
+        "waypoints": 2,
+        "moved": 47458.1,
+        "trips": 86,
+        "crossings": 94,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 18,
+        "x": 4314.200000000026,
+        "y": 2497,
+        "goal": {
+          "x": 4965.2,
+          "y": 2497
+        },
+        "waypoint": 5,
+        "waypoints": 10,
+        "moved": 51050.69048619969,
+        "trips": 94,
+        "crossings": 106,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 19,
+        "x": 4163,
+        "y": 2837,
+        "goal": {
+          "x": 4163,
+          "y": 2837
+        },
+        "waypoint": 2,
+        "waypoints": 2,
+        "moved": 39658.51999999998,
+        "trips": 68,
+        "crossings": 79,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 20,
+        "x": 4546.300000000017,
+        "y": 3603,
+        "goal": {
+          "x": 4163,
+          "y": 4407.46
+        },
+        "waypoint": 3,
+        "waypoints": 11,
+        "moved": 42170.04442612655,
+        "trips": 81,
+        "crossings": 84,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 21,
+        "x": 4966.599999999993,
+        "y": 2583,
+        "goal": {
+          "x": 5243,
+          "y": 2773.5
+        },
+        "waypoint": 7,
+        "waypoints": 10,
+        "moved": 67994.98798579408,
+        "trips": 118,
+        "crossings": 148,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 22,
+        "x": 5243,
+        "y": 925.799999999997,
+        "goal": {
+          "x": 6023.28,
+          "y": 457
+        },
+        "waypoint": 23,
+        "waypoints": 32,
+        "moved": 51356.03999999007,
+        "trips": 63,
+        "crossings": 120,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 23,
+        "x": 4163,
+        "y": 2438.4999999999986,
+        "goal": {
+          "x": 4163,
+          "y": 2243
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 55733.391375898726,
+        "trips": 92,
+        "crossings": 121,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 24,
+        "x": 6237,
+        "y": 1017.6199999999999,
+        "goal": {
+          "x": 6237,
+          "y": 1017.62
+        },
+        "waypoint": 11,
+        "waypoints": 11,
+        "moved": 64108.721823219676,
+        "trips": 79,
+        "crossings": 151,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 25,
+        "x": 4523,
+        "y": 2583,
+        "goal": {
+          "x": 4523,
+          "y": 2583
+        },
+        "waypoint": 2,
+        "waypoints": 2,
+        "moved": 48249.01143737,
+        "trips": 63,
+        "crossings": 111,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 26,
+        "x": 5603,
+        "y": 2369.8999999999887,
+        "goal": {
+          "x": 5603,
+          "y": 2243
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 54436.86605802629,
+        "trips": 69,
+        "crossings": 129,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 27,
+        "x": 5646.199999999939,
+        "y": 1563,
+        "goal": {
+          "x": 5685.2,
+          "y": 1563
+        },
+        "waypoint": 14,
+        "waypoints": 15,
+        "moved": 60318.54966897612,
+        "trips": 68,
+        "crossings": 145,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 28,
+        "x": 6683,
+        "y": 3514.9999999999936,
+        "goal": {
+          "x": 6743.28,
+          "y": 3857
+        },
+        "waypoint": 26,
+        "waypoints": 30,
+        "moved": 59567.260346600895,
+        "trips": 71,
+        "crossings": 144,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 29,
+        "x": 3803,
+        "y": 1993.3000000000038,
+        "goal": {
+          "x": 6237,
+          "y": 3402.7
+        },
+        "waypoint": 3,
+        "waypoints": 25,
+        "moved": 64621.13204085013,
+        "trips": 98,
+        "crossings": 138,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 30,
+        "x": 6037.400000000009,
+        "y": 2157,
+        "goal": {
+          "x": 7043,
+          "y": 1276.34
+        },
+        "waypoint": 23,
+        "waypoints": 34,
+        "moved": 49300.16209298148,
+        "trips": 51,
+        "crossings": 107,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 31,
+        "x": 837,
+        "y": 1541.5999999999992,
+        "goal": {
+          "x": 837,
+          "y": 1677.3
+        },
+        "waypoint": 3,
+        "waypoints": 5,
+        "moved": 52466.22349300062,
+        "trips": 84,
+        "crossings": 106,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 32,
+        "x": 117,
+        "y": 4355,
+        "goal": {
+          "x": 117,
+          "y": 4537
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 63641.922844206514,
+        "trips": 64,
+        "crossings": 151,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 33,
+        "x": 3304.9999999999527,
+        "y": 3177,
+        "goal": {
+          "x": 117,
+          "y": 3463.66
+        },
+        "waypoint": 7,
+        "waypoints": 27,
+        "moved": 45045.56366114907,
+        "trips": 61,
+        "crossings": 92,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 34,
+        "x": 563,
+        "y": 1497,
+        "goal": {
+          "x": 923,
+          "y": 1636.66
+        },
+        "waypoint": 6,
+        "waypoints": 10,
+        "moved": 49733.745109931144,
+        "trips": 69,
+        "crossings": 117,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 35,
+        "x": 2637,
+        "y": 3422.799999999994,
+        "goal": {
+          "x": 923,
+          "y": 4818.58
+        },
+        "waypoint": 14,
+        "waypoints": 32,
+        "moved": 74041.78994274029,
+        "trips": 103,
+        "crossings": 162,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 36,
+        "x": 563,
+        "y": 2542.5,
+        "goal": {
+          "x": 1109.32,
+          "y": 3263
+        },
+        "waypoint": 4,
+        "waypoints": 12,
+        "moved": 52041.38094890349,
+        "trips": 100,
+        "crossings": 102,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 37,
+        "x": 2190.399999999998,
+        "y": 883,
+        "goal": {
+          "x": 2277,
+          "y": 883
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 61034.76248936908,
+        "trips": 83,
+        "crossings": 134,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 38,
+        "x": 1643,
+        "y": 4263,
+        "goal": {
+          "x": 1917,
+          "y": 4686.5
+        },
+        "waypoint": 6,
+        "waypoints": 11,
+        "moved": 45572.22,
+        "trips": 53,
+        "crossings": 111,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 39,
+        "x": 2414.7999999999975,
+        "y": 1817,
+        "goal": {
+          "x": 2417.8,
+          "y": 1817
+        },
+        "waypoint": 9,
+        "waypoints": 10,
+        "moved": 45074.778116254995,
+        "trips": 95,
+        "crossings": 100,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 40,
+        "x": 2363,
+        "y": 266.5,
+        "goal": {
+          "x": 2363,
+          "y": 266.5
+        },
+        "waypoint": 26,
+        "waypoints": 26,
+        "moved": 48611.36599634993,
+        "trips": 97,
+        "crossings": 91,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 41,
+        "x": 2430.9600000000046,
+        "y": 3263,
+        "goal": {
+          "x": 2363,
+          "y": 3263
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 37702.200000002376,
+        "trips": 76,
+        "crossings": 72,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 42,
+        "x": 3357.2002320163674,
+        "y": 2242.999534344148,
+        "goal": {
+          "x": 2637,
+          "y": 2326.82
+        },
+        "waypoint": 7,
+        "waypoints": 13,
+        "moved": 61288.99210515124,
+        "trips": 111,
+        "crossings": 132,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 43,
+        "x": 2950.9999999999964,
+        "y": 4537,
+        "goal": {
+          "x": 2723,
+          "y": 4537
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 64750.91684627221,
+        "trips": 129,
+        "crossings": 125,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 44,
+        "x": 3536.16,
+        "y": 2583,
+        "goal": {
+          "x": 3536.16,
+          "y": 2583
+        },
+        "waypoint": 12,
+        "waypoints": 12,
+        "moved": 47817.318217292566,
+        "trips": 97,
+        "crossings": 100,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 45,
+        "x": 3083,
+        "y": 1493.3999999999996,
+        "goal": {
+          "x": 3357,
+          "y": 1641.74
+        },
+        "waypoint": 7,
+        "waypoints": 10,
+        "moved": 52702.32058660037,
+        "trips": 101,
+        "crossings": 111,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 46,
+        "x": 3323.000000000009,
+        "y": 4197,
+        "goal": {
+          "x": 3940,
+          "y": 4197
+        },
+        "waypoint": 5,
+        "waypoints": 10,
+        "moved": 55000.941613005125,
+        "trips": 107,
+        "crossings": 109,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 47,
+        "x": 3360.600000000009,
+        "y": 2923,
+        "goal": {
+          "x": 3357,
+          "y": 2697.3
+        },
+        "waypoint": 2,
+        "waypoints": 5,
+        "moved": 42914.16417485314,
+        "trips": 85,
+        "crossings": 83,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 48,
+        "x": 4163,
+        "y": 2583,
+        "goal": {
+          "x": 4163,
+          "y": 2583
+        },
+        "waypoint": 2,
+        "waypoints": 2,
+        "moved": 49525.473006724365,
+        "trips": 82,
+        "crossings": 110,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 49,
+        "x": 4424.5999999999985,
+        "y": 3943,
+        "goal": {
+          "x": 4077,
+          "y": 3666.5
+        },
+        "waypoint": 1,
+        "waypoints": 5,
+        "moved": 50974.56793981369,
+        "trips": 74,
+        "crossings": 116,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 50,
+        "x": 5243.112756261686,
+        "y": 1974.6002261760268,
+        "goal": {
+          "x": 5243,
+          "y": 1626.5
+        },
+        "waypoint": 2,
+        "waypoints": 5,
+        "moved": 55706.171239069154,
+        "trips": 109,
+        "crossings": 118,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 51,
+        "x": 5243,
+        "y": 543,
+        "goal": {
+          "x": 5157,
+          "y": 378.26
+        },
+        "waypoint": 0,
+        "waypoints": 4,
+        "moved": 60579.55817636619,
+        "trips": 112,
+        "crossings": 120,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 52,
+        "x": 5242.766094106114,
+        "y": 3738.299737304366,
+        "goal": {
+          "x": 5380,
+          "y": 4283
+        },
+        "waypoint": 8,
+        "waypoints": 13,
+        "moved": 46718.564972511,
+        "trips": 75,
+        "crossings": 105,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 53,
+        "x": 3733,
+        "y": 2497,
+        "goal": {
+          "x": 5380,
+          "y": 1817
+        },
+        "waypoint": 9,
+        "waypoints": 23,
+        "moved": 50723.36000000002,
+        "trips": 86,
+        "crossings": 106,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 54,
+        "x": 4437,
+        "y": 2836.899999999995,
+        "goal": {
+          "x": 4437,
+          "y": 2837
+        },
+        "waypoint": 2,
+        "waypoints": 2,
+        "moved": 54996.487968495625,
+        "trips": 88,
+        "crossings": 107,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 55,
+        "x": 5603,
+        "y": 2434,
+        "goal": {
+          "x": 5603,
+          "y": 2243
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 47816.76248602016,
+        "trips": 52,
+        "crossings": 113,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 56,
+        "x": 4883,
+        "y": 2379.400000000005,
+        "goal": {
+          "x": 5740,
+          "y": 1817
+        },
+        "waypoint": 6,
+        "waypoints": 15,
+        "moved": 66607.50963754559,
+        "trips": 100,
+        "crossings": 144,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 57,
+        "x": 2792,
+        "y": 2243,
+        "goal": {
+          "x": 2997,
+          "y": 2243
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 49323.68000000001,
+        "trips": 48,
+        "crossings": 120,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 58,
+        "x": 6683,
+        "y": 2138.500000000001,
+        "goal": {
+          "x": 6852.88,
+          "y": 1903
+        },
+        "waypoint": 10,
+        "waypoints": 12,
+        "moved": 57122.98860554884,
+        "trips": 63,
+        "crossings": 141,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 59,
+        "x": 5963,
+        "y": 1260.139999999998,
+        "goal": {
+          "x": 6787.12,
+          "y": 797
+        },
+        "waypoint": 1,
+        "waypoints": 10,
+        "moved": 62908.14280167549,
+        "trips": 70,
+        "crossings": 144,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 60,
+        "x": 6323,
+        "y": 4543.4,
+        "goal": {
+          "x": 6597,
+          "y": 4722.06
+        },
+        "waypoint": 7,
+        "waypoints": 10,
+        "moved": 49049.35999999294,
+        "trips": 43,
+        "crossings": 124,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 61,
+        "x": 6323,
+        "y": 4017.600000000007,
+        "goal": {
+          "x": 6323,
+          "y": 4197
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 55662.061620369364,
+        "trips": 52,
+        "crossings": 131,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 62,
+        "x": 683.56,
+        "y": 2497,
+        "goal": {
+          "x": 683.56,
+          "y": 2497
+        },
+        "waypoint": 23,
+        "waypoints": 23,
+        "moved": 53725.7266130896,
+        "trips": 80,
+        "crossings": 122,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 63,
+        "x": 3483.3999999999915,
+        "y": 2243,
+        "goal": {
+          "x": 639.72,
+          "y": 883
+        },
+        "waypoint": 7,
+        "waypoints": 32,
+        "moved": 55441.822198174516,
+        "trips": 82,
+        "crossings": 112,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 64,
+        "x": 951.0000000000055,
+        "y": 4623,
+        "goal": {
+          "x": 837,
+          "y": 4737.3
+        },
+        "waypoint": 31,
+        "waypoints": 34,
+        "moved": 63487.94105551919,
+        "trips": 84,
+        "crossings": 149,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 65,
+        "x": 1360.1999999999925,
+        "y": 2923,
+        "goal": {
+          "x": 1136.72,
+          "y": 2243
+        },
+        "waypoint": 2,
+        "waypoints": 9,
+        "moved": 68977.78535107343,
+        "trips": 91,
+        "crossings": 162,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 66,
+        "x": 2003,
+        "y": 864.9999999999999,
+        "goal": {
+          "x": 1409.04,
+          "y": 797
+        },
+        "waypoint": 4,
+        "waypoints": 9,
+        "moved": 52286.424390508524,
+        "trips": 68,
+        "crossings": 120,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 67,
+        "x": 1406.4999999999936,
+        "y": 3943,
+        "goal": {
+          "x": 1010.6800000000001,
+          "y": 3263
+        },
+        "waypoint": 2,
+        "waypoints": 9,
+        "moved": 57890.64002779481,
+        "trips": 75,
+        "crossings": 136,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 68,
+        "x": 3500.0000000000064,
+        "y": 2583,
+        "goal": {
+          "x": 1092.88,
+          "y": 2497
+        },
+        "waypoint": 5,
+        "waypoints": 21,
+        "moved": 39081.259999990936,
+        "trips": 76,
+        "crossings": 85,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 69,
+        "x": 4338.000000000002,
+        "y": 2157,
+        "goal": {
+          "x": 4163,
+          "y": 2157
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 43595.90357417848,
+        "trips": 81,
+        "crossings": 84,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 70,
+        "x": 2002.8894444314355,
+        "y": 3319.0003858453147,
+        "goal": {
+          "x": 2494.52,
+          "y": 2923
+        },
+        "waypoint": 6,
+        "waypoints": 12,
+        "moved": 69811.03317391167,
+        "trips": 121,
+        "crossings": 159,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 71,
+        "x": 2637,
+        "y": 2311.58,
+        "goal": {
+          "x": 2637,
+          "y": 2311.58
+        },
+        "waypoint": 5,
+        "waypoints": 5,
+        "moved": 49949.829136504275,
+        "trips": 95,
+        "crossings": 103,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 72,
+        "x": 2997,
+        "y": 2363,
+        "goal": {
+          "x": 3209.04,
+          "y": 4877
+        },
+        "waypoint": 3,
+        "waypoints": 20,
+        "moved": 55551.483537136555,
+        "trips": 100,
+        "crossings": 107,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 73,
+        "x": 2363,
+        "y": 2986.5,
+        "goal": {
+          "x": 2363,
+          "y": 2986.5
+        },
+        "waypoint": 4,
+        "waypoints": 4,
+        "moved": 56861.60161833162,
+        "trips": 113,
+        "crossings": 111,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 74,
+        "x": 3443,
+        "y": 1689,
+        "goal": {
+          "x": 2832.6,
+          "y": 1137
+        },
+        "waypoint": 1,
+        "waypoints": 9,
+        "moved": 44010.92659053196,
+        "trips": 87,
+        "crossings": 97,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 75,
+        "x": 3803,
+        "y": 3477.1999999999907,
+        "goal": {
+          "x": 3083,
+          "y": 4767.78
+        },
+        "waypoint": 10,
+        "waypoints": 23,
+        "moved": 48538.28581375023,
+        "trips": 89,
+        "crossings": 101,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 76,
+        "x": 4077,
+        "y": 2589,
+        "goal": {
+          "x": 4077,
+          "y": 2748.1
+        },
+        "waypoint": 9,
+        "waypoints": 10,
+        "moved": 36016.06005813951,
+        "trips": 73,
+        "crossings": 75,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 77,
+        "x": 3890.68,
+        "y": 1223,
+        "goal": {
+          "x": 3890.68,
+          "y": 1223
+        },
+        "waypoint": 4,
+        "waypoints": 4,
+        "moved": 58356.55062945749,
+        "trips": 109,
+        "crossings": 122,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 78,
+        "x": 3185.400000000014,
+        "y": 3603,
+        "goal": {
+          "x": 3083,
+          "y": 3603
+        },
+        "waypoint": 1,
+        "waypoints": 2,
+        "moved": 61944.56209301626,
+        "trips": 126,
+        "crossings": 122,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 79,
+        "x": 4475.399999999998,
+        "y": 2583,
+        "goal": {
+          "x": 4523,
+          "y": 2661.74
+        },
+        "waypoint": 8,
+        "waypoints": 10,
+        "moved": 45957.35999999522,
+        "trips": 89,
+        "crossings": 94,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 80,
+        "x": 2723,
+        "y": 2180.5999999999985,
+        "goal": {
+          "x": 4720.28,
+          "y": 117
+        },
+        "waypoint": 2,
+        "waypoints": 26,
+        "moved": 51739.15217016922,
+        "trips": 92,
+        "crossings": 119,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 81,
+        "x": 4436.440000000014,
+        "y": 3603,
+        "goal": {
+          "x": 4437,
+          "y": 3603
+        },
+        "waypoint": 2,
+        "waypoints": 2,
+        "moved": 54122.884017442564,
+        "trips": 103,
+        "crossings": 119,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 82,
+        "x": 4797,
+        "y": 1399.7999999999956,
+        "goal": {
+          "x": 4665.48,
+          "y": 1223
+        },
+        "waypoint": 7,
+        "waypoints": 9,
+        "moved": 42109.84095803457,
+        "trips": 78,
+        "crossings": 86,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 83,
+        "x": 5660.400000000005,
+        "y": 4963,
+        "goal": {
+          "x": 5660.54,
+          "y": 4963
+        },
+        "waypoint": 8,
+        "waypoints": 8,
+        "moved": 47038.701769745334,
+        "trips": 82,
+        "crossings": 95,
+        "recoveries": 0,
+        "crossing": false,
+        "waitingCrossing": false,
+        "protected": false
+      },
+      {
+        "id": 84,
+        "x": 5910.200000000008,
+        "y": 2837,
+        "goal": {
+          "x": 5380,
+          "y": 2837
+        },
+        "waypoint": 5,
+        "waypoints": 9,
+        "moved": 74766.78379561972,
+        "trips": 120,
+        "crossings": 164,
+        "recoveries": 0,
+        "crossing": true,
+        "waitingCrossing": false,
+        "protected": false
+      }
+    ],
+    "max": 85,
+    "collisions": 0,
+    "visibleRelocations": 0,
+    "milliseconds": 8880.235499,
+    "cpuMicroseconds": {
+      "user": 9340297,
+      "system": 87815
+    },
+    "nodes": 1200,
+    "edges": 2330,
+    "crosswalks": 1200,
+    "routeCache": 128,
+    "routeCacheLimit": 128,
+    "treeBuilds": 6767,
+    "treeHits": 6009,
+    "blockedEdges": 0,
+    "cap": 170,
+    "maxPopulation": 85,
+    "population": 85,
+    "routeFailures": 0,
+    "recoveries": 0,
+    "rebalanced": 455,
+    "moved": 85,
+    "trips": 7278,
+    "crossings": 9931
+  },
+  "scope": "Actual original 808-building world geometry; real cached sidewalk routes and movement for 30 simulated minutes. No rendering changes or mission-actor stepping; dynamic density reuses offscreen existing ambient identities and bounds population."
+}

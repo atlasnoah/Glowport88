@@ -1,0 +1,46 @@
+{
+  "time": "2026-10-30T19:53:02.488Z",
+  "resultFile": "citylife-host-results.json",
+  "loadedSourceHashes": {
+    "Glowport88_ArtRehaul_v11.html": "19c2220ab47dc756391dac354eb6a599eaf8a45b63eafc3ff4f156c1ede7acab",
+    "assets/ambient-traffic.js": "0bb88fe832feabd212ac7a5ec3f23d6f417ecec4e4577a5af11360fbd97d6fa7",
+    "assets/ambient-pedestrians.js": "997c621c819f25aa699fa506c7a2fd2cce9bd1253687f3b7d11a1ff23d64cd36",
+    "assets/neighborhood-details.js": "b83827b566a7a1ab69b1a12102bb8141de1b4030ef8c4db0979f04f27352b6af",
+    "assets/art.js": "daf7b5cc5d43089c884aad967c717d1c4feb4d2beaf69d18c1a8627fa9eec79c"
+  },
+  "currentSourceHashes": {
+    "Glowport88_ArtRehaul_v11.html": "19c2220ab47dc756391dac354eb6a599eaf8a45b63eafc3ff4f156c1ede7acab",
+    "assets/ambient-traffic.js": "49255b57c4a2d0033bb866df8439d3a858a90ac3f186c12ae27030f05564ae46",
+    "assets/ambient-pedestrians.js": "997c621c819f25aa699fa506c7a2fd2cce9bd1253687f3b7d11a1ff23d64cd36",
+    "assets/neighborhood-details.js": "b83827b566a7a1ab69b1a12102bb8141de1b4030ef8c4db0979f04f27352b6af",
+    "assets/art.js": "daf7b5cc5d43089c884aad967c717d1c4feb4d2beaf69d18c1a8627fa9eec79c"
+  },
+  "changedSinceMovementRun": [
+    "assets/ambient-traffic.js"
+  ],
+  "movementValidation": {
+    "status": "PASS",
+    "checks": 8,
+    "simulatedSeconds": 1800,
+    "updates": 36000,
+    "deltaSeconds": 0.05,
+    "rollingWindowSeconds": 120,
+    "rollingWindows": 84,
+    "minNPCProgressPerWindow": 818.3616856986955,
+    "minVehicleProgressPerWindow": 2229.564824993653,
+    "errors": []
+  },
+  "deltaScope": {
+    "file": "assets/ambient-traffic.js",
+    "description": "After the movement run started, a lifecycle-only patch added retirement of unprotected previously managed AI vehicles that are no longer AI. Healthy inactive cars are retained for at least sixty seconds and removed only outside the visible area; currently protected, player-owned, driven, mission and visible cars remain protected. Moving AI routing, steering, following, junction behavior, speed and collision code are unchanged.",
+    "soakExclusion": "During the thirty-minute movement soak all 43 ordinary ambient cars remained AI. The sole non-AI car was the protected personal starter. The changed unprotected non-AI retirement branch was therefore outside this soak scenario.",
+    "latestDeltaValidation": {
+      "modelResults": "ambient-traffic-results.json",
+      "modelResultTime": "2026-10-30T19:49:34.101Z",
+      "actualHostTest": "../tests/citylife-retirement-host.cjs",
+      "actualHostResult": "citylife-retirement-host-results.json",
+      "note": "The separate retirement host suite and latest standalone/public validation are owned by the root/regression agent. Read their result artifacts for executed status; this scope artifact does not claim unexecuted results."
+    }
+  },
+  "scope": "The movement evidence retains its actual loaded traffic SHA and all 84 original rolling-window rows. Four production source hashes are unchanged. Do not describe this movement run as having loaded the later lifecycle-only traffic SHA."
+}

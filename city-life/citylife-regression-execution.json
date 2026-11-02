@@ -1,0 +1,66 @@
+{
+  "time": "2026-10-30T19:45:52.376Z",
+  "baselineCommit": "b334fc0",
+  "status": "Existing suite coverage completed in resumed segments with isolated retries; final release/public checks owned by root.",
+  "logs": {
+    "initialFullSuite": "/tmp/glowport-citylife-regressions.log",
+    "eastDinerRetry": "/tmp/glowport-citylife-east-diner-retry.log",
+    "vehicleAndCity": "/tmp/glowport-citylife-regressions-suffix.log",
+    "encountersRetry": "/tmp/glowport-citylife-encounter-retry.log",
+    "endurance": "/tmp/glowport-citylife-endurance.log",
+    "restoration": "/tmp/glowport-citylife-final-regressions.log",
+    "galleryRetry": "/tmp/glowport-citylife-gallery.log",
+    "bugModels": "/tmp/glowport-citylife-bugs-playability.log",
+    "bugRemainder": "/tmp/glowport-citylife-bugs-remainder.log",
+    "playability": "/tmp/glowport-citylife-playability-final.log",
+    "postGuardRecovery": "/tmp/glowport-citylife-recovery-fixed.log",
+    "postGuardKeyboard": "/tmp/glowport-citylife-host-edge-fixed.log",
+    "postGuardMobile": "/tmp/glowport-citylife-mobile-fixed-retry.log"
+  },
+  "passed": {
+    "smoke": 20,
+    "mobile": 21,
+    "isolatedTouch": 17,
+    "navigation": 11,
+    "eastDiner": 14,
+    "vehicleHost": 6,
+    "livingCityHost": 8,
+    "encounterHost": 6,
+    "endurance": 5,
+    "bugRegressionGuards": 48,
+    "actualMissionDefinitions": 92,
+    "actualCompletedMissionRuns": 176,
+    "actualObjectiveResolutions": 580,
+    "distinctAuthoredStages": 390,
+    "realProjectiles": 628,
+    "realTimingInputs": 121,
+    "playableLandmarks": 12,
+    "entranceRoundTrips": 48,
+    "activeMissionEntranceStates": 12
+  },
+  "resolvedFindings": [
+    {
+      "issue": "East Diner startup readiness exceeded10s under concurrent cloud execution",
+      "resolution": "Original unmodified suite isolated retry passed14checks; no threshold/assertion change."
+    },
+    {
+      "issue": "Stranded-driver timing activity failed one meter run under concurrent cloud execution",
+      "resolution": "Instrumented and unmodified full encounter suites later passed6checks including real timing/race/save handlers; no mission or timing assertion weakening."
+    },
+    {
+      "issue": "Historical comparison gallery overflowed phone width",
+      "resolution": "Actual generator CSS shrink/wrap corrected by visual agent; unchanged gallery suite passed18stage selections and58scene jumps."
+    },
+    {
+      "issue": "Mobile m31 INTERACT opening a choice automatically chose its first response",
+      "resolution": "Reproduced on both archived0.6.3 and current host. Pointer trace proved compatibility click targeted newly mounted choice without its own pointerdown. Root added own-press guard preserving native keyboard/assistive clicks. Unmodified recovery5, keyboard8 and mobile21 passed afterward.",
+      "evidence": "citylife-compatibility-click-before.json"
+    },
+    {
+      "issue": "First post-guard mobile navigation exceeded8s initial page-load timeout",
+      "resolution": "System subsequently idle; original unmodified suite retry passed21checks including actual heist input, touch controls and saves."
+    }
+  ],
+  "performanceEvidence": "citylife-performance-comparison.json",
+  "scope": "Accelerated production-host Chromium checks use test travel/state fixtures where documented by each suite. All390authored stages completed via production handlers and actual weapon/timing inputs. No claim of physical-device testing, human-duration/balance validation, every choice combination, or one uninterrupted npm test success. Ambient rolling-window and final30minute targeted checks are owned by their respective agents."
+}

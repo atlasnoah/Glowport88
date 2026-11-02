@@ -1,0 +1,139 @@
+{
+  "time": "2026-10-30T19:54:49.770376+00:00",
+  "version": "0.6.4",
+  "baselineCommit": "b334fc070b9d06a84084093834b5577ccd2d0b65",
+  "rollbackBranch": "rollback/before-city-life-0.6.3",
+  "sourceHashesAtCollection": {
+    "Glowport88_ArtRehaul_v11.html": "19c2220ab47dc756391dac354eb6a599eaf8a45b63eafc3ff4f156c1ede7acab",
+    "assets/art.js": "daf7b5cc5d43089c884aad967c717d1c4feb4d2beaf69d18c1a8627fa9eec79c",
+    "assets/ambient-traffic.js": "49255b57c4a2d0033bb866df8439d3a858a90ac3f186c12ae27030f05564ae46",
+    "assets/ambient-pedestrians.js": "997c621c819f25aa699fa506c7a2fd2cce9bd1253687f3b7d11a1ff23d64cd36",
+    "assets/neighborhood-details.js": "b83827b566a7a1ab69b1a12102bb8141de1b4030ef8c4db0979f04f27352b6af",
+    "assets/hud.js": "d6841b307d556fe62c7d591852d53169ca7c69402a069754dfc2ee1bc81beed3",
+    "assets/hud.css": "70509b3f1c8be1f76f61ad9f3d648e80d3f86c8e9a502d2933a57d5c7a86f6db",
+    "assets/ui.css": "a6da9361b9bf334100fed0660336b767fe8ddc371f74cd15a7d0e833f03280b7",
+    "assets/mobile.css": "c003f721c960bfe93689be302d677b02b0ef0b87220fd2b2ad12a0ff84da3a92"
+  },
+  "checks": {
+    "traffic": {
+      "resultFile": "ambient-traffic-results.json",
+      "executed": true,
+      "time": "2026-10-30T19:49:34.101Z",
+      "groups": 14
+    },
+    "pedestrians": {
+      "resultFile": "ambient-pedestrians-results.json",
+      "executed": true,
+      "time": "2026-10-30T19:44:38.179Z",
+      "groups": 12
+    },
+    "schedules": {
+      "resultFile": "ambient-schedules-host-results.json",
+      "executed": true,
+      "time": "2026-10-30T19:51:59.220Z",
+      "groups": 6
+    },
+    "pedestrianRecoveryHost": {
+      "resultFile": "ambient-pedestrian-recovery-host-results.json",
+      "executed": true,
+      "time": "2026-10-30T19:47:21.000Z",
+      "groups": 0
+    },
+    "neighborhoods": {
+      "resultFile": "neighborhood-details-results.json",
+      "executed": true,
+      "time": "2026-10-30T13:41:59.399Z",
+      "groups": 8
+    },
+    "preservation": {
+      "resultFile": "citylife-preservation-results.json",
+      "executed": true,
+      "time": "2026-10-30T19:52:36.392Z",
+      "groups": 6
+    },
+    "jointRollingHost": {
+      "resultFile": "citylife-host-results.json",
+      "executed": true,
+      "time": "2026-10-30T19:50:26.862Z",
+      "groups": 8,
+      "scope": "Thirty-minute motion/recovery code before the cleanup-only healthy inactive-car patch; original hashes and all84 rolling windows retained. Final-source retirementHost,14 traffic guards and productionEndurance cover the final lifecycle patch."
+    },
+    "retirementHost": {
+      "resultFile": "citylife-retirement-host-results.json",
+      "executed": true,
+      "time": "2026-10-30T19:52:49.799Z",
+      "groups": 5
+    },
+    "productionEndurance": {
+      "resultFile": "living-endurance-results.json",
+      "executed": true,
+      "time": "2026-10-30T19:53:53.916Z",
+      "groups": 5
+    },
+    "allMissions": {
+      "resultFile": "all-missions-host-results.json",
+      "executed": true,
+      "time": "2026-10-30T19:40:36.893Z",
+      "groups": 0
+    },
+    "allEntrances": {
+      "resultFile": "all-entrances-host-results.json",
+      "executed": true,
+      "time": "2026-10-30T19:37:53.338Z",
+      "groups": 5
+    },
+    "bugAndExistingSuites": {
+      "resultFile": "citylife-regression-execution.json",
+      "executed": true,
+      "time": "2026-10-30T19:45:52.376Z",
+      "groups": 19,
+      "scope": "Executed/resumed segments; not a single uninterrupted final npm test invocation."
+    }
+  },
+  "map": {
+    "width": 7200,
+    "height": 5040,
+    "buildings": 808,
+    "roads": 35,
+    "streetWidth": 66,
+    "districts": 5,
+    "landmarks": 12,
+    "unchangedOriginalPNGs": 8
+  },
+  "changes": {
+    "facades": 72,
+    "blocks": 18,
+    "props": 136,
+    "additionalHouses": 24,
+    "apartments": 8,
+    "priorHomesPreserved": 16,
+    "trafficSpeedScale": 1.15,
+    "trafficCap": 43,
+    "pedestrianCap": 170
+  },
+  "verification": {
+    "pairedStaticViews": 49,
+    "unchangedEstablishedViews": 13,
+    "modifiedBlockViews": 36,
+    "pixelsOutsideReviewedBounds": 0,
+    "hudViewports": 5,
+    "missionDefinitions": 92,
+    "authoredStages": 390,
+    "completedMissionRuns": 176,
+    "entranceRoundTrips": 48
+  },
+  "failuresFoundAndFixed": [
+    "parked starter blocked both lanes and a blocked approach held a junction reservation",
+    "peer avoidance drifted a civilian beyond the18px curb-recovery limit",
+    "synchronous whole-population routine route rebuilds",
+    "healthy unowned former chase vehicles could accumulate",
+    "preexisting touch compatibility click selected a newly opened response without its own press",
+    "comparison gallery native-select width overflow"
+  ],
+  "limits": [
+    "Chromium accelerated travel/time and equipment fixtures, not difficulty or continuous human duration",
+    "No physical phone or Safari certification",
+    "Cloud CPU timings, not device FPS",
+    "Joint rolling run source scope documented; final lifecycle tested separately"
+  ]
+}
