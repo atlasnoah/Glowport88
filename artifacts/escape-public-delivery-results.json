@@ -1,0 +1,21 @@
+{
+  "time": "2026-11-02T14:00:07.109083+00:00",
+  "version": "0.6.5",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.5-escape",
+  "sourceCommit": "8f47fe888d31c492c511533593370daced53578e",
+  "gameDeploymentCommit": "eeccd586e5ddd2722ac86f0098c104ca371046c9",
+  "sha256": "5dcb08dd1375dd182a7e8e62884871b32b6db4abc70f45a13eb2521d030ffa3b",
+  "verifiedHTTPSDownload": true,
+  "matchesTestedRelease": true,
+  "mobilePlaybackOfExactPublicBytes": true,
+  "playerTopSpeedMultiplier": 1.25,
+  "workingVanMinimum": 164.0625,
+  "phoneMinimapWidth": 108,
+  "publicEvidenceFiles": 6,
+  "directOriginBrowser": {
+    "passed": false,
+    "reason": "ERR_CERT_AUTHORITY_INVALID in cloud browser proxy trust",
+    "tlsVerificationBypassed": false
+  },
+  "scope": "Verified HTTPS and exact-byte local Chromium playback; direct external browser navigation and physical phones/Safari not claimed."
+}

@@ -7,3 +7,5 @@ A badly damaged van actually drove 164 px/s versus a running officer’s 91 px/s
 The full 390-stage audit was not repeated for this narrowly scoped adjustment. Current driving, pursuit, racing, touch and save paths were executed. Historical reports: `TEST_RESULTS_0.6.4.md`, `CITY_LIFE_REPORT.md`. No physical-phone/Safari or balance-duration claim.
 
 See [ESCAPE_UPDATE_REPORT.md](ESCAPE_UPDATE_REPORT.md) for implementation, files, evidence and delivery status.
+
+Standalone and public delivery passed. Certificate-verified HTTPS bytes equal the tested release; exact downloaded-byte mobile playback verifies the new speed profile and 108px phone minimap plus existing touch/HUD/map/phone/story interactions. Six public screenshot/evidence hashes match. Direct external cloud Chromium remains proxy-trust blocked without TLS bypass; scope is documented in the release report.

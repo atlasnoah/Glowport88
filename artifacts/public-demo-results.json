@@ -1,8 +1,8 @@
 {
-  "time": "2026-11-02T13:38:45.161Z",
-  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.4-city-life",
+  "time": "2026-11-02T13:58:43.890Z",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.5-escape",
   "verifiedHTTPSDownload": true,
-  "sha256": "6c2f4e73827ee02503320cc4db8b24ef332aeb504e312a5efef774bae9149b5d",
+  "sha256": "5dcb08dd1375dd182a7e8e62884871b32b6db4abc70f45a13eb2521d030ffa3b",
   "matchesTestedRelease": true,
   "browserPlaybackOfDownloadedBytes": {
     "originalCity": {
@@ -33,6 +33,12 @@
       "trafficScale": 1.15,
       "trafficPopulation": 43,
       "pedestrianPopulation": 163
+    },
+    "escapeHud": {
+      "base": 175,
+      "driver": 218.75,
+      "workingMinimum": 164.0625,
+      "minimapWidth": 108
     },
     "mobileViewport": {
       "width": 390,

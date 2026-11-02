@@ -27,4 +27,14 @@ Matched screenshots: [phone before](artifacts/minimap-size-before-phone.png) · 
 
 ## Delivery
 
-The standalone release passed desktop/mobile rendering, controls, menus, mission guidance, save reload and production/debug save isolation with no subresource requests. The verified public link and release checksum will be recorded after publication.
+**Published and verified:** [Play 0.6.5](https://atlasnoah.github.io/Glowport88/?v=0.6.5-escape). Choose **Start / Continue**; existing vehicle condition and upgrades are retained.
+
+- Tested source: [`8f47fe888d31c492c511533593370daced53578e`](https://github.com/atlasnoah/Glowport88/commit/8f47fe888d31c492c511533593370daced53578e), pushed on `codex/faster-escape-minimap`; `main` is unchanged. Later evidence/report commits do not change the game payload.
+- Game deployment: [`eeccd586e5ddd2722ac86f0098c104ca371046c9`](https://github.com/atlasnoah/Glowport88/commit/eeccd586e5ddd2722ac86f0098c104ca371046c9).
+- Standalone/live SHA-256: `5dcb08dd1375dd182a7e8e62884871b32b6db4abc70f45a13eb2521d030ffa3b`.
+- Standalone checks pass desktop/mobile rendering, controls, menus, mission guidance, save reload and production/debug save isolation, with zero subresource requests.
+- `node tests/public-demo.cjs` passes: certificate-verified HTTPS bytes match the tested standalone. Playback of those exact public bytes verifies the faster player profile, damaged-vehicle minimum, enlarged phone minimap, HUD, touch movement, phone/map, story entrance guidance and East Diner acceptance, without script errors. Six public screenshot/evidence files match local hashes.
+
+[Phone before](https://atlasnoah.github.io/Glowport88/escape-update/minimap-size-before-phone.png) · [Phone after](https://atlasnoah.github.io/Glowport88/escape-update/minimap-size-after-phone.png).
+
+Direct public-origin cloud Chromium navigation remains blocked by proxy certificate trust (`ERR_CERT_AUTHORITY_INVALID`); no TLS bypass was used. Normal verified HTTPS downloads and exact downloaded-byte playback passed. Physical-phone/Safari testing is not claimed. Delivery evidence is in `artifacts/public-demo-results.json`, `escape-public-build.json`, `escape-public-evidence-results.json`, `escape-public-direct-browser.json` and `escape-public-delivery-results.json`.

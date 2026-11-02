@@ -1,0 +1,7 @@
+{
+  "time": "2026-11-02T13:58:29.409Z",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.5-escape",
+  "tlsVerificationBypassed": false,
+  "directNavigation": false,
+  "error": "page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://atlasnoah.github.io/Glowport88/?v=0.6.5-escape\nCall log:\n\u001b[2m  - navigating to \"https://atlasnoah.github.io/Glowport88/?v=0.6.5-escape\", waiting until \"domcontentloaded\"\u001b[22m\n"
+}
