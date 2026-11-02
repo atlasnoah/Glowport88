@@ -332,12 +332,12 @@ body.touch-mode #phonePanel #phoneStatus { min-height: 17px; margin: 8px 0 0; fo
 </style><style>/* Corner HUD only. The game canvas, city artwork, controls and simulation are unchanged. */
 .layout { grid-template-columns: minmax(0, 1fr); }
 .play-column, .play-surface { min-width: 0; }
-.play-surface { position: relative; container-type: inline-size; --hud-strip-height: 0px; --hud-map-width: clamp(110px, 17cqw, 210px); }
+.play-surface { position: relative; container-type: inline-size; --hud-strip-height: 0px; --hud-map-width: clamp(124px, 19cqw, 236px); }
 .play-surface .screen { width: 100%; }
 #hud.game-hud {
   --hud-detached: 0;
   --hud-gap: clamp(8px, 1.5cqw, 22px);
-  --hud-map-width: clamp(110px, 17cqw, 210px);
+  --hud-map-width: clamp(124px, 19cqw, 236px);
   position: absolute;
   inset: 0;
   display: block;
@@ -385,17 +385,17 @@ body.touch-mode #phonePanel #phoneStatus { min-height: 17px; margin: 8px 0 0; fo
 .hud-secondary #side, .hud-secondary #dialog { margin-top: 4px; }
 .hud-secondary #eventStatus { color: #f1c78c; }
 #hud-mission #missionRetryBtn { pointer-events: auto; margin-top: 8px; min-height: 44px; width: 100%; font-size: 10px; }
-.hud-context { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 6; display: flex; flex-direction: column-reverse; align-items: center; gap: 6px; width: max-content; max-width: calc(100% - 2 * var(--hud-map-width, 110px) - 32px); pointer-events: none; }
+.hud-context { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); z-index: 6; display: flex; flex-direction: column-reverse; align-items: center; gap: 6px; width: max-content; max-width: calc(100% - 2 * var(--hud-map-width, 124px) - 32px); pointer-events: none; }
 .play-surface .hud-context .prompt { position: static; transform: none; max-width: 100%; margin: 0; }
 .play-surface .hud-context #interactionMore { position: static !important; transform: none; min-height: 32px !important; max-width: 100% !important; font-size: 9px; padding: 5px 9px; pointer-events: auto; }
 .play-surface .toast { top: 44%; max-width: 50%; z-index: 7; padding: 8px 12px; font-size: 9px; }
 
 @media (max-width: 700px) {
-  #hud.game-hud { --hud-gap: 6px; --hud-map-width: 96px; }
+  #hud.game-hud { --hud-gap: 6px; --hud-map-width: 108px; }
 }
 /* The existing phone controls keep their rails and action bank. Only HUD placement changes. */
-body.touch-mode #hud.game-hud { --hud-detached: 1; --hud-gap: 6px; --hud-map-width: 96px; display: block; }
-body.touch-mode .play-surface { --hud-map-width: 96px; margin-bottom: var(--hud-strip-height); }
+body.touch-mode #hud.game-hud { --hud-detached: 1; --hud-gap: 6px; --hud-map-width: 108px; display: block; }
+body.touch-mode .play-surface { --hud-map-width: 108px; margin-bottom: var(--hud-strip-height); }
 body.touch-mode .play-surface:has(#hud.hidden) { margin-bottom: 0; }
 body.touch-mode .hud-map-meta { font-size: 6px; margin-bottom: 3px; }
 body.touch-mode .hud-map-frame { padding: 2px; border-radius: 5px; }
@@ -439,8 +439,8 @@ body.touch-mode .play-surface .toast { font-size: 7px; line-height: 1.3; max-wid
   body.touch-mode #hud-mission #missionRetryBtn { width: 100px; margin: 0; font-size: 8px; }
 }
 @media (orientation: landscape) and (max-height: 350px) {
-  body.touch-mode .play-surface { --hud-map-width: 78px; width: min(100%, calc((100dvh - 158px - max(0px, var(--hud-strip-height) - 42px) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) * 16 / 9)); }
-  body.touch-mode #hud.game-hud { --hud-map-width: 78px; }
+  body.touch-mode .play-surface { --hud-map-width: 88px; width: min(100%, calc((100dvh - 158px - max(0px, var(--hud-strip-height) - 42px) - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px)) * 16 / 9)); }
+  body.touch-mode #hud.game-hud { --hud-map-width: 88px; }
   body.touch-mode .hud-map-meta #weather { display: none; }
   body.touch-mode .hud-weapon { min-width: 80px; max-width: 102px; }
   body.touch-mode .hud-weapon-icon { width: 29px; height: 20px; }
@@ -2473,6 +2473,11 @@ function modelFor(car){return byId.get(car?.modelId)||(car?.kind==='police'?byId
 function profile(car={}){const base=modelFor(car),engine=level(car,'tuning'),handling=level(car,'handling'),durability=level(car,'durability'),disabled=clamp(car.health??100,0,100)<=0;
  return {...base,acceleration:disabled?0:base.acceleration*(1+engine*.09),maxSpeed:disabled?0:base.maxSpeed*(1+engine*.08),reverseSpeed:disabled?0:base.reverseSpeed,steering:base.steering*(1+handling*.1),braking:base.braking*(1+handling*.12),collisionResistance:base.collisionResistance*(1+durability*.3),rollingDrag:.977,boostMultiplier:1.4,disabled};
 }
+// Player mobility is separate from traffic and pursuit/race AI. A working,
+// damaged vehicle still needs enough speed to pull away from officers on foot.
+function playerProfile(car={}){const base=profile(car);
+ return {...base,maxSpeed:base.maxSpeed*1.25,acceleration:base.acceleration*1.2,reverseAcceleration:base.acceleration,conditionMultiplier:base.disabled?0:clamp((car.health??100)/100,.75,1)};
+}
 function spawn(modelId,position={}){const model=byId.get(modelId);if(!model)return null;const paint=paintById.get(model.paint);return {modelId:model.id,model:model.name,paint:paint.id,color:paint.color,kind:model.id==='police'?'police':'car',x:clamp(position.x??0,0,1e7),y:clamp(position.y??0,0,1e7),angle:Number.isFinite(position.angle)?position.angle:0,speed:0,health:100,tuning:0,handling:0,durability:0,trim:0,ai:false,parked:true,personal:false};}
 function damage(car,amount){if(!car||!Number.isFinite(amount)||amount<=0)return 0;const loss=amount/profile(car).collisionResistance;car.health=clamp((car.health??100)-loss,0,100);if(car.health<=0){car.health=0;car.speed=0;car.ai=false;car.parked=true;car.disabled=true}return loss;}
 function currentCar(api){const p=player(api);if(p.inCar)return p.inCar;return (get(api,'cars')||[]).filter(car=>car.personal&&!car.ai&&distance(car,p)<180).sort((a,b)=>distance(a,p)-distance(b,p))[0]||null;}
@@ -2509,13 +2514,13 @@ function render(){if(!panel||!currentApi)return;const api=currentApi,p=player(ap
  const upgrades=element('div',null,'garage-row');for(const [kind,label] of [['engine','ENGINE'],['handling','HANDLING'],['durability','DURABILITY'],['trim','TRIM']]){const key=kind==='engine'?'tuning':kind,base={engine:450,handling:300,durability:400,trim:150}[kind],price=base*(level(car,key)+1);upgrades.append(button(label+' · '+(level(car,key)>=2?'MAX':money(price)),()=>upgrade(api,kind),{'data-garage-upgrade':kind,disabled:!car||level(car,key)>=2||p.money<price}));}upgrades.append(button('REPAIR · $120',()=>repair(api),{'data-garage-repair':'true',disabled:!car||(car.health??100)>=100||p.money<120}),button('STORE VEHICLE',()=>store(api),{'data-garage-store':'true',disabled:!car||prog.listVehicles('palm-garage').length>=prog.capacity('palm-garage')}));workshop.append(upgrades);
  const paintRow=element('div',null,'garage-row');for(const paint of paints){const b=button(paint.name+' · $120',()=>repaint(api,paint.id),{'data-garage-paint':paint.id,disabled:!car||p.money<120||car.paint===paint.id});b.classList.add('garage-swatch');b.style.setProperty('--paint',paint.color);paintRow.append(b);}workshop.append(paintRow);content.append(workshop);
  const bays=element('section',null,'garage-card');bays.append(element('h3','YOUR VEHICLE BAYS · '+prog.listVehicles('palm-garage').length+'/'+prog.capacity('palm-garage')));for(const stored of prog.listVehicles('palm-garage')){const row=element('div',null,'garage-row');row.append(element('p',stored.model+' · '+Math.floor(stored.health)+'% condition'),button('PARK OUTSIDE',()=>retrieve(api,stored.id),{'data-garage-retrieve':stored.id}));bays.append(row);}if(!prog.listVehicles('palm-garage').length)bays.append(element('p','No stored vehicles. Purchased cars arrive here.'));content.append(bays);
- const shop=element('div',null,'garage-models');for(const model of models){const card=element('section',null,'garage-card'),stats=profile({modelId:model.id});card.append(element('h3',model.name+' / '+model.type),element('p','Top speed '+Math.round(stats.maxSpeed*.55)+' MPH · acceleration '+model.acceleration+' · steering '+model.steering.toFixed(2)+' · protection '+model.collisionResistance.toFixed(2)));card.append(button(model.price?('BUY · '+money(model.price)):'POLICE FLEET · NOT FOR SALE',()=>purchase(api,model.id),{'data-garage-model':model.id,disabled:!model.price||p.money<model.price||prog.listVehicles('palm-garage').length>=prog.capacity('palm-garage')}));shop.append(card);}content.append(element('h3','GLOWPORT MOTOR DIRECTORY'),shop);
+ const shop=element('div',null,'garage-models');for(const model of models){const card=element('section',null,'garage-card'),stats=playerProfile({modelId:model.id});card.append(element('h3',model.name+' / '+model.type),element('p','Top speed '+Math.round(stats.maxSpeed*.55)+' MPH · acceleration '+stats.acceleration+' · steering '+model.steering.toFixed(2)+' · protection '+model.collisionResistance.toFixed(2)));card.append(button(model.price?('BUY · '+money(model.price)):'POLICE FLEET · NOT FOR SALE',()=>purchase(api,model.id),{'data-garage-model':model.id,disabled:!model.price||p.money<model.price||prog.listVehicles('palm-garage').length>=prog.capacity('palm-garage')}));shop.append(card);}content.append(element('h3','GLOWPORT MOTOR DIRECTORY'),shop);
 }
 function down(event){if(!panel)return;event.stopImmediatePropagation();if(event.key==='Escape'){event.preventDefault();closeGarage();return}if(event.key==='Tab'){const list=[...panel.querySelectorAll('button:not(:disabled)')].filter(n=>n.getClientRects().length),first=list[0],last=list.at(-1);if(!panel.contains(document.activeElement)){event.preventDefault();(event.shiftKey?last:first)?.focus()}else if(event.shiftKey&&document.activeElement===first){event.preventDefault();last?.focus()}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first?.focus()}}else if(!['Enter',' '].includes(event.key))event.preventDefault();else if(!panel.contains(document.activeElement)){event.preventDefault();panel.querySelector('#garageClose')?.focus()}}
 function up(event){if(panel)event.stopImmediatePropagation();}
 function closeGarage(){if(!panel)return false;const api=currentApi;panel.remove();panel=null;currentApi=null;window.removeEventListener('keydown',down,true);window.removeEventListener('keyup',up,true);api?.resetControls?.();api?.save?.();if(previousFocus?.isConnected)previousFocus.focus({preventScroll:true});previousFocus=null;return true;}
 function openGarage(api){const check=access(api,false);if(!check.ok){api.announce?.(check.reason,3);return check}if(panel)closeGarage();style();currentApi=api;api.resetControls?.();previousFocus=document.activeElement;panel=element('div',null,'window');panel.id='garagePanel';panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-labelledby','garageTitle');panel.innerHTML='<section class="modal garage-shell"><div class="garage-head"><h2 id="garageTitle">PALM / MOTOR WORKSHOP</h2><button type="button" class="close" id="garageClose">CLOSE</button></div><p id="garageFunds"></p><div id="garageContent"></div><p id="garageStatus" role="status" aria-live="polite"></p></section>';panel.querySelector('#garageClose').onclick=closeGarage;panel.addEventListener('click',event=>{event.stopPropagation();if(event.target===panel)closeGarage()});document.body.append(panel);window.addEventListener('keydown',down,true);window.addEventListener('keyup',up,true);render();panel.querySelector('#garageClose').focus();return result(true,'Workshop open.');}
-return {get catalogue(){return models.map(m=>({...m}))},get paints(){return paints.map(p=>({...p}))},profile,spawn,damage,currentCar,purchase,buyGarage,upgrade,repaint,repair,retrieve,store,draw,openGarage,closeGarage,get active(){return !!panel}};
+return {get catalogue(){return models.map(m=>({...m}))},get paints(){return paints.map(p=>({...p}))},profile,playerProfile,spawn,damage,currentCar,purchase,buyGarage,upgrade,repaint,repair,retrieve,store,draw,openGarage,closeGarage,get active(){return !!panel}};
 })();
 </script>
 <script>/* Persistent progression and property economy. Wallet changes remain with the game adapter. */
@@ -4603,9 +4608,9 @@ function updateNpcs(dt){
  }
  if(ambientPedestrians)ambientPedestrians.maintain(npcs,{clock:world.clock,focus,camera,width:W,height:H});else for(let pass=0;pass<2;pass++)separatePedestrians();ambientSpeech(dt);
 }
-function updateDriving(dt){let car=player.inCar;const model=GlowportVehicles.profile(car);let input=movementInput(),go=-input.y,boost=controls.shift,cap=model.maxSpeed*(boost?model.boostMultiplier:1)*(1+(gameplay?.progression.state.skills.driving||0)*.001)*clamp((car.health??100)/100,.55,1);
+function updateDriving(dt){let car=player.inCar;const model=GlowportVehicles.playerProfile(car);let input=movementInput(),go=-input.y,boost=controls.shift,cap=model.maxSpeed*(boost?model.boostMultiplier:1)*(1+(gameplay?.progression.state.skills.driving||0)*.001)*model.conditionMultiplier;
  if(model.disabled){car.speed=0;return}
- if(go){car.speed=clamp(car.speed+go*model.acceleration*(boost&&go>0?1.25:1)*dt,-model.reverseSpeed,cap)}else car.speed*=Math.pow(model.rollingDrag,dt*60);
+ if(go){car.speed=clamp(car.speed+go*(go>0?model.acceleration:model.reverseAcceleration)*(boost&&go>0?1.25:1)*dt,-model.reverseSpeed,cap)}else car.speed*=Math.pow(model.rollingDrag,dt*60);
  if(controls.space)car.speed*=Math.pow(.83,dt*60*model.braking);
  if(Math.abs(car.speed)<.3)car.speed=0;
  let turn=input.x;if(turn)car.angle+=turn*model.steering*dt*Math.sign(car.speed||1)*clamp(Math.abs(car.speed)/90,.15,1.05);
