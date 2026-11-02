@@ -138,3 +138,7 @@
 - Existing mobile regression reproduced a0.6.3 dialogue click-through. Responses now require their own pointer press for pointer clicks; keyboard/assistive activation, layout and story remain unchanged.
 - Verified49 paired static views with zero changes outside72 facade bounds; original13 established views, all808 footprints/doors/35 roads,8 PNGs, lighting and protected modules remain exact. Passed390 authored mission stages, all12 entrances,48 older bug guards, new14traffic/12pedestrian/6schedule/8neighborhood tests, focused host recovery and final-source three-day endurance. Strict joint30minute rolling progress and its lifecycle-only source scope are documented in CITY_LIFE_REPORT.md.
 - Release evidence and public delivery are recorded in CITY_LIFE_REPORT.md and artifacts/citylife-suite-results.json.
+
+### Verified delivery · 2026-11-02
+
+- Pushed tested source22a929e and published game deployment84177cd. Live0.6.4 payload matches standaloneSHA6c2f4e73…9149b5d through verifiedHTTPS; exact-byte mobile playback, currentHUD/ambientmodules, story/Diner interactions and publiccomparisonassets pass. Direct cloudChromium originprobe remains certificate-trust blocked; noTLSbypass. Final evidence/report commits leavegamepayloadunchanged.
