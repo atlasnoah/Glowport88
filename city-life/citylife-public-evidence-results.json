@@ -1,0 +1,55 @@
+{
+  "time": "2026-11-02T13:38:34.870552+00:00",
+  "verifiedHTTPS": true,
+  "files": [
+    {
+      "file": "citylife-visual-comparison.html",
+      "url": "https://atlasnoah.github.io/Glowport88/city-life/citylife-visual-comparison.html",
+      "sha256": "62261309050c72a6a5dc2c22226bbd23d3edaecc911668443660bfcd388ee897",
+      "bytes": 29038,
+      "matchesLocal": true
+    },
+    {
+      "file": "citylife-after-block-01-residential-night.png",
+      "url": "https://atlasnoah.github.io/Glowport88/city-life/citylife-after-block-01-residential-night.png",
+      "sha256": "966e53f2de2471756be4298483708bd429d4fa5ab5638ba6f0637730ab320a17",
+      "bytes": 645106,
+      "matchesLocal": true
+    },
+    {
+      "file": "citylife-after-block-09-industrial-night.png",
+      "url": "https://atlasnoah.github.io/Glowport88/city-life/citylife-after-block-09-industrial-night.png",
+      "sha256": "8177e443d0a1bf027586d767ff4827e8270cc799b88b8f6561077e33e170e146",
+      "bytes": 632433,
+      "matchesLocal": true
+    },
+    {
+      "file": "citylife-after-hud-phone.png",
+      "url": "https://atlasnoah.github.io/Glowport88/city-life/citylife-after-hud-phone.png",
+      "sha256": "26a693154c880dbe994cb5b9d03945baa9022b9096de3ae643bba22a0cbfef30",
+      "bytes": 835272,
+      "matchesLocal": true
+    },
+    {
+      "file": "citylife-before-downtown-night.png",
+      "url": "https://atlasnoah.github.io/Glowport88/city-life/citylife-before-downtown-night.png",
+      "sha256": "eae66134df9b2e4fb0659d0a55ec15147d599049e49d960c51bae7f11e980ffe",
+      "bytes": 675542,
+      "matchesLocal": true
+    },
+    {
+      "file": "citylife-suite-results.json",
+      "url": "https://atlasnoah.github.io/Glowport88/city-life/citylife-suite-results.json",
+      "sha256": "437a69bfa70ee2505aa8867668c3e57bfc5ce1da366f5bcd19d469967c4463cc",
+      "bytes": 5033,
+      "matchesLocal": true
+    },
+    {
+      "file": "citylife-preservation-results.json",
+      "url": "https://atlasnoah.github.io/Glowport88/city-life/citylife-preservation-results.json",
+      "sha256": "51d126589ed5f87f3962e8dacc0fc06b3469c25130af3946c2a4098c9c614074",
+      "bytes": 277696,
+      "matchesLocal": true
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "time": "2026-11-02T13:39:45.767197+00:00",
+  "version": "0.6.4",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.4-city-life",
+  "sourceCommit": "22a929e24cb70e259447d1e5fd3b70c4f8d00890",
+  "gameDeploymentCommit": "84177cd9090e6bd6b92e8f5aad52b6b77e4f1fde",
+  "sha256": "6c2f4e73827ee02503320cc4db8b24ef332aeb504e312a5efef774bae9149b5d",
+  "verifiedHTTPSDownload": true,
+  "matchesTestedRelease": true,
+  "mobilePlaybackOfExactPublicBytes": true,
+  "publicGalleryEvidenceFiles": 7,
+  "directPublicOriginBrowser": {
+    "passed": false,
+    "reason": "ERR_CERT_AUTHORITY_INVALID in cloud browser proxy trust",
+    "tlsVerificationBypassed": false
+  },
+  "verificationFiles": [
+    "public-demo-results.json",
+    "citylife-public-build.json",
+    "citylife-public-evidence-results.json",
+    "citylife-public-direct-browser.json"
+  ],
+  "sourceReview": "Current standalone reconstructed from current source matched exact bytes;20protectedmodules/3CSS/8PNG/HUDmarkup retainedb334fc0 baseline.",
+  "scope": "Certificate-verified HTTPS bytes, exact-byte isolated Chromium playback and public evidence hashes passed. Direct external cloud Chromium navigation and physical phones/Safari not claimed."
+}

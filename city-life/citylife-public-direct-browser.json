@@ -1,0 +1,8 @@
+{
+  "time": "2026-11-02T13:38:33.419Z",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.4-city-life",
+  "tlsVerificationBypassed": false,
+  "directExternalNavigation": false,
+  "error": "page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://atlasnoah.github.io/Glowport88/?v=0.6.4-city-life\nCall log:\n\u001b[2m  - navigating to \"https://atlasnoah.github.io/Glowport88/?v=0.6.4-city-life\", waiting until \"domcontentloaded\"\u001b[22m\n",
+  "classification": "Cloud browser proxy trust prevents direct origin verification"
+}

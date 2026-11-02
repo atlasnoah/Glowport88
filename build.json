@@ -73,5 +73,7 @@
     "scope": "Joint motion soak and final lifecycle patch have separately recorded source scope and actual-host validation; see city-life/citylife-host-validation-scope.json."
   },
   "hudPreview": "city-life/citylife-after-hud-desktop.png",
-  "hudPhonePreview": "city-life/citylife-after-hud-phone.png"
+  "hudPhonePreview": "city-life/citylife-after-hud-phone.png",
+  "deliveryVerification": "city-life/citylife-public-delivery-results.json",
+  "report": "city-life/CITY_LIFE_REPORT.md"
 }

@@ -1,0 +1,44 @@
+{
+  "time": "2026-11-02T13:38:45.161Z",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.4-city-life",
+  "verifiedHTTPSDownload": true,
+  "sha256": "6c2f4e73827ee02503320cc4db8b24ef332aeb504e312a5efef774bae9149b5d",
+  "matchesTestedRelease": true,
+  "browserPlaybackOfDownloadedBytes": {
+    "originalCity": {
+      "buildings": 808,
+      "roads": 35,
+      "originalCommit": "c9b4af6"
+    },
+    "main": 40,
+    "side": 20,
+    "encounters": 32,
+    "start": true,
+    "phone": true,
+    "map": true,
+    "touchMovement": true,
+    "hud": {
+      "minimap": true,
+      "healthBar": true,
+      "equippedWeapon": true,
+      "presentationReady": true
+    },
+    "entranceGuidance": true,
+    "dinerStart": true,
+    "vehicleModels": 10,
+    "cassetteSites": 12,
+    "cityLife": {
+      "facades": 72,
+      "blocks": 18,
+      "trafficScale": 1.15,
+      "trafficPopulation": 43,
+      "pedestrianPopulation": 163
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "errors": []
+  },
+  "directExternalBrowserNavigation": "not exercised by this script; direct navigation is recorded by a separate browser probe"
+}

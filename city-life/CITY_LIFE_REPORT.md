@@ -66,10 +66,18 @@ Verification: `tests/ambient-traffic.cjs`, `ambient-pedestrians.cjs`, `neighborh
 
 ## Screenshots and limits
 
-[Before/after gallery](artifacts/citylife-visual-comparison.html) · [Residential night](artifacts/citylife-after-block-01-residential-night.png) · [Industrial night](artifacts/citylife-after-block-09-industrial-night.png) · [Phone HUD](artifacts/citylife-after-hud-phone.png).
+[Before/after gallery](citylife-visual-comparison.html) · [Residential night](citylife-after-block-01-residential-night.png) · [Industrial night](citylife-after-block-09-industrial-night.png) · [Phone HUD](citylife-after-hud-phone.png).
 
 Accelerated Chromium checks verify actual movement and production interactions; they do not establish physical-phone FPS, Safari behavior, every possible emergent traffic situation, human campaign duration or commercial-release readiness. Ambient activity has extra CPU cost; timings and bounded memory are reported without claiming identical performance. No difficulty or gameplay balance changes are intended.
 
 ## Delivery
 
-The verified playable URL, tested source commit and release checksum will be recorded after publishing and checking the actual public bytes.
+**Published and verified:** [Play Glowport ’88 0.6.4](https://atlasnoah.github.io/Glowport88/?v=0.6.4-city-life). Choose **Start / Continue** to resume your existing progress.
+
+- Tested game/source commit: [`22a929e24cb70e259447d1e5fd3b70c4f8d00890`](https://github.com/atlasnoah/Glowport88/commit/22a929e24cb70e259447d1e5fd3b70c4f8d00890), pushed on `codex/city-life-traffic`. Later report/evidence commits do not change the game payload; `main` remains unchanged.
+- Game deployment: [`84177cd9090e6bd6b92e8f5aad52b6b77e4f1fde`](https://github.com/atlasnoah/Glowport88/commit/84177cd9090e6bd6b92e8f5aad52b6b77e4f1fde).
+- Standalone/live SHA-256: `6c2f4e73827ee02503320cc4db8b24ef332aeb504e312a5efef774bae9149b5d`.
+- **PASS** `node tests/public-demo.cjs`: normal certificate-verified HTTPS download equals the tested release. Isolated mobile Chromium playback of those exact public bytes passes Start, touch movement, current HUD, phone/map, mission entrance guidance and East Diner acceptance. The 72 facades/eighteen blocks, 1.15 traffic scale, bounded populations and 40/20/32 mission catalogues are present, with no script errors.
+- **PASS** seven public gallery/screenshot/evidence files match local hashes through verified HTTPS. [Before/after gallery](https://atlasnoah.github.io/Glowport88/city-life/citylife-visual-comparison.html) · [Residential night](https://atlasnoah.github.io/Glowport88/city-life/citylife-after-block-01-residential-night.png) · [Phone HUD](https://atlasnoah.github.io/Glowport88/city-life/citylife-after-hud-phone.png).
+
+The separate direct public-origin cloud Chromium probe is blocked by its proxy trust configuration (`ERR_CERT_AUTHORITY_INVALID`). TLS verification was not bypassed. Verified HTTPS downloads and playback of the exact downloaded bytes passed; direct external Chromium navigation and physical-device testing are not claimed. Evidence: `artifacts/public-demo-results.json`, `citylife-public-build.json`, `citylife-public-evidence-results.json`, `citylife-public-direct-browser.json` and `citylife-public-delivery-results.json`.
