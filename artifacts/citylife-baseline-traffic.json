@@ -1,0 +1,1417 @@
+{
+  "time": "2026-10-30T13:36:03.945Z",
+  "baselineCommit": "b334fc0",
+  "wallMilliseconds": 49329,
+  "natural": {
+    "samples": [
+      {
+        "seconds": 30.000000000000156,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 96.88195336479475,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 60.00000000000058,
+        "cars": 43,
+        "stopped": 2,
+        "stuckOver30s": 0,
+        "minGap": 64.65229383002021,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 89.99999999999916,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 60.501493600155,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 119.99999999999746,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 71.09886337654916,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 149.99999999999577,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 60.797038230301865,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 179.99999999999406,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 69.25278814009714,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 209.99999999999235,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 70.00002622590182,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 239.99999999999065,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 70.01457216867675,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 269.9999999999929,
+        "cars": 43,
+        "stopped": 2,
+        "stuckOver30s": 0,
+        "minGap": 70.02035094918028,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 299.9999999999997,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 81.99290349580951,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 330.00000000000654,
+        "cars": 43,
+        "stopped": 2,
+        "stuckOver30s": 0,
+        "minGap": 70.0019965719166,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 360.00000000001336,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 67.86367851832074,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 390.0000000000202,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 72.94697551667014,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 420.000000000027,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 55.25234263918963,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 450.0000000000338,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 70.0007029646913,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 480.00000000004064,
+        "cars": 43,
+        "stopped": 3,
+        "stuckOver30s": 0,
+        "minGap": 70.00211054789725,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 510.00000000004746,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 63.521719125064415,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 540.0000000000542,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 53.05669466827948,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 570.000000000061,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 70.00729419880372,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 600.0000000000679,
+        "cars": 43,
+        "stopped": 3,
+        "stuckOver30s": 0,
+        "minGap": 52.17411344774914,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 630.0000000000747,
+        "cars": 43,
+        "stopped": 2,
+        "stuckOver30s": 0,
+        "minGap": 70.00365058185344,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 660.0000000000815,
+        "cars": 43,
+        "stopped": 2,
+        "stuckOver30s": 0,
+        "minGap": 70.00003531210132,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 690.0000000000883,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 69.25205081636214,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 720.0000000000952,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 74.18792185257189,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 750.000000000102,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 58.20631198356494,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 780.0000000001088,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 55.684749356749975,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 810.0000000001156,
+        "cars": 43,
+        "stopped": 2,
+        "stuckOver30s": 0,
+        "minGap": 59.636237471178006,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 840.0000000001224,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 71.03641777178933,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 870.0000000001293,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 69.67634964199439,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 900.0000000001361,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 71.16819554828666,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 930.0000000001429,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 67.52376967009909,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 960.0000000001497,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 86.81581957427251,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 990.0000000001565,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 78.96951561519722,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1020.0000000001634,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 76.38623103298778,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1050.0000000001405,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 54.583926264939464,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1080.0000000001132,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 73.96976809860098,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1110.000000000086,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 70.00124297113143,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1140.0000000000587,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 57.5115544830439,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1170.0000000000314,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 58.182452573869604,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1200.000000000004,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 59.05874827592078,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1229.9999999999768,
+        "cars": 43,
+        "stopped": 2,
+        "stuckOver30s": 0,
+        "minGap": 70.00003072825712,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1259.9999999999495,
+        "cars": 43,
+        "stopped": 3,
+        "stuckOver30s": 0,
+        "minGap": 70.00010925619063,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1289.9999999999222,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 70.00000000000182,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1319.999999999895,
+        "cars": 43,
+        "stopped": 4,
+        "stuckOver30s": 0,
+        "minGap": 70.00029145184271,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1349.9999999998677,
+        "cars": 43,
+        "stopped": 4,
+        "stuckOver30s": 0,
+        "minGap": 70.00061383264256,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1379.9999999998404,
+        "cars": 43,
+        "stopped": 3,
+        "stuckOver30s": 0,
+        "minGap": 60.90232080193057,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1409.999999999813,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 70.00379564942523,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1439.9999999997858,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 75.1504745555643,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1469.9999999997585,
+        "cars": 43,
+        "stopped": 2,
+        "stuckOver30s": 0,
+        "minGap": 63.03169593661766,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1499.9999999997312,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 71.40063894008087,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1529.999999999704,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 70.00081973323176,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1559.9999999996767,
+        "cars": 43,
+        "stopped": 2,
+        "stuckOver30s": 0,
+        "minGap": 69.99999999999909,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1589.9999999996494,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 70,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1619.999999999622,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 60.717861149143225,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1649.9999999995948,
+        "cars": 43,
+        "stopped": 2,
+        "stuckOver30s": 0,
+        "minGap": 70.72700488436669,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1679.9999999995675,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 60.76948927358637,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1709.9999999995403,
+        "cars": 43,
+        "stopped": 1,
+        "stuckOver30s": 0,
+        "minGap": 67.24781505425511,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1739.999999999513,
+        "cars": 43,
+        "stopped": 3,
+        "stuckOver30s": 0,
+        "minGap": 60.79690610686423,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1769.9999999994857,
+        "cars": 43,
+        "stopped": 2,
+        "stuckOver30s": 0,
+        "minGap": 70,
+        "overlaps": 0,
+        "npcs": 163
+      },
+      {
+        "seconds": 1799.9999999994584,
+        "cars": 43,
+        "stopped": 0,
+        "stuckOver30s": 0,
+        "minGap": 60.02151122855893,
+        "overlaps": 0,
+        "npcs": 163
+      }
+    ],
+    "updates": 18000,
+    "simulatedSeconds": 1800,
+    "updateMilliseconds": {
+      "median": 1.800000011920929,
+      "p95": 4.4000000059604645,
+      "p99": 8.599999994039536,
+      "max": 140.40000000596046
+    },
+    "vehicles": [
+      {
+        "id": "traffic-west-0",
+        "distance": 113414.50665771848,
+        "districts": [
+          "west"
+        ],
+        "maxContinuousStopSeconds": 3.5000000000000018
+      },
+      {
+        "id": "traffic-west-1",
+        "distance": 114661.81073300468,
+        "districts": [
+          "west"
+        ],
+        "maxContinuousStopSeconds": 5.1999999999999975
+      },
+      {
+        "id": "traffic-west-2",
+        "distance": 113846.65021471282,
+        "districts": [
+          "west"
+        ],
+        "maxContinuousStopSeconds": 5.799999999999995
+      },
+      {
+        "id": "traffic-west-3",
+        "distance": 112966.90314055387,
+        "districts": [
+          "west"
+        ],
+        "maxContinuousStopSeconds": 6.399999999999993
+      },
+      {
+        "id": "traffic-west-4",
+        "distance": 112129.42563537836,
+        "districts": [
+          "west"
+        ],
+        "maxContinuousStopSeconds": 6.399999999999993
+      },
+      {
+        "id": "traffic-west-5",
+        "distance": 111300.03217161869,
+        "districts": [
+          "west"
+        ],
+        "maxContinuousStopSeconds": 6.399999999999993
+      },
+      {
+        "id": "traffic-west-6",
+        "distance": 114613.42827001191,
+        "districts": [
+          "west"
+        ],
+        "maxContinuousStopSeconds": 3.5000000000000018
+      },
+      {
+        "id": "traffic-west-7",
+        "distance": 114168.01332829101,
+        "districts": [
+          "west"
+        ],
+        "maxContinuousStopSeconds": 3.5000000000000018
+      },
+      {
+        "id": "traffic-core-0",
+        "distance": 115796.18620371506,
+        "districts": [
+          "core",
+          "south"
+        ],
+        "maxContinuousStopSeconds": 6.699999999999992
+      },
+      {
+        "id": "traffic-core-1",
+        "distance": 115378.22030751793,
+        "districts": [
+          "core",
+          "south"
+        ],
+        "maxContinuousStopSeconds": 6.699999999999992
+      },
+      {
+        "id": "traffic-core-2",
+        "distance": 116773.86611230051,
+        "districts": [
+          "core",
+          "south"
+        ],
+        "maxContinuousStopSeconds": 6.799999999999992
+      },
+      {
+        "id": "traffic-core-3",
+        "distance": 116345.56804552858,
+        "districts": [
+          "core",
+          "south"
+        ],
+        "maxContinuousStopSeconds": 6.8999999999999915
+      },
+      {
+        "id": "traffic-core-4",
+        "distance": 115918.53789703903,
+        "districts": [
+          "core",
+          "south"
+        ],
+        "maxContinuousStopSeconds": 7.499999999999989
+      },
+      {
+        "id": "traffic-core-5",
+        "distance": 116573.98169616186,
+        "districts": [
+          "core",
+          "south"
+        ],
+        "maxContinuousStopSeconds": 8.399999999999986
+      },
+      {
+        "id": "traffic-core-6",
+        "distance": 116681.59597386852,
+        "districts": [
+          "core",
+          "south"
+        ],
+        "maxContinuousStopSeconds": 7.499999999999989
+      },
+      {
+        "id": "traffic-core-7",
+        "distance": 116248.18415283228,
+        "districts": [
+          "core",
+          "south"
+        ],
+        "maxContinuousStopSeconds": 7.499999999999989
+      },
+      {
+        "id": "traffic-core-8",
+        "distance": 117188.32261029314,
+        "districts": [
+          "core",
+          "south"
+        ],
+        "maxContinuousStopSeconds": 7.499999999999989
+      },
+      {
+        "id": "traffic-core-9",
+        "distance": 116704.45454806922,
+        "districts": [
+          "core",
+          "south"
+        ],
+        "maxContinuousStopSeconds": 6.099999999999994
+      },
+      {
+        "id": "traffic-core-10",
+        "distance": 116264.49633062814,
+        "districts": [
+          "core",
+          "south"
+        ],
+        "maxContinuousStopSeconds": 5.1999999999999975
+      },
+      {
+        "id": "traffic-north-0",
+        "distance": 125470.84884344175,
+        "districts": [
+          "north"
+        ],
+        "maxContinuousStopSeconds": 5.399999999999997
+      },
+      {
+        "id": "traffic-north-1",
+        "distance": 125004.87255647588,
+        "districts": [
+          "north"
+        ],
+        "maxContinuousStopSeconds": 6.199999999999994
+      },
+      {
+        "id": "traffic-north-2",
+        "distance": 124534.8011876314,
+        "districts": [
+          "north"
+        ],
+        "maxContinuousStopSeconds": 7.29999999999999
+      },
+      {
+        "id": "traffic-north-3",
+        "distance": 124075.38255090674,
+        "districts": [
+          "north"
+        ],
+        "maxContinuousStopSeconds": 7.29999999999999
+      },
+      {
+        "id": "traffic-north-4",
+        "distance": 123964.90725665329,
+        "districts": [
+          "north"
+        ],
+        "maxContinuousStopSeconds": 3.1000000000000014
+      },
+      {
+        "id": "traffic-north-5",
+        "distance": 124673.90390751156,
+        "districts": [
+          "north"
+        ],
+        "maxContinuousStopSeconds": 3.4000000000000017
+      },
+      {
+        "id": "traffic-north-6",
+        "distance": 124785.58141780834,
+        "districts": [
+          "north"
+        ],
+        "maxContinuousStopSeconds": 4.4
+      },
+      {
+        "id": "traffic-north-7",
+        "distance": 124379.02837757097,
+        "districts": [
+          "north"
+        ],
+        "maxContinuousStopSeconds": 4.699999999999999
+      },
+      {
+        "id": "traffic-south-0",
+        "distance": 110244.40166159242,
+        "districts": [
+          "south"
+        ],
+        "maxContinuousStopSeconds": 6.199999999999994
+      },
+      {
+        "id": "traffic-south-1",
+        "distance": 111162.66742648395,
+        "districts": [
+          "south"
+        ],
+        "maxContinuousStopSeconds": 5.799999999999995
+      },
+      {
+        "id": "traffic-south-2",
+        "distance": 110986.76524626577,
+        "districts": [
+          "south"
+        ],
+        "maxContinuousStopSeconds": 6.8999999999999915
+      },
+      {
+        "id": "traffic-south-3",
+        "distance": 111042.55898845775,
+        "districts": [
+          "south"
+        ],
+        "maxContinuousStopSeconds": 6.999999999999991
+      },
+      {
+        "id": "traffic-south-4",
+        "distance": 110643.0797505838,
+        "districts": [
+          "south"
+        ],
+        "maxContinuousStopSeconds": 3.5000000000000018
+      },
+      {
+        "id": "traffic-south-5",
+        "distance": 110299.03971242691,
+        "districts": [
+          "south"
+        ],
+        "maxContinuousStopSeconds": 3.600000000000002
+      },
+      {
+        "id": "traffic-south-6",
+        "distance": 110024.04490315437,
+        "districts": [
+          "south"
+        ],
+        "maxContinuousStopSeconds": 5.399999999999997
+      },
+      {
+        "id": "traffic-south-7",
+        "distance": 110139.02845495222,
+        "districts": [
+          "south"
+        ],
+        "maxContinuousStopSeconds": 6.099999999999994
+      },
+      {
+        "id": "traffic-east-0",
+        "distance": 127605.8237023082,
+        "districts": [
+          "east"
+        ],
+        "maxContinuousStopSeconds": 6.5999999999999925
+      },
+      {
+        "id": "traffic-east-1",
+        "distance": 126963.31048237467,
+        "districts": [
+          "east"
+        ],
+        "maxContinuousStopSeconds": 3.600000000000002
+      },
+      {
+        "id": "traffic-east-2",
+        "distance": 126453.59338883014,
+        "districts": [
+          "east"
+        ],
+        "maxContinuousStopSeconds": 3.600000000000002
+      },
+      {
+        "id": "traffic-east-3",
+        "distance": 131622.46915481452,
+        "districts": [
+          "east"
+        ],
+        "maxContinuousStopSeconds": 4.200000000000001
+      },
+      {
+        "id": "traffic-east-4",
+        "distance": 130833.12739761462,
+        "districts": [
+          "east"
+        ],
+        "maxContinuousStopSeconds": 4.4
+      },
+      {
+        "id": "traffic-east-5",
+        "distance": 130018.27413849166,
+        "districts": [
+          "east"
+        ],
+        "maxContinuousStopSeconds": 4.4
+      },
+      {
+        "id": "traffic-east-6",
+        "distance": 129262.34676514313,
+        "districts": [
+          "east"
+        ],
+        "maxContinuousStopSeconds": 4.6
+      },
+      {
+        "id": "traffic-east-7",
+        "distance": 128457.36726441141,
+        "districts": [
+          "east"
+        ],
+        "maxContinuousStopSeconds": 6.5999999999999925
+      }
+    ],
+    "ending": [
+      {
+        "x": 892,
+        "y": 1998.1983079602414,
+        "ring": "west",
+        "speed": 49.986789365345615,
+        "trackDist": 6781.801692039759
+      },
+      {
+        "x": 1948,
+        "y": 1534.7494619012414,
+        "ring": "west",
+        "speed": 47.39235179710522,
+        "trackDist": 1434.7494619012414
+      },
+      {
+        "x": 1948,
+        "y": 1633.3675649794932,
+        "ring": "west",
+        "speed": 47.37118384771893,
+        "trackDist": 1533.3675649794936
+      },
+      {
+        "x": 1948,
+        "y": 1731.9743099268035,
+        "ring": "west",
+        "speed": 47.368734272582515,
+        "trackDist": 1631.9743099268042
+      },
+      {
+        "x": 1948,
+        "y": 1830.5797676981601,
+        "ring": "west",
+        "speed": 47.36872278249939,
+        "trackDist": 1730.57976769816
+      },
+      {
+        "x": 1948,
+        "y": 1929.1852193993182,
+        "ring": "west",
+        "speed": 47.36872240346857,
+        "trackDist": 1829.1852193993188
+      },
+      {
+        "x": 892,
+        "y": 2633.241745012412,
+        "ring": "west",
+        "speed": 5.278020602390143,
+        "trackDist": 6146.758254987587
+      },
+      {
+        "x": 892,
+        "y": 2158.4001909898725,
+        "ring": "west",
+        "speed": 63.21640412737616,
+        "trackDist": 6621.599809010128
+      },
+      {
+        "x": 4468,
+        "y": 2878.4322174511763,
+        "ring": "core",
+        "speed": 49.318148485376156,
+        "trackDist": 2458.432217451176
+      },
+      {
+        "x": 4468,
+        "y": 2978.2560602146623,
+        "ring": "core",
+        "speed": 49.31814808663912,
+        "trackDist": 2558.2560602146627
+      },
+      {
+        "x": 3052,
+        "y": 3520.178775684137,
+        "ring": "core",
+        "speed": 55.61432384433283,
+        "trackDist": 4619.821224315862
+      },
+      {
+        "x": 3052,
+        "y": 3416.4104704595993,
+        "ring": "core",
+        "speed": 55.707852062629534,
+        "trackDist": 4723.589529540401
+      },
+      {
+        "x": 3052,
+        "y": 3311.879772130622,
+        "ring": "core",
+        "speed": 56.08919659950771,
+        "trackDist": 4828.120227869378
+      },
+      {
+        "x": 3052,
+        "y": 2068.9178884589455,
+        "ring": "core",
+        "speed": 51.62914284062572,
+        "trackDist": 6071.0821115410545
+      },
+      {
+        "x": 3590.545449514997,
+        "y": 1872,
+        "ring": "core",
+        "speed": 54.64670491585712,
+        "trackDist": 550.5454495149967
+      },
+      {
+        "x": 3693.699640029303,
+        "y": 1872,
+        "ring": "core",
+        "speed": 54.64670433481224,
+        "trackDist": 653.699640029303
+      },
+      {
+        "x": 4468,
+        "y": 2583.8901199840657,
+        "ring": "core",
+        "speed": 49.32256337367726,
+        "trackDist": 2163.890119984066
+      },
+      {
+        "x": 4468,
+        "y": 2683.716290501032,
+        "ring": "core",
+        "speed": 49.31824745784689,
+        "trackDist": 2263.7162905010314
+      },
+      {
+        "x": 4468,
+        "y": 2783.5401859419653,
+        "ring": "core",
+        "speed": 49.318155255640164,
+        "trackDist": 2363.540185941965
+      },
+      {
+        "x": 4468,
+        "y": 1312.761803650572,
+        "ring": "north",
+        "speed": 29.898667740955716,
+        "trackDist": 2252.761803650572
+      },
+      {
+        "x": 4468,
+        "y": 1401.9545943574776,
+        "ring": "north",
+        "speed": 44.9599014290463,
+        "trackDist": 2341.954594357478
+      },
+      {
+        "x": 4468,
+        "y": 1500.1231703285466,
+        "ring": "north",
+        "speed": 55.64627720820427,
+        "trackDist": 2440.123170328547
+      },
+      {
+        "x": 4395.738113829136,
+        "y": 1508,
+        "ring": "north",
+        "speed": 59.244203080097215,
+        "trackDist": 2544.2618861708643
+      },
+      {
+        "x": 3879.879883894343,
+        "y": 1508,
+        "ring": "north",
+        "speed": 56.29471026887186,
+        "trackDist": 3060.120116105657
+      },
+      {
+        "x": 3052,
+        "y": 1040.8360929951941,
+        "ring": "north",
+        "speed": 56.88594077252783,
+        "trackDist": 4379.163907004806
+      },
+      {
+        "x": 3351.7724128780083,
+        "y": 512,
+        "ring": "north",
+        "speed": 22.592800059937645,
+        "trackDist": 311.77241287800814
+      },
+      {
+        "x": 3462.4797459610354,
+        "y": 512,
+        "ring": "north",
+        "speed": 60.50910981805064,
+        "trackDist": 422.4797459610358
+      },
+      {
+        "x": 3052,
+        "y": 4463.608526226995,
+        "ring": "south",
+        "speed": 46.9789432764519,
+        "trackDist": 3676.3914737730042
+      },
+      {
+        "x": 4027.43793082925,
+        "y": 3912,
+        "ring": "south",
+        "speed": 59.78591976561584,
+        "trackDist": 987.4379308292503
+      },
+      {
+        "x": 4343.444066493057,
+        "y": 3912,
+        "ring": "south",
+        "speed": 53.90425445926376,
+        "trackDist": 1303.4440664930569
+      },
+      {
+        "x": 4468,
+        "y": 4410.411253599795,
+        "ring": "south",
+        "speed": 52.110417835903355,
+        "trackDist": 1950.411253599795
+      },
+      {
+        "x": 4468,
+        "y": 4511.98026366386,
+        "ring": "south",
+        "speed": 52.110407002153806,
+        "trackDist": 2051.98026366386
+      },
+      {
+        "x": 4446.450732008039,
+        "y": 4568,
+        "ring": "south",
+        "speed": 52.11040651970543,
+        "trackDist": 2153.5492679919607
+      },
+      {
+        "x": 4164.9212175091925,
+        "y": 4568,
+        "ring": "south",
+        "speed": 58.09986153510399,
+        "trackDist": 2435.078782490807
+      },
+      {
+        "x": 3536.1865334160093,
+        "y": 4568,
+        "ring": "south",
+        "speed": 65.81384275616146,
+        "trackDist": 3063.8134665839907
+      },
+      {
+        "x": 5572,
+        "y": 2923.6915893617497,
+        "ring": "east",
+        "speed": 56.694923205720265,
+        "trackDist": 5856.30841063825
+      },
+      {
+        "x": 5572,
+        "y": 2640.008130861628,
+        "ring": "east",
+        "speed": 64.65509500452318,
+        "trackDist": 6139.991869138373
+      },
+      {
+        "x": 5572,
+        "y": 2222.9298619265755,
+        "ring": "east",
+        "speed": 53.889892906369646,
+        "trackDist": 6557.070138073425
+      },
+      {
+        "x": 5572,
+        "y": 3628.390390829194,
+        "ring": "east",
+        "speed": 54.9307763972829,
+        "trackDist": 5151.609609170805
+      },
+      {
+        "x": 5572,
+        "y": 3525.0586612633815,
+        "ring": "east",
+        "speed": 54.93071957240609,
+        "trackDist": 5254.9413387366185
+      },
+      {
+        "x": 5572,
+        "y": 3421.726961662638,
+        "ring": "east",
+        "speed": 54.93071825229563,
+        "trackDist": 5358.273038337362
+      },
+      {
+        "x": 5572,
+        "y": 3150.097180538509,
+        "ring": "east",
+        "speed": 57.83923199591227,
+        "trackDist": 5629.902819461492
+      },
+      {
+        "x": 5572,
+        "y": 3022.456424590315,
+        "ring": "east",
+        "speed": 56.69492424488563,
+        "trackDist": 5757.543575409685
+      }
+    ]
+  },
+  "obstruction": {
+    "seconds": 360,
+    "final60Motion": [
+      {
+        "id": "traffic-core-0",
+        "distance": 0,
+        "speed": 0
+      },
+      {
+        "id": "traffic-core-1",
+        "distance": 0,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-2",
+        "distance": 0,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-3",
+        "distance": 0,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-4",
+        "distance": 0,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-5",
+        "distance": 0,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-6",
+        "distance": 0,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-7",
+        "distance": 0,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-8",
+        "distance": 0,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-9",
+        "distance": 0,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-10",
+        "distance": 0,
+        "speed": 1.6
+      }
+    ],
+    "lowMotionLast60Seconds": 11,
+    "blocker": {
+      "id": "baseline-obstruction",
+      "x": 3125.636363636364,
+      "y": 1872,
+      "angle": 1.5707963267948966,
+      "ai": false,
+      "parked": true,
+      "speed": 0,
+      "health": 100,
+      "personal": true
+    },
+    "before": [
+      {
+        "id": "traffic-core-0",
+        "x": 3125.636363636364,
+        "y": 1872
+      },
+      {
+        "id": "traffic-core-1",
+        "x": 3696.545454545454,
+        "y": 1872
+      },
+      {
+        "id": "traffic-core-2",
+        "x": 4267.454545454546,
+        "y": 1872
+      },
+      {
+        "id": "traffic-core-3",
+        "x": 4468,
+        "y": 2218.363636363636
+      },
+      {
+        "id": "traffic-core-4",
+        "x": 4468,
+        "y": 2789.272727272728
+      },
+      {
+        "id": "traffic-core-5",
+        "x": 4468,
+        "y": 3360.181818181818
+      },
+      {
+        "id": "traffic-core-6",
+        "x": 4108.909090909092,
+        "y": 3548
+      },
+      {
+        "id": "traffic-core-7",
+        "x": 3538,
+        "y": 3548
+      },
+      {
+        "id": "traffic-core-8",
+        "x": 3052,
+        "y": 3487.090909090908
+      },
+      {
+        "id": "traffic-core-9",
+        "x": 3052,
+        "y": 2916.181818181818
+      },
+      {
+        "id": "traffic-core-10",
+        "x": 3052,
+        "y": 2345.272727272728
+      }
+    ],
+    "after": [
+      {
+        "id": "traffic-core-0",
+        "x": 3138.7509728758005,
+        "y": 1872,
+        "speed": 0
+      },
+      {
+        "id": "traffic-core-1",
+        "x": 3052,
+        "y": 2461.2490271241986,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-2",
+        "x": 3052,
+        "y": 2391.2490271241986,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-3",
+        "x": 3052,
+        "y": 2321.2490271241986,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-4",
+        "x": 3052,
+        "y": 2251.2490271241986,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-5",
+        "x": 3052,
+        "y": 2181.2490271241986,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-6",
+        "x": 3052,
+        "y": 2111.2490271241986,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-7",
+        "x": 3052,
+        "y": 2041.2490271241986,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-8",
+        "x": 3052,
+        "y": 1971.2490271241986,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-9",
+        "x": 3052,
+        "y": 1901.2490271241986,
+        "speed": 1.6
+      },
+      {
+        "id": "traffic-core-10",
+        "x": 3068.7509728758005,
+        "y": 1872,
+        "speed": 1.6
+      }
+    ],
+    "stationaryBeforeBlocker": 1
+  },
+  "errors": [],
+  "scope": "Actual archived 0.6.3 host, deterministic RAF disabled, 18,000 real production .1s updates over30simulatedminutes with completed story/invulnerability/events suppressed; then300s parkedcar obstruction. CPU cloudChromium timing not deviceFPS. Separate blocker rerun measured actual 60s position deltas after300s queue settling, since oldspeedreports1.6whilepositionneveradvances."
+}

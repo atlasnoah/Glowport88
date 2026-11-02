@@ -129,3 +129,12 @@
 - Passed 25 guards across five viewports and ten exact 800×450 before/after canvas captures. Mobile 21, smoke 20, navigation 11, all 12 entrances and host-edge eight checks pass. Corrected a visually detected narrow-screen context/health overlap with a shared prompt/ACTIONS stack.
 - Screenshot, packaging and public-delivery evidence is recorded in HUD_REPORT.md. Physical devices/Safari are not covered by the Chromium checks.
 - Published tested source `5340c4c` through Pages `5cd4cfc`. Live 0.6.3 download matches the tested standalone SHA; downloaded-byte mobile HUD/control playback and public screenshot/evidence hashes pass. Direct external Chromium remains blocked by cloud proxy trust; certificate validation was preserved.
+
+## City diversity and ambient navigation · 0.6.4 · 2026-10-30
+
+- Preserved b334fc0 as the baseline and local rollback reference; retained all original city geometry, PNGs, lights, camera and HUD. Added72 existing-facade annotations across18 blocks and136 footprint-contained decorative details using the approved illustrated sheets.
+- Replaced only ambient traffic movement with existing-grid lane routing,15% cruise boost, controlled junctions, safe following, static obstruction detours, visible safe turnback and bounded offscreen recycling. Fixed the original starter-car queue and blocked junction ownership; protected player/mission cars. Added offscreen grace retirement for healthy completed chase cars to prevent population growth.
+- Added cached sidewalk/crosswalk civilian routing, bounded activity, pavement-constrained passing and same-side walking recovery. Rolling tests exposed and fixed a resident stranded19.8px from the curb. Staggered simultaneous routine reroutes with an eight-change budget.
+- Existing mobile regression reproduced a0.6.3 dialogue click-through. Responses now require their own pointer press for pointer clicks; keyboard/assistive activation, layout and story remain unchanged.
+- Verified49 paired static views with zero changes outside72 facade bounds; original13 established views, all808 footprints/doors/35 roads,8 PNGs, lighting and protected modules remain exact. Passed390 authored mission stages, all12 entrances,48 older bug guards, new14traffic/12pedestrian/6schedule/8neighborhood tests, focused host recovery and final-source three-day endurance. Strict joint30minute rolling progress and its lifecycle-only source scope are documented in CITY_LIFE_REPORT.md.
+- Release evidence and public delivery are recorded in CITY_LIFE_REPORT.md and artifacts/citylife-suite-results.json.

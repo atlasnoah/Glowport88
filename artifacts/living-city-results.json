@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-28T14:02:23.043Z",
+  "time": "2026-10-30T13:38:29.205Z",
   "passed": [
     "twelve original archive sites have valid sampled access paths",
     "blocked maps omit inaccessible collectibles instead of spawning placeholders",
@@ -20,7 +20,7 @@
     "days": 4,
     "npcs": 170,
     "steps": 960,
-    "milliseconds": 37.444197999999915
+    "milliseconds": 61.735276999999996
   },
   "browser": "Chromium mobile emulation; synthesized audio scheduling and controls, not a physical speaker/listening test"
 }

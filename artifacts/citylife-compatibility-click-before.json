@@ -1,0 +1,601 @@
+{
+  "time": "2026-10-30T19:42:50.876830+00:00",
+  "reproductions": [
+    {
+      "version": "b334fc0",
+      "beforeKey": "2:m31:2",
+      "beforeStage": "choice",
+      "interactButtonBounds": {
+        "x": 125.765625,
+        "y": 359.25,
+        "width": 66.71875,
+        "height": 44,
+        "top": 359.25,
+        "right": 192.484375,
+        "bottom": 403.25,
+        "left": 125.765625
+      },
+      "offeredActions": [
+        {
+          "id": "objective:2:m31:2",
+          "label": "MAKE YOUR DECISION",
+          "priority": 100,
+          "distance": 0
+        }
+      ],
+      "afterKey": "2:m31:3",
+      "dialogueVisibleAfterTap": false,
+      "events": [
+        {
+          "type": "pointerdown",
+          "x": 159.1199951171875,
+          "y": 381.25,
+          "target": "touchE",
+          "before": [
+            {
+              "id": "objective:2:m31:2",
+              "label": "MAKE YOUR DECISION",
+              "priority": 100,
+              "distance": 0
+            }
+          ],
+          "key": "2:m31:2",
+          "after": [
+            {
+              "id": "objective:2:m31:3",
+              "label": "COLLECT ANALYST CODES",
+              "priority": 100,
+              "distance": 0
+            }
+          ],
+          "keyAfter": "2:m31:3",
+          "dialogue": false,
+          "input": {
+            "controls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "keyboard": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "touchControls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "pointer": {
+              "x": 400,
+              "y": 225,
+              "active": false
+            },
+            "move": null,
+            "aim": null,
+            "paused": false,
+            "touch": {
+              "enabled": true,
+              "available": true,
+              "movePointer": null,
+              "aimPointer": null,
+              "aimFire": false,
+              "held": [],
+              "owners": 0
+            }
+          }
+        },
+        {
+          "type": "pointerup",
+          "x": 159.1199951171875,
+          "y": 381.25,
+          "target": "touchE",
+          "before": [
+            {
+              "id": "objective:2:m31:2",
+              "label": "MAKE YOUR DECISION",
+              "priority": 100,
+              "distance": 0
+            }
+          ],
+          "key": "2:m31:2",
+          "after": [
+            {
+              "id": "objective:2:m31:3",
+              "label": "COLLECT ANALYST CODES",
+              "priority": 100,
+              "distance": 0
+            }
+          ],
+          "keyAfter": "2:m31:3",
+          "dialogue": false,
+          "input": {
+            "controls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "keyboard": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "touchControls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "pointer": {
+              "x": 400,
+              "y": 225,
+              "active": false
+            },
+            "move": null,
+            "aim": null,
+            "paused": false,
+            "touch": {
+              "enabled": true,
+              "available": true,
+              "movePointer": null,
+              "aimPointer": null,
+              "aimFire": false,
+              "held": [],
+              "owners": 0
+            }
+          }
+        },
+        {
+          "type": "lostpointercapture",
+          "x": 159.1199951171875,
+          "y": 381.25,
+          "target": "touchE",
+          "before": [],
+          "key": "2:m31:2",
+          "after": [
+            {
+              "id": "objective:2:m31:3",
+              "label": "COLLECT ANALYST CODES",
+              "priority": 100,
+              "distance": 0
+            }
+          ],
+          "keyAfter": "2:m31:3",
+          "dialogue": false,
+          "input": {
+            "controls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "keyboard": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "touchControls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "pointer": {
+              "x": 400,
+              "y": 225,
+              "active": false
+            },
+            "move": null,
+            "aim": null,
+            "paused": false,
+            "touch": {
+              "enabled": true,
+              "available": true,
+              "movePointer": null,
+              "aimPointer": null,
+              "aimFire": false,
+              "held": [],
+              "owners": 0
+            }
+          }
+        },
+        {
+          "type": "click",
+          "x": 159,
+          "y": 381,
+          "target": "1. Stay. From now on, nobody makes that choice alone.",
+          "before": [],
+          "key": "2:m31:2",
+          "after": [
+            {
+              "id": "objective:2:m31:3",
+              "label": "COLLECT ANALYST CODES",
+              "priority": 100,
+              "distance": 0
+            }
+          ],
+          "keyAfter": "2:m31:3",
+          "dialogue": false,
+          "input": {
+            "controls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "keyboard": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "touchControls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "pointer": {
+              "x": 400,
+              "y": 225,
+              "active": false
+            },
+            "move": null,
+            "aim": null,
+            "paused": false,
+            "touch": {
+              "enabled": true,
+              "available": true,
+              "movePointer": null,
+              "aimPointer": null,
+              "aimFire": false,
+              "held": [],
+              "owners": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "version": "pre-fix0.6.4",
+      "beforeKey": "2:m31:2",
+      "beforeStage": "choice",
+      "interactButtonBounds": {
+        "x": 125.765625,
+        "y": 359.25,
+        "width": 66.71875,
+        "height": 44,
+        "top": 359.25,
+        "right": 192.484375,
+        "bottom": 403.25,
+        "left": 125.765625
+      },
+      "offeredActions": [
+        {
+          "id": "objective:2:m31:2",
+          "label": "MAKE YOUR DECISION",
+          "priority": 100,
+          "distance": 0
+        }
+      ],
+      "afterKey": "2:m31:3",
+      "dialogueVisibleAfterTap": false,
+      "events": [
+        {
+          "type": "pointerdown",
+          "x": 159.1199951171875,
+          "y": 381.25,
+          "target": "touchE",
+          "before": [
+            {
+              "id": "objective:2:m31:2",
+              "label": "MAKE YOUR DECISION",
+              "priority": 100,
+              "distance": 0
+            }
+          ],
+          "key": "2:m31:2",
+          "after": [
+            {
+              "id": "objective:2:m31:3",
+              "label": "COLLECT ANALYST CODES",
+              "priority": 100,
+              "distance": 0
+            }
+          ],
+          "keyAfter": "2:m31:3",
+          "dialogue": false,
+          "input": {
+            "controls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "keyboard": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "touchControls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "pointer": {
+              "x": 400,
+              "y": 225,
+              "active": false
+            },
+            "move": null,
+            "aim": null,
+            "paused": false,
+            "touch": {
+              "enabled": true,
+              "available": true,
+              "movePointer": null,
+              "aimPointer": null,
+              "aimFire": false,
+              "held": [],
+              "owners": 0
+            }
+          }
+        },
+        {
+          "type": "pointerup",
+          "x": 159.1199951171875,
+          "y": 381.25,
+          "target": "touchE",
+          "before": [
+            {
+              "id": "objective:2:m31:2",
+              "label": "MAKE YOUR DECISION",
+              "priority": 100,
+              "distance": 0
+            }
+          ],
+          "key": "2:m31:2",
+          "after": [
+            {
+              "id": "objective:2:m31:3",
+              "label": "COLLECT ANALYST CODES",
+              "priority": 100,
+              "distance": 0
+            }
+          ],
+          "keyAfter": "2:m31:3",
+          "dialogue": false,
+          "input": {
+            "controls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "keyboard": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "touchControls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "pointer": {
+              "x": 400,
+              "y": 225,
+              "active": false
+            },
+            "move": null,
+            "aim": null,
+            "paused": false,
+            "touch": {
+              "enabled": true,
+              "available": true,
+              "movePointer": null,
+              "aimPointer": null,
+              "aimFire": false,
+              "held": [],
+              "owners": 0
+            }
+          }
+        },
+        {
+          "type": "lostpointercapture",
+          "x": 159.1199951171875,
+          "y": 381.25,
+          "target": "touchE",
+          "before": [],
+          "key": "2:m31:2",
+          "after": [
+            {
+              "id": "objective:2:m31:3",
+              "label": "COLLECT ANALYST CODES",
+              "priority": 100,
+              "distance": 0
+            }
+          ],
+          "keyAfter": "2:m31:3",
+          "dialogue": false,
+          "input": {
+            "controls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "keyboard": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "touchControls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "pointer": {
+              "x": 400,
+              "y": 225,
+              "active": false
+            },
+            "move": null,
+            "aim": null,
+            "paused": false,
+            "touch": {
+              "enabled": true,
+              "available": true,
+              "movePointer": null,
+              "aimPointer": null,
+              "aimFire": false,
+              "held": [],
+              "owners": 0
+            }
+          }
+        },
+        {
+          "type": "click",
+          "x": 159,
+          "y": 381,
+          "target": "1. Stay. From now on, nobody makes that choice alone.",
+          "before": [],
+          "key": "2:m31:2",
+          "after": [
+            {
+              "id": "objective:2:m31:3",
+              "label": "COLLECT ANALYST CODES",
+              "priority": 100,
+              "distance": 0
+            }
+          ],
+          "keyAfter": "2:m31:3",
+          "dialogue": false,
+          "input": {
+            "controls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "keyboard": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "touchControls": {
+              "up": false,
+              "down": false,
+              "left": false,
+              "right": false,
+              "shift": false,
+              "space": false,
+              "fire": false
+            },
+            "pointer": {
+              "x": 400,
+              "y": 225,
+              "active": false
+            },
+            "move": null,
+            "aim": null,
+            "paused": false,
+            "touch": {
+              "enabled": true,
+              "available": true,
+              "movePointer": null,
+              "aimPointer": null,
+              "aimFire": false,
+              "held": [],
+              "owners": 0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "finding": "Opening the authored m31 choice from mobile INTERACT emits a compatibility click onto the newly mounted first choice, despite that choice receiving no pointerdown; both archived0.6.3 and pre-fix0.6.4 advance automatically to stage3. Existing audit-mission-recovery-host test detects this via missing pending-choice modal.",
+  "scope": "Real Chromium touch tap on production INTERACT with deterministic mission travel fixtures; trace listeners only observe events, never invoke or complete choices."
+}

@@ -1,3 +1,13 @@
+# City diversity and ambient navigation · 0.6.4
+
+- Preserved the restored world generator, 808 footprints, 35 roads, twelve landmarks, original PNG artwork, lighting, HUD, story and player controls.
+- Replaced ambient-only fixed traffic loops with connected lane routes, junction reservations, alternate turns, safe following and bounded offscreen recovery. Normal cruise targets increase 15%; player vehicle profiles are unchanged.
+- Added cached sidewalk and painted-crossing routes, temporary waiting, recovery and bounded neighborhood activity for ambient civilians. Scripted actors remain protected.
+- Refined 72 existing facades in 18 compact blocks and added 136 footprint-contained decorative details using the approved artwork. The previous sixteen homes remain intact.
+- Prevented a touch release from selecting a newly opened dialogue response before the player presses it; retained keyboard and assistive activation.
+- Bounded simultaneous ambient routine reroutes to avoid whole-population pathfinding hitches.
+- Added targeted long-running simulation, host and strict visual/geometry preservation checks. See CITY_LIFE_REPORT.md and TEST_RESULTS.md for executed results and limits.
+
 # Corner HUD · 0.6.3
 
 - Added a GTA-style interface layout: bottom-left minimap and health bar, top-right equipped weapon silhouette/name/ammo, cash/wanted indicators, and bottom-right speed.

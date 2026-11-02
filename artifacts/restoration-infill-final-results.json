@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-28T14:06:22.767Z",
+  "time": "2026-10-30T19:34:20.847Z",
   "phase": "final",
   "originalCommit": "c9b4af6",
   "manifestPath": "/workspace/Glowport88/tests/fixtures/restoration-infill-manifest.json",
@@ -332,6 +332,1160 @@
       "variant": 2
     }
   ],
+  "neighborhoodSites": [
+    {
+      "id": "neighborhood-200",
+      "rect": {
+        "x": 1664,
+        "y": 2609,
+        "w": 68,
+        "h": 99
+      },
+      "renderBounds": {
+        "x": 1661,
+        "y": 2606,
+        "w": 74,
+        "h": 119
+      },
+      "index": 200
+    },
+    {
+      "id": "neighborhood-201",
+      "rect": {
+        "x": 1828,
+        "y": 2609,
+        "w": 68,
+        "h": 99
+      },
+      "renderBounds": {
+        "x": 1825,
+        "y": 2606,
+        "w": 74,
+        "h": 119
+      },
+      "index": 201
+    },
+    {
+      "id": "neighborhood-202",
+      "rect": {
+        "x": 1667,
+        "y": 2737,
+        "w": 96,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 1664,
+        "y": 2734,
+        "w": 102,
+        "h": 92
+      },
+      "index": 202
+    },
+    {
+      "id": "neighborhood-203",
+      "rect": {
+        "x": 1790,
+        "y": 2737,
+        "w": 96,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 1787,
+        "y": 2734,
+        "w": 102,
+        "h": 92
+      },
+      "index": 203
+    },
+    {
+      "id": "neighborhood-116",
+      "rect": {
+        "x": 949,
+        "y": 2608,
+        "w": 87,
+        "h": 68
+      },
+      "renderBounds": {
+        "x": 946,
+        "y": 2605,
+        "w": 93,
+        "h": 88
+      },
+      "index": 116
+    },
+    {
+      "id": "neighborhood-118",
+      "rect": {
+        "x": 1072,
+        "y": 2608,
+        "w": 101,
+        "h": 71
+      },
+      "renderBounds": {
+        "x": 1069,
+        "y": 2605,
+        "w": 107,
+        "h": 91
+      },
+      "index": 118
+    },
+    {
+      "id": "neighborhood-117",
+      "rect": {
+        "x": 949,
+        "y": 2721,
+        "w": 87,
+        "h": 77
+      },
+      "renderBounds": {
+        "x": 946,
+        "y": 2718,
+        "w": 93,
+        "h": 97
+      },
+      "index": 117
+    },
+    {
+      "id": "neighborhood-119",
+      "rect": {
+        "x": 1072,
+        "y": 2721,
+        "w": 103,
+        "h": 71
+      },
+      "renderBounds": {
+        "x": 1069,
+        "y": 2718,
+        "w": 109,
+        "h": 91
+      },
+      "index": 119
+    },
+    {
+      "id": "neighborhood-488",
+      "rect": {
+        "x": 4189,
+        "y": 1248,
+        "w": 103,
+        "h": 71
+      },
+      "renderBounds": {
+        "x": 4186,
+        "y": 1245,
+        "w": 109,
+        "h": 91
+      },
+      "index": 488
+    },
+    {
+      "id": "neighborhood-490",
+      "rect": {
+        "x": 4312,
+        "y": 1248,
+        "w": 90,
+        "h": 73
+      },
+      "renderBounds": {
+        "x": 4309,
+        "y": 1245,
+        "w": 96,
+        "h": 93
+      },
+      "index": 490
+    },
+    {
+      "id": "neighborhood-489",
+      "rect": {
+        "x": 4189,
+        "y": 1361,
+        "w": 103,
+        "h": 68
+      },
+      "renderBounds": {
+        "x": 4186,
+        "y": 1358,
+        "w": 109,
+        "h": 88
+      },
+      "index": 489
+    },
+    {
+      "id": "neighborhood-491",
+      "rect": {
+        "x": 4312,
+        "y": 1361,
+        "w": 89,
+        "h": 69
+      },
+      "renderBounds": {
+        "x": 4309,
+        "y": 1358,
+        "w": 95,
+        "h": 89
+      },
+      "index": 491
+    },
+    {
+      "id": "neighborhood-480",
+      "rect": {
+        "x": 4189,
+        "y": 568,
+        "w": 99,
+        "h": 78
+      },
+      "renderBounds": {
+        "x": 4186,
+        "y": 565,
+        "w": 105,
+        "h": 98
+      },
+      "index": 480
+    },
+    {
+      "id": "neighborhood-482",
+      "rect": {
+        "x": 4312,
+        "y": 568,
+        "w": 97,
+        "h": 76
+      },
+      "renderBounds": {
+        "x": 4309,
+        "y": 565,
+        "w": 103,
+        "h": 96
+      },
+      "index": 482
+    },
+    {
+      "id": "neighborhood-481",
+      "rect": {
+        "x": 4189,
+        "y": 681,
+        "w": 102,
+        "h": 71
+      },
+      "renderBounds": {
+        "x": 4186,
+        "y": 678,
+        "w": 108,
+        "h": 91
+      },
+      "index": 481
+    },
+    {
+      "id": "neighborhood-483",
+      "rect": {
+        "x": 4312,
+        "y": 681,
+        "w": 87,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 4309,
+        "y": 678,
+        "w": 93,
+        "h": 92
+      },
+      "index": 483
+    },
+    {
+      "id": "neighborhood-389",
+      "rect": {
+        "x": 3109,
+        "y": 3968,
+        "w": 97,
+        "h": 73
+      },
+      "renderBounds": {
+        "x": 3106,
+        "y": 3965,
+        "w": 103,
+        "h": 93
+      },
+      "index": 389
+    },
+    {
+      "id": "neighborhood-391",
+      "rect": {
+        "x": 3232,
+        "y": 3968,
+        "w": 96,
+        "h": 76
+      },
+      "renderBounds": {
+        "x": 3229,
+        "y": 3965,
+        "w": 102,
+        "h": 96
+      },
+      "index": 391
+    },
+    {
+      "id": "neighborhood-390",
+      "rect": {
+        "x": 3109,
+        "y": 4081,
+        "w": 87,
+        "h": 79
+      },
+      "renderBounds": {
+        "x": 3106,
+        "y": 4078,
+        "w": 93,
+        "h": 99
+      },
+      "index": 390
+    },
+    {
+      "id": "neighborhood-392",
+      "rect": {
+        "x": 3232,
+        "y": 4081,
+        "w": 92,
+        "h": 74
+      },
+      "renderBounds": {
+        "x": 3229,
+        "y": 4078,
+        "w": 98,
+        "h": 94
+      },
+      "index": 392
+    },
+    {
+      "id": "neighborhood-423",
+      "rect": {
+        "x": 3469,
+        "y": 3628,
+        "w": 94,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 3466,
+        "y": 3625,
+        "w": 100,
+        "h": 92
+      },
+      "index": 423
+    },
+    {
+      "id": "neighborhood-425",
+      "rect": {
+        "x": 3592,
+        "y": 3628,
+        "w": 95,
+        "h": 69
+      },
+      "renderBounds": {
+        "x": 3589,
+        "y": 3625,
+        "w": 101,
+        "h": 89
+      },
+      "index": 425
+    },
+    {
+      "id": "neighborhood-424",
+      "rect": {
+        "x": 3469,
+        "y": 3741,
+        "w": 90,
+        "h": 69
+      },
+      "renderBounds": {
+        "x": 3466,
+        "y": 3738,
+        "w": 96,
+        "h": 89
+      },
+      "index": 424
+    },
+    {
+      "id": "neighborhood-426",
+      "rect": {
+        "x": 3592,
+        "y": 3741,
+        "w": 87,
+        "h": 79
+      },
+      "renderBounds": {
+        "x": 3589,
+        "y": 3738,
+        "w": 93,
+        "h": 99
+      },
+      "index": 426
+    },
+    {
+      "id": "neighborhood-770",
+      "rect": {
+        "x": 6709,
+        "y": 1248,
+        "w": 102,
+        "h": 75
+      },
+      "renderBounds": {
+        "x": 6706,
+        "y": 1245,
+        "w": 108,
+        "h": 95
+      },
+      "index": 770
+    },
+    {
+      "id": "neighborhood-772",
+      "rect": {
+        "x": 6832,
+        "y": 1248,
+        "w": 88,
+        "h": 80
+      },
+      "renderBounds": {
+        "x": 6829,
+        "y": 1245,
+        "w": 94,
+        "h": 100
+      },
+      "index": 772
+    },
+    {
+      "id": "neighborhood-771",
+      "rect": {
+        "x": 6709,
+        "y": 1361,
+        "w": 101,
+        "h": 75
+      },
+      "renderBounds": {
+        "x": 6706,
+        "y": 1358,
+        "w": 107,
+        "h": 95
+      },
+      "index": 771
+    },
+    {
+      "id": "neighborhood-773",
+      "rect": {
+        "x": 6832,
+        "y": 1361,
+        "w": 91,
+        "h": 77
+      },
+      "renderBounds": {
+        "x": 6829,
+        "y": 1358,
+        "w": 97,
+        "h": 97
+      },
+      "index": 773
+    },
+    {
+      "id": "neighborhood-774",
+      "rect": {
+        "x": 6709,
+        "y": 1588,
+        "w": 93,
+        "h": 74
+      },
+      "renderBounds": {
+        "x": 6706,
+        "y": 1585,
+        "w": 99,
+        "h": 94
+      },
+      "index": 774
+    },
+    {
+      "id": "neighborhood-776",
+      "rect": {
+        "x": 6832,
+        "y": 1588,
+        "w": 87,
+        "h": 73
+      },
+      "renderBounds": {
+        "x": 6829,
+        "y": 1585,
+        "w": 93,
+        "h": 93
+      },
+      "index": 776
+    },
+    {
+      "id": "neighborhood-775",
+      "rect": {
+        "x": 6709,
+        "y": 1701,
+        "w": 96,
+        "h": 79
+      },
+      "renderBounds": {
+        "x": 6706,
+        "y": 1698,
+        "w": 102,
+        "h": 99
+      },
+      "index": 775
+    },
+    {
+      "id": "neighborhood-777",
+      "rect": {
+        "x": 6832,
+        "y": 1701,
+        "w": 89,
+        "h": 77
+      },
+      "renderBounds": {
+        "x": 6829,
+        "y": 1698,
+        "w": 95,
+        "h": 97
+      },
+      "index": 777
+    },
+    {
+      "id": "neighborhood-745",
+      "rect": {
+        "x": 6349,
+        "y": 3288,
+        "w": 102,
+        "h": 74
+      },
+      "renderBounds": {
+        "x": 6346,
+        "y": 3285,
+        "w": 108,
+        "h": 94
+      },
+      "index": 745
+    },
+    {
+      "id": "neighborhood-747",
+      "rect": {
+        "x": 6472,
+        "y": 3288,
+        "w": 87,
+        "h": 71
+      },
+      "renderBounds": {
+        "x": 6469,
+        "y": 3285,
+        "w": 93,
+        "h": 91
+      },
+      "index": 747
+    },
+    {
+      "id": "neighborhood-746",
+      "rect": {
+        "x": 6349,
+        "y": 3401,
+        "w": 96,
+        "h": 71
+      },
+      "renderBounds": {
+        "x": 6346,
+        "y": 3398,
+        "w": 102,
+        "h": 91
+      },
+      "index": 746
+    },
+    {
+      "id": "neighborhood-748",
+      "rect": {
+        "x": 6472,
+        "y": 3401,
+        "w": 92,
+        "h": 69
+      },
+      "renderBounds": {
+        "x": 6469,
+        "y": 3398,
+        "w": 98,
+        "h": 89
+      },
+      "index": 748
+    },
+    {
+      "id": "neighborhood-657",
+      "rect": {
+        "x": 5629,
+        "y": 3288,
+        "w": 101,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 5626,
+        "y": 3285,
+        "w": 107,
+        "h": 92
+      },
+      "index": 657
+    },
+    {
+      "id": "neighborhood-659",
+      "rect": {
+        "x": 5752,
+        "y": 3288,
+        "w": 96,
+        "h": 78
+      },
+      "renderBounds": {
+        "x": 5749,
+        "y": 3285,
+        "w": 102,
+        "h": 98
+      },
+      "index": 659
+    },
+    {
+      "id": "neighborhood-658",
+      "rect": {
+        "x": 5629,
+        "y": 3401,
+        "w": 90,
+        "h": 77
+      },
+      "renderBounds": {
+        "x": 5626,
+        "y": 3398,
+        "w": 96,
+        "h": 97
+      },
+      "index": 658
+    },
+    {
+      "id": "neighborhood-660",
+      "rect": {
+        "x": 5752,
+        "y": 3401,
+        "w": 96,
+        "h": 70
+      },
+      "renderBounds": {
+        "x": 5749,
+        "y": 3398,
+        "w": 102,
+        "h": 90
+      },
+      "index": 660
+    },
+    {
+      "id": "neighborhood-701",
+      "rect": {
+        "x": 5984,
+        "y": 3629,
+        "w": 68,
+        "h": 99
+      },
+      "renderBounds": {
+        "x": 5981,
+        "y": 3626,
+        "w": 74,
+        "h": 119
+      },
+      "index": 701
+    },
+    {
+      "id": "neighborhood-702",
+      "rect": {
+        "x": 6148,
+        "y": 3629,
+        "w": 68,
+        "h": 99
+      },
+      "renderBounds": {
+        "x": 6145,
+        "y": 3626,
+        "w": 74,
+        "h": 119
+      },
+      "index": 702
+    },
+    {
+      "id": "neighborhood-703",
+      "rect": {
+        "x": 5987,
+        "y": 3757,
+        "w": 96,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 5984,
+        "y": 3754,
+        "w": 102,
+        "h": 92
+      },
+      "index": 703
+    },
+    {
+      "id": "neighborhood-704",
+      "rect": {
+        "x": 6110,
+        "y": 3757,
+        "w": 96,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 6107,
+        "y": 3754,
+        "w": 102,
+        "h": 92
+      },
+      "index": 704
+    },
+    {
+      "id": "neighborhood-244",
+      "rect": {
+        "x": 2029,
+        "y": 2948,
+        "w": 102,
+        "h": 68
+      },
+      "renderBounds": {
+        "x": 2026,
+        "y": 2945,
+        "w": 108,
+        "h": 88
+      },
+      "index": 244
+    },
+    {
+      "id": "neighborhood-246",
+      "rect": {
+        "x": 2152,
+        "y": 2948,
+        "w": 94,
+        "h": 80
+      },
+      "renderBounds": {
+        "x": 2149,
+        "y": 2945,
+        "w": 100,
+        "h": 100
+      },
+      "index": 246
+    },
+    {
+      "id": "neighborhood-245",
+      "rect": {
+        "x": 2029,
+        "y": 3061,
+        "w": 92,
+        "h": 71
+      },
+      "renderBounds": {
+        "x": 2026,
+        "y": 3058,
+        "w": 98,
+        "h": 91
+      },
+      "index": 245
+    },
+    {
+      "id": "neighborhood-247",
+      "rect": {
+        "x": 2152,
+        "y": 3061,
+        "w": 100,
+        "h": 79
+      },
+      "renderBounds": {
+        "x": 2149,
+        "y": 3058,
+        "w": 106,
+        "h": 99
+      },
+      "index": 247
+    },
+    {
+      "id": "neighborhood-546",
+      "rect": {
+        "x": 4549,
+        "y": 3628,
+        "w": 103,
+        "h": 80
+      },
+      "renderBounds": {
+        "x": 4546,
+        "y": 3625,
+        "w": 109,
+        "h": 100
+      },
+      "index": 546
+    },
+    {
+      "id": "neighborhood-548",
+      "rect": {
+        "x": 4672,
+        "y": 3628,
+        "w": 93,
+        "h": 80
+      },
+      "renderBounds": {
+        "x": 4669,
+        "y": 3625,
+        "w": 99,
+        "h": 100
+      },
+      "index": 548
+    },
+    {
+      "id": "neighborhood-547",
+      "rect": {
+        "x": 4549,
+        "y": 3741,
+        "w": 100,
+        "h": 71
+      },
+      "renderBounds": {
+        "x": 4546,
+        "y": 3738,
+        "w": 106,
+        "h": 91
+      },
+      "index": 547
+    },
+    {
+      "id": "neighborhood-549",
+      "rect": {
+        "x": 4672,
+        "y": 3741,
+        "w": 91,
+        "h": 74
+      },
+      "renderBounds": {
+        "x": 4669,
+        "y": 3738,
+        "w": 97,
+        "h": 94
+      },
+      "index": 549
+    },
+    {
+      "id": "neighborhood-324",
+      "rect": {
+        "x": 2749,
+        "y": 1248,
+        "w": 94,
+        "h": 73
+      },
+      "renderBounds": {
+        "x": 2746,
+        "y": 1245,
+        "w": 100,
+        "h": 93
+      },
+      "index": 324
+    },
+    {
+      "id": "neighborhood-326",
+      "rect": {
+        "x": 2872,
+        "y": 1248,
+        "w": 93,
+        "h": 68
+      },
+      "renderBounds": {
+        "x": 2869,
+        "y": 1245,
+        "w": 99,
+        "h": 88
+      },
+      "index": 326
+    },
+    {
+      "id": "neighborhood-325",
+      "rect": {
+        "x": 2749,
+        "y": 1361,
+        "w": 99,
+        "h": 69
+      },
+      "renderBounds": {
+        "x": 2746,
+        "y": 1358,
+        "w": 105,
+        "h": 89
+      },
+      "index": 325
+    },
+    {
+      "id": "neighborhood-327",
+      "rect": {
+        "x": 2872,
+        "y": 1361,
+        "w": 86,
+        "h": 69
+      },
+      "renderBounds": {
+        "x": 2869,
+        "y": 1358,
+        "w": 92,
+        "h": 89
+      },
+      "index": 327
+    },
+    {
+      "id": "neighborhood-26",
+      "rect": {
+        "x": 229,
+        "y": 1928,
+        "w": 100,
+        "h": 74
+      },
+      "renderBounds": {
+        "x": 226,
+        "y": 1925,
+        "w": 106,
+        "h": 94
+      },
+      "index": 26
+    },
+    {
+      "id": "neighborhood-28",
+      "rect": {
+        "x": 352,
+        "y": 1928,
+        "w": 90,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 349,
+        "y": 1925,
+        "w": 96,
+        "h": 92
+      },
+      "index": 28
+    },
+    {
+      "id": "neighborhood-27",
+      "rect": {
+        "x": 229,
+        "y": 2041,
+        "w": 96,
+        "h": 77
+      },
+      "renderBounds": {
+        "x": 226,
+        "y": 2038,
+        "w": 102,
+        "h": 97
+      },
+      "index": 27
+    },
+    {
+      "id": "neighborhood-29",
+      "rect": {
+        "x": 352,
+        "y": 2041,
+        "w": 92,
+        "h": 71
+      },
+      "renderBounds": {
+        "x": 349,
+        "y": 2038,
+        "w": 98,
+        "h": 91
+      },
+      "index": 29
+    },
+    {
+      "id": "neighborhood-601",
+      "rect": {
+        "x": 5264,
+        "y": 1589,
+        "w": 68,
+        "h": 99
+      },
+      "renderBounds": {
+        "x": 5261,
+        "y": 1586,
+        "w": 74,
+        "h": 119
+      },
+      "index": 601
+    },
+    {
+      "id": "neighborhood-602",
+      "rect": {
+        "x": 5428,
+        "y": 1589,
+        "w": 68,
+        "h": 99
+      },
+      "renderBounds": {
+        "x": 5425,
+        "y": 1586,
+        "w": 74,
+        "h": 119
+      },
+      "index": 602
+    },
+    {
+      "id": "neighborhood-603",
+      "rect": {
+        "x": 5267,
+        "y": 1717,
+        "w": 96,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 5264,
+        "y": 1714,
+        "w": 102,
+        "h": 92
+      },
+      "index": 603
+    },
+    {
+      "id": "neighborhood-604",
+      "rect": {
+        "x": 5390,
+        "y": 1717,
+        "w": 96,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 5387,
+        "y": 1714,
+        "w": 102,
+        "h": 92
+      },
+      "index": 604
+    },
+    {
+      "id": "neighborhood-365",
+      "rect": {
+        "x": 3109,
+        "y": 1928,
+        "w": 90,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 3106,
+        "y": 1925,
+        "w": 96,
+        "h": 92
+      },
+      "index": 365
+    },
+    {
+      "id": "neighborhood-367",
+      "rect": {
+        "x": 3232,
+        "y": 1928,
+        "w": 94,
+        "h": 77
+      },
+      "renderBounds": {
+        "x": 3229,
+        "y": 1925,
+        "w": 100,
+        "h": 97
+      },
+      "index": 367
+    },
+    {
+      "id": "neighborhood-366",
+      "rect": {
+        "x": 3109,
+        "y": 2041,
+        "w": 100,
+        "h": 68
+      },
+      "renderBounds": {
+        "x": 3106,
+        "y": 2038,
+        "w": 106,
+        "h": 88
+      },
+      "index": 366
+    },
+    {
+      "id": "neighborhood-368",
+      "rect": {
+        "x": 3232,
+        "y": 2041,
+        "w": 103,
+        "h": 77
+      },
+      "renderBounds": {
+        "x": 3229,
+        "y": 2038,
+        "w": 109,
+        "h": 97
+      },
+      "index": 368
+    },
+    {
+      "id": "neighborhood-532",
+      "rect": {
+        "x": 4544,
+        "y": 2269,
+        "w": 68,
+        "h": 99
+      },
+      "renderBounds": {
+        "x": 4541,
+        "y": 2266,
+        "w": 74,
+        "h": 119
+      },
+      "index": 532
+    },
+    {
+      "id": "neighborhood-533",
+      "rect": {
+        "x": 4708,
+        "y": 2269,
+        "w": 68,
+        "h": 99
+      },
+      "renderBounds": {
+        "x": 4705,
+        "y": 2266,
+        "w": 74,
+        "h": 119
+      },
+      "index": 533
+    },
+    {
+      "id": "neighborhood-534",
+      "rect": {
+        "x": 4547,
+        "y": 2397,
+        "w": 96,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 4544,
+        "y": 2394,
+        "w": 102,
+        "h": 92
+      },
+      "index": 534
+    },
+    {
+      "id": "neighborhood-535",
+      "rect": {
+        "x": 4670,
+        "y": 2397,
+        "w": 96,
+        "h": 72
+      },
+      "renderBounds": {
+        "x": 4667,
+        "y": 2394,
+        "w": 102,
+        "h": 92
+      },
+      "index": 535
+    }
+  ],
   "geometryHashes": {
     "MW": "3c5d8ca315f8c36d4cd4beecbc55b34c92a2d6eb1df730908df6f23dd2aa08f7",
     "MH": "68bc5ec90a2d9464eba42cbe67ccf5a442629e039a2e7d21942c0ea7420b4576",
@@ -364,7 +1518,7 @@
       "file": "restoration-infill-final-west-3-7-day.png",
       "terrainFile": "restoration-infill-final-west-3-7-terrain.png",
       "hostWashOpacity": 0.045,
-      "sha256": "aff6d52a6c05325f984ea667b44db9616a9acc6326187e1ef8ec3842a5317d8b"
+      "sha256": "07501d9eb4daad75387ce4c0ad58b527d867f63b75f5f6f73136382bcd15f039"
     },
     {
       "name": "west-3-7-night",
@@ -378,7 +1532,7 @@
       "file": "restoration-infill-final-west-3-7-night.png",
       "terrainFile": "restoration-infill-final-west-3-7-terrain.png",
       "hostWashOpacity": 0.07,
-      "sha256": "1ce09c41f61978975b12f9240504408161e12644d5ac84ed5b4ac96f14eb62bf"
+      "sha256": "6f09820ef0d26f617f65145e16786e996f377500e77e5b07b58877307c76d488"
     },
     {
       "name": "north-11-2-day",
@@ -420,7 +1574,7 @@
       "file": "restoration-infill-final-south-9-11-day.png",
       "terrainFile": "restoration-infill-final-south-9-11-terrain.png",
       "hostWashOpacity": 0.045,
-      "sha256": "870fd733672966ada4256ad9674be03fe567d46f4f2dd2a43fde3c27d623e30d"
+      "sha256": "b5a9410dbea99f75dcd43574aad148daf1d7b900cdffc4a7d9e31e55442f7396"
     },
     {
       "name": "south-9-11-night",
@@ -434,7 +1588,7 @@
       "file": "restoration-infill-final-south-9-11-night.png",
       "terrainFile": "restoration-infill-final-south-9-11-terrain.png",
       "hostWashOpacity": 0.07,
-      "sha256": "0bdeab25888aaa4d901b6a53de3a332c0f9b5c27393cbe6af35610cebb6bbf36"
+      "sha256": "f5a40bfd7fadd282ae809e4fb6031c80dd0bdbe7ecd5e9a4726a227f44d327b7"
     },
     {
       "name": "east-17-4-day",
@@ -448,7 +1602,7 @@
       "file": "restoration-infill-final-east-17-4-day.png",
       "terrainFile": "restoration-infill-final-east-17-4-terrain.png",
       "hostWashOpacity": 0.045,
-      "sha256": "3ee489ff48e1046df8ec40378240c67e1f244dca9e96482710e05c0bc754ca17"
+      "sha256": "f68f5b576b50b5434254b1f5e60e5b110410d51eb6fd92ca0652fcb29d2c4608"
     },
     {
       "name": "east-17-4-night",
@@ -462,14 +1616,14 @@
       "file": "restoration-infill-final-east-17-4-night.png",
       "terrainFile": "restoration-infill-final-east-17-4-terrain.png",
       "hostWashOpacity": 0.07,
-      "sha256": "f257bdd3ea844806dab4fa8a2944c5067a80aa1ce5078f81ab0232208c5a9b85"
+      "sha256": "2deb73e6c5cadb3603da297bd53a1f182bd6994ae3fc460ace850b57ea00f71c"
     }
   ],
   "comparisons": [
     {
       "name": "west-3-7-day",
-      "changedPixels": 33921,
-      "pixelFraction": 0.094225,
+      "changedPixels": 73522,
+      "pixelFraction": 0.20422777777777779,
       "outsidePixels": 0,
       "outsideSamples": [],
       "perSite": {
@@ -488,13 +1642,85 @@
         "residential-162": 8026,
         "residential-484": 0,
         "residential-429": 0,
-        "residential-730": 0
+        "residential-730": 0,
+        "neighborhood-200": 7533,
+        "neighborhood-201": 0,
+        "neighborhood-202": 8594,
+        "neighborhood-203": 2830,
+        "neighborhood-116": 1501,
+        "neighborhood-118": 8247,
+        "neighborhood-117": 1519,
+        "neighborhood-119": 9377,
+        "neighborhood-488": 0,
+        "neighborhood-490": 0,
+        "neighborhood-489": 0,
+        "neighborhood-491": 0,
+        "neighborhood-480": 0,
+        "neighborhood-482": 0,
+        "neighborhood-481": 0,
+        "neighborhood-483": 0,
+        "neighborhood-389": 0,
+        "neighborhood-391": 0,
+        "neighborhood-390": 0,
+        "neighborhood-392": 0,
+        "neighborhood-423": 0,
+        "neighborhood-425": 0,
+        "neighborhood-424": 0,
+        "neighborhood-426": 0,
+        "neighborhood-770": 0,
+        "neighborhood-772": 0,
+        "neighborhood-771": 0,
+        "neighborhood-773": 0,
+        "neighborhood-774": 0,
+        "neighborhood-776": 0,
+        "neighborhood-775": 0,
+        "neighborhood-777": 0,
+        "neighborhood-745": 0,
+        "neighborhood-747": 0,
+        "neighborhood-746": 0,
+        "neighborhood-748": 0,
+        "neighborhood-657": 0,
+        "neighborhood-659": 0,
+        "neighborhood-658": 0,
+        "neighborhood-660": 0,
+        "neighborhood-701": 0,
+        "neighborhood-702": 0,
+        "neighborhood-703": 0,
+        "neighborhood-704": 0,
+        "neighborhood-244": 0,
+        "neighborhood-246": 0,
+        "neighborhood-245": 0,
+        "neighborhood-247": 0,
+        "neighborhood-546": 0,
+        "neighborhood-548": 0,
+        "neighborhood-547": 0,
+        "neighborhood-549": 0,
+        "neighborhood-324": 0,
+        "neighborhood-326": 0,
+        "neighborhood-325": 0,
+        "neighborhood-327": 0,
+        "neighborhood-26": 0,
+        "neighborhood-28": 0,
+        "neighborhood-27": 0,
+        "neighborhood-29": 0,
+        "neighborhood-601": 0,
+        "neighborhood-602": 0,
+        "neighborhood-603": 0,
+        "neighborhood-604": 0,
+        "neighborhood-365": 0,
+        "neighborhood-367": 0,
+        "neighborhood-366": 0,
+        "neighborhood-368": 0,
+        "neighborhood-532": 0,
+        "neighborhood-533": 0,
+        "neighborhood-534": 0,
+        "neighborhood-535": 0
       }
     },
     {
       "name": "west-3-7-night",
-      "changedPixels": 33921,
-      "pixelFraction": 0.094225,
+      "changedPixels": 73522,
+      "pixelFraction": 0.20422777777777779,
       "outsidePixels": 0,
       "outsideSamples": [],
       "perSite": {
@@ -513,7 +1739,79 @@
         "residential-162": 8026,
         "residential-484": 0,
         "residential-429": 0,
-        "residential-730": 0
+        "residential-730": 0,
+        "neighborhood-200": 7533,
+        "neighborhood-201": 0,
+        "neighborhood-202": 8594,
+        "neighborhood-203": 2830,
+        "neighborhood-116": 1501,
+        "neighborhood-118": 8247,
+        "neighborhood-117": 1519,
+        "neighborhood-119": 9377,
+        "neighborhood-488": 0,
+        "neighborhood-490": 0,
+        "neighborhood-489": 0,
+        "neighborhood-491": 0,
+        "neighborhood-480": 0,
+        "neighborhood-482": 0,
+        "neighborhood-481": 0,
+        "neighborhood-483": 0,
+        "neighborhood-389": 0,
+        "neighborhood-391": 0,
+        "neighborhood-390": 0,
+        "neighborhood-392": 0,
+        "neighborhood-423": 0,
+        "neighborhood-425": 0,
+        "neighborhood-424": 0,
+        "neighborhood-426": 0,
+        "neighborhood-770": 0,
+        "neighborhood-772": 0,
+        "neighborhood-771": 0,
+        "neighborhood-773": 0,
+        "neighborhood-774": 0,
+        "neighborhood-776": 0,
+        "neighborhood-775": 0,
+        "neighborhood-777": 0,
+        "neighborhood-745": 0,
+        "neighborhood-747": 0,
+        "neighborhood-746": 0,
+        "neighborhood-748": 0,
+        "neighborhood-657": 0,
+        "neighborhood-659": 0,
+        "neighborhood-658": 0,
+        "neighborhood-660": 0,
+        "neighborhood-701": 0,
+        "neighborhood-702": 0,
+        "neighborhood-703": 0,
+        "neighborhood-704": 0,
+        "neighborhood-244": 0,
+        "neighborhood-246": 0,
+        "neighborhood-245": 0,
+        "neighborhood-247": 0,
+        "neighborhood-546": 0,
+        "neighborhood-548": 0,
+        "neighborhood-547": 0,
+        "neighborhood-549": 0,
+        "neighborhood-324": 0,
+        "neighborhood-326": 0,
+        "neighborhood-325": 0,
+        "neighborhood-327": 0,
+        "neighborhood-26": 0,
+        "neighborhood-28": 0,
+        "neighborhood-27": 0,
+        "neighborhood-29": 0,
+        "neighborhood-601": 0,
+        "neighborhood-602": 0,
+        "neighborhood-603": 0,
+        "neighborhood-604": 0,
+        "neighborhood-365": 0,
+        "neighborhood-367": 0,
+        "neighborhood-366": 0,
+        "neighborhood-368": 0,
+        "neighborhood-532": 0,
+        "neighborhood-533": 0,
+        "neighborhood-534": 0,
+        "neighborhood-535": 0
       }
     },
     {
@@ -538,7 +1836,79 @@
         "residential-162": 0,
         "residential-484": 7920,
         "residential-429": 0,
-        "residential-730": 0
+        "residential-730": 0,
+        "neighborhood-200": 0,
+        "neighborhood-201": 0,
+        "neighborhood-202": 0,
+        "neighborhood-203": 0,
+        "neighborhood-116": 0,
+        "neighborhood-118": 0,
+        "neighborhood-117": 0,
+        "neighborhood-119": 0,
+        "neighborhood-488": 0,
+        "neighborhood-490": 0,
+        "neighborhood-489": 0,
+        "neighborhood-491": 0,
+        "neighborhood-480": 0,
+        "neighborhood-482": 0,
+        "neighborhood-481": 0,
+        "neighborhood-483": 0,
+        "neighborhood-389": 0,
+        "neighborhood-391": 0,
+        "neighborhood-390": 0,
+        "neighborhood-392": 0,
+        "neighborhood-423": 0,
+        "neighborhood-425": 0,
+        "neighborhood-424": 0,
+        "neighborhood-426": 0,
+        "neighborhood-770": 0,
+        "neighborhood-772": 0,
+        "neighborhood-771": 0,
+        "neighborhood-773": 0,
+        "neighborhood-774": 0,
+        "neighborhood-776": 0,
+        "neighborhood-775": 0,
+        "neighborhood-777": 0,
+        "neighborhood-745": 0,
+        "neighborhood-747": 0,
+        "neighborhood-746": 0,
+        "neighborhood-748": 0,
+        "neighborhood-657": 0,
+        "neighborhood-659": 0,
+        "neighborhood-658": 0,
+        "neighborhood-660": 0,
+        "neighborhood-701": 0,
+        "neighborhood-702": 0,
+        "neighborhood-703": 0,
+        "neighborhood-704": 0,
+        "neighborhood-244": 0,
+        "neighborhood-246": 0,
+        "neighborhood-245": 0,
+        "neighborhood-247": 0,
+        "neighborhood-546": 0,
+        "neighborhood-548": 0,
+        "neighborhood-547": 0,
+        "neighborhood-549": 0,
+        "neighborhood-324": 0,
+        "neighborhood-326": 0,
+        "neighborhood-325": 0,
+        "neighborhood-327": 0,
+        "neighborhood-26": 0,
+        "neighborhood-28": 0,
+        "neighborhood-27": 0,
+        "neighborhood-29": 0,
+        "neighborhood-601": 0,
+        "neighborhood-602": 0,
+        "neighborhood-603": 0,
+        "neighborhood-604": 0,
+        "neighborhood-365": 0,
+        "neighborhood-367": 0,
+        "neighborhood-366": 0,
+        "neighborhood-368": 0,
+        "neighborhood-532": 0,
+        "neighborhood-533": 0,
+        "neighborhood-534": 0,
+        "neighborhood-535": 0
       }
     },
     {
@@ -563,13 +1933,85 @@
         "residential-162": 0,
         "residential-484": 7920,
         "residential-429": 0,
-        "residential-730": 0
+        "residential-730": 0,
+        "neighborhood-200": 0,
+        "neighborhood-201": 0,
+        "neighborhood-202": 0,
+        "neighborhood-203": 0,
+        "neighborhood-116": 0,
+        "neighborhood-118": 0,
+        "neighborhood-117": 0,
+        "neighborhood-119": 0,
+        "neighborhood-488": 0,
+        "neighborhood-490": 0,
+        "neighborhood-489": 0,
+        "neighborhood-491": 0,
+        "neighborhood-480": 0,
+        "neighborhood-482": 0,
+        "neighborhood-481": 0,
+        "neighborhood-483": 0,
+        "neighborhood-389": 0,
+        "neighborhood-391": 0,
+        "neighborhood-390": 0,
+        "neighborhood-392": 0,
+        "neighborhood-423": 0,
+        "neighborhood-425": 0,
+        "neighborhood-424": 0,
+        "neighborhood-426": 0,
+        "neighborhood-770": 0,
+        "neighborhood-772": 0,
+        "neighborhood-771": 0,
+        "neighborhood-773": 0,
+        "neighborhood-774": 0,
+        "neighborhood-776": 0,
+        "neighborhood-775": 0,
+        "neighborhood-777": 0,
+        "neighborhood-745": 0,
+        "neighborhood-747": 0,
+        "neighborhood-746": 0,
+        "neighborhood-748": 0,
+        "neighborhood-657": 0,
+        "neighborhood-659": 0,
+        "neighborhood-658": 0,
+        "neighborhood-660": 0,
+        "neighborhood-701": 0,
+        "neighborhood-702": 0,
+        "neighborhood-703": 0,
+        "neighborhood-704": 0,
+        "neighborhood-244": 0,
+        "neighborhood-246": 0,
+        "neighborhood-245": 0,
+        "neighborhood-247": 0,
+        "neighborhood-546": 0,
+        "neighborhood-548": 0,
+        "neighborhood-547": 0,
+        "neighborhood-549": 0,
+        "neighborhood-324": 0,
+        "neighborhood-326": 0,
+        "neighborhood-325": 0,
+        "neighborhood-327": 0,
+        "neighborhood-26": 0,
+        "neighborhood-28": 0,
+        "neighborhood-27": 0,
+        "neighborhood-29": 0,
+        "neighborhood-601": 0,
+        "neighborhood-602": 0,
+        "neighborhood-603": 0,
+        "neighborhood-604": 0,
+        "neighborhood-365": 0,
+        "neighborhood-367": 0,
+        "neighborhood-366": 0,
+        "neighborhood-368": 0,
+        "neighborhood-532": 0,
+        "neighborhood-533": 0,
+        "neighborhood-534": 0,
+        "neighborhood-535": 0
       }
     },
     {
       "name": "south-9-11-day",
-      "changedPixels": 34491,
-      "pixelFraction": 0.09580833333333333,
+      "changedPixels": 55571,
+      "pixelFraction": 0.15436388888888888,
       "outsidePixels": 0,
       "outsideSamples": [],
       "perSite": {
@@ -588,13 +2030,85 @@
         "residential-162": 0,
         "residential-484": 0,
         "residential-429": 9780,
-        "residential-730": 0
+        "residential-730": 0,
+        "neighborhood-200": 0,
+        "neighborhood-201": 0,
+        "neighborhood-202": 0,
+        "neighborhood-203": 0,
+        "neighborhood-116": 0,
+        "neighborhood-118": 0,
+        "neighborhood-117": 0,
+        "neighborhood-119": 0,
+        "neighborhood-488": 0,
+        "neighborhood-490": 0,
+        "neighborhood-489": 0,
+        "neighborhood-491": 0,
+        "neighborhood-480": 0,
+        "neighborhood-482": 0,
+        "neighborhood-481": 0,
+        "neighborhood-483": 0,
+        "neighborhood-389": 2380,
+        "neighborhood-391": 8858,
+        "neighborhood-390": 1504,
+        "neighborhood-392": 8338,
+        "neighborhood-423": 0,
+        "neighborhood-425": 0,
+        "neighborhood-424": 0,
+        "neighborhood-426": 0,
+        "neighborhood-770": 0,
+        "neighborhood-772": 0,
+        "neighborhood-771": 0,
+        "neighborhood-773": 0,
+        "neighborhood-774": 0,
+        "neighborhood-776": 0,
+        "neighborhood-775": 0,
+        "neighborhood-777": 0,
+        "neighborhood-745": 0,
+        "neighborhood-747": 0,
+        "neighborhood-746": 0,
+        "neighborhood-748": 0,
+        "neighborhood-657": 0,
+        "neighborhood-659": 0,
+        "neighborhood-658": 0,
+        "neighborhood-660": 0,
+        "neighborhood-701": 0,
+        "neighborhood-702": 0,
+        "neighborhood-703": 0,
+        "neighborhood-704": 0,
+        "neighborhood-244": 0,
+        "neighborhood-246": 0,
+        "neighborhood-245": 0,
+        "neighborhood-247": 0,
+        "neighborhood-546": 0,
+        "neighborhood-548": 0,
+        "neighborhood-547": 0,
+        "neighborhood-549": 0,
+        "neighborhood-324": 0,
+        "neighborhood-326": 0,
+        "neighborhood-325": 0,
+        "neighborhood-327": 0,
+        "neighborhood-26": 0,
+        "neighborhood-28": 0,
+        "neighborhood-27": 0,
+        "neighborhood-29": 0,
+        "neighborhood-601": 0,
+        "neighborhood-602": 0,
+        "neighborhood-603": 0,
+        "neighborhood-604": 0,
+        "neighborhood-365": 0,
+        "neighborhood-367": 0,
+        "neighborhood-366": 0,
+        "neighborhood-368": 0,
+        "neighborhood-532": 0,
+        "neighborhood-533": 0,
+        "neighborhood-534": 0,
+        "neighborhood-535": 0
       }
     },
     {
       "name": "south-9-11-night",
-      "changedPixels": 34491,
-      "pixelFraction": 0.09580833333333333,
+      "changedPixels": 55571,
+      "pixelFraction": 0.15436388888888888,
       "outsidePixels": 0,
       "outsideSamples": [],
       "perSite": {
@@ -613,13 +2127,85 @@
         "residential-162": 0,
         "residential-484": 0,
         "residential-429": 9780,
-        "residential-730": 0
+        "residential-730": 0,
+        "neighborhood-200": 0,
+        "neighborhood-201": 0,
+        "neighborhood-202": 0,
+        "neighborhood-203": 0,
+        "neighborhood-116": 0,
+        "neighborhood-118": 0,
+        "neighborhood-117": 0,
+        "neighborhood-119": 0,
+        "neighborhood-488": 0,
+        "neighborhood-490": 0,
+        "neighborhood-489": 0,
+        "neighborhood-491": 0,
+        "neighborhood-480": 0,
+        "neighborhood-482": 0,
+        "neighborhood-481": 0,
+        "neighborhood-483": 0,
+        "neighborhood-389": 2380,
+        "neighborhood-391": 8858,
+        "neighborhood-390": 1504,
+        "neighborhood-392": 8338,
+        "neighborhood-423": 0,
+        "neighborhood-425": 0,
+        "neighborhood-424": 0,
+        "neighborhood-426": 0,
+        "neighborhood-770": 0,
+        "neighborhood-772": 0,
+        "neighborhood-771": 0,
+        "neighborhood-773": 0,
+        "neighborhood-774": 0,
+        "neighborhood-776": 0,
+        "neighborhood-775": 0,
+        "neighborhood-777": 0,
+        "neighborhood-745": 0,
+        "neighborhood-747": 0,
+        "neighborhood-746": 0,
+        "neighborhood-748": 0,
+        "neighborhood-657": 0,
+        "neighborhood-659": 0,
+        "neighborhood-658": 0,
+        "neighborhood-660": 0,
+        "neighborhood-701": 0,
+        "neighborhood-702": 0,
+        "neighborhood-703": 0,
+        "neighborhood-704": 0,
+        "neighborhood-244": 0,
+        "neighborhood-246": 0,
+        "neighborhood-245": 0,
+        "neighborhood-247": 0,
+        "neighborhood-546": 0,
+        "neighborhood-548": 0,
+        "neighborhood-547": 0,
+        "neighborhood-549": 0,
+        "neighborhood-324": 0,
+        "neighborhood-326": 0,
+        "neighborhood-325": 0,
+        "neighborhood-327": 0,
+        "neighborhood-26": 0,
+        "neighborhood-28": 0,
+        "neighborhood-27": 0,
+        "neighborhood-29": 0,
+        "neighborhood-601": 0,
+        "neighborhood-602": 0,
+        "neighborhood-603": 0,
+        "neighborhood-604": 0,
+        "neighborhood-365": 0,
+        "neighborhood-367": 0,
+        "neighborhood-366": 0,
+        "neighborhood-368": 0,
+        "neighborhood-532": 0,
+        "neighborhood-533": 0,
+        "neighborhood-534": 0,
+        "neighborhood-535": 0
       }
     },
     {
       "name": "east-17-4-day",
-      "changedPixels": 36982,
-      "pixelFraction": 0.10272777777777778,
+      "changedPixels": 60265,
+      "pixelFraction": 0.1674027777777778,
       "outsidePixels": 0,
       "outsideSamples": [],
       "perSite": {
@@ -638,13 +2224,85 @@
         "residential-162": 0,
         "residential-484": 0,
         "residential-429": 0,
-        "residential-730": 9594
+        "residential-730": 9594,
+        "neighborhood-200": 0,
+        "neighborhood-201": 0,
+        "neighborhood-202": 0,
+        "neighborhood-203": 0,
+        "neighborhood-116": 0,
+        "neighborhood-118": 0,
+        "neighborhood-117": 0,
+        "neighborhood-119": 0,
+        "neighborhood-488": 0,
+        "neighborhood-490": 0,
+        "neighborhood-489": 0,
+        "neighborhood-491": 0,
+        "neighborhood-480": 0,
+        "neighborhood-482": 0,
+        "neighborhood-481": 0,
+        "neighborhood-483": 0,
+        "neighborhood-389": 0,
+        "neighborhood-391": 0,
+        "neighborhood-390": 0,
+        "neighborhood-392": 0,
+        "neighborhood-423": 0,
+        "neighborhood-425": 0,
+        "neighborhood-424": 0,
+        "neighborhood-426": 0,
+        "neighborhood-770": 0,
+        "neighborhood-772": 0,
+        "neighborhood-771": 0,
+        "neighborhood-773": 0,
+        "neighborhood-774": 8336,
+        "neighborhood-776": 2693,
+        "neighborhood-775": 9554,
+        "neighborhood-777": 2700,
+        "neighborhood-745": 0,
+        "neighborhood-747": 0,
+        "neighborhood-746": 0,
+        "neighborhood-748": 0,
+        "neighborhood-657": 0,
+        "neighborhood-659": 0,
+        "neighborhood-658": 0,
+        "neighborhood-660": 0,
+        "neighborhood-701": 0,
+        "neighborhood-702": 0,
+        "neighborhood-703": 0,
+        "neighborhood-704": 0,
+        "neighborhood-244": 0,
+        "neighborhood-246": 0,
+        "neighborhood-245": 0,
+        "neighborhood-247": 0,
+        "neighborhood-546": 0,
+        "neighborhood-548": 0,
+        "neighborhood-547": 0,
+        "neighborhood-549": 0,
+        "neighborhood-324": 0,
+        "neighborhood-326": 0,
+        "neighborhood-325": 0,
+        "neighborhood-327": 0,
+        "neighborhood-26": 0,
+        "neighborhood-28": 0,
+        "neighborhood-27": 0,
+        "neighborhood-29": 0,
+        "neighborhood-601": 0,
+        "neighborhood-602": 0,
+        "neighborhood-603": 0,
+        "neighborhood-604": 0,
+        "neighborhood-365": 0,
+        "neighborhood-367": 0,
+        "neighborhood-366": 0,
+        "neighborhood-368": 0,
+        "neighborhood-532": 0,
+        "neighborhood-533": 0,
+        "neighborhood-534": 0,
+        "neighborhood-535": 0
       }
     },
     {
       "name": "east-17-4-night",
-      "changedPixels": 36982,
-      "pixelFraction": 0.10272777777777778,
+      "changedPixels": 60265,
+      "pixelFraction": 0.1674027777777778,
       "outsidePixels": 0,
       "outsideSamples": [],
       "perSite": {
@@ -663,7 +2321,79 @@
         "residential-162": 0,
         "residential-484": 0,
         "residential-429": 0,
-        "residential-730": 9594
+        "residential-730": 9594,
+        "neighborhood-200": 0,
+        "neighborhood-201": 0,
+        "neighborhood-202": 0,
+        "neighborhood-203": 0,
+        "neighborhood-116": 0,
+        "neighborhood-118": 0,
+        "neighborhood-117": 0,
+        "neighborhood-119": 0,
+        "neighborhood-488": 0,
+        "neighborhood-490": 0,
+        "neighborhood-489": 0,
+        "neighborhood-491": 0,
+        "neighborhood-480": 0,
+        "neighborhood-482": 0,
+        "neighborhood-481": 0,
+        "neighborhood-483": 0,
+        "neighborhood-389": 0,
+        "neighborhood-391": 0,
+        "neighborhood-390": 0,
+        "neighborhood-392": 0,
+        "neighborhood-423": 0,
+        "neighborhood-425": 0,
+        "neighborhood-424": 0,
+        "neighborhood-426": 0,
+        "neighborhood-770": 0,
+        "neighborhood-772": 0,
+        "neighborhood-771": 0,
+        "neighborhood-773": 0,
+        "neighborhood-774": 8336,
+        "neighborhood-776": 2693,
+        "neighborhood-775": 9554,
+        "neighborhood-777": 2700,
+        "neighborhood-745": 0,
+        "neighborhood-747": 0,
+        "neighborhood-746": 0,
+        "neighborhood-748": 0,
+        "neighborhood-657": 0,
+        "neighborhood-659": 0,
+        "neighborhood-658": 0,
+        "neighborhood-660": 0,
+        "neighborhood-701": 0,
+        "neighborhood-702": 0,
+        "neighborhood-703": 0,
+        "neighborhood-704": 0,
+        "neighborhood-244": 0,
+        "neighborhood-246": 0,
+        "neighborhood-245": 0,
+        "neighborhood-247": 0,
+        "neighborhood-546": 0,
+        "neighborhood-548": 0,
+        "neighborhood-547": 0,
+        "neighborhood-549": 0,
+        "neighborhood-324": 0,
+        "neighborhood-326": 0,
+        "neighborhood-325": 0,
+        "neighborhood-327": 0,
+        "neighborhood-26": 0,
+        "neighborhood-28": 0,
+        "neighborhood-27": 0,
+        "neighborhood-29": 0,
+        "neighborhood-601": 0,
+        "neighborhood-602": 0,
+        "neighborhood-603": 0,
+        "neighborhood-604": 0,
+        "neighborhood-365": 0,
+        "neighborhood-367": 0,
+        "neighborhood-366": 0,
+        "neighborhood-368": 0,
+        "neighborhood-532": 0,
+        "neighborhood-533": 0,
+        "neighborhood-534": 0,
+        "neighborhood-535": 0
       }
     }
   ],
@@ -674,9 +2404,9 @@
     "evictions": 4,
     "residentBytes": 24838144,
     "peakResidentBytes": 25165824,
-    "totalBakeMs": 228.7000000104308,
-    "maxBakeMs": 49.400000005960464,
-    "lastBakeMs": 11.799999997019768,
+    "totalBakeMs": 235.20000004768372,
+    "maxBakeMs": 68.30000001192093,
+    "lastBakeMs": 17.900000005960464,
     "tileSize": 1024,
     "maxTiles": 6,
     "cachedTiles": 6,
@@ -728,5 +2458,5 @@
     ]
   },
   "errors": [],
-  "scope": "Supplemental actual Chromium terrain/lighting captures at exact selected original-block centers. Footprints, all grid coordinates, districts, trees, decorations and lamps must remain identical. Raw terrain changes are constrained to selected facade render bounds; day/night composites also show atmosphere, without transient actors/UI."
+  "scope": "Supplemental actual Chromium terrain/lighting captures at exact selected original-block centers. Footprints, all grid coordinates, districts, trees, decorations and lamps must remain identical. Raw terrain changes are constrained to the original16 selected facade bounds plus explicitly annotated later neighborhood facades; historical night composites must remain identical outside the later annotations. Day/night composites also show atmosphere, without transient actors/UI."
 }

@@ -51,32 +51,54 @@ function modularBuilding(c,b){const {x,y,w,h}=b,s=hash(x,y),p=palettes[b.distric
 }
 const buildingCells=[[0,0,512,530],[512,0,512,530],[1024,0,512,530],[0,530,512,494],[512,530,512,494],[1024,530,512,494]];
 const neighborhoodCells=[[36,58,467,424],[530,92,469,387],[1029,60,473,419],[25,534,484,407],[535,547,472,392],[1029,534,485,400]];
+// Optional neighborhood furniture uses the same approved atlas and lies inside
+// the existing facade footprint. It contributes no new collision or light.
+function neighborhoodProps(c,b){for(const p of b.neighborhoodDetail?.props||[]){
+ if(p.type==='mailbox'){rect(c,p.x+4,p.y+4,2,p.h-4,'#62717f');rect(c,p.x,p.y,p.w,6,'#24394e');rect(c,p.x+1,p.y+1,p.w-2,1,'#91a7b2');rect(c,p.x+p.w-2,p.y+1,1,3,'#b8778e')}
+ else if(p.type==='fence'){rect(c,p.x,p.y+1,p.w,1,'#8694a3');rect(c,p.x,p.y+3,p.w,1,'#46546c');for(let x=p.x;x<p.x+p.w;x+=5)rect(c,x,p.y,1,p.h,'#778397')}
+ else if(p.type==='weathering'){for(let k=0;k<5;k++){const x=p.x+(k*7)%p.w,y=p.y+(k*5)%p.h;rect(c,x,y,Math.min(5,p.x+p.w-x),1,k%2?'#a07d92':'#404259')}}
+ else sprite(c,p.type,p.x,p.y,p.w,p.h);
+}}
 function building(c,b){
  const seed=hash(b.x,b.y),landmark=b.landmark?.key;
  const choices={west:[0,2,4],core:[1,3,4],north:[0,0,4],south:[2,0,1],east:[5,5,1]};
  let index=choices[b.district][seed%3],sheet='neighborhoods-illustrated',cells=neighborhoodCells;
  if(landmark){const special={hotel:0,armory:1,radio:2,warehouse:5};if(special[landmark]!==undefined){index=special[landmark];sheet='buildings-illustrated';cells=buildingCells}else index={motel:0,diner:2,records:4,club:3,arcade:4,observatory:5,pier:5,clinic:0}[landmark]??0}
+ // Preserve the original local light field even when an optional facade uses
+ // another approved architectural cell. Neighborhood selection never relights a block.
+ const lightIndex=index,detail=!landmark?b.neighborhoodDetail:null;
+ if(detail){sheet=detail.sheet;index=detail.cell;cells=sheet==='buildings-illustrated'?buildingCells:neighborhoodCells}
  // Full illustrated architectural sprites are anchored at the original collision footprint and door.
  const dx=b.x-3,dy=b.y-3,dw=b.w+6,dh=b.h+20;
  // Controlled facade swaps share the original footprint, scale and light field.
  // All other buildings, especially the story landmarks, retain their old path.
- if(!landmark&&Number.isInteger(b.residentialVariant)&&b.residentialVariant>=0&&b.residentialVariant<4){
+ if(!landmark&&((Number.isInteger(b.residentialVariant)&&b.residentialVariant>=0&&b.residentialVariant<4)||detail?.sheet==='residential-illustrated')){
   const homes=[[41,57,539,538],[624,82,596,521],[37,607,560,587],[626,640,595,546]];
-  c.drawImage(images['residential-illustrated'],...homes[b.residentialVariant],dx,dy,dw,dh);
+  c.drawImage(images['residential-illustrated'],...homes[Number.isInteger(b.residentialVariant)?b.residentialVariant:detail.cell],dx,dy,dw,dh);
   const col=neon[seed%4];light(b.doorX,b.doorY-8,75,col,.85);
-  if(index===3)light(b.x+b.w*.75,b.y+b.h*.55,50,'#e589cb',.8);
-  if(index===0||index===2)light(b.x+b.w*.25,b.y+b.h*.6,38,'#efb786',.55);
+  if(lightIndex===3)light(b.x+b.w*.75,b.y+b.h*.55,50,'#e589cb',.8);
+  if(lightIndex===0||lightIndex===2)light(b.x+b.w*.25,b.y+b.h*.6,38,'#efb786',.55);
+  neighborhoodProps(c,b);
   return;
  }
  c.drawImage(images[sheet],...cells[index],dx,dy,dw,dh);
+ // Existing freight artwork supplies a second industrial silhouette. Relabel
+ // only its original sign's lettering band; retain the weathered board/logo,
+ // roof equipment and loading doors rather than duplicating the story depot.
+ if(detail?.kind==='industrial'&&sheet==='buildings-illustrated'){
+  const sx=dx+dw*.18,sy=dy+dh*.445,sw=dw*.72,sh=Math.max(7,dh*.09);
+  rect(c,sx,sy,sw,sh,'#9da7ac');rect(c,sx,sy,sw,1,'#7d8c96');
+  label(c,detail.displayName,sx,sy+sh-2,sw,'#26394f',Math.min(7,Math.max(5,b.w/19)));
+ }
  const col=landmark?palettes[b.district].accent:neon[seed%4];
  // An in-world business plaque labels the unlettered neighborhood shells.
  const plateY=Math.round(dy+dh*.6),plateW=Math.min(b.w-14,112);
- if(sheet==='neighborhoods-illustrated'||landmark){rect(c,b.doorX-plateW/2,plateY,plateW,9,'#131d30ed');label(c,b.name,b.doorX-plateW/2,plateY+7,plateW,col,7)}
+ if(sheet==='neighborhoods-illustrated'||landmark){rect(c,b.doorX-plateW/2,plateY,plateW,9,'#131d30ed');label(c,detail?.displayName||b.name,b.doorX-plateW/2,plateY+7,plateW,col,7)}
  rect(c,b.doorX-9,b.doorY+3,18,1,col);
  light(b.doorX,b.doorY-8,75,col,landmark?1.4:.85);
- if(index===3)light(b.x+b.w*.75,b.y+b.h*.55,50,'#e589cb',.8);
- if(index===0||index===2)light(b.x+b.w*.25,b.y+b.h*.6,38,'#efb786',.55);
+ if(lightIndex===3)light(b.x+b.w*.75,b.y+b.h*.55,50,'#e589cb',.8);
+ if(lightIndex===0||lightIndex===2)light(b.x+b.w*.25,b.y+b.h*.6,38,'#efb786',.55);
+ neighborhoodProps(c,b);
 }
 function bakeTerrain(c,world){const {MW,MH,lands,roadXs,roadYs,STREET,buildings,trees,debris,streetlights}=world;lightGrid.clear();c.imageSmoothingEnabled=false;
  material(c,'concrete',0,0,MW,MH);

@@ -42,6 +42,9 @@
 <script src="assets/art.js"></script>
 <script src="assets/restored-city.js"></script>
 <script src="assets/residential-infill.js"></script>
+<script src="assets/neighborhood-details.js"></script>
+<script src="assets/ambient-traffic.js"></script>
+<script src="assets/ambient-pedestrians.js"></script>
 <script src="assets/missions.js"></script>
 <script src="assets/activities.js"></script>
 <script src="assets/mission-engine.js"></script>
@@ -190,6 +193,10 @@ for(let s of segments){let len=distance(s.a.x,s.a.y,s.b.x,s.b.y);for(let u=85;u<
 const residentialInfill=GlowportResidential.apply(buildings,{landmarks,roadXs,roadYs,limit:16});
 cityLayout=GlowportRestoredCity.create({MW,MH,lands,roadXs,roadYs,STREET,buildings,trees,debris,streetlights,roads:streetPaths,segments,districtRings,landmarks});
 for(const ring of Object.values(districtRings)){ring.lanes=ring.map(()=>12);ring.signals=ring.map(()=>true)}
+// Facade annotations and ambient graphs reuse the recovered geometry above.
+const neighborhoodDetails=typeof GlowportNeighborhoods==='undefined'?null:GlowportNeighborhoods.apply(buildings,{landmarks,roadXs,roadYs,STREET});
+const ambientTraffic=typeof GlowportAmbientTraffic==='undefined'?null:GlowportAmbientTraffic.create({roadXs,roadYs,STREET,MW,MH,solid:solidWorld,isRoad:(x,y,r)=>cityLayout.navigation.isRoad(x,y,r),district:districtFor,classify:(x,y)=>neighborhoodDetails?.classify(x,y,districtFor(x,y).id),signals:Object.entries(districtRings).flatMap(([id,ring])=>ring.map((p,k)=>({...p,offset:lands.findIndex(d=>d.id===id)*4+k*7}))),cap:43});
+const ambientPedestrians=typeof GlowportPedestrians==='undefined'?null:GlowportPedestrians.create({roadXs,roadYs,STREET,MW,MH,landmarks,solid:solidWorld,clearLine:segmentClear,moveCircle,districtFor,classify:(x,y)=>neighborhoodDetails?.classify(x,y,districtFor(x,y).id),cap:170,visible:(p,context={})=>{const view=context.camera||camera;return p.x>view.x-140&&p.x<view.x+W+140&&p.y>view.y-140&&p.y<view.y+H+140}});
 const terrainWorld={MW,MH,lands,roadXs,roadYs,STREET,buildings,trees,debris,streetlights,roads:streetPaths,segments};
 const terrain=GlowportTerrain.create({world:terrainWorld,bake:GlowportArt.bakeTerrain,tileSize:1024,maxTiles:6});
 function neonRect(c,x,y,w,h,color,alpha=.24){c.save();c.globalAlpha=alpha;for(let i=3;i>=1;i--){c.fillStyle=color;c.fillRect(Math.floor(x-i),Math.floor(y-i),Math.floor(w+i*2),Math.floor(h+i*2))}c.restore()}
@@ -310,6 +317,7 @@ const eventCatalog=[
  {id:'outage',title:'BLACKOUT BLOCK',desc:'The local power box blew. Restore the streetlights.',pay:190}
 ];
 let streetEvent=null,eventSpawnAt=22,weather='CLEAR',nextWeatherAt=115,cityAlert='',cityAlertUntil=0,cityEventsFinished=0,relations={},trafficTick=0;
+let npcScheduleClock=-Infinity,npcScheduleCount=0;
 function cityMinute(){return (CITY_START_MINUTES+Math.floor(world.clock*1440/CITY_DAY_SECONDS))%1440}
 function formatCityClock(){let t=cityMinute(),h=Math.floor(t/60),m=t%60;return ((h+11)%12+1)+':'+String(m).padStart(2,'0')+(h<12?' AM':' PM')}
 function timePhase(){let hour=cityMinute()/60;return hour<7||hour>=22?'home':hour<16?'work':'leisure'}
@@ -340,10 +348,21 @@ function pedestrianRoute(from,to){
  const safe=out.every((p,i)=>!i||segmentClear(out[i-1],p,9))?out:route;
  return safe.filter((p,i)=>i||distance(p.x,p.y,from.x,from.y)>4);
 }
-function setNpcDestination(n,to){n.goal={x:to.x,y:to.y};n.waypoints=pedestrianRoute(n,n.goal);n.waypoint=0;n.stuckTime=0;}
+function setNpcDestination(n,to){if(ambientPedestrians)return ambientPedestrians.setDestination(n,to);n.goal={x:to.x,y:to.y};n.waypoints=pedestrianRoute(n,n.goal);n.waypoint=0;n.stuckTime=0;}
 
-function settleNpcSchedule(n,force=false){let phase=timePhase();if(!force&&n.phase===phase)return;n.phase=phase;
- let dest=phase==='home'?n.home:phase==='work'?n.work:n.leisure;
+function settleNpcSchedule(n,force=false){
+ if(ambientPedestrians?.protectedNpc?.(n))return;
+ const phase=timePhase();if(!force&&n.phase===phase){delete n._ambientPendingPhase;delete n._ambientScheduleDue;return}
+ // Ambient residents change routines over a few seconds instead of rebuilding
+ // every sidewalk route in one frame. Initial/load placement remains immediate.
+ if(!force&&ambientPedestrians&&n.phase!=null){
+  if(n._ambientPendingPhase!==phase){n._ambientPendingPhase=phase;n._ambientScheduleDue=world.clock+((Math.abs(Number(n.id)||0)*37)%61)*.05}
+  if(world.clock<n._ambientScheduleDue)return;
+  if(npcScheduleClock!==world.clock){npcScheduleClock=world.clock;npcScheduleCount=0}
+  if(npcScheduleCount>=8)return;npcScheduleCount++;
+ }
+ delete n._ambientPendingPhase;delete n._ambientScheduleDue;n.phase=phase;
+ const dest=phase==='home'?n.home:phase==='work'?n.work:n.leisure;
  setNpcDestination(n,dest);n.dwell=0;
 }
 function socialFavor(n,delta){relations[n.id]=clamp((relations[n.id]||0)+delta,-4,6);n.affinity=relations[n.id];}
@@ -384,7 +403,7 @@ function updateCityLife(dt){
  if(world.clock>=nextWeatherAt){let next=pick(WEATHER_TYPES);if(next!==weather){weather=next;setCityAlert('WEATHER UPDATE: '+weather,3)}nextWeatherAt=world.clock+rnd(85,155)}
  if(streetEvent){if(world.clock>streetEvent.expiry){setCityAlert('STREET EVENT EXPIRED',2);streetEvent=null;eventSpawnAt=world.clock+rnd(16,35)}}
  else if(!gameplay&&world.clock>=eventSpawnAt)startStreetEvent();
- for(let n of npcs)settleNpcSchedule(n);
+ for(let n of npcs)if(!ambientPedestrians?.protectedNpc?.(n))settleNpcSchedule(n);
 }
 function drawStreetSignals(){
  for(let d of lands){let ring=districtRings[d.id];for(let k=0;k<ring.length;k++){
@@ -421,6 +440,7 @@ function loopAt(r,metres,lane=null){let total=loopLength(r),d=((metres%total)+to
  }
 }
 function restoreTraffic(car){
+ if(ambientTraffic)return ambientTraffic.restore(car,cars,{focus:player.inCar||player,playerCar:player.inCar,camera,width:W,height:H});
  if(!car?.ai)return car;
  const current=districtRings[car.ring];
  if(car._trafficMapVersion===3&&current&&Number.isFinite(car.trackDist)){
@@ -448,6 +468,7 @@ function spawnTraffic(){cars.length=0;
  }
  let place=closestRoadPoint(player.x+65,player.y+35);
  cars.push({id:'starter',modelId:'sedan',model:'Harbor Regent',x:place.x,y:place.y,angle:0,speed:0,health:100,color:'#ff60b3',ai:false,parked:true,personal:true,w:18,h:35,style:2});
+ ambientTraffic?.bootstrap(cars,{focus:player,playerCar:player.inCar,camera:{x:clamp(player.x-W/2,0,MW-W),y:clamp(player.y-H/2,0,MH-H)},width:W,height:H});
 }
 
 function spawnPedestrians(){npcs.length=0;
@@ -464,6 +485,7 @@ function spawnPedestrians(){npcs.length=0;
     dwell:rnd(0,8),affinity:relations[i]||0,waypoints:[],waypoint:0,stuckTime:0};
   settleNpcSchedule(n,true);npcs.push(n);
  }
+ ambientPedestrians?.bootstrap?.(npcs,{clock:world.clock,focus:player,camera:{x:clamp(player.x-W/2,0,MW-W),y:clamp(player.y-H/2,0,MH-H)},width:W,height:H});
 }
 function spawnCollectibles(){pickups.length=0;for(let k=0;k<55;k++){let d=pick(lands),p=pointAt(d,rnd(0,TAU),rnd(.25,.79));if(solidWorld(p.x,p.y,13))continue;pickups.push({x:p.x,y:p.y,amount:pick([15,25,40,55]),collected:false})}}
 function initialState(){GlowportInteractions.close();GlowportVehicles.closeGarage();GlowportAudio.close();resetInputs();pointer.active=false;damageFlash=0;saveClock=0;toastTimer=0;world={mapVersion:3,trust:{vee:0},story:0,side:null,wanted:0,crimeTimer:0,clock:0,nearHit:0,lastCopSpawn:-10};const h=lm('hotel');player={x:h?h.x:2410,y:h?h.y+32:1580,hp:150,maxHp:150,money:600,inCar:null,inside:null,ix:400,iy:380,face:'down',angle:0,walk:0,invuln:1.5,weapon:0,owned:[true,false,false,false,false],ammo:{pistol:0,shotgun:0,smg:0},mag:{pistol:0,shotgun:0,smg:0},cool:0,reload:0,armor:0};
@@ -511,7 +533,10 @@ function showConversationPage(){
  $('conversationBody').textContent=node.text;
  const opts=$('conversationChoices');opts.innerHTML='';
  let choices=node.choices||[{label:d.index===d.lines.length-1?'[ Continue ]':'[ Next ]',reaction:null}];
- choices.forEach((choice,i)=>{let btn=document.createElement('button');btn.className='chat-choice';btn.textContent=(i+1)+'. '+choice.label;btn.onclick=()=>advanceConversation(i);opts.appendChild(btn)});opts.querySelector('button')?.focus({preventScroll:true})
+ choices.forEach((choice,i)=>{let btn=document.createElement('button'),pressed=false;btn.className='chat-choice';btn.textContent=(i+1)+'. '+choice.label;
+  // A touch release can open this panel under the same finger. Its synthetic
+  // click must not select a new response that never received its own press.
+  btn.onpointerdown=()=>{pressed=true};btn.onpointercancel=()=>{pressed=false};btn.onclick=event=>{if(event.detail>0&&!pressed)return;pressed=false;advanceConversation(i)};opts.appendChild(btn)});opts.querySelector('button')?.focus({preventScroll:true})
 }
 function advanceConversation(i=0){
  if(!activeDialogue)return;let d=activeDialogue,node=d.lines[d.index],choice=(node.choices||[{label:'Next'}])[i];if(!choice)return;
@@ -573,7 +598,7 @@ function talkToInformant(){
 }
 function ambientSpeech(dt){
  let p=player.inCar||player,near=0;
- for(let n of npcs){n.sayTime=Math.max(0,(n.sayTime||0)-dt);n.nextSay-=dt;
+ for(let n of npcs){if(ambientPedestrians?.protectedNpc?.(n))continue;n.sayTime=Math.max(0,(n.sayTime||0)-dt);n.nextSay-=dt;
   let d=distance(n.x,n.y,p.x,p.y);
   if(d>150)n.contactLock=false;
   if(d<195&&n.sayTime>0)near++;
@@ -751,6 +776,7 @@ function updateBullets(dt){for(let bullet of bullets){bullet.life-=dt;let count=
  }}bullets.splice(0,bullets.length,...bullets.filter(b=>b.life>0));npcs.splice(0,npcs.length,...npcs.filter(n=>n.hp>0))}
 function trafficSignal(ring,corner){let order=['west','core','north','south','east'].indexOf(ring);let phase=(world.clock+(order*4+corner*7))%28;return phase<17?'green':phase<21?'amber':'red'}
 function updateTraffic(dt){
+ if(ambientTraffic){ambientTraffic.update(dt,{cars,clock:world.clock,focus:player.inCar||player,playerCar:player.inCar,camera,width:W,height:H,weather,wanted:world.wanted,cops:police,pedestrians:npcs,hazards:gameplay?.encounters?.hazards?.()||[]});return}
  for(let c of cars){if(!c.ai||c===player.inCar)continue;
   let rr=districtRings[c.ring],total=loopLength(rr),ahead=Infinity;
   for(let o of cars){if(o===c||!o.ai||o.ring!==c.ring)continue;let gap=(o.trackDist-c.trackDist+total)%total;if(gap>.001&&gap<ahead)ahead=gap}
@@ -789,8 +815,9 @@ function separatePedestrians(){
 function updateNpcs(dt){
  let focus=player.inCar||player,cell=56,spatial=new Map();
  for(let n of npcs){let k=Math.floor(n.x/cell)+','+Math.floor(n.y/cell);if(!spatial.has(k))spatial.set(k,[]);spatial.get(k).push(n)}
- for(let n of npcs){const cityMotion=livingCity?.updateNPC(n,dt,{clock:world.clock,weather,wanted:world.wanted,focus,reroute:setNpcDestination,hazards:gameplay?.encounters?.hazards?.()||[]});n.step+=dt*7;n.panic=Math.max(0,n.panic-dt);let d=distance(n.x,n.y,focus.x,focus.y);
+ for(let n of npcs){if(ambientPedestrians?.protectedNpc?.(n))continue;const cityMotion=livingCity?.updateNPC(n,dt,{clock:world.clock,weather,wanted:world.wanted,focus,reroute:setNpcDestination,hazards:gameplay?.encounters?.hazards?.()||[]});if(!ambientPedestrians)n.step+=dt*7;n.panic=Math.max(0,n.panic-dt);let d=distance(n.x,n.y,focus.x,focus.y);
   if(world.wanted>1&&d<150)n.panic=Math.max(n.panic,3);
+  if(ambientPedestrians){const peers=[],cx=Math.floor(n.x/cell),cy=Math.floor(n.y/cell);for(let ox=-1;ox<=1;ox++)for(let oy=-1;oy<=1;oy++)peers.push(...spatial.get((cx+ox)+','+(cy+oy))||[]);ambientPedestrians.step(n,dt,{clock:world.clock,focus,cars,peers,speedMultiplier:cityMotion?.speedMultiplier||1,population:npcs.length});continue}
   if(n.panic>0){n.angle=Math.atan2(n.y-focus.y,n.x-focus.x);n.waypoint=Math.max(0,n.waypoint)}
   else if(n.waypoint>=n.waypoints.length){n.dwell-=dt;
    if(n.dwell<=0){n.dwell=rnd(3,11);let center=n.phase==='home'?n.home:n.phase==='work'?n.work:n.leisure;
@@ -812,7 +839,7 @@ function updateNpcs(dt){
     else{setNpcDestination(n,n.goal||randomSidewalkNear(n.x,n.y,130));}}
   n.face=Math.abs(vx)>Math.abs(vy)?(vx>0?'right':'left'):(vy>0?'down':'up');n.angle=Math.atan2(vy,vx);
  }
- for(let pass=0;pass<2;pass++)separatePedestrians();ambientSpeech(dt);
+ if(ambientPedestrians)ambientPedestrians.maintain(npcs,{clock:world.clock,focus,camera,width:W,height:H});else for(let pass=0;pass<2;pass++)separatePedestrians();ambientSpeech(dt);
 }
 function updateDriving(dt){let car=player.inCar;const model=GlowportVehicles.profile(car);let input=movementInput(),go=-input.y,boost=controls.shift,cap=model.maxSpeed*(boost?model.boostMultiplier:1)*(1+(gameplay?.progression.state.skills.driving||0)*.001)*clamp((car.health??100)/100,.55,1);
  if(model.disabled){car.speed=0;return}
@@ -935,7 +962,7 @@ $('interactionMore').addEventListener('click',openInteractionMenu);$('soundBtn')
 touchInput=GlowportTouch.mount({root:$('touch'),state:()=>({playing:screen==='playing',blocked:!canPlayInput(),inCar:!!player?.inCar,inside:!!player?.inside,sneaking:!!player?.sneaking}),move:(x,y)=>{mobileMove=x||y?{x,y}:null;touchControls.left=x<-.01;touchControls.right=x>.01;touchControls.up=y<-.01;touchControls.down=y>.01;syncControls()},aim:(x,y)=>{mobileAim=x||y?{x,y}:null;pointer.active=false},control:(name,held)=>{if(name in touchControls){const pressed=held&&!controls[name];touchControls[name]=held;syncControls();if(name==='fire'&&pressed)shoot()}},action:touchAction,canFullscreen:()=>!!document.fullscreenEnabled&&typeof document.documentElement.requestFullscreen==='function'});
 if(touchInput.enabled){document.querySelector('.menu-mini').textContent='LEFT STICK: MOVE / DRIVE · DRAG RIGHT STICK: AIM + FIRE · INTERACT: TALK / ENTER';document.querySelector('.convo-hint').textContent='Tap a response or Continue.';}
 // Diagnostics for gameplay regression checks, not required by players.
-if(DEV_MODE)window.GlowportTest={get cityLayout(){return cityLayout},get residentialInfill(){return residentialInfill},getWorld:()=>terrainWorld,worldDiagnostics:()=>cityLayout.diagnostics(),get mapBase(){return mapBase},guidance:dest=>streetGuidance(dest),pedestrianRoute:(from,to)=>pedestrianRoute(from,to),interactions:()=>resolvedInteractions().map(({id,label,priority,distance})=>({id,label,priority,distance})),get livingCity(){return livingCity},debugSaveKey:memoryKey,terrain:()=>terrain.diagnostics(),input:()=>({controls:{...controls},keyboard:{...keyboardControls},touchControls:{...touchControls},pointer:{...pointer},move:mobileMove,aim:mobileAim,paused,touch:touchInput?.diagnostics()}),get system(){return gameplay},campaign:()=>gameplay?.diagnostics(),setMission:id=>gameplay?.fixture(id,0),setMissionStage:(id,index)=>gameplay?.fixture(id,index),landmarks:()=>landmarks.map(l=>({key:l.key,x:l.x,y:l.y,safe:!solidWorld(l.x,l.y+10,9),onLand:onLand(l.x,l.y+10),roadDistance:closestRoadPoint(l.x,l.y).d,inside:!!l.building})),getState:()=>({interior:{x:player?.ix,y:player?.iy},investigation:GlowportMissions.current(storyAt(),world),delivery:world.delivery?JSON.parse(JSON.stringify(world.delivery)):null,reserve:player?.ammo?{...player.ammo}:null,ammo:player?.mag?{...player.mag}:null,reloading:player?.reload,trust:world.trust,camera:{...camera},time:world.clock,screen,story:world.story,hp:player.hp,money:player.money,wanted:world.wanted,inside:player.inside,player:{x:player.x,y:player.y,weapon:player.weapon},cars:cars.length,buildings:buildings.length,landmarks:landmarks.length,roadSegments:segments.length,mapW:MW,mapH:MH,roadCols:roadXs.length,roadRows:roadYs.length,dialogue:!!activeDialogue,practice:(world.practice||[]).length,training:world.trainingSpawned,talking:world.talkCount,trafficMinGap:Math.min(...cars.filter(c=>c.ai).map(c=>Math.min(...cars.filter(o=>o!==c&&o.ai&&o.ring===c.ring).map(o=>distance(c.x,c.y,o.x,o.y))))),enemies:enemies.length,police:police.length,bullets:bullets.length,car:!!player.inCar,side:world.side?.to||null}),launch,teleport:key=>{let a=lm(key);player.inside=null;player.inCar=null;player.x=a.x;player.y=a.y+10;camera.x=clamp(player.x-W/2,0,MW-W);camera.y=clamp(player.y-H/2,0,MH-H);updateHud()},getTargets:()=>world.practice.map(t=>({...t})),getNPCs:()=>npcs.map(n=>({id:n.id,state:n.state,x:n.x,y:n.y,phase:n.phase,role:n.role,waypoints:n.waypoints.length,stuck:n.stuckTime,sayTime:n.sayTime})),getEnemies:()=>enemies.map(e=>({hp:e.hp,x:e.x,y:e.y})),getPolice:()=>police.map(p=>({x:p.x,y:p.y,foot:p.foot})),getTraffic:()=>cars.filter(c=>c.ai).map(c=>({x:c.x,y:c.y,ring:c.ring,speed:c.speed,trackDist:c.trackDist})),canStand:(x,y)=>!solidWorld(x,y,9),setInteriorPosition:(x,y)=>{player.ix=x;player.iy=y},setPosition:(x,y,angle=null)=>{player.inside=null;player.inCar=null;player.x=x;player.y=y;if(angle!==null)player.angle=angle;camera.x=clamp(x-W/2,0,MW-W);camera.y=clamp(y-H/2,0,MH-H);pointer.active=false;player.cool=0},resetCooldown:()=>player.cool=0,setWanted:v=>{gameplay?gameplay.forceWanted(v<0?0:Math.min(5,world.wanted+v)):crime(v);updateHud()},setEnvironment:(hour,type)=>{world.clock=((hour*60-CITY_START_MINUTES+1440)%1440)/1440*CITY_DAY_SECONDS;weather=type;nextWeatherAt=world.clock+9999;eventSpawnAt=world.clock+9999;updateHud()},getVehicles:()=>cars.map(c=>({x:c.x,y:c.y,angle:c.angle,personal:c.personal,speed:c.speed})),getCity:()=>({time:formatCityClock(),weather,event:streetEvent?{...streetEvent}:null,finished:cityEventsFinished,relations:{...relations}}),startStreetEvent,interactStreetEvent,setEvent:e=>{streetEvent=e;updateHud()},getSignals:()=>lands.map(d=>({ring:d.id,signal:trafficSignal(d.id,0)})),talkToInformant,advanceConversation,buyItem,initPractice,spawnTutorialEnforcers,shoot,updateBullets,equip,action,update,drawGame,storyAdvance,enterInterior,leaveInterior};
+if(DEV_MODE)window.GlowportTest={get neighborhoodDetails(){return neighborhoodDetails},get ambientTraffic(){return ambientTraffic},get ambientPedestrians(){return ambientPedestrians},ambientDiagnostics:()=>({traffic:ambientTraffic?.diagnostics(),pedestrians:ambientPedestrians?.diagnostics(npcs)}),ambientStep:(seconds,dt=.05)=>{const total=clamp(Number(seconds)||0,0,3600),step=clamp(Number(dt)||.05,.01,.1);for(let elapsed=0;elapsed<total-1e-8;){const tick=Math.min(step,total-elapsed);world.clock+=tick;for(const n of npcs)if(!ambientPedestrians?.protectedNpc?.(n))settleNpcSchedule(n);updateTraffic(tick);updateNpcs(tick);elapsed+=tick}return world.clock},get cityLayout(){return cityLayout},get residentialInfill(){return residentialInfill},getWorld:()=>terrainWorld,worldDiagnostics:()=>cityLayout.diagnostics(),get mapBase(){return mapBase},guidance:dest=>streetGuidance(dest),pedestrianRoute:(from,to)=>pedestrianRoute(from,to),interactions:()=>resolvedInteractions().map(({id,label,priority,distance})=>({id,label,priority,distance})),get livingCity(){return livingCity},debugSaveKey:memoryKey,terrain:()=>terrain.diagnostics(),input:()=>({controls:{...controls},keyboard:{...keyboardControls},touchControls:{...touchControls},pointer:{...pointer},move:mobileMove,aim:mobileAim,paused,touch:touchInput?.diagnostics()}),get system(){return gameplay},campaign:()=>gameplay?.diagnostics(),setMission:id=>gameplay?.fixture(id,0),setMissionStage:(id,index)=>gameplay?.fixture(id,index),landmarks:()=>landmarks.map(l=>({key:l.key,x:l.x,y:l.y,safe:!solidWorld(l.x,l.y+10,9),onLand:onLand(l.x,l.y+10),roadDistance:closestRoadPoint(l.x,l.y).d,inside:!!l.building})),getState:()=>({interior:{x:player?.ix,y:player?.iy},investigation:GlowportMissions.current(storyAt(),world),delivery:world.delivery?JSON.parse(JSON.stringify(world.delivery)):null,reserve:player?.ammo?{...player.ammo}:null,ammo:player?.mag?{...player.mag}:null,reloading:player?.reload,trust:world.trust,camera:{...camera},time:world.clock,screen,story:world.story,hp:player.hp,money:player.money,wanted:world.wanted,inside:player.inside,player:{x:player.x,y:player.y,weapon:player.weapon},cars:cars.length,buildings:buildings.length,landmarks:landmarks.length,roadSegments:segments.length,mapW:MW,mapH:MH,roadCols:roadXs.length,roadRows:roadYs.length,dialogue:!!activeDialogue,practice:(world.practice||[]).length,training:world.trainingSpawned,talking:world.talkCount,trafficMinGap:Math.min(...cars.filter(c=>c.ai).map(c=>Math.min(...cars.filter(o=>o!==c&&o.ai&&o.ring===c.ring).map(o=>distance(c.x,c.y,o.x,o.y))))),enemies:enemies.length,police:police.length,bullets:bullets.length,car:!!player.inCar,side:world.side?.to||null}),launch,teleport:key=>{let a=lm(key);player.inside=null;player.inCar=null;player.x=a.x;player.y=a.y+10;camera.x=clamp(player.x-W/2,0,MW-W);camera.y=clamp(player.y-H/2,0,MH-H);updateHud()},getTargets:()=>world.practice.map(t=>({...t})),getNPCs:()=>npcs.map(n=>({id:n.id,state:n.state,x:n.x,y:n.y,phase:n.phase,role:n.role,waypoints:n.waypoints.length,stuck:n.stuckTime,sayTime:n.sayTime})),getEnemies:()=>enemies.map(e=>({hp:e.hp,x:e.x,y:e.y})),getPolice:()=>police.map(p=>({x:p.x,y:p.y,foot:p.foot})),getTraffic:()=>cars.filter(c=>c.ai).map(c=>({x:c.x,y:c.y,ring:c.ring,speed:c.speed,trackDist:c.trackDist})),canStand:(x,y)=>!solidWorld(x,y,9),setInteriorPosition:(x,y)=>{player.ix=x;player.iy=y},setPosition:(x,y,angle=null)=>{player.inside=null;player.inCar=null;player.x=x;player.y=y;if(angle!==null)player.angle=angle;camera.x=clamp(x-W/2,0,MW-W);camera.y=clamp(y-H/2,0,MH-H);pointer.active=false;player.cool=0},resetCooldown:()=>player.cool=0,setWanted:v=>{gameplay?gameplay.forceWanted(v<0?0:Math.min(5,world.wanted+v)):crime(v);updateHud()},setEnvironment:(hour,type)=>{world.clock=((hour*60-CITY_START_MINUTES+1440)%1440)/1440*CITY_DAY_SECONDS;weather=type;nextWeatherAt=world.clock+9999;eventSpawnAt=world.clock+9999;updateHud()},getVehicles:()=>cars.map(c=>({x:c.x,y:c.y,angle:c.angle,personal:c.personal,speed:c.speed})),getCity:()=>({time:formatCityClock(),weather,event:streetEvent?{...streetEvent}:null,finished:cityEventsFinished,relations:{...relations}}),startStreetEvent,interactStreetEvent,setEvent:e=>{streetEvent=e;updateHud()},getSignals:()=>lands.map(d=>({ring:d.id,signal:trafficSignal(d.id,0)})),talkToInformant,advanceConversation,buyItem,initPractice,spawnTutorialEnforcers,shoot,updateBullets,equip,action,update,drawGame,storyAdvance,enterInterior,leaveInterior};
 $('startBtn').disabled=false;$('startBtn').textContent='▶ START / CONTINUE';$('newBtn').disabled=false;
 console.log('GLOWPORT88 MIDNIGHT SIGNAL READY',lands.length,'districts',buildings.length,'buildings',landmarks.length,'interiors');
 requestAnimationFrame(doFrame);

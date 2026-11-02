@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-28T14:05:51.896Z",
+  "time": "2026-10-30T19:33:46.494Z",
   "passed": [
     "authentic c9b4af6 geometry, density, terrain and landmarks remain exact",
     "one connected original grid serves both walking and driving",
@@ -13,7 +13,7 @@
   "landmarkRoutes": 132,
   "buildingRoutes": 808,
   "samples": 431530,
-  "elapsedMs": 579.972537,
+  "elapsedMs": 622.5146530000001,
   "diagnostics": {
     "baseline": "c9b4af6",
     "mapVersion": 3,

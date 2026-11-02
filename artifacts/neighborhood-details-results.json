@@ -1,0 +1,3443 @@
+{
+  "time": "2026-10-30T13:41:59.399Z",
+  "passed": [
+    "72 selected facades form 18 compact existing blocks with five architectural purposes",
+    "all 808 footprints, original properties, landmark references and world geometry stay intact",
+    "no house replaces downtown, a landmark or any protected story-door approach",
+    "all 136 small props fit existing impassable footprints and leave real doors, roads and sidewalks clear",
+    "every selected facade keeps its original clear entrance and a safe walking route to the hotel",
+    "selection is deterministic, consumes no RNG and can be reduced without accumulating annotations",
+    "activity classification follows selected existing blocks and gives industrial streets fewer pedestrians",
+    "all original light positions, colors, radii and powers remain identical for every chosen facade"
+  ],
+  "count": 72,
+  "blocks": [
+    {
+      "id": "west:4:7",
+      "district": "west",
+      "ix": 4,
+      "iy": 7,
+      "x": 1600,
+      "y": 2540,
+      "w": 360,
+      "h": 340,
+      "cx": 1780,
+      "cy": 2710,
+      "kind": "residential",
+      "count": 4
+    },
+    {
+      "id": "west:2:7",
+      "district": "west",
+      "ix": 2,
+      "iy": 7,
+      "x": 880,
+      "y": 2540,
+      "w": 360,
+      "h": 340,
+      "cx": 1060,
+      "cy": 2710,
+      "kind": "residential",
+      "count": 4
+    },
+    {
+      "id": "north:11:3",
+      "district": "north",
+      "ix": 11,
+      "iy": 3,
+      "x": 4120,
+      "y": 1180,
+      "w": 360,
+      "h": 340,
+      "cx": 4300,
+      "cy": 1350,
+      "kind": "residential",
+      "count": 4
+    },
+    {
+      "id": "north:11:1",
+      "district": "north",
+      "ix": 11,
+      "iy": 1,
+      "x": 4120,
+      "y": 500,
+      "w": 360,
+      "h": 340,
+      "cx": 4300,
+      "cy": 670,
+      "kind": "residential",
+      "count": 4
+    },
+    {
+      "id": "south:8:11",
+      "district": "south",
+      "ix": 8,
+      "iy": 11,
+      "x": 3040,
+      "y": 3900,
+      "w": 360,
+      "h": 340,
+      "cx": 3220,
+      "cy": 4070,
+      "kind": "residential",
+      "count": 4
+    },
+    {
+      "id": "south:9:10",
+      "district": "south",
+      "ix": 9,
+      "iy": 10,
+      "x": 3400,
+      "y": 3560,
+      "w": 360,
+      "h": 340,
+      "cx": 3580,
+      "cy": 3730,
+      "kind": "residential",
+      "count": 4
+    },
+    {
+      "id": "east:18:3",
+      "district": "east",
+      "ix": 18,
+      "iy": 3,
+      "x": 6640,
+      "y": 1180,
+      "w": 360,
+      "h": 340,
+      "cx": 6820,
+      "cy": 1350,
+      "kind": "residential",
+      "count": 4
+    },
+    {
+      "id": "east:18:4",
+      "district": "east",
+      "ix": 18,
+      "iy": 4,
+      "x": 6640,
+      "y": 1520,
+      "w": 360,
+      "h": 340,
+      "cx": 6820,
+      "cy": 1690,
+      "kind": "residential",
+      "count": 4
+    },
+    {
+      "id": "east:17:9",
+      "district": "east",
+      "ix": 17,
+      "iy": 9,
+      "x": 6280,
+      "y": 3220,
+      "w": 360,
+      "h": 340,
+      "cx": 6460,
+      "cy": 3390,
+      "kind": "industrial",
+      "count": 4
+    },
+    {
+      "id": "east:15:9",
+      "district": "east",
+      "ix": 15,
+      "iy": 9,
+      "x": 5560,
+      "y": 3220,
+      "w": 360,
+      "h": 340,
+      "cx": 5740,
+      "cy": 3390,
+      "kind": "industrial",
+      "count": 4
+    },
+    {
+      "id": "east:16:10",
+      "district": "east",
+      "ix": 16,
+      "iy": 10,
+      "x": 5920,
+      "y": 3560,
+      "w": 360,
+      "h": 340,
+      "cx": 6100,
+      "cy": 3730,
+      "kind": "industrial",
+      "count": 4
+    },
+    {
+      "id": "west:5:8",
+      "district": "west",
+      "ix": 5,
+      "iy": 8,
+      "x": 1960,
+      "y": 2880,
+      "w": 360,
+      "h": 340,
+      "cx": 2140,
+      "cy": 3050,
+      "kind": "mixed",
+      "count": 4
+    },
+    {
+      "id": "south:12:10",
+      "district": "south",
+      "ix": 12,
+      "iy": 10,
+      "x": 4480,
+      "y": 3560,
+      "w": 360,
+      "h": 340,
+      "cx": 4660,
+      "cy": 3730,
+      "kind": "mixed",
+      "count": 4
+    },
+    {
+      "id": "north:7:3",
+      "district": "north",
+      "ix": 7,
+      "iy": 3,
+      "x": 2680,
+      "y": 1180,
+      "w": 360,
+      "h": 340,
+      "cx": 2860,
+      "cy": 1350,
+      "kind": "mixed",
+      "count": 4
+    },
+    {
+      "id": "west:0:5",
+      "district": "west",
+      "ix": 0,
+      "iy": 5,
+      "x": 160,
+      "y": 1860,
+      "w": 360,
+      "h": 340,
+      "cx": 340,
+      "cy": 2030,
+      "kind": "older",
+      "count": 4
+    },
+    {
+      "id": "east:14:4",
+      "district": "east",
+      "ix": 14,
+      "iy": 4,
+      "x": 5200,
+      "y": 1520,
+      "w": 360,
+      "h": 340,
+      "cx": 5380,
+      "cy": 1690,
+      "kind": "older",
+      "count": 4
+    },
+    {
+      "id": "core:8:5",
+      "district": "core",
+      "ix": 8,
+      "iy": 5,
+      "x": 3040,
+      "y": 1860,
+      "w": 360,
+      "h": 340,
+      "cx": 3220,
+      "cy": 2030,
+      "kind": "commercial",
+      "count": 4
+    },
+    {
+      "id": "core:12:6",
+      "district": "core",
+      "ix": 12,
+      "iy": 6,
+      "x": 4480,
+      "y": 2200,
+      "w": 360,
+      "h": 340,
+      "cx": 4660,
+      "cy": 2370,
+      "kind": "commercial",
+      "count": 4
+    }
+  ],
+  "sites": [
+    {
+      "id": "neighborhood-200",
+      "index": 200,
+      "x": 1664,
+      "y": 2609,
+      "w": 68,
+      "h": 99,
+      "doorX": 1698,
+      "doorY": 2721,
+      "renderBounds": {
+        "x": 1661,
+        "y": 2606,
+        "w": 74,
+        "h": 119
+      },
+      "district": "west",
+      "block": "west:4:7",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 3,
+      "style": 0,
+      "design": "Mid-century garage house",
+      "props": [
+        {
+          "id": "neighborhood-200-mailbox",
+          "type": "mailbox",
+          "x": 1668,
+          "y": 2693,
+          "w": 10,
+          "h": 12,
+          "building": 200,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-201",
+      "index": 201,
+      "x": 1828,
+      "y": 2609,
+      "w": 68,
+      "h": 99,
+      "doorX": 1862,
+      "doorY": 2721,
+      "renderBounds": {
+        "x": 1825,
+        "y": 2606,
+        "w": 74,
+        "h": 119
+      },
+      "district": "west",
+      "block": "west:4:7",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 0,
+      "style": 1,
+      "design": "Porch bungalow",
+      "props": [
+        {
+          "id": "neighborhood-201-mailbox",
+          "type": "mailbox",
+          "x": 1832,
+          "y": 2693,
+          "w": 10,
+          "h": 12,
+          "building": 201,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-202",
+      "index": 202,
+      "x": 1667,
+      "y": 2737,
+      "w": 96,
+      "h": 72,
+      "doorX": 1715,
+      "doorY": 2822,
+      "renderBounds": {
+        "x": 1664,
+        "y": 2734,
+        "w": 102,
+        "h": 92
+      },
+      "district": "west",
+      "block": "west:4:7",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 1,
+      "style": 2,
+      "design": "Urban duplex",
+      "props": [
+        {
+          "id": "neighborhood-202-mailbox",
+          "type": "mailbox",
+          "x": 1671,
+          "y": 2794,
+          "w": 10,
+          "h": 12,
+          "building": 202,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-202-fence",
+          "type": "fence",
+          "x": 1736,
+          "y": 2802,
+          "w": 20,
+          "h": 5,
+          "building": 202,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-203",
+      "index": 203,
+      "x": 1790,
+      "y": 2737,
+      "w": 96,
+      "h": 72,
+      "doorX": 1838,
+      "doorY": 2822,
+      "renderBounds": {
+        "x": 1787,
+        "y": 2734,
+        "w": 102,
+        "h": 92
+      },
+      "district": "west",
+      "block": "west:4:7",
+      "kind": "residential",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 3,
+      "design": "Low-rise apartments",
+      "props": [
+        {
+          "id": "neighborhood-203-planter",
+          "type": "planter",
+          "x": 1794,
+          "y": 2794,
+          "w": 10,
+          "h": 12,
+          "building": 203,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-203-ac",
+          "type": "ac",
+          "x": 1859,
+          "y": 2745,
+          "w": 20,
+          "h": 15,
+          "building": 203,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-116",
+      "index": 116,
+      "x": 949,
+      "y": 2608,
+      "w": 87,
+      "h": 68,
+      "doorX": 993,
+      "doorY": 2689,
+      "renderBounds": {
+        "x": 946,
+        "y": 2605,
+        "w": 93,
+        "h": 88
+      },
+      "district": "west",
+      "block": "west:2:7",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 1,
+      "style": 0,
+      "design": "Urban duplex",
+      "props": [
+        {
+          "id": "neighborhood-116-mailbox",
+          "type": "mailbox",
+          "x": 953,
+          "y": 2661,
+          "w": 10,
+          "h": 12,
+          "building": 116,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-116-fence",
+          "type": "fence",
+          "x": 1009,
+          "y": 2669,
+          "w": 20,
+          "h": 5,
+          "building": 116,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-118",
+      "index": 118,
+      "x": 1072,
+      "y": 2608,
+      "w": 101,
+      "h": 71,
+      "doorX": 1122,
+      "doorY": 2692,
+      "renderBounds": {
+        "x": 1069,
+        "y": 2605,
+        "w": 107,
+        "h": 91
+      },
+      "district": "west",
+      "block": "west:2:7",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 2,
+      "style": 1,
+      "design": "Victorian townhouse",
+      "props": [
+        {
+          "id": "neighborhood-118-mailbox",
+          "type": "mailbox",
+          "x": 1076,
+          "y": 2664,
+          "w": 10,
+          "h": 12,
+          "building": 118,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-118-fence",
+          "type": "fence",
+          "x": 1146,
+          "y": 2672,
+          "w": 20,
+          "h": 5,
+          "building": 118,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-117",
+      "index": 117,
+      "x": 949,
+      "y": 2721,
+      "w": 87,
+      "h": 77,
+      "doorX": 992,
+      "doorY": 2811,
+      "renderBounds": {
+        "x": 946,
+        "y": 2718,
+        "w": 93,
+        "h": 97
+      },
+      "district": "west",
+      "block": "west:2:7",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 3,
+      "style": 2,
+      "design": "Mid-century garage house",
+      "props": [
+        {
+          "id": "neighborhood-117-mailbox",
+          "type": "mailbox",
+          "x": 953,
+          "y": 2783,
+          "w": 10,
+          "h": 12,
+          "building": 117,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-117-fence",
+          "type": "fence",
+          "x": 1009,
+          "y": 2791,
+          "w": 20,
+          "h": 5,
+          "building": 117,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-119",
+      "index": 119,
+      "x": 1072,
+      "y": 2721,
+      "w": 103,
+      "h": 71,
+      "doorX": 1124,
+      "doorY": 2805,
+      "renderBounds": {
+        "x": 1069,
+        "y": 2718,
+        "w": 109,
+        "h": 91
+      },
+      "district": "west",
+      "block": "west:2:7",
+      "kind": "residential",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 3,
+      "design": "Low-rise apartments",
+      "props": [
+        {
+          "id": "neighborhood-119-planter",
+          "type": "planter",
+          "x": 1076,
+          "y": 2777,
+          "w": 10,
+          "h": 12,
+          "building": 119,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-119-ac",
+          "type": "ac",
+          "x": 1148,
+          "y": 2729,
+          "w": 20,
+          "h": 15,
+          "building": 119,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-488",
+      "index": 488,
+      "x": 4189,
+      "y": 1248,
+      "w": 103,
+      "h": 71,
+      "doorX": 4240,
+      "doorY": 1332,
+      "renderBounds": {
+        "x": 4186,
+        "y": 1245,
+        "w": 109,
+        "h": 91
+      },
+      "district": "north",
+      "block": "north:11:3",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 2,
+      "style": 0,
+      "design": "Victorian townhouse",
+      "props": [
+        {
+          "id": "neighborhood-488-mailbox",
+          "type": "mailbox",
+          "x": 4193,
+          "y": 1304,
+          "w": 10,
+          "h": 12,
+          "building": 488,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-488-fence",
+          "type": "fence",
+          "x": 4265,
+          "y": 1312,
+          "w": 20,
+          "h": 5,
+          "building": 488,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-490",
+      "index": 490,
+      "x": 4312,
+      "y": 1248,
+      "w": 90,
+      "h": 73,
+      "doorX": 4357,
+      "doorY": 1334,
+      "renderBounds": {
+        "x": 4309,
+        "y": 1245,
+        "w": 96,
+        "h": 93
+      },
+      "district": "north",
+      "block": "north:11:3",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 3,
+      "style": 1,
+      "design": "Mid-century garage house",
+      "props": [
+        {
+          "id": "neighborhood-490-mailbox",
+          "type": "mailbox",
+          "x": 4316,
+          "y": 1306,
+          "w": 10,
+          "h": 12,
+          "building": 490,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-490-fence",
+          "type": "fence",
+          "x": 4375,
+          "y": 1314,
+          "w": 20,
+          "h": 5,
+          "building": 490,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-489",
+      "index": 489,
+      "x": 4189,
+      "y": 1361,
+      "w": 103,
+      "h": 68,
+      "doorX": 4240,
+      "doorY": 1442,
+      "renderBounds": {
+        "x": 4186,
+        "y": 1358,
+        "w": 109,
+        "h": 88
+      },
+      "district": "north",
+      "block": "north:11:3",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 0,
+      "style": 2,
+      "design": "Porch bungalow",
+      "props": [
+        {
+          "id": "neighborhood-489-mailbox",
+          "type": "mailbox",
+          "x": 4193,
+          "y": 1414,
+          "w": 10,
+          "h": 12,
+          "building": 489,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-489-fence",
+          "type": "fence",
+          "x": 4265,
+          "y": 1422,
+          "w": 20,
+          "h": 5,
+          "building": 489,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-491",
+      "index": 491,
+      "x": 4312,
+      "y": 1361,
+      "w": 89,
+      "h": 69,
+      "doorX": 4357,
+      "doorY": 1443,
+      "renderBounds": {
+        "x": 4309,
+        "y": 1358,
+        "w": 95,
+        "h": 89
+      },
+      "district": "north",
+      "block": "north:11:3",
+      "kind": "residential",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 3,
+      "design": "Low-rise apartments",
+      "props": [
+        {
+          "id": "neighborhood-491-planter",
+          "type": "planter",
+          "x": 4316,
+          "y": 1415,
+          "w": 10,
+          "h": 12,
+          "building": 491,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-491-ac",
+          "type": "ac",
+          "x": 4374,
+          "y": 1369,
+          "w": 20,
+          "h": 15,
+          "building": 491,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-480",
+      "index": 480,
+      "x": 4189,
+      "y": 568,
+      "w": 99,
+      "h": 78,
+      "doorX": 4238,
+      "doorY": 659,
+      "renderBounds": {
+        "x": 4186,
+        "y": 565,
+        "w": 105,
+        "h": 98
+      },
+      "district": "north",
+      "block": "north:11:1",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 0,
+      "style": 0,
+      "design": "Porch bungalow",
+      "props": [
+        {
+          "id": "neighborhood-480-mailbox",
+          "type": "mailbox",
+          "x": 4193,
+          "y": 631,
+          "w": 10,
+          "h": 12,
+          "building": 480,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-480-fence",
+          "type": "fence",
+          "x": 4261,
+          "y": 639,
+          "w": 20,
+          "h": 5,
+          "building": 480,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-482",
+      "index": 482,
+      "x": 4312,
+      "y": 568,
+      "w": 97,
+      "h": 76,
+      "doorX": 4361,
+      "doorY": 657,
+      "renderBounds": {
+        "x": 4309,
+        "y": 565,
+        "w": 103,
+        "h": 96
+      },
+      "district": "north",
+      "block": "north:11:1",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 1,
+      "style": 1,
+      "design": "Urban duplex",
+      "props": [
+        {
+          "id": "neighborhood-482-mailbox",
+          "type": "mailbox",
+          "x": 4316,
+          "y": 629,
+          "w": 10,
+          "h": 12,
+          "building": 482,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-482-fence",
+          "type": "fence",
+          "x": 4382,
+          "y": 637,
+          "w": 20,
+          "h": 5,
+          "building": 482,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-481",
+      "index": 481,
+      "x": 4189,
+      "y": 681,
+      "w": 102,
+      "h": 71,
+      "doorX": 4240,
+      "doorY": 765,
+      "renderBounds": {
+        "x": 4186,
+        "y": 678,
+        "w": 108,
+        "h": 91
+      },
+      "district": "north",
+      "block": "north:11:1",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 2,
+      "style": 2,
+      "design": "Victorian townhouse",
+      "props": [
+        {
+          "id": "neighborhood-481-mailbox",
+          "type": "mailbox",
+          "x": 4193,
+          "y": 737,
+          "w": 10,
+          "h": 12,
+          "building": 481,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-481-fence",
+          "type": "fence",
+          "x": 4264,
+          "y": 745,
+          "w": 20,
+          "h": 5,
+          "building": 481,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-483",
+      "index": 483,
+      "x": 4312,
+      "y": 681,
+      "w": 87,
+      "h": 72,
+      "doorX": 4356,
+      "doorY": 766,
+      "renderBounds": {
+        "x": 4309,
+        "y": 678,
+        "w": 93,
+        "h": 92
+      },
+      "district": "north",
+      "block": "north:11:1",
+      "kind": "residential",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 3,
+      "design": "Low-rise apartments",
+      "props": [
+        {
+          "id": "neighborhood-483-planter",
+          "type": "planter",
+          "x": 4316,
+          "y": 738,
+          "w": 10,
+          "h": 12,
+          "building": 483,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-483-ac",
+          "type": "ac",
+          "x": 4372,
+          "y": 689,
+          "w": 20,
+          "h": 15,
+          "building": 483,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-389",
+      "index": 389,
+      "x": 3109,
+      "y": 3968,
+      "w": 97,
+      "h": 73,
+      "doorX": 3158,
+      "doorY": 4054,
+      "renderBounds": {
+        "x": 3106,
+        "y": 3965,
+        "w": 103,
+        "h": 93
+      },
+      "district": "south",
+      "block": "south:8:11",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 3,
+      "style": 0,
+      "design": "Mid-century garage house",
+      "props": [
+        {
+          "id": "neighborhood-389-mailbox",
+          "type": "mailbox",
+          "x": 3113,
+          "y": 4026,
+          "w": 10,
+          "h": 12,
+          "building": 389,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-389-fence",
+          "type": "fence",
+          "x": 3179,
+          "y": 4034,
+          "w": 20,
+          "h": 5,
+          "building": 389,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-391",
+      "index": 391,
+      "x": 3232,
+      "y": 3968,
+      "w": 96,
+      "h": 76,
+      "doorX": 3280,
+      "doorY": 4057,
+      "renderBounds": {
+        "x": 3229,
+        "y": 3965,
+        "w": 102,
+        "h": 96
+      },
+      "district": "south",
+      "block": "south:8:11",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 0,
+      "style": 1,
+      "design": "Porch bungalow",
+      "props": [
+        {
+          "id": "neighborhood-391-mailbox",
+          "type": "mailbox",
+          "x": 3236,
+          "y": 4029,
+          "w": 10,
+          "h": 12,
+          "building": 391,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-391-fence",
+          "type": "fence",
+          "x": 3301,
+          "y": 4037,
+          "w": 20,
+          "h": 5,
+          "building": 391,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-390",
+      "index": 390,
+      "x": 3109,
+      "y": 4081,
+      "w": 87,
+      "h": 79,
+      "doorX": 3153,
+      "doorY": 4173,
+      "renderBounds": {
+        "x": 3106,
+        "y": 4078,
+        "w": 93,
+        "h": 99
+      },
+      "district": "south",
+      "block": "south:8:11",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 1,
+      "style": 2,
+      "design": "Urban duplex",
+      "props": [
+        {
+          "id": "neighborhood-390-mailbox",
+          "type": "mailbox",
+          "x": 3113,
+          "y": 4145,
+          "w": 10,
+          "h": 12,
+          "building": 390,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-390-fence",
+          "type": "fence",
+          "x": 3169,
+          "y": 4153,
+          "w": 20,
+          "h": 5,
+          "building": 390,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-392",
+      "index": 392,
+      "x": 3232,
+      "y": 4081,
+      "w": 92,
+      "h": 74,
+      "doorX": 3278,
+      "doorY": 4168,
+      "renderBounds": {
+        "x": 3229,
+        "y": 4078,
+        "w": 98,
+        "h": 94
+      },
+      "district": "south",
+      "block": "south:8:11",
+      "kind": "residential",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 3,
+      "design": "Low-rise apartments",
+      "props": [
+        {
+          "id": "neighborhood-392-planter",
+          "type": "planter",
+          "x": 3236,
+          "y": 4140,
+          "w": 10,
+          "h": 12,
+          "building": 392,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-392-ac",
+          "type": "ac",
+          "x": 3297,
+          "y": 4089,
+          "w": 20,
+          "h": 15,
+          "building": 392,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-423",
+      "index": 423,
+      "x": 3469,
+      "y": 3628,
+      "w": 94,
+      "h": 72,
+      "doorX": 3516,
+      "doorY": 3713,
+      "renderBounds": {
+        "x": 3466,
+        "y": 3625,
+        "w": 100,
+        "h": 92
+      },
+      "district": "south",
+      "block": "south:9:10",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 3,
+      "style": 0,
+      "design": "Mid-century garage house",
+      "props": [
+        {
+          "id": "neighborhood-423-mailbox",
+          "type": "mailbox",
+          "x": 3473,
+          "y": 3685,
+          "w": 10,
+          "h": 12,
+          "building": 423,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-423-fence",
+          "type": "fence",
+          "x": 3536,
+          "y": 3693,
+          "w": 20,
+          "h": 5,
+          "building": 423,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-425",
+      "index": 425,
+      "x": 3592,
+      "y": 3628,
+      "w": 95,
+      "h": 69,
+      "doorX": 3639,
+      "doorY": 3710,
+      "renderBounds": {
+        "x": 3589,
+        "y": 3625,
+        "w": 101,
+        "h": 89
+      },
+      "district": "south",
+      "block": "south:9:10",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 0,
+      "style": 1,
+      "design": "Porch bungalow",
+      "props": [
+        {
+          "id": "neighborhood-425-mailbox",
+          "type": "mailbox",
+          "x": 3596,
+          "y": 3682,
+          "w": 10,
+          "h": 12,
+          "building": 425,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-425-fence",
+          "type": "fence",
+          "x": 3660,
+          "y": 3690,
+          "w": 20,
+          "h": 5,
+          "building": 425,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-424",
+      "index": 424,
+      "x": 3469,
+      "y": 3741,
+      "w": 90,
+      "h": 69,
+      "doorX": 3514,
+      "doorY": 3823,
+      "renderBounds": {
+        "x": 3466,
+        "y": 3738,
+        "w": 96,
+        "h": 89
+      },
+      "district": "south",
+      "block": "south:9:10",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 1,
+      "style": 2,
+      "design": "Urban duplex",
+      "props": [
+        {
+          "id": "neighborhood-424-mailbox",
+          "type": "mailbox",
+          "x": 3473,
+          "y": 3795,
+          "w": 10,
+          "h": 12,
+          "building": 424,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-424-fence",
+          "type": "fence",
+          "x": 3532,
+          "y": 3803,
+          "w": 20,
+          "h": 5,
+          "building": 424,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-426",
+      "index": 426,
+      "x": 3592,
+      "y": 3741,
+      "w": 87,
+      "h": 79,
+      "doorX": 3635,
+      "doorY": 3833,
+      "renderBounds": {
+        "x": 3589,
+        "y": 3738,
+        "w": 93,
+        "h": 99
+      },
+      "district": "south",
+      "block": "south:9:10",
+      "kind": "residential",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 3,
+      "design": "Low-rise apartments",
+      "props": [
+        {
+          "id": "neighborhood-426-planter",
+          "type": "planter",
+          "x": 3596,
+          "y": 3805,
+          "w": 10,
+          "h": 12,
+          "building": 426,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-426-ac",
+          "type": "ac",
+          "x": 3652,
+          "y": 3749,
+          "w": 20,
+          "h": 15,
+          "building": 426,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-770",
+      "index": 770,
+      "x": 6709,
+      "y": 1248,
+      "w": 102,
+      "h": 75,
+      "doorX": 6760,
+      "doorY": 1336,
+      "renderBounds": {
+        "x": 6706,
+        "y": 1245,
+        "w": 108,
+        "h": 95
+      },
+      "district": "east",
+      "block": "east:18:3",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 1,
+      "style": 0,
+      "design": "Urban duplex",
+      "props": [
+        {
+          "id": "neighborhood-770-mailbox",
+          "type": "mailbox",
+          "x": 6713,
+          "y": 1308,
+          "w": 10,
+          "h": 12,
+          "building": 770,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-770-fence",
+          "type": "fence",
+          "x": 6784,
+          "y": 1316,
+          "w": 20,
+          "h": 5,
+          "building": 770,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-772",
+      "index": 772,
+      "x": 6832,
+      "y": 1248,
+      "w": 88,
+      "h": 80,
+      "doorX": 6876,
+      "doorY": 1341,
+      "renderBounds": {
+        "x": 6829,
+        "y": 1245,
+        "w": 94,
+        "h": 100
+      },
+      "district": "east",
+      "block": "east:18:3",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 2,
+      "style": 1,
+      "design": "Victorian townhouse",
+      "props": [
+        {
+          "id": "neighborhood-772-mailbox",
+          "type": "mailbox",
+          "x": 6836,
+          "y": 1313,
+          "w": 10,
+          "h": 12,
+          "building": 772,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-772-fence",
+          "type": "fence",
+          "x": 6893,
+          "y": 1321,
+          "w": 20,
+          "h": 5,
+          "building": 772,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-771",
+      "index": 771,
+      "x": 6709,
+      "y": 1361,
+      "w": 101,
+      "h": 75,
+      "doorX": 6760,
+      "doorY": 1449,
+      "renderBounds": {
+        "x": 6706,
+        "y": 1358,
+        "w": 107,
+        "h": 95
+      },
+      "district": "east",
+      "block": "east:18:3",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 3,
+      "style": 2,
+      "design": "Mid-century garage house",
+      "props": [
+        {
+          "id": "neighborhood-771-mailbox",
+          "type": "mailbox",
+          "x": 6713,
+          "y": 1421,
+          "w": 10,
+          "h": 12,
+          "building": 771,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-771-fence",
+          "type": "fence",
+          "x": 6783,
+          "y": 1429,
+          "w": 20,
+          "h": 5,
+          "building": 771,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-773",
+      "index": 773,
+      "x": 6832,
+      "y": 1361,
+      "w": 91,
+      "h": 77,
+      "doorX": 6878,
+      "doorY": 1451,
+      "renderBounds": {
+        "x": 6829,
+        "y": 1358,
+        "w": 97,
+        "h": 97
+      },
+      "district": "east",
+      "block": "east:18:3",
+      "kind": "residential",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 3,
+      "design": "Low-rise apartments",
+      "props": [
+        {
+          "id": "neighborhood-773-planter",
+          "type": "planter",
+          "x": 6836,
+          "y": 1423,
+          "w": 10,
+          "h": 12,
+          "building": 773,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-773-ac",
+          "type": "ac",
+          "x": 6896,
+          "y": 1369,
+          "w": 20,
+          "h": 15,
+          "building": 773,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-774",
+      "index": 774,
+      "x": 6709,
+      "y": 1588,
+      "w": 93,
+      "h": 74,
+      "doorX": 6755,
+      "doorY": 1675,
+      "renderBounds": {
+        "x": 6706,
+        "y": 1585,
+        "w": 99,
+        "h": 94
+      },
+      "district": "east",
+      "block": "east:18:4",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 2,
+      "style": 0,
+      "design": "Victorian townhouse",
+      "props": [
+        {
+          "id": "neighborhood-774-mailbox",
+          "type": "mailbox",
+          "x": 6713,
+          "y": 1647,
+          "w": 10,
+          "h": 12,
+          "building": 774,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-774-fence",
+          "type": "fence",
+          "x": 6775,
+          "y": 1655,
+          "w": 20,
+          "h": 5,
+          "building": 774,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-776",
+      "index": 776,
+      "x": 6832,
+      "y": 1588,
+      "w": 87,
+      "h": 73,
+      "doorX": 6875,
+      "doorY": 1674,
+      "renderBounds": {
+        "x": 6829,
+        "y": 1585,
+        "w": 93,
+        "h": 93
+      },
+      "district": "east",
+      "block": "east:18:4",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 3,
+      "style": 1,
+      "design": "Mid-century garage house",
+      "props": [
+        {
+          "id": "neighborhood-776-mailbox",
+          "type": "mailbox",
+          "x": 6836,
+          "y": 1646,
+          "w": 10,
+          "h": 12,
+          "building": 776,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-776-fence",
+          "type": "fence",
+          "x": 6892,
+          "y": 1654,
+          "w": 20,
+          "h": 5,
+          "building": 776,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-775",
+      "index": 775,
+      "x": 6709,
+      "y": 1701,
+      "w": 96,
+      "h": 79,
+      "doorX": 6757,
+      "doorY": 1793,
+      "renderBounds": {
+        "x": 6706,
+        "y": 1698,
+        "w": 102,
+        "h": 99
+      },
+      "district": "east",
+      "block": "east:18:4",
+      "kind": "residential",
+      "sheet": "residential-illustrated",
+      "cell": 0,
+      "style": 2,
+      "design": "Porch bungalow",
+      "props": [
+        {
+          "id": "neighborhood-775-mailbox",
+          "type": "mailbox",
+          "x": 6713,
+          "y": 1765,
+          "w": 10,
+          "h": 12,
+          "building": 775,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-775-fence",
+          "type": "fence",
+          "x": 6778,
+          "y": 1773,
+          "w": 20,
+          "h": 5,
+          "building": 775,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-777",
+      "index": 777,
+      "x": 6832,
+      "y": 1701,
+      "w": 89,
+      "h": 77,
+      "doorX": 6877,
+      "doorY": 1791,
+      "renderBounds": {
+        "x": 6829,
+        "y": 1698,
+        "w": 95,
+        "h": 97
+      },
+      "district": "east",
+      "block": "east:18:4",
+      "kind": "residential",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 3,
+      "design": "Low-rise apartments",
+      "props": [
+        {
+          "id": "neighborhood-777-planter",
+          "type": "planter",
+          "x": 6836,
+          "y": 1763,
+          "w": 10,
+          "h": 12,
+          "building": 777,
+          "kind": "residential"
+        },
+        {
+          "id": "neighborhood-777-ac",
+          "type": "ac",
+          "x": 6894,
+          "y": 1709,
+          "w": 20,
+          "h": 15,
+          "building": 777,
+          "kind": "residential"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-745",
+      "index": 745,
+      "x": 6349,
+      "y": 3288,
+      "w": 102,
+      "h": 74,
+      "doorX": 6400,
+      "doorY": 3375,
+      "renderBounds": {
+        "x": 6346,
+        "y": 3285,
+        "w": 108,
+        "h": 94
+      },
+      "district": "east",
+      "block": "east:17:9",
+      "kind": "industrial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 5,
+      "style": 0,
+      "design": "Auto workshop",
+      "props": [
+        {
+          "id": "neighborhood-745-dumpster",
+          "type": "dumpster",
+          "x": 6353,
+          "y": 3344,
+          "w": 15,
+          "h": 14,
+          "building": 745,
+          "kind": "industrial"
+        },
+        {
+          "id": "neighborhood-745-ac",
+          "type": "ac",
+          "x": 6427,
+          "y": 3297,
+          "w": 17,
+          "h": 13,
+          "building": 745,
+          "kind": "industrial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-747",
+      "index": 747,
+      "x": 6472,
+      "y": 3288,
+      "w": 87,
+      "h": 71,
+      "doorX": 6516,
+      "doorY": 3372,
+      "renderBounds": {
+        "x": 6469,
+        "y": 3285,
+        "w": 93,
+        "h": 91
+      },
+      "district": "east",
+      "block": "east:17:9",
+      "kind": "industrial",
+      "sheet": "buildings-illustrated",
+      "cell": 5,
+      "style": 1,
+      "design": "Freight depot",
+      "props": [
+        {
+          "id": "neighborhood-747-crates",
+          "type": "crates",
+          "x": 6476,
+          "y": 3341,
+          "w": 15,
+          "h": 14,
+          "building": 747,
+          "kind": "industrial"
+        },
+        {
+          "id": "neighborhood-747-ac",
+          "type": "ac",
+          "x": 6535,
+          "y": 3297,
+          "w": 17,
+          "h": 13,
+          "building": 747,
+          "kind": "industrial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-746",
+      "index": 746,
+      "x": 6349,
+      "y": 3401,
+      "w": 96,
+      "h": 71,
+      "doorX": 6397,
+      "doorY": 3485,
+      "renderBounds": {
+        "x": 6346,
+        "y": 3398,
+        "w": 102,
+        "h": 91
+      },
+      "district": "east",
+      "block": "east:17:9",
+      "kind": "industrial",
+      "sheet": "buildings-illustrated",
+      "cell": 5,
+      "style": 2,
+      "design": "Storage warehouse",
+      "props": [
+        {
+          "id": "neighborhood-746-dumpster",
+          "type": "dumpster",
+          "x": 6353,
+          "y": 3454,
+          "w": 15,
+          "h": 14,
+          "building": 746,
+          "kind": "industrial"
+        },
+        {
+          "id": "neighborhood-746-ac",
+          "type": "ac",
+          "x": 6421,
+          "y": 3410,
+          "w": 17,
+          "h": 13,
+          "building": 746,
+          "kind": "industrial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-748",
+      "index": 748,
+      "x": 6472,
+      "y": 3401,
+      "w": 92,
+      "h": 69,
+      "doorX": 6518,
+      "doorY": 3483,
+      "renderBounds": {
+        "x": 6469,
+        "y": 3398,
+        "w": 98,
+        "h": 89
+      },
+      "district": "east",
+      "block": "east:17:9",
+      "kind": "industrial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 5,
+      "style": 3,
+      "design": "Utility workshop",
+      "props": [
+        {
+          "id": "neighborhood-748-crates",
+          "type": "crates",
+          "x": 6476,
+          "y": 3452,
+          "w": 15,
+          "h": 14,
+          "building": 748,
+          "kind": "industrial"
+        },
+        {
+          "id": "neighborhood-748-ac",
+          "type": "ac",
+          "x": 6540,
+          "y": 3410,
+          "w": 17,
+          "h": 13,
+          "building": 748,
+          "kind": "industrial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-657",
+      "index": 657,
+      "x": 5629,
+      "y": 3288,
+      "w": 101,
+      "h": 72,
+      "doorX": 5680,
+      "doorY": 3373,
+      "renderBounds": {
+        "x": 5626,
+        "y": 3285,
+        "w": 107,
+        "h": 92
+      },
+      "district": "east",
+      "block": "east:15:9",
+      "kind": "industrial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 5,
+      "style": 0,
+      "design": "Auto workshop",
+      "props": [
+        {
+          "id": "neighborhood-657-dumpster",
+          "type": "dumpster",
+          "x": 5633,
+          "y": 3342,
+          "w": 15,
+          "h": 14,
+          "building": 657,
+          "kind": "industrial"
+        },
+        {
+          "id": "neighborhood-657-ac",
+          "type": "ac",
+          "x": 5706,
+          "y": 3297,
+          "w": 17,
+          "h": 13,
+          "building": 657,
+          "kind": "industrial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-659",
+      "index": 659,
+      "x": 5752,
+      "y": 3288,
+      "w": 96,
+      "h": 78,
+      "doorX": 5800,
+      "doorY": 3379,
+      "renderBounds": {
+        "x": 5749,
+        "y": 3285,
+        "w": 102,
+        "h": 98
+      },
+      "district": "east",
+      "block": "east:15:9",
+      "kind": "industrial",
+      "sheet": "buildings-illustrated",
+      "cell": 5,
+      "style": 1,
+      "design": "Freight depot",
+      "props": [
+        {
+          "id": "neighborhood-659-crates",
+          "type": "crates",
+          "x": 5756,
+          "y": 3348,
+          "w": 15,
+          "h": 14,
+          "building": 659,
+          "kind": "industrial"
+        },
+        {
+          "id": "neighborhood-659-ac",
+          "type": "ac",
+          "x": 5824,
+          "y": 3297,
+          "w": 17,
+          "h": 13,
+          "building": 659,
+          "kind": "industrial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-658",
+      "index": 658,
+      "x": 5629,
+      "y": 3401,
+      "w": 90,
+      "h": 77,
+      "doorX": 5674,
+      "doorY": 3491,
+      "renderBounds": {
+        "x": 5626,
+        "y": 3398,
+        "w": 96,
+        "h": 97
+      },
+      "district": "east",
+      "block": "east:15:9",
+      "kind": "industrial",
+      "sheet": "buildings-illustrated",
+      "cell": 5,
+      "style": 2,
+      "design": "Storage warehouse",
+      "props": [
+        {
+          "id": "neighborhood-658-dumpster",
+          "type": "dumpster",
+          "x": 5633,
+          "y": 3460,
+          "w": 15,
+          "h": 14,
+          "building": 658,
+          "kind": "industrial"
+        },
+        {
+          "id": "neighborhood-658-ac",
+          "type": "ac",
+          "x": 5695,
+          "y": 3410,
+          "w": 17,
+          "h": 13,
+          "building": 658,
+          "kind": "industrial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-660",
+      "index": 660,
+      "x": 5752,
+      "y": 3401,
+      "w": 96,
+      "h": 70,
+      "doorX": 5800,
+      "doorY": 3484,
+      "renderBounds": {
+        "x": 5749,
+        "y": 3398,
+        "w": 102,
+        "h": 90
+      },
+      "district": "east",
+      "block": "east:15:9",
+      "kind": "industrial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 5,
+      "style": 3,
+      "design": "Utility workshop",
+      "props": [
+        {
+          "id": "neighborhood-660-crates",
+          "type": "crates",
+          "x": 5756,
+          "y": 3453,
+          "w": 15,
+          "h": 14,
+          "building": 660,
+          "kind": "industrial"
+        },
+        {
+          "id": "neighborhood-660-ac",
+          "type": "ac",
+          "x": 5824,
+          "y": 3410,
+          "w": 17,
+          "h": 13,
+          "building": 660,
+          "kind": "industrial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-701",
+      "index": 701,
+      "x": 5984,
+      "y": 3629,
+      "w": 68,
+      "h": 99,
+      "doorX": 6018,
+      "doorY": 3741,
+      "renderBounds": {
+        "x": 5981,
+        "y": 3626,
+        "w": 74,
+        "h": 119
+      },
+      "district": "east",
+      "block": "east:16:10",
+      "kind": "industrial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 5,
+      "style": 0,
+      "design": "Auto workshop",
+      "props": [
+        {
+          "id": "neighborhood-701-ac",
+          "type": "ac",
+          "x": 6028,
+          "y": 3638,
+          "w": 17,
+          "h": 13,
+          "building": 701,
+          "kind": "industrial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-702",
+      "index": 702,
+      "x": 6148,
+      "y": 3629,
+      "w": 68,
+      "h": 99,
+      "doorX": 6182,
+      "doorY": 3741,
+      "renderBounds": {
+        "x": 6145,
+        "y": 3626,
+        "w": 74,
+        "h": 119
+      },
+      "district": "east",
+      "block": "east:16:10",
+      "kind": "industrial",
+      "sheet": "buildings-illustrated",
+      "cell": 5,
+      "style": 1,
+      "design": "Freight depot",
+      "props": [
+        {
+          "id": "neighborhood-702-ac",
+          "type": "ac",
+          "x": 6192,
+          "y": 3638,
+          "w": 17,
+          "h": 13,
+          "building": 702,
+          "kind": "industrial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-703",
+      "index": 703,
+      "x": 5987,
+      "y": 3757,
+      "w": 96,
+      "h": 72,
+      "doorX": 6035,
+      "doorY": 3842,
+      "renderBounds": {
+        "x": 5984,
+        "y": 3754,
+        "w": 102,
+        "h": 92
+      },
+      "district": "east",
+      "block": "east:16:10",
+      "kind": "industrial",
+      "sheet": "buildings-illustrated",
+      "cell": 5,
+      "style": 2,
+      "design": "Storage warehouse",
+      "props": [
+        {
+          "id": "neighborhood-703-dumpster",
+          "type": "dumpster",
+          "x": 5991,
+          "y": 3811,
+          "w": 15,
+          "h": 14,
+          "building": 703,
+          "kind": "industrial"
+        },
+        {
+          "id": "neighborhood-703-ac",
+          "type": "ac",
+          "x": 6059,
+          "y": 3766,
+          "w": 17,
+          "h": 13,
+          "building": 703,
+          "kind": "industrial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-704",
+      "index": 704,
+      "x": 6110,
+      "y": 3757,
+      "w": 96,
+      "h": 72,
+      "doorX": 6158,
+      "doorY": 3842,
+      "renderBounds": {
+        "x": 6107,
+        "y": 3754,
+        "w": 102,
+        "h": 92
+      },
+      "district": "east",
+      "block": "east:16:10",
+      "kind": "industrial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 5,
+      "style": 3,
+      "design": "Utility workshop",
+      "props": [
+        {
+          "id": "neighborhood-704-crates",
+          "type": "crates",
+          "x": 6114,
+          "y": 3811,
+          "w": 15,
+          "h": 14,
+          "building": 704,
+          "kind": "industrial"
+        },
+        {
+          "id": "neighborhood-704-ac",
+          "type": "ac",
+          "x": 6182,
+          "y": 3766,
+          "w": 17,
+          "h": 13,
+          "building": 704,
+          "kind": "industrial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-244",
+      "index": 244,
+      "x": 2029,
+      "y": 2948,
+      "w": 102,
+      "h": 68,
+      "doorX": 2080,
+      "doorY": 3029,
+      "renderBounds": {
+        "x": 2026,
+        "y": 2945,
+        "w": 108,
+        "h": 88
+      },
+      "district": "west",
+      "block": "west:5:8",
+      "kind": "mixed",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 0,
+      "design": "Apartments above shops",
+      "props": [
+        {
+          "id": "neighborhood-244-bench",
+          "type": "bench",
+          "x": 2033,
+          "y": 2999,
+          "w": 16,
+          "h": 14,
+          "building": 244,
+          "kind": "mixed"
+        },
+        {
+          "id": "neighborhood-244-planter",
+          "type": "planter",
+          "x": 2107,
+          "y": 2956,
+          "w": 16,
+          "h": 14,
+          "building": 244,
+          "kind": "mixed"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-246",
+      "index": 246,
+      "x": 2152,
+      "y": 2948,
+      "w": 94,
+      "h": 80,
+      "doorX": 2199,
+      "doorY": 3041,
+      "renderBounds": {
+        "x": 2149,
+        "y": 2945,
+        "w": 100,
+        "h": 100
+      },
+      "district": "west",
+      "block": "west:5:8",
+      "kind": "mixed",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 1,
+      "style": 1,
+      "design": "Corner grocer",
+      "props": [
+        {
+          "id": "neighborhood-246-vending",
+          "type": "vending",
+          "x": 2156,
+          "y": 3011,
+          "w": 16,
+          "h": 14,
+          "building": 246,
+          "kind": "mixed"
+        },
+        {
+          "id": "neighborhood-246-ac",
+          "type": "ac",
+          "x": 2222,
+          "y": 2956,
+          "w": 16,
+          "h": 14,
+          "building": 246,
+          "kind": "mixed"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-245",
+      "index": 245,
+      "x": 2029,
+      "y": 3061,
+      "w": 92,
+      "h": 71,
+      "doorX": 2075,
+      "doorY": 3145,
+      "renderBounds": {
+        "x": 2026,
+        "y": 3058,
+        "w": 98,
+        "h": 91
+      },
+      "district": "west",
+      "block": "west:5:8",
+      "kind": "mixed",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 2,
+      "style": 2,
+      "design": "Neighborhood restaurant",
+      "props": [
+        {
+          "id": "neighborhood-245-bench",
+          "type": "bench",
+          "x": 2033,
+          "y": 3115,
+          "w": 16,
+          "h": 14,
+          "building": 245,
+          "kind": "mixed"
+        },
+        {
+          "id": "neighborhood-245-planter",
+          "type": "planter",
+          "x": 2097,
+          "y": 3069,
+          "w": 16,
+          "h": 14,
+          "building": 245,
+          "kind": "mixed"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-247",
+      "index": 247,
+      "x": 2152,
+      "y": 3061,
+      "w": 100,
+      "h": 79,
+      "doorX": 2202,
+      "doorY": 3153,
+      "renderBounds": {
+        "x": 2149,
+        "y": 3058,
+        "w": 106,
+        "h": 99
+      },
+      "district": "west",
+      "block": "west:5:8",
+      "kind": "mixed",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 4,
+      "style": 3,
+      "design": "Small repair business",
+      "props": [
+        {
+          "id": "neighborhood-247-vending",
+          "type": "vending",
+          "x": 2156,
+          "y": 3123,
+          "w": 16,
+          "h": 14,
+          "building": 247,
+          "kind": "mixed"
+        },
+        {
+          "id": "neighborhood-247-ac",
+          "type": "ac",
+          "x": 2228,
+          "y": 3069,
+          "w": 16,
+          "h": 14,
+          "building": 247,
+          "kind": "mixed"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-546",
+      "index": 546,
+      "x": 4549,
+      "y": 3628,
+      "w": 103,
+      "h": 80,
+      "doorX": 4600,
+      "doorY": 3721,
+      "renderBounds": {
+        "x": 4546,
+        "y": 3625,
+        "w": 109,
+        "h": 100
+      },
+      "district": "south",
+      "block": "south:12:10",
+      "kind": "mixed",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 0,
+      "design": "Apartments above shops",
+      "props": [
+        {
+          "id": "neighborhood-546-bench",
+          "type": "bench",
+          "x": 4553,
+          "y": 3691,
+          "w": 16,
+          "h": 14,
+          "building": 546,
+          "kind": "mixed"
+        },
+        {
+          "id": "neighborhood-546-planter",
+          "type": "planter",
+          "x": 4628,
+          "y": 3636,
+          "w": 16,
+          "h": 14,
+          "building": 546,
+          "kind": "mixed"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-548",
+      "index": 548,
+      "x": 4672,
+      "y": 3628,
+      "w": 93,
+      "h": 80,
+      "doorX": 4718,
+      "doorY": 3721,
+      "renderBounds": {
+        "x": 4669,
+        "y": 3625,
+        "w": 99,
+        "h": 100
+      },
+      "district": "south",
+      "block": "south:12:10",
+      "kind": "mixed",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 1,
+      "style": 1,
+      "design": "Corner grocer",
+      "props": [
+        {
+          "id": "neighborhood-548-vending",
+          "type": "vending",
+          "x": 4676,
+          "y": 3691,
+          "w": 16,
+          "h": 14,
+          "building": 548,
+          "kind": "mixed"
+        },
+        {
+          "id": "neighborhood-548-ac",
+          "type": "ac",
+          "x": 4741,
+          "y": 3636,
+          "w": 16,
+          "h": 14,
+          "building": 548,
+          "kind": "mixed"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-547",
+      "index": 547,
+      "x": 4549,
+      "y": 3741,
+      "w": 100,
+      "h": 71,
+      "doorX": 4599,
+      "doorY": 3825,
+      "renderBounds": {
+        "x": 4546,
+        "y": 3738,
+        "w": 106,
+        "h": 91
+      },
+      "district": "south",
+      "block": "south:12:10",
+      "kind": "mixed",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 2,
+      "style": 2,
+      "design": "Neighborhood restaurant",
+      "props": [
+        {
+          "id": "neighborhood-547-bench",
+          "type": "bench",
+          "x": 4553,
+          "y": 3795,
+          "w": 16,
+          "h": 14,
+          "building": 547,
+          "kind": "mixed"
+        },
+        {
+          "id": "neighborhood-547-planter",
+          "type": "planter",
+          "x": 4625,
+          "y": 3749,
+          "w": 16,
+          "h": 14,
+          "building": 547,
+          "kind": "mixed"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-549",
+      "index": 549,
+      "x": 4672,
+      "y": 3741,
+      "w": 91,
+      "h": 74,
+      "doorX": 4718,
+      "doorY": 3828,
+      "renderBounds": {
+        "x": 4669,
+        "y": 3738,
+        "w": 97,
+        "h": 94
+      },
+      "district": "south",
+      "block": "south:12:10",
+      "kind": "mixed",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 4,
+      "style": 3,
+      "design": "Small repair business",
+      "props": [
+        {
+          "id": "neighborhood-549-vending",
+          "type": "vending",
+          "x": 4676,
+          "y": 3798,
+          "w": 16,
+          "h": 14,
+          "building": 549,
+          "kind": "mixed"
+        },
+        {
+          "id": "neighborhood-549-ac",
+          "type": "ac",
+          "x": 4739,
+          "y": 3749,
+          "w": 16,
+          "h": 14,
+          "building": 549,
+          "kind": "mixed"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-324",
+      "index": 324,
+      "x": 2749,
+      "y": 1248,
+      "w": 94,
+      "h": 73,
+      "doorX": 2796,
+      "doorY": 1334,
+      "renderBounds": {
+        "x": 2746,
+        "y": 1245,
+        "w": 100,
+        "h": 93
+      },
+      "district": "north",
+      "block": "north:7:3",
+      "kind": "mixed",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 0,
+      "design": "Apartments above shops",
+      "props": [
+        {
+          "id": "neighborhood-324-bench",
+          "type": "bench",
+          "x": 2753,
+          "y": 1304,
+          "w": 16,
+          "h": 14,
+          "building": 324,
+          "kind": "mixed"
+        },
+        {
+          "id": "neighborhood-324-planter",
+          "type": "planter",
+          "x": 2819,
+          "y": 1256,
+          "w": 16,
+          "h": 14,
+          "building": 324,
+          "kind": "mixed"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-326",
+      "index": 326,
+      "x": 2872,
+      "y": 1248,
+      "w": 93,
+      "h": 68,
+      "doorX": 2919,
+      "doorY": 1329,
+      "renderBounds": {
+        "x": 2869,
+        "y": 1245,
+        "w": 99,
+        "h": 88
+      },
+      "district": "north",
+      "block": "north:7:3",
+      "kind": "mixed",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 1,
+      "style": 1,
+      "design": "Corner grocer",
+      "props": [
+        {
+          "id": "neighborhood-326-vending",
+          "type": "vending",
+          "x": 2876,
+          "y": 1299,
+          "w": 16,
+          "h": 14,
+          "building": 326,
+          "kind": "mixed"
+        },
+        {
+          "id": "neighborhood-326-ac",
+          "type": "ac",
+          "x": 2941,
+          "y": 1256,
+          "w": 16,
+          "h": 14,
+          "building": 326,
+          "kind": "mixed"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-325",
+      "index": 325,
+      "x": 2749,
+      "y": 1361,
+      "w": 99,
+      "h": 69,
+      "doorX": 2799,
+      "doorY": 1443,
+      "renderBounds": {
+        "x": 2746,
+        "y": 1358,
+        "w": 105,
+        "h": 89
+      },
+      "district": "north",
+      "block": "north:7:3",
+      "kind": "mixed",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 2,
+      "style": 2,
+      "design": "Neighborhood restaurant",
+      "props": [
+        {
+          "id": "neighborhood-325-bench",
+          "type": "bench",
+          "x": 2753,
+          "y": 1413,
+          "w": 16,
+          "h": 14,
+          "building": 325,
+          "kind": "mixed"
+        },
+        {
+          "id": "neighborhood-325-planter",
+          "type": "planter",
+          "x": 2824,
+          "y": 1369,
+          "w": 16,
+          "h": 14,
+          "building": 325,
+          "kind": "mixed"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-327",
+      "index": 327,
+      "x": 2872,
+      "y": 1361,
+      "w": 86,
+      "h": 69,
+      "doorX": 2915,
+      "doorY": 1443,
+      "renderBounds": {
+        "x": 2869,
+        "y": 1358,
+        "w": 92,
+        "h": 89
+      },
+      "district": "north",
+      "block": "north:7:3",
+      "kind": "mixed",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 4,
+      "style": 3,
+      "design": "Small repair business",
+      "props": [
+        {
+          "id": "neighborhood-327-vending",
+          "type": "vending",
+          "x": 2876,
+          "y": 1413,
+          "w": 16,
+          "h": 14,
+          "building": 327,
+          "kind": "mixed"
+        },
+        {
+          "id": "neighborhood-327-ac",
+          "type": "ac",
+          "x": 2934,
+          "y": 1369,
+          "w": 16,
+          "h": 14,
+          "building": 327,
+          "kind": "mixed"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-26",
+      "index": 26,
+      "x": 229,
+      "y": 1928,
+      "w": 100,
+      "h": 74,
+      "doorX": 279,
+      "doorY": 2015,
+      "renderBounds": {
+        "x": 226,
+        "y": 1925,
+        "w": 106,
+        "h": 94
+      },
+      "district": "west",
+      "block": "west:0:5",
+      "kind": "older",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 0,
+      "design": "Older apartments",
+      "props": [
+        {
+          "id": "neighborhood-26-planter",
+          "type": "planter",
+          "x": 233,
+          "y": 1985,
+          "w": 12,
+          "h": 13,
+          "building": 26,
+          "kind": "older"
+        },
+        {
+          "id": "neighborhood-26-weathering",
+          "type": "weathering",
+          "x": 303,
+          "y": 1978,
+          "w": 17,
+          "h": 13,
+          "building": 26,
+          "kind": "older"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-28",
+      "index": 28,
+      "x": 352,
+      "y": 1928,
+      "w": 90,
+      "h": 72,
+      "doorX": 397,
+      "doorY": 2013,
+      "renderBounds": {
+        "x": 349,
+        "y": 1925,
+        "w": 96,
+        "h": 92
+      },
+      "district": "west",
+      "block": "west:0:5",
+      "kind": "older",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 1,
+      "design": "Weathered flats",
+      "props": [
+        {
+          "id": "neighborhood-28-dumpster",
+          "type": "dumpster",
+          "x": 356,
+          "y": 1983,
+          "w": 12,
+          "h": 13,
+          "building": 28,
+          "kind": "older"
+        },
+        {
+          "id": "neighborhood-28-weathering",
+          "type": "weathering",
+          "x": 416,
+          "y": 1976,
+          "w": 17,
+          "h": 13,
+          "building": 28,
+          "kind": "older"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-27",
+      "index": 27,
+      "x": 229,
+      "y": 2041,
+      "w": 96,
+      "h": 77,
+      "doorX": 277,
+      "doorY": 2131,
+      "renderBounds": {
+        "x": 226,
+        "y": 2038,
+        "w": 102,
+        "h": 97
+      },
+      "district": "west",
+      "block": "west:0:5",
+      "kind": "older",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 4,
+      "style": 2,
+      "design": "Older corner store",
+      "props": [
+        {
+          "id": "neighborhood-27-planter",
+          "type": "planter",
+          "x": 233,
+          "y": 2101,
+          "w": 12,
+          "h": 13,
+          "building": 27,
+          "kind": "older"
+        },
+        {
+          "id": "neighborhood-27-weathering",
+          "type": "weathering",
+          "x": 299,
+          "y": 2094,
+          "w": 17,
+          "h": 13,
+          "building": 27,
+          "kind": "older"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-29",
+      "index": 29,
+      "x": 352,
+      "y": 2041,
+      "w": 92,
+      "h": 71,
+      "doorX": 398,
+      "doorY": 2125,
+      "renderBounds": {
+        "x": 349,
+        "y": 2038,
+        "w": 98,
+        "h": 91
+      },
+      "district": "west",
+      "block": "west:0:5",
+      "kind": "older",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 3,
+      "design": "Working-class apartments",
+      "props": [
+        {
+          "id": "neighborhood-29-dumpster",
+          "type": "dumpster",
+          "x": 356,
+          "y": 2095,
+          "w": 12,
+          "h": 13,
+          "building": 29,
+          "kind": "older"
+        },
+        {
+          "id": "neighborhood-29-weathering",
+          "type": "weathering",
+          "x": 418,
+          "y": 2088,
+          "w": 17,
+          "h": 13,
+          "building": 29,
+          "kind": "older"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-601",
+      "index": 601,
+      "x": 5264,
+      "y": 1589,
+      "w": 68,
+      "h": 99,
+      "doorX": 5298,
+      "doorY": 1701,
+      "renderBounds": {
+        "x": 5261,
+        "y": 1586,
+        "w": 74,
+        "h": 119
+      },
+      "district": "east",
+      "block": "east:14:4",
+      "kind": "older",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 0,
+      "design": "Older apartments",
+      "props": [
+        {
+          "id": "neighborhood-601-planter",
+          "type": "planter",
+          "x": 5268,
+          "y": 1671,
+          "w": 12,
+          "h": 13,
+          "building": 601,
+          "kind": "older"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-602",
+      "index": 602,
+      "x": 5428,
+      "y": 1589,
+      "w": 68,
+      "h": 99,
+      "doorX": 5462,
+      "doorY": 1701,
+      "renderBounds": {
+        "x": 5425,
+        "y": 1586,
+        "w": 74,
+        "h": 119
+      },
+      "district": "east",
+      "block": "east:14:4",
+      "kind": "older",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 1,
+      "design": "Weathered flats",
+      "props": [
+        {
+          "id": "neighborhood-602-dumpster",
+          "type": "dumpster",
+          "x": 5432,
+          "y": 1671,
+          "w": 12,
+          "h": 13,
+          "building": 602,
+          "kind": "older"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-603",
+      "index": 603,
+      "x": 5267,
+      "y": 1717,
+      "w": 96,
+      "h": 72,
+      "doorX": 5315,
+      "doorY": 1802,
+      "renderBounds": {
+        "x": 5264,
+        "y": 1714,
+        "w": 102,
+        "h": 92
+      },
+      "district": "east",
+      "block": "east:14:4",
+      "kind": "older",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 4,
+      "style": 2,
+      "design": "Older corner store",
+      "props": [
+        {
+          "id": "neighborhood-603-planter",
+          "type": "planter",
+          "x": 5271,
+          "y": 1772,
+          "w": 12,
+          "h": 13,
+          "building": 603,
+          "kind": "older"
+        },
+        {
+          "id": "neighborhood-603-weathering",
+          "type": "weathering",
+          "x": 5337,
+          "y": 1765,
+          "w": 17,
+          "h": 13,
+          "building": 603,
+          "kind": "older"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-604",
+      "index": 604,
+      "x": 5390,
+      "y": 1717,
+      "w": 96,
+      "h": 72,
+      "doorX": 5438,
+      "doorY": 1802,
+      "renderBounds": {
+        "x": 5387,
+        "y": 1714,
+        "w": 102,
+        "h": 92
+      },
+      "district": "east",
+      "block": "east:14:4",
+      "kind": "older",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 0,
+      "style": 3,
+      "design": "Working-class apartments",
+      "props": [
+        {
+          "id": "neighborhood-604-dumpster",
+          "type": "dumpster",
+          "x": 5394,
+          "y": 1772,
+          "w": 12,
+          "h": 13,
+          "building": 604,
+          "kind": "older"
+        },
+        {
+          "id": "neighborhood-604-weathering",
+          "type": "weathering",
+          "x": 5460,
+          "y": 1765,
+          "w": 17,
+          "h": 13,
+          "building": 604,
+          "kind": "older"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-365",
+      "index": 365,
+      "x": 3109,
+      "y": 1928,
+      "w": 90,
+      "h": 72,
+      "doorX": 3154,
+      "doorY": 2013,
+      "renderBounds": {
+        "x": 3106,
+        "y": 1925,
+        "w": 96,
+        "h": 92
+      },
+      "district": "core",
+      "block": "core:8:5",
+      "kind": "commercial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 1,
+      "style": 0,
+      "design": "Office storefront",
+      "props": [
+        {
+          "id": "neighborhood-365-bench",
+          "type": "bench",
+          "x": 3113,
+          "y": 1983,
+          "w": 16,
+          "h": 14,
+          "building": 365,
+          "kind": "commercial"
+        },
+        {
+          "id": "neighborhood-365-planter",
+          "type": "planter",
+          "x": 3175,
+          "y": 1936,
+          "w": 16,
+          "h": 14,
+          "building": 365,
+          "kind": "commercial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-367",
+      "index": 367,
+      "x": 3232,
+      "y": 1928,
+      "w": 94,
+      "h": 77,
+      "doorX": 3279,
+      "doorY": 2018,
+      "renderBounds": {
+        "x": 3229,
+        "y": 1925,
+        "w": 100,
+        "h": 97
+      },
+      "district": "core",
+      "block": "core:8:5",
+      "kind": "commercial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 2,
+      "style": 1,
+      "design": "Late-night restaurant",
+      "props": [
+        {
+          "id": "neighborhood-367-vending",
+          "type": "vending",
+          "x": 3236,
+          "y": 1988,
+          "w": 16,
+          "h": 14,
+          "building": 367,
+          "kind": "commercial"
+        },
+        {
+          "id": "neighborhood-367-ac",
+          "type": "ac",
+          "x": 3302,
+          "y": 1936,
+          "w": 16,
+          "h": 14,
+          "building": 367,
+          "kind": "commercial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-366",
+      "index": 366,
+      "x": 3109,
+      "y": 2041,
+      "w": 100,
+      "h": 68,
+      "doorX": 3159,
+      "doorY": 2122,
+      "renderBounds": {
+        "x": 3106,
+        "y": 2038,
+        "w": 106,
+        "h": 88
+      },
+      "district": "core",
+      "block": "core:8:5",
+      "kind": "commercial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 3,
+      "style": 2,
+      "design": "Neon lounge",
+      "props": [
+        {
+          "id": "neighborhood-366-bench",
+          "type": "bench",
+          "x": 3113,
+          "y": 2092,
+          "w": 16,
+          "h": 14,
+          "building": 366,
+          "kind": "commercial"
+        },
+        {
+          "id": "neighborhood-366-planter",
+          "type": "planter",
+          "x": 3185,
+          "y": 2049,
+          "w": 16,
+          "h": 14,
+          "building": 366,
+          "kind": "commercial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-368",
+      "index": 368,
+      "x": 3232,
+      "y": 2041,
+      "w": 103,
+      "h": 77,
+      "doorX": 3284,
+      "doorY": 2131,
+      "renderBounds": {
+        "x": 3229,
+        "y": 2038,
+        "w": 109,
+        "h": 97
+      },
+      "district": "core",
+      "block": "core:8:5",
+      "kind": "commercial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 4,
+      "style": 3,
+      "design": "Local bank office",
+      "props": [
+        {
+          "id": "neighborhood-368-vending",
+          "type": "vending",
+          "x": 3236,
+          "y": 2101,
+          "w": 16,
+          "h": 14,
+          "building": 368,
+          "kind": "commercial"
+        },
+        {
+          "id": "neighborhood-368-ac",
+          "type": "ac",
+          "x": 3311,
+          "y": 2049,
+          "w": 16,
+          "h": 14,
+          "building": 368,
+          "kind": "commercial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-532",
+      "index": 532,
+      "x": 4544,
+      "y": 2269,
+      "w": 68,
+      "h": 99,
+      "doorX": 4578,
+      "doorY": 2381,
+      "renderBounds": {
+        "x": 4541,
+        "y": 2266,
+        "w": 74,
+        "h": 119
+      },
+      "district": "core",
+      "block": "core:12:6",
+      "kind": "commercial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 1,
+      "style": 0,
+      "design": "Office storefront",
+      "props": [
+        {
+          "id": "neighborhood-532-planter",
+          "type": "planter",
+          "x": 4588,
+          "y": 2277,
+          "w": 16,
+          "h": 14,
+          "building": 532,
+          "kind": "commercial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-533",
+      "index": 533,
+      "x": 4708,
+      "y": 2269,
+      "w": 68,
+      "h": 99,
+      "doorX": 4742,
+      "doorY": 2381,
+      "renderBounds": {
+        "x": 4705,
+        "y": 2266,
+        "w": 74,
+        "h": 119
+      },
+      "district": "core",
+      "block": "core:12:6",
+      "kind": "commercial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 2,
+      "style": 1,
+      "design": "Late-night restaurant",
+      "props": [
+        {
+          "id": "neighborhood-533-ac",
+          "type": "ac",
+          "x": 4752,
+          "y": 2277,
+          "w": 16,
+          "h": 14,
+          "building": 533,
+          "kind": "commercial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-534",
+      "index": 534,
+      "x": 4547,
+      "y": 2397,
+      "w": 96,
+      "h": 72,
+      "doorX": 4595,
+      "doorY": 2482,
+      "renderBounds": {
+        "x": 4544,
+        "y": 2394,
+        "w": 102,
+        "h": 92
+      },
+      "district": "core",
+      "block": "core:12:6",
+      "kind": "commercial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 3,
+      "style": 2,
+      "design": "Neon lounge",
+      "props": [
+        {
+          "id": "neighborhood-534-bench",
+          "type": "bench",
+          "x": 4551,
+          "y": 2452,
+          "w": 16,
+          "h": 14,
+          "building": 534,
+          "kind": "commercial"
+        },
+        {
+          "id": "neighborhood-534-planter",
+          "type": "planter",
+          "x": 4619,
+          "y": 2405,
+          "w": 16,
+          "h": 14,
+          "building": 534,
+          "kind": "commercial"
+        }
+      ]
+    },
+    {
+      "id": "neighborhood-535",
+      "index": 535,
+      "x": 4670,
+      "y": 2397,
+      "w": 96,
+      "h": 72,
+      "doorX": 4718,
+      "doorY": 2482,
+      "renderBounds": {
+        "x": 4667,
+        "y": 2394,
+        "w": 102,
+        "h": 92
+      },
+      "district": "core",
+      "block": "core:12:6",
+      "kind": "commercial",
+      "sheet": "neighborhoods-illustrated",
+      "cell": 4,
+      "style": 3,
+      "design": "Local bank office",
+      "props": [
+        {
+          "id": "neighborhood-535-vending",
+          "type": "vending",
+          "x": 4674,
+          "y": 2452,
+          "w": 16,
+          "h": 14,
+          "building": 535,
+          "kind": "commercial"
+        },
+        {
+          "id": "neighborhood-535-ac",
+          "type": "ac",
+          "x": 4742,
+          "y": 2405,
+          "w": 16,
+          "h": 14,
+          "building": 535,
+          "kind": "commercial"
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "residential": 32,
+    "industrial": 12,
+    "mixed": 12,
+    "older": 8,
+    "commercial": 8
+  },
+  "props": 136,
+  "geometryHash": "61e370716e2010718b88c7ff774d2258f75830c5adf0f1d2fa9be09b2de353fe",
+  "originalHouseFacades": 16,
+  "newHouseFacades": 24,
+  "newApartmentFacades": 8,
+  "scope": "Actual recovered host generation, deterministic annotations of 72 existing facades in 18 blocks, 136 decorative props fully inside original impassable footprints, 72 entrance routes and original light-field/unchanged-facade draw-call comparisons across all 808 buildings. New neighborhoods create no collision geometry, consume no game RNG and load no new artwork."
+}

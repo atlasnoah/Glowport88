@@ -1,0 +1,313 @@
+{
+  "time": "2026-10-30T19:52:49.799Z",
+  "sourceHashes": {
+    "Glowport88_ArtRehaul_v11.html": "19c2220ab47dc756391dac354eb6a599eaf8a45b63eafc3ff4f156c1ede7acab",
+    "assets/ambient-traffic.js": "49255b57c4a2d0033bb866df8439d3a858a90ac3f186c12ae27030f05564ae46",
+    "assets/gameplay.js": "c9dfc07c9df2c04cbbd52c71d16adc26ae08d075170673959a2884a6fecf64da"
+  },
+  "checks": [
+    "a stopped active quest target remains protected offscreen before contact",
+    "completed healthy targets stay visible beyond the retirement grace without resuming AI",
+    "three authored chase contacts retire their unowned cars without growing the fleet",
+    "loaded legacy driven and owned ambient cars remain durable while offscreen",
+    "quest retirement produces no browser script or missing-asset errors"
+  ],
+  "quests": [
+    {
+      "run": 1,
+      "target": {
+        "id": "traffic-core-5",
+        "tail": 16.000000000000092,
+        "duration": 16,
+        "ticks": 320,
+        "health": 100,
+        "stage": 2
+      },
+      "beforeContact": {
+        "before": {
+          "clock": 16.000000000000092,
+          "car": {
+            "id": "traffic-core-5",
+            "x": 5996,
+            "y": 3208,
+            "ai": false,
+            "health": 100,
+            "personal": false,
+            "wasDriven": false,
+            "mission": "2:m12:2",
+            "managed": true
+          },
+          "stage": 2,
+          "status": "active",
+          "population": 43,
+          "totalCars": 45,
+          "retired": 0
+        },
+        "after": {
+          "clock": 85.99999999999922,
+          "car": {
+            "id": "traffic-core-5",
+            "x": 5996,
+            "y": 3208,
+            "ai": false,
+            "health": 100,
+            "personal": false,
+            "wasDriven": false,
+            "mission": "2:m12:2",
+            "managed": true
+          },
+          "stage": 2,
+          "status": "active",
+          "population": 43,
+          "totalCars": 45,
+          "retired": 0
+        }
+      },
+      "contacted": {
+        "clock": 85.99999999999922,
+        "car": {
+          "id": "traffic-core-5",
+          "x": 5996,
+          "y": 3208,
+          "ai": false,
+          "health": 100,
+          "personal": false,
+          "wasDriven": false,
+          "mission": null,
+          "managed": true
+        },
+        "stage": 3,
+        "status": "active",
+        "population": 43,
+        "totalCars": 45,
+        "retired": 0
+      },
+      "visibleAfter75": {
+        "clock": 160.99999999999494,
+        "car": {
+          "id": "traffic-core-5",
+          "x": 5996,
+          "y": 3208,
+          "ai": false,
+          "health": 100,
+          "personal": false,
+          "wasDriven": false,
+          "mission": null,
+          "managed": true
+        },
+        "stage": 3,
+        "status": "active",
+        "population": 43,
+        "totalCars": 45,
+        "retired": 0
+      },
+      "retired": {
+        "clock": 165.99999999999466,
+        "car": null,
+        "stage": 3,
+        "status": "active",
+        "population": 43,
+        "totalCars": 44,
+        "retired": 1
+      }
+    },
+    {
+      "run": 2,
+      "target": {
+        "id": "traffic-east-1",
+        "tail": 16.000000000000092,
+        "duration": 16,
+        "ticks": 320,
+        "health": 100,
+        "stage": 2
+      },
+      "contacted": {
+        "clock": 181.9999999999983,
+        "car": {
+          "id": "traffic-east-1",
+          "x": 3496.261578213333,
+          "y": 1848,
+          "ai": false,
+          "health": 100,
+          "personal": false,
+          "wasDriven": false,
+          "mission": null,
+          "managed": true
+        },
+        "stage": 3,
+        "status": "active",
+        "population": 43,
+        "totalCars": 45,
+        "retired": 1
+      },
+      "offscreenGrace": {
+        "clock": 211.99999999999645,
+        "car": {
+          "id": "traffic-east-1",
+          "x": 3496.261578213333,
+          "y": 1848,
+          "ai": false,
+          "health": 100,
+          "personal": false,
+          "wasDriven": false,
+          "mission": null,
+          "managed": true
+        },
+        "stage": 3,
+        "status": "active",
+        "population": 43,
+        "totalCars": 45,
+        "retired": 1
+      },
+      "retired": {
+        "clock": 256.99999999999375,
+        "car": null,
+        "stage": 3,
+        "status": "active",
+        "population": 43,
+        "totalCars": 44,
+        "retired": 2
+      }
+    },
+    {
+      "run": 3,
+      "target": {
+        "id": "traffic-east-6",
+        "tail": 16.000000000000092,
+        "duration": 16,
+        "ticks": 320,
+        "health": 100,
+        "stage": 2
+      },
+      "contacted": {
+        "clock": 272.9999999999974,
+        "car": {
+          "id": "traffic-east-6",
+          "x": 4155.744886843064,
+          "y": 2188,
+          "ai": false,
+          "health": 100,
+          "personal": false,
+          "wasDriven": false,
+          "mission": null,
+          "managed": true
+        },
+        "stage": 3,
+        "status": "active",
+        "population": 43,
+        "totalCars": 45,
+        "retired": 2
+      },
+      "offscreenGrace": {
+        "clock": 303.00000000000404,
+        "car": {
+          "id": "traffic-east-6",
+          "x": 4155.744886843064,
+          "y": 2188,
+          "ai": false,
+          "health": 100,
+          "personal": false,
+          "wasDriven": false,
+          "mission": null,
+          "managed": true
+        },
+        "stage": 3,
+        "status": "active",
+        "population": 43,
+        "totalCars": 45,
+        "retired": 2
+      },
+      "retired": {
+        "clock": 348.00000000001387,
+        "car": null,
+        "stage": 3,
+        "status": "active",
+        "population": 43,
+        "totalCars": 44,
+        "retired": 3
+      }
+    }
+  ],
+  "legacy": {
+    "before": [
+      {
+        "id": "legacy-retired-driven",
+        "x": 3630,
+        "y": 2539.9999996799997,
+        "angle": 0,
+        "speed": 0,
+        "targetSpeed": 90,
+        "ai": false,
+        "parked": true,
+        "health": 91,
+        "modelId": "sedan",
+        "personal": false,
+        "wasDriven": true,
+        "_ambientManaged": true,
+        "_trafficMapVersion": 3,
+        "w": 17,
+        "h": 32
+      },
+      {
+        "id": "legacy-retired-owned",
+        "x": 3630,
+        "y": 2539.9999996799997,
+        "angle": 0,
+        "speed": 0,
+        "targetSpeed": 90,
+        "ai": false,
+        "parked": true,
+        "health": 87,
+        "modelId": "compact",
+        "personal": true,
+        "wasDriven": false,
+        "_ambientManaged": true,
+        "_trafficMapVersion": 3,
+        "w": 17,
+        "h": 32
+      }
+    ],
+    "after": [
+      {
+        "id": "legacy-retired-driven",
+        "x": 3630,
+        "y": 2539.9999996799997,
+        "angle": 0,
+        "speed": 0,
+        "targetSpeed": 90,
+        "ai": false,
+        "parked": true,
+        "health": 91,
+        "modelId": "sedan",
+        "personal": false,
+        "wasDriven": true,
+        "_ambientManaged": true,
+        "_trafficMapVersion": 3,
+        "w": 17,
+        "h": 32
+      },
+      {
+        "id": "legacy-retired-owned",
+        "x": 3630,
+        "y": 2539.9999996799997,
+        "angle": 0,
+        "speed": 0,
+        "targetSpeed": 90,
+        "ai": false,
+        "parked": true,
+        "health": 87,
+        "modelId": "compact",
+        "personal": true,
+        "wasDriven": false,
+        "_ambientManaged": true,
+        "_trafficMapVersion": 3,
+        "w": 17,
+        "h": 32
+      }
+    ],
+    "starters": 1,
+    "population": 43
+  },
+  "errors": [],
+  "scope": "Actual Chromium production host. Three authored m12 chase fixtures use production target selection, real elapsed tail evaluation, ambient vehicle movement and keyboard E contact. QA accelerates travel/time and supplies invulnerability; no evaluator or completion override, no quest-target AI/health mutation. Visibility/grace and repeated cleanup are checked, then saved legacy driven/owned cars reload through production save handling and remain durable."
+}

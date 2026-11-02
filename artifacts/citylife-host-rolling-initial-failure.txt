@@ -1,0 +1,18 @@
+AssertionError [ERR_ASSERTION]: Every unprotected ambient vehicle must resume movement within a rolling 120-second window without unexplained permanent blockage: {"fromClock":190.1000000000131,"toClock":310.1000000000404,"minNPCDistance":2021.8286211495229,"minCarDistance":0,"starvedNPCs":[],"starvedCars":[{"id":"traffic-core-6","distance":0,"reason":"junction","x":3642.9989194467594,"y":2552}]}
++ actual - expected
+
++ [
++   {
++     distance: 0,
++     id: 'traffic-core-6',
++     reason: 'junction',
++     x: 3642.9989194467594,
++     y: 2552
++   }
++ ]
+- []
+
+    at validateRollingMotion (/workspace/Glowport88/tests/citylife-host.cjs:50:9)
+    at /workspace/Glowport88/tests/citylife-host.cjs:90:81
+    at async check (/workspace/Glowport88/tests/citylife-host.cjs:12:31)
+    at async /workspace/Glowport88/tests/citylife-host.cjs:73:2

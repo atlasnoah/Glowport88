@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-29T18:07:04.276Z",
+  "time": "2026-10-30T19:37:53.338Z",
   "passed": [
     "all twelve playable doors enter and exit from three actual keyboard-walk approaches",
     "all twelve playable doors use real phone joystick Interact and Actions with working return exits",
@@ -136,7 +136,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 295.67499999999995
+        "y": 299.92499999999995
       }
     },
     {
@@ -157,7 +157,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 302
+        "y": 299.91249999999997
       }
     },
     {
@@ -178,7 +178,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 299.9125
+        "y": 299.91249999999997
       }
     },
     {
@@ -220,7 +220,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 299.9
+        "y": 302
       }
     },
     {
@@ -234,27 +234,6 @@
       "entry": {
         "via": "primary",
         "primary": "door-armory"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 299.9125
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "club",
-      "approach": {
-        "dx": 0,
-        "dy": 72,
-        "key": "w"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-club"
       },
       "start": {
         "x": 400,
@@ -269,6 +248,27 @@
       "input": "keyboard",
       "where": "club",
       "approach": {
+        "dx": 0,
+        "dy": 72,
+        "key": "w"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-club"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 299.90000000000003
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "club",
+      "approach": {
         "dx": 72,
         "dy": 0,
         "key": "a"
@@ -283,7 +283,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 297.75
+        "y": 302
       }
     },
     {
@@ -325,390 +325,12 @@
       },
       "walked": {
         "x": 400,
-        "y": 302
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "records",
-      "approach": {
-        "dx": 72,
-        "dy": 0,
-        "key": "a"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-records"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 299.92500000000007
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "records",
-      "approach": {
-        "dx": -72,
-        "dy": 0,
-        "key": "d"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-records"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 302
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "radio",
-      "approach": {
-        "dx": 0,
-        "dy": 72,
-        "key": "w"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-radio"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 297.82499999999993
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "radio",
-      "approach": {
-        "dx": 72,
-        "dy": 0,
-        "key": "a"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-radio"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 302
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "radio",
-      "approach": {
-        "dx": -72,
-        "dy": 0,
-        "key": "d"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-radio"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 302
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "arcade",
-      "approach": {
-        "dx": 0,
-        "dy": 72,
-        "key": "w"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-arcade"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 295.73749999999995
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "arcade",
-      "approach": {
-        "dx": 72,
-        "dy": 0,
-        "key": "a"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-arcade"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 299.9125
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "arcade",
-      "approach": {
-        "dx": -72,
-        "dy": 0,
-        "key": "d"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-arcade"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 302
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "motel",
-      "approach": {
-        "dx": 0,
-        "dy": 72,
-        "key": "w"
-      },
-      "entry": {
-        "via": "ACTIONS",
-        "primary": "garage"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 302
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "motel",
-      "approach": {
-        "dx": 72,
-        "dy": 0,
-        "key": "a"
-      },
-      "entry": {
-        "via": "ACTIONS",
-        "primary": "garage"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 302
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "motel",
-      "approach": {
-        "dx": -72,
-        "dy": 0,
-        "key": "d"
-      },
-      "entry": {
-        "via": "ACTIONS",
-        "primary": "garage"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 299.9125
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "warehouse",
-      "approach": {
-        "dx": 0,
-        "dy": 72,
-        "key": "w"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-warehouse"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 302
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "warehouse",
-      "approach": {
-        "dx": 72,
-        "dy": 0,
-        "key": "a"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-warehouse"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 302
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "warehouse",
-      "approach": {
-        "dx": -72,
-        "dy": 0,
-        "key": "d"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-warehouse"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 302
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "diner",
-      "approach": {
-        "dx": 0,
-        "dy": 72,
-        "key": "w"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-diner"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 299.91250000000014
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "diner",
-      "approach": {
-        "dx": 72,
-        "dy": 0,
-        "key": "a"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-diner"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
         "y": 299.9124999999999
       }
     },
     {
       "input": "keyboard",
-      "where": "diner",
-      "approach": {
-        "dx": -72,
-        "dy": 0,
-        "key": "d"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-diner"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 297.83749999999986
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "observatory",
-      "approach": {
-        "dx": 0,
-        "dy": 72,
-        "key": "w"
-      },
-      "entry": {
-        "via": "primary",
-        "primary": "door-observatory"
-      },
-      "start": {
-        "x": 400,
-        "y": 377
-      },
-      "walked": {
-        "x": 400,
-        "y": 297.83749999999986
-      }
-    },
-    {
-      "input": "keyboard",
-      "where": "observatory",
+      "where": "records",
       "approach": {
         "dx": 72,
         "dy": 0,
@@ -716,7 +338,175 @@
       },
       "entry": {
         "via": "primary",
-        "primary": "door-observatory"
+        "primary": "door-records"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 302
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "records",
+      "approach": {
+        "dx": -72,
+        "dy": 0,
+        "key": "d"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-records"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 299.92499999999995
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "radio",
+      "approach": {
+        "dx": 0,
+        "dy": 72,
+        "key": "w"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-radio"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 302
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "radio",
+      "approach": {
+        "dx": 72,
+        "dy": 0,
+        "key": "a"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-radio"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 302
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "radio",
+      "approach": {
+        "dx": -72,
+        "dy": 0,
+        "key": "d"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-radio"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 299.9125
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "arcade",
+      "approach": {
+        "dx": 0,
+        "dy": 72,
+        "key": "w"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-arcade"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 302
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "arcade",
+      "approach": {
+        "dx": 72,
+        "dy": 0,
+        "key": "a"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-arcade"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 302
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "arcade",
+      "approach": {
+        "dx": -72,
+        "dy": 0,
+        "key": "d"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-arcade"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 299.92499999999995
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "motel",
+      "approach": {
+        "dx": 0,
+        "dy": 72,
+        "key": "w"
+      },
+      "entry": {
+        "via": "ACTIONS",
+        "primary": "garage"
       },
       "start": {
         "x": 400,
@@ -729,6 +519,216 @@
     },
     {
       "input": "keyboard",
+      "where": "motel",
+      "approach": {
+        "dx": 72,
+        "dy": 0,
+        "key": "a"
+      },
+      "entry": {
+        "via": "ACTIONS",
+        "primary": "garage"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 299.92499999999995
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "motel",
+      "approach": {
+        "dx": -72,
+        "dy": 0,
+        "key": "d"
+      },
+      "entry": {
+        "via": "ACTIONS",
+        "primary": "garage"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 299.9375
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "warehouse",
+      "approach": {
+        "dx": 0,
+        "dy": 72,
+        "key": "w"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-warehouse"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 299.9125
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "warehouse",
+      "approach": {
+        "dx": 72,
+        "dy": 0,
+        "key": "a"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-warehouse"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 299.92499999999995
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "warehouse",
+      "approach": {
+        "dx": -72,
+        "dy": 0,
+        "key": "d"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-warehouse"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 299.9125
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "diner",
+      "approach": {
+        "dx": 0,
+        "dy": 72,
+        "key": "w"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-diner"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 299.9125
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "diner",
+      "approach": {
+        "dx": 72,
+        "dy": 0,
+        "key": "a"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-diner"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 302
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "diner",
+      "approach": {
+        "dx": -72,
+        "dy": 0,
+        "key": "d"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-diner"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 302
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "observatory",
+      "approach": {
+        "dx": 0,
+        "dy": 72,
+        "key": "w"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-observatory"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 299.92499999999995
+      }
+    },
+    {
+      "input": "keyboard",
+      "where": "observatory",
+      "approach": {
+        "dx": 72,
+        "dy": 0,
+        "key": "a"
+      },
+      "entry": {
+        "via": "primary",
+        "primary": "door-observatory"
+      },
+      "start": {
+        "x": 400,
+        "y": 377
+      },
+      "walked": {
+        "x": 400,
+        "y": 299.91250000000014
+      }
+    },
+    {
+      "input": "keyboard",
       "where": "observatory",
       "approach": {
         "dx": -72,
@@ -745,7 +745,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 299.9124999999999
+        "y": 297.8375000000001
       }
     },
     {
@@ -766,7 +766,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 302
+        "y": 297.8375000000001
       }
     },
     {
@@ -787,7 +787,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 299.91250000000014
+        "y": 297.8249999999998
       }
     },
     {
@@ -829,7 +829,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 299.92499999999995
+        "y": 299.9000000000001
       }
     },
     {
@@ -871,7 +871,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 302
+        "y": 299.89999999999986
       }
     },
     {
@@ -887,7 +887,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 285.44376835409645
+        "y": 285.44376835409633
       }
     },
     {
@@ -919,7 +919,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 287.3873161721803
+        "y": 289.33086399026416
       }
     },
     {
@@ -935,7 +935,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 279.53165882363766
+        "y": 279.6247629107314
       }
     },
     {
@@ -951,7 +951,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 287.3873161721803
+        "y": 283.51185854689936
       }
     },
     {
@@ -967,7 +967,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 279.56657285629774
+        "y": 285.4554063649831
       }
     },
     {
@@ -983,7 +983,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 289.3192259793775
+        "y": 262.01645243910946
       }
     },
     {
@@ -999,7 +999,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 287.3873161721803
+        "y": 289.3192259793773
       }
     },
     {
@@ -1015,7 +1015,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 287.3873161721803
+        "y": 279.63640092161796
       }
     },
     {
@@ -1031,7 +1031,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 275.7493052854505
+        "y": 283.4885825251258
       }
     },
     {
@@ -1047,7 +1047,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 289.33086399026405
+        "y": 287.3873161721803
       }
     },
     {
@@ -1063,7 +1063,7 @@
       },
       "walked": {
         "x": 400,
-        "y": 289.3192259793773
+        "y": 285.44376835409633
       }
     }
   ],

@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-28T14:08:11.042Z",
+  "time": "2026-10-30T19:40:36.893Z",
   "primaryDefinitions": 92,
   "uniqueAuthoredStageCoverage": 390,
   "expectedAuthoredStages": 390,
@@ -494,7 +494,7 @@
   ],
   "completedRuns": 176,
   "objectiveResolutions": 580,
-  "realProjectileShots": 631,
+  "realProjectileShots": 628,
   "realTimingInputs": 121,
   "branchRuns": 84,
   "records": [
