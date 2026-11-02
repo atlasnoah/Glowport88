@@ -1,0 +1,18 @@
+{
+  "time": "2026-11-02T13:54:26.226522+00:00",
+  "command": "node tests/police-system.cjs",
+  "passed": [
+    "minor crime requires a living, in-range witness and clear line of sight",
+    "alarms and explicit script crimes dispatch without inventing witnesses",
+    "officers cannot see or engage through walls; last known position stays fixed",
+    "wanted level does not decay while officers see the player",
+    "breaking line of sight produces a finite search and successful escape",
+    "reacquisition renews pursuit and search; interiors cannot be magically observed",
+    "dispatch/backup and high-level roadblocks are rate limited",
+    "low-level stationary suspects can be arrested, with a fair hold and cancellation",
+    "missing geometry fails closed instead of granting omniscient perception",
+    "state roundtrips without restoring an unavoidable arrest and validates unsafe input",
+    "external hospital/reset and negative legacy heat adjustments clear pursuit"
+  ],
+  "sourceSHA256": "42f8727a704a259ce368cdc3fb3bb9ad4686a57f55b522e4c22f31a01dfcc0a5"
+}

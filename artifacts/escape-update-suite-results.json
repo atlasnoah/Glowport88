@@ -1,0 +1,40 @@
+{
+  "time": "2026-11-02T13:53:28.786032+00:00",
+  "version": "0.6.5",
+  "baseline": "dfad716",
+  "sourceHashesAtCollection": {
+    "Glowport88_ArtRehaul_v11.html": "2482a21011af5a617349ad24f125c5736395e50ea75d593743f73579952795a4",
+    "assets/vehicle-system.js": "12e83d749dbe6de804abab0aba08ae0128e9ca0f67f40bb20278dec8305fa138",
+    "assets/hud.css": "a486a40e0d210b886b03ea026a266595ff578e2e2064cc7aacaff766fd60e195"
+  },
+  "playerTopSpeedMultiplier": 1.25,
+  "playerAccelerationMultiplier": 1.2,
+  "workingConditionFloor": 0.75,
+  "minimapWidths": {
+    "phone": 108,
+    "shortLandscape": 88,
+    "desktopMax": 236
+  },
+  "passed": {
+    "escapeHost": 7,
+    "minimapGuards": 15,
+    "preservationViews": 49,
+    "hudViewports": 5,
+    "vehicleModels": 13,
+    "policeModels": 11,
+    "vehicleHost": 6,
+    "mobile": 21,
+    "encounterHost": 6
+  },
+  "evidence": [
+    "escape-speed-host-results.json",
+    "minimap-size-results.json",
+    "citylife-preservation-results.json",
+    "living-vehicles-results.json",
+    "escape-police-model-results.json",
+    "vehicle-host-results.json",
+    "mobile-results.json",
+    "encounter-host-results.json"
+  ],
+  "scope": "Focused actual driving/pursuit/input/size and preservation checks; earlier390-stageauditnotrepeated;physicalphones/Safarinotclaimed."
+}

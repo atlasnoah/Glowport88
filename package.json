@@ -1,11 +1,11 @@
 {
   "name": "glowport88",
-  "version": "0.6.4",
+  "version": "0.6.5",
   "private": true,
   "description": "A standalone pixel-art city adventure",
   "scripts": {
     "start": "python3 -m http.server 8000 --directory Glowport88",
-    "test": "node tests/syntax.cjs && node tests/missions.cjs && node tests/mission-engine.cjs && node tests/police-system.cjs && node tests/progression.cjs && node tests/save-system.cjs && node tests/living-missions.cjs && node tests/living-events.cjs && node tests/living-vehicles.cjs && node tests/living-city.cjs && node tests/campaign-content.cjs && node tests/campaign-playthrough.cjs && node tests/terrain-cache.cjs && node tests/smoke.cjs && node tests/gameplay.cjs && node tests/overhaul.cjs && node tests/navigation.cjs && node tests/touch-controls.cjs && node tests/mobile.cjs && node tests/east-diner.cjs && node tests/vehicle-host.cjs && node tests/living-city-host.cjs && node tests/encounter-host.cjs && node tests/living-endurance.cjs && npm run test:restoration && npm run test:bugs && npm run test:playability && npm run test:citylife",
+    "test": "node tests/syntax.cjs && node tests/missions.cjs && node tests/mission-engine.cjs && node tests/police-system.cjs && node tests/progression.cjs && node tests/save-system.cjs && node tests/living-missions.cjs && node tests/living-events.cjs && node tests/living-vehicles.cjs && node tests/living-city.cjs && node tests/campaign-content.cjs && node tests/campaign-playthrough.cjs && node tests/terrain-cache.cjs && node tests/smoke.cjs && node tests/gameplay.cjs && node tests/overhaul.cjs && node tests/navigation.cjs && node tests/touch-controls.cjs && node tests/mobile.cjs && node tests/east-diner.cjs && node tests/vehicle-host.cjs && node tests/living-city-host.cjs && node tests/encounter-host.cjs && node tests/living-endurance.cjs && npm run test:restoration && npm run test:bugs && npm run test:playability && npm run test:citylife && npm run test:escape",
     "assets": "python3 tools/build_assets.py",
     "release": "python3 tools/build_release.py",
     "test:release": "node tests/release.cjs",
@@ -18,7 +18,8 @@
     "test:bugs": "node tests/audit-mission-recovery.cjs && node tests/audit-mission-recovery-host.cjs && node tests/audit-persistence-host.cjs && node tests/mobile-ui-audit.cjs && node tests/encounter-edge-regressions.cjs && node tests/audio-host-regressions.cjs && node tests/host-edge-regressions.cjs && node tests/arcade-actions-audit.cjs",
     "test:playability": "node tests/mission-geometry-audit.cjs && node tests/room-reachability.cjs && node tests/all-entrances-host.cjs && node tests/all-missions-host.cjs",
     "test:hud": "node tests/hud-layout.cjs",
-    "test:citylife": "node tests/ambient-traffic.cjs && node tests/ambient-pedestrians.cjs && node tests/ambient-schedules-host.cjs && node tests/ambient-pedestrian-recovery-host.cjs && node tests/neighborhood-details.cjs && node tests/citylife-preservation.cjs && node tests/citylife-host.cjs && node tests/citylife-retirement-host.cjs"
+    "test:citylife": "node tests/ambient-traffic.cjs && node tests/ambient-pedestrians.cjs && node tests/ambient-schedules-host.cjs && node tests/ambient-pedestrian-recovery-host.cjs && node tests/neighborhood-details.cjs && node tests/citylife-preservation.cjs && node tests/citylife-host.cjs && node tests/citylife-retirement-host.cjs",
+    "test:escape": "node tests/escape-speed-host.cjs && node tests/minimap-size.cjs"
   },
   "devDependencies": {
     "playwright": "1.58.2"

@@ -1,8 +1,8 @@
 {
-  "time": "2026-10-30T19:52:36.392Z",
+  "time": "2026-11-02T13:51:01.090Z",
   "baselineCommit": "b334fc0",
   "checks": [
-    "Exact baseline hashes: all original PNGs, 20 protected modules, HUD/menu/control markup, all CSS, character/vehicle/interior/lighting functions",
+    "Exact baseline hashes: all original PNGs, 19 protected modules, HUD/menu/control markup, unchanged base vehicle/AI profiles and non-minimap CSS; only reviewed player driving profile/readouts and minimap widths differ",
     "808 original footprints and doors, 35 road axes, 66px streets, 7200x5040 boundaries, five districts, 12 landmarks, trees/props/lamps unchanged",
     "49 fixed day/night/rain scenes have zero changed pixels outside reviewed facade/prop bounds",
     "Exact sprite/interior browser probes: characters, vehicles, hotel, East Diner, Marina Clinic, armory",
@@ -20,7 +20,7 @@
       "mission-engine.js": "002f6575d4d5a804bb6f5bc153dc8f6aef60d92c79adb82053da92b17d0f9800",
       "campaign.js": "8c81e3cd751fbb611fdd0dca444fe6edaa6f4da82f00562326a92ff0079c97c5",
       "side-content.js": "fe380abbd3ef76c3d6717f42279b6d139273eff96454fa6f45d5e6571630fec8",
-      "vehicle-system.js": "5a92479fcb4a80e279f205b8872eea77ce84cb1b6efe8d27e811d331a9a29171",
+      "vehicle-system.js": "12e83d749dbe6de804abab0aba08ae0128e9ca0f67f40bb20278dec8305fa138",
       "progression.js": "22808e2a2c077846fa59a9d8ceed77444f7f071182692bd9e92efac4a7c9d6c2",
       "interactions.js": "b2f73d7c329765f0c2ed5783cb6fdc54b51b5fbf23d67978b910183da1a02f30",
       "save-system.js": "0951b0c25bc44a6f8dcf6c25049cafe09b1762a2aed919d3e35972f1aa4f70b9",
@@ -54,7 +54,19 @@
     "css": {
       "ui.css": "a6da9361b9bf334100fed0660336b767fe8ddc371f74cd15a7d0e833f03280b7",
       "mobile.css": "c003f721c960bfe93689be302d677b02b0ef0b87220fd2b2ad12a0ff84da3a92",
-      "hud.css": "70509b3f1c8be1f76f61ad9f3d648e80d3f86c8e9a502d2933a57d5c7a86f6db"
+      "hud.css": "a486a40e0d210b886b03ea026a266595ff578e2e2064cc7aacaff766fd60e195"
+    },
+    "reviewedChanges": {
+      "vehicleSystem": {
+        "baselineSHA256": "5a92479fcb4a80e279f205b8872eea77ce84cb1b6efe8d27e811d331a9a29171",
+        "currentSHA256": "12e83d749dbe6de804abab0aba08ae0128e9ca0f67f40bb20278dec8305fa138",
+        "scope": "Player-only profile/export and matching garage speed/acceleration readouts; every other byte unchanged"
+      },
+      "hudCss": {
+        "baselineSHA256": "70509b3f1c8be1f76f61ad9f3d648e80d3f86c8e9a502d2933a57d5c7a86f6db",
+        "currentSHA256": "a486a40e0d210b886b03ea026a266595ff578e2e2064cc7aacaff766fd60e195",
+        "scope": "Only eight reviewed minimap-width/fallback constants; every other byte unchanged"
+      }
     }
   },
   "geometryHashes": {
@@ -11171,26 +11183,26 @@
         },
         "minimap": {
           "left": 48.875,
-          "top": 698.40625,
-          "right": 250.875,
+          "top": 680.671875,
+          "right": 276.875,
           "bottom": 836.125,
-          "width": 202,
-          "height": 137.71875
+          "width": 228,
+          "height": 155.453125
         },
         "healthBar": {
           "left": 46.875,
           "top": 861.71875,
-          "right": 211.671875,
+          "right": 232.46875,
           "bottom": 864.71875,
-          "width": 164.796875,
+          "width": 185.59375,
           "height": 3
         },
         "hud-health": {
           "left": 44.875,
           "top": 846.125,
-          "right": 254.875,
+          "right": 280.875,
           "bottom": 866.71875,
-          "width": 210,
+          "width": 236,
           "height": 20.59375
         },
         "hud-weapon": {
@@ -11255,26 +11267,26 @@
         },
         "minimap": {
           "left": 17,
-          "top": 205.3125,
-          "right": 107,
+          "top": 197.140625,
+          "right": 119,
           "bottom": 266.671875,
-          "width": 90,
-          "height": 61.359375
+          "width": 102,
+          "height": 69.53125
         },
         "healthBar": {
           "left": 16,
           "top": 284.859375,
-          "right": 89.59375,
+          "right": 99.1875,
           "bottom": 286.859375,
-          "width": 73.59375,
+          "width": 83.1875,
           "height": 2
         },
         "hud-health": {
           "left": 14,
           "top": 273.671875,
-          "right": 110,
+          "right": 122,
           "bottom": 288.859375,
-          "width": 96,
+          "width": 108,
           "height": 15.1875
         },
         "hud-weapon": {
@@ -11363,26 +11375,26 @@
         },
         "minimap": {
           "left": 236.328125,
-          "top": 175.921875,
-          "right": 326.328125,
+          "top": 167.75,
+          "right": 338.328125,
           "bottom": 237.28125,
-          "width": 90,
-          "height": 61.359375
+          "width": 102,
+          "height": 69.53125
         },
         "healthBar": {
           "left": 235.328125,
           "top": 255.46875,
-          "right": 308.921875,
+          "right": 318.515625,
           "bottom": 257.46875,
-          "width": 73.59375,
+          "width": 83.1875,
           "height": 2
         },
         "hud-health": {
           "left": 233.328125,
           "top": 244.28125,
-          "right": 329.328125,
+          "right": 341.328125,
           "bottom": 259.46875,
-          "width": 96,
+          "width": 108,
           "height": 15.1875
         },
         "hud-weapon": {
@@ -11471,26 +11483,26 @@
         },
         "minimap": {
           "left": 287,
-          "top": 131.21875,
-          "right": 359,
+          "top": 124.390625,
+          "right": 369,
           "bottom": 180.296875,
-          "width": 72,
-          "height": 49.078125
+          "width": 82,
+          "height": 55.90625
         },
         "healthBar": {
           "left": 286,
           "top": 198.484375,
-          "right": 345.1875,
+          "right": 353.1875,
           "bottom": 200.484375,
-          "width": 59.1875,
+          "width": 67.1875,
           "height": 2
         },
         "hud-health": {
           "left": 284,
           "top": 187.296875,
-          "right": 362,
+          "right": 372,
           "bottom": 202.484375,
-          "width": 78,
+          "width": 88,
           "height": 15.1875
         },
         "hud-weapon": {
@@ -11579,26 +11591,26 @@
         },
         "minimap": {
           "left": 14,
-          "top": 166.3125,
-          "right": 104,
+          "top": 158.140625,
+          "right": 116,
           "bottom": 227.671875,
-          "width": 90,
-          "height": 61.359375
+          "width": 102,
+          "height": 69.53125
         },
         "healthBar": {
           "left": 13,
           "top": 245.859375,
-          "right": 86.59375,
+          "right": 96.1875,
           "bottom": 247.859375,
-          "width": 73.59375,
+          "width": 83.1875,
           "height": 2
         },
         "hud-health": {
           "left": 11,
           "top": 234.671875,
-          "right": 107,
+          "right": 119,
           "bottom": 249.859375,
-          "width": 96,
+          "width": 108,
           "height": 15.1875
         },
         "hud-weapon": {
@@ -11676,5 +11688,5 @@
     }
   ],
   "errors": [],
-  "scope": "Actual Chromium production terrain and unchanged atmosphere, paired baseline/current at identical camera/hour/weather/clock. Transient actors are omitted from exact environmental comparisons; unchanged actor/interior probes and five actual UI viewports are tested separately. Intentional building/prop changes are allowed only within annotated render bounds. No physical phone/Safari/perfect-balance claim."
+  "scope": "Actual Chromium production terrain and unchanged atmosphere, paired baseline/current at identical camera/hour/weather/clock. Transient actors are omitted from exact environmental comparisons; unchanged actor/interior probes and five actual UI viewports are tested separately. Intentional building/prop changes are allowed only within annotated render bounds. Later reviewed exceptions are restricted to the player-only driving profile/garage stats and explicit minimap-width constants; every other protected vehicle/CSS byte stays exact. Separate escape/minimap suites verify those requested behaviors. No physical phone/Safari/perfect-balance claim."
 }

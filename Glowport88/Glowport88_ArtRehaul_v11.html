@@ -841,9 +841,9 @@ function updateNpcs(dt){
  }
  if(ambientPedestrians)ambientPedestrians.maintain(npcs,{clock:world.clock,focus,camera,width:W,height:H});else for(let pass=0;pass<2;pass++)separatePedestrians();ambientSpeech(dt);
 }
-function updateDriving(dt){let car=player.inCar;const model=GlowportVehicles.profile(car);let input=movementInput(),go=-input.y,boost=controls.shift,cap=model.maxSpeed*(boost?model.boostMultiplier:1)*(1+(gameplay?.progression.state.skills.driving||0)*.001)*clamp((car.health??100)/100,.55,1);
+function updateDriving(dt){let car=player.inCar;const model=GlowportVehicles.playerProfile(car);let input=movementInput(),go=-input.y,boost=controls.shift,cap=model.maxSpeed*(boost?model.boostMultiplier:1)*(1+(gameplay?.progression.state.skills.driving||0)*.001)*model.conditionMultiplier;
  if(model.disabled){car.speed=0;return}
- if(go){car.speed=clamp(car.speed+go*model.acceleration*(boost&&go>0?1.25:1)*dt,-model.reverseSpeed,cap)}else car.speed*=Math.pow(model.rollingDrag,dt*60);
+ if(go){car.speed=clamp(car.speed+go*(go>0?model.acceleration:model.reverseAcceleration)*(boost&&go>0?1.25:1)*dt,-model.reverseSpeed,cap)}else car.speed*=Math.pow(model.rollingDrag,dt*60);
  if(controls.space)car.speed*=Math.pow(.83,dt*60*model.braking);
  if(Math.abs(car.speed)<.3)car.speed=0;
  let turn=input.x;if(turn)car.angle+=turn*model.steering*dt*Math.sign(car.speed||1)*clamp(Math.abs(car.speed)/90,.15,1.05);

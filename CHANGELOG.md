@@ -1,3 +1,9 @@
+# Faster escapes and a larger minimap · 0.6.5
+
+- Increased only player-controlled forward top speeds25% and acceleration20%, with a75% damage-condition speed floor for working vehicles. Disabled cars stay disabled; reverse speed/acceleration, steering, braking, Turbo and AI vehicle profiles remain unchanged.
+- Enlarged the existing minimap roughly12–13% across desktop and phone layouts; retained its style, logical resolution and existing touch controls.
+- Updated workshop speed/acceleration readouts to reflect actual player driving performance. See ESCAPE_UPDATE_REPORT.md for actual chase, control and layout checks.
+
 # City diversity and ambient navigation · 0.6.4
 
 - Preserved the restored world generator, 808 footprints, 35 roads, twelve landmarks, original PNG artwork, lighting, HUD, story and player controls.

@@ -142,3 +142,9 @@
 ### Verified delivery · 2026-11-02
 
 - Pushed tested source22a929e and published game deployment84177cd. Live0.6.4 payload matches standaloneSHA6c2f4e73…9149b5d through verifiedHTTPS; exact-byte mobile playback, currentHUD/ambientmodules, story/Diner interactions and publiccomparisonassets pass. Direct cloudChromium originprobe remains certificate-trust blocked; noTLSbypass. Final evidence/report commits leavegamepayloadunchanged.
+
+## Faster escapes and a larger minimap · 0.6.5 · 2026-11-02
+
+- Added a player-only driving profile with 25% higher forward top speed, 20% quicker forward acceleration and a 75% working-damage speed floor. Preserved AI/rival profiles, reverse, steering, brakes, Turbo, disabled cars and existing health/upgrades/saves. Workshop readouts reflect the player profile.
+- Increased existing minimap widths to 108px phone, 88px short landscape and 236px desktop maximum. Shared context reservations match; logical map/canvas/style are preserved.
+- Passed actual cop-pursuit and phone-input checks (1%-health van 164px/s versus foot cop 91), five-viewport size/control comparisons, 49 city preservation views and relevant vehicle/police/mobile/race/save regressions. See ESCAPE_UPDATE_REPORT.md.

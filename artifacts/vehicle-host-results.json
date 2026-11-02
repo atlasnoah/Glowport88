@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-30T13:42:15.950Z",
+  "time": "2026-11-02T13:51:19.640Z",
   "passed": [
     "actual driving uses distinct vehicle acceleration profiles",
     "disabled vehicles stay stopped under actual acceleration input",
