@@ -1,0 +1,203 @@
+{
+  "time": "2026-11-17T20:00:27.325Z",
+  "passed": [
+    "patrols keep driving beyond the old 2.2-second automatic exit timer",
+    "multi-block pursuit turns through the authentic road network without clipping or snapping",
+    "moving targets can change streets while patrols keep a bounded route cadence and speed",
+    "patrols brake before dismounting near an on-foot suspect and preserve the parked sprite",
+    "a disabled patrol safely stops and dismounts even while the suspect is driving",
+    "the original parked starter closes its street and patrols take another connected route",
+    "a newly blocked lane causes safe replanning instead of indefinite stationary pursuit",
+    "crossing pedestrians receive clearance while patrol cars remain in their vehicles",
+    "search routes use the supplied last-known target, never a hidden current focus",
+    "roadblocks lie ahead of observed routes, outside view, traffic and protected approaches",
+    "hidden-player roadblock placement is based on last-known position and rejects indoor mission approaches",
+    "invalid targets fail closed, reset is bounded and original world geometry stays unchanged"
+  ],
+  "sourceSHA256": "872082c7260c2bf11a2e2cf178e69b974af5fb591521c342b103c1214a11e4cf",
+  "world": {
+    "buildings": 808,
+    "roads": 35
+  },
+  "longChase": {
+    "invalid": 0,
+    "maxJump": 6.800000000000409,
+    "maxSpeed": 136,
+    "updates": 280,
+    "distance": 1811.039999999992,
+    "replans": 1,
+    "turns": 0,
+    "dismounts": 0,
+    "blocked": 0,
+    "roadblocks": 0,
+    "invalidSteps": 0,
+    "tracked": 1,
+    "maximumPatrolSpeed": 144,
+    "officers": [
+      {
+        "x": 3049.0926680739685,
+        "y": 1192.0000006081168,
+        "foot": false,
+        "speed": 136,
+        "moved": 1811.039999999992,
+        "turns": 0,
+        "blocked": 0,
+        "failures": 0,
+        "state": "pursuit",
+        "routePoints": 3,
+        "index": 2
+      }
+    ]
+  },
+  "crossCity": {
+    "invalid": 0,
+    "maxJump": 6.800000000000637,
+    "maxSpeed": 136,
+    "updates": 3000,
+    "distance": 7725.338133572544,
+    "replans": 1,
+    "turns": 1,
+    "dismounts": 0,
+    "blocked": 0,
+    "roadblocks": 0,
+    "invalidSteps": 0,
+    "tracked": 1,
+    "maximumPatrolSpeed": 144,
+    "officers": [
+      {
+        "x": 6228.449231496717,
+        "y": 3911.99999776,
+        "foot": false,
+        "speed": 0,
+        "moved": 7725.338133572544,
+        "turns": 1,
+        "blocked": 0,
+        "failures": 0,
+        "state": "holding",
+        "routePoints": 54,
+        "index": 53
+      }
+    ]
+  },
+  "movingTarget": {
+    "invalid": 0,
+    "maxJump": 6.800000000000182,
+    "maxSpeed": 136,
+    "updates": 650,
+    "distance": 4022.8750000000355,
+    "replans": 42,
+    "turns": 4,
+    "dismounts": 0,
+    "blocked": 0,
+    "roadblocks": 0,
+    "invalidSteps": 0,
+    "tracked": 1,
+    "maximumPatrolSpeed": 144,
+    "officers": [
+      {
+        "x": 3187.7167438070437,
+        "y": 2891.9999992000003,
+        "foot": false,
+        "speed": 136,
+        "moved": 4022.8750000000355,
+        "turns": 4,
+        "blocked": 0,
+        "failures": 0,
+        "state": "pursuit",
+        "routePoints": 3,
+        "index": 2
+      }
+    ]
+  },
+  "dismount": {
+    "officer": {
+      "x": 1485.8278187372223,
+      "y": 1217.000001092569
+    },
+    "parked": {
+      "x": 1485.8278188483432,
+      "y": 1192.000001092569,
+      "angle": 1.5707963312397308,
+      "kind": "police",
+      "color": "#c2c9cc"
+    }
+  },
+  "obstacle": {
+    "minimumGap": 295.3291381957843,
+    "invalid": 0,
+    "maxJump": 6.800000000000182,
+    "maxSpeed": 136,
+    "updates": 1800,
+    "distance": 1740.3048154752078,
+    "replans": 1,
+    "turns": 1,
+    "dismounts": 0,
+    "blocked": 0,
+    "roadblocks": 0,
+    "invalidSteps": 0,
+    "tracked": 1,
+    "maximumPatrolSpeed": 144,
+    "officers": [
+      {
+        "x": 4492,
+        "y": 2591.603495432067,
+        "foot": false,
+        "speed": 0,
+        "moved": 1740.3048154752078,
+        "turns": 1,
+        "blocked": 0,
+        "failures": 0,
+        "state": "holding",
+        "routePoints": 37,
+        "index": 36
+      }
+    ]
+  },
+  "blockedRecovery": {
+    "invalid": 0,
+    "maxJump": 6.800000000000182,
+    "maxSpeed": 136,
+    "updates": 1620,
+    "distance": 3166.2104165013,
+    "replans": 2,
+    "turns": 3,
+    "dismounts": 0,
+    "blocked": 1,
+    "roadblocks": 0,
+    "invalidSteps": 0,
+    "tracked": 1,
+    "maximumPatrolSpeed": 144,
+    "officers": [
+      {
+        "x": 5572,
+        "y": 2591.565004089444,
+        "foot": false,
+        "speed": 0,
+        "moved": 3166.2104165013,
+        "turns": 3,
+        "blocked": 0,
+        "failures": 0,
+        "state": "holding",
+        "routePoints": 78,
+        "index": 77
+      }
+    ]
+  },
+  "crossing": {
+    "stop": 1421,
+    "after": 1736.0399999999986
+  },
+  "roadblock": {
+    "x": 3960,
+    "y": 2539.9999996799997,
+    "angle": 0,
+    "source": "observed-route"
+  },
+  "hiddenRoadblock": {
+    "x": 3040,
+    "y": 3460,
+    "angle": 1.5707963267948966,
+    "source": "last-known-cordon"
+  },
+  "scope": "Production pursuit module moves patrol bodies on the actual restored 808-building world and conservative19px road/collision clearance. Target fixtures cover motion, obstruction, foot transition and fair roadblock geometry without overriding movement. Player/police awareness and actual host integration are separate checks."
+}

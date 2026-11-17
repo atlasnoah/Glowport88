@@ -1,0 +1,111 @@
+{
+  "time": "2026-11-17T20:00:49.626Z",
+  "sourceHashes": {
+    "combatFeedback": "590501e04f504a4f7b94c8db73179fef7b1d556a1fc8caa22201000217ecafaa",
+    "loadedHostInline": "3a87fa8cd80f5799de57aa46c18821e5bc1d58e86fa9a6210f1fbce02c445c9e"
+  },
+  "checks": [
+    "real pistol input consumes ammunition and feedback follows actual projectile damage",
+    "shotgun pellets and SMG cadence retain their original damage and ammo while showing distinct confirmed effects",
+    "melee and empty-magazine input do not invent projectile hits or change rewards",
+    "production enemy updates take existing-building cover, peek and remain collision-safe",
+    "an authored combat objective still finishes through real projectiles after tactical movement",
+    "phone Fire uses the same real projectile/feedback path without new controls",
+    "feedback expires and host integration produces no new critical errors"
+  ],
+  "measurements": [
+    {
+      "test": "pistol",
+      "firstDamage": 26,
+      "shots": 2,
+      "ammunitionUsed": 2,
+      "downs": 1
+    },
+    {
+      "test": "shotgun-and-smg",
+      "shotgunShellsUsed": 1,
+      "smgRoundsUsed": 5,
+      "smgHpSequence": [
+        40,
+        28,
+        16,
+        4,
+        0
+      ]
+    },
+    {
+      "test": "actual-city-cover",
+      "scenario": {
+        "enemy": {
+          "x": 209,
+          "y": 605
+        },
+        "target": {
+          "x": 381,
+          "y": 748
+        }
+      },
+      "particleLimit": 96,
+      "flashLimit": 24,
+      "particles": 0,
+      "flashes": 0,
+      "shots": 0,
+      "hits": 0,
+      "downs": 0,
+      "coverSelections": 1,
+      "coverPeeks": 1,
+      "repositions": 0,
+      "abandonedPlans": 1,
+      "maxParticles": 0,
+      "maxFlashes": 0,
+      "actors": [
+        {
+          "id": "cover-host",
+          "x": 263.09192253629254,
+          "y": 715.5752786974791,
+          "hp": 52,
+          "protected": false,
+          "mode": "engaging",
+          "maxHp": 52,
+          "cover": false,
+          "stuck": 0
+        }
+      ],
+      "states": [
+        "taking-cover",
+        "covered",
+        "peeking",
+        "advancing",
+        "engaging"
+      ],
+      "invalid": 0,
+      "maxStep": 3.300000000000024
+    },
+    {
+      "test": "authored-combat-finish",
+      "actualShots": 6,
+      "id": "m09",
+      "stage": 1,
+      "type": "investigate",
+      "feedback": {
+        "particleLimit": 96,
+        "flashLimit": 24,
+        "particles": 1,
+        "flashes": 0,
+        "shots": 6,
+        "hits": 6,
+        "downs": 2,
+        "coverSelections": 0,
+        "coverPeeks": 0,
+        "repositions": 0,
+        "abandonedPlans": 0,
+        "maxParticles": 7,
+        "maxFlashes": 1,
+        "actors": []
+      },
+      "alive": 0
+    }
+  ],
+  "errors": [],
+  "scope": "Actual current Chromium game host with deterministic RAF/time advancement, real keyboard/phone Fire and production bullets/HP/objective handlers. Fixtures supply equipment, travel, invulnerability and isolated actors; no after-start HP reduction or stage/evaluator override. Cover motion tested on actual808building geometry; no physical-device/difficulty claim."
+}

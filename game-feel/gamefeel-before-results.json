@@ -1,0 +1,242 @@
+{
+  "time": "2026-11-17T19:41:57.265Z",
+  "baselineCommit": "01887e7",
+  "checks": [],
+  "errors": [],
+  "sources": null,
+  "geometryHashes": {
+    "before": {
+      "MW": "3c5d8ca315f8c36d4cd4beecbc55b34c92a2d6eb1df730908df6f23dd2aa08f7",
+      "MH": "68bc5ec90a2d9464eba42cbe67ccf5a442629e039a2e7d21942c0ea7420b4576",
+      "STREET": "3ada92f28b4ceda38562ebf047c6ff05400d4c572352a1142eedfef67d21e662",
+      "roadXs": "5d17df04bb08568cd85567c282bd567a5a189d97031c224fe408c4dff8ba1b2b",
+      "roadYs": "2a65137060173cb6c3d8e22afb8bb6df3faa8c37dc40084e7d8b7ff19f584dec",
+      "roads": "21a27c4f11328de1fa0a803a725cbe573b1c5f7e181909650628e52b0a6e3765",
+      "segments": "d1d0b7bbc07c41c405ae3c2ad81fad509d4da01db824e1b93644024117eb2003",
+      "lands": "b8cb927d2f3fe502035e41e03d22015f9584073f5d2d23b02c764e03c56c6653",
+      "buildings": "306b8753d7e3d015671d53e0bb72349bd6f77ed4fb0ccbae3cb5ae96b6342bab",
+      "trees": "1b8ecd4eb2773a7da26b2470d348bc02a8f4e358a9796bb563ba34aad049b450",
+      "debris": "9eb5dbe5a087b8d2f331818fbde1e9f720d8634b24cb06f549e24787990918c2",
+      "streetlights": "b377d82bf83e5a863802b32f2d2349cb73d14299e4f58c6dfa532f71fdb3d40c",
+      "landmarks": "53f679acbf0e01fc96de863971eb0e9c7640e07239f816ced85cfa790e0ef007"
+    }
+  },
+  "scenes": [
+    {
+      "phase": "before",
+      "name": "downtown-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3230,
+        "y": 2272
+      },
+      "file": "gamefeel-before-downtown-day.png",
+      "sha256": "53c2f3ea59e5ac6687d19bd22b6f3d1b4e5117a03556c11fdb7daa65e6a53a10"
+    },
+    {
+      "phase": "before",
+      "name": "downtown-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3230,
+        "y": 2272
+      },
+      "file": "gamefeel-before-downtown-night.png",
+      "sha256": "eae66134df9b2e4fb0659d0a55ec15147d599049e49d960c51bae7f11e980ffe"
+    },
+    {
+      "phase": "before",
+      "name": "downtown-rain",
+      "hour": 23,
+      "weather": "RAIN",
+      "camera": {
+        "x": 3230,
+        "y": 2272
+      },
+      "file": "gamefeel-before-downtown-rain.png",
+      "sha256": "f102808e5b49a26b677774293b79899bcd91cef9be6af772c81d62b29456982c"
+    },
+    {
+      "phase": "before",
+      "name": "club-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3961,
+        "y": 2952
+      },
+      "file": "gamefeel-before-club-night.png",
+      "sha256": "a001bcd8f22ba6dafdc4b65d18d87d8d2cfe7f268d2c2810ce38327191b8c40a"
+    },
+    {
+      "phase": "before",
+      "name": "radio-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 660,
+        "y": 1932
+      },
+      "file": "gamefeel-before-radio-day.png",
+      "sha256": "8f0110a81a646f30b16827c38a0b4407a35a86dee0d53b35183301541cfffa26"
+    },
+    {
+      "phase": "before",
+      "name": "radio-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 660,
+        "y": 1932
+      },
+      "file": "gamefeel-before-radio-night.png",
+      "sha256": "da38f126870a29a4e26db4d42ad700d16bc68efea36b28476f49e36b3b4a19e9"
+    },
+    {
+      "phase": "before",
+      "name": "crescent-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3241,
+        "y": 572
+      },
+      "file": "gamefeel-before-crescent-day.png",
+      "sha256": "11da2e260cf1b17c86acd787ae3bffa25e2336ec3e3708b23398c62755037224"
+    },
+    {
+      "phase": "before",
+      "name": "clinic-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3601,
+        "y": 3972
+      },
+      "file": "gamefeel-before-clinic-day.png",
+      "sha256": "83e8510ef79734c6dc1b790d7c6d7b10b2b6bbfa1b5f6242c78d9d9e6e7c6836"
+    },
+    {
+      "phase": "before",
+      "name": "clinic-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3601,
+        "y": 3972
+      },
+      "file": "gamefeel-before-clinic-night.png",
+      "sha256": "500896451a3556759849b09b40946526f6a579192153b2b1da4022be270441ad"
+    },
+    {
+      "phase": "before",
+      "name": "diner-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 5401,
+        "y": 1932
+      },
+      "file": "gamefeel-before-diner-day.png",
+      "sha256": "f8ad11d7812e1e255a3faf5e38d87a0208c72fd589592630061fd530c34ed4a8"
+    },
+    {
+      "phase": "before",
+      "name": "diner-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 5401,
+        "y": 1932
+      },
+      "file": "gamefeel-before-diner-night.png",
+      "sha256": "db31b11e29a308d3d7a6efd507aa169998f4365e67f0c58f02e47fa3470fcb5c"
+    },
+    {
+      "phase": "before",
+      "name": "industrial-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 5740,
+        "y": 2612
+      },
+      "file": "gamefeel-before-industrial-day.png",
+      "sha256": "2fa07c2515c4b17ac6dc45ff234ea6285596eb672d4a14eeb2567867ff49f405"
+    },
+    {
+      "phase": "before",
+      "name": "industrial-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 5740,
+        "y": 2612
+      },
+      "file": "gamefeel-before-industrial-night.png",
+      "sha256": "750767a96df04cadf90da81179e974e30546cab4a26310079d483e35c62c4612"
+    },
+    {
+      "phase": "before",
+      "name": "intersection",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 1920,
+        "y": 955
+      },
+      "file": "gamefeel-before-intersection.png",
+      "sha256": "62f755705c1f61a0dde309532f10ccfb2d3d2c966edae29e39607d4cb9332f7f"
+    },
+    {
+      "phase": "before",
+      "name": "residential-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 1380,
+        "y": 2485
+      },
+      "file": "gamefeel-before-residential-night.png",
+      "sha256": "966e53f2de2471756be4298483708bd429d4fa5ab5638ba6f0637730ab320a17"
+    }
+  ],
+  "probes": {
+    "before": [
+      {
+        "name": "hotel",
+        "file": "gamefeel-before-hotel-interior.png",
+        "sha256": "934ef0694ea686482a221b3732188b585d59e9954571afe53a44f479bdd7a040"
+      },
+      {
+        "name": "diner",
+        "file": "gamefeel-before-diner-interior.png",
+        "sha256": "4b763c048ebb02c836456fa9c4a9045e44cba1b4ab357db998a3e3440a68d08b"
+      },
+      {
+        "name": "clinic",
+        "file": "gamefeel-before-clinic-interior.png",
+        "sha256": "d3527eb4ce568f3d54115c13e88f51dd8d6efbfb85de8f77550ae969569c5362"
+      },
+      {
+        "name": "armory",
+        "file": "gamefeel-before-armory-interior.png",
+        "sha256": "b148ddf3b2f2fb28e54bd42a95f7528ff880b2a5654d75141bf1b62329344149"
+      },
+      {
+        "name": "sprites",
+        "file": "gamefeel-before-sprites.png",
+        "sha256": "991d68121b768d6f94c92a855135dd486dcf8df6fdccf71cca20ca76aa92e61c"
+      },
+      {
+        "name": "fullmap",
+        "file": "gamefeel-before-fullmap.png",
+        "sha256": "4cf757b4c6b500a8f1447756cafe3f1a93432d979711c4abd6cd8ad9ae422cc7"
+      }
+    ]
+  },
+  "ui": [],
+  "scope": "Actual archived0.6.5 baseline/current Chromium comparisons with fixed800x450 camera/time/weather and production terrain cache. Static art excludes transient runtimefeedback; gameplay modules are tested functionally elsewhere. OriginalPNG/map/coreprofile/input/save/missioninvariants and fiveactualHUDlayouts guarded. Not physical-device or difficulty certification."
+}

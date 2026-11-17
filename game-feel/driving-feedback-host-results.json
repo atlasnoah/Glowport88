@@ -1,0 +1,38 @@
+{
+  "time": "2026-11-17T20:00:42.046Z",
+  "passed": [
+    "real W input drives the player car and feeds live model/load/gear audio through the host",
+    "real Space braking produces transient tire marks, brake-light state and a tire sound",
+    "real reverse input adds white reverse lights and reverse engine state without damaging or tuning the car",
+    "leaving the vehicle releases its engine and old tire marks expire through actual world updates",
+    "host pause cleans up all audio with no browser or asset errors"
+  ],
+  "errors": [],
+  "forward": {
+    "speed": 263.78177614581125,
+    "engine": {
+      "gear": "5",
+      "rpm": 6200,
+      "frequency": 113.66666666666667,
+      "load": 1,
+      "modelId": "sedan",
+      "boost": false
+    }
+  },
+  "braking": {
+    "speed": 172.00814276405916,
+    "marks": 2
+  },
+  "reverse": {
+    "speed": -98,
+    "engine": {
+      "gear": "R",
+      "rpm": 5962,
+      "frequency": 109.31184834123223,
+      "load": 1,
+      "modelId": "sedan",
+      "boost": false
+    }
+  },
+  "scope": "Actual integrated phone-layout Chromium host, native keyboard driving/braking/reverse input, deterministic RAF steps, production audio and draw hooks. QA chooses a clear road and removes nearby ambient traffic for measurement; no player motion/speed override during input measurements, no physical-device or listening claim."
+}

@@ -1,0 +1,89 @@
+{
+  "time": "2026-11-17T20:00:37.894Z",
+  "passed": [
+    "ordinary motion creates no skid marks and presentation never mutates a saved vehicle",
+    "fast braking leaves bounded transient paired tire marks which fade on foot",
+    "strong steering makes marks while gentle low-speed turns do not",
+    "brake and reverse lights use small overlays without replacing the sprite",
+    "pause freezes effects, interior travel adds no trails, and teleports cannot join tire lines",
+    "real phone gesture unlocks original Web Audio while silence is safe before activation",
+    "running engine responds to speed, gear changes, throttle load, model, boost and reverse",
+    "high-speed steering schedules the same bounded tire cue as hard braking",
+    "distinct synthesized weapon, confirmed-hit and radio cues are available without external assets",
+    "layered engines and rapid combat/weather cues remain under 24 voices and pause releases all nodes",
+    "mute, zero effects, suspension and gesture resume keep engine and new effects safe"
+  ],
+  "engineSamples": [
+    {
+      "gear": "N",
+      "rpm": 850,
+      "frequency": 25,
+      "load": 0,
+      "modelId": "sedan",
+      "boost": false
+    },
+    {
+      "gear": "1",
+      "rpm": 4423,
+      "frequency": 81.09722222222223,
+      "load": 1,
+      "modelId": "sedan",
+      "boost": false
+    },
+    {
+      "gear": "2",
+      "rpm": 5405,
+      "frequency": 99.08333333333334,
+      "load": 1,
+      "modelId": "sedan",
+      "boost": false
+    },
+    {
+      "gear": "3",
+      "rpm": 3283,
+      "frequency": 60.194444444444464,
+      "load": 1,
+      "modelId": "sedan",
+      "boost": false
+    },
+    {
+      "gear": "3",
+      "rpm": 2683,
+      "frequency": 49.194444444444464,
+      "load": 0,
+      "modelId": "sedan",
+      "boost": false
+    },
+    {
+      "gear": "3",
+      "rpm": 3283,
+      "frequency": 49.250000000000014,
+      "load": 1,
+      "modelId": "van",
+      "boost": false
+    },
+    {
+      "gear": "3",
+      "rpm": 3633,
+      "frequency": 75.69444444444446,
+      "load": 1,
+      "modelId": "rare",
+      "boost": true
+    },
+    {
+      "gear": "R",
+      "rpm": 5458,
+      "frequency": 100.05555555555557,
+      "load": 1,
+      "modelId": "sedan",
+      "boost": false
+    }
+  ],
+  "voicePressure": {
+    "voices": 22,
+    "maxVoices": 24,
+    "limit": 24
+  },
+  "errors": [],
+  "scope": "Pure transient presentation invariants plus real Chromium mobile-gesture Web Audio scheduling and Canvas overlays. No handling, health, collision, city or sprite mutations; not physical speakers or subjective listening verification."
+}

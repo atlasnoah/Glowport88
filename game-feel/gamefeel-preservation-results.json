@@ -1,0 +1,2741 @@
+{
+  "time": "2026-11-17T20:01:19.467Z",
+  "baselineCommit": "01887e7",
+  "checks": [
+    "Exact approved PNGs, complete city/art/lighting, base player/AI profiles, mission catalogue, input, saves and unrelated styles",
+    "Actual forward drive/brake produces bounded expiring tire marks and brake lights; one real pistol projectile produces one confirmed hit at original damage/ammo",
+    "All808 original building footprints/doors,35 roads,12landmarks,world details and boundaries remain exact",
+    "All15 matched city/day/night/rain views, four interiors, actor/vehicle sprites and fullmap remain pixel-identical",
+    "All92 mission definitions/stages/rewards/choices, original four radio stations, player/AI profiles and save schema remain intact",
+    "Five actual desktop/phone layouts retain larger minimap, HUD corners, prompt/ACTIONS and reachable map/phone controls"
+  ],
+  "errors": [],
+  "sources": {
+    "immutable": {
+      "art.js": "daf7b5cc5d43089c884aad967c717d1c4feb4d2beaf69d18c1a8627fa9eec79c",
+      "atlas.js": "5b46e6c9ec30c34bc34140be368430126bea8380f0a71346db0927c9ddc2da6d",
+      "restored-city.js": "7cf76a0b2da393269eb712f3ba295eaa83bdde5e153dfa95a709d43789e4abc5",
+      "residential-infill.js": "b6b272a80e3d9412f564edeef4ffaf5173a1de1aa31ce2d85a51a36af5a0fcd7",
+      "neighborhood-details.js": "b83827b566a7a1ab69b1a12102bb8141de1b4030ef8c4db0979f04f27352b6af",
+      "ambient-traffic.js": "49255b57c4a2d0033bb866df8439d3a858a90ac3f186c12ae27030f05564ae46",
+      "ambient-pedestrians.js": "997c621c819f25aa699fa506c7a2fd2cce9bd1253687f3b7d11a1ff23d64cd36",
+      "terrain-cache.js": "d2c952c4a6bec8da56f95350f1dcdb81817bb37bbf6ef86f6a3dba12631595bf",
+      "missions.js": "35fb76d9ba5a4fb5e48bc5aea333e0970622aad80d60d5abe019325400a89da7",
+      "activities.js": "9208a7499dad65571f530fad9e1c5ce1df949145d2351b097a73497786a47af8",
+      "mission-engine.js": "002f6575d4d5a804bb6f5bc153dc8f6aef60d92c79adb82053da92b17d0f9800",
+      "campaign.js": "8c81e3cd751fbb611fdd0dca444fe6edaa6f4da82f00562326a92ff0079c97c5",
+      "side-content.js": "fe380abbd3ef76c3d6717f42279b6d139273eff96454fa6f45d5e6571630fec8",
+      "vehicle-system.js": "12e83d749dbe6de804abab0aba08ae0128e9ca0f67f40bb20278dec8305fa138",
+      "progression.js": "22808e2a2c077846fa59a9d8ceed77444f7f071182692bd9e92efac4a7c9d6c2",
+      "interactions.js": "b2f73d7c329765f0c2ed5783cb6fdc54b51b5fbf23d67978b910183da1a02f30",
+      "save-system.js": "0951b0c25bc44a6f8dcf6c25049cafe09b1762a2aed919d3e35972f1aa4f70b9",
+      "encounter-system.js": "6a15f8bc062aa20f3a816b13bec85d1129540838269bb6d44034e7213712077a",
+      "phone.js": "47fe81bf0a59e90b121aae7e4814b8c253f184028130ef7a72f1ebc5ce429573",
+      "police-system.js": "42f8727a704a259ce368cdc3fb3bb9ad4686a57f55b522e4c22f31a01dfcc0a5",
+      "touch-controls.js": "965e523c51718f18a2aa8495fe92464e7aa23d7302fef9f22229766aff44da36",
+      "ui.css": "a6da9361b9bf334100fed0660336b767fe8ddc371f74cd15a7d0e833f03280b7",
+      "mobile.css": "c003f721c960bfe93689be302d677b02b0ef0b87220fd2b2ad12a0ff84da3a92",
+      "buildings-illustrated.png": "4e0aaad31c743d1bd779f2f194557dbba922316959f9232eee983cd732cc438e",
+      "characters.png": "0e3ea49095f5d519601cbd587862454eadbe4fbcba7f75c1c167fe33d5dabd8b",
+      "city-atlas.png": "964bbaf24f1d374e5992ee60756c45223a27b9e1e720c0dafefaaa4a0ac7dd4f",
+      "furniture-illustrated.png": "00ca5377c351f078ad3d4d39ac8c3687b1d9734c5b8e85671124d33bb6960b49",
+      "neighborhoods-illustrated.png": "de124d9ae06e1e88faffc733ca8215aa5f7c0790346699ae09ae517576d23166",
+      "portraits.png": "4506507edf4b0be8e70901065f3aa51ffa66ec28d05cc367cf0d35e4cd39935e",
+      "residential-illustrated.png": "15fe7966f78c070dee7506086006cfd27eb72bd5a76c7a1f68615170ce43aae5",
+      "vehicles.png": "1c6e15cf1c96ba2de9d181a4acfbd3687de4cc517099f1f1e4593183dc58c3ef"
+    },
+    "authorizedChangedModules": [
+      "city-audio.js",
+      "gameplay.js",
+      "hud.js"
+    ],
+    "baselineHudSHA256": "a486a40e0d210b886b03ea026a266595ff578e2e2064cc7aacaff766fd60e195",
+    "currentHudSHA256": "5e0f7a1cc814afbc7be9a947c96feef621cdc03849a8d2e9ec88fedc257b1734"
+  },
+  "geometryHashes": {
+    "before": {
+      "MW": "3c5d8ca315f8c36d4cd4beecbc55b34c92a2d6eb1df730908df6f23dd2aa08f7",
+      "MH": "68bc5ec90a2d9464eba42cbe67ccf5a442629e039a2e7d21942c0ea7420b4576",
+      "STREET": "3ada92f28b4ceda38562ebf047c6ff05400d4c572352a1142eedfef67d21e662",
+      "roadXs": "5d17df04bb08568cd85567c282bd567a5a189d97031c224fe408c4dff8ba1b2b",
+      "roadYs": "2a65137060173cb6c3d8e22afb8bb6df3faa8c37dc40084e7d8b7ff19f584dec",
+      "roads": "21a27c4f11328de1fa0a803a725cbe573b1c5f7e181909650628e52b0a6e3765",
+      "segments": "d1d0b7bbc07c41c405ae3c2ad81fad509d4da01db824e1b93644024117eb2003",
+      "lands": "b8cb927d2f3fe502035e41e03d22015f9584073f5d2d23b02c764e03c56c6653",
+      "buildings": "306b8753d7e3d015671d53e0bb72349bd6f77ed4fb0ccbae3cb5ae96b6342bab",
+      "trees": "1b8ecd4eb2773a7da26b2470d348bc02a8f4e358a9796bb563ba34aad049b450",
+      "debris": "9eb5dbe5a087b8d2f331818fbde1e9f720d8634b24cb06f549e24787990918c2",
+      "streetlights": "b377d82bf83e5a863802b32f2d2349cb73d14299e4f58c6dfa532f71fdb3d40c",
+      "landmarks": "53f679acbf0e01fc96de863971eb0e9c7640e07239f816ced85cfa790e0ef007"
+    },
+    "after": {
+      "MW": "3c5d8ca315f8c36d4cd4beecbc55b34c92a2d6eb1df730908df6f23dd2aa08f7",
+      "MH": "68bc5ec90a2d9464eba42cbe67ccf5a442629e039a2e7d21942c0ea7420b4576",
+      "STREET": "3ada92f28b4ceda38562ebf047c6ff05400d4c572352a1142eedfef67d21e662",
+      "roadXs": "5d17df04bb08568cd85567c282bd567a5a189d97031c224fe408c4dff8ba1b2b",
+      "roadYs": "2a65137060173cb6c3d8e22afb8bb6df3faa8c37dc40084e7d8b7ff19f584dec",
+      "roads": "21a27c4f11328de1fa0a803a725cbe573b1c5f7e181909650628e52b0a6e3765",
+      "segments": "d1d0b7bbc07c41c405ae3c2ad81fad509d4da01db824e1b93644024117eb2003",
+      "lands": "b8cb927d2f3fe502035e41e03d22015f9584073f5d2d23b02c764e03c56c6653",
+      "buildings": "306b8753d7e3d015671d53e0bb72349bd6f77ed4fb0ccbae3cb5ae96b6342bab",
+      "trees": "1b8ecd4eb2773a7da26b2470d348bc02a8f4e358a9796bb563ba34aad049b450",
+      "debris": "9eb5dbe5a087b8d2f331818fbde1e9f720d8634b24cb06f549e24787990918c2",
+      "streetlights": "b377d82bf83e5a863802b32f2d2349cb73d14299e4f58c6dfa532f71fdb3d40c",
+      "landmarks": "53f679acbf0e01fc96de863971eb0e9c7640e07239f816ced85cfa790e0ef007"
+    }
+  },
+  "scenes": [
+    {
+      "phase": "before",
+      "name": "downtown-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3230,
+        "y": 2272
+      },
+      "file": "gamefeel-before-downtown-day.png",
+      "sha256": "53c2f3ea59e5ac6687d19bd22b6f3d1b4e5117a03556c11fdb7daa65e6a53a10"
+    },
+    {
+      "phase": "before",
+      "name": "downtown-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3230,
+        "y": 2272
+      },
+      "file": "gamefeel-before-downtown-night.png",
+      "sha256": "eae66134df9b2e4fb0659d0a55ec15147d599049e49d960c51bae7f11e980ffe"
+    },
+    {
+      "phase": "before",
+      "name": "downtown-rain",
+      "hour": 23,
+      "weather": "RAIN",
+      "camera": {
+        "x": 3230,
+        "y": 2272
+      },
+      "file": "gamefeel-before-downtown-rain.png",
+      "sha256": "f102808e5b49a26b677774293b79899bcd91cef9be6af772c81d62b29456982c"
+    },
+    {
+      "phase": "before",
+      "name": "club-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3961,
+        "y": 2952
+      },
+      "file": "gamefeel-before-club-night.png",
+      "sha256": "a001bcd8f22ba6dafdc4b65d18d87d8d2cfe7f268d2c2810ce38327191b8c40a"
+    },
+    {
+      "phase": "before",
+      "name": "radio-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 660,
+        "y": 1932
+      },
+      "file": "gamefeel-before-radio-day.png",
+      "sha256": "8f0110a81a646f30b16827c38a0b4407a35a86dee0d53b35183301541cfffa26"
+    },
+    {
+      "phase": "before",
+      "name": "radio-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 660,
+        "y": 1932
+      },
+      "file": "gamefeel-before-radio-night.png",
+      "sha256": "da38f126870a29a4e26db4d42ad700d16bc68efea36b28476f49e36b3b4a19e9"
+    },
+    {
+      "phase": "before",
+      "name": "crescent-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3241,
+        "y": 572
+      },
+      "file": "gamefeel-before-crescent-day.png",
+      "sha256": "11da2e260cf1b17c86acd787ae3bffa25e2336ec3e3708b23398c62755037224"
+    },
+    {
+      "phase": "before",
+      "name": "clinic-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3601,
+        "y": 3972
+      },
+      "file": "gamefeel-before-clinic-day.png",
+      "sha256": "83e8510ef79734c6dc1b790d7c6d7b10b2b6bbfa1b5f6242c78d9d9e6e7c6836"
+    },
+    {
+      "phase": "before",
+      "name": "clinic-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3601,
+        "y": 3972
+      },
+      "file": "gamefeel-before-clinic-night.png",
+      "sha256": "500896451a3556759849b09b40946526f6a579192153b2b1da4022be270441ad"
+    },
+    {
+      "phase": "before",
+      "name": "diner-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 5401,
+        "y": 1932
+      },
+      "file": "gamefeel-before-diner-day.png",
+      "sha256": "f8ad11d7812e1e255a3faf5e38d87a0208c72fd589592630061fd530c34ed4a8"
+    },
+    {
+      "phase": "before",
+      "name": "diner-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 5401,
+        "y": 1932
+      },
+      "file": "gamefeel-before-diner-night.png",
+      "sha256": "db31b11e29a308d3d7a6efd507aa169998f4365e67f0c58f02e47fa3470fcb5c"
+    },
+    {
+      "phase": "before",
+      "name": "industrial-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 5740,
+        "y": 2612
+      },
+      "file": "gamefeel-before-industrial-day.png",
+      "sha256": "2fa07c2515c4b17ac6dc45ff234ea6285596eb672d4a14eeb2567867ff49f405"
+    },
+    {
+      "phase": "before",
+      "name": "industrial-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 5740,
+        "y": 2612
+      },
+      "file": "gamefeel-before-industrial-night.png",
+      "sha256": "750767a96df04cadf90da81179e974e30546cab4a26310079d483e35c62c4612"
+    },
+    {
+      "phase": "before",
+      "name": "intersection",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 1920,
+        "y": 955
+      },
+      "file": "gamefeel-before-intersection.png",
+      "sha256": "62f755705c1f61a0dde309532f10ccfb2d3d2c966edae29e39607d4cb9332f7f"
+    },
+    {
+      "phase": "before",
+      "name": "residential-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 1380,
+        "y": 2485
+      },
+      "file": "gamefeel-before-residential-night.png",
+      "sha256": "966e53f2de2471756be4298483708bd429d4fa5ab5638ba6f0637730ab320a17"
+    },
+    {
+      "phase": "after",
+      "name": "downtown-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3230,
+        "y": 2272
+      },
+      "file": "gamefeel-after-downtown-day.png",
+      "sha256": "53c2f3ea59e5ac6687d19bd22b6f3d1b4e5117a03556c11fdb7daa65e6a53a10"
+    },
+    {
+      "phase": "after",
+      "name": "downtown-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3230,
+        "y": 2272
+      },
+      "file": "gamefeel-after-downtown-night.png",
+      "sha256": "eae66134df9b2e4fb0659d0a55ec15147d599049e49d960c51bae7f11e980ffe"
+    },
+    {
+      "phase": "after",
+      "name": "downtown-rain",
+      "hour": 23,
+      "weather": "RAIN",
+      "camera": {
+        "x": 3230,
+        "y": 2272
+      },
+      "file": "gamefeel-after-downtown-rain.png",
+      "sha256": "f102808e5b49a26b677774293b79899bcd91cef9be6af772c81d62b29456982c"
+    },
+    {
+      "phase": "after",
+      "name": "club-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3961,
+        "y": 2952
+      },
+      "file": "gamefeel-after-club-night.png",
+      "sha256": "a001bcd8f22ba6dafdc4b65d18d87d8d2cfe7f268d2c2810ce38327191b8c40a"
+    },
+    {
+      "phase": "after",
+      "name": "radio-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 660,
+        "y": 1932
+      },
+      "file": "gamefeel-after-radio-day.png",
+      "sha256": "8f0110a81a646f30b16827c38a0b4407a35a86dee0d53b35183301541cfffa26"
+    },
+    {
+      "phase": "after",
+      "name": "radio-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 660,
+        "y": 1932
+      },
+      "file": "gamefeel-after-radio-night.png",
+      "sha256": "da38f126870a29a4e26db4d42ad700d16bc68efea36b28476f49e36b3b4a19e9"
+    },
+    {
+      "phase": "after",
+      "name": "crescent-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3241,
+        "y": 572
+      },
+      "file": "gamefeel-after-crescent-day.png",
+      "sha256": "11da2e260cf1b17c86acd787ae3bffa25e2336ec3e3708b23398c62755037224"
+    },
+    {
+      "phase": "after",
+      "name": "clinic-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3601,
+        "y": 3972
+      },
+      "file": "gamefeel-after-clinic-day.png",
+      "sha256": "83e8510ef79734c6dc1b790d7c6d7b10b2b6bbfa1b5f6242c78d9d9e6e7c6836"
+    },
+    {
+      "phase": "after",
+      "name": "clinic-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 3601,
+        "y": 3972
+      },
+      "file": "gamefeel-after-clinic-night.png",
+      "sha256": "500896451a3556759849b09b40946526f6a579192153b2b1da4022be270441ad"
+    },
+    {
+      "phase": "after",
+      "name": "diner-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 5401,
+        "y": 1932
+      },
+      "file": "gamefeel-after-diner-day.png",
+      "sha256": "f8ad11d7812e1e255a3faf5e38d87a0208c72fd589592630061fd530c34ed4a8"
+    },
+    {
+      "phase": "after",
+      "name": "diner-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 5401,
+        "y": 1932
+      },
+      "file": "gamefeel-after-diner-night.png",
+      "sha256": "db31b11e29a308d3d7a6efd507aa169998f4365e67f0c58f02e47fa3470fcb5c"
+    },
+    {
+      "phase": "after",
+      "name": "industrial-day",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 5740,
+        "y": 2612
+      },
+      "file": "gamefeel-after-industrial-day.png",
+      "sha256": "2fa07c2515c4b17ac6dc45ff234ea6285596eb672d4a14eeb2567867ff49f405"
+    },
+    {
+      "phase": "after",
+      "name": "industrial-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 5740,
+        "y": 2612
+      },
+      "file": "gamefeel-after-industrial-night.png",
+      "sha256": "750767a96df04cadf90da81179e974e30546cab4a26310079d483e35c62c4612"
+    },
+    {
+      "phase": "after",
+      "name": "intersection",
+      "hour": 12,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 1920,
+        "y": 955
+      },
+      "file": "gamefeel-after-intersection.png",
+      "sha256": "62f755705c1f61a0dde309532f10ccfb2d3d2c966edae29e39607d4cb9332f7f"
+    },
+    {
+      "phase": "after",
+      "name": "residential-night",
+      "hour": 23,
+      "weather": "CLEAR",
+      "camera": {
+        "x": 1380,
+        "y": 2485
+      },
+      "file": "gamefeel-after-residential-night.png",
+      "sha256": "966e53f2de2471756be4298483708bd429d4fa5ab5638ba6f0637730ab320a17"
+    }
+  ],
+  "probes": {
+    "before": [
+      {
+        "name": "hotel",
+        "file": "gamefeel-before-hotel-interior.png",
+        "sha256": "934ef0694ea686482a221b3732188b585d59e9954571afe53a44f479bdd7a040"
+      },
+      {
+        "name": "diner",
+        "file": "gamefeel-before-diner-interior.png",
+        "sha256": "4b763c048ebb02c836456fa9c4a9045e44cba1b4ab357db998a3e3440a68d08b"
+      },
+      {
+        "name": "clinic",
+        "file": "gamefeel-before-clinic-interior.png",
+        "sha256": "d3527eb4ce568f3d54115c13e88f51dd8d6efbfb85de8f77550ae969569c5362"
+      },
+      {
+        "name": "armory",
+        "file": "gamefeel-before-armory-interior.png",
+        "sha256": "b148ddf3b2f2fb28e54bd42a95f7528ff880b2a5654d75141bf1b62329344149"
+      },
+      {
+        "name": "sprites",
+        "file": "gamefeel-before-sprites.png",
+        "sha256": "991d68121b768d6f94c92a855135dd486dcf8df6fdccf71cca20ca76aa92e61c"
+      },
+      {
+        "name": "fullmap",
+        "file": "gamefeel-before-fullmap.png",
+        "sha256": "4cf757b4c6b500a8f1447756cafe3f1a93432d979711c4abd6cd8ad9ae422cc7"
+      }
+    ],
+    "after": [
+      {
+        "name": "hotel",
+        "file": "gamefeel-after-hotel-interior.png",
+        "sha256": "934ef0694ea686482a221b3732188b585d59e9954571afe53a44f479bdd7a040"
+      },
+      {
+        "name": "diner",
+        "file": "gamefeel-after-diner-interior.png",
+        "sha256": "4b763c048ebb02c836456fa9c4a9045e44cba1b4ab357db998a3e3440a68d08b"
+      },
+      {
+        "name": "clinic",
+        "file": "gamefeel-after-clinic-interior.png",
+        "sha256": "d3527eb4ce568f3d54115c13e88f51dd8d6efbfb85de8f77550ae969569c5362"
+      },
+      {
+        "name": "armory",
+        "file": "gamefeel-after-armory-interior.png",
+        "sha256": "b148ddf3b2f2fb28e54bd42a95f7528ff880b2a5654d75141bf1b62329344149"
+      },
+      {
+        "name": "sprites",
+        "file": "gamefeel-after-sprites.png",
+        "sha256": "991d68121b768d6f94c92a855135dd486dcf8df6fdccf71cca20ca76aa92e61c"
+      },
+      {
+        "name": "fullmap",
+        "file": "gamefeel-after-fullmap.png",
+        "sha256": "4cf757b4c6b500a8f1447756cafe3f1a93432d979711c4abd6cd8ad9ae422cc7"
+      }
+    ]
+  },
+  "ui": [
+    {
+      "device": "desktop",
+      "rects": {
+        "game": {
+          "left": 25,
+          "top": 123.71875,
+          "right": 1415,
+          "bottom": 905.59375,
+          "width": 1390,
+          "height": 781.875,
+          "visible": true
+        },
+        "hud-map": {
+          "left": 44.875,
+          "top": 661.671875,
+          "right": 280.875,
+          "bottom": 885.71875,
+          "width": 236,
+          "height": 224.046875,
+          "visible": true
+        },
+        "hud-weapon": {
+          "left": 1235.125,
+          "top": 143.59375,
+          "right": 1395.125,
+          "bottom": 253.28125,
+          "width": 160,
+          "height": 109.6875,
+          "visible": true
+        },
+        "hud-speed": {
+          "left": 1316.765625,
+          "top": 875.828125,
+          "right": 1395.125,
+          "bottom": 885.71875,
+          "width": 78.359375,
+          "height": 9.890625,
+          "visible": true
+        },
+        "healthBar": {
+          "left": 46.875,
+          "top": 861.71875,
+          "right": 232.46875,
+          "bottom": 864.71875,
+          "width": 185.59375,
+          "height": 3,
+          "visible": true
+        },
+        "objective": {
+          "left": 60.875,
+          "top": 190.984375,
+          "right": 381.875,
+          "bottom": 223.984375,
+          "width": 321,
+          "height": 33,
+          "visible": true
+        },
+        "prompt": {
+          "left": 595.078125,
+          "top": 864.59375,
+          "right": 844.921875,
+          "bottom": 893.59375,
+          "width": 249.84375,
+          "height": 29,
+          "visible": true
+        },
+        "interactionMore": {
+          "left": 682.984375,
+          "top": 826.59375,
+          "right": 757,
+          "bottom": 858.59375,
+          "width": 74.015625,
+          "height": 32,
+          "visible": true
+        },
+        "phoneBtn": {
+          "left": 1177.34375,
+          "top": 48.5625,
+          "right": 1264.765625,
+          "bottom": 81.5625,
+          "width": 87.421875,
+          "height": 33,
+          "visible": true
+        },
+        "mapBtn": {
+          "left": 876.3125,
+          "top": 48.5625,
+          "right": 970.859375,
+          "bottom": 81.5625,
+          "width": 94.546875,
+          "height": 33,
+          "visible": true
+        },
+        "hud-pursuit": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        }
+      },
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 1440,
+        "bottom": 1000,
+        "width": 1440,
+        "height": 1000
+      },
+      "scrollWidth": 1440,
+      "logical": {
+        "width": 800,
+        "height": 450
+      },
+      "mapLogical": {
+        "width": 220,
+        "height": 150
+      },
+      "pursuitStates": {
+        "snapshots": [
+          {
+            "input": {
+              "mode": "pursuit",
+              "wanted": 2,
+              "escapes": 0,
+              "clock": 1,
+              "searchRemaining": 30
+            },
+            "hidden": false,
+            "mode": "spotted",
+            "label": "SPOTTED",
+            "progress": 0,
+            "rects": {
+              "game": {
+                "left": 25,
+                "top": 123.71875,
+                "right": 1415,
+                "bottom": 905.59375,
+                "width": 1390,
+                "height": 781.875
+              },
+              "hud-map": {
+                "left": 44.875,
+                "top": 661.671875,
+                "right": 280.875,
+                "bottom": 885.71875,
+                "width": 236,
+                "height": 224.046875
+              },
+              "hud-weapon": {
+                "left": 1235.125,
+                "top": 143.59375,
+                "right": 1395.125,
+                "bottom": 281.28125,
+                "width": 160,
+                "height": 137.6875
+              },
+              "hud-speed": {
+                "left": 1316.765625,
+                "top": 875.828125,
+                "right": 1395.125,
+                "bottom": 885.71875,
+                "width": 78.359375,
+                "height": 9.890625
+              },
+              "hud-pursuit": {
+                "left": 1235.125,
+                "top": 192.59375,
+                "right": 1395.125,
+                "bottom": 216.59375,
+                "width": 160,
+                "height": 24
+              },
+              "prompt": {
+                "left": 595.078125,
+                "top": 864.59375,
+                "right": 844.921875,
+                "bottom": 893.59375,
+                "width": 249.84375,
+                "height": 29
+              },
+              "interactionMore": {
+                "left": 682.984375,
+                "top": 826.59375,
+                "right": 757,
+                "bottom": 858.59375,
+                "width": 74.015625,
+                "height": 32
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "search",
+              "wanted": 2,
+              "escapes": 0,
+              "clock": 2,
+              "searchRemaining": 30
+            },
+            "hidden": false,
+            "mode": "searching",
+            "label": "SEARCHING · 30s",
+            "progress": 0,
+            "rects": {
+              "game": {
+                "left": 25,
+                "top": 123.71875,
+                "right": 1415,
+                "bottom": 905.59375,
+                "width": 1390,
+                "height": 781.875
+              },
+              "hud-map": {
+                "left": 44.875,
+                "top": 661.671875,
+                "right": 280.875,
+                "bottom": 885.71875,
+                "width": 236,
+                "height": 224.046875
+              },
+              "hud-weapon": {
+                "left": 1235.125,
+                "top": 143.59375,
+                "right": 1395.125,
+                "bottom": 281.28125,
+                "width": 160,
+                "height": 137.6875
+              },
+              "hud-speed": {
+                "left": 1316.765625,
+                "top": 875.828125,
+                "right": 1395.125,
+                "bottom": 885.71875,
+                "width": 78.359375,
+                "height": 9.890625
+              },
+              "hud-pursuit": {
+                "left": 1235.125,
+                "top": 192.59375,
+                "right": 1395.125,
+                "bottom": 216.59375,
+                "width": 160,
+                "height": 24
+              },
+              "prompt": {
+                "left": 595.078125,
+                "top": 864.59375,
+                "right": 844.921875,
+                "bottom": 893.59375,
+                "width": 249.84375,
+                "height": 29
+              },
+              "interactionMore": {
+                "left": 682.984375,
+                "top": 826.59375,
+                "right": 757,
+                "bottom": 858.59375,
+                "width": 74.015625,
+                "height": 32
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "search",
+              "wanted": 1,
+              "escapes": 0,
+              "clock": 17,
+              "searchRemaining": 15
+            },
+            "hidden": false,
+            "mode": "searching",
+            "label": "SEARCHING · 15s",
+            "progress": 50,
+            "rects": {
+              "game": {
+                "left": 25,
+                "top": 123.71875,
+                "right": 1415,
+                "bottom": 905.59375,
+                "width": 1390,
+                "height": 781.875
+              },
+              "hud-map": {
+                "left": 44.875,
+                "top": 661.671875,
+                "right": 280.875,
+                "bottom": 885.71875,
+                "width": 236,
+                "height": 224.046875
+              },
+              "hud-weapon": {
+                "left": 1235.125,
+                "top": 143.59375,
+                "right": 1395.125,
+                "bottom": 281.28125,
+                "width": 160,
+                "height": 137.6875
+              },
+              "hud-speed": {
+                "left": 1316.765625,
+                "top": 875.828125,
+                "right": 1395.125,
+                "bottom": 885.71875,
+                "width": 78.359375,
+                "height": 9.890625
+              },
+              "hud-pursuit": {
+                "left": 1235.125,
+                "top": 192.59375,
+                "right": 1395.125,
+                "bottom": 216.59375,
+                "width": 160,
+                "height": 24
+              },
+              "prompt": {
+                "left": 595.078125,
+                "top": 864.59375,
+                "right": 844.921875,
+                "bottom": 893.59375,
+                "width": 249.84375,
+                "height": 29
+              },
+              "interactionMore": {
+                "left": 682.984375,
+                "top": 826.59375,
+                "right": 757,
+                "bottom": 858.59375,
+                "width": 74.015625,
+                "height": 32
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "clear",
+              "wanted": 0,
+              "escapes": 1,
+              "clock": 32,
+              "searchRemaining": 0
+            },
+            "hidden": false,
+            "mode": "escaped",
+            "label": "ESCAPED",
+            "progress": 100,
+            "rects": {
+              "game": {
+                "left": 25,
+                "top": 123.71875,
+                "right": 1415,
+                "bottom": 905.59375,
+                "width": 1390,
+                "height": 781.875
+              },
+              "hud-map": {
+                "left": 44.875,
+                "top": 661.671875,
+                "right": 280.875,
+                "bottom": 885.71875,
+                "width": 236,
+                "height": 224.046875
+              },
+              "hud-weapon": {
+                "left": 1235.125,
+                "top": 143.59375,
+                "right": 1395.125,
+                "bottom": 281.28125,
+                "width": 160,
+                "height": 137.6875
+              },
+              "hud-speed": {
+                "left": 1316.765625,
+                "top": 875.828125,
+                "right": 1395.125,
+                "bottom": 885.71875,
+                "width": 78.359375,
+                "height": 9.890625
+              },
+              "hud-pursuit": {
+                "left": 1235.125,
+                "top": 192.59375,
+                "right": 1395.125,
+                "bottom": 216.59375,
+                "width": 160,
+                "height": 24
+              },
+              "prompt": {
+                "left": 595.078125,
+                "top": 864.59375,
+                "right": 844.921875,
+                "bottom": 893.59375,
+                "width": 249.84375,
+                "height": 29
+              },
+              "interactionMore": {
+                "left": 682.984375,
+                "top": 826.59375,
+                "right": 757,
+                "bottom": 858.59375,
+                "width": 74.015625,
+                "height": 32
+              }
+            }
+          }
+        ],
+        "hiddenAfterEscape": true
+      },
+      "file": "gamefeel-hud-desktop.png"
+    },
+    {
+      "device": "phone",
+      "rects": {
+        "game": {
+          "left": 9,
+          "top": 97,
+          "right": 381,
+          "bottom": 306.25,
+          "width": 372,
+          "height": 209.25,
+          "visible": true
+        },
+        "hud-map": {
+          "left": 14,
+          "top": 185.140625,
+          "right": 122,
+          "bottom": 301.25,
+          "width": 108,
+          "height": 116.109375,
+          "visible": true
+        },
+        "hud-weapon": {
+          "left": 280,
+          "top": 102,
+          "right": 376,
+          "bottom": 176.09375,
+          "width": 96,
+          "height": 74.09375,
+          "visible": true
+        },
+        "hud-speed": {
+          "left": 321.828125,
+          "top": 294.0625,
+          "right": 376,
+          "bottom": 301.25,
+          "width": 54.171875,
+          "height": 7.1875,
+          "visible": true
+        },
+        "healthBar": {
+          "left": 16,
+          "top": 284.859375,
+          "right": 99.1875,
+          "bottom": 286.859375,
+          "width": 83.1875,
+          "height": 2,
+          "visible": true
+        },
+        "objective": {
+          "left": 20,
+          "top": 336.25,
+          "right": 373,
+          "bottom": 364.25,
+          "width": 353,
+          "height": 28,
+          "visible": true
+        },
+        "prompt": {
+          "left": 133,
+          "top": 269.46875,
+          "right": 257,
+          "bottom": 300.25,
+          "width": 124,
+          "height": 30.78125,
+          "visible": true
+        },
+        "interactionMore": {
+          "left": 160.984375,
+          "top": 221.46875,
+          "right": 229,
+          "bottom": 265.46875,
+          "width": 68.015625,
+          "height": 44,
+          "visible": true
+        },
+        "phoneBtn": {
+          "left": 197.5,
+          "top": 34,
+          "right": 255.65625,
+          "bottom": 78,
+          "width": 58.15625,
+          "height": 44,
+          "visible": true
+        },
+        "mapBtn": {
+          "left": 8,
+          "top": 34,
+          "right": 66.15625,
+          "bottom": 78,
+          "width": 58.15625,
+          "height": 44,
+          "visible": true
+        },
+        "movePad": {
+          "left": 8,
+          "top": 413.359375,
+          "right": 118.765625,
+          "bottom": 524.125,
+          "width": 110.765625,
+          "height": 110.765625,
+          "visible": true
+        },
+        "aimPad": {
+          "left": 271.21875,
+          "top": 413.359375,
+          "right": 382,
+          "bottom": 524.140625,
+          "width": 110.78125,
+          "height": 110.78125,
+          "visible": true
+        },
+        "touchE": {
+          "left": 125.765625,
+          "top": 373.25,
+          "right": 192.484375,
+          "bottom": 417.25,
+          "width": 66.71875,
+          "height": 44,
+          "visible": true
+        },
+        "hud-pursuit": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        }
+      },
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 390,
+        "bottom": 844,
+        "width": 390,
+        "height": 844
+      },
+      "scrollWidth": 390,
+      "logical": {
+        "width": 800,
+        "height": 450
+      },
+      "mapLogical": {
+        "width": 220,
+        "height": 150
+      },
+      "pursuitStates": {
+        "snapshots": [
+          {
+            "input": {
+              "mode": "pursuit",
+              "wanted": 2,
+              "escapes": 0,
+              "clock": 1,
+              "searchRemaining": 30
+            },
+            "hidden": false,
+            "mode": "spotted",
+            "label": "SPOTTED",
+            "progress": 0,
+            "rects": {
+              "game": {
+                "left": 9,
+                "top": 97,
+                "right": 381,
+                "bottom": 306.25,
+                "width": 372,
+                "height": 209.25
+              },
+              "hud-map": {
+                "left": 14,
+                "top": 185.140625,
+                "right": 122,
+                "bottom": 301.25,
+                "width": 108,
+                "height": 116.109375
+              },
+              "hud-weapon": {
+                "left": 280,
+                "top": 102,
+                "right": 376,
+                "bottom": 195.09375,
+                "width": 96,
+                "height": 93.09375
+              },
+              "hud-speed": {
+                "left": 321.828125,
+                "top": 294.0625,
+                "right": 376,
+                "bottom": 301.25,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 280,
+                "top": 134,
+                "right": 376,
+                "bottom": 151,
+                "width": 96,
+                "height": 17
+              },
+              "prompt": {
+                "left": 133,
+                "top": 269.46875,
+                "right": 257,
+                "bottom": 300.25,
+                "width": 124,
+                "height": 30.78125
+              },
+              "interactionMore": {
+                "left": 160.984375,
+                "top": 221.46875,
+                "right": 229,
+                "bottom": 265.46875,
+                "width": 68.015625,
+                "height": 44
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "search",
+              "wanted": 2,
+              "escapes": 0,
+              "clock": 2,
+              "searchRemaining": 30
+            },
+            "hidden": false,
+            "mode": "searching",
+            "label": "SEARCHING · 30s",
+            "progress": 0,
+            "rects": {
+              "game": {
+                "left": 9,
+                "top": 97,
+                "right": 381,
+                "bottom": 306.25,
+                "width": 372,
+                "height": 209.25
+              },
+              "hud-map": {
+                "left": 14,
+                "top": 185.140625,
+                "right": 122,
+                "bottom": 301.25,
+                "width": 108,
+                "height": 116.109375
+              },
+              "hud-weapon": {
+                "left": 280,
+                "top": 102,
+                "right": 376,
+                "bottom": 195.09375,
+                "width": 96,
+                "height": 93.09375
+              },
+              "hud-speed": {
+                "left": 321.828125,
+                "top": 294.0625,
+                "right": 376,
+                "bottom": 301.25,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 280,
+                "top": 134,
+                "right": 376,
+                "bottom": 151,
+                "width": 96,
+                "height": 17
+              },
+              "prompt": {
+                "left": 133,
+                "top": 269.46875,
+                "right": 257,
+                "bottom": 300.25,
+                "width": 124,
+                "height": 30.78125
+              },
+              "interactionMore": {
+                "left": 160.984375,
+                "top": 221.46875,
+                "right": 229,
+                "bottom": 265.46875,
+                "width": 68.015625,
+                "height": 44
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "search",
+              "wanted": 1,
+              "escapes": 0,
+              "clock": 17,
+              "searchRemaining": 15
+            },
+            "hidden": false,
+            "mode": "searching",
+            "label": "SEARCHING · 15s",
+            "progress": 50,
+            "rects": {
+              "game": {
+                "left": 9,
+                "top": 97,
+                "right": 381,
+                "bottom": 306.25,
+                "width": 372,
+                "height": 209.25
+              },
+              "hud-map": {
+                "left": 14,
+                "top": 185.140625,
+                "right": 122,
+                "bottom": 301.25,
+                "width": 108,
+                "height": 116.109375
+              },
+              "hud-weapon": {
+                "left": 280,
+                "top": 102,
+                "right": 376,
+                "bottom": 195.09375,
+                "width": 96,
+                "height": 93.09375
+              },
+              "hud-speed": {
+                "left": 321.828125,
+                "top": 294.0625,
+                "right": 376,
+                "bottom": 301.25,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 280,
+                "top": 134,
+                "right": 376,
+                "bottom": 151,
+                "width": 96,
+                "height": 17
+              },
+              "prompt": {
+                "left": 133,
+                "top": 269.46875,
+                "right": 257,
+                "bottom": 300.25,
+                "width": 124,
+                "height": 30.78125
+              },
+              "interactionMore": {
+                "left": 160.984375,
+                "top": 221.46875,
+                "right": 229,
+                "bottom": 265.46875,
+                "width": 68.015625,
+                "height": 44
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "clear",
+              "wanted": 0,
+              "escapes": 1,
+              "clock": 32,
+              "searchRemaining": 0
+            },
+            "hidden": false,
+            "mode": "escaped",
+            "label": "ESCAPED",
+            "progress": 100,
+            "rects": {
+              "game": {
+                "left": 9,
+                "top": 97,
+                "right": 381,
+                "bottom": 306.25,
+                "width": 372,
+                "height": 209.25
+              },
+              "hud-map": {
+                "left": 14,
+                "top": 185.140625,
+                "right": 122,
+                "bottom": 301.25,
+                "width": 108,
+                "height": 116.109375
+              },
+              "hud-weapon": {
+                "left": 280,
+                "top": 102,
+                "right": 376,
+                "bottom": 195.09375,
+                "width": 96,
+                "height": 93.09375
+              },
+              "hud-speed": {
+                "left": 321.828125,
+                "top": 294.0625,
+                "right": 376,
+                "bottom": 301.25,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 280,
+                "top": 134,
+                "right": 376,
+                "bottom": 151,
+                "width": 96,
+                "height": 17
+              },
+              "prompt": {
+                "left": 133,
+                "top": 269.46875,
+                "right": 257,
+                "bottom": 300.25,
+                "width": 124,
+                "height": 30.78125
+              },
+              "interactionMore": {
+                "left": 160.984375,
+                "top": 221.46875,
+                "right": 229,
+                "bottom": 265.46875,
+                "width": 68.015625,
+                "height": 44
+              }
+            }
+          }
+        ],
+        "hiddenAfterEscape": true
+      },
+      "file": "gamefeel-hud-phone.png"
+    },
+    {
+      "device": "landscape",
+      "rects": {
+        "game": {
+          "left": 228.328125,
+          "top": 59,
+          "right": 615.65625,
+          "bottom": 276.859375,
+          "width": 387.328125,
+          "height": 217.859375,
+          "visible": true
+        },
+        "hud-map": {
+          "left": 233.328125,
+          "top": 155.75,
+          "right": 341.328125,
+          "bottom": 271.859375,
+          "width": 108,
+          "height": 116.109375,
+          "visible": true
+        },
+        "hud-weapon": {
+          "left": 514.65625,
+          "top": 64,
+          "right": 610.65625,
+          "bottom": 138.09375,
+          "width": 96,
+          "height": 74.09375,
+          "visible": true
+        },
+        "hud-speed": {
+          "left": 556.484375,
+          "top": 264.671875,
+          "right": 610.65625,
+          "bottom": 271.859375,
+          "width": 54.171875,
+          "height": 7.1875,
+          "visible": true
+        },
+        "healthBar": {
+          "left": 235.328125,
+          "top": 255.46875,
+          "right": 318.515625,
+          "bottom": 257.46875,
+          "width": 83.1875,
+          "height": 2,
+          "visible": true
+        },
+        "objective": {
+          "left": 239,
+          "top": 288.859375,
+          "right": 827.984375,
+          "bottom": 301,
+          "width": 588.984375,
+          "height": 12.140625,
+          "visible": true
+        },
+        "prompt": {
+          "left": 352.3203125,
+          "top": 240.078125,
+          "right": 491.6484375,
+          "bottom": 270.859375,
+          "width": 139.328125,
+          "height": 30.78125,
+          "visible": true
+        },
+        "interactionMore": {
+          "left": 387.9765625,
+          "top": 192.078125,
+          "right": 455.9921875,
+          "bottom": 236.078125,
+          "width": 68.015625,
+          "height": 44,
+          "visible": true
+        },
+        "phoneBtn": {
+          "left": 439.484375,
+          "top": 4,
+          "right": 513.5,
+          "bottom": 48,
+          "width": 74.015625,
+          "height": 44,
+          "visible": true
+        },
+        "mapBtn": {
+          "left": 178.484375,
+          "top": 4,
+          "right": 258.984375,
+          "bottom": 48,
+          "width": 80.5,
+          "height": 44,
+          "visible": true
+        },
+        "movePad": {
+          "left": 11,
+          "top": 133.421875,
+          "right": 111,
+          "bottom": 233.421875,
+          "width": 100,
+          "height": 100,
+          "visible": true
+        },
+        "aimPad": {
+          "left": 733,
+          "top": 133.421875,
+          "right": 833,
+          "bottom": 233.421875,
+          "width": 100,
+          "height": 100,
+          "visible": true
+        },
+        "touchE": {
+          "left": 8,
+          "top": 314.859375,
+          "right": 107.125,
+          "bottom": 358.859375,
+          "width": 99.125,
+          "height": 44,
+          "visible": true
+        },
+        "hud-pursuit": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        }
+      },
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 844,
+        "bottom": 390,
+        "width": 844,
+        "height": 390
+      },
+      "scrollWidth": 844,
+      "logical": {
+        "width": 800,
+        "height": 450
+      },
+      "mapLogical": {
+        "width": 220,
+        "height": 150
+      },
+      "pursuitStates": {
+        "snapshots": [
+          {
+            "input": {
+              "mode": "pursuit",
+              "wanted": 2,
+              "escapes": 0,
+              "clock": 1,
+              "searchRemaining": 30
+            },
+            "hidden": false,
+            "mode": "spotted",
+            "label": "SPOTTED",
+            "progress": 0,
+            "rects": {
+              "game": {
+                "left": 228.328125,
+                "top": 59,
+                "right": 615.65625,
+                "bottom": 276.859375,
+                "width": 387.328125,
+                "height": 217.859375
+              },
+              "hud-map": {
+                "left": 233.328125,
+                "top": 155.75,
+                "right": 341.328125,
+                "bottom": 271.859375,
+                "width": 108,
+                "height": 116.109375
+              },
+              "hud-weapon": {
+                "left": 514.65625,
+                "top": 64,
+                "right": 610.65625,
+                "bottom": 157.09375,
+                "width": 96,
+                "height": 93.09375
+              },
+              "hud-speed": {
+                "left": 556.484375,
+                "top": 264.671875,
+                "right": 610.65625,
+                "bottom": 271.859375,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 514.65625,
+                "top": 96,
+                "right": 610.65625,
+                "bottom": 113,
+                "width": 96,
+                "height": 17
+              },
+              "prompt": {
+                "left": 352.3203125,
+                "top": 240.078125,
+                "right": 491.6484375,
+                "bottom": 270.859375,
+                "width": 139.328125,
+                "height": 30.78125
+              },
+              "interactionMore": {
+                "left": 387.9765625,
+                "top": 192.078125,
+                "right": 455.9921875,
+                "bottom": 236.078125,
+                "width": 68.015625,
+                "height": 44
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "search",
+              "wanted": 2,
+              "escapes": 0,
+              "clock": 2,
+              "searchRemaining": 30
+            },
+            "hidden": false,
+            "mode": "searching",
+            "label": "SEARCHING · 30s",
+            "progress": 0,
+            "rects": {
+              "game": {
+                "left": 228.328125,
+                "top": 59,
+                "right": 615.65625,
+                "bottom": 276.859375,
+                "width": 387.328125,
+                "height": 217.859375
+              },
+              "hud-map": {
+                "left": 233.328125,
+                "top": 155.75,
+                "right": 341.328125,
+                "bottom": 271.859375,
+                "width": 108,
+                "height": 116.109375
+              },
+              "hud-weapon": {
+                "left": 514.65625,
+                "top": 64,
+                "right": 610.65625,
+                "bottom": 157.09375,
+                "width": 96,
+                "height": 93.09375
+              },
+              "hud-speed": {
+                "left": 556.484375,
+                "top": 264.671875,
+                "right": 610.65625,
+                "bottom": 271.859375,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 514.65625,
+                "top": 96,
+                "right": 610.65625,
+                "bottom": 113,
+                "width": 96,
+                "height": 17
+              },
+              "prompt": {
+                "left": 352.3203125,
+                "top": 240.078125,
+                "right": 491.6484375,
+                "bottom": 270.859375,
+                "width": 139.328125,
+                "height": 30.78125
+              },
+              "interactionMore": {
+                "left": 387.9765625,
+                "top": 192.078125,
+                "right": 455.9921875,
+                "bottom": 236.078125,
+                "width": 68.015625,
+                "height": 44
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "search",
+              "wanted": 1,
+              "escapes": 0,
+              "clock": 17,
+              "searchRemaining": 15
+            },
+            "hidden": false,
+            "mode": "searching",
+            "label": "SEARCHING · 15s",
+            "progress": 50,
+            "rects": {
+              "game": {
+                "left": 228.328125,
+                "top": 59,
+                "right": 615.65625,
+                "bottom": 276.859375,
+                "width": 387.328125,
+                "height": 217.859375
+              },
+              "hud-map": {
+                "left": 233.328125,
+                "top": 155.75,
+                "right": 341.328125,
+                "bottom": 271.859375,
+                "width": 108,
+                "height": 116.109375
+              },
+              "hud-weapon": {
+                "left": 514.65625,
+                "top": 64,
+                "right": 610.65625,
+                "bottom": 157.09375,
+                "width": 96,
+                "height": 93.09375
+              },
+              "hud-speed": {
+                "left": 556.484375,
+                "top": 264.671875,
+                "right": 610.65625,
+                "bottom": 271.859375,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 514.65625,
+                "top": 96,
+                "right": 610.65625,
+                "bottom": 113,
+                "width": 96,
+                "height": 17
+              },
+              "prompt": {
+                "left": 352.3203125,
+                "top": 240.078125,
+                "right": 491.6484375,
+                "bottom": 270.859375,
+                "width": 139.328125,
+                "height": 30.78125
+              },
+              "interactionMore": {
+                "left": 387.9765625,
+                "top": 192.078125,
+                "right": 455.9921875,
+                "bottom": 236.078125,
+                "width": 68.015625,
+                "height": 44
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "clear",
+              "wanted": 0,
+              "escapes": 1,
+              "clock": 32,
+              "searchRemaining": 0
+            },
+            "hidden": false,
+            "mode": "escaped",
+            "label": "ESCAPED",
+            "progress": 100,
+            "rects": {
+              "game": {
+                "left": 228.328125,
+                "top": 59,
+                "right": 615.65625,
+                "bottom": 276.859375,
+                "width": 387.328125,
+                "height": 217.859375
+              },
+              "hud-map": {
+                "left": 233.328125,
+                "top": 155.75,
+                "right": 341.328125,
+                "bottom": 271.859375,
+                "width": 108,
+                "height": 116.109375
+              },
+              "hud-weapon": {
+                "left": 514.65625,
+                "top": 64,
+                "right": 610.65625,
+                "bottom": 157.09375,
+                "width": 96,
+                "height": 93.09375
+              },
+              "hud-speed": {
+                "left": 556.484375,
+                "top": 264.671875,
+                "right": 610.65625,
+                "bottom": 271.859375,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 514.65625,
+                "top": 96,
+                "right": 610.65625,
+                "bottom": 113,
+                "width": 96,
+                "height": 17
+              },
+              "prompt": {
+                "left": 352.3203125,
+                "top": 240.078125,
+                "right": 491.6484375,
+                "bottom": 270.859375,
+                "width": 139.328125,
+                "height": 30.78125
+              },
+              "interactionMore": {
+                "left": 387.9765625,
+                "top": 192.078125,
+                "right": 455.9921875,
+                "bottom": 236.078125,
+                "width": 68.015625,
+                "height": 44
+              }
+            }
+          }
+        ],
+        "hiddenAfterEscape": true
+      },
+      "file": "gamefeel-hud-landscape.png"
+    },
+    {
+      "device": "short-landscape",
+      "rects": {
+        "game": {
+          "left": 279,
+          "top": 59,
+          "right": 565,
+          "bottom": 219.875,
+          "width": 286,
+          "height": 160.875,
+          "visible": true
+        },
+        "hud-map": {
+          "left": 284,
+          "top": 112.390625,
+          "right": 372,
+          "bottom": 214.875,
+          "width": 88,
+          "height": 102.484375,
+          "visible": true
+        },
+        "hud-weapon": {
+          "left": 476.59375,
+          "top": 64,
+          "right": 560,
+          "bottom": 128.09375,
+          "width": 83.40625,
+          "height": 64.09375,
+          "visible": true
+        },
+        "hud-speed": {
+          "left": 505.828125,
+          "top": 207.6875,
+          "right": 560,
+          "bottom": 214.875,
+          "width": 54.171875,
+          "height": 7.1875,
+          "visible": true
+        },
+        "healthBar": {
+          "left": 286,
+          "top": 198.484375,
+          "right": 353.1875,
+          "bottom": 200.484375,
+          "width": 67.1875,
+          "height": 2,
+          "visible": true
+        },
+        "objective": {
+          "left": 239.015625,
+          "top": 231.875,
+          "right": 828,
+          "bottom": 244.015625,
+          "width": 588.984375,
+          "height": 12.140625,
+          "visible": true
+        },
+        "prompt": {
+          "left": 383,
+          "top": 162.3125,
+          "right": 461,
+          "bottom": 213.875,
+          "width": 78,
+          "height": 51.5625,
+          "visible": true
+        },
+        "interactionMore": {
+          "left": 387.984375,
+          "top": 114.3125,
+          "right": 456,
+          "bottom": 158.3125,
+          "width": 68.015625,
+          "height": 44,
+          "visible": true
+        },
+        "phoneBtn": {
+          "left": 439.484375,
+          "top": 4,
+          "right": 513.5,
+          "bottom": 48,
+          "width": 74.015625,
+          "height": 44,
+          "visible": true
+        },
+        "mapBtn": {
+          "left": 178.484375,
+          "top": 4,
+          "right": 258.984375,
+          "bottom": 48,
+          "width": 80.5,
+          "height": 44,
+          "visible": true
+        },
+        "movePad": {
+          "left": 11,
+          "top": 104.9375,
+          "right": 111,
+          "bottom": 204.9375,
+          "width": 100,
+          "height": 100,
+          "visible": true
+        },
+        "aimPad": {
+          "left": 733,
+          "top": 104.9375,
+          "right": 833,
+          "bottom": 204.9375,
+          "width": 100,
+          "height": 100,
+          "visible": true
+        },
+        "touchE": {
+          "left": 8,
+          "top": 257.875,
+          "right": 107.125,
+          "bottom": 301.875,
+          "width": 99.125,
+          "height": 44,
+          "visible": true
+        },
+        "hud-pursuit": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        }
+      },
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 844,
+        "bottom": 320,
+        "width": 844,
+        "height": 320
+      },
+      "scrollWidth": 844,
+      "logical": {
+        "width": 800,
+        "height": 450
+      },
+      "mapLogical": {
+        "width": 220,
+        "height": 150
+      },
+      "pursuitStates": {
+        "snapshots": [
+          {
+            "input": {
+              "mode": "pursuit",
+              "wanted": 2,
+              "escapes": 0,
+              "clock": 1,
+              "searchRemaining": 30
+            },
+            "hidden": false,
+            "mode": "spotted",
+            "label": "SPOTTED",
+            "progress": 0,
+            "rects": {
+              "game": {
+                "left": 279,
+                "top": 59,
+                "right": 565,
+                "bottom": 219.875,
+                "width": 286,
+                "height": 160.875
+              },
+              "hud-map": {
+                "left": 284,
+                "top": 112.390625,
+                "right": 372,
+                "bottom": 214.875,
+                "width": 88,
+                "height": 102.484375
+              },
+              "hud-weapon": {
+                "left": 476.59375,
+                "top": 64,
+                "right": 560,
+                "bottom": 147.09375,
+                "width": 83.40625,
+                "height": 83.09375
+              },
+              "hud-speed": {
+                "left": 505.828125,
+                "top": 207.6875,
+                "right": 560,
+                "bottom": 214.875,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 476.59375,
+                "top": 89,
+                "right": 560,
+                "bottom": 106,
+                "width": 83.40625,
+                "height": 17
+              },
+              "prompt": {
+                "left": 383,
+                "top": 162.3125,
+                "right": 461,
+                "bottom": 213.875,
+                "width": 78,
+                "height": 51.5625
+              },
+              "interactionMore": {
+                "left": 387.984375,
+                "top": 114.3125,
+                "right": 456,
+                "bottom": 158.3125,
+                "width": 68.015625,
+                "height": 44
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "search",
+              "wanted": 2,
+              "escapes": 0,
+              "clock": 2,
+              "searchRemaining": 30
+            },
+            "hidden": false,
+            "mode": "searching",
+            "label": "SEARCHING · 30s",
+            "progress": 0,
+            "rects": {
+              "game": {
+                "left": 279,
+                "top": 59,
+                "right": 565,
+                "bottom": 219.875,
+                "width": 286,
+                "height": 160.875
+              },
+              "hud-map": {
+                "left": 284,
+                "top": 112.390625,
+                "right": 372,
+                "bottom": 214.875,
+                "width": 88,
+                "height": 102.484375
+              },
+              "hud-weapon": {
+                "left": 476.59375,
+                "top": 64,
+                "right": 560,
+                "bottom": 147.09375,
+                "width": 83.40625,
+                "height": 83.09375
+              },
+              "hud-speed": {
+                "left": 505.828125,
+                "top": 207.6875,
+                "right": 560,
+                "bottom": 214.875,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 476.59375,
+                "top": 89,
+                "right": 560,
+                "bottom": 106,
+                "width": 83.40625,
+                "height": 17
+              },
+              "prompt": {
+                "left": 383,
+                "top": 162.3125,
+                "right": 461,
+                "bottom": 213.875,
+                "width": 78,
+                "height": 51.5625
+              },
+              "interactionMore": {
+                "left": 387.984375,
+                "top": 114.3125,
+                "right": 456,
+                "bottom": 158.3125,
+                "width": 68.015625,
+                "height": 44
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "search",
+              "wanted": 1,
+              "escapes": 0,
+              "clock": 17,
+              "searchRemaining": 15
+            },
+            "hidden": false,
+            "mode": "searching",
+            "label": "SEARCHING · 15s",
+            "progress": 50,
+            "rects": {
+              "game": {
+                "left": 279,
+                "top": 59,
+                "right": 565,
+                "bottom": 219.875,
+                "width": 286,
+                "height": 160.875
+              },
+              "hud-map": {
+                "left": 284,
+                "top": 112.390625,
+                "right": 372,
+                "bottom": 214.875,
+                "width": 88,
+                "height": 102.484375
+              },
+              "hud-weapon": {
+                "left": 476.59375,
+                "top": 64,
+                "right": 560,
+                "bottom": 147.09375,
+                "width": 83.40625,
+                "height": 83.09375
+              },
+              "hud-speed": {
+                "left": 505.828125,
+                "top": 207.6875,
+                "right": 560,
+                "bottom": 214.875,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 476.59375,
+                "top": 89,
+                "right": 560,
+                "bottom": 106,
+                "width": 83.40625,
+                "height": 17
+              },
+              "prompt": {
+                "left": 383,
+                "top": 162.3125,
+                "right": 461,
+                "bottom": 213.875,
+                "width": 78,
+                "height": 51.5625
+              },
+              "interactionMore": {
+                "left": 387.984375,
+                "top": 114.3125,
+                "right": 456,
+                "bottom": 158.3125,
+                "width": 68.015625,
+                "height": 44
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "clear",
+              "wanted": 0,
+              "escapes": 1,
+              "clock": 32,
+              "searchRemaining": 0
+            },
+            "hidden": false,
+            "mode": "escaped",
+            "label": "ESCAPED",
+            "progress": 100,
+            "rects": {
+              "game": {
+                "left": 279,
+                "top": 59,
+                "right": 565,
+                "bottom": 219.875,
+                "width": 286,
+                "height": 160.875
+              },
+              "hud-map": {
+                "left": 284,
+                "top": 112.390625,
+                "right": 372,
+                "bottom": 214.875,
+                "width": 88,
+                "height": 102.484375
+              },
+              "hud-weapon": {
+                "left": 476.59375,
+                "top": 64,
+                "right": 560,
+                "bottom": 147.09375,
+                "width": 83.40625,
+                "height": 83.09375
+              },
+              "hud-speed": {
+                "left": 505.828125,
+                "top": 207.6875,
+                "right": 560,
+                "bottom": 214.875,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 476.59375,
+                "top": 89,
+                "right": 560,
+                "bottom": 106,
+                "width": 83.40625,
+                "height": 17
+              },
+              "prompt": {
+                "left": 383,
+                "top": 162.3125,
+                "right": 461,
+                "bottom": 213.875,
+                "width": 78,
+                "height": 51.5625
+              },
+              "interactionMore": {
+                "left": 387.984375,
+                "top": 114.3125,
+                "right": 456,
+                "bottom": 158.3125,
+                "width": 68.015625,
+                "height": 44
+              }
+            }
+          }
+        ],
+        "hiddenAfterEscape": true
+      },
+      "file": "gamefeel-hud-short-landscape.png"
+    },
+    {
+      "device": "small-phone",
+      "rects": {
+        "game": {
+          "left": 6,
+          "top": 94,
+          "right": 314,
+          "bottom": 267.25,
+          "width": 308,
+          "height": 173.25,
+          "visible": true
+        },
+        "hud-map": {
+          "left": 11,
+          "top": 146.140625,
+          "right": 119,
+          "bottom": 262.25,
+          "width": 108,
+          "height": 116.109375,
+          "visible": true
+        },
+        "hud-weapon": {
+          "left": 213,
+          "top": 99,
+          "right": 309,
+          "bottom": 173.09375,
+          "width": 96,
+          "height": 74.09375,
+          "visible": true
+        },
+        "hud-speed": {
+          "left": 254.828125,
+          "top": 255.0625,
+          "right": 309,
+          "bottom": 262.25,
+          "width": 54.171875,
+          "height": 7.1875,
+          "visible": true
+        },
+        "healthBar": {
+          "left": 13,
+          "top": 245.859375,
+          "right": 96.1875,
+          "bottom": 247.859375,
+          "width": 83.1875,
+          "height": 2,
+          "visible": true
+        },
+        "objective": {
+          "left": 17,
+          "top": 297.25,
+          "right": 306,
+          "bottom": 325.25,
+          "width": 289,
+          "height": 28,
+          "visible": true
+        },
+        "prompt": {
+          "left": 130,
+          "top": 199.296875,
+          "right": 190,
+          "bottom": 261.25,
+          "width": 60,
+          "height": 61.953125,
+          "visible": true
+        },
+        "interactionMore": {
+          "left": 130,
+          "top": 151.296875,
+          "right": 190,
+          "bottom": 195.296875,
+          "width": 60,
+          "height": 44,
+          "visible": true
+        },
+        "phoneBtn": {
+          "left": 162.5,
+          "top": 31,
+          "right": 210,
+          "bottom": 75,
+          "width": 47.5,
+          "height": 44,
+          "visible": true
+        },
+        "mapBtn": {
+          "left": 5,
+          "top": 31,
+          "right": 52.5,
+          "bottom": 75,
+          "width": 47.5,
+          "height": 44,
+          "visible": true
+        },
+        "movePad": {
+          "left": 5,
+          "top": 382.75,
+          "right": 96,
+          "bottom": 473.75,
+          "width": 91,
+          "height": 91,
+          "visible": true
+        },
+        "aimPad": {
+          "left": 224,
+          "top": 382.75,
+          "right": 315,
+          "bottom": 473.75,
+          "width": 91,
+          "height": 91,
+          "visible": true
+        },
+        "touchE": {
+          "left": 101,
+          "top": 334.25,
+          "right": 158,
+          "bottom": 378.25,
+          "width": 57,
+          "height": 44,
+          "visible": true
+        },
+        "hud-pursuit": {
+          "left": 0,
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "width": 0,
+          "height": 0,
+          "visible": false
+        }
+      },
+      "viewport": {
+        "left": 0,
+        "top": 0,
+        "right": 322,
+        "bottom": 572,
+        "width": 322,
+        "height": 572
+      },
+      "scrollWidth": 322,
+      "logical": {
+        "width": 800,
+        "height": 450
+      },
+      "mapLogical": {
+        "width": 220,
+        "height": 150
+      },
+      "pursuitStates": {
+        "snapshots": [
+          {
+            "input": {
+              "mode": "pursuit",
+              "wanted": 2,
+              "escapes": 0,
+              "clock": 1,
+              "searchRemaining": 30
+            },
+            "hidden": false,
+            "mode": "spotted",
+            "label": "SPOTTED",
+            "progress": 0,
+            "rects": {
+              "game": {
+                "left": 6,
+                "top": 94,
+                "right": 314,
+                "bottom": 267.25,
+                "width": 308,
+                "height": 173.25
+              },
+              "hud-map": {
+                "left": 11,
+                "top": 146.140625,
+                "right": 119,
+                "bottom": 262.25,
+                "width": 108,
+                "height": 116.109375
+              },
+              "hud-weapon": {
+                "left": 213,
+                "top": 99,
+                "right": 309,
+                "bottom": 192.09375,
+                "width": 96,
+                "height": 93.09375
+              },
+              "hud-speed": {
+                "left": 254.828125,
+                "top": 255.0625,
+                "right": 309,
+                "bottom": 262.25,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 213,
+                "top": 131,
+                "right": 309,
+                "bottom": 148,
+                "width": 96,
+                "height": 17
+              },
+              "prompt": {
+                "left": 130,
+                "top": 199.296875,
+                "right": 190,
+                "bottom": 261.25,
+                "width": 60,
+                "height": 61.953125
+              },
+              "interactionMore": {
+                "left": 130,
+                "top": 151.296875,
+                "right": 190,
+                "bottom": 195.296875,
+                "width": 60,
+                "height": 44
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "search",
+              "wanted": 2,
+              "escapes": 0,
+              "clock": 2,
+              "searchRemaining": 30
+            },
+            "hidden": false,
+            "mode": "searching",
+            "label": "SEARCHING · 30s",
+            "progress": 0,
+            "rects": {
+              "game": {
+                "left": 6,
+                "top": 94,
+                "right": 314,
+                "bottom": 267.25,
+                "width": 308,
+                "height": 173.25
+              },
+              "hud-map": {
+                "left": 11,
+                "top": 146.140625,
+                "right": 119,
+                "bottom": 262.25,
+                "width": 108,
+                "height": 116.109375
+              },
+              "hud-weapon": {
+                "left": 213,
+                "top": 99,
+                "right": 309,
+                "bottom": 192.09375,
+                "width": 96,
+                "height": 93.09375
+              },
+              "hud-speed": {
+                "left": 254.828125,
+                "top": 255.0625,
+                "right": 309,
+                "bottom": 262.25,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 213,
+                "top": 131,
+                "right": 309,
+                "bottom": 148,
+                "width": 96,
+                "height": 17
+              },
+              "prompt": {
+                "left": 130,
+                "top": 199.296875,
+                "right": 190,
+                "bottom": 261.25,
+                "width": 60,
+                "height": 61.953125
+              },
+              "interactionMore": {
+                "left": 130,
+                "top": 151.296875,
+                "right": 190,
+                "bottom": 195.296875,
+                "width": 60,
+                "height": 44
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "search",
+              "wanted": 1,
+              "escapes": 0,
+              "clock": 17,
+              "searchRemaining": 15
+            },
+            "hidden": false,
+            "mode": "searching",
+            "label": "SEARCHING · 15s",
+            "progress": 50,
+            "rects": {
+              "game": {
+                "left": 6,
+                "top": 94,
+                "right": 314,
+                "bottom": 267.25,
+                "width": 308,
+                "height": 173.25
+              },
+              "hud-map": {
+                "left": 11,
+                "top": 146.140625,
+                "right": 119,
+                "bottom": 262.25,
+                "width": 108,
+                "height": 116.109375
+              },
+              "hud-weapon": {
+                "left": 213,
+                "top": 99,
+                "right": 309,
+                "bottom": 192.09375,
+                "width": 96,
+                "height": 93.09375
+              },
+              "hud-speed": {
+                "left": 254.828125,
+                "top": 255.0625,
+                "right": 309,
+                "bottom": 262.25,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 213,
+                "top": 131,
+                "right": 309,
+                "bottom": 148,
+                "width": 96,
+                "height": 17
+              },
+              "prompt": {
+                "left": 130,
+                "top": 199.296875,
+                "right": 190,
+                "bottom": 261.25,
+                "width": 60,
+                "height": 61.953125
+              },
+              "interactionMore": {
+                "left": 130,
+                "top": 151.296875,
+                "right": 190,
+                "bottom": 195.296875,
+                "width": 60,
+                "height": 44
+              }
+            }
+          },
+          {
+            "input": {
+              "mode": "clear",
+              "wanted": 0,
+              "escapes": 1,
+              "clock": 32,
+              "searchRemaining": 0
+            },
+            "hidden": false,
+            "mode": "escaped",
+            "label": "ESCAPED",
+            "progress": 100,
+            "rects": {
+              "game": {
+                "left": 6,
+                "top": 94,
+                "right": 314,
+                "bottom": 267.25,
+                "width": 308,
+                "height": 173.25
+              },
+              "hud-map": {
+                "left": 11,
+                "top": 146.140625,
+                "right": 119,
+                "bottom": 262.25,
+                "width": 108,
+                "height": 116.109375
+              },
+              "hud-weapon": {
+                "left": 213,
+                "top": 99,
+                "right": 309,
+                "bottom": 192.09375,
+                "width": 96,
+                "height": 93.09375
+              },
+              "hud-speed": {
+                "left": 254.828125,
+                "top": 255.0625,
+                "right": 309,
+                "bottom": 262.25,
+                "width": 54.171875,
+                "height": 7.1875
+              },
+              "hud-pursuit": {
+                "left": 213,
+                "top": 131,
+                "right": 309,
+                "bottom": 148,
+                "width": 96,
+                "height": 17
+              },
+              "prompt": {
+                "left": 130,
+                "top": 199.296875,
+                "right": 190,
+                "bottom": 261.25,
+                "width": 60,
+                "height": 61.953125
+              },
+              "interactionMore": {
+                "left": 130,
+                "top": 151.296875,
+                "right": 190,
+                "bottom": 195.296875,
+                "width": 60,
+                "height": 44
+              }
+            }
+          }
+        ],
+        "hiddenAfterEscape": true
+      },
+      "file": "gamefeel-hud-small-phone.png"
+    }
+  ],
+  "feedback": {
+    "initial": {
+      "health": 100,
+      "speed": 0
+    },
+    "accelerated": 263.804890595,
+    "braking": {
+      "marks": 2,
+      "markLimit": 80,
+      "markLifetime": 6,
+      "emitted": 2,
+      "state": {
+        "braking": true,
+        "reverse": false,
+        "skidding": false
+      },
+      "health": 100,
+      "speed": 11.37293832407117
+    },
+    "hit": {
+      "feedback": {
+        "particleLimit": 96,
+        "flashLimit": 24,
+        "particles": 6,
+        "flashes": 0,
+        "shots": 1,
+        "hits": 1,
+        "downs": 0,
+        "coverSelections": 0,
+        "coverPeeks": 0,
+        "repositions": 0,
+        "abandonedPlans": 0,
+        "maxParticles": 6,
+        "maxFlashes": 1,
+        "actors": [
+          {
+            "id": "feedback-hit-proof",
+            "x": 1340,
+            "y": 1180,
+            "hp": 38,
+            "protected": false,
+            "mode": "advancing",
+            "maxHp": 64,
+            "cover": false,
+            "stuck": 0
+          }
+        ]
+      },
+      "enemy": {
+        "id": "feedback-hit-proof",
+        "x": 1340,
+        "y": 1180,
+        "hp": 38,
+        "shootTimer": 998.8800000000001,
+        "stun": 0.06999999999999999,
+        "angle": -1.5707963267948966
+      },
+      "mag": 11
+    }
+  },
+  "scope": "Actual archived0.6.5 baseline/current Chromium comparisons with fixed800x450 camera/time/weather and production terrain cache. Static art excludes transient runtimefeedback; gameplay modules are tested functionally elsewhere. OriginalPNG/map/coreprofile/input/save/missioninvariants and fiveactualHUDlayouts guarded. Not physical-device or difficulty certification."
+}

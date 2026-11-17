@@ -1,0 +1,12 @@
+{
+  "time": "2026-11-17T20:00:34.585Z",
+  "checks": [
+    "quiet play and restored historical escape receipts do not show a false escape",
+    "observed pursuits clearly show spotted without declaring escape progress",
+    "hidden search counts down and its progress increases before a confirmed escape",
+    "being spotted again resets search progress and starts a fresh countdown",
+    "only a new confirmed escape gets a short escaped confirmation",
+    "reported crimes and reset remain readable without changing supplied model data"
+  ],
+  "scope": "Presentation transitions driven by police awareness snapshots; actual HUD geometry and host awareness covered separately."
+}

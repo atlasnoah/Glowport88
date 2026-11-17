@@ -1,0 +1,67 @@
+{
+  "time": "2026-11-17T20:00:49.967Z",
+  "passed": [
+    "all forty authored missions, stages, choices, coordinates and rewards retain their original source",
+    "a real mission start queues a distinct briefing through existing dialogue handlers",
+    "mid-operation radio arrives once, remains nonblocking and survives checkpoint/load without another receipt",
+    "late stage events from a different run or suspended operation cannot narrate the current job",
+    "all three actual Vee decisions produce their own aftermath without altering the chosen consequence",
+    "all three finale choices finish through production callbacks and keep distinct recorded broadcasts",
+    "new narrative completion receipts never repay cash or duplicate aftermaths during event replay",
+    "older active/completed saves do not replay missed historical radio beats",
+    "non-curated side jobs and encounters keep their original briefing and completion fallback"
+  ],
+  "curatedMissions": [
+    "m08",
+    "m12",
+    "m16",
+    "m20",
+    "m24",
+    "m28",
+    "m31",
+    "m40"
+  ],
+  "vee": [
+    {
+      "decision": "forgive",
+      "relationship": 3,
+      "messages": 2,
+      "cashReward": 3850
+    },
+    {
+      "decision": "accountable",
+      "relationship": 1,
+      "messages": 2,
+      "cashReward": 3850
+    },
+    {
+      "decision": "replace",
+      "relationship": -3,
+      "messages": 2,
+      "cashReward": 3850
+    }
+  ],
+  "endings": [
+    {
+      "ending": "broadcast",
+      "messages": 1,
+      "reward": 19800
+    },
+    {
+      "ending": "control",
+      "messages": 1,
+      "reward": 19800
+    },
+    {
+      "ending": "deal",
+      "messages": 1,
+      "reward": 19800
+    }
+  ],
+  "sourceHashes": {
+    "campaign.js": "8c81e3cd751fbb611fdd0dca444fe6edaa6f4da82f00562326a92ff0079c97c5",
+    "mission-moments.js": "2eb896d1c07660502e45dc6816e21822db9913ed00f660bccb06ba59a94159ee",
+    "gameplay.js": "2cffb68d42d7e52d36cf51de52f9768a48a84290c8a7686c23fe669643379eea"
+  },
+  "scope": "Real production engine events, adapter actions and authored choice/dialogue callbacks using a deterministic host. Travel fixtures arrange positions; no stage-completion/evaluator overrides, extra rewards or changed mission definitions. Existing actual-browser mission suite remains responsible for city travel/combat/input."
+}

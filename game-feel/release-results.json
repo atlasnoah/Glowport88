@@ -1,0 +1,41 @@
+{
+  "time": "2026-11-17T20:13:03.950Z",
+  "selfContained": true,
+  "originalCity": {
+    "buildings": 808,
+    "roads": 35,
+    "originalCommit": "c9b4af6"
+  },
+  "desktop": {
+    "start": true,
+    "render": true,
+    "saveReload": true,
+    "map": true,
+    "phone": true,
+    "expandedMission": true
+  },
+  "mobile": {
+    "start": true,
+    "responsiveLayout": true,
+    "touchMovement": true,
+    "releasedInput": true,
+    "phoneJobs": 60,
+    "entranceGuidance": true,
+    "vehicleModels": 10,
+    "encounterTypes": 32,
+    "cassetteSites": 12,
+    "radioStations": 4
+  },
+  "gameFeel": {
+    "patrolSpeed": 144,
+    "tireMarks": 80,
+    "combatParticles": 96,
+    "missionMoments": 8,
+    "pursuitHud": true
+  },
+  "debugIsolation": true,
+  "newStoryQuotaSafety": true,
+  "localFileNavigation": "not tested: blocked by cloud browser policy",
+  "errors": [],
+  "networkRequests": []
+}

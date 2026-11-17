@@ -1,0 +1,563 @@
+{
+  "time": "2026-11-17T19:59:53.834Z",
+  "passed": [
+    "three simulated days preserve finite geometry and bounded city entities",
+    "retained JS heap, terrain surfaces and save keys stay bounded",
+    "every encounter offer expires without payout or leftover mission enemies",
+    "soak state reloads with completed story and finite player position",
+    "endurance simulation produces no critical browser errors"
+  ],
+  "errors": [],
+  "metrics": {
+    "simulatedSeconds": 2160,
+    "simulatedDays": 3,
+    "updates": 21600,
+    "deltaSeconds": 0.1,
+    "wallMilliseconds": 63782,
+    "updateMilliseconds": {
+      "median": 2.5,
+      "p95": 4.6,
+      "p99": 7.1,
+      "max": 91.9
+    },
+    "heapBytes": {
+      "before": 7074612,
+      "after": 7527296,
+      "measurement": "Chromium Runtime.getHeapUsage after explicit GC; excludes GPU surfaces and process memory"
+    },
+    "baseline": {
+      "clock": 0.06729999999999996,
+      "npcs": 163,
+      "cars": 44,
+      "enemies": 0,
+      "police": 0,
+      "finite": true,
+      "invalidNPCs": [],
+      "weather": "CLEAR",
+      "terrain": {
+        "draws": 3,
+        "hits": 2,
+        "bakes": 1,
+        "evictions": 0,
+        "residentBytes": 4194304,
+        "peakResidentBytes": 4194304,
+        "totalBakeMs": 41.39999999990687,
+        "maxBakeMs": 41.39999999990687,
+        "lastBakeMs": 41.39999999990687,
+        "tileSize": 1024,
+        "maxTiles": 6,
+        "cachedTiles": 1,
+        "maxSurfacePixels": 1048576,
+        "estimatedResidentMiB": 4,
+        "tiles": [
+          {
+            "key": "3,2",
+            "x": 3072,
+            "y": 2048,
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "living": {
+        "collected": [],
+        "total": 12,
+        "placed": 12,
+        "states": {
+          "WALKING": 163
+        },
+        "sites": [
+          {
+            "id": "city-tape-01",
+            "where": "hotel",
+            "x": 3694,
+            "y": 2522,
+            "collected": false
+          },
+          {
+            "id": "city-tape-02",
+            "where": "armory",
+            "x": 4065,
+            "y": 2182,
+            "collected": false
+          },
+          {
+            "id": "city-tape-03",
+            "where": "club",
+            "x": 4425,
+            "y": 3202,
+            "collected": false
+          },
+          {
+            "id": "city-tape-04",
+            "where": "records",
+            "x": 2985,
+            "y": 3202,
+            "collected": false
+          },
+          {
+            "id": "city-tape-05",
+            "where": "warehouse",
+            "x": 6204,
+            "y": 2862,
+            "collected": false
+          },
+          {
+            "id": "city-tape-06",
+            "where": "radio",
+            "x": 1124,
+            "y": 2182,
+            "collected": false
+          },
+          {
+            "id": "city-tape-07",
+            "where": "arcade",
+            "x": 1545,
+            "y": 3542,
+            "collected": false
+          },
+          {
+            "id": "city-tape-08",
+            "where": "motel",
+            "x": 1185,
+            "y": 1502,
+            "collected": false
+          },
+          {
+            "id": "city-tape-09",
+            "where": "diner",
+            "x": 5865,
+            "y": 2182,
+            "collected": false
+          },
+          {
+            "id": "city-tape-10",
+            "where": "clinic",
+            "x": 4065,
+            "y": 4222,
+            "collected": false
+          },
+          {
+            "id": "city-tape-11",
+            "where": "observatory",
+            "x": 3705,
+            "y": 822,
+            "collected": false
+          },
+          {
+            "id": "city-tape-12",
+            "where": "pier",
+            "x": 2985,
+            "y": 4562,
+            "collected": false
+          }
+        ]
+      },
+      "storageKeys": 1,
+      "storageBytes": 20156,
+      "screen": "playing",
+      "inside": null
+    },
+    "after": {
+      "clock": 2164.961799999132,
+      "npcs": 163,
+      "cars": 44,
+      "enemies": 0,
+      "police": 0,
+      "finite": true,
+      "invalidNPCs": [],
+      "weather": "CLEAR",
+      "terrain": {
+        "draws": 279,
+        "hits": 642,
+        "bakes": 5,
+        "evictions": 0,
+        "residentBytes": 20971520,
+        "peakResidentBytes": 20971520,
+        "totalBakeMs": 101.00000000023283,
+        "maxBakeMs": 41.39999999990687,
+        "lastBakeMs": 14.100000000093132,
+        "tileSize": 1024,
+        "maxTiles": 6,
+        "cachedTiles": 5,
+        "maxSurfacePixels": 1048576,
+        "estimatedResidentMiB": 20,
+        "tiles": [
+          {
+            "key": "3,2",
+            "x": 3072,
+            "y": 2048,
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "key": "1,0",
+            "x": 1024,
+            "y": 0,
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "key": "2,0",
+            "x": 2048,
+            "y": 0,
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "key": "1,1",
+            "x": 1024,
+            "y": 1024,
+            "width": 1024,
+            "height": 1024
+          },
+          {
+            "key": "2,1",
+            "x": 2048,
+            "y": 1024,
+            "width": 1024,
+            "height": 1024
+          }
+        ]
+      },
+      "living": {
+        "collected": [],
+        "total": 12,
+        "placed": 12,
+        "states": {
+          "WALKING": 131,
+          "WORKING": 32
+        },
+        "sites": [
+          {
+            "id": "city-tape-01",
+            "where": "hotel",
+            "x": 3694,
+            "y": 2522,
+            "collected": false
+          },
+          {
+            "id": "city-tape-02",
+            "where": "armory",
+            "x": 4065,
+            "y": 2182,
+            "collected": false
+          },
+          {
+            "id": "city-tape-03",
+            "where": "club",
+            "x": 4425,
+            "y": 3202,
+            "collected": false
+          },
+          {
+            "id": "city-tape-04",
+            "where": "records",
+            "x": 2985,
+            "y": 3202,
+            "collected": false
+          },
+          {
+            "id": "city-tape-05",
+            "where": "warehouse",
+            "x": 6204,
+            "y": 2862,
+            "collected": false
+          },
+          {
+            "id": "city-tape-06",
+            "where": "radio",
+            "x": 1124,
+            "y": 2182,
+            "collected": false
+          },
+          {
+            "id": "city-tape-07",
+            "where": "arcade",
+            "x": 1545,
+            "y": 3542,
+            "collected": false
+          },
+          {
+            "id": "city-tape-08",
+            "where": "motel",
+            "x": 1185,
+            "y": 1502,
+            "collected": false
+          },
+          {
+            "id": "city-tape-09",
+            "where": "diner",
+            "x": 5865,
+            "y": 2182,
+            "collected": false
+          },
+          {
+            "id": "city-tape-10",
+            "where": "clinic",
+            "x": 4065,
+            "y": 4222,
+            "collected": false
+          },
+          {
+            "id": "city-tape-11",
+            "where": "observatory",
+            "x": 3705,
+            "y": 822,
+            "collected": false
+          },
+          {
+            "id": "city-tape-12",
+            "where": "pier",
+            "x": 2985,
+            "y": 4562,
+            "collected": false
+          }
+        ]
+      },
+      "storageKeys": 2,
+      "storageBytes": 40594,
+      "screen": "playing",
+      "inside": null
+    },
+    "observedWeather": [
+      "CLEAR",
+      "RAIN",
+      "MIST",
+      "CLOUDY"
+    ],
+    "bounds": {
+      "maxNPCs": 163,
+      "maxCars": 44,
+      "maxEnemies": 0,
+      "maxTerrainMiB": 20
+    }
+  },
+  "expirations": [
+    {
+      "id": "event-mugging",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-passing-pursuit",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-ride-request",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-store-robbery",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-car-thief",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-suspicious-van",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-alley-ambush",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-medical-help",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-stranded-driver",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-street-race",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-street-argument",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-drunk-philosopher",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-security-convoy",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-shakedown",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-illegal-parcel",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-lost-tourist",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-rival-gang",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-runaway-driver",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-club-dispute",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-bizarre-offer",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-missing-person",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-car-accident",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-street-scam",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-blackout",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-lost-wallet",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-street-performer",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-undercover",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-stolen-recovery",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-secret-transmission",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-shopkeeper",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-false-accusation",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    },
+    {
+      "id": "event-wrong-delivery",
+      "ok": true,
+      "missionEnemies": 0,
+      "scene": false,
+      "temporaryCars": 0
+    }
+  ],
+  "scope": "Accelerated deterministic outdoor city updates, periodic real rendering, bounded entities/saves/terrain/JS heap, every encounter offer expiration and save reload. No real-time or physical-device FPS guarantee, complete event outcomes, or browser-process memory measurement."
+}
