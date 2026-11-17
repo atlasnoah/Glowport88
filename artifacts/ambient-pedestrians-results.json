@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-30T19:44:38.179Z",
+  "time": "2026-11-17T20:05:22.502Z",
   "passed": [
     "cached graph follows the existing 66px sidewalks and painted junction crossings",
     "cross-city routes turn corners without using road-centerline fallback",
@@ -1573,10 +1573,10 @@
     "max": 85,
     "collisions": 0,
     "visibleRelocations": 0,
-    "milliseconds": 8880.235499,
+    "milliseconds": 12383.169037,
     "cpuMicroseconds": {
-      "user": 9340297,
-      "system": 87815
+      "user": 12530064,
+      "system": 357422
     },
     "nodes": 1200,
     "edges": 2330,

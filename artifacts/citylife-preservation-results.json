@@ -1,8 +1,8 @@
 {
-  "time": "2026-11-02T13:51:01.090Z",
+  "time": "2026-11-17T20:07:14.878Z",
   "baselineCommit": "b334fc0",
   "checks": [
-    "Exact baseline hashes: all original PNGs, 19 protected modules, HUD/menu/control markup, unchanged base vehicle/AI profiles and non-minimap CSS; only reviewed player driving profile/readouts and minimap widths differ",
+    "Exact baseline hashes: all original PNGs, 17 protected modules, HUD/menu/control markup, unchanged base vehicle/AI profiles and established CSS; only reviewed player driving/minimap changes, the pursuit readout and separately tested audio/mission adapters differ",
     "808 original footprints and doors, 35 road axes, 66px streets, 7200x5040 boundaries, five districts, 12 landmarks, trees/props/lamps unchanged",
     "49 fixed day/night/rain scenes have zero changed pixels outside reviewed facade/prop bounds",
     "Exact sprite/interior browser probes: characters, vehicles, hotel, East Diner, Marina Clinic, armory",
@@ -24,11 +24,11 @@
       "progression.js": "22808e2a2c077846fa59a9d8ceed77444f7f071182692bd9e92efac4a7c9d6c2",
       "interactions.js": "b2f73d7c329765f0c2ed5783cb6fdc54b51b5fbf23d67978b910183da1a02f30",
       "save-system.js": "0951b0c25bc44a6f8dcf6c25049cafe09b1762a2aed919d3e35972f1aa4f70b9",
-      "city-audio.js": "f254cfbe0415eae4d23cbf3ad061fbb8cc918c95af4ba646f0809eeba89c788b",
+      "city-audio.js": "ed05e66329f9e6533dd489a9e11c07549d1b7a280a2dc24621d7035c56d85e0e",
       "encounter-system.js": "6a15f8bc062aa20f3a816b13bec85d1129540838269bb6d44034e7213712077a",
       "phone.js": "47fe81bf0a59e90b121aae7e4814b8c253f184028130ef7a72f1ebc5ce429573",
       "police-system.js": "42f8727a704a259ce368cdc3fb3bb9ad4686a57f55b522e4c22f31a01dfcc0a5",
-      "gameplay.js": "c9dfc07c9df2c04cbbd52c71d16adc26ae08d075170673959a2884a6fecf64da",
+      "gameplay.js": "2cffb68d42d7e52d36cf51de52f9768a48a84290c8a7686c23fe669643379eea",
       "touch-controls.js": "965e523c51718f18a2aa8495fe92464e7aa23d7302fef9f22229766aff44da36",
       "hud.js": "d6841b307d556fe62c7d591852d53169ca7c69402a069754dfc2ee1bc81beed3"
     },
@@ -50,13 +50,23 @@
       "interior": "540cca32bcf8e5ec90222800e6ed7bdbeb2cca26ceaf022278cd09ad7a9622f2",
       "portrait": "3664cc1431d01728cacb9f69a163c0c453416992a8d41a8678ed9bda431584f9"
     },
-    "markupSHA256": "f38bbe0b3fe9f236215daa48253e0391bdfdac7c1d7f4138a99b6c3acfeaa75c",
+    "markupSHA256": "fbf4b0cb89d0308d18dbaae3a84c7cee088943e4859482fa6e06288a752c4867",
     "css": {
       "ui.css": "a6da9361b9bf334100fed0660336b767fe8ddc371f74cd15a7d0e833f03280b7",
       "mobile.css": "c003f721c960bfe93689be302d677b02b0ef0b87220fd2b2ad12a0ff84da3a92",
-      "hud.css": "a486a40e0d210b886b03ea026a266595ff578e2e2064cc7aacaff766fd60e195"
+      "hud.css": "5e0f7a1cc814afbc7be9a947c96feef621cdc03849a8d2e9ec88fedc257b1734"
     },
     "reviewedChanges": {
+      "gameFeelModules": {
+        "names": [
+          "city-audio.js",
+          "gameplay.js"
+        ],
+        "scope": "Authorized sound/mission-moment adapters; exact radio/catalogue/reward/choice/save invariants are guarded by gamefeel-preservation and functional feature tests"
+      },
+      "pursuitReadout": {
+        "scope": "One exact new status block; every other HUD/menu/control markup byte unchanged"
+      },
       "vehicleSystem": {
         "baselineSHA256": "5a92479fcb4a80e279f205b8872eea77ce84cb1b6efe8d27e811d331a9a29171",
         "currentSHA256": "12e83d749dbe6de804abab0aba08ae0128e9ca0f67f40bb20278dec8305fa138",
@@ -64,8 +74,8 @@
       },
       "hudCss": {
         "baselineSHA256": "70509b3f1c8be1f76f61ad9f3d648e80d3f86c8e9a502d2933a57d5c7a86f6db",
-        "currentSHA256": "a486a40e0d210b886b03ea026a266595ff578e2e2064cc7aacaff766fd60e195",
-        "scope": "Only eight reviewed minimap-width/fallback constants; every other byte unchanged"
+        "currentSHA256": "5e0f7a1cc814afbc7be9a947c96feef621cdc03849a8d2e9ec88fedc257b1734",
+        "scope": "Only eight reviewed minimap-width/fallback constants and appended pursuit-readout selectors; every established style byte unchanged"
       }
     }
   },

@@ -1,0 +1,40 @@
+{
+  "time": "2026-11-17T20:00:56.119Z",
+  "checks": [
+    "real mobile Interact archives a one-time radio beat without blocking the next doorway action",
+    "radio receipts survive actual page reload without replaying or paying the player",
+    "a fresh finale decision waits for its own touch then shows the chosen authored aftermath",
+    "saved ending preserves its exact aftermath, money and playable free roam on reload",
+    "new narrative input produces no critical browser errors"
+  ],
+  "errors": [],
+  "radioMessages": [
+    {
+      "id": "narrative:2:m08:stage:4",
+      "from": "ROXY",
+      "text": "Two patrols just changed direction together. That is a lot of coordination for one diner lockbox. Keep moving.",
+      "read": false,
+      "clock": 0.033,
+      "sequence": 2
+    }
+  ],
+  "endingMessages": [
+    {
+      "id": "narrative:2:m08:stage:4",
+      "from": "ROXY",
+      "text": "Two patrols just changed direction together. That is a lot of coordination for one diner lockbox. Keep moving.",
+      "read": false,
+      "clock": 0.033,
+      "sequence": 2
+    },
+    {
+      "id": "narrative:3:m40:complete",
+      "from": "GLOWPORT RADIO",
+      "text": "DEAL: Vale’s settlement keeps the crew safe while the system survives. That compromise is part of the record, too. Glowport remains open.",
+      "read": false,
+      "clock": 0.083,
+      "sequence": 5
+    }
+  ],
+  "scope": "Actual390x844 mobile Chromium Interact, doorway, authored finale choice/aftermath, Save/reload and Phone. Fixtures arrange existing mission stages/travel; callbacks and rewards are production code. Deterministic RAF prevents unrelated city motion during narrative assertions; no physical-device or difficulty claim."
+}

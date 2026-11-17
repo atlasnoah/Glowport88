@@ -117,3 +117,13 @@ body.touch-mode .play-surface .toast { font-size: 7px; line-height: 1.3; max-wid
   body.touch-mode #hud .hud-wanted { font-size: 8px; margin: 2px 0 4px; }
   body.touch-mode .hud-ammo strong { font-size: 18px; }
 }
+
+/* Pursuit feedback fits the existing weapon/money corner. */
+.hud-pursuit { margin: -3px 0 7px; padding: 4px 6px; background: #101722db; color: #ffd296; font-size: 8px; font-weight: 800; letter-spacing: .07em; border-right: 2px solid currentColor; }
+.hud-pursuit[hidden] { display: none; }
+.hud-pursuit[data-mode="spotted"] { color: #ff88ab; }
+.hud-pursuit[data-mode="escaped"] { color: #91ecc1; }
+#hud-pursuit-track { height: 3px; margin-top: 4px; background: #ffffff25; overflow: hidden; }
+#hud-pursuit-fill { display: block; height: 100%; width: 0; background: currentColor; }
+body.touch-mode .hud-pursuit { padding: 3px 4px; margin: -2px 0 4px; font-size: 6px; }
+body.touch-mode #hud-pursuit-track { height: 2px; margin-top: 3px; }

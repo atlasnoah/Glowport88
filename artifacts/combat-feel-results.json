@@ -1,0 +1,51 @@
+{
+  "time": "2026-11-17T20:00:42.260Z",
+  "passed": [
+    "weapon feedback is distinctive without changing any weapon or victim state",
+    "confirmed health bars use actual maximum health and corpse pellets cannot duplicate a down",
+    "effects, muzzle flashes and hit cues remain bounded and pause on simulation time",
+    "scripted, passive, escort and protected actors cannot acquire combat movement",
+    "attacking enemies use safe existing-building cover, then peek and re-engage",
+    "blocked sight selects a collision-checked route instead of remaining behind a wall",
+    "rendering saves and restores state, stays out of interiors and does not draw sprite replacements"
+  ],
+  "coverEvidence": {
+    "particleLimit": 96,
+    "flashLimit": 24,
+    "particles": 0,
+    "flashes": 0,
+    "shots": 0,
+    "hits": 0,
+    "downs": 0,
+    "coverSelections": 2,
+    "coverPeeks": 2,
+    "repositions": 2,
+    "abandonedPlans": 0,
+    "maxParticles": 0,
+    "maxFlashes": 0,
+    "actors": [
+      {
+        "id": null,
+        "x": 178.11926529769175,
+        "y": 216.45769614418793,
+        "hp": 52,
+        "protected": false,
+        "mode": "engaging",
+        "maxHp": 52,
+        "cover": false,
+        "stuck": 0
+      }
+    ],
+    "modes": [
+      "taking-cover",
+      "covered",
+      "peeking",
+      "advancing",
+      "engaging"
+    ],
+    "maxStep": 3.3000000000000114,
+    "maxWithheldFireSeconds": 0.5499999999999999,
+    "visibleFireUpdates": 181
+  },
+  "scope": "Pure production combat-feedback module with original swept-circle collision adapter. Visuals cannot apply damage/rewards; boundedcover/peek routes are simulated with fullbodyclearance. Actual projectile/input host coverage is separate."
+}

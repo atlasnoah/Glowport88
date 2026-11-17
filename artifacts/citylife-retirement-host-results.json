@@ -1,9 +1,9 @@
 {
-  "time": "2026-10-30T19:52:49.799Z",
+  "time": "2026-11-17T20:09:19.398Z",
   "sourceHashes": {
-    "Glowport88_ArtRehaul_v11.html": "19c2220ab47dc756391dac354eb6a599eaf8a45b63eafc3ff4f156c1ede7acab",
+    "Glowport88_ArtRehaul_v11.html": "ad5dfe6e85a723b37dadea752a383a0ba2cd0919807c10d98d64c68c66344417",
     "assets/ambient-traffic.js": "49255b57c4a2d0033bb866df8439d3a858a90ac3f186c12ae27030f05564ae46",
-    "assets/gameplay.js": "c9dfc07c9df2c04cbbd52c71d16adc26ae08d075170673959a2884a6fecf64da"
+    "assets/gameplay.js": "2cffb68d42d7e52d36cf51de52f9768a48a84290c8a7686c23fe669643379eea"
   },
   "checks": [
     "a stopped active quest target remains protected offscreen before contact",

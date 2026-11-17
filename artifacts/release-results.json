@@ -1,5 +1,5 @@
 {
-  "time": "2026-11-02T13:55:05.551Z",
+  "time": "2026-11-17T20:13:03.950Z",
   "selfContained": true,
   "originalCity": {
     "buildings": 808,
@@ -25,6 +25,13 @@
     "encounterTypes": 32,
     "cassetteSites": 12,
     "radioStations": 4
+  },
+  "gameFeel": {
+    "patrolSpeed": 144,
+    "tireMarks": 80,
+    "combatParticles": 96,
+    "missionMoments": 8,
+    "pursuitHud": true
   },
   "debugIsolation": true,
   "newStoryQuotaSafety": true,

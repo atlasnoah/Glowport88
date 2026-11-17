@@ -149,3 +149,11 @@
 - Increased existing minimap widths to 108px phone, 88px short landscape and 236px desktop maximum. Shared context reservations match; logical map/canvas/style are preserved.
 - Passed actual cop-pursuit and phone-input checks (1%-health van 164px/s versus foot cop 91), five-viewport size/control comparisons, 49 city preservation views and relevant vehicle/police/mobile/race/save regressions. See ESCAPE_UPDATE_REPORT.md.
 - Published tested source `8f47fe8` through game deployment `eeccd58`. Live 0.6.5 SHA `5dcb08dd…30ffa3b` matches the tested standalone; exact-byte mobile playback and six public screenshot/evidence hashes pass.
+
+
+## Pursuit, driving, combat and mission moments · 2026-11-17 · 0.6.6
+
+- Used verified 0.6.5 (`01887e7`) as the baseline. Added separate bounded pursuit, driving-feedback, combat-feedback, mission-moments and pursuit-HUD modules. Kept the complete original city, approved image assets, lighting, mission definitions, save schema, larger minimap and faster player handling.
+- Integrated sustained road-following patrols, safer roadblocks, confirmed search/escape HUD, load/gear audio, tire/brake feedback, confirmed weapon feedback and bounded cover/peek behavior. Added authored moments to eight existing main missions through durable narrative receipts.
+- Model/browser checks found and fixed early turn slowdown, parked-obstruction recovery, wanted-state loss on reload, a dismounted-officer direct-target route crash and overlapping hit labels.
+- Current dedicated checks total 71. The full actual-host audit covering 92 definitions and 390 stages audit and all12 playable entrances pass. Exact 0.6.5 environmental comparisons, five HUD viewports, existing core/restoration/bugs/mobile and full citylife/escape regressions pass. The initial full command failed at the now-fixed officer crash; the complete mission audit passed on rerun. See GAME_FEEL_REPORT.md/TEST_RESULTS.md for exact scope and known limits.

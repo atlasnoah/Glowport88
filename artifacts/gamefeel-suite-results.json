@@ -1,0 +1,151 @@
+{
+  "version": "0.6.6",
+  "time": "2026-11-17T20:12:20.568547+00:00",
+  "baselineCommit": "01887e7c81ea32a9eac3f1019d5e3a810c836144",
+  "sourceSHA256": {
+    "Glowport88/Glowport88_ArtRehaul_v11.html": "ad5dfe6e85a723b37dadea752a383a0ba2cd0919807c10d98d64c68c66344417",
+    "Glowport88/assets/activities.js": "9208a7499dad65571f530fad9e1c5ce1df949145d2351b097a73497786a47af8",
+    "Glowport88/assets/ambient-pedestrians.js": "997c621c819f25aa699fa506c7a2fd2cce9bd1253687f3b7d11a1ff23d64cd36",
+    "Glowport88/assets/ambient-traffic.js": "49255b57c4a2d0033bb866df8439d3a858a90ac3f186c12ae27030f05564ae46",
+    "Glowport88/assets/art.js": "daf7b5cc5d43089c884aad967c717d1c4feb4d2beaf69d18c1a8627fa9eec79c",
+    "Glowport88/assets/atlas.js": "5b46e6c9ec30c34bc34140be368430126bea8380f0a71346db0927c9ddc2da6d",
+    "Glowport88/assets/buildings-illustrated.png": "4e0aaad31c743d1bd779f2f194557dbba922316959f9232eee983cd732cc438e",
+    "Glowport88/assets/campaign.js": "8c81e3cd751fbb611fdd0dca444fe6edaa6f4da82f00562326a92ff0079c97c5",
+    "Glowport88/assets/characters.png": "0e3ea49095f5d519601cbd587862454eadbe4fbcba7f75c1c167fe33d5dabd8b",
+    "Glowport88/assets/city-atlas.png": "964bbaf24f1d374e5992ee60756c45223a27b9e1e720c0dafefaaa4a0ac7dd4f",
+    "Glowport88/assets/city-audio.js": "ed05e66329f9e6533dd489a9e11c07549d1b7a280a2dc24621d7035c56d85e0e",
+    "Glowport88/assets/city-layout.js": "5c8898691df97cd877134ea3e478ff33450349e39d052d43a7e9edca3b1bf28d",
+    "Glowport88/assets/combat-feedback.js": "590501e04f504a4f7b94c8db73179fef7b1d556a1fc8caa22201000217ecafaa",
+    "Glowport88/assets/driving-feedback.js": "5305de5279f7df8ee77e07450c32e279d246d227a6710d6f1088adcff1ab7038",
+    "Glowport88/assets/encounter-system.js": "6a15f8bc062aa20f3a816b13bec85d1129540838269bb6d44034e7213712077a",
+    "Glowport88/assets/environment-art.js": "929583a95d0f6a579c4e42eac05b9971ac2e3b3b30ce12dd6a9f851b234c78b1",
+    "Glowport88/assets/furniture-illustrated.png": "00ca5377c351f078ad3d4d39ac8c3687b1d9734c5b8e85671124d33bb6960b49",
+    "Glowport88/assets/gameplay.js": "2cffb68d42d7e52d36cf51de52f9768a48a84290c8a7686c23fe669643379eea",
+    "Glowport88/assets/hud.css": "5e0f7a1cc814afbc7be9a947c96feef621cdc03849a8d2e9ec88fedc257b1734",
+    "Glowport88/assets/hud.js": "d6841b307d556fe62c7d591852d53169ca7c69402a069754dfc2ee1bc81beed3",
+    "Glowport88/assets/interactions.js": "b2f73d7c329765f0c2ed5783cb6fdc54b51b5fbf23d67978b910183da1a02f30",
+    "Glowport88/assets/living-city.js": "53644150ff07f5108f9455fa7bf076c467bf388ab82c1a9e537fd50adb2dc514",
+    "Glowport88/assets/mission-engine.js": "002f6575d4d5a804bb6f5bc153dc8f6aef60d92c79adb82053da92b17d0f9800",
+    "Glowport88/assets/mission-moments.js": "2eb896d1c07660502e45dc6816e21822db9913ed00f660bccb06ba59a94159ee",
+    "Glowport88/assets/missions.js": "35fb76d9ba5a4fb5e48bc5aea333e0970622aad80d60d5abe019325400a89da7",
+    "Glowport88/assets/mobile.css": "c003f721c960bfe93689be302d677b02b0ef0b87220fd2b2ad12a0ff84da3a92",
+    "Glowport88/assets/neighborhood-details.js": "b83827b566a7a1ab69b1a12102bb8141de1b4030ef8c4db0979f04f27352b6af",
+    "Glowport88/assets/neighborhoods-illustrated.png": "de124d9ae06e1e88faffc733ca8215aa5f7c0790346699ae09ae517576d23166",
+    "Glowport88/assets/phone.js": "47fe81bf0a59e90b121aae7e4814b8c253f184028130ef7a72f1ebc5ce429573",
+    "Glowport88/assets/police-pursuit.js": "872082c7260c2bf11a2e2cf178e69b974af5fb591521c342b103c1214a11e4cf",
+    "Glowport88/assets/police-system.js": "42f8727a704a259ce368cdc3fb3bb9ad4686a57f55b522e4c22f31a01dfcc0a5",
+    "Glowport88/assets/portraits.png": "4506507edf4b0be8e70901065f3aa51ffa66ec28d05cc367cf0d35e4cd39935e",
+    "Glowport88/assets/progression.js": "22808e2a2c077846fa59a9d8ceed77444f7f071182692bd9e92efac4a7c9d6c2",
+    "Glowport88/assets/pursuit-hud.js": "df60c377e80e92db34ae3a75bde221b8039eba5252cabf7d19cff5787f7a7a90",
+    "Glowport88/assets/residential-illustrated.png": "15fe7966f78c070dee7506086006cfd27eb72bd5a76c7a1f68615170ce43aae5",
+    "Glowport88/assets/residential-infill.js": "b6b272a80e3d9412f564edeef4ffaf5173a1de1aa31ce2d85a51a36af5a0fcd7",
+    "Glowport88/assets/restored-city.js": "7cf76a0b2da393269eb712f3ba295eaa83bdde5e153dfa95a709d43789e4abc5",
+    "Glowport88/assets/save-system.js": "0951b0c25bc44a6f8dcf6c25049cafe09b1762a2aed919d3e35972f1aa4f70b9",
+    "Glowport88/assets/side-content.js": "fe380abbd3ef76c3d6717f42279b6d139273eff96454fa6f45d5e6571630fec8",
+    "Glowport88/assets/terrain-cache.js": "d2c952c4a6bec8da56f95350f1dcdb81817bb37bbf6ef86f6a3dba12631595bf",
+    "Glowport88/assets/touch-controls.js": "965e523c51718f18a2aa8495fe92464e7aa23d7302fef9f22229766aff44da36",
+    "Glowport88/assets/ui.css": "a6da9361b9bf334100fed0660336b767fe8ddc371f74cd15a7d0e833f03280b7",
+    "Glowport88/assets/vehicle-system.js": "12e83d749dbe6de804abab0aba08ae0128e9ca0f67f40bb20278dec8305fa138",
+    "Glowport88/assets/vehicles.png": "1c6e15cf1c96ba2de9d181a4acfbd3687de4cc517099f1f1e4593183dc58c3ef"
+  },
+  "targetedChecks": 71,
+  "featureCounts": {
+    "police-pursuit": 12,
+    "police-pursuit-host": 9,
+    "pursuit-hud": 6,
+    "driving-feedback": 11,
+    "driving-feedback-host": 5,
+    "combat-feel": 7,
+    "combat-feel-host": 7,
+    "mission-moments": 9,
+    "mission-moments-host": 5
+  },
+  "commands": {
+    "npm test": {
+      "initialExitCode": 1,
+      "reason": "Full chain found a direct-target foot-officer missing-route crash during event-passing-pursuit. Fixed and all mission definitions rerun successfully; preceding core/restoration/bug/entrance stages passed. The remaining citylife/escape stages were run separately."
+    },
+    "npm run test:feel": {
+      "exitCode": 0,
+      "scope": "70 feature checks and exact preservation at initial final pass; updated nine-check patrol-host suite passed after the additional route fix, bringing current dedicated coverage to71."
+    },
+    "npm run test:citylife": {
+      "status": "passed",
+      "scope": "Complete traffic/pedestrian models, schedules/recovery,49-scene preservation,fiveHUDviewports,30-minute actual-host soak and retirement tests. Captured complete final success log."
+    },
+    "remaining": {
+      "started": "2026-11-17T20:09:35.336979+00:00",
+      "commands": [
+        {
+          "args": [
+            "npm",
+            "run",
+            "test:escape"
+          ],
+          "exitCode": 0,
+          "log": "/tmp/glowport-escape-final.log"
+        },
+        {
+          "args": [
+            "node",
+            "tests/all-missions-host.cjs"
+          ],
+          "exitCode": 0,
+          "log": "/tmp/glowport-missions-final.log"
+        },
+        {
+          "args": [
+            "node",
+            "tests/syntax.cjs"
+          ],
+          "exitCode": 0,
+          "log": "/tmp/glowport-syntax-final.log"
+        }
+      ],
+      "completed": "2026-11-17T20:11:55.438369+00:00"
+    }
+  },
+  "missionAudit": {
+    "primaryDefinitions": 92,
+    "uniqueAuthoredStageCoverage": 390,
+    "completedRuns": 176,
+    "objectiveResolutions": 580,
+    "realProjectileShots": 628,
+    "realTimingInputs": 121,
+    "errors": []
+  },
+  "entranceAudit": {
+    "playableInteriors": 12,
+    "freeRoamRoundTrips": 48,
+    "activeMissionStates": 12
+  },
+  "preservation": {
+    "staticCityViews": 15,
+    "interiors": 4,
+    "spriteProbe": true,
+    "fullMap": true,
+    "exactStaticMatches": true,
+    "hudViewports": 5,
+    "errors": []
+  },
+  "resolvedFindings": [
+    "Distant turn markers slowed patrols too early.",
+    "A newly parked obstruction could trap a turning patrol.",
+    "Reload cleared imported police wanted state instead of continuing its search.",
+    "A foot officer reaching a direct last-known target tried to advance a missing route.",
+    "Confirmed damage text overlapped enemy health bars."
+  ],
+  "retryNote": "One concurrent mission-audit retry hit its12-second startup click timeout. The final mission audit ran sequentially and completed. No timeout was suppressed or test evaluator replaced.",
+  "limits": [
+    "Chromium desktop/mobile emulation; physical phones and Safari not exercised.",
+    "Mission fixtures accelerate travel and provide equipment/invulnerability; no continuous human difficulty/duration certification.",
+    "Each authored choice is swept, not every possible combination."
+  ],
+  "delivery": "Standalone and public-byte verification recorded separately in release-results.json and public-demo-results.json.",
+  "standalone": {
+    "passed": true,
+    "selfContained": true,
+    "sha256": "d5ea9e9fc060b4d2b4245f5839623883092ae889421d06dcac253de2785c82ab",
+    "archiveCRCPassed": true
+  }
+}

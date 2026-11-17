@@ -1,3 +1,13 @@
+# Pursuit, driving, combat and mission moments · 0.6.6
+
+- Patrol cars now pursue along the existing roads, slow for turns, reroute around parked obstructions and dismount safely when appropriate. Roadblocks respect visibility, occupied streets and mission approaches.
+- Fixed saved police searches being silently cleared on the first tick after reload, and a crash when a dismounted officer reached a direct search target.
+- Added a compact SPOTTED / SEARCHING / ESCAPED readout driven by the existing police awareness model. Player escape speeds and minimap sizes stay intact.
+- Added load/gear-sensitive engine audio, tire sounds, transient skid marks and small brake/reverse lights using the original vehicle sprites.
+- Added distinct weapon sounds, flashes/tracers, confirmed-hit effects and correct enemy health bars. Enemies can use existing cover, peek and re-engage; weapon damage, ammunition and rewards remain authoritative in the host.
+- Added authored briefing/radio/aftermath moments to eight existing main missions, with persistent one-time receipts and reactive choices. No missions or original story stages were replaced.
+- Retained exact original city/art/lighting, mission catalogue, save schema and player handling. See GAME_FEEL_REPORT.md for verification and limits.
+
 # Faster escapes and a larger minimap · 0.6.5
 
 - Increased only player-controlled forward top speeds25% and acceleration20%, with a75% damage-condition speed floor for working vehicles. Disabled cars stay disabled; reverse speed/acceleration, steering, braking, Turbo and AI vehicle profiles remain unchanged.

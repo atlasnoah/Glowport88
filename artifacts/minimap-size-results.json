@@ -1,5 +1,5 @@
 {
-  "time": "2026-11-02T13:51:58.262Z",
+  "time": "2026-11-17T20:10:10.913Z",
   "baselineCommit": "dfad716",
   "checks": [
     "Original PNGs, city renderer/geometry, mission content and unrelated HUD presenter/styles match the preceding release",

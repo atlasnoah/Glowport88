@@ -1,0 +1,51 @@
+'use strict';
+// Real adapter events, authored interactions and choice callbacks test narrative
+// persistence. Travel fixtures do not complete objectives or inject outcomes.
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),{execFileSync}=require('node:child_process');
+const root=path.resolve(__dirname,'..');global.window=global;
+for(const file of ['mission-engine','campaign','mission-moments','side-content','progression','police-system','gameplay'])require('../Glowport88/assets/'+file+'.js');
+global.GlowportPhone={active:false,close(){}};
+const locations=['hotel','armory','club','records','warehouse','radio','arcade','motel','diner','clinic','observatory','pier'].map((key,i)=>({key,x:1000+(i%4)*600,y:1000+Math.floor(i/4)*600}));
+let game,player,world,cars,enemies,dialogue,choice,shown,announcements,saves;
+function setup(){player={x:1000,y:1000,inside:null,ix:403,iy:149,hp:150,maxHp:150,money:100000,ammo:{pistol:84},mag:{pistol:12},inCar:null};world={story:6,clock:0,wanted:0};cars=[];enemies=[];dialogue=null;choice=null;shown=[];announcements=[];saves=0;
+ game=new GlowportGameplay({player:()=>player,world:()=>world,cars:()=>cars,enemies:()=>enemies,npcs:()=>[],cops:()=>[],locations:()=>locations,roadsX:locations.map(l=>l.x),roadsY:locations.map(l=>l.y),solid:()=>false,road:(x,y)=>({x,y}),move:(p,x,y)=>{p.x+=x;p.y+=y},district:()=>({id:'east'}),random:()=>.5,camera:()=>({x:0,y:0}),recenter(){},announce:text=>announcements.push(text),save(){saves++},hud(){},busy:()=>!!dialogue||!!choice,resetControls(){},dialogue:(who,lines,callback)=>{shown.push(...lines.map(x=>({...x})));dialogue={who,lines,callback}},choice:(who,text,options,unused,callback)=>{choice={who,text,options,callback}}});game.reset(null,6);game.nextEvent=1e12;flush();
+}
+function flush(){for(let n=0;n<100;n++){game.uiTick();if(dialogue){const d=dialogue;dialogue=null;d.callback?.()}else if(!game.dialogues.length)return}throw Error('Dialogue loop')}
+function arrive(){const stage=game.stage(),loc=game.location(stage.where);Object.assign(player,{x:loc.x,y:loc.y,inside:stage.inside?stage.where:null,ix:game.roomPoint(stage).x,iy:game.roomPoint(stage).y,inCar:null})}
+function fixture(id,index=0){assert(game.fixture(id,index));arrive();flush()}
+function action(){assert(game.action(),'Authored action unavailable');flush()}
+function narrative(){return game.progression.state.inbox.filter(m=>m.id.startsWith('narrative:'))}
+function finishVee(index){fixture('m31');for(const clue of game.stage().clues){player.ix=clue.x;player.iy=clue.y;action()}arrive();action();arrive();assert.equal(game.stage().type,'choice');assert(game.action());assert(choice);const q=choice;choice=null;q.callback(index);flush();arrive();action();arrive();action();assert.equal(game.engine.state.active.status,'complete');flush()}
+const passed=[];function check(name,run){setup();run();passed.push(name);console.log('PASS mission moments:',name)}
+check('all forty authored missions, stages, choices, coordinates and rewards retain their original source',()=>{
+ const current=fs.readFileSync(path.join(root,'Glowport88/assets/campaign.js')),baseline=execFileSync('git',['show','01887e7:Glowport88/assets/campaign.js'],{cwd:root});assert.deepEqual(current,baseline);assert.equal(GlowportCampaign.missions.length,40);assert.equal(GlowportMissionMoments.ids.length,8);
+ for(const id of GlowportMissionMoments.ids){const def=GlowportCampaign.missions.find(m=>m.id===id);assert(def);const intro=GlowportMissionMoments.intro(def);assert.deepEqual(intro.slice(0,def.intro.length),def.intro);assert(intro.length>def.intro.length);assert(GlowportMissionMoments.completion(def).lines.length)}
+});
+check('a real mission start queues a distinct briefing through existing dialogue handlers',()=>{
+ game.engine.state.active=null;for(const id of ['m01','m02','m03','m04','m05','m06','m07'])game.engine.state.completed[id]={fixture:true};const cash=player.money;assert(game.accept('m08').ok);assert(game.dialogues[0].cinematic);flush();assert(shown.some(x=>x.speaker==='EDDIE'&&x.text.includes('tips belong to my staff')));assert.equal(player.money,cash);assert.equal(game.engine.state.active.stage,0);
+});
+check('mid-operation radio arrives once, remains nonblocking and survives checkpoint/load without another receipt',()=>{
+ fixture('m08',3);const cash=player.money;action();assert.equal(game.engine.state.active.stage,4);const receipt=`narrative:${game.engine.state.active.run}:m08:stage:4`,message=game.progression.state.inbox.find(m=>m.id===receipt);assert(message&&message.text.includes('Two patrols'));assert.equal(game.dialogues.length,0);assert.equal(game.api.busy(),false);assert.equal(player.money,cash);assert.equal(narrative().length,1);const announcementsBefore=announcements.filter(a=>a.includes('Two patrols')).length;assert(game.restartCheckpoint().ok);flush();assert.equal(narrative().length,1);assert.equal(announcements.filter(a=>a.includes('Two patrols')).length,announcementsBefore);
+ const saved=game.export();game.reset(saved,6);flush();assert.equal(game.rewardReceipts[receipt],true);assert.equal(narrative().length,1);assert.equal(announcements.filter(a=>a.includes('Two patrols')).length,announcementsBefore);
+});
+check('late stage events from a different run or suspended operation cannot narrate the current job',()=>{
+ fixture('m08',4);const a=game.engine.state.active,def=game.definition();game.missionBeat(def,{run:a.run+1,stage:4});game.missionBeat(GlowportCampaign.missions.find(m=>m.id==='m12'),{run:a.run,stage:3});assert.equal(narrative().length,0);assert.equal(game.dialogues.length,0);
+});
+const vee=[];
+check('all three actual Vee decisions produce their own aftermath without altering the chosen consequence',()=>{
+ for(const [index,flag,expected]of [[0,'forgive','letting me stay'],[1,'accountable','answer to the crew'],[2,'replace','command of the codes']]){setup();const cash=player.money;finishVee(index);assert.equal(game.engine.state.flags.veeDecision,flag);assert.equal(game.engine.state.relationships.VEE,[3,1,-3][index]);assert(shown.some(l=>l.text.includes(expected)));assert(narrative().some(m=>m.id.endsWith(':complete')&&m.text.includes(index===0?'nobody makes that choice alone':index===1?'crew decides':'out of command')));assert.equal(player.money-cash,game.engine.state.completed.m31.reward.cash);const saved=game.export(),count=narrative().length,cashAfter=player.money;game.reset(saved,6);flush();assert.equal(narrative().length,count);assert.equal(player.money,cashAfter);assert.equal(game.engine.state.flags.veeDecision,flag);vee.push({decision:flag,relationship:game.engine.state.relationships.VEE,messages:count,cashReward:cashAfter-cash})}
+});
+const endings=[];
+check('all three finale choices finish through production callbacks and keep distinct recorded broadcasts',()=>{
+ for(const [index,ending,term]of [[0,'broadcast','archive is public'],[1,'control','SIREN is in crew hands'],[2,'deal','system survives']]){setup();fixture('m40',6);const cash=player.money;assert(game.action());assert(choice);const q=choice;choice=null;q.callback(index);flush();assert.equal(game.engine.state.active.status,'complete');assert.equal(game.engine.state.ending,ending);assert(narrative().some(m=>m.id.endsWith(':complete')&&m.text.includes(term)));assert(shown.some(l=>l.text.includes(ending==='broadcast'?'names are on the air':ending==='control'?'SIREN answers to us':'crew gets to walk away')));assert.equal(player.money-cash,game.engine.state.completed.m40.reward.cash);const saved=game.export(),count=narrative().length;game.reset(saved,21);flush();assert.equal(narrative().length,count);assert.equal(game.engine.state.ending,ending);endings.push({ending,messages:count,reward:player.money-cash})}
+});
+check('new narrative completion receipts never repay cash or duplicate aftermaths during event replay',()=>{
+ finishVee(2);const record=game.engine.state.completed.m31,event={run:record.run},cash=player.money,count=narrative().length;const summary=[{speaker:'GLOWPORT RADIO',text:'Existing completion summary'}];assert.deepEqual(game.completionLines(game.definition(),event,null,summary),summary);assert.equal(narrative().length,count);assert.equal(player.money,cash);
+});
+check('older active/completed saves do not replay missed historical radio beats',()=>{
+ fixture('m08',4);const saved=game.export();delete saved.rewardReceipts;game.reset(saved,6);flush();assert.equal(narrative().length,0);game.reset(null,21);const complete=game.export();game.reset(complete,21);flush();assert.equal(narrative().length,0);assert.equal(Object.keys(game.engine.state.completed).length,40);
+});
+check('non-curated side jobs and encounters keep their original briefing and completion fallback',()=>{
+ const def=GlowportSideContent.missions[0],event=GlowportSideContent.events[0];assert.deepEqual(GlowportMissionMoments.intro(def),def.intro);assert.equal(GlowportMissionMoments.stage(def,0),null);assert.equal(GlowportMissionMoments.completion(def),null);assert.equal(GlowportMissionMoments.completion(event),null);assert.deepEqual(GlowportMissionMoments.intro({id:'custom',intro:'A simple briefing.'}),[{speaker:'VEE',text:'A simple briefing.'}]);const original=GlowportCampaign.missions.find(m=>m.id==='m07').intro;assert.deepEqual(GlowportMissionMoments.intro(GlowportCampaign.missions.find(m=>m.id==='m07')),original);
+});
+const result={time:new Date().toISOString(),passed,curatedMissions:GlowportMissionMoments.ids,vee,endings,sourceHashes:Object.fromEntries(['campaign.js','mission-moments.js','gameplay.js'].map(f=>[f,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'Glowport88/assets',f))).digest('hex')])),scope:'Real production engine events, adapter actions and authored choice/dialogue callbacks using a deterministic host. Travel fixtures arrange positions; no stage-completion/evaluator overrides, extra rewards or changed mission definitions. Existing actual-browser mission suite remains responsible for city travel/combat/input.'};fs.writeFileSync(path.join(root,'artifacts/mission-moments-results.json'),JSON.stringify(result,null,2)+'\n');console.log(`${passed.length} mission moment checks passed`);

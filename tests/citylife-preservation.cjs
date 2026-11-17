@@ -4,6 +4,9 @@
 // gameplay/art against that same release while allowing reviewed ambient AI.
 // The later requested escape-speed/minimap pass permits only its player-profile
 // addition, garage stat readouts and explicit minimap-width constants below.
+// The game-feel pass also authorizes audio/mission-adapter polish and one
+// pursuit readout. Their functional/stage invariants are checked in
+// gamefeel-preservation.cjs and the focused feature regressions.
 const {chromium}=require('playwright');
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
 const {spawn,execFileSync}=require('node:child_process');
@@ -43,13 +46,16 @@ function protectedSources(){
  const old=fs.readFileSync(path.join(originalDir,'Glowport88_ArtRehaul_v11.html'),'utf8'),now=fs.readFileSync(path.join(currentDir,'Glowport88_ArtRehaul_v11.html'),'utf8');
  // All static HTML/UI precedes the first external script; additional AI scripts
  // belong after this boundary and are deliberately outside the presentation hash.
- assert.equal(sha(now.split('<script src=')[0]),sha(old.split('<script src=')[0]),'HUD/menu/control markup or inline styles changed');
+ const pursuitReadout='<div id="hud-pursuit" class="hud-pursuit" hidden><span id="hud-pursuit-label">SPOTTED</span><div id="hud-pursuit-track" role="progressbar" aria-label="Escape progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span id="hud-pursuit-fill"></span></div></div>\n';
+ assert.equal(now.split(pursuitReadout).length-1,1,'Exactly one requested pursuit status readout is expected');
+ assert.equal(sha(now.replace(pursuitReadout,'').split('<script src=')[0]),sha(old.split('<script src=')[0]),'HUD/menu/control markup or inline styles changed outside the requested pursuit readout');
  for(const name of ['ui.css','mobile.css'])assert.equal(sha(fs.readFileSync(path.join(currentDir,'assets',name))),sha(fs.readFileSync(path.join(originalDir,'assets',name))),name+' presentation changed');
  const oldHud=fs.readFileSync(path.join(originalDir,'assets/hud.css'),'utf8'),nowHud=fs.readFileSync(path.join(currentDir,'assets/hud.css'),'utf8');
  const reviewedHud=reviewedReplacements(oldHud,[['clamp(110px, 17cqw, 210px)','clamp(124px, 19cqw, 236px)',2],['--hud-map-width: 96px','--hud-map-width: 108px',3],['--hud-map-width: 78px','--hud-map-width: 88px',2],['var(--hud-map-width, 110px)','var(--hud-map-width, 124px)',1]],'Minimap widths');
- assert.equal(nowHud,reviewedHud,'HUD CSS changed outside the explicitly requested minimap widths');
+ assert(nowHud.startsWith(reviewedHud),'Existing HUD CSS changed outside the explicitly requested minimap widths');
+ const pursuitCss=nowHud.slice(reviewedHud.length).replace(/\/\*[\s\S]*?\*\//g,'');for(const match of pursuitCss.matchAll(/([^{}]+)\{/g))assert(/^(?:body\.touch-mode\s+)?[.#]hud-pursuit(?:[-[\s.#:]|$)/.test(match[1].trim()),'Unrelated HUD CSS appended: '+match[1].trim());
  const oldModules=fileHashes(originalDir,protectedModules),nowModules=fileHashes(currentDir,protectedModules);
- for(const name of protectedModules.filter(name=>name!=='vehicle-system.js'))assert.equal(nowModules[name],oldModules[name],'Protected gameplay/UI/geometry module changed: '+name);
+ for(const name of protectedModules.filter(name=>!['vehicle-system.js','city-audio.js','gameplay.js'].includes(name)))assert.equal(nowModules[name],oldModules[name],'Protected gameplay/UI/geometry module changed: '+name);
  const oldVehicles=fs.readFileSync(path.join(originalDir,'assets/vehicle-system.js'),'utf8'),nowVehicles=fs.readFileSync(path.join(currentDir,'assets/vehicle-system.js'),'utf8');
  const playerProfileAddition=`// Player mobility is separate from traffic and pursuit/race AI. A working,
 // damaged vehicle still needs enough speed to pull away from officers on foot.
@@ -63,8 +69,8 @@ function playerProfile(car={}){const base=profile(car);
  const oldImages=fileHashes(originalDir,pngs),nowImages=fileHashes(currentDir,pngs);assert.deepEqual(nowImages,oldImages,'Existing illustrated/character/vehicle PNG changed');
  const oldArt=fs.readFileSync(path.join(originalDir,'assets/art.js'),'utf8'),nowArt=fs.readFileSync(path.join(currentDir,'assets/art.js'),'utf8'),renderers={};
  for(const name of ['character','vehicle','hostWashAlpha','atmosphere','interior','portrait']){renderers[name]=sha(functionSource(nowArt,name));assert.equal(renderers[name],sha(functionSource(oldArt,name)),name+' renderer/lighting changed')}
- checks.push('Exact baseline hashes: all original PNGs, 19 protected modules, HUD/menu/control markup, unchanged base vehicle/AI profiles and non-minimap CSS; only reviewed player driving profile/readouts and minimap widths differ');
- return {modules:nowModules,images:nowImages,renderers,markupSHA256:sha(now.split('<script src=')[0]),css:fileHashes(currentDir,['ui.css','mobile.css','hud.css']),reviewedChanges:{vehicleSystem:{baselineSHA256:oldModules['vehicle-system.js'],currentSHA256:nowModules['vehicle-system.js'],scope:'Player-only profile/export and matching garage speed/acceleration readouts; every other byte unchanged'},hudCss:{baselineSHA256:sha(oldHud),currentSHA256:sha(nowHud),scope:'Only eight reviewed minimap-width/fallback constants; every other byte unchanged'}}};
+ checks.push('Exact baseline hashes: all original PNGs, 17 protected modules, HUD/menu/control markup, unchanged base vehicle/AI profiles and established CSS; only reviewed player driving/minimap changes, the pursuit readout and separately tested audio/mission adapters differ');
+ return {modules:nowModules,images:nowImages,renderers,markupSHA256:sha(now.split('<script src=')[0]),css:fileHashes(currentDir,['ui.css','mobile.css','hud.css']),reviewedChanges:{gameFeelModules:{names:['city-audio.js','gameplay.js'],scope:'Authorized sound/mission-moment adapters; exact radio/catalogue/reward/choice/save invariants are guarded by gamefeel-preservation and functional feature tests'},pursuitReadout:{scope:'One exact new status block; every other HUD/menu/control markup byte unchanged'},vehicleSystem:{baselineSHA256:oldModules['vehicle-system.js'],currentSHA256:nowModules['vehicle-system.js'],scope:'Player-only profile/export and matching garage speed/acceleration readouts; every other byte unchanged'},hudCss:{baselineSHA256:sha(oldHud),currentSHA256:sha(nowHud),scope:'Only eight reviewed minimap-width/fallback constants and appended pursuit-readout selectors; every established style byte unchanged'}}};
 }
 async function startServer(directory){const server=spawn('python3',['-u','-m','http.server','0','--bind','127.0.0.1','--directory',directory],{stdio:['ignore','pipe','ignore']});servers.push(server);return new Promise((resolve,reject)=>{let output='';const timer=setTimeout(()=>reject(Error('Server timeout')),7000);server.stdout.on('data',data=>{output+=data;const match=output.match(/port (\d+)/);if(match){clearTimeout(timer);resolve('http://127.0.0.1:'+match[1]+'/Glowport88_ArtRehaul_v11.html?debug=1')}});server.on('error',reject)})}
 async function open(url,phase,device={width:1440,height:1000,touch:false}){

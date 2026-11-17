@@ -1,5 +1,5 @@
 {
-  "time": "2026-10-30T19:43:33.159Z",
+  "time": "2026-11-17T20:01:44.613Z",
   "passed": [
     "menu Tab reaches controls without starting the game",
     "focused New Story Enter uses its native action and preserves the old backup",

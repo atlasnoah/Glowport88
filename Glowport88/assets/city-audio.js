@@ -9,18 +9,18 @@ const stations=Object.freeze([
  {id:'harbor',name:'HARBOR RADIO',description:'Original harbor bells and quiet intervals',wave:'sine',beat:.38,notes:[62,69,74,0,65,72,77,0]}
 ]);
 const defaults={muted:false,music:.2,effects:.45,station:'neon'};
-const cues=new Set(['footstep','door','mission','complete','objective','collect','dialogue','interact','weapon','shot','reload','skid','impact','arcade','error']);
+const cues=new Set(['footstep','door','mission','complete','objective','collect','dialogue','interact','radio','weapon','shot','pistol','shotgun','smg','melee','hit','down','reload','skid','impact','arcade','error']);
 const finite=(v,f)=>Number.isFinite(Number(v))?Number(v):f,clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
 function clean(input){return {muted:!!input?.muted,music:clamp(finite(input?.music,defaults.music),0,1),effects:clamp(finite(input?.effects,defaults.effects),0,1),station:stations.some(s=>s.id===input?.station)?input.station:defaults.station}}
 let settings={...defaults};try{settings=clean(JSON.parse(localStorage.getItem(KEY)||'null'))}catch{}
 let context=null,musicBus=null,effectsBus=null,noise=null,unlocked=false,paused=true,failed=false,panel=null,previousFocus=null,closeCallback=null,resetControls=null;
-let nextBeat=0,beatIndex=0,footClock=0,ambienceClock=0,sirenClock=0,previewUntil=0,engine=null,maxVoices=0,lastCue='',cueTimes=new Map();
+let nextBeat=0,beatIndex=0,footClock=0,tireClock=0,ambienceClock=0,sirenClock=0,previewUntil=0,engine=null,maxVoices=0,lastCue='',cueTimes=new Map();
 const voices=new Set();
 function store(){try{localStorage.setItem(KEY,JSON.stringify(settings))}catch{}}
 function gain(){if(!context)return;const now=context.currentTime;try{musicBus.gain.setTargetAtTime(settings.muted?0:settings.music*.12,now,.025);effectsBus.gain.setTargetAtTime(settings.muted?0:settings.effects*.22,now,.025)}catch{}}
 function forget(voice){if(!voices.delete(voice))return;for(const node of voice.nodes)try{node.disconnect()}catch{}}
-function stop(voice){if(!voice)return;for(const node of voice.sources)try{node.stop()}catch{}forget(voice)}
-function stopAll(){for(const voice of [...voices])stop(voice);engine=null;nextBeat=0;footClock=0;ambienceClock=0;sirenClock=0;previewUntil=0}
+function stop(voice){if(!voice)return;if(engine===voice)engine=null;for(const node of voice.sources)try{node.stop()}catch{}forget(voice)}
+function stopAll(){for(const voice of [...voices])stop(voice);engine=null;nextBeat=0;footClock=0;tireClock=0;ambienceClock=0;sirenClock=0;previewUntil=0}
 function room(){if(!context||context.state!=='running'||settings.muted||paused)return false;while(voices.size>=LIMIT)stop(voices.values().next().value);return true}
 function tone(frequency,duration=.12,volume=.2,wave='sine',bus=effectsBus,delay=0,endFrequency=null){
  if(!room()||frequency<=0)return null;
@@ -41,14 +41,20 @@ async function unlock(){
   await context.resume();unlocked=context.state==='running';failed=false;paused=false;gain();return unlocked;
  }catch{failed=true;return false}
 }
-function cue(name){if(!cues.has(name)||!room())return false;const now=context.currentTime,previous=cueTimes.get(name)??-100;if(now-previous<.045)return false;cueTimes.set(name,now);lastCue=name;
+function cue(name){if(!cues.has(name)||settings.effects<=0||!room())return false;const now=context.currentTime,previous=cueTimes.get(name)??-100;if(now-previous<.045)return false;cueTimes.set(name,now);lastCue=name;
  switch(name){
   case 'footstep':tone(96,.055,.12,'triangle',effectsBus,0,44);break;
   case 'door':tone(150,.15,.18,'triangle',effectsBus,0,65);hiss(.06,.08,900);break;
   case 'mission':case 'complete':tone(523,.18,.25,'triangle');tone(659,.18,.22,'triangle',effectsBus,.12);tone(784,.3,.2,'triangle',effectsBus,.24);break;
   case 'objective':case 'collect':tone(659,.12,.2,'sine');tone(988,.17,.14,'sine',effectsBus,.09);break;
   case 'dialogue':case 'interact':tone(380,.055,.12,'square');break;
-  case 'weapon':case 'shot':hiss(.065,.22,750);tone(92,.06,.18,'triangle',effectsBus,0,35);break;
+  case 'radio':tone(440,.05,.07,'sine');tone(660,.065,.055,'sine',effectsBus,.075);break;
+  case 'weapon':case 'shot':case 'pistol':hiss(.055,.2,1000);tone(112,.075,.2,'triangle',effectsBus,0,37);break;
+  case 'shotgun':hiss(.17,.3,450);tone(76,.19,.28,'triangle',effectsBus,0,26);tone(155,.065,.08,'square',effectsBus,.025,55);break;
+  case 'smg':hiss(.038,.16,1800);tone(158,.04,.13,'square',effectsBus,0,62);break;
+  case 'melee':hiss(.055,.1,400);tone(74,.075,.14,'triangle',effectsBus,0,32);break;
+  case 'hit':tone(820,.035,.1,'sine',effectsBus,0,540);hiss(.025,.045,2400);break;
+  case 'down':tone(330,.1,.12,'triangle',effectsBus,0,165);tone(165,.12,.09,'triangle',effectsBus,.07,82);break;
   case 'reload':hiss(.075,.14,1300);tone(180,.035,.12,'square',effectsBus,.09);break;
   case 'skid':hiss(.14,.16,2600);break;
   case 'impact':hiss(.12,.2,420);tone(64,.16,.2,'triangle',effectsBus,0,28);break;
@@ -63,13 +69,25 @@ function update(dt,state={}){
  if(nextPaused){if(panel&&context.currentTime<previewUntil){paused=true;return}if(!paused||voices.size)stopAll();paused=true;return}paused=false;if(context.state!=='running'||settings.muted){engineOff();return}
  const elapsed=clamp(finite(dt,0),0,.1),now=context.currentTime,station=stations.find(s=>s.id===settings.station)||stations[0];
  if(settings.music>0&&now>=nextBeat){if(now-nextBeat>1)nextBeat=now;const note=station.notes[beatIndex%station.notes.length];if(note){tone(440*2**((note-69)/12),station.beat*.8,.22,station.wave,musicBus);if(beatIndex%4===0)tone(440*2**((note-81)/12),station.beat*1.5,.27,'sine',musicBus)}beatIndex=(beatIndex+1)%64;nextBeat=now+station.beat}
- if(state.inCar&&settings.effects>0){if(!engine&&room()){try{const osc=context.createOscillator(),env=context.createGain();osc.type='triangle';osc.frequency.value=45;env.gain.value=.045;osc.connect(env);env.connect(effectsBus);engine={sources:[osc],nodes:[osc,env],osc,env};voices.add(engine);maxVoices=Math.max(maxVoices,voices.size);osc.onended=()=>{if(engine?.osc===osc)engine=null};osc.start()}catch{engine=null}}
-  if(engine){engine.osc.frequency.setTargetAtTime(42+Math.min(320,Math.abs(finite(state.speed,0)))*.48,now,.12);engine.env.gain.setTargetAtTime(.035+Math.min(250,Math.abs(finite(state.speed,0)))*.0003,now,.1)}
+ if(state.inCar&&settings.effects>0){if(!engine&&room()){try{
+   const osc=context.createOscillator(),harmonic=context.createOscillator(),harmonicGain=context.createGain(),filter=context.createBiquadFilter(),env=context.createGain();
+   osc.type='triangle';harmonic.type='sawtooth';osc.frequency.value=35;harmonic.frequency.value=70;harmonicGain.gain.value=.18;filter.type='lowpass';filter.frequency.value=550;env.gain.value=.035;
+   osc.connect(filter);harmonic.connect(harmonicGain);harmonicGain.connect(filter);filter.connect(env);env.connect(effectsBus);
+   const voice={sources:[osc,harmonic],nodes:[osc,harmonic,harmonicGain,filter,env],osc,harmonic,filter,env,gearIndex:0,telemetry:null};engine=voice;voices.add(voice);maxVoices=Math.max(maxVoices,voices.size);osc.onended=()=>{if(engine===voice)engine=null;forget(voice)};osc.start();harmonic.start();
+  }catch{engine=null}}
+  if(engine){
+   const speed=finite(state.speed,0),absolute=Math.abs(speed),maximum=clamp(finite(state.maxSpeed,264),120,550),width=maximum/5.2,load=clamp(Math.abs(finite(state.throttle,0)),0,1),sport=['sport','rare','muscle'].includes(state.modelId),heavy=['van','pickup','delivery'].includes(state.modelId);
+   while(engine.gearIndex<4&&absolute>(engine.gearIndex+1)*width+5)engine.gearIndex++;while(engine.gearIndex>0&&absolute<engine.gearIndex*width-7)engine.gearIndex--;
+   const rev=clamp((absolute-engine.gearIndex*width)/width,0,1),rpm=clamp(absolute<4?850+load*850:2100+rev*3500+load*600+(state.boost?350:0),850,6800),frequency=clamp(rpm/60*(heavy?.9:sport?1.25:1.1),25,180);
+   engine.osc.frequency.setTargetAtTime(frequency,now,.085);engine.harmonic.frequency.setTargetAtTime(frequency*(sport?2.01:1.98),now,.085);engine.filter.frequency.setTargetAtTime(420+load*760+Math.min(1,absolute/maximum)*500+(state.boost?180:0),now,.1);engine.env.gain.setTargetAtTime(.028+load*.035+Math.min(300,absolute)*.00008,now,.08);
+   engine.telemetry={gear:absolute<2?'N':speed<0?'R':String(engine.gearIndex+1),rpm:Math.round(rpm),frequency,load,modelId:state.modelId||'sedan',boost:!!state.boost};
+  }
  }else engineOff();
  footClock-=elapsed;if(state.walking&&!state.inCar&&footClock<=0){cue('footstep');footClock=state.running ? .23 : .36}
- ambienceClock-=elapsed;if(!state.inside&&ambienceClock<=0){if(state.weather==='RAIN')hiss(.35,.045,700);else if(state.weather==='FOG')hiss(.18,.018,100);else if(beatIndex%8===0)tone(92,.38,.015,'sine');ambienceClock=state.weather==='RAIN'?.3:2}
- sirenClock-=elapsed;if(!state.inside&&finite(state.wanted,0)>.5&&sirenClock<=0){tone(610,.4,.055,'sine',effectsBus,0,970);tone(970,.4,.05,'sine',effectsBus,.4,610);sirenClock=.82}
- if(state.braking&&Math.abs(finite(state.speed,0))>95&&footClock<=0){cue('skid');footClock=.24}
+ ambienceClock-=elapsed;if(settings.effects>0&&!state.inside&&ambienceClock<=0){if(state.weather==='RAIN')hiss(.35,.045,700);else if(state.weather==='FOG')hiss(.18,.018,100);else if(beatIndex%8===0)tone(92,.38,.015,'sine');ambienceClock=state.weather==='RAIN'?.3:2}
+ sirenClock-=elapsed;if(settings.effects>0&&!state.inside&&finite(state.wanted,0)>.5&&sirenClock<=0){tone(610,.4,.055,'sine',effectsBus,0,970);tone(970,.4,.05,'sine',effectsBus,.4,610);sirenClock=.82}
+ tireClock-=elapsed;const tireSpeed=Math.abs(finite(state.speed,0)),hardBrake=!!state.braking||finite(state.speed,0)*finite(state.throttle,0)<-20,hardTurn=Math.abs(finite(state.steering,0))>.55&&tireSpeed>125;
+ if(state.inCar&&(hardBrake||hardTurn)&&tireSpeed>90&&tireClock<=0){cue('skid');tireClock=.28}
 }
 function suspend(){paused=true;stopAll();if(context?.state==='running')context.suspend().catch(()=>{})}
 function apply(next){settings=clean({...settings,...next});gain();store();if(settings.muted)stopAll();nextBeat=0;return {...settings}}
@@ -85,5 +103,5 @@ function open(options={}){if(panel)return false;unlock();resetControls=options.r
  mute.onchange=()=>apply({muted:mute.checked});music.oninput=()=>apply({music:Number(music.value)/100});effects.oninput=()=>apply({effects:Number(effects.value)/100});select.onchange=()=>{apply({station:select.value});beatIndex=0;describe()};
  panel.querySelector('#audioClose').onclick=close;panel.querySelector('#audioTest').onclick=async()=>{const ok=await unlock();if(!panel)return;panel.querySelector('#audioStatus').textContent=ok?(settings.muted?'Unmute to hear the test.':'Original sound preview.'): 'Audio is unavailable here. The game remains playable.';stopAll();if(ok&&!settings.muted){previewUntil=context.currentTime+.34;cue('collect')}};panel.addEventListener('click',event=>{event.stopPropagation();if(event.target===panel)close()});document.body.append(panel);window.addEventListener('keydown',down,true);window.addEventListener('keyup',up,true);panel.querySelector('#audioClose').focus();return true;
 }
-return {stations,unlock,cue,update,suspend,open,close,configure:apply,export:()=>({...settings}),import:input=>apply(input),get active(){return !!panel},diagnostics:()=>({available:!!(window.AudioContext||window.webkitAudioContext),unlocked,failed,state:context?.state||'locked',voices:voices.size,maxVoices,voiceLimit:LIMIT,lastCue,settings:{...settings}})};
+return {stations,unlock,cue,update,suspend,open,close,configure:apply,export:()=>({...settings}),import:input=>apply(input),get active(){return !!panel},diagnostics:()=>({available:!!(window.AudioContext||window.webkitAudioContext),unlocked,failed,state:context?.state||'locked',voices:voices.size,maxVoices,voiceLimit:LIMIT,lastCue,engine:engine?.telemetry?{...engine.telemetry}:null,settings:{...settings}})};
 })();
