@@ -141,7 +141,25 @@
     "Mission fixtures accelerate travel and provide equipment/invulnerability; no continuous human difficulty/duration certification.",
     "Each authored choice is swept, not every possible combination."
   ],
-  "delivery": "Standalone and public-byte verification recorded separately in release-results.json and public-demo-results.json.",
+  "delivery": {
+    "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.6-feel",
+    "implementationCommit": "51ec20a3dd2da3a6b8d53321a6b022df3888a077",
+    "pagesImplementationCommit": "7ecdc8b",
+    "verifiedHTTPSDownload": true,
+    "matchesTestedRelease": true,
+    "sha256": "d5ea9e9fc060b4d2b4245f5839623883092ae889421d06dcac253de2785c82ab",
+    "mobilePlaybackOfExactDownloadedBytes": true,
+    "publicEvidenceHashes": 6,
+    "directCloudBrowserProbe": {
+      "time": "2026-11-17T20:15:29.396Z",
+      "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.6-feel",
+      "tlsBypass": false,
+      "directPlayback": false,
+      "error": "page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://atlasnoah.github.io/Glowport88/?v=0.6.6-feel\nCall log:\n\u001b[2m  - navigating to \"https://atlasnoah.github.io/Glowport88/?v=0.6.6-feel\", waiting until \"load\"\u001b[22m\n",
+      "note": "Cloud browser trust/network limitation; separately verify HTTPS download and playback of those exact bytes."
+    },
+    "scope": "Verified system HTTPS download plus isolated mobile Chromium playback of those exact public bytes. Direct cloud Chromium origin navigation is proxy/certificate trust blocked without TLS bypass."
+  },
   "standalone": {
     "passed": true,
     "selfContained": true,

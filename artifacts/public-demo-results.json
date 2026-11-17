@@ -1,8 +1,8 @@
 {
-  "time": "2026-11-02T13:58:43.890Z",
-  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.5-escape",
+  "time": "2026-11-17T20:15:35.864Z",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.6-feel",
   "verifiedHTTPSDownload": true,
-  "sha256": "5dcb08dd1375dd182a7e8e62884871b32b6db4abc70f45a13eb2521d030ffa3b",
+  "sha256": "d5ea9e9fc060b4d2b4245f5839623883092ae889421d06dcac253de2785c82ab",
   "matchesTestedRelease": true,
   "browserPlaybackOfDownloadedBytes": {
     "originalCity": {
@@ -39,6 +39,44 @@
       "driver": 218.75,
       "workingMinimum": 164.0625,
       "minimapWidth": 108
+    },
+    "gameFeel": {
+      "pursuit": true,
+      "patrolSpeed": 144,
+      "driving": {
+        "marks": 0,
+        "markLimit": 80,
+        "markLifetime": 6,
+        "emitted": 0,
+        "state": null
+      },
+      "combat": {
+        "particleLimit": 96,
+        "flashLimit": 24,
+        "particles": 0,
+        "flashes": 0,
+        "shots": 0,
+        "hits": 0,
+        "downs": 0,
+        "coverSelections": 0,
+        "coverPeeks": 0,
+        "repositions": 0,
+        "abandonedPlans": 0,
+        "maxParticles": 0,
+        "maxFlashes": 0,
+        "actors": []
+      },
+      "moments": [
+        "m08",
+        "m12",
+        "m16",
+        "m20",
+        "m24",
+        "m28",
+        "m31",
+        "m40"
+      ],
+      "pursuitHud": true
     },
     "mobileViewport": {
       "width": 390,

@@ -1,0 +1,36 @@
+{
+  "time": "2026-11-17T20:15:46.278364+00:00",
+  "checks": [
+    {
+      "name": "gamefeel-hud-phone.png",
+      "verifiedHTTPS": true,
+      "sha256": "524ca920b0503824be1487a4e65823c8a65653737f43fad0356862d6725d9960"
+    },
+    {
+      "name": "gamefeel-after-downtown-night.png",
+      "verifiedHTTPS": true,
+      "sha256": "eae66134df9b2e4fb0659d0a55ec15147d599049e49d960c51bae7f11e980ffe"
+    },
+    {
+      "name": "combat-feel-host-pistol.png",
+      "verifiedHTTPS": true,
+      "sha256": "0e84c82ef885432532bbc4d5402a493b300e73bd69f7a735305f7884823566f9"
+    },
+    {
+      "name": "mission-moments-phone.png",
+      "verifiedHTTPS": true,
+      "sha256": "267b1ec3b7b3edcfebc7f5ddd8d8d9a477776c6a99179c81378fff54f3f5fde5"
+    },
+    {
+      "name": "police-pursuit-host-results.json",
+      "verifiedHTTPS": true,
+      "sha256": "68a91380b3bcbde437e966d9785399511ce82b2c24d91f94beaf9931c5120143"
+    },
+    {
+      "name": "gamefeel-comparison.html",
+      "verifiedHTTPS": true,
+      "sha256": "b10d381812e9c52658038bcedcbd5e72e2fb42d0f64c71ce0185a26d97f85cf2"
+    }
+  ],
+  "errors": []
+}

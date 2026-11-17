@@ -1,0 +1,8 @@
+{
+  "time": "2026-11-17T20:15:29.396Z",
+  "url": "https://atlasnoah.github.io/Glowport88/?v=0.6.6-feel",
+  "tlsBypass": false,
+  "directPlayback": false,
+  "error": "page.goto: net::ERR_CERT_AUTHORITY_INVALID at https://atlasnoah.github.io/Glowport88/?v=0.6.6-feel\nCall log:\n\u001b[2m  - navigating to \"https://atlasnoah.github.io/Glowport88/?v=0.6.6-feel\", waiting until \"load\"\u001b[22m\n",
+  "note": "Cloud browser trust/network limitation; separately verify HTTPS download and playback of those exact bytes."
+}
