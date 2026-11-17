@@ -118,6 +118,11 @@
     "hudViewports": 5,
     "pixelIdenticalStaticScenes": true,
     "savedSearchRegressionFixed": true,
-    "testedSourceCommit": "51ec20a3dd2da3a6b8d53321a6b022df3888a077"
-  }
+    "testedSourceCommit": "51ec20a3dd2da3a6b8d53321a6b022df3888a077",
+    "publicBytePlayback": true,
+    "publishedEvidenceHashes": 6,
+    "directCloudBrowser": "Certificate trust blocked; verified HTTPS plus exact downloaded-byte mobile playback passed without TLS bypass."
+  },
+  "documentationCommit": "144a5f14181993349a8562bc0d77bdff177d890d",
+  "deliveryVerifiedAt": "2026-11-17T20:15:35.864Z"
 }
